@@ -12,61 +12,53 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.AdvanceStatusType', null, global);
-goog.exportSymbol('proto.api.commons.AgentCallHistoryScope', null, global);
-goog.exportSymbol('proto.api.commons.AgentFieldOption', null, global);
-goog.exportSymbol('proto.api.commons.AgentInfoSortBy', null, global);
-goog.exportSymbol('proto.api.commons.AgentRouting', null, global);
-goog.exportSymbol('proto.api.commons.AlphanumericKeypadDelimiter', null, global);
-goog.exportSymbol('proto.api.commons.AnnouncementMixingOption', null, global);
-goog.exportSymbol('proto.api.commons.AutomaticSystemCode', null, global);
-goog.exportSymbol('proto.api.commons.ClientSkin', null, global);
-goog.exportSymbol('proto.api.commons.CommunicationExpiration', null, global);
-goog.exportSymbol('proto.api.commons.ConfigSound', null, global);
-goog.exportSymbol('proto.api.commons.DataDipTemplateFilterType', null, global);
-goog.exportSymbol('proto.api.commons.DefaultCallbackRouting', null, global);
-goog.exportSymbol('proto.api.commons.DefaultDuplicateHandling', null, global);
-goog.exportSymbol('proto.api.commons.DefaultManualCallRecording', null, global);
-goog.exportSymbol('proto.api.commons.DefaultManualDialCallerId', null, global);
-goog.exportSymbol('proto.api.commons.DefaultTransferCallerId', null, global);
-goog.exportSymbol('proto.api.commons.Digit', null, global);
-goog.exportSymbol('proto.api.commons.DigitWrapper', null, global);
-goog.exportSymbol('proto.api.commons.DisplayLanguage', null, global);
-goog.exportSymbol('proto.api.commons.HuntGroupOrgDefaultCustom', null, global);
-goog.exportSymbol('proto.api.commons.IdentityProvider', null, global);
-goog.exportSymbol('proto.api.commons.InboundOverrideOption', null, global);
-goog.exportSymbol('proto.api.commons.InitialAgentStatus', null, global);
-goog.exportSymbol('proto.api.commons.IntercomConnection', null, global);
-goog.exportSymbol('proto.api.commons.ManualDialDataDipHandling', null, global);
-goog.exportSymbol('proto.api.commons.ManualDialDataDipIntegration', null, global);
-goog.exportSymbol('proto.api.commons.ManualDialDataDipScope', null, global);
-goog.exportSymbol('proto.api.commons.ManualDialTimeZoneValidation', null, global);
-goog.exportSymbol('proto.api.commons.OperatorApplications', null, global);
-goog.exportSymbol('proto.api.commons.OrganizationArchivedStateFilter', null, global);
-goog.exportSymbol('proto.api.commons.PhoneFieldOption', null, global);
-goog.exportSymbol('proto.api.commons.PhonePostalDisplayOptions', null, global);
-goog.exportSymbol('proto.api.commons.PostalFieldOption', null, global);
-goog.exportSymbol('proto.api.commons.QueueInfoSortBy', null, global);
-goog.exportSymbol('proto.api.commons.RecordingFileType', null, global);
-goog.exportSymbol('proto.api.commons.RequeueTransferQueueConfig', null, global);
-goog.exportSymbol('proto.api.commons.SoundGender', null, global);
-goog.exportSymbol('proto.api.commons.SoundLanguage', null, global);
-goog.exportSymbol('proto.api.commons.StandardImportFormat', null, global);
-goog.exportSymbol('proto.api.commons.TimeZone', null, global);
-goog.exportSymbol('proto.api.commons.TimeZoneWrapper', null, global);
-goog.exportSymbol('proto.api.commons.TransferRecordingStatus', null, global);
-goog.exportSymbol('proto.api.commons.XMLPropertyKey', null, global);
+goog.exportSymbol('api.commons.AdvanceStatusType', null, proto);
+goog.exportSymbol('api.commons.AgentCallHistoryScope', null, proto);
+goog.exportSymbol('api.commons.AgentFieldOption', null, proto);
+goog.exportSymbol('api.commons.AgentInfoSortBy', null, proto);
+goog.exportSymbol('api.commons.AgentRouting', null, proto);
+goog.exportSymbol('api.commons.AlphanumericKeypadDelimiter', null, proto);
+goog.exportSymbol('api.commons.AnnouncementMixingOption', null, proto);
+goog.exportSymbol('api.commons.AutomaticSystemCode', null, proto);
+goog.exportSymbol('api.commons.ClientSkin', null, proto);
+goog.exportSymbol('api.commons.CommunicationExpiration', null, proto);
+goog.exportSymbol('api.commons.ConfigSound', null, proto);
+goog.exportSymbol('api.commons.DataDipTemplateFilterType', null, proto);
+goog.exportSymbol('api.commons.DefaultCallbackRouting', null, proto);
+goog.exportSymbol('api.commons.DefaultDuplicateHandling', null, proto);
+goog.exportSymbol('api.commons.DefaultManualCallRecording', null, proto);
+goog.exportSymbol('api.commons.DefaultManualDialCallerId', null, proto);
+goog.exportSymbol('api.commons.DefaultTransferCallerId', null, proto);
+goog.exportSymbol('api.commons.Digit', null, proto);
+goog.exportSymbol('api.commons.DigitWrapper', null, proto);
+goog.exportSymbol('api.commons.DisplayLanguage', null, proto);
+goog.exportSymbol('api.commons.HuntGroupOrgDefaultCustom', null, proto);
+goog.exportSymbol('api.commons.IdentityProvider', null, proto);
+goog.exportSymbol('api.commons.InboundOverrideOption', null, proto);
+goog.exportSymbol('api.commons.InitialAgentStatus', null, proto);
+goog.exportSymbol('api.commons.IntercomConnection', null, proto);
+goog.exportSymbol('api.commons.ManualDialDataDipHandling', null, proto);
+goog.exportSymbol('api.commons.ManualDialDataDipIntegration', null, proto);
+goog.exportSymbol('api.commons.ManualDialDataDipScope', null, proto);
+goog.exportSymbol('api.commons.ManualDialTimeZoneValidation', null, proto);
+goog.exportSymbol('api.commons.OperatorApplications', null, proto);
+goog.exportSymbol('api.commons.OrganizationArchivedStateFilter', null, proto);
+goog.exportSymbol('api.commons.PhoneFieldOption', null, proto);
+goog.exportSymbol('api.commons.PhonePostalDisplayOptions', null, proto);
+goog.exportSymbol('api.commons.PostalFieldOption', null, proto);
+goog.exportSymbol('api.commons.QueueInfoSortBy', null, proto);
+goog.exportSymbol('api.commons.RecordingFileType', null, proto);
+goog.exportSymbol('api.commons.RequeueTransferQueueConfig', null, proto);
+goog.exportSymbol('api.commons.SoundGender', null, proto);
+goog.exportSymbol('api.commons.SoundLanguage', null, proto);
+goog.exportSymbol('api.commons.StandardImportFormat', null, proto);
+goog.exportSymbol('api.commons.TimeZone', null, proto);
+goog.exportSymbol('api.commons.TimeZoneWrapper', null, proto);
+goog.exportSymbol('api.commons.TransferRecordingStatus', null, proto);
+goog.exportSymbol('api.commons.XMLPropertyKey', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -1262,4 +1254,4 @@ proto.api.commons.OrganizationArchivedStateFilter = {
   ORGANIZATION_ARCHIVED_STATE_FILTER_ALL: 2
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

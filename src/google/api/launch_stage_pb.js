@@ -12,18 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.google.api.LaunchStage', null, global);
+goog.exportSymbol('google.api.LaunchStage', null, proto);
 /**
  * @enum {number}
  */
@@ -38,4 +30,4 @@ proto.google.api.LaunchStage = {
   DEPRECATED: 5
 };
 
-goog.object.extend(exports, proto.google.api);
+goog.object.extend(exports, proto);

@@ -12,57 +12,49 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_org_skill_group_pb = require('../../../../api/commons/org/skill_group_pb.js');
 goog.object.extend(proto, api_commons_org_skill_group_pb);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.AssignSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.AssignSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.CreateSkillGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.CreateSkillGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.DeleteSkillGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.DeleteSkillGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetAgentSkillsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetAgentSkillsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetSkillGroupMembersRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetSkillGroupMembersResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetSkillGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetSkillGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetUserSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetUserSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetUserSkillsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.GetUserSkillsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListAssignedSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListAssignedSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillGroupsMembersRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillGroupsMembersResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.AgentSkill', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RevokeOwnSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RevokeOwnSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RevokeSkillGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.RevokeSkillGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.SkillGroupMembers', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.UpdateSkillGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.UpdateSkillGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse', null, global);
+goog.exportSymbol('api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.AssignOwnSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.AssignSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.AssignSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.CreateSkillGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.CreateSkillGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.DeleteSkillGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.DeleteSkillGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetAgentSkillsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetAgentSkillsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetSkillGroupMembersRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetSkillGroupMembersResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetSkillGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetSkillGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetUserSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetUserSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetUserSkillsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.GetUserSkillsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListAssignedSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListAssignedSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillGroupsMembersRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillGroupsMembersResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillsForCurrentAgentRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.AgentSkill', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RevokeOwnSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RevokeOwnSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RevokeSkillGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.RevokeSkillGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.SkillGroupMembers', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.UpdateSkillGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.UpdateSkillGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -6196,4 +6188,4 @@ proto.api.v1alpha1.org.skills.RevokeOwnSkillGroupsResponse.serializeBinaryToWrit
 };
 
 
-goog.object.extend(exports, proto.api.v1alpha1.org.skills);
+goog.object.extend(exports, proto);

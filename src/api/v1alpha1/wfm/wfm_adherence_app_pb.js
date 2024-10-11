@@ -12,16 +12,9 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_wfm_pb = require('../../../api/commons/wfm_pb.js');
 goog.object.extend(proto, api_commons_wfm_pb);
+goog.object.extend(exports, proto);

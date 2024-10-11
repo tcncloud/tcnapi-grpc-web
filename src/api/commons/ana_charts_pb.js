@@ -12,25 +12,17 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.AreaChartChoice', null, global);
-goog.exportSymbol('proto.api.commons.BarChartOrientation', null, global);
-goog.exportSymbol('proto.api.commons.ChartDisplayLabels', null, global);
-goog.exportSymbol('proto.api.commons.ChartOrientation', null, global);
-goog.exportSymbol('proto.api.commons.LineChartStep', null, global);
-goog.exportSymbol('proto.api.commons.PackedBubbleChoice', null, global);
-goog.exportSymbol('proto.api.commons.SuffixChoices', null, global);
-goog.exportSymbol('proto.api.commons.ThresholdType', null, global);
+goog.exportSymbol('api.commons.AreaChartChoice', null, proto);
+goog.exportSymbol('api.commons.BarChartOrientation', null, proto);
+goog.exportSymbol('api.commons.ChartDisplayLabels', null, proto);
+goog.exportSymbol('api.commons.ChartOrientation', null, proto);
+goog.exportSymbol('api.commons.LineChartStep', null, proto);
+goog.exportSymbol('api.commons.PackedBubbleChoice', null, proto);
+goog.exportSymbol('api.commons.SuffixChoices', null, proto);
+goog.exportSymbol('api.commons.ThresholdType', null, proto);
 /**
  * @enum {number}
  */
@@ -99,4 +91,4 @@ proto.api.commons.SuffixChoices = {
   SUFFIX_CHOICES_PERCENTAGE: 2
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

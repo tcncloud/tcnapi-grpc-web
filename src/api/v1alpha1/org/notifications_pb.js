@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_audit_event_types_pb = require('../../../api/commons/audit/event_types_pb.js');
 goog.object.extend(proto, api_commons_audit_event_types_pb);
@@ -29,32 +21,32 @@ var api_commons_notifications_pb = require('../../../api/commons/notifications_p
 goog.object.extend(proto, api_commons_notifications_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
-goog.exportSymbol('proto.api.v1alpha1.org.AddUserSubscriptionByUserIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AddUserSubscriptionByUserIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AddUserSubscriptionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AddUserSubscriptionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserSubscriptionByUserIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserSubscriptionByUserIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserSubscriptionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserSubscriptionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrgSubscriptionsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrgSubscriptionsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListUserSubscriptionsByUserIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListUserSubscriptionsByUserIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListUserSubscriptionsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListUserSubscriptionsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemoveUserSubscriptionByUserIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemoveUserSubscriptionByUserIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemoveUserSubscriptionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemoveUserSubscriptionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateUserSubscriptionByUserIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateUserSubscriptionByUserIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateUserSubscriptionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateUserSubscriptionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UserSubscription', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UserSubscription.DeliverMethodCase', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UserSubscription.Delivery', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UserSubscription.Room303', null, global);
+goog.exportSymbol('api.v1alpha1.org.AddUserSubscriptionByUserIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AddUserSubscriptionByUserIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AddUserSubscriptionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AddUserSubscriptionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserSubscriptionByUserIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserSubscriptionByUserIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserSubscriptionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserSubscriptionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrgSubscriptionsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrgSubscriptionsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListUserSubscriptionsByUserIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListUserSubscriptionsByUserIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListUserSubscriptionsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListUserSubscriptionsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemoveUserSubscriptionByUserIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemoveUserSubscriptionByUserIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemoveUserSubscriptionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemoveUserSubscriptionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateUserSubscriptionByUserIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateUserSubscriptionByUserIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateUserSubscriptionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateUserSubscriptionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UserSubscription', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UserSubscription.DeliverMethodCase', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UserSubscription.Delivery', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UserSubscription.Room303', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -4543,4 +4535,4 @@ proto.api.v1alpha1.org.ListOrgSubscriptionsResponse.prototype.clearSubscriptions
 };
 
 
-goog.object.extend(exports, proto.api.v1alpha1.org);
+goog.object.extend(exports, proto);

@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -31,3 +23,4 @@ var services_org_exile_certificate_manager_v1alpha1_exile_certificate_pb = requi
 goog.object.extend(proto, services_org_exile_certificate_manager_v1alpha1_exile_certificate_pb);
 var services_org_exile_certificate_manager_v1alpha1_exile_configuration_pb = require('../../../../services/org/exile_certificate_manager/v1alpha1/exile_configuration_pb.js');
 goog.object.extend(proto, services_org_exile_certificate_manager_v1alpha1_exile_configuration_pb);
+goog.object.extend(exports, proto);

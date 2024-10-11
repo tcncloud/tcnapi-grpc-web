@@ -12,18 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.TaskGroupStatus', null, global);
+goog.exportSymbol('api.commons.TaskGroupStatus', null, proto);
 /**
  * @enum {number}
  */
@@ -50,4 +42,4 @@ proto.api.commons.TaskGroupStatus = {
   TG_ACCOUNTINGEXPORT_CANCELLED_ADMIN: 1530
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

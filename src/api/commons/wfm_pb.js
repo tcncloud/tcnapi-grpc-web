@@ -12,86 +12,78 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('proto.api.commons.AdherenceAgentRule', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceAgentRuleAction', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceAgentRuleActionType', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceAgentRuleClause', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceDepartmentalRule', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceDepartmentalRuleAction', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceDepartmentalRuleActionType', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceDepartmentalRuleClause', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleCondition', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleNotificationConfig', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleNotificationConfigEntry', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleNotificationMedium', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleRange', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleRequirementType', null, global);
-goog.exportSymbol('proto.api.commons.AdherenceRuleUnit', null, global);
-goog.exportSymbol('proto.api.commons.AgentLeavePetition', null, global);
-goog.exportSymbol('proto.api.commons.AgentLeavePetitionStatus', null, global);
-goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
-goog.exportSymbol('proto.api.commons.AgentStateSequence', null, global);
-goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
-goog.exportSymbol('proto.api.commons.BitmapType', null, global);
-goog.exportSymbol('proto.api.commons.CallProfileGroupAvgs', null, global);
-goog.exportSymbol('proto.api.commons.CallProfileGroupCalls', null, global);
-goog.exportSymbol('proto.api.commons.ClientHistoryCacheInfo', null, global);
-goog.exportSymbol('proto.api.commons.ConfigEntity', null, global);
-goog.exportSymbol('proto.api.commons.ConfigEntityType', null, global);
-goog.exportSymbol('proto.api.commons.ConfigRelationshipType', null, global);
-goog.exportSymbol('proto.api.commons.ConstraintRuleType', null, global);
-goog.exportSymbol('proto.api.commons.ConstraintTimeUnit', null, global);
-goog.exportSymbol('proto.api.commons.DOWPlacementType', null, global);
-goog.exportSymbol('proto.api.commons.DatetimeRange', null, global);
-goog.exportSymbol('proto.api.commons.DayOfWeek', null, global);
-goog.exportSymbol('proto.api.commons.DiagnosticCode', null, global);
-goog.exportSymbol('proto.api.commons.DiagnosticLevel', null, global);
-goog.exportSymbol('proto.api.commons.DistributionProfile', null, global);
-goog.exportSymbol('proto.api.commons.ErrorTrace', null, global);
-goog.exportSymbol('proto.api.commons.ForecastingParameters', null, global);
-goog.exportSymbol('proto.api.commons.ForecastingParameters.ForecastRangeCase', null, global);
-goog.exportSymbol('proto.api.commons.ForecastingParameters.HistoricalDataRangeCase', null, global);
-goog.exportSymbol('proto.api.commons.ForecastingParameters.TrainingDataRangeCase', null, global);
-goog.exportSymbol('proto.api.commons.HistoryCacheState', null, global);
-goog.exportSymbol('proto.api.commons.InitialSetupState', null, global);
-goog.exportSymbol('proto.api.commons.InitialSetupStatus', null, global);
-goog.exportSymbol('proto.api.commons.OpenTimesOption', null, global);
-goog.exportSymbol('proto.api.commons.OptionTypes', null, global);
-goog.exportSymbol('proto.api.commons.OptionTypes.DesiredOptionCase', null, global);
-goog.exportSymbol('proto.api.commons.PerformanceMetricType', null, global);
-goog.exportSymbol('proto.api.commons.ProfileDOW', null, global);
-goog.exportSymbol('proto.api.commons.ProfileMOY', null, global);
-goog.exportSymbol('proto.api.commons.ProfileTOD', null, global);
-goog.exportSymbol('proto.api.commons.ProfileWOMS', null, global);
-goog.exportSymbol('proto.api.commons.RealTimeManagementState', null, global);
-goog.exportSymbol('proto.api.commons.RegressionForecasterAvgsProcessingType', null, global);
-goog.exportSymbol('proto.api.commons.RegressionForecasterModelTypes', null, global);
-goog.exportSymbol('proto.api.commons.ScheduleSelector', null, global);
-goog.exportSymbol('proto.api.commons.ScheduleShouldInclude', null, global);
-goog.exportSymbol('proto.api.commons.ScheduleType', null, global);
-goog.exportSymbol('proto.api.commons.SchedulingActivityClassification', null, global);
-goog.exportSymbol('proto.api.commons.SchedulingResultMetric', null, global);
-goog.exportSymbol('proto.api.commons.SchedulingResultMetricForSkillCollection', null, global);
-goog.exportSymbol('proto.api.commons.SchedulingTargetType', null, global);
-goog.exportSymbol('proto.api.commons.SkillProfileCategory', null, global);
-goog.exportSymbol('proto.api.commons.SkillProfileCategory.CategoryType', null, global);
-goog.exportSymbol('proto.api.commons.SkillType', null, global);
-goog.exportSymbol('proto.api.commons.SkillType.Enum', null, global);
+goog.exportSymbol('api.commons.AdherenceAgentRule', null, proto);
+goog.exportSymbol('api.commons.AdherenceAgentRuleAction', null, proto);
+goog.exportSymbol('api.commons.AdherenceAgentRuleActionType', null, proto);
+goog.exportSymbol('api.commons.AdherenceAgentRuleClause', null, proto);
+goog.exportSymbol('api.commons.AdherenceDepartmentalRule', null, proto);
+goog.exportSymbol('api.commons.AdherenceDepartmentalRuleAction', null, proto);
+goog.exportSymbol('api.commons.AdherenceDepartmentalRuleActionType', null, proto);
+goog.exportSymbol('api.commons.AdherenceDepartmentalRuleClause', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleCondition', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleNotificationConfig', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleNotificationConfigEntry', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleNotificationMedium', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleRange', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleRequirementType', null, proto);
+goog.exportSymbol('api.commons.AdherenceRuleUnit', null, proto);
+goog.exportSymbol('api.commons.AgentLeavePetition', null, proto);
+goog.exportSymbol('api.commons.AgentLeavePetitionStatus', null, proto);
+goog.exportSymbol('api.commons.AgentStateSegment', null, proto);
+goog.exportSymbol('api.commons.AgentStateSequence', null, proto);
+goog.exportSymbol('api.commons.AvailabilityOption', null, proto);
+goog.exportSymbol('api.commons.BitmapType', null, proto);
+goog.exportSymbol('api.commons.CallProfileGroupAvgs', null, proto);
+goog.exportSymbol('api.commons.CallProfileGroupCalls', null, proto);
+goog.exportSymbol('api.commons.ClientHistoryCacheInfo', null, proto);
+goog.exportSymbol('api.commons.ConfigEntity', null, proto);
+goog.exportSymbol('api.commons.ConfigEntityType', null, proto);
+goog.exportSymbol('api.commons.ConfigRelationshipType', null, proto);
+goog.exportSymbol('api.commons.ConstraintRuleType', null, proto);
+goog.exportSymbol('api.commons.ConstraintTimeUnit', null, proto);
+goog.exportSymbol('api.commons.DOWPlacementType', null, proto);
+goog.exportSymbol('api.commons.DatetimeRange', null, proto);
+goog.exportSymbol('api.commons.DayOfWeek', null, proto);
+goog.exportSymbol('api.commons.DiagnosticCode', null, proto);
+goog.exportSymbol('api.commons.DiagnosticLevel', null, proto);
+goog.exportSymbol('api.commons.DistributionProfile', null, proto);
+goog.exportSymbol('api.commons.ErrorTrace', null, proto);
+goog.exportSymbol('api.commons.ForecastingParameters', null, proto);
+goog.exportSymbol('api.commons.ForecastingParameters.ForecastRangeCase', null, proto);
+goog.exportSymbol('api.commons.ForecastingParameters.HistoricalDataRangeCase', null, proto);
+goog.exportSymbol('api.commons.ForecastingParameters.TrainingDataRangeCase', null, proto);
+goog.exportSymbol('api.commons.HistoryCacheState', null, proto);
+goog.exportSymbol('api.commons.InitialSetupState', null, proto);
+goog.exportSymbol('api.commons.InitialSetupStatus', null, proto);
+goog.exportSymbol('api.commons.OpenTimesOption', null, proto);
+goog.exportSymbol('api.commons.OptionTypes', null, proto);
+goog.exportSymbol('api.commons.OptionTypes.DesiredOptionCase', null, proto);
+goog.exportSymbol('api.commons.PerformanceMetricType', null, proto);
+goog.exportSymbol('api.commons.ProfileDOW', null, proto);
+goog.exportSymbol('api.commons.ProfileMOY', null, proto);
+goog.exportSymbol('api.commons.ProfileTOD', null, proto);
+goog.exportSymbol('api.commons.ProfileWOMS', null, proto);
+goog.exportSymbol('api.commons.RealTimeManagementState', null, proto);
+goog.exportSymbol('api.commons.RegressionForecasterAvgsProcessingType', null, proto);
+goog.exportSymbol('api.commons.RegressionForecasterModelTypes', null, proto);
+goog.exportSymbol('api.commons.ScheduleSelector', null, proto);
+goog.exportSymbol('api.commons.ScheduleShouldInclude', null, proto);
+goog.exportSymbol('api.commons.ScheduleType', null, proto);
+goog.exportSymbol('api.commons.SchedulingActivityClassification', null, proto);
+goog.exportSymbol('api.commons.SchedulingResultMetric', null, proto);
+goog.exportSymbol('api.commons.SchedulingResultMetricForSkillCollection', null, proto);
+goog.exportSymbol('api.commons.SchedulingTargetType', null, proto);
+goog.exportSymbol('api.commons.SkillProfileCategory', null, proto);
+goog.exportSymbol('api.commons.SkillProfileCategory.CategoryType', null, proto);
+goog.exportSymbol('api.commons.SkillType', null, proto);
+goog.exportSymbol('api.commons.SkillType.Enum', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -9648,4 +9640,4 @@ proto.api.commons.AdherenceAgentRuleActionType = {
   ADHERENCE_AGENT_RULE_ACTION_TYPE_SHIFT_END_EARLY: 9
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

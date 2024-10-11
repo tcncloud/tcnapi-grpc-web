@@ -12,53 +12,45 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('proto.api.commons.AbsentPolicyType', null, global);
-goog.exportSymbol('proto.api.commons.ChainOperator', null, global);
-goog.exportSymbol('proto.api.commons.CompareOperator', null, global);
-goog.exportSymbol('proto.api.commons.CompareType', null, global);
-goog.exportSymbol('proto.api.commons.ComplianceListType', null, global);
-goog.exportSymbol('proto.api.commons.ConsentActionType', null, global);
-goog.exportSymbol('proto.api.commons.ConstructedFilename', null, global);
-goog.exportSymbol('proto.api.commons.CronType', null, global);
-goog.exportSymbol('proto.api.commons.DatePosition', null, global);
-goog.exportSymbol('proto.api.commons.DateTimePrecision', null, global);
-goog.exportSymbol('proto.api.commons.DeDupActions', null, global);
-goog.exportSymbol('proto.api.commons.DedupKeyPolicy', null, global);
-goog.exportSymbol('proto.api.commons.DialOrderType', null, global);
-goog.exportSymbol('proto.api.commons.DuplicatePolicyType', null, global);
-goog.exportSymbol('proto.api.commons.EnrichmentType', null, global);
-goog.exportSymbol('proto.api.commons.EntrypointType', null, global);
-goog.exportSymbol('proto.api.commons.EventState', null, global);
-goog.exportSymbol('proto.api.commons.Expiration', null, global);
-goog.exportSymbol('proto.api.commons.ExportType', null, global);
-goog.exportSymbol('proto.api.commons.FieldType', null, global);
-goog.exportSymbol('proto.api.commons.FileFormat', null, global);
-goog.exportSymbol('proto.api.commons.FilePattern', null, global);
-goog.exportSymbol('proto.api.commons.FilePatternType', null, global);
-goog.exportSymbol('proto.api.commons.HttpVerb', null, global);
-goog.exportSymbol('proto.api.commons.PaginationTerminator', null, global);
-goog.exportSymbol('proto.api.commons.PaginationTerminator.OpCase', null, global);
-goog.exportSymbol('proto.api.commons.PipelineElementStatusType', null, global);
-goog.exportSymbol('proto.api.commons.PrimarySource', null, global);
-goog.exportSymbol('proto.api.commons.RecordField', null, global);
-goog.exportSymbol('proto.api.commons.RecordType', null, global);
-goog.exportSymbol('proto.api.commons.RelativeDay', null, global);
-goog.exportSymbol('proto.api.commons.RunType', null, global);
-goog.exportSymbol('proto.api.commons.SortOrder', null, global);
-goog.exportSymbol('proto.api.commons.TimeUnit', null, global);
+goog.exportSymbol('api.commons.AbsentPolicyType', null, proto);
+goog.exportSymbol('api.commons.ChainOperator', null, proto);
+goog.exportSymbol('api.commons.CompareOperator', null, proto);
+goog.exportSymbol('api.commons.CompareType', null, proto);
+goog.exportSymbol('api.commons.ComplianceListType', null, proto);
+goog.exportSymbol('api.commons.ConsentActionType', null, proto);
+goog.exportSymbol('api.commons.ConstructedFilename', null, proto);
+goog.exportSymbol('api.commons.CronType', null, proto);
+goog.exportSymbol('api.commons.DatePosition', null, proto);
+goog.exportSymbol('api.commons.DateTimePrecision', null, proto);
+goog.exportSymbol('api.commons.DeDupActions', null, proto);
+goog.exportSymbol('api.commons.DedupKeyPolicy', null, proto);
+goog.exportSymbol('api.commons.DialOrderType', null, proto);
+goog.exportSymbol('api.commons.DuplicatePolicyType', null, proto);
+goog.exportSymbol('api.commons.EnrichmentType', null, proto);
+goog.exportSymbol('api.commons.EntrypointType', null, proto);
+goog.exportSymbol('api.commons.EventState', null, proto);
+goog.exportSymbol('api.commons.Expiration', null, proto);
+goog.exportSymbol('api.commons.ExportType', null, proto);
+goog.exportSymbol('api.commons.FieldType', null, proto);
+goog.exportSymbol('api.commons.FileFormat', null, proto);
+goog.exportSymbol('api.commons.FilePattern', null, proto);
+goog.exportSymbol('api.commons.FilePatternType', null, proto);
+goog.exportSymbol('api.commons.HttpVerb', null, proto);
+goog.exportSymbol('api.commons.PaginationTerminator', null, proto);
+goog.exportSymbol('api.commons.PaginationTerminator.OpCase', null, proto);
+goog.exportSymbol('api.commons.PipelineElementStatusType', null, proto);
+goog.exportSymbol('api.commons.PrimarySource', null, proto);
+goog.exportSymbol('api.commons.RecordField', null, proto);
+goog.exportSymbol('api.commons.RecordType', null, proto);
+goog.exportSymbol('api.commons.RelativeDay', null, proto);
+goog.exportSymbol('api.commons.RunType', null, proto);
+goog.exportSymbol('api.commons.SortOrder', null, proto);
+goog.exportSymbol('api.commons.TimeUnit', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -2088,4 +2080,4 @@ proto.api.commons.TimeUnit = {
   TIME_HOURS: 3
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

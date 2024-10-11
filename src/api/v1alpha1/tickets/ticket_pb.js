@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_tickets_pb = require('../../../api/commons/tickets_pb.js');
 goog.object.extend(proto, api_commons_tickets_pb);
@@ -29,78 +21,78 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ActionTypes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AddEntityRefRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AddEntityRefResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignProjectTemplateRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignProjectTemplateResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignTicketActionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignTicketActionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AssignTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.AvailableTicketsFilter', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ChangeTicketStatusRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ChangeTicketStatusResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CloseTicketActionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CloseTicketActionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CloseTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CloseTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateCommentReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateCommentRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateSelfAssignReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateSelfAssignRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateSlaReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateSlaRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketActionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketActionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketTemplateRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.CreateTicketTemplateResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditMaskTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditMaskTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditTicketTemplateRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EditTicketTemplateResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.EntityRef', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.GetActionTypeRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.GetActionTypeResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.GetPhoneNumberTypeRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.GetPhoneNumberTypeResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAgentTicketsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAgentTicketsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListEntityRefsByTicketRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListEntityRefsByTicketResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSlaConditionReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSlaConditionRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSlaReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListSlaRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketTemplateRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketTemplateResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketsByEntityRefResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketsReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListTicketsRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListUsersRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListUsersResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.PingReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.PingRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ReplyCommentReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ReplyCommentRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.SLAConditions', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.Skill', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.UpdateSlaReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.UpdateSlaRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.User', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ViewTicketReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ViewTicketRes', null, global);
+goog.exportSymbol('api.v1alpha1.tickets.ActionTypes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AddEntityRefRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AddEntityRefResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignProjectTemplateRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignProjectTemplateResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignTicketActionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignTicketActionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AssignTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.AvailableTicketsFilter', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ChangeTicketStatusRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ChangeTicketStatusResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CloseTicketActionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CloseTicketActionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CloseTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CloseTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateCommentReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateCommentRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateSelfAssignReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateSelfAssignRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateSlaReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateSlaRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketActionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketActionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketTemplateRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.CreateTicketTemplateResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditMaskTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditMaskTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditTicketTemplateRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EditTicketTemplateResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.EntityRef', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.GetActionTypeRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.GetActionTypeResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.GetPhoneNumberTypeRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.GetPhoneNumberTypeResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAgentTicketsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAgentTicketsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAllocatedTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAllocatedTicketRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAvailableAgentTicketsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListAvailableAgentTicketsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListEntityRefsByTicketRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListEntityRefsByTicketResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSkillsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSkillsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSlaConditionReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSlaConditionRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSlaReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListSlaRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketTemplateRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketTemplateResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketsByEntityRefRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketsByEntityRefResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketsReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListTicketsRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListUsersRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ListUsersResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.PingReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.PingRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ReplyCommentReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ReplyCommentRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.SLAConditions', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.Skill', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.UpdateSlaReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.UpdateSlaRes', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.User', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ViewTicketReq', null, proto);
+goog.exportSymbol('api.v1alpha1.tickets.ViewTicketRes', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -13432,4 +13424,4 @@ proto.api.v1alpha1.tickets.SLAConditions = {
   RESOLVE: 2
 };
 
-goog.object.extend(exports, proto.api.v1alpha1.tickets);
+goog.object.extend(exports, proto);

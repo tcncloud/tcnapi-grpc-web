@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
@@ -29,45 +21,45 @@ var api_commons_omnichannel_pb = require('../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.commons.AutoEvaluation', null, global);
-goog.exportSymbol('proto.api.commons.AutoEvaluation.CategoryInfo', null, global);
-goog.exportSymbol('proto.api.commons.AutoEvaluation.ScorecardInfo', null, global);
-goog.exportSymbol('proto.api.commons.AutoEvaluationQuestion', null, global);
-goog.exportSymbol('proto.api.commons.AutoEvaluationSection', null, global);
-goog.exportSymbol('proto.api.commons.AutoQuestion', null, global);
-goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr', null, global);
-goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr.Flag', null, global);
-goog.exportSymbol('proto.api.commons.Category', null, global);
-goog.exportSymbol('proto.api.commons.CategoryType', null, global);
-goog.exportSymbol('proto.api.commons.Evaluation', null, global);
-goog.exportSymbol('proto.api.commons.Evaluation.CustomField', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationQuestion', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationQuestion.Answer', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationQuestion.Answer.ResultCase', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationSection', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationState', null, global);
-goog.exportSymbol('proto.api.commons.EvaluationType', null, global);
-goog.exportSymbol('proto.api.commons.FailType', null, global);
-goog.exportSymbol('proto.api.commons.Question', null, global);
-goog.exportSymbol('proto.api.commons.QuestionFocus', null, global);
-goog.exportSymbol('proto.api.commons.RiskLevel', null, global);
-goog.exportSymbol('proto.api.commons.ScoreType', null, global);
-goog.exportSymbol('proto.api.commons.Scorecard', null, global);
-goog.exportSymbol('proto.api.commons.ScorecardQuestion', null, global);
-goog.exportSymbol('proto.api.commons.ScorecardQuestion.Answer', null, global);
-goog.exportSymbol('proto.api.commons.ScorecardQuestion.Answer.ResultCase', null, global);
-goog.exportSymbol('proto.api.commons.ScorecardQuestion.MultiSelect', null, global);
-goog.exportSymbol('proto.api.commons.ScorecardState', null, global);
-goog.exportSymbol('proto.api.commons.Section', null, global);
-goog.exportSymbol('proto.api.commons.SmartEvaluation', null, global);
-goog.exportSymbol('proto.api.commons.SmartEvaluationQuestion', null, global);
-goog.exportSymbol('proto.api.commons.SmartEvaluationQuestion.Answer', null, global);
-goog.exportSymbol('proto.api.commons.SmartEvaluationQuestion.Answer.ResultCase', null, global);
-goog.exportSymbol('proto.api.commons.SmartEvaluationSection', null, global);
-goog.exportSymbol('proto.api.commons.SmartQuestion', null, global);
-goog.exportSymbol('proto.api.commons.SmartQuestion.Answer', null, global);
-goog.exportSymbol('proto.api.commons.SmartQuestion.Answer.ResultCase', null, global);
-goog.exportSymbol('proto.api.commons.TimeFilter', null, global);
+goog.exportSymbol('api.commons.AutoEvaluation', null, proto);
+goog.exportSymbol('api.commons.AutoEvaluation.CategoryInfo', null, proto);
+goog.exportSymbol('api.commons.AutoEvaluation.ScorecardInfo', null, proto);
+goog.exportSymbol('api.commons.AutoEvaluationQuestion', null, proto);
+goog.exportSymbol('api.commons.AutoEvaluationSection', null, proto);
+goog.exportSymbol('api.commons.AutoQuestion', null, proto);
+goog.exportSymbol('api.commons.AutoQuestion.FlagExpr', null, proto);
+goog.exportSymbol('api.commons.AutoQuestion.FlagExpr.Flag', null, proto);
+goog.exportSymbol('api.commons.Category', null, proto);
+goog.exportSymbol('api.commons.CategoryType', null, proto);
+goog.exportSymbol('api.commons.Evaluation', null, proto);
+goog.exportSymbol('api.commons.Evaluation.CustomField', null, proto);
+goog.exportSymbol('api.commons.EvaluationQuestion', null, proto);
+goog.exportSymbol('api.commons.EvaluationQuestion.Answer', null, proto);
+goog.exportSymbol('api.commons.EvaluationQuestion.Answer.ResultCase', null, proto);
+goog.exportSymbol('api.commons.EvaluationSection', null, proto);
+goog.exportSymbol('api.commons.EvaluationState', null, proto);
+goog.exportSymbol('api.commons.EvaluationType', null, proto);
+goog.exportSymbol('api.commons.FailType', null, proto);
+goog.exportSymbol('api.commons.Question', null, proto);
+goog.exportSymbol('api.commons.QuestionFocus', null, proto);
+goog.exportSymbol('api.commons.RiskLevel', null, proto);
+goog.exportSymbol('api.commons.ScoreType', null, proto);
+goog.exportSymbol('api.commons.Scorecard', null, proto);
+goog.exportSymbol('api.commons.ScorecardQuestion', null, proto);
+goog.exportSymbol('api.commons.ScorecardQuestion.Answer', null, proto);
+goog.exportSymbol('api.commons.ScorecardQuestion.Answer.ResultCase', null, proto);
+goog.exportSymbol('api.commons.ScorecardQuestion.MultiSelect', null, proto);
+goog.exportSymbol('api.commons.ScorecardState', null, proto);
+goog.exportSymbol('api.commons.Section', null, proto);
+goog.exportSymbol('api.commons.SmartEvaluation', null, proto);
+goog.exportSymbol('api.commons.SmartEvaluationQuestion', null, proto);
+goog.exportSymbol('api.commons.SmartEvaluationQuestion.Answer', null, proto);
+goog.exportSymbol('api.commons.SmartEvaluationQuestion.Answer.ResultCase', null, proto);
+goog.exportSymbol('api.commons.SmartEvaluationSection', null, proto);
+goog.exportSymbol('api.commons.SmartQuestion', null, proto);
+goog.exportSymbol('api.commons.SmartQuestion.Answer', null, proto);
+goog.exportSymbol('api.commons.SmartQuestion.Answer.ResultCase', null, proto);
+goog.exportSymbol('api.commons.TimeFilter', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -10729,4 +10721,4 @@ proto.api.commons.RiskLevel = {
   RISK_LEVEL_RISK_FREE: 4
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

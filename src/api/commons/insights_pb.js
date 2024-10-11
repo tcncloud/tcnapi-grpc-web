@@ -12,20 +12,12 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.InsightPermissionType', null, global);
-goog.exportSymbol('proto.api.commons.InsightType', null, global);
-goog.exportSymbol('proto.api.commons.InsightVfsSchemaType', null, global);
+goog.exportSymbol('api.commons.InsightPermissionType', null, proto);
+goog.exportSymbol('api.commons.InsightType', null, proto);
+goog.exportSymbol('api.commons.InsightVfsSchemaType', null, proto);
 /**
  * @enum {number}
  */
@@ -52,4 +44,4 @@ proto.api.commons.InsightVfsSchemaType = {
   INSIGHT_VFS_SCHEMA_TYPE_DATETIME: 4
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

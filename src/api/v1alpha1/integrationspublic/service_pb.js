@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_integrations_integrations_pb = require('../../../api/commons/integrations/integrations_pb.js');
 goog.object.extend(proto, api_commons_integrations_integrations_pb);
@@ -31,31 +23,31 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.CompositeVal', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.FieldOrStr', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.FieldOrStr.ValCase', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetInvoiceReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetInvoiceRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetLinkDataReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetLinkDataRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetReceiptReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.GetReceiptRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.PortalConfig', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.PortalConfigId', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.PortalLinkId', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.PortalText', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SessionKeepAliveReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SessionKeepAliveRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SubmitPaymentReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SubmitPaymentRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SubmitVerificationReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.SubmitVerificationRes', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.Value', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.Value.ValCase', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrationspublic.Values', null, global);
+goog.exportSymbol('api.v1alpha1.integrationspublic.CompositeVal', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.FieldOrStr', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.FieldOrStr.ValCase', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetInvoiceReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetInvoiceRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetLinkDataReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetLinkDataRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetReceiptReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.GetReceiptRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.PortalConfig', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.PortalConfigId', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.PortalLinkId', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.PortalText', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.ProcessWorkflowReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.ProcessWorkflowRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SessionKeepAliveReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SessionKeepAliveRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SubmitPaymentReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SubmitPaymentRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SubmitVerificationReq', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.SubmitVerificationRes', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.Value', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.Value.ValCase', null, proto);
+goog.exportSymbol('api.v1alpha1.integrationspublic.Values', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -6051,4 +6043,4 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.clearDataMap 
 };
 
 
-goog.object.extend(exports, proto.api.v1alpha1.integrationspublic);
+goog.object.extend(exports, proto);

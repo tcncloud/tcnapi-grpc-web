@@ -12,18 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.services.billing.entities.v1alpha1.Product', null, global);
+goog.exportSymbol('services.billing.entities.v1alpha1.Product', null, proto);
 /**
  * @enum {number}
  */
@@ -40,4 +32,4 @@ proto.services.billing.entities.v1alpha1.Product = {
   PRODUCT_COMPLIANCE: 300
 };
 
-goog.object.extend(exports, proto.services.billing.entities.v1alpha1);
+goog.object.extend(exports, proto);
