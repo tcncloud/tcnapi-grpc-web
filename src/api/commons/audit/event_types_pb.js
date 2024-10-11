@@ -12,18 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.audit.EventType', null, global);
+goog.exportSymbol('api.commons.audit.EventType', null, proto);
 /**
  * @enum {number}
  */
@@ -169,4 +161,4 @@ proto.api.commons.audit.EventType = {
   EVENT_TYPE_CONTACT_MANAGER_DELETE_EVENT: 1207
 };
 
-goog.object.extend(exports, proto.api.commons.audit);
+goog.object.extend(exports, proto);

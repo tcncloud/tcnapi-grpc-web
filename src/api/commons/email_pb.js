@@ -12,23 +12,15 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
-goog.exportSymbol('proto.api.commons.EmailIBGroupEvent', null, global);
-goog.exportSymbol('proto.api.commons.EmailIBGroupStatus', null, global);
-goog.exportSymbol('proto.api.commons.EmailIBReplyStatus', null, global);
-goog.exportSymbol('proto.api.commons.EmailIBReplyType', null, global);
-goog.exportSymbol('proto.api.commons.EmailResult', null, global);
-goog.exportSymbol('proto.api.commons.EmailStatus', null, global);
+goog.exportSymbol('api.commons.EmailIBGroupEvent', null, proto);
+goog.exportSymbol('api.commons.EmailIBGroupStatus', null, proto);
+goog.exportSymbol('api.commons.EmailIBReplyStatus', null, proto);
+goog.exportSymbol('api.commons.EmailIBReplyType', null, proto);
+goog.exportSymbol('api.commons.EmailResult', null, proto);
+goog.exportSymbol('api.commons.EmailStatus', null, proto);
 /**
  * @enum {number}
  */
@@ -145,4 +137,4 @@ proto.api.commons.EmailIBReplyType = {
   OUTBOUND_PURE: 6
 };
 
-goog.object.extend(exports, proto.api.commons);
+goog.object.extend(exports, proto);

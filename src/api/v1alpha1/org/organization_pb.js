@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_country_pb = require('../../../api/commons/country_pb.js');
 goog.object.extend(proto, api_commons_country_pb);
@@ -31,35 +23,35 @@ var api_commons_org_organization_pb = require('../../../api/commons/org/organiza
 goog.object.extend(proto, api_commons_org_organization_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.v1alpha1.org.ArchiveOrganizationRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ArchiveOrganizationResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ConvertOrgToManualRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ConvertOrgToManualResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.CreateOrganizationRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.CreateOrganizationResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrganizationByIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrganizationByIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrganizationRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrganizationResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListAllOrganizationsGloballyRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListAllOrganizationsGloballyResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListAllOrganizationsGloballyResponse.OrganizationDetails', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListArchivedOrganizationsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListArchivedOrganizationsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsByRegionRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsByRegionResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsByRegionResponse.OrganizationDetails', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsRequest.IdentifierCase', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOrganizationsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOwnedOrgsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListOwnedOrgsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.OrganizationDetails', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UnArchiveOrganizationRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UnArchiveOrganizationResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateOrganizationRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateOrganizationResponse', null, global);
+goog.exportSymbol('api.v1alpha1.org.ArchiveOrganizationRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ArchiveOrganizationResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ConvertOrgToManualRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ConvertOrgToManualResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.CreateOrganizationRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.CreateOrganizationResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrganizationByIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrganizationByIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrganizationRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrganizationResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListAllOrganizationsGloballyRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListAllOrganizationsGloballyResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListAllOrganizationsGloballyResponse.OrganizationDetails', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListArchivedOrganizationsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListArchivedOrganizationsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsByRegionRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsByRegionResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsByRegionResponse.OrganizationDetails', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsRequest.IdentifierCase', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOrganizationsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOwnedOrgsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListOwnedOrgsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.OrganizationDetails', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UnArchiveOrganizationRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UnArchiveOrganizationResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateOrganizationRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateOrganizationResponse', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5602,4 +5594,4 @@ proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.prototype.clearOrganiza
 };
 
 
-goog.object.extend(exports, proto.api.v1alpha1.org);
+goog.object.extend(exports, proto);

@@ -12,16 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var api_commons_auth_perms_pb = require('../../../api/commons/auth/perms_pb.js');
 goog.object.extend(proto, api_commons_auth_perms_pb);
@@ -35,44 +27,44 @@ var api_commons_org_user_pb = require('../../../api/commons/org/user_pb.js');
 goog.object.extend(proto, api_commons_org_user_pb);
 var api_commons_perms_pb = require('../../../api/commons/perms_pb.js');
 goog.object.extend(proto, api_commons_perms_pb);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignAccountOwnerPermissionToUserRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignAccountOwnerPermissionToUserResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignLabelsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignLabelsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignUsersPermissionGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.AssignUsersPermissionGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.CreatePermissionGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.CreatePermissionGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.DeletePermissionGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.DeletePermissionGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetAccountOwnerGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetAccountOwnerGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetLicensesRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetLicensesResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrgLicensesRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetOrgLicensesResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetPermissionsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetPermissionsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserPermissionsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.GetUserPermissionsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.InitDefaultPermissionGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.InitDefaultPermissionGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListPermissionGroupsByOrgIdRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListPermissionGroupsByOrgIdResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListPermissionGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.ListPermissionGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemovePermissionFromAllPermissionGroupsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RemovePermissionFromAllPermissionGroupsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeAccountOwnerPermissionFromUserRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeAccountOwnerPermissionFromUserResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeLabelsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeLabelsResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeUsersPermissionGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.RevokeUsersPermissionGroupResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateLicensesRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdateLicensesResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdatePermissionGroupRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.UpdatePermissionGroupResponse', null, global);
+goog.exportSymbol('api.v1alpha1.org.AssignAccountOwnerPermissionToUserRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AssignAccountOwnerPermissionToUserResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AssignLabelsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AssignLabelsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AssignUsersPermissionGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.AssignUsersPermissionGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.CreatePermissionGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.CreatePermissionGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.DeletePermissionGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.DeletePermissionGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetAccountOwnerGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetAccountOwnerGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetLicensesRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetLicensesResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrgLicensesRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetOrgLicensesResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetPermissionsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetPermissionsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserPermissionsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.GetUserPermissionsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.InitDefaultPermissionGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.InitDefaultPermissionGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListPermissionGroupsByOrgIdRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListPermissionGroupsByOrgIdResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListPermissionGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.ListPermissionGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemovePermissionFromAllPermissionGroupsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RemovePermissionFromAllPermissionGroupsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeAccountOwnerPermissionFromUserRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeAccountOwnerPermissionFromUserResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeLabelsRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeLabelsResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeUsersPermissionGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.RevokeUsersPermissionGroupResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateLicensesRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdateLicensesResponse', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdatePermissionGroupRequest', null, proto);
+goog.exportSymbol('api.v1alpha1.org.UpdatePermissionGroupResponse', null, proto);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -6437,4 +6429,4 @@ proto.api.v1alpha1.org.RevokeLabelsResponse.serializeBinaryToWriter = function(m
 };
 
 
-goog.object.extend(exports, proto.api.v1alpha1.org);
+goog.object.extend(exports, proto);

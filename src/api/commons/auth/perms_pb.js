@@ -12,20 +12,12 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var proto = {};
 
 var annotations_perms_tcn_pb = require('../../../annotations/perms/tcn_pb.js');
 goog.object.extend(proto, annotations_perms_tcn_pb);
-goog.exportSymbol('proto.api.commons.auth.Permission', null, global);
+goog.exportSymbol('api.commons.auth.Permission', null, proto);
 /**
  * @enum {number}
  */
@@ -139,4 +131,4 @@ proto.api.commons.auth.Permission = {
   PERMISSION_CONTACTMANAGER_APP: 5101
 };
 
-goog.object.extend(exports, proto.api.commons.auth);
+goog.object.extend(exports, proto);
