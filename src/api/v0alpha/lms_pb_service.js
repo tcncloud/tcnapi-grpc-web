@@ -344,15 +344,6 @@ LMS.UpdateCollection = {
   responseType: google_protobuf_empty_pb.Empty
 };
 
-LMS.RetypeCollection = {
-  methodName: "RetypeCollection",
-  service: LMS,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_lms_pb.RetypeCollectionReq,
-  responseType: api_v0alpha_lms_pb.RetypeCollectionRes
-};
-
 LMS.DeleteCollection = {
   methodName: "DeleteCollection",
   service: LMS,
@@ -1721,37 +1712,6 @@ LMSClient.prototype.updateCollection = function updateCollection(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.UpdateCollection, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-LMSClient.prototype.retypeCollection = function retypeCollection(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(LMS.RetypeCollection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
