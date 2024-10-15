@@ -6141,6 +6141,11 @@ export class CollectionMetadata extends jspb.Message {
   getLastSearched(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastSearched(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  clearPrimaryKeyList(): void;
+  getPrimaryKeyList(): Array<string>;
+  setPrimaryKeyList(value: Array<string>): void;
+  addPrimaryKey(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CollectionMetadata.AsObject;
   static toObject(includeInstance: boolean, msg: CollectionMetadata): CollectionMetadata.AsObject;
@@ -6165,6 +6170,7 @@ export namespace CollectionMetadata {
     lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     searchCount: number,
     lastSearched?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    primaryKeyList: Array<string>,
   }
 }
 
