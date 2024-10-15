@@ -99,6 +99,12 @@ export class GeneralSettings extends jspb.Message {
   getEnablePauseOptionReset(): boolean;
   setEnablePauseOptionReset(value: boolean): void;
 
+  getTriggeredPauseStatusPauseCodeWaiting(): string;
+  setTriggeredPauseStatusPauseCodeWaiting(value: string): void;
+
+  getTriggeredPauseStatusPauseCodeWrapup(): string;
+  setTriggeredPauseStatusPauseCodeWrapup(value: string): void;
+
   getDisplayRecordingIndicator(): boolean;
   setDisplayRecordingIndicator(value: boolean): void;
 
@@ -249,6 +255,8 @@ export namespace GeneralSettings {
     agentPauseOptionSet?: GeneralSettings.PauseOptionSet.AsObject,
     defaultAgentPauseOption: string,
     enablePauseOptionReset: boolean,
+    triggeredPauseStatusPauseCodeWaiting: string,
+    triggeredPauseStatusPauseCodeWrapup: string,
     displayRecordingIndicator: boolean,
     enableCallRecordingPause: boolean,
     callRecordingPauseConfirmation: boolean,
