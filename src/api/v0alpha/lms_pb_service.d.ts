@@ -338,6 +338,15 @@ type LMSUpdateCollection = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSRetypeCollection = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.RetypeCollectionReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.RetypeCollectionRes;
+};
+
 type LMSDeleteCollection = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -575,6 +584,7 @@ export class LMS {
   static readonly CreateCollection: LMSCreateCollection;
   static readonly GetCollection: LMSGetCollection;
   static readonly UpdateCollection: LMSUpdateCollection;
+  static readonly RetypeCollection: LMSRetypeCollection;
   static readonly DeleteCollection: LMSDeleteCollection;
   static readonly ListCollections: LMSListCollections;
   static readonly ResetCollection: LMSResetCollection;
@@ -923,6 +933,15 @@ export class LMSClient {
   updateCollection(
     requestMessage: api_v0alpha_lms_pb.CollectionMetadata,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  retypeCollection(
+    requestMessage: api_v0alpha_lms_pb.RetypeCollectionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.RetypeCollectionRes|null) => void
+  ): UnaryResponse;
+  retypeCollection(
+    requestMessage: api_v0alpha_lms_pb.RetypeCollectionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.RetypeCollectionRes|null) => void
   ): UnaryResponse;
   deleteCollection(
     requestMessage: api_v0alpha_lms_pb.DeleteCollectionReq,
