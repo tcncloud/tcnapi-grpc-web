@@ -59956,8 +59956,7 @@ proto.api.commons.integrations.RequestSource = {
   REQUEST_SOURCE_WEB: 2,
   REQUEST_SOURCE_SMS: 3,
   REQUEST_SOURCE_CHAT: 4,
-  REQUEST_SOURCE_LMS: 5,
-  REQUEST_SOURCE_AGENT: 6
+  REQUEST_SOURCE_LMS: 5
 };
 
 /**
