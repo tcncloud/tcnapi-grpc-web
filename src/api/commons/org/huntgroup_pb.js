@@ -2299,6 +2299,8 @@ enableAgentPause: jspb.Message.getBooleanFieldWithDefault(msg, 101, false),
 agentPauseOptionSet: (f = msg.getAgentPauseOptionSet()) && proto.api.commons.org.GeneralSettings.PauseOptionSet.toObject(includeInstance, f),
 defaultAgentPauseOption: jspb.Message.getFieldWithDefault(msg, 103, ""),
 enablePauseOptionReset: jspb.Message.getBooleanFieldWithDefault(msg, 104, false),
+triggeredPauseStatusPauseCodeWaiting: jspb.Message.getFieldWithDefault(msg, 105, ""),
+triggeredPauseStatusPauseCodeWrapup: jspb.Message.getFieldWithDefault(msg, 106, ""),
 displayRecordingIndicator: jspb.Message.getBooleanFieldWithDefault(msg, 200, false),
 enableCallRecordingPause: jspb.Message.getBooleanFieldWithDefault(msg, 201, false),
 callRecordingPauseConfirmation: jspb.Message.getBooleanFieldWithDefault(msg, 202, false),
@@ -2411,6 +2413,14 @@ proto.api.commons.org.GeneralSettings.deserializeBinaryFromReader = function(msg
     case 104:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnablePauseOptionReset(value);
+      break;
+    case 105:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTriggeredPauseStatusPauseCodeWaiting(value);
+      break;
+    case 106:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTriggeredPauseStatusPauseCodeWrapup(value);
       break;
     case 200:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2663,6 +2673,20 @@ proto.api.commons.org.GeneralSettings.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       104,
+      f
+    );
+  }
+  f = message.getTriggeredPauseStatusPauseCodeWaiting();
+  if (f.length > 0) {
+    writer.writeString(
+      105,
+      f
+    );
+  }
+  f = message.getTriggeredPauseStatusPauseCodeWrapup();
+  if (f.length > 0) {
+    writer.writeString(
+      106,
       f
     );
   }
@@ -5179,6 +5203,42 @@ proto.api.commons.org.GeneralSettings.prototype.getEnablePauseOptionReset = func
  */
 proto.api.commons.org.GeneralSettings.prototype.setEnablePauseOptionReset = function(value) {
   return jspb.Message.setProto3BooleanField(this, 104, value);
+};
+
+
+/**
+ * optional string triggered_pause_status_pause_code_waiting = 105;
+ * @return {string}
+ */
+proto.api.commons.org.GeneralSettings.prototype.getTriggeredPauseStatusPauseCodeWaiting = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 105, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.GeneralSettings} returns this
+ */
+proto.api.commons.org.GeneralSettings.prototype.setTriggeredPauseStatusPauseCodeWaiting = function(value) {
+  return jspb.Message.setProto3StringField(this, 105, value);
+};
+
+
+/**
+ * optional string triggered_pause_status_pause_code_wrapup = 106;
+ * @return {string}
+ */
+proto.api.commons.org.GeneralSettings.prototype.getTriggeredPauseStatusPauseCodeWrapup = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 106, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.GeneralSettings} returns this
+ */
+proto.api.commons.org.GeneralSettings.prototype.setTriggeredPauseStatusPauseCodeWrapup = function(value) {
+  return jspb.Message.setProto3StringField(this, 106, value);
 };
 
 
