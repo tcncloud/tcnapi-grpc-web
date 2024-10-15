@@ -47928,7 +47928,7 @@ proto.api.v0alpha.ViewQueueReq.prototype.setNumberOfRecords = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.CollectionMetadata.repeatedFields_ = [5];
+proto.api.v0alpha.CollectionMetadata.repeatedFields_ = [5,15];
 
 
 
@@ -47973,7 +47973,8 @@ queryCount: jspb.Message.getFieldWithDefault(msg, 10, 0),
 entryCount: jspb.Message.getFieldWithDefault(msg, 11, 0),
 lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 searchCount: jspb.Message.getFieldWithDefault(msg, 13, 0),
-lastSearched: (f = msg.getLastSearched()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+lastSearched: (f = msg.getLastSearched()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+primaryKeyList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -48062,6 +48063,10 @@ proto.api.v0alpha.CollectionMetadata.deserializeBinaryFromReader = function(msg,
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastSearched(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPrimaryKey(value);
       break;
     default:
       reader.skipField();
@@ -48179,6 +48184,13 @@ proto.api.v0alpha.CollectionMetadata.serializeBinaryToWriter = function(message,
       14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrimaryKeyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      15,
+      f
     );
   }
 };
@@ -48493,6 +48505,43 @@ proto.api.v0alpha.CollectionMetadata.prototype.clearLastSearched = function() {
  */
 proto.api.v0alpha.CollectionMetadata.prototype.hasLastSearched = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * repeated string primary_key = 15;
+ * @return {!Array<string>}
+ */
+proto.api.v0alpha.CollectionMetadata.prototype.getPrimaryKeyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 15));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v0alpha.CollectionMetadata} returns this
+ */
+proto.api.v0alpha.CollectionMetadata.prototype.setPrimaryKeyList = function(value) {
+  return jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v0alpha.CollectionMetadata} returns this
+ */
+proto.api.v0alpha.CollectionMetadata.prototype.addPrimaryKey = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v0alpha.CollectionMetadata} returns this
+ */
+proto.api.v0alpha.CollectionMetadata.prototype.clearPrimaryKeyList = function() {
+  return this.setPrimaryKeyList([]);
 };
 
 
