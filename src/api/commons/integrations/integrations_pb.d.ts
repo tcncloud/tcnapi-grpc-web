@@ -8174,6 +8174,7 @@ export interface RequestSourceMap {
   REQUEST_SOURCE_SMS: 3;
   REQUEST_SOURCE_CHAT: 4;
   REQUEST_SOURCE_LMS: 5;
+  REQUEST_SOURCE_AGENT: 6;
 }
 
 export const RequestSource: RequestSourceMap;
