@@ -350,6 +350,7 @@ goog.exportSymbol('api.commons.integrations.PaymentVisionCC', null, proto);
 goog.exportSymbol('api.commons.integrations.Receipt', null, proto);
 goog.exportSymbol('api.commons.integrations.ReceiptField', null, proto);
 goog.exportSymbol('api.commons.integrations.RequestMethod', null, proto);
+goog.exportSymbol('api.commons.integrations.RequestOrigin', null, proto);
 goog.exportSymbol('api.commons.integrations.RequestSource', null, proto);
 goog.exportSymbol('api.commons.integrations.TransactionResult', null, proto);
 goog.exportSymbol('api.commons.integrations.TransactionType', null, proto);
@@ -59957,6 +59958,18 @@ proto.api.commons.integrations.RequestSource = {
   REQUEST_SOURCE_SMS: 3,
   REQUEST_SOURCE_CHAT: 4,
   REQUEST_SOURCE_LMS: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.integrations.RequestOrigin = {
+  REQUEST_ORIGIN_UNKNOWN: 0,
+  REQUEST_ORIGIN_IVR: 1,
+  REQUEST_ORIGIN_AGENT_ASSISTED: 2,
+  REQUEST_ORIGIN_INTEGRATION_LINK: 3,
+  REQUEST_ORIGIN_FLOWS: 4,
+  REQUEST_ORIGIN_TEXT_2_PAY: 5
 };
 
 /**
