@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_ana_pb = require('../../../api/commons/ana_pb.js');
 goog.object.extend(proto, api_commons_ana_pb);
@@ -29,71 +37,71 @@ var api_commons_org_preferences_pb = require('../../../api/commons/org_preferenc
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.commons.org.AdminClientPreferences', null, proto);
-goog.exportSymbol('api.commons.org.AgentPreferences', null, proto);
-goog.exportSymbol('api.commons.org.AuthenticationPreferences', null, proto);
-goog.exportSymbol('api.commons.org.AuthenticationPreferences.DuoMfaSettings', null, proto);
-goog.exportSymbol('api.commons.org.AuthenticationPreferences.EmailMfaSettings', null, proto);
-goog.exportSymbol('api.commons.org.BargeInFiltering', null, proto);
-goog.exportSymbol('api.commons.org.BargeInFiltering.AgentStatus', null, proto);
-goog.exportSymbol('api.commons.org.BargeInFiltering.HuntGroup', null, proto);
-goog.exportSymbol('api.commons.org.BroadcastPreferences', null, proto);
-goog.exportSymbol('api.commons.org.BroadcastTime', null, proto);
-goog.exportSymbol('api.commons.org.BusinessHours', null, proto);
-goog.exportSymbol('api.commons.org.BusinessPreferences', null, proto);
-goog.exportSymbol('api.commons.org.CertificateInfo', null, proto);
-goog.exportSymbol('api.commons.org.CompliancePreferences', null, proto);
-goog.exportSymbol('api.commons.org.ContactAreaCode', null, proto);
-goog.exportSymbol('api.commons.org.ContactAreaCode.AreaCodeCase', null, proto);
-goog.exportSymbol('api.commons.org.ContactFieldDescription', null, proto);
-goog.exportSymbol('api.commons.org.ContactPreferences', null, proto);
-goog.exportSymbol('api.commons.org.CountryHoliday', null, proto);
-goog.exportSymbol('api.commons.org.CustomDialOrder', null, proto);
-goog.exportSymbol('api.commons.org.CustomImportFormat', null, proto);
-goog.exportSymbol('api.commons.org.DashboardPreferences', null, proto);
-goog.exportSymbol('api.commons.org.DashboardQueuePreferences', null, proto);
-goog.exportSymbol('api.commons.org.DayInterval', null, proto);
-goog.exportSymbol('api.commons.org.DialOrder', null, proto);
-goog.exportSymbol('api.commons.org.DialOrder.TypeCase', null, proto);
-goog.exportSymbol('api.commons.org.DialOrderField', null, proto);
-goog.exportSymbol('api.commons.org.EmailSmsPreferences', null, proto);
-goog.exportSymbol('api.commons.org.EndOfDayPreferences', null, proto);
-goog.exportSymbol('api.commons.org.FileNameSegment', null, proto);
-goog.exportSymbol('api.commons.org.FileNamingConvention', null, proto);
-goog.exportSymbol('api.commons.org.FilterPreferences', null, proto);
-goog.exportSymbol('api.commons.org.ImportFormat', null, proto);
-goog.exportSymbol('api.commons.org.ImportFormat.FormatCase', null, proto);
-goog.exportSymbol('api.commons.org.IncludedCallTypes', null, proto);
-goog.exportSymbol('api.commons.org.MonthDayDate', null, proto);
-goog.exportSymbol('api.commons.org.ObservedHoliday', null, proto);
-goog.exportSymbol('api.commons.org.ObservedHoliday.DaytypeCase', null, proto);
-goog.exportSymbol('api.commons.org.ObservedHolidays', null, proto);
-goog.exportSymbol('api.commons.org.OrganizationPreferences', null, proto);
-goog.exportSymbol('api.commons.org.PhonePreferences', null, proto);
-goog.exportSymbol('api.commons.org.ProgrammedDates', null, proto);
-goog.exportSymbol('api.commons.org.ProgrammedDay', null, proto);
-goog.exportSymbol('api.commons.org.ProgrammedDay.DaytypeCase', null, proto);
-goog.exportSymbol('api.commons.org.Range', null, proto);
-goog.exportSymbol('api.commons.org.RecordingPreferences', null, proto);
-goog.exportSymbol('api.commons.org.RecordingsFileNamingConvention', null, proto);
-goog.exportSymbol('api.commons.org.RecordingsZipFileNamingConvention', null, proto);
-goog.exportSymbol('api.commons.org.ReportFilter', null, proto);
-goog.exportSymbol('api.commons.org.ReportFilter.ChoiceCase', null, proto);
-goog.exportSymbol('api.commons.org.SchedulePreferences', null, proto);
-goog.exportSymbol('api.commons.org.ScheduleRuleField', null, proto);
-goog.exportSymbol('api.commons.org.Scorecards', null, proto);
-goog.exportSymbol('api.commons.org.Scorecards.EvaluationInterval', null, proto);
-goog.exportSymbol('api.commons.org.ScorecardsPreferences', null, proto);
-goog.exportSymbol('api.commons.org.TimeOfDay', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics.Notify', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics.Number', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics.Number.Kind', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics.Redact', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalytics.Redact.WhereCase', null, proto);
-goog.exportSymbol('api.commons.org.VoiceAnalyticsPreferences', null, proto);
-goog.exportSymbol('api.commons.org.WebhookPreferences', null, proto);
-goog.exportSymbol('api.commons.org.ZipCodeField', null, proto);
+goog.exportSymbol('proto.api.commons.org.AdminClientPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.AgentPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.AuthenticationPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings', null, global);
+goog.exportSymbol('proto.api.commons.org.AuthenticationPreferences.EmailMfaSettings', null, global);
+goog.exportSymbol('proto.api.commons.org.BargeInFiltering', null, global);
+goog.exportSymbol('proto.api.commons.org.BargeInFiltering.AgentStatus', null, global);
+goog.exportSymbol('proto.api.commons.org.BargeInFiltering.HuntGroup', null, global);
+goog.exportSymbol('proto.api.commons.org.BroadcastPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.BroadcastTime', null, global);
+goog.exportSymbol('proto.api.commons.org.BusinessHours', null, global);
+goog.exportSymbol('proto.api.commons.org.BusinessPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.CertificateInfo', null, global);
+goog.exportSymbol('proto.api.commons.org.CompliancePreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.ContactAreaCode', null, global);
+goog.exportSymbol('proto.api.commons.org.ContactAreaCode.AreaCodeCase', null, global);
+goog.exportSymbol('proto.api.commons.org.ContactFieldDescription', null, global);
+goog.exportSymbol('proto.api.commons.org.ContactPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.CountryHoliday', null, global);
+goog.exportSymbol('proto.api.commons.org.CustomDialOrder', null, global);
+goog.exportSymbol('proto.api.commons.org.CustomImportFormat', null, global);
+goog.exportSymbol('proto.api.commons.org.DashboardPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.DashboardQueuePreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.DayInterval', null, global);
+goog.exportSymbol('proto.api.commons.org.DialOrder', null, global);
+goog.exportSymbol('proto.api.commons.org.DialOrder.TypeCase', null, global);
+goog.exportSymbol('proto.api.commons.org.DialOrderField', null, global);
+goog.exportSymbol('proto.api.commons.org.EmailSmsPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.EndOfDayPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.FileNameSegment', null, global);
+goog.exportSymbol('proto.api.commons.org.FileNamingConvention', null, global);
+goog.exportSymbol('proto.api.commons.org.FilterPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.ImportFormat', null, global);
+goog.exportSymbol('proto.api.commons.org.ImportFormat.FormatCase', null, global);
+goog.exportSymbol('proto.api.commons.org.IncludedCallTypes', null, global);
+goog.exportSymbol('proto.api.commons.org.MonthDayDate', null, global);
+goog.exportSymbol('proto.api.commons.org.ObservedHoliday', null, global);
+goog.exportSymbol('proto.api.commons.org.ObservedHoliday.DaytypeCase', null, global);
+goog.exportSymbol('proto.api.commons.org.ObservedHolidays', null, global);
+goog.exportSymbol('proto.api.commons.org.OrganizationPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.PhonePreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.ProgrammedDates', null, global);
+goog.exportSymbol('proto.api.commons.org.ProgrammedDay', null, global);
+goog.exportSymbol('proto.api.commons.org.ProgrammedDay.DaytypeCase', null, global);
+goog.exportSymbol('proto.api.commons.org.Range', null, global);
+goog.exportSymbol('proto.api.commons.org.RecordingPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.RecordingsFileNamingConvention', null, global);
+goog.exportSymbol('proto.api.commons.org.RecordingsZipFileNamingConvention', null, global);
+goog.exportSymbol('proto.api.commons.org.ReportFilter', null, global);
+goog.exportSymbol('proto.api.commons.org.ReportFilter.ChoiceCase', null, global);
+goog.exportSymbol('proto.api.commons.org.SchedulePreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.ScheduleRuleField', null, global);
+goog.exportSymbol('proto.api.commons.org.Scorecards', null, global);
+goog.exportSymbol('proto.api.commons.org.Scorecards.EvaluationInterval', null, global);
+goog.exportSymbol('proto.api.commons.org.ScorecardsPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.TimeOfDay', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics.Notify', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics.Number', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics.Number.Kind', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics.Redact', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalytics.Redact.WhereCase', null, global);
+goog.exportSymbol('proto.api.commons.org.VoiceAnalyticsPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.WebhookPreferences', null, global);
+goog.exportSymbol('proto.api.commons.org.ZipCodeField', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -16815,4 +16823,4 @@ proto.api.commons.org.CertificateInfo.prototype.setRevoked = function(value) {
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons.org);

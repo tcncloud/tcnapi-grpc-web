@@ -12,11 +12,19 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
-goog.exportSymbol('annotations.perms.Application', null, proto);
-goog.exportSymbol('annotations.perms.Card', null, proto);
+goog.exportSymbol('proto.annotations.perms.Application', null, global);
+goog.exportSymbol('proto.annotations.perms.Card', null, global);
 /**
  * @enum {number}
  */
@@ -61,4 +69,4 @@ proto.annotations.perms.Card = {
   CARD_AGENT_SCRIPTS: 11
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.annotations.perms);

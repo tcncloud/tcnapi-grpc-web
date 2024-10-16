@@ -12,64 +12,72 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentAssignConversationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentMessageUnitsEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentReassignConversationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentSuspendEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentTextMessageEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelAgentUnassignConversationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelArchiveCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelArchiveModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelBeginWrapUpEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCloseConversationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCompleteCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCompleteModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelConnectedInboxCreatedEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelConnectedInboxPollEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCreateCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCreateConversationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCreateProjectEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCustomerMessageUnitsEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelCustomerTextMessageEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelDailyConversationReportEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelDailyProjectReportEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelErrorModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelFailModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelFinishWrapUpEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManagerMessageUnitsEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManagerTextMessageEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManualApproveTaskRejectedEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManualApproveTaskRequeueEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelMessageSentEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelModuleInitialReplyEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelPauseCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelPauseModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelPaymentLinkSentEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelProviderResponseEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelResumeCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelResumeModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelScheduleModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelSetConversationCollectedDataEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelSmsMessageSentModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelStartCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelStartModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelSuccessModuleEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelSystemMessageUnitsEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelT10Event', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelT11Event', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelTaskMessageSentEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelTranscriptSavedEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelUpdateCampaignEvent', null, proto);
-goog.exportSymbol('api.commons.audit.OmnichannelUpdateModuleEvent', null, proto);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentAssignConversationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentMessageUnitsEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentReassignConversationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentSuspendEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentTextMessageEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelArchiveCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelArchiveModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelBeginWrapUpEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCloseConversationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCompleteCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCompleteModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelConnectedInboxCreatedEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelConnectedInboxPollEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCreateCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCreateConversationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCreateProjectEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCustomerMessageUnitsEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelCustomerTextMessageEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelDailyConversationReportEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelDailyProjectReportEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelErrorModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelFailModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelFinishWrapUpEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManagerMessageUnitsEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManagerTextMessageEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelMessageSentEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelModuleInitialReplyEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelPauseCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelPauseModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelPaymentLinkSentEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelProviderResponseEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelResumeCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelResumeModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelScheduleModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelSmsMessageSentModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelStartCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelStartModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelSuccessModuleEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelSystemMessageUnitsEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelT10Event', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelT11Event', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelTaskMessageSentEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelTranscriptSavedEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelUpdateCampaignEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelUpdateModuleEvent', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -13855,4 +13863,4 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.setProviderMe
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons.audit);

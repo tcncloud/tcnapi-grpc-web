@@ -12,14 +12,22 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_api_http_pb = require('../../google/api/http_pb.js');
 goog.object.extend(proto, google_api_http_pb);
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
-goog.exportSymbol('google.api.http', null, proto);
+goog.exportSymbol('proto.google.api.http', null, global);
 
 /**
  * A tuple of {field number, class constructor} for the extension
@@ -45,4 +53,4 @@ google_protobuf_descriptor_pb.MethodOptions.extensionsBinary[72295728] = new jsp
 // toObject() will function correctly.
 google_protobuf_descriptor_pb.MethodOptions.extensions[72295728] = proto.google.api.http;
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.google.api);

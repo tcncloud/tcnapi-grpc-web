@@ -12,47 +12,55 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.commons.ACDStatus', null, proto);
-goog.exportSymbol('api.commons.AgentAlert', null, proto);
-goog.exportSymbol('api.commons.AgentAlert.AlertCase', null, proto);
-goog.exportSymbol('api.commons.AgentBackofficeMessageAlert', null, proto);
-goog.exportSymbol('api.commons.AgentCallLogActionKey', null, proto);
-goog.exportSymbol('api.commons.AgentCallLogActionKey.Enum', null, proto);
-goog.exportSymbol('api.commons.AgentCallLogActionValue', null, proto);
-goog.exportSymbol('api.commons.AgentCallLogActionValue.Enum', null, proto);
-goog.exportSymbol('api.commons.AgentCallLogCallEnded', null, proto);
-goog.exportSymbol('api.commons.AgentDialIn', null, proto);
-goog.exportSymbol('api.commons.AgentDialIn.Enum', null, proto);
-goog.exportSymbol('api.commons.AgentDirectedCallHangupAlert', null, proto);
-goog.exportSymbol('api.commons.AgentDirectedCallRingingAlert', null, proto);
-goog.exportSymbol('api.commons.AgentSession', null, proto);
-goog.exportSymbol('api.commons.AgentSessionLogActionKey', null, proto);
-goog.exportSymbol('api.commons.AgentSessionLogActionKey.Enum', null, proto);
-goog.exportSymbol('api.commons.AgentState', null, proto);
-goog.exportSymbol('api.commons.AgentStatus', null, proto);
-goog.exportSymbol('api.commons.AgentStatus.Enum', null, proto);
-goog.exportSymbol('api.commons.CallType', null, proto);
-goog.exportSymbol('api.commons.CallType.Enum', null, proto);
-goog.exportSymbol('api.commons.CallerSid', null, proto);
-goog.exportSymbol('api.commons.CallerStatus', null, proto);
-goog.exportSymbol('api.commons.CallerStatus.Enum', null, proto);
-goog.exportSymbol('api.commons.DTMFDigit', null, proto);
-goog.exportSymbol('api.commons.HoldType', null, proto);
-goog.exportSymbol('api.commons.HuntGroupParamKey', null, proto);
-goog.exportSymbol('api.commons.HuntGroupParamKey.Enum', null, proto);
-goog.exportSymbol('api.commons.HuntGroupType', null, proto);
-goog.exportSymbol('api.commons.HuntGroupType.Enum', null, proto);
-goog.exportSymbol('api.commons.QueuedNotificationType', null, proto);
-goog.exportSymbol('api.commons.ReplaceConfig', null, proto);
-goog.exportSymbol('api.commons.ReplaceConfig.Enum', null, proto);
-goog.exportSymbol('api.commons.TransferMember', null, proto);
-goog.exportSymbol('api.commons.TransferMember.LocatableDataCase', null, proto);
-goog.exportSymbol('api.commons.TransferMemberType', null, proto);
+goog.exportSymbol('proto.api.commons.ACDStatus', null, global);
+goog.exportSymbol('proto.api.commons.AgentAlert', null, global);
+goog.exportSymbol('proto.api.commons.AgentAlert.AlertCase', null, global);
+goog.exportSymbol('proto.api.commons.AgentBackofficeMessageAlert', null, global);
+goog.exportSymbol('proto.api.commons.AgentCallLogActionKey', null, global);
+goog.exportSymbol('proto.api.commons.AgentCallLogActionKey.Enum', null, global);
+goog.exportSymbol('proto.api.commons.AgentCallLogActionValue', null, global);
+goog.exportSymbol('proto.api.commons.AgentCallLogActionValue.Enum', null, global);
+goog.exportSymbol('proto.api.commons.AgentCallLogCallEnded', null, global);
+goog.exportSymbol('proto.api.commons.AgentDialIn', null, global);
+goog.exportSymbol('proto.api.commons.AgentDialIn.Enum', null, global);
+goog.exportSymbol('proto.api.commons.AgentDirectedCallHangupAlert', null, global);
+goog.exportSymbol('proto.api.commons.AgentDirectedCallRingingAlert', null, global);
+goog.exportSymbol('proto.api.commons.AgentSession', null, global);
+goog.exportSymbol('proto.api.commons.AgentSessionLogActionKey', null, global);
+goog.exportSymbol('proto.api.commons.AgentSessionLogActionKey.Enum', null, global);
+goog.exportSymbol('proto.api.commons.AgentState', null, global);
+goog.exportSymbol('proto.api.commons.AgentStatus', null, global);
+goog.exportSymbol('proto.api.commons.AgentStatus.Enum', null, global);
+goog.exportSymbol('proto.api.commons.CallType', null, global);
+goog.exportSymbol('proto.api.commons.CallType.Enum', null, global);
+goog.exportSymbol('proto.api.commons.CallerSid', null, global);
+goog.exportSymbol('proto.api.commons.CallerStatus', null, global);
+goog.exportSymbol('proto.api.commons.CallerStatus.Enum', null, global);
+goog.exportSymbol('proto.api.commons.DTMFDigit', null, global);
+goog.exportSymbol('proto.api.commons.HoldType', null, global);
+goog.exportSymbol('proto.api.commons.HuntGroupParamKey', null, global);
+goog.exportSymbol('proto.api.commons.HuntGroupParamKey.Enum', null, global);
+goog.exportSymbol('proto.api.commons.HuntGroupType', null, global);
+goog.exportSymbol('proto.api.commons.HuntGroupType.Enum', null, global);
+goog.exportSymbol('proto.api.commons.QueuedNotificationType', null, global);
+goog.exportSymbol('proto.api.commons.ReplaceConfig', null, global);
+goog.exportSymbol('proto.api.commons.ReplaceConfig.Enum', null, global);
+goog.exportSymbol('proto.api.commons.TransferMember', null, global);
+goog.exportSymbol('proto.api.commons.TransferMember.LocatableDataCase', null, global);
+goog.exportSymbol('proto.api.commons.TransferMemberType', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -4714,4 +4722,4 @@ proto.api.commons.DTMFDigit = {
   DTMFDIGIT_POUND: 15
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

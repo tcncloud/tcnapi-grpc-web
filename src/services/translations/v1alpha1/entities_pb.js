@@ -12,42 +12,50 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('services.translations.v1alpha1.BulkDeleteTranslationsRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.BulkDeleteTranslationsResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.CreateTranslationRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.CreateTranslationResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.DisableContextRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.DisableContextResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.EnableContextRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.EnableContextResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.GetSystemMessageRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.GetSystemMessageResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListContextsRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListContextsResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListLanguagesRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListLanguagesResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListTranslationsRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.ListTranslationsResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.LocalizationContext', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.LocalizationLanguage', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.SetSystemMessageRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.SetSystemMessageResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TestSystemMessageRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TestSystemMessageResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TranslateTemplateRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TranslateTemplateResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.Translation', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TriggerLLMTranslationRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TriggerLLMTranslationResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TriggerLLMTranslationsRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.TriggerLLMTranslationsResponse', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.UpdateTranslationRequest', null, proto);
-goog.exportSymbol('services.translations.v1alpha1.UpdateTranslationResponse', null, proto);
+goog.exportSymbol('proto.services.translations.v1alpha1.BulkDeleteTranslationsRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.BulkDeleteTranslationsResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.CreateTranslationRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.CreateTranslationResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.DisableContextRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.DisableContextResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.EnableContextRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.EnableContextResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.GetSystemMessageRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.GetSystemMessageResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListContextsRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListContextsResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListLanguagesRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListLanguagesResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListTranslationsRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.ListTranslationsResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.LocalizationContext', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.LocalizationLanguage', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.SetSystemMessageRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.SetSystemMessageResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TestSystemMessageRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TestSystemMessageResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TranslateTemplateRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TranslateTemplateResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.Translation', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TriggerLLMTranslationRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TriggerLLMTranslationResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TriggerLLMTranslationsRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.TriggerLLMTranslationsResponse', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.UpdateTranslationRequest', null, global);
+goog.exportSymbol('proto.services.translations.v1alpha1.UpdateTranslationResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5345,4 +5353,4 @@ proto.services.translations.v1alpha1.BulkDeleteTranslationsResponse.serializeBin
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.services.translations.v1alpha1);

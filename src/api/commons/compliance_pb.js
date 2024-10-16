@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_communication_pb = require('../../api/commons/communication_pb.js');
 goog.object.extend(proto, api_commons_communication_pb);
@@ -23,47 +31,47 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('api.commons.Channel', null, proto);
-goog.exportSymbol('api.commons.ConsentAbsentAction', null, proto);
-goog.exportSymbol('api.commons.ConsentCondition', null, proto);
-goog.exportSymbol('api.commons.ContentType', null, proto);
-goog.exportSymbol('api.commons.CountryCode', null, proto);
-goog.exportSymbol('api.commons.DateExp', null, proto);
-goog.exportSymbol('api.commons.DispositionField', null, proto);
-goog.exportSymbol('api.commons.DispositionMod', null, proto);
-goog.exportSymbol('api.commons.DispositionPair', null, proto);
-goog.exportSymbol('api.commons.DnclExp', null, proto);
-goog.exportSymbol('api.commons.Entity', null, proto);
-goog.exportSymbol('api.commons.EntityExp', null, proto);
-goog.exportSymbol('api.commons.Environment', null, proto);
-goog.exportSymbol('api.commons.Field', null, proto);
-goog.exportSymbol('api.commons.FieldNamesMod', null, proto);
-goog.exportSymbol('api.commons.FrequencyExp', null, proto);
-goog.exportSymbol('api.commons.HolidayExp', null, proto);
-goog.exportSymbol('api.commons.InvalidScrubListEntry', null, proto);
-goog.exportSymbol('api.commons.LocationExp', null, proto);
-goog.exportSymbol('api.commons.MatchingEntity', null, proto);
-goog.exportSymbol('api.commons.MatchingEntity.EntityCase', null, proto);
-goog.exportSymbol('api.commons.MatchingMod', null, proto);
-goog.exportSymbol('api.commons.MetaFieldExp', null, proto);
-goog.exportSymbol('api.commons.MonthExp', null, proto);
-goog.exportSymbol('api.commons.PhoneType', null, proto);
-goog.exportSymbol('api.commons.PhoneTypeExp', null, proto);
-goog.exportSymbol('api.commons.PluginExp', null, proto);
-goog.exportSymbol('api.commons.PluginType', null, proto);
-goog.exportSymbol('api.commons.ResultsMod', null, proto);
-goog.exportSymbol('api.commons.Rule', null, proto);
-goog.exportSymbol('api.commons.RuleResponse', null, proto);
-goog.exportSymbol('api.commons.ScenarioData', null, proto);
-goog.exportSymbol('api.commons.ScenarioResult', null, proto);
-goog.exportSymbol('api.commons.ScenarioRuleResponse', null, proto);
-goog.exportSymbol('api.commons.ScrubEntryDetails', null, proto);
-goog.exportSymbol('api.commons.Selector', null, proto);
-goog.exportSymbol('api.commons.Selector.SelectionRuleCase', null, proto);
-goog.exportSymbol('api.commons.SubEntity', null, proto);
-goog.exportSymbol('api.commons.TimeExp', null, proto);
-goog.exportSymbol('api.commons.Verb', null, proto);
-goog.exportSymbol('api.commons.WeekdayExp', null, proto);
+goog.exportSymbol('proto.api.commons.Channel', null, global);
+goog.exportSymbol('proto.api.commons.ConsentAbsentAction', null, global);
+goog.exportSymbol('proto.api.commons.ConsentCondition', null, global);
+goog.exportSymbol('proto.api.commons.ContentType', null, global);
+goog.exportSymbol('proto.api.commons.CountryCode', null, global);
+goog.exportSymbol('proto.api.commons.DateExp', null, global);
+goog.exportSymbol('proto.api.commons.DispositionField', null, global);
+goog.exportSymbol('proto.api.commons.DispositionMod', null, global);
+goog.exportSymbol('proto.api.commons.DispositionPair', null, global);
+goog.exportSymbol('proto.api.commons.DnclExp', null, global);
+goog.exportSymbol('proto.api.commons.Entity', null, global);
+goog.exportSymbol('proto.api.commons.EntityExp', null, global);
+goog.exportSymbol('proto.api.commons.Environment', null, global);
+goog.exportSymbol('proto.api.commons.Field', null, global);
+goog.exportSymbol('proto.api.commons.FieldNamesMod', null, global);
+goog.exportSymbol('proto.api.commons.FrequencyExp', null, global);
+goog.exportSymbol('proto.api.commons.HolidayExp', null, global);
+goog.exportSymbol('proto.api.commons.InvalidScrubListEntry', null, global);
+goog.exportSymbol('proto.api.commons.LocationExp', null, global);
+goog.exportSymbol('proto.api.commons.MatchingEntity', null, global);
+goog.exportSymbol('proto.api.commons.MatchingEntity.EntityCase', null, global);
+goog.exportSymbol('proto.api.commons.MatchingMod', null, global);
+goog.exportSymbol('proto.api.commons.MetaFieldExp', null, global);
+goog.exportSymbol('proto.api.commons.MonthExp', null, global);
+goog.exportSymbol('proto.api.commons.PhoneType', null, global);
+goog.exportSymbol('proto.api.commons.PhoneTypeExp', null, global);
+goog.exportSymbol('proto.api.commons.PluginExp', null, global);
+goog.exportSymbol('proto.api.commons.PluginType', null, global);
+goog.exportSymbol('proto.api.commons.ResultsMod', null, global);
+goog.exportSymbol('proto.api.commons.Rule', null, global);
+goog.exportSymbol('proto.api.commons.RuleResponse', null, global);
+goog.exportSymbol('proto.api.commons.ScenarioData', null, global);
+goog.exportSymbol('proto.api.commons.ScenarioResult', null, global);
+goog.exportSymbol('proto.api.commons.ScenarioRuleResponse', null, global);
+goog.exportSymbol('proto.api.commons.ScrubEntryDetails', null, global);
+goog.exportSymbol('proto.api.commons.Selector', null, global);
+goog.exportSymbol('proto.api.commons.Selector.SelectionRuleCase', null, global);
+goog.exportSymbol('proto.api.commons.SubEntity', null, global);
+goog.exportSymbol('proto.api.commons.TimeExp', null, global);
+goog.exportSymbol('proto.api.commons.Verb', null, global);
+goog.exportSymbol('proto.api.commons.WeekdayExp', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -8380,4 +8388,4 @@ proto.api.commons.ConsentAbsentAction = {
   CONSENT_ABSENT_ACTION_DENY: 1
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

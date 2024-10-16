@@ -12,10 +12,18 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
-goog.exportSymbol('api.commons.InboundGroupStatus', null, proto);
+goog.exportSymbol('proto.api.commons.InboundGroupStatus', null, global);
 /**
  * @enum {number}
  */
@@ -39,4 +47,4 @@ proto.api.commons.InboundGroupStatus = {
   IBG_ACCOUNTINGEXPORT_CANCELLED_ADMIN: 5530
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

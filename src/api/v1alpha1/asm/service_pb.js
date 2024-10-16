@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -33,40 +41,40 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.v1alpha1.asm.AsmSession', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.AssignNewConversationReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.AssignNewConversationRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.Conversation', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ConversationSkills', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.CreateSessionReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.CreateSessionRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.DisableVoiceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.DisableVoiceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.EnableVoiceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.EnableVoiceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.EndSessionReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.EndSessionRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.GetCurrentSessionReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.GetQueuesDetailsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.GetStatusReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.GetStatusRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ListAgentsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ListAgentsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ListConversationsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ListConversationsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.ManagerStreamAgentStateReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.PushEventsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.PushEventsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.QueuedCalls', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.QueuedCalls.QueuedCallData', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.SetConversationCollectedDataReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.SetConversationCollectedDataRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.StreamAgentStateReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.SwitchSubsessionReq', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.SwitchSubsessionRes', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.VoiceRegistration', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.VoiceSession', null, proto);
-goog.exportSymbol('api.v1alpha1.asm.VoiceStatus', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.asm.AsmSession', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.AssignNewConversationReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.AssignNewConversationRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.Conversation', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ConversationSkills', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.CreateSessionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.CreateSessionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.DisableVoiceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.DisableVoiceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.EnableVoiceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.EnableVoiceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.EndSessionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.EndSessionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.GetCurrentSessionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.GetQueuesDetailsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.GetStatusReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.GetStatusRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ListAgentsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ListAgentsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ListConversationsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ListConversationsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.ManagerStreamAgentStateReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.PushEventsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.PushEventsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.QueuedCalls', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.QueuedCalls.QueuedCallData', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.SetConversationCollectedDataReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.SetConversationCollectedDataRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.StreamAgentStateReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.SwitchSubsessionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.SwitchSubsessionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.VoiceRegistration', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.VoiceSession', null, global);
+goog.exportSymbol('proto.api.v1alpha1.asm.VoiceStatus', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -8599,4 +8607,4 @@ proto.api.v1alpha1.asm.DisableVoiceRes.serializeBinaryToWriter = function(messag
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.asm);

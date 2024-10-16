@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -27,45 +35,45 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.v0alpha.ApplicationDashboards', null, proto);
-goog.exportSymbol('api.v0alpha.CreateApplicationDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.CreateApplicationDashboardResponse', null, proto);
-goog.exportSymbol('api.v0alpha.CreateDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.CreateDashboardResponse', null, proto);
-goog.exportSymbol('api.v0alpha.Dashboard', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardLayout', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardPanel', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardSummary', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardType', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardType.TypeCase', null, proto);
-goog.exportSymbol('api.v0alpha.DashboardView', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteApplicationDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteApplicationDashboardResponse', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.GetDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.GetDefaultDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.HistoricConfig', null, proto);
-goog.exportSymbol('api.v0alpha.HistoricConfig.TimeSpanCase', null, proto);
-goog.exportSymbol('api.v0alpha.ListApplicationsDashboardsRequest', null, proto);
-goog.exportSymbol('api.v0alpha.ListApplicationsDashboardsResponse', null, proto);
-goog.exportSymbol('api.v0alpha.ListDashboardsRequest', null, proto);
-goog.exportSymbol('api.v0alpha.ListDashboardsResponse', null, proto);
-goog.exportSymbol('api.v0alpha.ListProductTypesRequest', null, proto);
-goog.exportSymbol('api.v0alpha.ListProductTypesResult', null, proto);
-goog.exportSymbol('api.v0alpha.PanelSource', null, proto);
-goog.exportSymbol('api.v0alpha.PanelSource.PanelTypeCase', null, proto);
-goog.exportSymbol('api.v0alpha.ProductType', null, proto);
-goog.exportSymbol('api.v0alpha.PublishDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.PublishDashboardResponse', null, proto);
-goog.exportSymbol('api.v0alpha.RealTimeConfig', null, proto);
-goog.exportSymbol('api.v0alpha.SetDefaultDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.TimeSpan', null, proto);
-goog.exportSymbol('api.v0alpha.TimeSpan.Interval', null, proto);
-goog.exportSymbol('api.v0alpha.TimeSpan.Range', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateDashboardLayoutRequest', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateDashboardRequest', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateDashboardTitleAndDescriptionRequest', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateDashboardViewRequest', null, proto);
+goog.exportSymbol('proto.api.v0alpha.ApplicationDashboards', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateApplicationDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateApplicationDashboardResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateDashboardResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.Dashboard', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardLayout', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardPanel', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardSummary', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardType', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardType.TypeCase', null, global);
+goog.exportSymbol('proto.api.v0alpha.DashboardView', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteApplicationDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteApplicationDashboardResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetDefaultDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.HistoricConfig', null, global);
+goog.exportSymbol('proto.api.v0alpha.HistoricConfig.TimeSpanCase', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListApplicationsDashboardsRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListApplicationsDashboardsResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListDashboardsRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListDashboardsResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListProductTypesRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListProductTypesResult', null, global);
+goog.exportSymbol('proto.api.v0alpha.PanelSource', null, global);
+goog.exportSymbol('proto.api.v0alpha.PanelSource.PanelTypeCase', null, global);
+goog.exportSymbol('proto.api.v0alpha.ProductType', null, global);
+goog.exportSymbol('proto.api.v0alpha.PublishDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.PublishDashboardResponse', null, global);
+goog.exportSymbol('proto.api.v0alpha.RealTimeConfig', null, global);
+goog.exportSymbol('proto.api.v0alpha.SetDefaultDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.TimeSpan', null, global);
+goog.exportSymbol('proto.api.v0alpha.TimeSpan.Interval', null, global);
+goog.exportSymbol('proto.api.v0alpha.TimeSpan.Range', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateDashboardLayoutRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateDashboardRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateDashboardTitleAndDescriptionRequest', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateDashboardViewRequest', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -7378,4 +7386,4 @@ proto.api.v0alpha.DeleteApplicationDashboardResponse.serializeBinaryToWriter = f
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v0alpha);

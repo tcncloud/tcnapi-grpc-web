@@ -12,12 +12,20 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
-goog.exportSymbol('api.commons.Interval', null, proto);
-goog.exportSymbol('api.commons.TranscriptSentimentTone', null, proto);
-goog.exportSymbol('api.commons.TranscriptSummaryStatus', null, proto);
+goog.exportSymbol('proto.api.commons.Interval', null, global);
+goog.exportSymbol('proto.api.commons.TranscriptSentimentTone', null, global);
+goog.exportSymbol('proto.api.commons.TranscriptSummaryStatus', null, global);
 /**
  * @enum {number}
  */
@@ -56,4 +64,4 @@ proto.api.commons.TranscriptSentimentTone = {
   TRANSCRIPT_SENTIMENT_TONE_POSITIVE: 3
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

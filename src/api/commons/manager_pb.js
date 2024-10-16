@@ -12,14 +12,22 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
-goog.exportSymbol('api.commons.AgentInfo', null, proto);
-goog.exportSymbol('api.commons.AgentStats', null, proto);
-goog.exportSymbol('api.commons.ManagerBargeInMode', null, proto);
-goog.exportSymbol('api.commons.SkillQueues', null, proto);
-goog.exportSymbol('api.commons.SkillStats', null, proto);
+goog.exportSymbol('proto.api.commons.AgentInfo', null, global);
+goog.exportSymbol('proto.api.commons.AgentStats', null, global);
+goog.exportSymbol('proto.api.commons.ManagerBargeInMode', null, global);
+goog.exportSymbol('proto.api.commons.SkillQueues', null, global);
+goog.exportSymbol('proto.api.commons.SkillStats', null, global);
 /**
  * @enum {number}
  */
@@ -105,4 +113,4 @@ proto.api.commons.ManagerBargeInMode = {
   AGENT_WHISPER: 2
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

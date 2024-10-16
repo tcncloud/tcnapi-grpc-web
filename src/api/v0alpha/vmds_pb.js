@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -21,35 +29,35 @@ var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-goog.exportSymbol('api.v0alpha.DeleteGreetingReq', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteGreetingRes', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteVoicemailReq', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteVoicemailRes', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadGreetingForExtensionReq', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadGreetingForExtensionRes', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadGreetingReq', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadGreetingRes', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadMessageReq', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadMessageRes', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadMessagesReq', null, proto);
-goog.exportSymbol('api.v0alpha.DownloadMessagesRes', null, proto);
-goog.exportSymbol('api.v0alpha.GetUploadGreetingUrlReq', null, proto);
-goog.exportSymbol('api.v0alpha.GetUploadGreetingUrlRes', null, proto);
-goog.exportSymbol('api.v0alpha.GetVoicemailCountReq', null, proto);
-goog.exportSymbol('api.v0alpha.GetVoicemailCountRes', null, proto);
-goog.exportSymbol('api.v0alpha.GetVoicemailMetadataReq', null, proto);
-goog.exportSymbol('api.v0alpha.GetVoicemailMetadataRes', null, proto);
-goog.exportSymbol('api.v0alpha.ListAvailableGreetingsReq', null, proto);
-goog.exportSymbol('api.v0alpha.ListAvailableGreetingsRes', null, proto);
-goog.exportSymbol('api.v0alpha.ListAvailableGreetingsRes.FileInfo', null, proto);
-goog.exportSymbol('api.v0alpha.ProcessGreetingUploadReq', null, proto);
-goog.exportSymbol('api.v0alpha.ProcessGreetingUploadRes', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateGreetingForExtensionReq', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateGreetingForExtensionRes', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateUploadNameReq', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateUploadNameRes', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateVoicemailFlagReadReq', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateVoicemailFlagReadRes', null, proto);
+goog.exportSymbol('proto.api.v0alpha.DeleteGreetingReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteGreetingRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteVoicemailReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteVoicemailRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadGreetingForExtensionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadGreetingForExtensionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadGreetingReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadGreetingRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadMessageReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadMessageRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadMessagesReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DownloadMessagesRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetUploadGreetingUrlReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetUploadGreetingUrlRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetVoicemailCountReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetVoicemailCountRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetVoicemailMetadataReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.GetVoicemailMetadataRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListAvailableGreetingsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListAvailableGreetingsRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListAvailableGreetingsRes.FileInfo', null, global);
+goog.exportSymbol('proto.api.v0alpha.ProcessGreetingUploadReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ProcessGreetingUploadRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateGreetingForExtensionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateGreetingForExtensionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateUploadNameReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateUploadNameRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateVoicemailFlagReadReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateVoicemailFlagReadRes', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5023,4 +5031,4 @@ proto.api.v0alpha.ListAvailableGreetingsRes.prototype.clearGreetingsList = funct
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v0alpha);

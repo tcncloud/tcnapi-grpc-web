@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -25,52 +33,52 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('api.v0alpha.ContentByVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.ContentEditorDataReq', null, proto);
-goog.exportSymbol('api.v0alpha.ContentEditorDataRes', null, proto);
-goog.exportSymbol('api.v0alpha.ContentReq', null, proto);
-goog.exportSymbol('api.v0alpha.ContentRes', null, proto);
-goog.exportSymbol('api.v0alpha.CreateEditVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.CreateEditVersionRes', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteLearnPagesReq', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteLearnPagesRes', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteStandaloneReq', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteStandaloneRes', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.DeleteVersionRes', null, proto);
-goog.exportSymbol('api.v0alpha.ExistReq', null, proto);
-goog.exportSymbol('api.v0alpha.ExistRes', null, proto);
-goog.exportSymbol('api.v0alpha.ExportManyReq', null, proto);
-goog.exportSymbol('api.v0alpha.ExportRes', null, proto);
-goog.exportSymbol('api.v0alpha.LearnImage', null, proto);
-goog.exportSymbol('api.v0alpha.LearnSearchDetails', null, proto);
-goog.exportSymbol('api.v0alpha.LearnSnippetDetails', null, proto);
-goog.exportSymbol('api.v0alpha.LearnStandaloneDetails', null, proto);
-goog.exportSymbol('api.v0alpha.ListVersionsReq', null, proto);
-goog.exportSymbol('api.v0alpha.ListVersionsRes', null, proto);
-goog.exportSymbol('api.v0alpha.PublishVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.PublishVersionRes', null, proto);
-goog.exportSymbol('api.v0alpha.ReviewFileVersionsReq', null, proto);
-goog.exportSymbol('api.v0alpha.ReviewFileVersionsRes', null, proto);
-goog.exportSymbol('api.v0alpha.ReviewVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.ReviewVersionRes', null, proto);
-goog.exportSymbol('api.v0alpha.SearchContentByVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.SearchContentReq', null, proto);
-goog.exportSymbol('api.v0alpha.SearchRes', null, proto);
-goog.exportSymbol('api.v0alpha.SnippetReq', null, proto);
-goog.exportSymbol('api.v0alpha.SnippetRes', null, proto);
-goog.exportSymbol('api.v0alpha.StandaloneReq', null, proto);
-goog.exportSymbol('api.v0alpha.StandaloneRes', null, proto);
-goog.exportSymbol('api.v0alpha.StoreStaticImageReq', null, proto);
-goog.exportSymbol('api.v0alpha.StoreStaticImageRes', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateByVersionReq', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateReq', null, proto);
-goog.exportSymbol('api.v0alpha.UpdateRes', null, proto);
-goog.exportSymbol('api.v0alpha.UploadDynamicScreenshotReq', null, proto);
-goog.exportSymbol('api.v0alpha.UploadDynamicScreenshotRes', null, proto);
-goog.exportSymbol('api.v0alpha.UploadStaticImageReq', null, proto);
-goog.exportSymbol('api.v0alpha.UploadStaticImageRes', null, proto);
-goog.exportSymbol('api.v0alpha.VersionDetails', null, proto);
+goog.exportSymbol('proto.api.v0alpha.ContentByVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ContentEditorDataReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ContentEditorDataRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ContentReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ContentRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateEditVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.CreateEditVersionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteLearnPagesReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteLearnPagesRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteStandaloneReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteStandaloneRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DeleteVersionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ExistReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ExistRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ExportManyReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ExportRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.LearnImage', null, global);
+goog.exportSymbol('proto.api.v0alpha.LearnSearchDetails', null, global);
+goog.exportSymbol('proto.api.v0alpha.LearnSnippetDetails', null, global);
+goog.exportSymbol('proto.api.v0alpha.LearnStandaloneDetails', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListVersionsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ListVersionsRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.PublishVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.PublishVersionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ReviewFileVersionsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ReviewFileVersionsRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ReviewVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ReviewVersionRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.SearchContentByVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.SearchContentReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.SearchRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.SnippetReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.SnippetRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.StandaloneReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.StandaloneRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.StoreStaticImageReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.StoreStaticImageRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateByVersionReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UpdateRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UploadDynamicScreenshotReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UploadDynamicScreenshotRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.UploadStaticImageReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.UploadStaticImageRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.VersionDetails', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -9362,4 +9370,4 @@ proto.api.v0alpha.UploadStaticImageRes.prototype.hasImage = function() {
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v0alpha);
