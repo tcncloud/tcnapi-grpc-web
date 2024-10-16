@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_insights_pb = require('../../../api/commons/insights_pb.js');
 goog.object.extend(proto, api_commons_insights_pb);
@@ -21,61 +29,61 @@ var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/
 goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
-goog.exportSymbol('api.v1alpha1.insights.ColumnOperation', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ColumnOperation.OperationValueCase', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ColumnSort', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ComponentAction', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.CreateInsightRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.CreateInsightResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.CreateOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.CreateOutputConfigurationResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DeleteInsightRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DeleteInsightResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DeleteOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DeleteOutputConfigurationResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DrillThroughAction', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.DrillThroughParameter', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.FormatSeries', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetDefaultOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetDefaultOutputConfigurationResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetInsightRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetInsightResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetOutputConfigurationResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetVfsSchemaRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetVfsSchemaResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.GetVfsSchemaResponse.Field', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.Insight', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.InsightContextualAction', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.InsightContextualAction.ActionCase', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.InsightContextualActionType', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.LinkAction', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListInsightsRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListInsightsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListOrgInsightsRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListOrgInsightsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListOutputConfigurationsRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListOutputConfigurationsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListVfsSchemasRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListVfsSchemasResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListVfsesRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.ListVfsesResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.OperationType', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.OutputConfiguration', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.OutputConfiguration.BodyCase', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.OutputConfigurationColumnSummaryType', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.OutputConfigurationType', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.PadOperation', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.PublishInsightRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.PublishInsightResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.SetDefaultOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.SetDefaultOutputConfigurationResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.TableColumnConfig', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.TableVisualization', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.UpdateInsightRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.UpdateInsightResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.UpdateOutputConfigurationRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.insights.UpdateOutputConfigurationResponse', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.insights.ColumnOperation', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ColumnOperation.OperationValueCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ColumnSort', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ComponentAction', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.CreateInsightRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.CreateInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.CreateOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.CreateOutputConfigurationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DeleteInsightRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DeleteInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DeleteOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DeleteOutputConfigurationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DrillThroughAction', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.DrillThroughParameter', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.FormatSeries', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetDefaultOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetDefaultOutputConfigurationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetInsightRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetOutputConfigurationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse.Field', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.Insight', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction.ActionCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualActionType', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.LinkAction', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListInsightsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListInsightsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListOrgInsightsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListOrgInsightsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListOutputConfigurationsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListOutputConfigurationsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListVfsSchemasRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListVfsSchemasResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListVfsesRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.ListVfsesResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.OperationType', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.OutputConfiguration', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.OutputConfiguration.BodyCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.OutputConfigurationColumnSummaryType', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.OutputConfigurationType', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.PadOperation', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.PublishInsightRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.PublishInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.SetDefaultOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.SetDefaultOutputConfigurationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.TableColumnConfig', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.TableVisualization', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.UpdateInsightRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.UpdateInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.UpdateOutputConfigurationRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.UpdateOutputConfigurationResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -9398,4 +9406,4 @@ proto.api.v1alpha1.insights.InsightContextualActionType = {
   INSIGHT_CONTEXTUAL_ACTION_TYPE_DRILL_THROUGH: 3
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.insights);

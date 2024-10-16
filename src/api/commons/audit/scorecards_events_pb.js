@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_acd_pb = require('../../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
@@ -23,29 +31,29 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.commons.audit.ScorecardsCloneScorecardEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateAutoEvaluationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateCategoryEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateEvaluationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateEvaluationQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateScorecardEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateScorecardQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsCreateSectionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteCategoryEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteEvaluationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteEvaluationQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteScorecardEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteScorecardQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsDeleteSectionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateCategoryEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateEvaluationEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateEvaluationQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateScorecardEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateScorecardQuestionEvent', null, proto);
-goog.exportSymbol('api.commons.audit.ScorecardsUpdateSectionEvent', null, proto);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCloneScorecardEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateAutoEvaluationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateCategoryEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateEvaluationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateEvaluationQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateScorecardEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateScorecardQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsCreateSectionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteCategoryEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteEvaluationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteEvaluationQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteScorecardEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteScorecardQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsDeleteSectionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateCategoryEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateEvaluationEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateEvaluationQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateScorecardEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateScorecardQuestionEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.ScorecardsUpdateSectionEvent', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -7858,4 +7866,4 @@ proto.api.commons.audit.ScorecardsCreateAutoEvaluationEvent.prototype.hasAutoEva
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons.audit);

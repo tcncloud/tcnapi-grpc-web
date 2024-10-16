@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -25,36 +33,36 @@ var api_v0alpha_p3api_pb = require('../../api/v0alpha/p3api_pb.js');
 goog.object.extend(proto, api_v0alpha_p3api_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-goog.exportSymbol('api.v0alpha.ClearManualDialQueueReq', null, proto);
-goog.exportSymbol('api.v0alpha.ClearManualDialQueueRes', null, proto);
-goog.exportSymbol('api.v0alpha.ClearPreviewRecordReturnQueueReq', null, proto);
-goog.exportSymbol('api.v0alpha.ClearPreviewRecordReturnQueueRes', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueCallForManualApprovalReq', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueCallForManualApprovalRes', null, proto);
-goog.exportSymbol('api.v0alpha.DequeuePreviewRecordOrCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.DequeuePreviewRecordOrCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueScrubbedCallForPreviewRecordReq', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueScrubbedCallForPreviewRecordRes', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueSmsMamForManualApprovalReq', null, proto);
-goog.exportSymbol('api.v0alpha.DequeueSmsMamForManualApprovalRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyApprovedCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyApprovedCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyApprovedSmsReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyApprovedSmsRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyRejectedCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyRejectedCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyRejectedSmsReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueueManuallyRejectedSmsRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueuePreviewDialCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueuePreviewDialCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueuePreviewRecordReq', null, proto);
-goog.exportSymbol('api.v0alpha.EnqueuePreviewRecordRes', null, proto);
-goog.exportSymbol('api.v0alpha.ProcessManualDialCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.ProcessManualDialCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.RequeueManuallyApprovedCallReq', null, proto);
-goog.exportSymbol('api.v0alpha.RequeueManuallyApprovedCallRes', null, proto);
-goog.exportSymbol('api.v0alpha.RequeueManuallyApprovedSmsReq', null, proto);
-goog.exportSymbol('api.v0alpha.RequeueManuallyApprovedSmsRes', null, proto);
+goog.exportSymbol('proto.api.v0alpha.ClearManualDialQueueReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ClearManualDialQueueRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ClearPreviewRecordReturnQueueReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ClearPreviewRecordReturnQueueRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueCallForManualApprovalReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueCallForManualApprovalRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeuePreviewRecordOrCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeuePreviewRecordOrCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueScrubbedCallForPreviewRecordReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueScrubbedCallForPreviewRecordRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueSmsMamForManualApprovalReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.DequeueSmsMamForManualApprovalRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyApprovedCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyApprovedCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyApprovedSmsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyApprovedSmsRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyRejectedCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyRejectedCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyRejectedSmsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueueManuallyRejectedSmsRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueuePreviewDialCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueuePreviewDialCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueuePreviewRecordReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.EnqueuePreviewRecordRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.ProcessManualDialCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.ProcessManualDialCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.RequeueManuallyApprovedCallReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.RequeueManuallyApprovedCallRes', null, global);
+goog.exportSymbol('proto.api.v0alpha.RequeueManuallyApprovedSmsReq', null, global);
+goog.exportSymbol('proto.api.v0alpha.RequeueManuallyApprovedSmsRes', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5104,4 +5112,4 @@ proto.api.v0alpha.DequeueSmsMamForManualApprovalRes.prototype.setQueue = functio
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v0alpha);

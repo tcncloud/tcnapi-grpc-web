@@ -12,42 +12,50 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_org_huntgroup_pb = require('../../../../api/commons/org/huntgroup_pb.js');
 goog.object.extend(proto, api_commons_org_huntgroup_pb);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AdminCopyHuntGroupToOrganizationRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AdminCopyHuntGroupToOrganizationResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AgentStatus', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AgentStatusOption', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.AgentTrigger', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupAgentTriggerRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupAgentTriggerResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ExileLink', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ExileLinkData', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ExileLinkParameter', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ListHuntGroupAgentTriggersRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ListHuntGroupAgentTriggersResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ListHuntGroupExileLinksRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.ListHuntGroupExileLinksResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.SystemPauseCode', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.TriggerAction', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.TriggerActionOption', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.TriggerCallTypes', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.TriggerPauseCode', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.TriggerPauseCode.PauseCodeCase', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.UpdateHuntGroupAgentTriggersRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.UpdateHuntGroupAgentTriggersResponse', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.UpdateHuntGroupExileLinksRequest', null, proto);
-goog.exportSymbol('services.org.hunt_groups.v1alpha1.UpdateHuntGroupExileLinksResponse', null, proto);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AdminCopyHuntGroupToOrganizationRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AdminCopyHuntGroupToOrganizationResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatus', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatusOption', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentTrigger', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupAgentTriggerRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupAgentTriggerResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ExileLink', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ExileLinkData', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ExileLinkParameter', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ListHuntGroupAgentTriggersRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ListHuntGroupAgentTriggersResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ListHuntGroupExileLinksRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.ListHuntGroupExileLinksResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.SystemPauseCode', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.TriggerAction', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.TriggerActionOption', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.TriggerCallTypes', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode.PauseCodeCase', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.UpdateHuntGroupAgentTriggersRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.UpdateHuntGroupAgentTriggersResponse', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.UpdateHuntGroupExileLinksRequest', null, global);
+goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.UpdateHuntGroupExileLinksResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5494,4 +5502,4 @@ proto.services.org.hunt_groups.v1alpha1.TriggerAction = {
   TRIGGER_ACTION_EXECUTE_EXILE_LINK: 6
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.services.org.hunt_groups.v1alpha1);

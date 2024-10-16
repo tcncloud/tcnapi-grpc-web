@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
@@ -23,34 +31,34 @@ var services_billing_entities_v1alpha1_plan_pb = require('../../../services/bill
 goog.object.extend(proto, services_billing_entities_v1alpha1_plan_pb);
 var services_billing_v1alpha1_core_pb = require('../../../services/billing/v1alpha1/core_pb.js');
 goog.object.extend(proto, services_billing_v1alpha1_core_pb);
-goog.exportSymbol('services.billing.v1alpha1.CommitBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CommitBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CommitDefaultBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CommitDefaultBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CreateBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CreateBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CreateDefaultBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.CreateDefaultBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DeleteBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DeleteBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DeleteDefaultBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DeleteDefaultBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DuplicateBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DuplicateBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetActiveBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetActiveBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetBillingPlanHistoryRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetBillingPlanHistoryResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.GetBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.ListBillingPlansRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.ListBillingPlansResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.UpdateBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.UpdateBillingPlanResponse', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.UpdateDefaultBillingPlanRequest', null, proto);
-goog.exportSymbol('services.billing.v1alpha1.UpdateDefaultBillingPlanResponse', null, proto);
+goog.exportSymbol('proto.services.billing.v1alpha1.CommitBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CommitBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CommitDefaultBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CommitDefaultBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CreateBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CreateBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CreateDefaultBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.CreateDefaultBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DeleteBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DeleteBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DeleteDefaultBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DeleteDefaultBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DuplicateBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DuplicateBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetActiveBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetActiveBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetBillingPlanHistoryResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.GetBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.ListBillingPlansRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.ListBillingPlansResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.UpdateBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.UpdateBillingPlanResponse', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.UpdateDefaultBillingPlanRequest', null, global);
+goog.exportSymbol('proto.services.billing.v1alpha1.UpdateDefaultBillingPlanResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5046,4 +5054,4 @@ proto.services.billing.v1alpha1.UpdateDefaultBillingPlanResponse.serializeBinary
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.services.billing.v1alpha1);

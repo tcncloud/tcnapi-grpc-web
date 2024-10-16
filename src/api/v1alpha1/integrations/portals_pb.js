@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -27,66 +35,66 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
-goog.exportSymbol('api.v1alpha1.integrations.ActionDefinition', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.CreatePortalLinksReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.CreatePortalLinksRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePluginInstanceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePluginInstanceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePortalConfigRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePortalLinkReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePortalLinkRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePortalReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.DeletePortalRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetDetailedPortalReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetDetailedPortalRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetDetailedPortalRes.Entity', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPluginInstanceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPluginInstanceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalConfigLogoReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalConfigLogoRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalConfigRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalLinkReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalLinkRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.GetPortalRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAllActionDefinitionsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAllActionDefinitionsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAvailablePaymentFieldsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAvailablePaymentFieldsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAvailableVerificationFieldsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListAvailableVerificationFieldsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListDetailedPortalsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListDetailedPortalsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListDetailedPortalsRes.Entity', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListFlowFieldNamesReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListFlowFieldNamesRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginInstanceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginInstanceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginsByMethodReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginsByMethodRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPluginsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalConfigsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalLinksReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalLinksRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalTypesReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalTypesResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalWorkflowsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalWorkflowsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalsReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.ListPortalsRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.PortalDefinition', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpdatePortalConfigLogoReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpdatePortalConfigLogoRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPluginInstanceReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPluginInstanceRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPortalConfigReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPortalConfigRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPortalReq', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.UpsertPortalRes', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.WorkflowDefinition', null, proto);
-goog.exportSymbol('api.v1alpha1.integrations.WorkflowRequirement', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ActionDefinition', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.CreatePortalLinksReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.CreatePortalLinksRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePluginInstanceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePluginInstanceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePortalConfigRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePortalLinkReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePortalLinkRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePortalReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.DeletePortalRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetDetailedPortalReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetDetailedPortalRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetDetailedPortalRes.Entity', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPluginInstanceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPluginInstanceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalConfigLogoReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalConfigLogoRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalConfigRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalLinkReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalLinkRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAllActionDefinitionsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAllActionDefinitionsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListDetailedPortalsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListDetailedPortalsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListDetailedPortalsRes.Entity', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListFlowFieldNamesReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListFlowFieldNamesRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginInstanceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginInstanceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginsByMethodReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginsByMethodRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPluginsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalConfigsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalLinksReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalLinksRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalTypesReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalTypesResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalWorkflowsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalWorkflowsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.ListPortalsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.PortalDefinition', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpdatePortalConfigLogoReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpdatePortalConfigLogoRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPluginInstanceReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPluginInstanceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPortalConfigReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPortalConfigRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPortalReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertPortalRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.WorkflowDefinition', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.WorkflowRequirement', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -12050,4 +12058,4 @@ proto.api.v1alpha1.integrations.ListPluginsByMethodRes.prototype.clearEntitiesLi
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.integrations);

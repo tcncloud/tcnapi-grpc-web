@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
@@ -21,4 +29,3 @@ var google_api_annotations_pb = require('../../../../google/api/annotations_pb.j
 goog.object.extend(proto, google_api_annotations_pb);
 var services_omnichannel_tasks_v1alpha1_entities_pb = require('../../../../services/omnichannel/tasks/v1alpha1/entities_pb.js');
 goog.object.extend(proto, services_omnichannel_tasks_v1alpha1_entities_pb);
-goog.object.extend(exports, proto);

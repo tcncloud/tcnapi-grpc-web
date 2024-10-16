@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_audit_event_types_pb = require('../../../../api/commons/audit/event_types_pb.js');
 goog.object.extend(proto, api_commons_audit_event_types_pb);
@@ -21,32 +29,32 @@ var api_commons_notifications_pb = require('../../../../api/commons/notification
 goog.object.extend(proto, api_commons_notifications_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
-goog.exportSymbol('api.v1alpha1.org.users.AddUserSubscriptionByUserIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.AddUserSubscriptionByUserIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.AddUserSubscriptionRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.AddUserSubscriptionResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.GetUserSubscriptionByUserIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.GetUserSubscriptionByUserIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.GetUserSubscriptionRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.GetUserSubscriptionResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListOrgSubscriptionsRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListOrgSubscriptionsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListUserSubscriptionsByUserIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListUserSubscriptionsByUserIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListUserSubscriptionsRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.ListUserSubscriptionsResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.RemoveUserSubscriptionByUserIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.RemoveUserSubscriptionByUserIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.RemoveUserSubscriptionRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.RemoveUserSubscriptionResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UpdateUserSubscriptionByUserIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UpdateUserSubscriptionByUserIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UpdateUserSubscriptionRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UpdateUserSubscriptionResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UserSubscription', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UserSubscription.DeliverMethodCase', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UserSubscription.Delivery', null, proto);
-goog.exportSymbol('api.v1alpha1.org.users.UserSubscription.Room303', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.org.users.AddUserSubscriptionByUserIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.AddUserSubscriptionByUserIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.AddUserSubscriptionRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.AddUserSubscriptionResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.GetUserSubscriptionByUserIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.GetUserSubscriptionByUserIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.GetUserSubscriptionRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.GetUserSubscriptionResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListOrgSubscriptionsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListOrgSubscriptionsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListUserSubscriptionsByUserIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListUserSubscriptionsByUserIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListUserSubscriptionsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.ListUserSubscriptionsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.RemoveUserSubscriptionByUserIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.RemoveUserSubscriptionByUserIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.RemoveUserSubscriptionRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.RemoveUserSubscriptionResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UpdateUserSubscriptionByUserIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UpdateUserSubscriptionByUserIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UpdateUserSubscriptionRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UpdateUserSubscriptionResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UserSubscription', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UserSubscription.DeliverMethodCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UserSubscription.Delivery', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.users.UserSubscription.Room303', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -4535,4 +4543,4 @@ proto.api.v1alpha1.org.users.ListOrgSubscriptionsResponse.prototype.clearSubscri
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.org.users);

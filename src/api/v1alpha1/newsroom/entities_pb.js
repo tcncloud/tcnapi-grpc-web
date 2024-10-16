@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_newsroom_pb = require('../../../api/commons/newsroom_pb.js');
 goog.object.extend(proto, api_commons_newsroom_pb);
@@ -23,35 +31,35 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
-goog.exportSymbol('api.v1alpha1.newsroom.CreateNewsArticleRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.CreateNewsArticleResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.CreatePublishedArticleRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.CreatePublishedArticleResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetNewsArticleByIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetNewsArticleByIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetNewsForUserRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetNewsForUserResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetPublishedArticleByIdRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.GetPublishedArticleByIdResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListImagesForNewsArticleRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListImagesForNewsArticleResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListNewsArticlesRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListNewsArticlesResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListPublishedArticlesRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.ListPublishedArticlesResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.NewsArticleDetails', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.NewsArticleImage', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.PublishedArticleDetails', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.StoreNewsArticleImageRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.StoreNewsArticleImageResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UpdateNewsArticleRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UpdateNewsArticleResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UploadNewsArticleImageRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UploadNewsArticleImageResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UserActivity', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UserActivity.UserActivityDetails', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UserActivityRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.newsroom.UserActivityResponse', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.CreateNewsArticleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.CreateNewsArticleResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.CreatePublishedArticleResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetNewsArticleByIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetNewsArticleByIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetNewsForUserRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetNewsForUserResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.GetPublishedArticleByIdResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListImagesForNewsArticleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListImagesForNewsArticleResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListNewsArticlesRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListNewsArticlesResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListPublishedArticlesRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.ListPublishedArticlesResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.NewsArticleDetails', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.NewsArticleImage', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.PublishedArticleDetails', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.StoreNewsArticleImageRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.StoreNewsArticleImageResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UpdateNewsArticleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UpdateNewsArticleResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UploadNewsArticleImageRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UploadNewsArticleImageResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UserActivity', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UserActivityRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.newsroom.UserActivityResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5751,4 +5759,4 @@ proto.api.v1alpha1.newsroom.UploadNewsArticleImageResponse.prototype.hasImage = 
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.newsroom);

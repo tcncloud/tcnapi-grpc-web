@@ -12,8 +12,16 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
 goog.object.extend(proto, api_commons_classifier_pb);
@@ -23,29 +31,29 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('api.v1alpha1.contactmanager.AddContactEntryRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.AddContactEntryResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ContactManagerEntry', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ContactManagerEntryVal', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ContactManagerList', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.EditContactEntryRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.EditContactEntryResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.EditedEntry', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.Entry', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetContactFieldTypeRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetContactFieldTypeResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetContactListRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetContactListResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetEncContactEntryRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetEncContactEntryResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetKYCKeysRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.GetKYCKeysResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ListContactEntryListRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ListContactEntryListResponse', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ListContactsByEntityRequest', null, proto);
-goog.exportSymbol('api.v1alpha1.contactmanager.ListContactsByEntityResponse', null, proto);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.AddContactEntryRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.AddContactEntryResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ContactManagerEntry', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ContactManagerEntryVal', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ContactManagerList', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.EditContactEntryRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.EditContactEntryResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.EditedEntry', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.Entry', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetContactListRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetContactListResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetEncContactEntryRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetEncContactEntryResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetKYCKeysRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.GetKYCKeysResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ListContactEntryListRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ListContactEntryListResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.contactmanager.ListContactsByEntityResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -4853,4 +4861,4 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.prototype.setField
 };
 
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.v1alpha1.contactmanager);

@@ -12,30 +12,38 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
-goog.exportSymbol('api.commons.AnaExportType', null, proto);
-goog.exportSymbol('api.commons.AnaTimeZone', null, proto);
-goog.exportSymbol('api.commons.BoolComparison', null, proto);
-goog.exportSymbol('api.commons.CompoundFilterJoin', null, proto);
-goog.exportSymbol('api.commons.CsvQuoteType', null, proto);
-goog.exportSymbol('api.commons.CustomDataSeleciton', null, proto);
-goog.exportSymbol('api.commons.DashPageType', null, proto);
-goog.exportSymbol('api.commons.DataPointType', null, proto);
-goog.exportSymbol('api.commons.DateComparison', null, proto);
-goog.exportSymbol('api.commons.ExportStatus', null, proto);
-goog.exportSymbol('api.commons.ExporterDataSelectionType', null, proto);
-goog.exportSymbol('api.commons.FilterBy', null, proto);
-goog.exportSymbol('api.commons.FloatComparison', null, proto);
-goog.exportSymbol('api.commons.NonNumericAggregation', null, proto);
-goog.exportSymbol('api.commons.NumericAggregation', null, proto);
-goog.exportSymbol('api.commons.Operation', null, proto);
-goog.exportSymbol('api.commons.StringComparison', null, proto);
-goog.exportSymbol('api.commons.Tag', null, proto);
-goog.exportSymbol('api.commons.TimeFilterType', null, proto);
-goog.exportSymbol('api.commons.TimeScope', null, proto);
-goog.exportSymbol('api.commons.WallaceDataType', null, proto);
+goog.exportSymbol('proto.api.commons.AnaExportType', null, global);
+goog.exportSymbol('proto.api.commons.AnaTimeZone', null, global);
+goog.exportSymbol('proto.api.commons.BoolComparison', null, global);
+goog.exportSymbol('proto.api.commons.CompoundFilterJoin', null, global);
+goog.exportSymbol('proto.api.commons.CsvQuoteType', null, global);
+goog.exportSymbol('proto.api.commons.CustomDataSeleciton', null, global);
+goog.exportSymbol('proto.api.commons.DashPageType', null, global);
+goog.exportSymbol('proto.api.commons.DataPointType', null, global);
+goog.exportSymbol('proto.api.commons.DateComparison', null, global);
+goog.exportSymbol('proto.api.commons.ExportStatus', null, global);
+goog.exportSymbol('proto.api.commons.ExporterDataSelectionType', null, global);
+goog.exportSymbol('proto.api.commons.FilterBy', null, global);
+goog.exportSymbol('proto.api.commons.FloatComparison', null, global);
+goog.exportSymbol('proto.api.commons.NonNumericAggregation', null, global);
+goog.exportSymbol('proto.api.commons.NumericAggregation', null, global);
+goog.exportSymbol('proto.api.commons.Operation', null, global);
+goog.exportSymbol('proto.api.commons.StringComparison', null, global);
+goog.exportSymbol('proto.api.commons.Tag', null, global);
+goog.exportSymbol('proto.api.commons.TimeFilterType', null, global);
+goog.exportSymbol('proto.api.commons.TimeScope', null, global);
+goog.exportSymbol('proto.api.commons.WallaceDataType', null, global);
 /**
  * @enum {number}
  */
@@ -341,4 +349,4 @@ proto.api.commons.ExportStatus = {
   SENT: 1
 };
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.api.commons);

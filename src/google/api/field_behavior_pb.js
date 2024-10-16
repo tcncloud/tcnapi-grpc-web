@@ -12,13 +12,21 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var proto = {};
+var global = localGlobalThis || 
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
-goog.exportSymbol('google.api.FieldBehavior', null, proto);
-goog.exportSymbol('google.api.fieldBehaviorList', null, proto);
+goog.exportSymbol('proto.google.api.FieldBehavior', null, global);
+goog.exportSymbol('proto.google.api.fieldBehaviorList', null, global);
 /**
  * @enum {number}
  */
@@ -59,4 +67,4 @@ google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[1052] = new jspb.Ext
 // toObject() will function correctly.
 google_protobuf_descriptor_pb.FieldOptions.extensions[1052] = proto.google.api.fieldBehaviorList;
 
-goog.object.extend(exports, proto);
+goog.object.extend(exports, proto.google.api);
