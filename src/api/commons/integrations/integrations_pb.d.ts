@@ -2136,6 +2136,11 @@ export class ExecuteFlow extends jspb.Message {
   getAcquiredProcessPayment(): ExecuteAcquiredProcessPayment | undefined;
   setAcquiredProcessPayment(value?: ExecuteAcquiredProcessPayment): void;
 
+  hasGenericRequest(): boolean;
+  clearGenericRequest(): void;
+  getGenericRequest(): ExecuteGenericRequest | undefined;
+  setGenericRequest(value?: ExecuteGenericRequest): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2430,6 +2435,7 @@ export namespace ExecuteFlow {
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
     acquiredProcessPayment?: ExecuteAcquiredProcessPayment.AsObject,
+    genericRequest?: ExecuteGenericRequest.AsObject,
   }
 
   export enum ValueCase {
@@ -2714,6 +2720,7 @@ export namespace ExecuteFlow {
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
     ACQUIRED_PROCESS_PAYMENT = 5101,
+    GENERIC_REQUEST = 5201,
   }
 }
 
@@ -7814,6 +7821,22 @@ export namespace ExecuteAcquiredProcessPayment {
   }
 }
 
+export class ExecuteGenericRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteGenericRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteGenericRequest): ExecuteGenericRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteGenericRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteGenericRequest;
+  static deserializeBinaryFromReader(message: ExecuteGenericRequest, reader: jspb.BinaryReader): ExecuteGenericRequest;
+}
+
+export namespace ExecuteGenericRequest {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7867,6 +7890,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_PDCFLOW: 4900;
   INTEGRATION_TYPE_DEBUG: 5000;
   INTEGRATION_TYPE_ACQUIRED: 5100;
+  INTEGRATION_TYPE_GENERIC: 5200;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8155,6 +8179,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
   REQUEST_METHOD_ACQUIRED_PROCESS_PAYMENT: 5101;
+  REQUEST_METHOD_GENERIC_REQUEST: 5201;
 }
 
 export const RequestMethod: RequestMethodMap;
