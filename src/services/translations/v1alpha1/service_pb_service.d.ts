@@ -122,15 +122,6 @@ type TranslationsServiceDisableContext = {
   readonly responseType: typeof services_translations_v1alpha1_entities_pb.DisableContextResponse;
 };
 
-type TranslationsServiceDeleteTranslationsByTemplate = {
-  readonly methodName: string;
-  readonly service: typeof TranslationsService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest;
-  readonly responseType: typeof services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse;
-};
-
 type TranslationsServiceBulkDeleteTranslations = {
   readonly methodName: string;
   readonly service: typeof TranslationsService;
@@ -155,7 +146,6 @@ export class TranslationsService {
   static readonly TestSystemMessage: TranslationsServiceTestSystemMessage;
   static readonly EnableContext: TranslationsServiceEnableContext;
   static readonly DisableContext: TranslationsServiceDisableContext;
-  static readonly DeleteTranslationsByTemplate: TranslationsServiceDeleteTranslationsByTemplate;
   static readonly BulkDeleteTranslations: TranslationsServiceBulkDeleteTranslations;
 }
 
@@ -307,15 +297,6 @@ export class TranslationsServiceClient {
   disableContext(
     requestMessage: services_translations_v1alpha1_entities_pb.DisableContextRequest,
     callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.DisableContextResponse|null) => void
-  ): UnaryResponse;
-  deleteTranslationsByTemplate(
-    requestMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse|null) => void
-  ): UnaryResponse;
-  deleteTranslationsByTemplate(
-    requestMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse|null) => void
   ): UnaryResponse;
   bulkDeleteTranslations(
     requestMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,

@@ -654,46 +654,6 @@ export namespace DisableContextResponse {
   }
 }
 
-export class DeleteTranslationsByTemplateRequest extends jspb.Message {
-  getTemplate(): string;
-  setTemplate(value: string): void;
-
-  getContext(): string;
-  setContext(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteTranslationsByTemplateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteTranslationsByTemplateRequest): DeleteTranslationsByTemplateRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteTranslationsByTemplateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteTranslationsByTemplateRequest;
-  static deserializeBinaryFromReader(message: DeleteTranslationsByTemplateRequest, reader: jspb.BinaryReader): DeleteTranslationsByTemplateRequest;
-}
-
-export namespace DeleteTranslationsByTemplateRequest {
-  export type AsObject = {
-    template: string,
-    context: string,
-  }
-}
-
-export class DeleteTranslationsByTemplateResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteTranslationsByTemplateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteTranslationsByTemplateResponse): DeleteTranslationsByTemplateResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteTranslationsByTemplateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteTranslationsByTemplateResponse;
-  static deserializeBinaryFromReader(message: DeleteTranslationsByTemplateResponse, reader: jspb.BinaryReader): DeleteTranslationsByTemplateResponse;
-}
-
-export namespace DeleteTranslationsByTemplateResponse {
-  export type AsObject = {
-  }
-}
-
 export class BulkDeleteTranslationsRequest extends jspb.Message {
   clearTranslationIdsList(): void;
   getTranslationIdsList(): Array<string>;
