@@ -86,7 +86,7 @@ type ContactManagerGetContactFieldType = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse;
 };
 
-type ContactManagerAgentAddContactEntry = {
+type ContactManagerAgentAddContact = {
   readonly methodName: string;
   readonly service: typeof ContactManager;
   readonly requestStream: false;
@@ -95,7 +95,7 @@ type ContactManagerAgentAddContactEntry = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse;
 };
 
-type ContactManagerAgentEditContactEntry = {
+type ContactManagerAgentEditContact = {
   readonly methodName: string;
   readonly service: typeof ContactManager;
   readonly requestStream: false;
@@ -115,8 +115,8 @@ export class ContactManager {
   static readonly EditContactEntry: ContactManagerEditContactEntry;
   static readonly ListContactsByEntity: ContactManagerListContactsByEntity;
   static readonly GetContactFieldType: ContactManagerGetContactFieldType;
-  static readonly AgentAddContactEntry: ContactManagerAgentAddContactEntry;
-  static readonly AgentEditContactEntry: ContactManagerAgentEditContactEntry;
+  static readonly AgentAddContact: ContactManagerAgentAddContact;
+  static readonly AgentEditContact: ContactManagerAgentEditContact;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -232,21 +232,21 @@ export class ContactManagerClient {
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse|null) => void
   ): UnaryResponse;
-  agentAddContactEntry(
+  agentAddContact(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse|null) => void
   ): UnaryResponse;
-  agentAddContactEntry(
+  agentAddContact(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse|null) => void
   ): UnaryResponse;
-  agentEditContactEntry(
+  agentEditContact(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse|null) => void
   ): UnaryResponse;
-  agentEditContactEntry(
+  agentEditContact(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse|null) => void
   ): UnaryResponse;

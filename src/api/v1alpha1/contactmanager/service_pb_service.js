@@ -92,8 +92,8 @@ ContactManager.GetContactFieldType = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse
 };
 
-ContactManager.AgentAddContactEntry = {
-  methodName: "AgentAddContactEntry",
+ContactManager.AgentAddContact = {
+  methodName: "AgentAddContact",
   service: ContactManager,
   requestStream: false,
   responseStream: false,
@@ -101,8 +101,8 @@ ContactManager.AgentAddContactEntry = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse
 };
 
-ContactManager.AgentEditContactEntry = {
-  methodName: "AgentEditContactEntry",
+ContactManager.AgentEditContact = {
+  methodName: "AgentEditContact",
   service: ContactManager,
   requestStream: false,
   responseStream: false,
@@ -396,11 +396,11 @@ ContactManagerClient.prototype.getContactFieldType = function getContactFieldTyp
   };
 };
 
-ContactManagerClient.prototype.agentAddContactEntry = function agentAddContactEntry(requestMessage, metadata, callback) {
+ContactManagerClient.prototype.agentAddContact = function agentAddContact(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.AgentAddContactEntry, {
+  var client = grpc.unary(ContactManager.AgentAddContact, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -427,11 +427,11 @@ ContactManagerClient.prototype.agentAddContactEntry = function agentAddContactEn
   };
 };
 
-ContactManagerClient.prototype.agentEditContactEntry = function agentEditContactEntry(requestMessage, metadata, callback) {
+ContactManagerClient.prototype.agentEditContact = function agentEditContact(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.AgentEditContactEntry, {
+  var client = grpc.unary(ContactManager.AgentEditContact, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
