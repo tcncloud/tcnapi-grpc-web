@@ -60,6 +60,8 @@ export namespace GetContactListResponse {
 }
 
 export class ListContactEntryListRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): string;
   setContactManagerListId(value: string): void;
 
@@ -68,6 +70,9 @@ export class ListContactEntryListRequest extends jspb.Message {
 
   getProjectId(): string;
   setProjectId(value: string): void;
+
+  getProjectSid(): number;
+  setProjectSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListRequest.AsObject;
@@ -84,6 +89,7 @@ export namespace ListContactEntryListRequest {
     contactManagerListId: string,
     orgId: string,
     projectId: string,
+    projectSid: number,
   }
 }
 
@@ -376,6 +382,8 @@ export namespace ContactManagerEntryVal {
 }
 
 export class AddContactEntryRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): string;
   setContactManagerListId(value: string): void;
 
@@ -383,6 +391,11 @@ export class AddContactEntryRequest extends jspb.Message {
   getEntryList(): Array<Entry>;
   setEntryList(value: Array<Entry>): void;
   addEntry(value?: Entry, index?: number): Entry;
+
+  hasProjectSid(): boolean;
+  clearProjectSid(): void;
+  getProjectSid(): string;
+  setProjectSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddContactEntryRequest.AsObject;
@@ -398,6 +411,7 @@ export namespace AddContactEntryRequest {
   export type AsObject = {
     contactManagerListId: string,
     entryList: Array<Entry.AsObject>,
+    projectSid: string,
   }
 }
 
@@ -450,6 +464,8 @@ export namespace AddContactEntryResponse {
 }
 
 export class EditContactEntryRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): number;
   setContactManagerListId(value: number): void;
 

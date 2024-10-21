@@ -92,6 +92,24 @@ ContactManager.GetContactFieldType = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse
 };
 
+ContactManager.AgentAddContactEntry = {
+  methodName: "AgentAddContactEntry",
+  service: ContactManager,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryRequest,
+  responseType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse
+};
+
+ContactManager.AgentEditContactEntry = {
+  methodName: "AgentEditContactEntry",
+  service: ContactManager,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
+  responseType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse
+};
+
 exports.ContactManager = ContactManager;
 
 function ContactManagerClient(serviceHost, options) {
@@ -352,6 +370,68 @@ ContactManagerClient.prototype.getContactFieldType = function getContactFieldTyp
     callback = arguments[1];
   }
   var client = grpc.unary(ContactManager.GetContactFieldType, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ContactManagerClient.prototype.agentAddContactEntry = function agentAddContactEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ContactManager.AgentAddContactEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ContactManagerClient.prototype.agentEditContactEntry = function agentEditContactEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ContactManager.AgentEditContactEntry, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

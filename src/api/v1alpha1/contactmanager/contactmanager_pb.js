@@ -940,9 +940,10 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.toObject
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-projectId: jspb.Message.getFieldWithDefault(msg, 3, "")
+projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+projectSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -991,6 +992,10 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.deserializeBinaryF
       var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setProjectSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1020,8 +1025,8 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.serializ
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (parseInt(f, 10) !== 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64String(
       1,
       f
@@ -1038,6 +1043,13 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.serializeBinaryToW
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getProjectSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
       f
     );
   }
@@ -1058,7 +1070,25 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getConta
  * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.clearContactManagerListId = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.hasContactManagerListId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1095,6 +1125,24 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getProje
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int64 project_sid = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getProjectSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setProjectSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -3191,9 +3239,10 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 entryList: jspb.Message.toObjectList(msg.getEntryList(),
-    proto.api.v1alpha1.contactmanager.Entry.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.Entry.toObject, includeInstance),
+projectSid: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3239,6 +3288,10 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.deserializeBinaryFromRe
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.Entry.deserializeBinaryFromReader);
       msg.addEntry(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setProjectSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3268,8 +3321,8 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.serializeBina
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (parseInt(f, 10) !== 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64String(
       1,
       f
@@ -3281,6 +3334,13 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.serializeBinaryToWriter
       2,
       f,
       proto.api.v1alpha1.contactmanager.Entry.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt64String(
+      3,
+      f
     );
   }
 };
@@ -3300,7 +3360,25 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.getContactMan
  * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.clearContactManagerListId = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.hasContactManagerListId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3339,6 +3417,42 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.addEntry = fu
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.clearEntryList = function() {
   return this.setEntryList([]);
+};
+
+
+/**
+ * optional int64 project_sid = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.getProjectSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.setProjectSid = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.clearProjectSid = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.hasProjectSid = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -3701,7 +3815,7 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
 editedEntryList: jspb.Message.toObjectList(msg.getEditedEntryList(),
     proto.api.v1alpha1.contactmanager.EditedEntry.toObject, includeInstance)
@@ -3783,8 +3897,8 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.serializeBin
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64(
       1,
       f
@@ -3822,7 +3936,25 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.getContactMa
  * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryRequest} returns this
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.clearContactManagerListId = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.hasContactManagerListId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
