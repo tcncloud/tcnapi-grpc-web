@@ -71,8 +71,10 @@ export class ListContactEntryListRequest extends jspb.Message {
   getProjectId(): string;
   setProjectId(value: string): void;
 
-  getProjectSid(): number;
-  setProjectSid(value: number): void;
+  hasProjectSid(): boolean;
+  clearProjectSid(): void;
+  getProjectSid(): string;
+  setProjectSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListRequest.AsObject;
@@ -89,7 +91,7 @@ export namespace ListContactEntryListRequest {
     contactManagerListId: string,
     orgId: string,
     projectId: string,
-    projectSid: number,
+    projectSid: string,
   }
 }
 

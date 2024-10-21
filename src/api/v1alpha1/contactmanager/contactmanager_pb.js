@@ -943,7 +943,7 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.toObject = functio
 contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-projectSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+projectSid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -993,7 +993,7 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.deserializeBinaryF
       msg.setProjectId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setProjectSid(value);
       break;
     default:
@@ -1046,9 +1046,9 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.serializeBinaryToW
       f
     );
   }
-  f = message.getProjectSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64String(
       4,
       f
     );
@@ -1130,19 +1130,37 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setProje
 
 /**
  * optional int64 project_sid = 4;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getProjectSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setProjectSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.clearProjectSid = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.hasProjectSid = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
