@@ -76,6 +76,7 @@ goog.exportSymbol('proto.api.v1alpha1.insights.OutputConfigurationType', null, g
 goog.exportSymbol('proto.api.v1alpha1.insights.PadOperation', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.PublishInsightRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.PublishInsightResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.QuoteCharacter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.SetDefaultOutputConfigurationRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.SetDefaultOutputConfigurationResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.TableColumnConfig', null, global);
@@ -4765,7 +4766,9 @@ proto.api.v1alpha1.insights.TableVisualization.prototype.toObject = function(opt
 proto.api.v1alpha1.insights.TableVisualization.toObject = function(includeInstance, msg) {
   var f, obj = {
 tableColumnDetailsList: jspb.Message.toObjectList(msg.getTableColumnDetailsList(),
-    proto.api.v1alpha1.insights.TableColumnConfig.toObject, includeInstance)
+    proto.api.v1alpha1.insights.TableColumnConfig.toObject, includeInstance),
+delimiter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+quoteCharacter: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -4807,6 +4810,14 @@ proto.api.v1alpha1.insights.TableVisualization.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.api.v1alpha1.insights.TableColumnConfig.deserializeBinaryFromReader);
       msg.addTableColumnDetails(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDelimiter(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.api.v1alpha1.insights.QuoteCharacter} */ (reader.readEnum());
+      msg.setQuoteCharacter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4842,6 +4853,20 @@ proto.api.v1alpha1.insights.TableVisualization.serializeBinaryToWriter = functio
       1,
       f,
       proto.api.v1alpha1.insights.TableColumnConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getDelimiter();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getQuoteCharacter();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
     );
   }
 };
@@ -4882,6 +4907,42 @@ proto.api.v1alpha1.insights.TableVisualization.prototype.addTableColumnDetails =
  */
 proto.api.v1alpha1.insights.TableVisualization.prototype.clearTableColumnDetailsList = function() {
   return this.setTableColumnDetailsList([]);
+};
+
+
+/**
+ * optional string delimiter = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.getDelimiter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.insights.TableVisualization} returns this
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.setDelimiter = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional QuoteCharacter quote_character = 3;
+ * @return {!proto.api.v1alpha1.insights.QuoteCharacter}
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.getQuoteCharacter = function() {
+  return /** @type {!proto.api.v1alpha1.insights.QuoteCharacter} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.insights.QuoteCharacter} value
+ * @return {!proto.api.v1alpha1.insights.TableVisualization} returns this
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.setQuoteCharacter = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -9404,6 +9465,15 @@ proto.api.v1alpha1.insights.InsightContextualActionType = {
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_DRILL_THROUGH: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.insights.QuoteCharacter = {
+  QUOTE_CHARACTER_UNSPECIFIED: 0,
+  QUOTE_CHARACTER_DOUBLE_QUOTE: 1,
+  QUOTE_CHARACTER_SINGLE_QUOTE: 2
 };
 
 goog.object.extend(exports, proto.api.v1alpha1.insights);
