@@ -540,12 +540,6 @@ export class TableVisualization extends jspb.Message {
   setTableColumnDetailsList(value: Array<TableColumnConfig>): void;
   addTableColumnDetails(value?: TableColumnConfig, index?: number): TableColumnConfig;
 
-  getDelimiter(): string;
-  setDelimiter(value: string): void;
-
-  getQuoteCharacter(): QuoteCharacterMap[keyof QuoteCharacterMap];
-  setQuoteCharacter(value: QuoteCharacterMap[keyof QuoteCharacterMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableVisualization.AsObject;
   static toObject(includeInstance: boolean, msg: TableVisualization): TableVisualization.AsObject;
@@ -559,8 +553,6 @@ export class TableVisualization extends jspb.Message {
 export namespace TableVisualization {
   export type AsObject = {
     tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
-    delimiter: string,
-    quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
   }
 }
 
@@ -1264,12 +1256,4 @@ export interface InsightContextualActionTypeMap {
 }
 
 export const InsightContextualActionType: InsightContextualActionTypeMap;
-
-export interface QuoteCharacterMap {
-  QUOTE_CHARACTER_UNSPECIFIED: 0;
-  QUOTE_CHARACTER_DOUBLE_QUOTE: 1;
-  QUOTE_CHARACTER_SINGLE_QUOTE: 2;
-}
-
-export const QuoteCharacter: QuoteCharacterMap;
 
