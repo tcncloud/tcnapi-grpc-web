@@ -943,7 +943,9 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.toObject = functio
 contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-projectSid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+projectSid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -995,6 +997,14 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.deserializeBinaryF
     case 4:
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setProjectSid(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
       break;
     default:
       reader.skipField();
@@ -1050,6 +1060,20 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.serializeBinaryToW
   if (f != null) {
     writer.writeInt64String(
       4,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1164,6 +1188,42 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.hasProje
 };
 
 
+/**
+ * optional int32 page_size = 5;
+ * @return {number}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string page_token = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1204,7 +1264,8 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.toObjec
 proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
-    proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1246,6 +1307,10 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.deserializeBinary
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReader);
       msg.addContactManagerEntry(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1281,6 +1346,13 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.serializeBinaryTo
       2,
       f,
       proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -1321,6 +1393,24 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.addCont
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.clearContactManagerEntryList = function() {
   return this.setContactManagerEntryList([]);
+};
+
+
+/**
+ * optional string next_page_token = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListResponse} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

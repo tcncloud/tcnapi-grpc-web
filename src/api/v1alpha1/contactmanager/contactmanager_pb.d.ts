@@ -76,6 +76,12 @@ export class ListContactEntryListRequest extends jspb.Message {
   getProjectSid(): string;
   setProjectSid(value: string): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListRequest): ListContactEntryListRequest.AsObject;
@@ -92,6 +98,8 @@ export namespace ListContactEntryListRequest {
     orgId: string,
     projectId: string,
     projectSid: string,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -100,6 +108,9 @@ export class ListContactEntryListResponse extends jspb.Message {
   getContactManagerEntryList(): Array<ContactManagerEntry>;
   setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
   addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
@@ -114,6 +125,7 @@ export class ListContactEntryListResponse extends jspb.Message {
 export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
+    nextPageToken: string,
   }
 }
 
