@@ -3263,7 +3263,8 @@ displayMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
 advanceToStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
 webLinkSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
 integrationLinkSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-exileLinkSid: jspb.Message.getFieldWithDefault(msg, 6, 0)
+exileLinkSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+pauseCode: (f = msg.getPauseCode()) && proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3323,6 +3324,11 @@ proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.deserializeBinaryFro
     case 6:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setExileLinkSid(value);
+      break;
+    case 7:
+      var value = new proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode;
+      reader.readMessage(value,proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode.deserializeBinaryFromReader);
+      msg.setPauseCode(value);
       break;
     default:
       reader.skipField();
@@ -3393,6 +3399,14 @@ proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.serializeBinaryToWri
     writer.writeInt64(
       6,
       f
+    );
+  }
+  f = message.getPauseCode();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode.serializeBinaryToWriter
     );
   }
 };
@@ -3503,6 +3517,43 @@ proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.getExileLi
  */
 proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.setExileLinkSid = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional TriggerPauseCode pause_code = 7;
+ * @return {?proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode}
+ */
+proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.getPauseCode = function() {
+  return /** @type{?proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode} */ (
+    jspb.Message.getWrapperField(this, proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode, 7));
+};
+
+
+/**
+ * @param {?proto.services.org.hunt_groups.v1alpha1.TriggerPauseCode|undefined} value
+ * @return {!proto.services.org.hunt_groups.v1alpha1.TriggerActionOption} returns this
+*/
+proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.setPauseCode = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.org.hunt_groups.v1alpha1.TriggerActionOption} returns this
+ */
+proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.clearPauseCode = function() {
+  return this.setPauseCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.hunt_groups.v1alpha1.TriggerActionOption.prototype.hasPauseCode = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

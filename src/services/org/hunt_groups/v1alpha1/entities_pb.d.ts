@@ -396,6 +396,11 @@ export class TriggerActionOption extends jspb.Message {
   getExileLinkSid(): number;
   setExileLinkSid(value: number): void;
 
+  hasPauseCode(): boolean;
+  clearPauseCode(): void;
+  getPauseCode(): TriggerPauseCode | undefined;
+  setPauseCode(value?: TriggerPauseCode): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TriggerActionOption.AsObject;
   static toObject(includeInstance: boolean, msg: TriggerActionOption): TriggerActionOption.AsObject;
@@ -414,6 +419,7 @@ export namespace TriggerActionOption {
     webLinkSid: number,
     integrationLinkSid: number,
     exileLinkSid: number,
+    pauseCode?: TriggerPauseCode.AsObject,
   }
 }
 
