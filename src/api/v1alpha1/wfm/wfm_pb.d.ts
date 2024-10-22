@@ -13102,11 +13102,6 @@ export class AgentGetScheduleResponse extends jspb.Message {
   setShiftInstancesList(value: Array<ShiftInstance>): void;
   addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
 
-  clearNonSkillActivitiesList(): void;
-  getNonSkillActivitiesList(): Array<NonSkillActivity>;
-  setNonSkillActivitiesList(value: Array<NonSkillActivity>): void;
-  addNonSkillActivities(value?: NonSkillActivity, index?: number): NonSkillActivity;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentGetScheduleResponse.AsObject;
   static toObject(includeInstance: boolean, msg: AgentGetScheduleResponse): AgentGetScheduleResponse.AsObject;
@@ -13120,7 +13115,6 @@ export class AgentGetScheduleResponse extends jspb.Message {
 export namespace AgentGetScheduleResponse {
   export type AsObject = {
     shiftInstancesList: Array<ShiftInstance.AsObject>,
-    nonSkillActivitiesList: Array<NonSkillActivity.AsObject>,
   }
 }
 

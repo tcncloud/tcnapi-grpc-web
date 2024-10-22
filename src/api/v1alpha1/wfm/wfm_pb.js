@@ -103609,7 +103609,7 @@ proto.api.v1alpha1.wfm.AgentGetScheduleRequest.prototype.hasDatetimeRange = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.AgentGetScheduleResponse.repeatedFields_ = [1,2];
+proto.api.v1alpha1.wfm.AgentGetScheduleResponse.repeatedFields_ = [1];
 
 
 
@@ -103643,9 +103643,7 @@ proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.toObject = function(op
 proto.api.v1alpha1.wfm.AgentGetScheduleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
-    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
-nonSkillActivitiesList: jspb.Message.toObjectList(msg.getNonSkillActivitiesList(),
-    proto.api.v1alpha1.wfm.NonSkillActivity.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -103687,11 +103685,6 @@ proto.api.v1alpha1.wfm.AgentGetScheduleResponse.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
       msg.addShiftInstances(value);
       break;
-    case 2:
-      var value = new proto.api.v1alpha1.wfm.NonSkillActivity;
-      reader.readMessage(value,proto.api.v1alpha1.wfm.NonSkillActivity.deserializeBinaryFromReader);
-      msg.addNonSkillActivities(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -103727,14 +103720,6 @@ proto.api.v1alpha1.wfm.AgentGetScheduleResponse.serializeBinaryToWriter = functi
       1,
       f,
       proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
-    );
-  }
-  f = message.getNonSkillActivitiesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.api.v1alpha1.wfm.NonSkillActivity.serializeBinaryToWriter
     );
   }
 };
@@ -103775,44 +103760,6 @@ proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.addShiftInstances = fu
  */
 proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.clearShiftInstancesList = function() {
   return this.setShiftInstancesList([]);
-};
-
-
-/**
- * repeated NonSkillActivity non_skill_activities = 2;
- * @return {!Array<!proto.api.v1alpha1.wfm.NonSkillActivity>}
- */
-proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.getNonSkillActivitiesList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.wfm.NonSkillActivity>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.NonSkillActivity, 2));
-};
-
-
-/**
- * @param {!Array<!proto.api.v1alpha1.wfm.NonSkillActivity>} value
- * @return {!proto.api.v1alpha1.wfm.AgentGetScheduleResponse} returns this
-*/
-proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.setNonSkillActivitiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.wfm.NonSkillActivity=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.wfm.NonSkillActivity}
- */
-proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.addNonSkillActivities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.NonSkillActivity, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.wfm.AgentGetScheduleResponse} returns this
- */
-proto.api.v1alpha1.wfm.AgentGetScheduleResponse.prototype.clearNonSkillActivitiesList = function() {
-  return this.setNonSkillActivitiesList([]);
 };
 
 
