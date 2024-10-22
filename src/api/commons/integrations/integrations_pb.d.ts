@@ -8178,6 +8178,17 @@ export interface RequestSourceMap {
 
 export const RequestSource: RequestSourceMap;
 
+export interface RequestOriginMap {
+  REQUEST_ORIGIN_UNKNOWN: 0;
+  REQUEST_ORIGIN_IVR: 1;
+  REQUEST_ORIGIN_AGENT_ASSISTED: 2;
+  REQUEST_ORIGIN_INTEGRATION_LINK: 3;
+  REQUEST_ORIGIN_FLOWS: 4;
+  REQUEST_ORIGIN_TEXT_2_PAY: 5;
+}
+
+export const RequestOrigin: RequestOriginMap;
+
 export interface TransactionResultMap {
   TRANSACTION_RESULT_SUCCESS: 0;
   TRANSACTION_RESULT_FAILED: 1;

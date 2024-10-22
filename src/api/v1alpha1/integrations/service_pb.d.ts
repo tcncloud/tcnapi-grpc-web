@@ -188,6 +188,9 @@ export class ProcessReq extends jspb.Message {
   getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
   setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
 
+  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
+  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessReq): ProcessReq.AsObject;
@@ -209,6 +212,7 @@ export namespace ProcessReq {
     condsList: Array<Condition.AsObject>,
     callSid: number,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
   }
 }
 
@@ -2538,6 +2542,9 @@ export class IntegrationTransaction extends jspb.Message {
   getConds(): Conditions | undefined;
   setConds(value?: Conditions): void;
 
+  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
+  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntegrationTransaction.AsObject;
   static toObject(includeInstance: boolean, msg: IntegrationTransaction): IntegrationTransaction.AsObject;
@@ -2563,6 +2570,7 @@ export namespace IntegrationTransaction {
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     configName: string,
     conds?: Conditions.AsObject,
+    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
   }
 }
 
@@ -3606,6 +3614,9 @@ export class ProcessWorkflowReq extends jspb.Message {
   getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
   setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
 
+  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
+  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessWorkflowReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessWorkflowReq): ProcessWorkflowReq.AsObject;
@@ -3625,6 +3636,7 @@ export namespace ProcessWorkflowReq {
     paramsMap: Array<[string, Value.AsObject]>,
     callSid: number,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
   }
 }
 
