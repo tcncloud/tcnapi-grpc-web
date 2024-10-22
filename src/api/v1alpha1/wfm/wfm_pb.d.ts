@@ -8524,6 +8524,88 @@ export namespace BuildDraftScheduleRes {
   }
 }
 
+export class PollBuildInProgressRequest extends jspb.Message {
+  getDraftScheduleSid(): number;
+  setDraftScheduleSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PollBuildInProgressRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PollBuildInProgressRequest): PollBuildInProgressRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PollBuildInProgressRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PollBuildInProgressRequest;
+  static deserializeBinaryFromReader(message: PollBuildInProgressRequest, reader: jspb.BinaryReader): PollBuildInProgressRequest;
+}
+
+export namespace PollBuildInProgressRequest {
+  export type AsObject = {
+    draftScheduleSid: number,
+  }
+}
+
+export class PollBuildInProgressResponse extends jspb.Message {
+  hasBuildStartDatetime(): boolean;
+  clearBuildStartDatetime(): void;
+  getBuildStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBuildStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getBuildInProgress(): boolean;
+  setBuildInProgress(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PollBuildInProgressResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PollBuildInProgressResponse): PollBuildInProgressResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PollBuildInProgressResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PollBuildInProgressResponse;
+  static deserializeBinaryFromReader(message: PollBuildInProgressResponse, reader: jspb.BinaryReader): PollBuildInProgressResponse;
+}
+
+export namespace PollBuildInProgressResponse {
+  export type AsObject = {
+    buildStartDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    buildInProgress: boolean,
+  }
+}
+
+export class CancelBuildInProgressRequest extends jspb.Message {
+  getDraftScheduleSid(): number;
+  setDraftScheduleSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CancelBuildInProgressRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelBuildInProgressRequest): CancelBuildInProgressRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CancelBuildInProgressRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelBuildInProgressRequest;
+  static deserializeBinaryFromReader(message: CancelBuildInProgressRequest, reader: jspb.BinaryReader): CancelBuildInProgressRequest;
+}
+
+export namespace CancelBuildInProgressRequest {
+  export type AsObject = {
+    draftScheduleSid: number,
+  }
+}
+
+export class CancelBuildInProgressResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CancelBuildInProgressResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelBuildInProgressResponse): CancelBuildInProgressResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CancelBuildInProgressResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelBuildInProgressResponse;
+  static deserializeBinaryFromReader(message: CancelBuildInProgressResponse, reader: jspb.BinaryReader): CancelBuildInProgressResponse;
+}
+
+export namespace CancelBuildInProgressResponse {
+  export type AsObject = {
+  }
+}
+
 export class PublishDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;

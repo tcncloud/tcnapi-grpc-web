@@ -1057,6 +1057,24 @@ type WFMBuildDraftSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.BuildDraftScheduleRes;
 };
 
+type WFMPollBuildInProgress = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.PollBuildInProgressRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.PollBuildInProgressResponse;
+};
+
+type WFMCancelBuildInProgress = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressResponse;
+};
+
 type WFMPublishDraftSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2013,6 +2031,8 @@ export class WFM {
   static readonly CreateDraftSchedule: WFMCreateDraftSchedule;
   static readonly UpdateDraftSchedule: WFMUpdateDraftSchedule;
   static readonly BuildDraftSchedule: WFMBuildDraftSchedule;
+  static readonly PollBuildInProgress: WFMPollBuildInProgress;
+  static readonly CancelBuildInProgress: WFMCancelBuildInProgress;
   static readonly PublishDraftSchedule: WFMPublishDraftSchedule;
   static readonly ResetDraftSchedule: WFMResetDraftSchedule;
   static readonly GetDraftSchedule: WFMGetDraftSchedule;
@@ -3144,6 +3164,24 @@ export class WFMClient {
   buildDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildDraftScheduleReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.BuildDraftScheduleRes|null) => void
+  ): UnaryResponse;
+  pollBuildInProgress(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.PollBuildInProgressRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PollBuildInProgressResponse|null) => void
+  ): UnaryResponse;
+  pollBuildInProgress(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.PollBuildInProgressRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PollBuildInProgressResponse|null) => void
+  ): UnaryResponse;
+  cancelBuildInProgress(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressResponse|null) => void
+  ): UnaryResponse;
+  cancelBuildInProgress(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CancelBuildInProgressResponse|null) => void
   ): UnaryResponse;
   publishDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.PublishDraftScheduleReq,
