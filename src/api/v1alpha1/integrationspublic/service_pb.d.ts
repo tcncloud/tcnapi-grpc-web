@@ -733,9 +733,6 @@ export class ProcessWorkflowReq extends jspb.Message {
 
   getParamsMap(): jspb.Map<string, Value>;
   clearParamsMap(): void;
-  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
-  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessWorkflowReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessWorkflowReq): ProcessWorkflowReq.AsObject;
@@ -753,7 +750,6 @@ export namespace ProcessWorkflowReq {
     segment: number,
     choice: number,
     paramsMap: Array<[string, Value.AsObject]>,
-    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
   }
 }
 

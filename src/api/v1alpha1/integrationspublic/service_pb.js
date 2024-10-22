@@ -5669,8 +5669,7 @@ portalLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
 choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
-paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-requestOrigin: jspb.Message.getFieldWithDefault(msg, 6, 0)
+paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
   };
 
   if (includeInstance) {
@@ -5728,10 +5727,6 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.deserializeBinaryFromRe
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.integrationspublic.Value.deserializeBinaryFromReader, "", new proto.api.v1alpha1.integrationspublic.Value());
          });
-      break;
-    case 6:
-      var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
-      msg.setRequestOrigin(value);
       break;
     default:
       reader.skipField();
@@ -5793,13 +5788,6 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.serializeBinaryToWriter
   f = message.getParamsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.integrationspublic.Value.serializeBinaryToWriter);
-  }
-  f = message.getRequestOrigin();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      6,
-      f
-    );
   }
 };
 
@@ -5896,24 +5884,6 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.getParamsMap 
 proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.clearParamsMap = function() {
   this.getParamsMap().clear();
   return this;
-};
-
-
-/**
- * optional api.commons.integrations.RequestOrigin request_origin = 6;
- * @return {!proto.api.commons.integrations.RequestOrigin}
- */
-proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.getRequestOrigin = function() {
-  return /** @type {!proto.api.commons.integrations.RequestOrigin} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.integrations.RequestOrigin} value
- * @return {!proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq} returns this
- */
-proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.setRequestOrigin = function(value) {
-  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
