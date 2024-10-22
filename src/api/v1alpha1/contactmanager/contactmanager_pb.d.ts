@@ -71,11 +71,6 @@ export class ListContactEntryListRequest extends jspb.Message {
   getProjectId(): string;
   setProjectId(value: string): void;
 
-  hasProjectSid(): boolean;
-  clearProjectSid(): void;
-  getProjectSid(): string;
-  setProjectSid(value: string): void;
-
   getPageSize(): number;
   setPageSize(value: number): void;
 
@@ -97,7 +92,6 @@ export namespace ListContactEntryListRequest {
     contactManagerListId: string,
     orgId: string,
     projectId: string,
-    projectSid: string,
     pageSize: number,
     pageToken: string,
   }
@@ -406,8 +400,6 @@ export class AddContactEntryRequest extends jspb.Message {
   setEntryList(value: Array<Entry>): void;
   addEntry(value?: Entry, index?: number): Entry;
 
-  hasProjectSid(): boolean;
-  clearProjectSid(): void;
   getProjectSid(): string;
   setProjectSid(value: string): void;
 
@@ -535,6 +527,34 @@ export class EditedEntry extends jspb.Message {
 export namespace EditedEntry {
   export type AsObject = {
     contactManagerEntryListId: number,
+    name: string,
+    value: string,
+    type: string,
+  }
+}
+
+export class ContactField extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactField.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactField): ContactField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactField;
+  static deserializeBinaryFromReader(message: ContactField, reader: jspb.BinaryReader): ContactField;
+}
+
+export namespace ContactField {
+  export type AsObject = {
     name: string,
     value: string,
     type: string,
