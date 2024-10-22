@@ -1003,15 +1003,6 @@ type WFMBuildGlobalDiagnostics = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.BuildGlobalDiagnosticsRes;
 };
 
-type WFMAgentGetSchedule = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse;
-};
-
 type WFMGetPublishedSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1570,33 +1561,6 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
-type WFMAgentCancelLeavePetition = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse;
-};
-
-type WFMAgentCreateLeavePetition = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse;
-};
-
-type WFMAgentListLeavePetitions = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse;
-};
-
 type WFMCreateAgentLeavePetition = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1894,6 +1858,42 @@ type WFMDeleteAdherenceAgentRuleClause = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseResponse;
 };
 
+type WFMAgentGetSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse;
+};
+
+type WFMAgentListLeavePetitions = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse;
+};
+
+type WFMAgentCreateLeavePetition = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse;
+};
+
+type WFMAgentCancelLeavePetition = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -2007,7 +2007,6 @@ export class WFM {
   static readonly DeleteShiftInstances: WFMDeleteShiftInstances;
   static readonly BuildNodeDiagnostics: WFMBuildNodeDiagnostics;
   static readonly BuildGlobalDiagnostics: WFMBuildGlobalDiagnostics;
-  static readonly AgentGetSchedule: WFMAgentGetSchedule;
   static readonly GetPublishedSchedule: WFMGetPublishedSchedule;
   static readonly GetPublishedScheduleRequiredCalls: WFMGetPublishedScheduleRequiredCalls;
   static readonly GetDraftScheduleRequiredCalls: WFMGetDraftScheduleRequiredCalls;
@@ -2070,9 +2069,6 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
-  static readonly AgentCancelLeavePetition: WFMAgentCancelLeavePetition;
-  static readonly AgentCreateLeavePetition: WFMAgentCreateLeavePetition;
-  static readonly AgentListLeavePetitions: WFMAgentListLeavePetitions;
   static readonly CreateAgentLeavePetition: WFMCreateAgentLeavePetition;
   static readonly ListAgentLeavePetitions: WFMListAgentLeavePetitions;
   static readonly ArchiveAgentLeavePetition: WFMArchiveAgentLeavePetition;
@@ -2106,6 +2102,10 @@ export class WFM {
   static readonly UpdateAdherenceAgentRuleClause: WFMUpdateAdherenceAgentRuleClause;
   static readonly ListAdherenceAgentRules: WFMListAdherenceAgentRules;
   static readonly DeleteAdherenceAgentRuleClause: WFMDeleteAdherenceAgentRuleClause;
+  static readonly AgentGetSchedule: WFMAgentGetSchedule;
+  static readonly AgentListLeavePetitions: WFMAgentListLeavePetitions;
+  static readonly AgentCreateLeavePetition: WFMAgentCreateLeavePetition;
+  static readonly AgentCancelLeavePetition: WFMAgentCancelLeavePetition;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3091,15 +3091,6 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildGlobalDiagnosticsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.BuildGlobalDiagnosticsRes|null) => void
   ): UnaryResponse;
-  agentGetSchedule(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse|null) => void
-  ): UnaryResponse;
-  agentGetSchedule(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse|null) => void
-  ): UnaryResponse;
   getPublishedSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetPublishedScheduleReq,
     metadata: grpc.Metadata,
@@ -3658,33 +3649,6 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
   ): UnaryResponse;
-  agentCancelLeavePetition(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
-  ): UnaryResponse;
-  agentCancelLeavePetition(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
-  ): UnaryResponse;
-  agentCreateLeavePetition(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse|null) => void
-  ): UnaryResponse;
-  agentCreateLeavePetition(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse|null) => void
-  ): UnaryResponse;
-  agentListLeavePetitions(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse|null) => void
-  ): UnaryResponse;
-  agentListLeavePetitions(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse|null) => void
-  ): UnaryResponse;
   createAgentLeavePetition(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionRequest,
     metadata: grpc.Metadata,
@@ -3981,6 +3945,42 @@ export class WFMClient {
   deleteAdherenceAgentRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  agentGetSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse|null) => void
+  ): UnaryResponse;
+  agentGetSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentGetScheduleResponse|null) => void
+  ): UnaryResponse;
+  agentListLeavePetitions(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse|null) => void
+  ): UnaryResponse;
+  agentListLeavePetitions(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentListLeavePetitionsResponse|null) => void
+  ): UnaryResponse;
+  agentCreateLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  agentCreateLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCreateLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  agentCancelLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  agentCancelLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
   ): UnaryResponse;
 }
 
