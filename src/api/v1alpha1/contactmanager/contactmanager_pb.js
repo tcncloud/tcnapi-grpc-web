@@ -465,7 +465,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.contactmanager.EditContactEntryResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.contactmanager.EditContactEntryResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3288,7 +3288,7 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.prototype.setValue = fu
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.contactmanager.AddContactEntryRequest.repeatedFields_ = [2];
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.repeatedFields_ = [2,4];
 
 
 
@@ -3324,7 +3324,9 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.toObject = function(inc
 contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 entryList: jspb.Message.toObjectList(msg.getEntryList(),
     proto.api.v1alpha1.contactmanager.Entry.toObject, includeInstance),
-projectSid: jspb.Message.getFieldWithDefault(msg, 3, "0")
+projectSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+fieldList: jspb.Message.toObjectList(msg.getFieldList(),
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3373,6 +3375,11 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.deserializeBinaryFromRe
     case 3:
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setProjectSid(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.contactmanager.ContactField;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
+      msg.addField(value);
       break;
     default:
       reader.skipField();
@@ -3423,6 +3430,14 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.serializeBinaryToWriter
     writer.writeInt64String(
       3,
       f
+    );
+  }
+  f = message.getFieldList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
     );
   }
 };
@@ -3517,6 +3532,44 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.getProjectSid
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.setProjectSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 3, value);
+};
+
+
+/**
+ * repeated ContactField field = 4;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactField>}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.getFieldList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactField>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactField, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactField>} value
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+*/
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.setFieldList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactField=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactField}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.addField = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.v1alpha1.contactmanager.ContactField, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.clearFieldList = function() {
+  return this.setFieldList([]);
 };
 
 
@@ -3846,7 +3899,7 @@ proto.api.v1alpha1.contactmanager.AddContactEntryResponse.prototype.setContactId
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.contactmanager.EditContactEntryRequest.repeatedFields_ = [3];
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.repeatedFields_ = [3,4];
 
 
 
@@ -3882,7 +3935,9 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.toObject = function(in
 contactManagerListId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
 editedEntryList: jspb.Message.toObjectList(msg.getEditedEntryList(),
-    proto.api.v1alpha1.contactmanager.EditedEntry.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.EditedEntry.toObject, includeInstance),
+fieldList: jspb.Message.toObjectList(msg.getFieldList(),
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3931,6 +3986,11 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.deserializeBinaryFromR
       var value = new proto.api.v1alpha1.contactmanager.EditedEntry;
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.EditedEntry.deserializeBinaryFromReader);
       msg.addEditedEntry(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.contactmanager.ContactField;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
+      msg.addField(value);
       break;
     default:
       reader.skipField();
@@ -3981,6 +4041,14 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.serializeBinaryToWrite
       3,
       f,
       proto.api.v1alpha1.contactmanager.EditedEntry.serializeBinaryToWriter
+    );
+  }
+  f = message.getFieldList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
     );
   }
 };
@@ -4075,6 +4143,44 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.addEditedEnt
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.clearEditedEntryList = function() {
   return this.setEditedEntryList([]);
+};
+
+
+/**
+ * repeated ContactField field = 4;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactField>}
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.getFieldList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactField>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactField, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactField>} value
+ * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryRequest} returns this
+*/
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.setFieldList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactField=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactField}
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.addField = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.v1alpha1.contactmanager.ContactField, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.clearFieldList = function() {
+  return this.setFieldList([]);
 };
 
 
@@ -4489,6 +4595,13 @@ proto.api.v1alpha1.contactmanager.ContactField.prototype.setType = function(valu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryResponse.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4520,7 +4633,8 @@ proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.toObject = 
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+fieldList: jspb.Message.toObjectList(msg.getFieldList(),
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4557,6 +4671,11 @@ proto.api.v1alpha1.contactmanager.EditContactEntryResponse.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.contactmanager.ContactField;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
+      msg.addField(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4586,6 +4705,52 @@ proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.serializeBi
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getFieldList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ContactField field = 1;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactField>}
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.getFieldList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactField>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactField, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactField>} value
+ * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryResponse} returns this
+*/
+proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.setFieldList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactField=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactField}
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.addField = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.contactmanager.ContactField, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.EditContactEntryResponse} returns this
+ */
+proto.api.v1alpha1.contactmanager.EditContactEntryResponse.prototype.clearFieldList = function() {
+  return this.setFieldList([]);
 };
 
 

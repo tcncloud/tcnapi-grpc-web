@@ -403,6 +403,11 @@ export class AddContactEntryRequest extends jspb.Message {
   getProjectSid(): string;
   setProjectSid(value: string): void;
 
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddContactEntryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AddContactEntryRequest): AddContactEntryRequest.AsObject;
@@ -418,6 +423,7 @@ export namespace AddContactEntryRequest {
     contactManagerListId: string,
     entryList: Array<Entry.AsObject>,
     projectSid: string,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -483,6 +489,11 @@ export class EditContactEntryRequest extends jspb.Message {
   setEditedEntryList(value: Array<EditedEntry>): void;
   addEditedEntry(value?: EditedEntry, index?: number): EditedEntry;
 
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditContactEntryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: EditContactEntryRequest): EditContactEntryRequest.AsObject;
@@ -498,6 +509,7 @@ export namespace EditContactEntryRequest {
     contactManagerListId: number,
     contactManagerEntryId: number,
     editedEntryList: Array<EditedEntry.AsObject>,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -562,6 +574,11 @@ export namespace ContactField {
 }
 
 export class EditContactEntryResponse extends jspb.Message {
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditContactEntryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EditContactEntryResponse): EditContactEntryResponse.AsObject;
@@ -574,6 +591,7 @@ export class EditContactEntryResponse extends jspb.Message {
 
 export namespace EditContactEntryResponse {
   export type AsObject = {
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
