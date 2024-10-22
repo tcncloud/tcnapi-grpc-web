@@ -3636,7 +3636,8 @@ paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1al
 condsList: jspb.Message.toObjectList(msg.getCondsList(),
     proto.api.v1alpha1.integrations.Condition.toObject, includeInstance),
 callSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-callType: jspb.Message.getFieldWithDefault(msg, 11, 0)
+callType: jspb.Message.getFieldWithDefault(msg, 11, 0),
+requestOrigin: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -3711,6 +3712,10 @@ proto.api.v1alpha1.integrations.ProcessReq.deserializeBinaryFromReader = functio
     case 11:
       var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
       msg.setCallType(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
+      msg.setRequestOrigin(value);
       break;
     default:
       reader.skipField();
@@ -3799,6 +3804,13 @@ proto.api.v1alpha1.integrations.ProcessReq.serializeBinaryToWriter = function(me
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getRequestOrigin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -3989,6 +4001,24 @@ proto.api.v1alpha1.integrations.ProcessReq.prototype.getCallType = function() {
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.setCallType = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional api.commons.integrations.RequestOrigin request_origin = 12;
+ * @return {!proto.api.commons.integrations.RequestOrigin}
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.getRequestOrigin = function() {
+  return /** @type {!proto.api.commons.integrations.RequestOrigin} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.RequestOrigin} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.setRequestOrigin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -20466,7 +20496,8 @@ requestData: (f = msg.getRequestData()) && proto.api.v1alpha1.integrations.Value
 responseData: (f = msg.getResponseData()) && proto.api.v1alpha1.integrations.Values.toObject(includeInstance, f),
 createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 configName: jspb.Message.getFieldWithDefault(msg, 14, ""),
-conds: (f = msg.getConds()) && proto.api.v1alpha1.integrations.Conditions.toObject(includeInstance, f)
+conds: (f = msg.getConds()) && proto.api.v1alpha1.integrations.Conditions.toObject(includeInstance, f),
+requestOrigin: jspb.Message.getFieldWithDefault(msg, 16, 0)
   };
 
   if (includeInstance) {
@@ -20558,6 +20589,10 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.deserializeBinaryFromRead
       var value = new proto.api.v1alpha1.integrations.Conditions;
       reader.readMessage(value,proto.api.v1alpha1.integrations.Conditions.deserializeBinaryFromReader);
       msg.setConds(value);
+      break;
+    case 16:
+      var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
+      msg.setRequestOrigin(value);
       break;
     default:
       reader.skipField();
@@ -20681,6 +20716,13 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.serializeBinaryToWriter =
       15,
       f,
       proto.api.v1alpha1.integrations.Conditions.serializeBinaryToWriter
+    );
+  }
+  f = message.getRequestOrigin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      16,
+      f
     );
   }
 };
@@ -20993,6 +21035,24 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.clearConds = fu
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.hasConds = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional api.commons.integrations.RequestOrigin request_origin = 16;
+ * @return {!proto.api.commons.integrations.RequestOrigin}
+ */
+proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getRequestOrigin = function() {
+  return /** @type {!proto.api.commons.integrations.RequestOrigin} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.RequestOrigin} value
+ * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
+ */
+proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setRequestOrigin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 16, value);
 };
 
 
@@ -28406,7 +28466,8 @@ segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
 choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
 paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
 callSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-callType: jspb.Message.getFieldWithDefault(msg, 7, 0)
+callType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+requestOrigin: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -28472,6 +28533,10 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.deserializeBinaryFromReader =
     case 7:
       var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
       msg.setCallType(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
+      msg.setRequestOrigin(value);
       break;
     default:
       reader.skipField();
@@ -28545,6 +28610,13 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.serializeBinaryToWriter = fun
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getRequestOrigin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
       f
     );
   }
@@ -28679,6 +28751,24 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.getCallType = funct
  */
 proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.setCallType = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional api.commons.integrations.RequestOrigin request_origin = 8;
+ * @return {!proto.api.commons.integrations.RequestOrigin}
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.getRequestOrigin = function() {
+  return /** @type {!proto.api.commons.integrations.RequestOrigin} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.RequestOrigin} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessWorkflowReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.setRequestOrigin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
