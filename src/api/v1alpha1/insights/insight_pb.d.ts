@@ -955,6 +955,11 @@ export class ListOutputConfigurationsRequest extends jspb.Message {
   getInsightResourceId(): string;
   setInsightResourceId(value: string): void;
 
+  clearFilterList(): void;
+  getFilterList(): Array<OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap]>;
+  setFilterList(value: Array<OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap]>): void;
+  addFilter(value: OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap], index?: number): OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOutputConfigurationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOutputConfigurationsRequest): ListOutputConfigurationsRequest.AsObject;
@@ -968,6 +973,7 @@ export class ListOutputConfigurationsRequest extends jspb.Message {
 export namespace ListOutputConfigurationsRequest {
   export type AsObject = {
     insightResourceId: string,
+    filterList: Array<OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap]>,
   }
 }
 
