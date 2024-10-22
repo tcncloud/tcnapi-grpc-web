@@ -830,7 +830,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.insights.ListOutputConfigurationsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.insights.ListOutputConfigurationsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -7651,13 +7651,6 @@ proto.api.v1alpha1.insights.CreateOutputConfigurationResponse.prototype.hasOutpu
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -7689,8 +7682,7 @@ proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.toObject =
  */
 proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-insightResourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-filterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+insightResourceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -7731,12 +7723,6 @@ proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.deserializeBinaryFro
       var value = /** @type {string} */ (reader.readString());
       msg.setInsightResourceId(value);
       break;
-    case 2:
-      var values = /** @type {!Array<!proto.api.v1alpha1.insights.OutputConfigurationType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addFilter(values[i]);
-      }
-      break;
     default:
       reader.skipField();
       break;
@@ -7773,13 +7759,6 @@ proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.serializeBinaryToWri
       f
     );
   }
-  f = message.getFilterList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -7798,43 +7777,6 @@ proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.getInsight
  */
 proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.setInsightResourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * repeated OutputConfigurationType filter = 2;
- * @return {!Array<!proto.api.v1alpha1.insights.OutputConfigurationType>}
- */
-proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.getFilterList = function() {
-  return /** @type {!Array<!proto.api.v1alpha1.insights.OutputConfigurationType>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<!proto.api.v1alpha1.insights.OutputConfigurationType>} value
- * @return {!proto.api.v1alpha1.insights.ListOutputConfigurationsRequest} returns this
- */
-proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.setFilterList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.insights.OutputConfigurationType} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.insights.ListOutputConfigurationsRequest} returns this
- */
-proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.addFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.insights.ListOutputConfigurationsRequest} returns this
- */
-proto.api.v1alpha1.insights.ListOutputConfigurationsRequest.prototype.clearFilterList = function() {
-  return this.setFilterList([]);
 };
 
 
