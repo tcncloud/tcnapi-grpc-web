@@ -546,8 +546,8 @@ export class TableVisualization extends jspb.Message {
   getQuoteCharacter(): QuoteCharacterMap[keyof QuoteCharacterMap];
   setQuoteCharacter(value: QuoteCharacterMap[keyof QuoteCharacterMap]): void;
 
-  getIncludeHeader(): boolean;
-  setIncludeHeader(value: boolean): void;
+  getNoHeader(): boolean;
+  setNoHeader(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableVisualization.AsObject;
@@ -564,7 +564,7 @@ export namespace TableVisualization {
     tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
     delimiter: string,
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
-    includeHeader: boolean,
+    noHeader: boolean,
   }
 }
 

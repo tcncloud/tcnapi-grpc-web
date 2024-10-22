@@ -4769,7 +4769,7 @@ tableColumnDetailsList: jspb.Message.toObjectList(msg.getTableColumnDetailsList(
     proto.api.v1alpha1.insights.TableColumnConfig.toObject, includeInstance),
 delimiter: jspb.Message.getFieldWithDefault(msg, 2, ""),
 quoteCharacter: jspb.Message.getFieldWithDefault(msg, 3, 0),
-includeHeader: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -4821,7 +4821,7 @@ proto.api.v1alpha1.insights.TableVisualization.deserializeBinaryFromReader = fun
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeHeader(value);
+      msg.setNoHeader(value);
       break;
     default:
       reader.skipField();
@@ -4874,7 +4874,7 @@ proto.api.v1alpha1.insights.TableVisualization.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getIncludeHeader();
+  f = message.getNoHeader();
   if (f) {
     writer.writeBool(
       4,
@@ -4959,10 +4959,10 @@ proto.api.v1alpha1.insights.TableVisualization.prototype.setQuoteCharacter = fun
 
 
 /**
- * optional bool include_header = 4;
+ * optional bool no_header = 4;
  * @return {boolean}
  */
-proto.api.v1alpha1.insights.TableVisualization.prototype.getIncludeHeader = function() {
+proto.api.v1alpha1.insights.TableVisualization.prototype.getNoHeader = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -4971,7 +4971,7 @@ proto.api.v1alpha1.insights.TableVisualization.prototype.getIncludeHeader = func
  * @param {boolean} value
  * @return {!proto.api.v1alpha1.insights.TableVisualization} returns this
  */
-proto.api.v1alpha1.insights.TableVisualization.prototype.setIncludeHeader = function(value) {
+proto.api.v1alpha1.insights.TableVisualization.prototype.setNoHeader = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
