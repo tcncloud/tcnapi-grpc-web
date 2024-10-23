@@ -304,47 +304,55 @@ export namespace GetFileTemplateResponse {
   }
 }
 
-export class ParseFTSFileRequest extends jspb.Message {
+export class ParseLargeFileRequest extends jspb.Message {
+  hasFtsId(): boolean;
+  clearFtsId(): void;
   getFtsId(): string;
   setFtsId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
 
+  getFilePointerCase(): ParseLargeFileRequest.FilePointerCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ParseFTSFileRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ParseFTSFileRequest): ParseFTSFileRequest.AsObject;
+  toObject(includeInstance?: boolean): ParseLargeFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ParseLargeFileRequest): ParseLargeFileRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ParseFTSFileRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ParseFTSFileRequest;
-  static deserializeBinaryFromReader(message: ParseFTSFileRequest, reader: jspb.BinaryReader): ParseFTSFileRequest;
+  static serializeBinaryToWriter(message: ParseLargeFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParseLargeFileRequest;
+  static deserializeBinaryFromReader(message: ParseLargeFileRequest, reader: jspb.BinaryReader): ParseLargeFileRequest;
 }
 
-export namespace ParseFTSFileRequest {
+export namespace ParseLargeFileRequest {
   export type AsObject = {
     ftsId: string,
     name: string,
   }
+
+  export enum FilePointerCase {
+    FILE_POINTER_NOT_SET = 0,
+    FTS_ID = 1,
+  }
 }
 
-export class ParseFTSFileResponse extends jspb.Message {
+export class ParseLargeFileResponse extends jspb.Message {
   hasFileTemplate(): boolean;
   clearFileTemplate(): void;
   getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
   setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ParseFTSFileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ParseFTSFileResponse): ParseFTSFileResponse.AsObject;
+  toObject(includeInstance?: boolean): ParseLargeFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ParseLargeFileResponse): ParseLargeFileResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ParseFTSFileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ParseFTSFileResponse;
-  static deserializeBinaryFromReader(message: ParseFTSFileResponse, reader: jspb.BinaryReader): ParseFTSFileResponse;
+  static serializeBinaryToWriter(message: ParseLargeFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParseLargeFileResponse;
+  static deserializeBinaryFromReader(message: ParseLargeFileResponse, reader: jspb.BinaryReader): ParseLargeFileResponse;
 }
 
-export namespace ParseFTSFileResponse {
+export namespace ParseLargeFileResponse {
   export type AsObject = {
     fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
   }

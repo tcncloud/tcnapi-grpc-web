@@ -37,13 +37,13 @@ ClassifierFileTemplates.PeekList = {
   responseType: api_v1alpha1_classifier_service_pb.PeekListResponse
 };
 
-ClassifierFileTemplates.ParseFTSFile = {
-  methodName: "ParseFTSFile",
+ClassifierFileTemplates.ParseLargeFile = {
+  methodName: "ParseLargeFile",
   service: ClassifierFileTemplates,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_classifier_service_pb.ParseFTSFileRequest,
-  responseType: api_v1alpha1_classifier_service_pb.ParseFTSFileResponse
+  requestType: api_v1alpha1_classifier_service_pb.ParseLargeFileRequest,
+  responseType: api_v1alpha1_classifier_service_pb.ParseLargeFileResponse
 };
 
 ClassifierFileTemplates.UpdateFileTemplate = {
@@ -182,11 +182,11 @@ ClassifierFileTemplatesClient.prototype.peekList = function peekList(requestMess
   };
 };
 
-ClassifierFileTemplatesClient.prototype.parseFTSFile = function parseFTSFile(requestMessage, metadata, callback) {
+ClassifierFileTemplatesClient.prototype.parseLargeFile = function parseLargeFile(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ClassifierFileTemplates.ParseFTSFile, {
+  var client = grpc.unary(ClassifierFileTemplates.ParseLargeFile, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
