@@ -13,6 +13,33 @@ type ClassifierFileTemplatesParseFile = {
   readonly responseType: typeof api_v1alpha1_classifier_service_pb.ParseFileResponse;
 };
 
+type ClassifierFileTemplatesListEvents = {
+  readonly methodName: string;
+  readonly service: typeof ClassifierFileTemplates;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_classifier_service_pb.ListEventsRequest;
+  readonly responseType: typeof api_v1alpha1_classifier_service_pb.ListEventsResponse;
+};
+
+type ClassifierFileTemplatesPeekList = {
+  readonly methodName: string;
+  readonly service: typeof ClassifierFileTemplates;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_classifier_service_pb.PeekListRequest;
+  readonly responseType: typeof api_v1alpha1_classifier_service_pb.PeekListResponse;
+};
+
+type ClassifierFileTemplatesParseFTSFile = {
+  readonly methodName: string;
+  readonly service: typeof ClassifierFileTemplates;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_classifier_service_pb.ParseFTSFileRequest;
+  readonly responseType: typeof api_v1alpha1_classifier_service_pb.ParseFTSFileResponse;
+};
+
 type ClassifierFileTemplatesUpdateFileTemplate = {
   readonly methodName: string;
   readonly service: typeof ClassifierFileTemplates;
@@ -52,6 +79,9 @@ type ClassifierFileTemplatesGetFileTemplate = {
 export class ClassifierFileTemplates {
   static readonly serviceName: string;
   static readonly ParseFile: ClassifierFileTemplatesParseFile;
+  static readonly ListEvents: ClassifierFileTemplatesListEvents;
+  static readonly PeekList: ClassifierFileTemplatesPeekList;
+  static readonly ParseFTSFile: ClassifierFileTemplatesParseFTSFile;
   static readonly UpdateFileTemplate: ClassifierFileTemplatesUpdateFileTemplate;
   static readonly DeleteFileTemplate: ClassifierFileTemplatesDeleteFileTemplate;
   static readonly ListFileTemplates: ClassifierFileTemplatesListFileTemplates;
@@ -98,6 +128,33 @@ export class ClassifierFileTemplatesClient {
   parseFile(
     requestMessage: api_v1alpha1_classifier_service_pb.ParseFileRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ParseFileResponse|null) => void
+  ): UnaryResponse;
+  listEvents(
+    requestMessage: api_v1alpha1_classifier_service_pb.ListEventsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ListEventsResponse|null) => void
+  ): UnaryResponse;
+  listEvents(
+    requestMessage: api_v1alpha1_classifier_service_pb.ListEventsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ListEventsResponse|null) => void
+  ): UnaryResponse;
+  peekList(
+    requestMessage: api_v1alpha1_classifier_service_pb.PeekListRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.PeekListResponse|null) => void
+  ): UnaryResponse;
+  peekList(
+    requestMessage: api_v1alpha1_classifier_service_pb.PeekListRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.PeekListResponse|null) => void
+  ): UnaryResponse;
+  parseFTSFile(
+    requestMessage: api_v1alpha1_classifier_service_pb.ParseFTSFileRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ParseFTSFileResponse|null) => void
+  ): UnaryResponse;
+  parseFTSFile(
+    requestMessage: api_v1alpha1_classifier_service_pb.ParseFTSFileRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ParseFTSFileResponse|null) => void
   ): UnaryResponse;
   updateFileTemplate(
     requestMessage: api_v1alpha1_classifier_service_pb.UpdateFileTemplateRequest,
