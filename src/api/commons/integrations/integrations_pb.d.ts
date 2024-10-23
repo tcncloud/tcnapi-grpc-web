@@ -2141,6 +2141,11 @@ export class ExecuteFlow extends jspb.Message {
   getGenericRequest(): ExecuteGenericRequest | undefined;
   setGenericRequest(value?: ExecuteGenericRequest): void;
 
+  hasHealthpay24AccountsReceivable(): boolean;
+  clearHealthpay24AccountsReceivable(): void;
+  getHealthpay24AccountsReceivable(): ExecuteHealthpay24AccountsReceivable | undefined;
+  setHealthpay24AccountsReceivable(value?: ExecuteHealthpay24AccountsReceivable): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2436,6 +2441,7 @@ export namespace ExecuteFlow {
     debugValidate?: ExecuteDebugValidate.AsObject,
     acquiredProcessPayment?: ExecuteAcquiredProcessPayment.AsObject,
     genericRequest?: ExecuteGenericRequest.AsObject,
+    healthpay24AccountsReceivable?: ExecuteHealthpay24AccountsReceivable.AsObject,
   }
 
   export enum ValueCase {
@@ -2721,6 +2727,7 @@ export namespace ExecuteFlow {
     DEBUG_VALIDATE = 5002,
     ACQUIRED_PROCESS_PAYMENT = 5101,
     GENERIC_REQUEST = 5201,
+    HEALTHPAY24_ACCOUNTS_RECEIVABLE = 5301,
   }
 }
 
@@ -7837,6 +7844,22 @@ export namespace ExecuteGenericRequest {
   }
 }
 
+export class ExecuteHealthpay24AccountsReceivable extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteHealthpay24AccountsReceivable.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteHealthpay24AccountsReceivable): ExecuteHealthpay24AccountsReceivable.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteHealthpay24AccountsReceivable, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteHealthpay24AccountsReceivable;
+  static deserializeBinaryFromReader(message: ExecuteHealthpay24AccountsReceivable, reader: jspb.BinaryReader): ExecuteHealthpay24AccountsReceivable;
+}
+
+export namespace ExecuteHealthpay24AccountsReceivable {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7891,6 +7914,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_DEBUG: 5000;
   INTEGRATION_TYPE_ACQUIRED: 5100;
   INTEGRATION_TYPE_GENERIC: 5200;
+  INTEGRATION_TYPE_HEALTHPAY24: 5300;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8180,6 +8204,7 @@ export interface RequestMethodMap {
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
   REQUEST_METHOD_ACQUIRED_PROCESS_PAYMENT: 5101;
   REQUEST_METHOD_GENERIC_REQUEST: 5201;
+  REQUEST_METHOD_HEALTHPAY24_ACCOUNTS_RECEIVABLE: 5301;
 }
 
 export const RequestMethod: RequestMethodMap;
