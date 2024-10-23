@@ -8553,9 +8553,6 @@ export class PollBuildInProgressResponse extends jspb.Message {
   getBuildInProgress(): boolean;
   setBuildInProgress(value: boolean): void;
 
-  getPreviousBuildState(): boolean;
-  setPreviousBuildState(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PollBuildInProgressResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PollBuildInProgressResponse): PollBuildInProgressResponse.AsObject;
@@ -8570,7 +8567,6 @@ export namespace PollBuildInProgressResponse {
   export type AsObject = {
     buildStartDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     buildInProgress: boolean,
-    previousBuildState: boolean,
   }
 }
 
