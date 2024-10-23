@@ -638,6 +638,11 @@ export class AuditEvent extends jspb.Message {
   getContactManagerEntryDeleteEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
   setContactManagerEntryDeleteEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
 
+  hasContactManagerEntryExpungeEvent(): boolean;
+  clearContactManagerEntryExpungeEvent(): void;
+  getContactManagerEntryExpungeEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
+  setContactManagerEntryExpungeEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -777,6 +782,7 @@ export namespace AuditEvent {
     contactManagerListUploadEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent.AsObject,
     contactManagerKycVerificationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
     contactManagerEntryDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
+    contactManagerEntryExpungeEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
   }
 
   export enum EventCase {
@@ -901,6 +907,7 @@ export namespace AuditEvent {
     CONTACT_MANAGER_LIST_UPLOAD_EVENT = 1205,
     CONTACT_MANAGER_KYC_VERIFICATION_EVENT = 1206,
     CONTACT_MANAGER_ENTRY_DELETE_EVENT = 1207,
+    CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT = 1208,
   }
 }
 

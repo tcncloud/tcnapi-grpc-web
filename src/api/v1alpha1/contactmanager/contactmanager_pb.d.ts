@@ -60,6 +60,8 @@ export namespace GetContactListResponse {
 }
 
 export class ListContactEntryListRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): string;
   setContactManagerListId(value: string): void;
 
@@ -68,6 +70,12 @@ export class ListContactEntryListRequest extends jspb.Message {
 
   getProjectId(): string;
   setProjectId(value: string): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListRequest.AsObject;
@@ -84,6 +92,8 @@ export namespace ListContactEntryListRequest {
     contactManagerListId: string,
     orgId: string,
     projectId: string,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -92,6 +102,9 @@ export class ListContactEntryListResponse extends jspb.Message {
   getContactManagerEntryList(): Array<ContactManagerEntry>;
   setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
   addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
@@ -106,6 +119,7 @@ export class ListContactEntryListResponse extends jspb.Message {
 export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -376,6 +390,8 @@ export namespace ContactManagerEntryVal {
 }
 
 export class AddContactEntryRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): string;
   setContactManagerListId(value: string): void;
 
@@ -383,6 +399,14 @@ export class AddContactEntryRequest extends jspb.Message {
   getEntryList(): Array<Entry>;
   setEntryList(value: Array<Entry>): void;
   addEntry(value?: Entry, index?: number): Entry;
+
+  getProjectSid(): string;
+  setProjectSid(value: string): void;
+
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddContactEntryRequest.AsObject;
@@ -398,6 +422,8 @@ export namespace AddContactEntryRequest {
   export type AsObject = {
     contactManagerListId: string,
     entryList: Array<Entry.AsObject>,
+    projectSid: string,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -450,6 +476,8 @@ export namespace AddContactEntryResponse {
 }
 
 export class EditContactEntryRequest extends jspb.Message {
+  hasContactManagerListId(): boolean;
+  clearContactManagerListId(): void;
   getContactManagerListId(): number;
   setContactManagerListId(value: number): void;
 
@@ -460,6 +488,11 @@ export class EditContactEntryRequest extends jspb.Message {
   getEditedEntryList(): Array<EditedEntry>;
   setEditedEntryList(value: Array<EditedEntry>): void;
   addEditedEntry(value?: EditedEntry, index?: number): EditedEntry;
+
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditContactEntryRequest.AsObject;
@@ -476,6 +509,7 @@ export namespace EditContactEntryRequest {
     contactManagerListId: number,
     contactManagerEntryId: number,
     editedEntryList: Array<EditedEntry.AsObject>,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -511,7 +545,40 @@ export namespace EditedEntry {
   }
 }
 
+export class ContactField extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactField.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactField): ContactField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactField;
+  static deserializeBinaryFromReader(message: ContactField, reader: jspb.BinaryReader): ContactField;
+}
+
+export namespace ContactField {
+  export type AsObject = {
+    name: string,
+    value: string,
+    type: string,
+  }
+}
+
 export class EditContactEntryResponse extends jspb.Message {
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditContactEntryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EditContactEntryResponse): EditContactEntryResponse.AsObject;
@@ -524,6 +591,7 @@ export class EditContactEntryResponse extends jspb.Message {
 
 export namespace EditContactEntryResponse {
   export type AsObject = {
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
