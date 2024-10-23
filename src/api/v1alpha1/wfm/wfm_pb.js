@@ -71725,7 +71725,8 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.toObject = function
 proto.api.v1alpha1.wfm.PollBuildInProgressResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 buildStartDatetime: (f = msg.getBuildStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-buildInProgress: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+buildInProgress: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+previousBuildState: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -71771,6 +71772,10 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.deserializeBinaryFromReader =
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBuildInProgress(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPreviousBuildState(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -71812,6 +71817,13 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.serializeBinaryToWriter = fun
   if (f) {
     writer.writeBool(
       2,
+      f
+    );
+  }
+  f = message.getPreviousBuildState();
+  if (f) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -71870,6 +71882,24 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getBuildInProgress 
  */
 proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setBuildInProgress = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool previous_build_state = 3;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getPreviousBuildState = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setPreviousBuildState = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
