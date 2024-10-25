@@ -70899,7 +70899,8 @@ includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
 includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
 includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-autoGenerateAgents: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+autoGenerateAgents: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+schedulingTarget: (f = msg.getSchedulingTarget()) && proto.api.v1alpha1.wfm.SchedulingTarget.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -70977,6 +70978,11 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.deserializeBinaryFromReader = funct
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAutoGenerateAgents(value);
+      break;
+    case 11:
+      var value = new proto.api.v1alpha1.wfm.SchedulingTarget;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SchedulingTarget.deserializeBinaryFromReader);
+      msg.setSchedulingTarget(value);
       break;
     default:
       reader.skipField();
@@ -71077,6 +71083,14 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.serializeBinaryToWriter = function(
     writer.writeBool(
       10,
       f
+    );
+  }
+  f = message.getSchedulingTarget();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.api.v1alpha1.wfm.SchedulingTarget.serializeBinaryToWriter
     );
   }
 };
@@ -71297,6 +71311,43 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getAutoGenerateAgents = f
  */
 proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setAutoGenerateAgents = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * optional SchedulingTarget scheduling_target = 11;
+ * @return {?proto.api.v1alpha1.wfm.SchedulingTarget}
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getSchedulingTarget = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.SchedulingTarget} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SchedulingTarget, 11));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.SchedulingTarget|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleReq} returns this
+*/
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setSchedulingTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.clearSchedulingTarget = function() {
+  return this.setSchedulingTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.hasSchedulingTarget = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

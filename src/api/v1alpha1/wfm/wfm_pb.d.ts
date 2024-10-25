@@ -8465,6 +8465,11 @@ export class BuildDraftScheduleReq extends jspb.Message {
   getAutoGenerateAgents(): boolean;
   setAutoGenerateAgents(value: boolean): void;
 
+  hasSchedulingTarget(): boolean;
+  clearSchedulingTarget(): void;
+  getSchedulingTarget(): SchedulingTarget | undefined;
+  setSchedulingTarget(value?: SchedulingTarget): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildDraftScheduleReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildDraftScheduleReq): BuildDraftScheduleReq.AsObject;
@@ -8487,6 +8492,7 @@ export namespace BuildDraftScheduleReq {
     includeSchedulingActivity: boolean,
     includeActivity: boolean,
     autoGenerateAgents: boolean,
+    schedulingTarget?: SchedulingTarget.AsObject,
   }
 }
 
