@@ -1221,6 +1221,7 @@ export interface OutputConfigurationTypeMap {
   OUTPUT_CONFIGURATION_TYPE_MULTI_SERIES: 2;
   OUTPUT_CONFIGURATION_TYPE_PIE_CHART: 3;
   OUTPUT_CONFIGURATION_TYPE_FIXED_WIDTH: 4;
+  OUTPUT_CONFIGURATION_TYPE_TIMELINE: 5;
 }
 
 export const OutputConfigurationType: OutputConfigurationTypeMap;
