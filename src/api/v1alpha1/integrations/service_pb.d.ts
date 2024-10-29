@@ -3380,6 +3380,12 @@ export class PortalSegment extends jspb.Message {
   setWorkflowChoicesList(value: Array<PortalWorkflow>): void;
   addWorkflowChoices(value?: PortalWorkflow, index?: number): PortalWorkflow;
 
+  getHeaderText(): string;
+  setHeaderText(value: string): void;
+
+  getFooterText(): string;
+  setFooterText(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PortalSegment.AsObject;
   static toObject(includeInstance: boolean, msg: PortalSegment): PortalSegment.AsObject;
@@ -3393,6 +3399,8 @@ export class PortalSegment extends jspb.Message {
 export namespace PortalSegment {
   export type AsObject = {
     workflowChoicesList: Array<PortalWorkflow.AsObject>,
+    headerText: string,
+    footerText: string,
   }
 }
 

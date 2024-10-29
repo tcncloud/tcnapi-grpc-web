@@ -26842,7 +26842,9 @@ proto.api.v1alpha1.integrations.PortalSegment.prototype.toObject = function(opt_
 proto.api.v1alpha1.integrations.PortalSegment.toObject = function(includeInstance, msg) {
   var f, obj = {
 workflowChoicesList: jspb.Message.toObjectList(msg.getWorkflowChoicesList(),
-    proto.api.v1alpha1.integrations.PortalWorkflow.toObject, includeInstance)
+    proto.api.v1alpha1.integrations.PortalWorkflow.toObject, includeInstance),
+headerText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+footerText: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -26884,6 +26886,14 @@ proto.api.v1alpha1.integrations.PortalSegment.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.api.v1alpha1.integrations.PortalWorkflow.deserializeBinaryFromReader);
       msg.addWorkflowChoices(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHeaderText(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFooterText(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -26919,6 +26929,20 @@ proto.api.v1alpha1.integrations.PortalSegment.serializeBinaryToWriter = function
       1,
       f,
       proto.api.v1alpha1.integrations.PortalWorkflow.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeaderText();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getFooterText();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -26959,6 +26983,42 @@ proto.api.v1alpha1.integrations.PortalSegment.prototype.addWorkflowChoices = fun
  */
 proto.api.v1alpha1.integrations.PortalSegment.prototype.clearWorkflowChoicesList = function() {
   return this.setWorkflowChoicesList([]);
+};
+
+
+/**
+ * optional string header_text = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrations.PortalSegment.prototype.getHeaderText = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrations.PortalSegment} returns this
+ */
+proto.api.v1alpha1.integrations.PortalSegment.prototype.setHeaderText = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string footer_text = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrations.PortalSegment.prototype.getFooterText = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrations.PortalSegment} returns this
+ */
+proto.api.v1alpha1.integrations.PortalSegment.prototype.setFooterText = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
