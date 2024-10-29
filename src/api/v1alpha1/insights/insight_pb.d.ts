@@ -37,9 +37,6 @@ export class Insight extends jspb.Message {
   getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
   setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
 
-  getDatasourceName(): string;
-  setDatasourceName(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -62,7 +59,6 @@ export namespace Insight {
     resourceId: string,
     standardInsight: boolean,
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
-    datasourceName: string,
   }
 }
 
