@@ -13192,7 +13192,8 @@ sentTo: jspb.Message.getFieldWithDefault(msg, 4, ""),
 messageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
 attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-userId: jspb.Message.getFieldWithDefault(msg, 8, "")
+userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+messageType: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -13260,6 +13261,10 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinaryFromReader 
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 9:
+      var value = /** @type {!proto.api.commons.OmniMessageType} */ (reader.readEnum());
+      msg.setMessageType(value);
       break;
     default:
       reader.skipField();
@@ -13343,6 +13348,13 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getMessageType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      9,
       f
     );
   }
@@ -13493,6 +13505,24 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setUserId = functi
 };
 
 
+/**
+ * optional api.commons.OmniMessageType message_type = 9;
+ * @return {!proto.api.commons.OmniMessageType}
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getMessageType = function() {
+  return /** @type {!proto.api.commons.OmniMessageType} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OmniMessageType} value
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setMessageType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 9, value);
+};
+
+
 
 
 
@@ -13533,7 +13563,8 @@ messageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
 attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-providerMessageCount: jspb.Message.getFieldWithDefault(msg, 9, 0)
+providerMessageCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
+messageType: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -13605,6 +13636,10 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.deserializeBinaryFromRe
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setProviderMessageCount(value);
+      break;
+    case 10:
+      var value = /** @type {!proto.api.commons.OmniMessageType} */ (reader.readEnum());
+      msg.setMessageType(value);
       break;
     default:
       reader.skipField();
@@ -13695,6 +13730,13 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.serializeBinaryToWriter
   if (f !== 0) {
     writer.writeInt64(
       9,
+      f
+    );
+  }
+  f = message.getMessageType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      10,
       f
     );
   }
@@ -13860,6 +13902,24 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.getProviderMe
  */
 proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.setProviderMessageCount = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional api.commons.OmniMessageType message_type = 10;
+ * @return {!proto.api.commons.OmniMessageType}
+ */
+proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.getMessageType = function() {
+  return /** @type {!proto.api.commons.OmniMessageType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OmniMessageType} value
+ * @return {!proto.api.commons.audit.OmnichannelProviderResponseEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.setMessageType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 

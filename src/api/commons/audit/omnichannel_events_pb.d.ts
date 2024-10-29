@@ -1702,6 +1702,9 @@ export class OmnichannelMessageSentEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
+  setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelMessageSentEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelMessageSentEvent): OmnichannelMessageSentEvent.AsObject;
@@ -1722,6 +1725,7 @@ export namespace OmnichannelMessageSentEvent {
     attachmentSize: number,
     senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
     userId: string,
+    messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
   }
 }
 
@@ -1753,6 +1757,9 @@ export class OmnichannelProviderResponseEvent extends jspb.Message {
   getProviderMessageCount(): number;
   setProviderMessageCount(value: number): void;
 
+  getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
+  setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelProviderResponseEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelProviderResponseEvent): OmnichannelProviderResponseEvent.AsObject;
@@ -1774,6 +1781,7 @@ export namespace OmnichannelProviderResponseEvent {
     senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
     userId: string,
     providerMessageCount: number,
+    messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
   }
 }
 
