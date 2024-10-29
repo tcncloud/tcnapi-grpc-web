@@ -1113,7 +1113,8 @@ body: jspb.Message.getFieldWithDefault(msg, 7, ""),
 insightPermissionType: jspb.Message.getFieldWithDefault(msg, 8, 0),
 resourceId: jspb.Message.getFieldWithDefault(msg, 9, ""),
 standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-datasourceType: jspb.Message.getFieldWithDefault(msg, 11, 0)
+datasourceType: jspb.Message.getFieldWithDefault(msg, 11, 0),
+datasourceName: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -1189,6 +1190,10 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
     case 11:
       var value = /** @type {!proto.api.v1alpha1.explorer.DatasourceType} */ (reader.readEnum());
       msg.setDatasourceType(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasourceName(value);
       break;
     default:
       reader.skipField();
@@ -1286,6 +1291,13 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getDatasourceName();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -1469,6 +1481,24 @@ proto.api.v1alpha1.insights.Insight.prototype.getDatasourceType = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.setDatasourceType = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional string datasource_name = 12;
+ * @return {string}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getDatasourceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.setDatasourceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
