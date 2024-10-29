@@ -3122,9 +3122,6 @@ export class ListHuntGroupWebLinksReq extends jspb.Message {
   getIsinitialpreview(): boolean;
   setIsinitialpreview(value: boolean): void;
 
-  getTaskSid(): number;
-  setTaskSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListHuntGroupWebLinksReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListHuntGroupWebLinksReq): ListHuntGroupWebLinksReq.AsObject;
@@ -3144,7 +3141,6 @@ export namespace ListHuntGroupWebLinksReq {
     scheduledCallbackId: string,
     sessionSid: number,
     isinitialpreview: boolean,
-    taskSid: number,
   }
 }
 

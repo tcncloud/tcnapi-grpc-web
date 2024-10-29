@@ -28082,8 +28082,7 @@ callType: jspb.Message.getFieldWithDefault(msg, 5, 0),
 serviceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
 scheduledCallbackId: jspb.Message.getFieldWithDefault(msg, 8, ""),
 sessionSid: jspb.Message.getFieldWithDefault(msg, 9, 0),
-isinitialpreview: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-taskSid: jspb.Message.getFieldWithDefault(msg, 11, 0)
+isinitialpreview: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -28147,10 +28146,6 @@ proto.api.v0alpha.ListHuntGroupWebLinksReq.deserializeBinaryFromReader = functio
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsinitialpreview(value);
-      break;
-    case 11:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTaskSid(value);
       break;
     default:
       reader.skipField();
@@ -28227,13 +28222,6 @@ proto.api.v0alpha.ListHuntGroupWebLinksReq.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       10,
-      f
-    );
-  }
-  f = message.getTaskSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      11,
       f
     );
   }
@@ -28363,24 +28351,6 @@ proto.api.v0alpha.ListHuntGroupWebLinksReq.prototype.getIsinitialpreview = funct
  */
 proto.api.v0alpha.ListHuntGroupWebLinksReq.prototype.setIsinitialpreview = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
-};
-
-
-/**
- * optional int64 task_sid = 11;
- * @return {number}
- */
-proto.api.v0alpha.ListHuntGroupWebLinksReq.prototype.getTaskSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v0alpha.ListHuntGroupWebLinksReq} returns this
- */
-proto.api.v0alpha.ListHuntGroupWebLinksReq.prototype.setTaskSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
