@@ -98,6 +98,7 @@ goog.exportSymbol('proto.api.commons.OmniMessage', null, global);
 goog.exportSymbol('proto.api.commons.OmniMessagePayload', null, global);
 goog.exportSymbol('proto.api.commons.OmniMessagePayload.PayloadCase', null, global);
 goog.exportSymbol('proto.api.commons.OmniMessageStatus', null, global);
+goog.exportSymbol('proto.api.commons.OmniMessageType', null, global);
 goog.exportSymbol('proto.api.commons.OmniOffLoadedTextMessage', null, global);
 goog.exportSymbol('proto.api.commons.OmniProjectComplianceConfig', null, global);
 goog.exportSymbol('proto.api.commons.OmniQueueInformation', null, global);
@@ -22494,6 +22495,29 @@ proto.api.commons.CampaignDirection = {
 proto.api.commons.WhatsAppNumberProvider = {
   UNKNOWN_WHATSAPP_PROVIDER: 0,
   WHATSAPP_SMS_PROVIDER: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.OmniMessageType = {
+  OMNI_MESSAGE_TYPE_TEXT_MESSAGE: 0,
+  OMNI_MESSAGE_TYPE_TYPING_NOTIFICATION: 1,
+  OMNI_MESSAGE_TYPE_REASSIGNMENT_NOTIFICATION: 2,
+  OMNI_MESSAGE_TYPE_ASSIGN_CONVERSATION: 3,
+  OMNI_MESSAGE_TYPE_UNASSIGN_CONVERSATION: 4,
+  OMNI_MESSAGE_TYPE_ATTACHMENT: 5,
+  OMNI_MESSAGE_TYPE_ATTACHMENT_UPLOAD_URL: 6,
+  OMNI_MESSAGE_TYPE_REQUEST_ATTACHMENT_UPLOAD_URL: 7,
+  OMNI_MESSAGE_TYPE_CLOSE_CONVERSATION: 8,
+  OMNI_MESSAGE_TYPE_START_WRAP_UP: 9,
+  OMNI_MESSAGE_TYPE_FINISH_WRAP_UP: 10,
+  OMNI_MESSAGE_TYPE_UNKNOWN: 11,
+  OMNI_MESSAGE_TYPE_SUSPEND: 12,
+  OMNI_MESSAGE_TYPE_QUEUE_INFORMATION: 13,
+  OMNI_MESSAGE_TYPE_REQUEST_QUEUE_INFORMATION: 14,
+  OMNI_MESSAGE_TYPE_OFFLOADED_TEXT_MESSAGE: 15,
+  OMNI_MESSAGE_TYPE_CANNED_MESSAGE: 16
 };
 
 goog.object.extend(exports, proto.api.commons);
