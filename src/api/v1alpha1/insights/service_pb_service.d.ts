@@ -23,7 +23,7 @@ type InsightsListInsights = {
   readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListInsightsResponse;
 };
 
-type InsightsListInsightsStreamed = {
+type InsightsListInsightsStream = {
   readonly methodName: string;
   readonly service: typeof Insights;
   readonly requestStream: false;
@@ -198,7 +198,7 @@ export class Insights {
   static readonly serviceName: string;
   static readonly CreateInsight: InsightsCreateInsight;
   static readonly ListInsights: InsightsListInsights;
-  static readonly ListInsightsStreamed: InsightsListInsightsStreamed;
+  static readonly ListInsightsStream: InsightsListInsightsStream;
   static readonly ListOrgInsights: InsightsListOrgInsights;
   static readonly UpdateInsight: InsightsUpdateInsight;
   static readonly DeleteInsight: InsightsDeleteInsight;
@@ -269,7 +269,7 @@ export class InsightsClient {
     requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListInsightsResponse|null) => void
   ): UnaryResponse;
-  listInsightsStreamed(requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListInsightsResponse>;
+  listInsightsStream(requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListInsightsResponse>;
   listOrgInsights(
     requestMessage: api_v1alpha1_insights_insight_pb.ListOrgInsightsRequest,
     metadata: grpc.Metadata,

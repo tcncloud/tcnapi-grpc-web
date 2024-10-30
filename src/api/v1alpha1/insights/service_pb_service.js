@@ -29,8 +29,8 @@ Insights.ListInsights = {
   responseType: api_v1alpha1_insights_insight_pb.ListInsightsResponse
 };
 
-Insights.ListInsightsStreamed = {
-  methodName: "ListInsightsStreamed",
+Insights.ListInsightsStream = {
+  methodName: "ListInsightsStream",
   service: Insights,
   requestStream: false,
   responseStream: true,
@@ -269,13 +269,13 @@ InsightsClient.prototype.listInsights = function listInsights(requestMessage, me
   };
 };
 
-InsightsClient.prototype.listInsightsStreamed = function listInsightsStreamed(requestMessage, metadata) {
+InsightsClient.prototype.listInsightsStream = function listInsightsStream(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(Insights.ListInsightsStreamed, {
+  var client = grpc.invoke(Insights.ListInsightsStream, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
