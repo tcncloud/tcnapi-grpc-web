@@ -24603,7 +24603,8 @@ cjsCollectionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 enabled: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 cron: jspb.Message.getFieldWithDefault(msg, 6, ""),
 timezone: jspb.Message.getFieldWithDefault(msg, 7, ""),
-dedup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+dedup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+useZeroValues: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -24659,6 +24660,10 @@ proto.api.v0alpha.CjsImportProcess.deserializeBinaryFromReader = function(msg, r
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDedup(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseZeroValues(value);
       break;
     default:
       reader.skipField();
@@ -24721,6 +24726,13 @@ proto.api.v0alpha.CjsImportProcess.serializeBinaryToWriter = function(message, w
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getUseZeroValues();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -24814,6 +24826,24 @@ proto.api.v0alpha.CjsImportProcess.prototype.getDedup = function() {
  */
 proto.api.v0alpha.CjsImportProcess.prototype.setDedup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional bool use_zero_values = 9;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CjsImportProcess.prototype.getUseZeroValues = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CjsImportProcess} returns this
+ */
+proto.api.v0alpha.CjsImportProcess.prototype.setUseZeroValues = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -25186,7 +25216,8 @@ enrichType: jspb.Message.getFieldWithDefault(msg, 5, 0),
 primarySource: jspb.Message.getFieldWithDefault(msg, 6, 0),
 cjsKeyFieldName: jspb.Message.getFieldWithDefault(msg, 7, ""),
 columnOverwrite: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-dedupKeyPolicy: jspb.Message.getFieldWithDefault(msg, 9, 0)
+dedupKeyPolicy: jspb.Message.getFieldWithDefault(msg, 9, 0),
+useZeroValues: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -25250,6 +25281,10 @@ proto.api.v0alpha.CjsEnrichmentProcess.deserializeBinaryFromReader = function(ms
     case 9:
       var value = /** @type {!proto.api.commons.DedupKeyPolicy} */ (reader.readEnum());
       msg.setDedupKeyPolicy(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseZeroValues(value);
       break;
     default:
       reader.skipField();
@@ -25326,6 +25361,13 @@ proto.api.v0alpha.CjsEnrichmentProcess.serializeBinaryToWriter = function(messag
   if (f !== 0.0) {
     writer.writeEnum(
       9,
+      f
+    );
+  }
+  f = message.getUseZeroValues();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -25455,6 +25497,24 @@ proto.api.v0alpha.CjsEnrichmentProcess.prototype.getDedupKeyPolicy = function() 
  */
 proto.api.v0alpha.CjsEnrichmentProcess.prototype.setDedupKeyPolicy = function(value) {
   return jspb.Message.setProto3EnumField(this, 9, value);
+};
+
+
+/**
+ * optional bool use_zero_values = 10;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CjsEnrichmentProcess.prototype.getUseZeroValues = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CjsEnrichmentProcess} returns this
+ */
+proto.api.v0alpha.CjsEnrichmentProcess.prototype.setUseZeroValues = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
