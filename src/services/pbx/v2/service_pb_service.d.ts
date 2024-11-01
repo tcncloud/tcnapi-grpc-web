@@ -49,15 +49,6 @@ type PBXServiceGetSIPAccount = {
   readonly responseType: typeof services_pbx_v2_service_pb.GetSIPAccountResponse;
 };
 
-type PBXServiceGetSIPAccountByUserId = {
-  readonly methodName: string;
-  readonly service: typeof PBXService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_pbx_v2_service_pb.GetSIPAccountByUserIdRequest;
-  readonly responseType: typeof services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse;
-};
-
 type PBXServiceListSIPAccounts = {
   readonly methodName: string;
   readonly service: typeof PBXService;
@@ -119,7 +110,6 @@ export class PBXService {
   static readonly ListRingGroups: PBXServiceListRingGroups;
   static readonly GetRingGroup: PBXServiceGetRingGroup;
   static readonly GetSIPAccount: PBXServiceGetSIPAccount;
-  static readonly GetSIPAccountByUserId: PBXServiceGetSIPAccountByUserId;
   static readonly ListSIPAccounts: PBXServiceListSIPAccounts;
   static readonly UpdateSIPAccount: PBXServiceUpdateSIPAccount;
   static readonly UpdateRingGroup: PBXServiceUpdateRingGroup;
@@ -204,15 +194,6 @@ export class PBXServiceClient {
   getSIPAccount(
     requestMessage: services_pbx_v2_service_pb.GetSIPAccountRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountResponse|null) => void
-  ): UnaryResponse;
-  getSIPAccountByUserId(
-    requestMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse|null) => void
-  ): UnaryResponse;
-  getSIPAccountByUserId(
-    requestMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdRequest,
-    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse|null) => void
   ): UnaryResponse;
   listSIPAccounts(
     requestMessage: services_pbx_v2_service_pb.ListSIPAccountsRequest,

@@ -192,48 +192,6 @@ export namespace ListSIPAccountsResponse {
   }
 }
 
-export class GetSIPAccountByUserIdRequest extends jspb.Message {
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSIPAccountByUserIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSIPAccountByUserIdRequest): GetSIPAccountByUserIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSIPAccountByUserIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSIPAccountByUserIdRequest;
-  static deserializeBinaryFromReader(message: GetSIPAccountByUserIdRequest, reader: jspb.BinaryReader): GetSIPAccountByUserIdRequest;
-}
-
-export namespace GetSIPAccountByUserIdRequest {
-  export type AsObject = {
-    userId: string,
-  }
-}
-
-export class GetSIPAccountByUserIdResponse extends jspb.Message {
-  hasSipAccount(): boolean;
-  clearSipAccount(): void;
-  getSipAccount(): SIPAccount | undefined;
-  setSipAccount(value?: SIPAccount): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSIPAccountByUserIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSIPAccountByUserIdResponse): GetSIPAccountByUserIdResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSIPAccountByUserIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSIPAccountByUserIdResponse;
-  static deserializeBinaryFromReader(message: GetSIPAccountByUserIdResponse, reader: jspb.BinaryReader): GetSIPAccountByUserIdResponse;
-}
-
-export namespace GetSIPAccountByUserIdResponse {
-  export type AsObject = {
-    sipAccount?: SIPAccount.AsObject,
-  }
-}
-
 export class GetSIPAccountRequest extends jspb.Message {
   getSipAccountId(): string;
   setSipAccountId(value: string): void;

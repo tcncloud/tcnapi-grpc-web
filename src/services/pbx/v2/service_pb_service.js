@@ -55,15 +55,6 @@ PBXService.GetSIPAccount = {
   responseType: services_pbx_v2_service_pb.GetSIPAccountResponse
 };
 
-PBXService.GetSIPAccountByUserId = {
-  methodName: "GetSIPAccountByUserId",
-  service: PBXService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_pbx_v2_service_pb.GetSIPAccountByUserIdRequest,
-  responseType: services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse
-};
-
 PBXService.ListSIPAccounts = {
   methodName: "ListSIPAccounts",
   service: PBXService,
@@ -254,37 +245,6 @@ PBXServiceClient.prototype.getSIPAccount = function getSIPAccount(requestMessage
     callback = arguments[1];
   }
   var client = grpc.unary(PBXService.GetSIPAccount, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-PBXServiceClient.prototype.getSIPAccountByUserId = function getSIPAccountByUserId(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(PBXService.GetSIPAccountByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
