@@ -39848,6 +39848,7 @@ proto.api.v0alpha.ReshapeAction.toObject = function(includeInstance, msg) {
 field: jspb.Message.getFieldWithDefault(msg, 19, ""),
 matchingType: jspb.Message.getFieldWithDefault(msg, 20, 0),
 predicate: (f = msg.getPredicate()) && proto.api.v0alpha.FilterCheck.toObject(includeInstance, f),
+operations: (f = msg.getOperations()) && proto.api.v0alpha.FilterOperation.toObject(includeInstance, f),
 rename: (f = msg.getRename()) && proto.api.v0alpha.ReshapeAction.Rename.toObject(includeInstance, f),
 addValue: (f = msg.getAddValue()) && proto.api.v0alpha.ReshapeAction.AddValue.toObject(includeInstance, f),
 addField: (f = msg.getAddField()) && proto.api.v0alpha.ReshapeAction.AddField.toObject(includeInstance, f),
@@ -39916,6 +39917,11 @@ proto.api.v0alpha.ReshapeAction.deserializeBinaryFromReader = function(msg, read
       var value = new proto.api.v0alpha.FilterCheck;
       reader.readMessage(value,proto.api.v0alpha.FilterCheck.deserializeBinaryFromReader);
       msg.setPredicate(value);
+      break;
+    case 55:
+      var value = new proto.api.v0alpha.FilterOperation;
+      reader.readMessage(value,proto.api.v0alpha.FilterOperation.deserializeBinaryFromReader);
+      msg.setOperations(value);
       break;
     case 22:
       var value = new proto.api.v0alpha.ReshapeAction.Rename;
@@ -40066,6 +40072,14 @@ proto.api.v0alpha.ReshapeAction.serializeBinaryToWriter = function(message, writ
       50,
       f,
       proto.api.v0alpha.FilterCheck.serializeBinaryToWriter
+    );
+  }
+  f = message.getOperations();
+  if (f != null) {
+    writer.writeMessage(
+      55,
+      f,
+      proto.api.v0alpha.FilterOperation.serializeBinaryToWriter
     );
   }
   f = message.getRename();
@@ -44253,6 +44267,43 @@ proto.api.v0alpha.ReshapeAction.prototype.clearPredicate = function() {
  */
 proto.api.v0alpha.ReshapeAction.prototype.hasPredicate = function() {
   return jspb.Message.getField(this, 50) != null;
+};
+
+
+/**
+ * optional FilterOperation operations = 55;
+ * @return {?proto.api.v0alpha.FilterOperation}
+ */
+proto.api.v0alpha.ReshapeAction.prototype.getOperations = function() {
+  return /** @type{?proto.api.v0alpha.FilterOperation} */ (
+    jspb.Message.getWrapperField(this, proto.api.v0alpha.FilterOperation, 55));
+};
+
+
+/**
+ * @param {?proto.api.v0alpha.FilterOperation|undefined} value
+ * @return {!proto.api.v0alpha.ReshapeAction} returns this
+*/
+proto.api.v0alpha.ReshapeAction.prototype.setOperations = function(value) {
+  return jspb.Message.setWrapperField(this, 55, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ReshapeAction} returns this
+ */
+proto.api.v0alpha.ReshapeAction.prototype.clearOperations = function() {
+  return this.setOperations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ReshapeAction.prototype.hasOperations = function() {
+  return jspb.Message.getField(this, 55) != null;
 };
 
 

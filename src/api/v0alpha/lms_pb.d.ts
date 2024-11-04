@@ -4951,6 +4951,11 @@ export class ReshapeAction extends jspb.Message {
   getPredicate(): FilterCheck | undefined;
   setPredicate(value?: FilterCheck): void;
 
+  hasOperations(): boolean;
+  clearOperations(): void;
+  getOperations(): FilterOperation | undefined;
+  setOperations(value?: FilterOperation): void;
+
   hasRename(): boolean;
   clearRename(): void;
   getRename(): ReshapeAction.Rename | undefined;
@@ -5067,6 +5072,7 @@ export namespace ReshapeAction {
     field: string,
     matchingType: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap],
     predicate?: FilterCheck.AsObject,
+    operations?: FilterOperation.AsObject,
     rename?: ReshapeAction.Rename.AsObject,
     addValue?: ReshapeAction.AddValue.AsObject,
     addField?: ReshapeAction.AddField.AsObject,
