@@ -348,6 +348,15 @@ type ScorecardsSampleCallsByCategory = {
   readonly responseType: typeof api_v1alpha1_scorecards_category_pb.SampleCallsByCategoryResponse;
 };
 
+type ScorecardsSampleAgentConversations = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsResponse;
+};
+
 type ScorecardsCreateAutoQuestion = {
   readonly methodName: string;
   readonly service: typeof Scorecards;
@@ -531,6 +540,7 @@ export class Scorecards {
   static readonly UpdateEvaluationQuestion: ScorecardsUpdateEvaluationQuestion;
   static readonly DeleteEvaluationQuestion: ScorecardsDeleteEvaluationQuestion;
   static readonly SampleCallsByCategory: ScorecardsSampleCallsByCategory;
+  static readonly SampleAgentConversations: ScorecardsSampleAgentConversations;
   static readonly CreateAutoQuestion: ScorecardsCreateAutoQuestion;
   static readonly UpdateAutoQuestion: ScorecardsUpdateAutoQuestion;
   static readonly DeleteAutoQuestion: ScorecardsDeleteAutoQuestion;
@@ -913,6 +923,15 @@ export class ScorecardsClient {
   sampleCallsByCategory(
     requestMessage: api_v1alpha1_scorecards_category_pb.SampleCallsByCategoryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_category_pb.SampleCallsByCategoryResponse|null) => void
+  ): UnaryResponse;
+  sampleAgentConversations(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsResponse|null) => void
+  ): UnaryResponse;
+  sampleAgentConversations(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.SampleAgentConversationsResponse|null) => void
   ): UnaryResponse;
   createAutoQuestion(
     requestMessage: api_v1alpha1_scorecards_auto_question_pb.CreateAutoQuestionRequest,

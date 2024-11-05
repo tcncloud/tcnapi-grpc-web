@@ -2,8 +2,12 @@
 // file: api/v1alpha1/scorecards/evaluation.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
+import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateEvaluationRequest extends jspb.Message {
   hasEvaluation(): boolean;
@@ -552,6 +556,193 @@ export class RestoreEvaluationResponse extends jspb.Message {
 export namespace RestoreEvaluationResponse {
   export type AsObject = {
     evaluation?: api_commons_scorecards_pb.Evaluation.AsObject,
+  }
+}
+
+export class SampleAgentConversationsRequest extends jspb.Message {
+  getScorecardId(): number;
+  setScorecardId(value: number): void;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTime(): boolean;
+  clearEndTime(): void;
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getMaxAgentEvaluations(): number;
+  setMaxAgentEvaluations(value: number): void;
+
+  getSamplePercentage(): number;
+  setSamplePercentage(value: number): void;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SampleAgentConversationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SampleAgentConversationsRequest): SampleAgentConversationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SampleAgentConversationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SampleAgentConversationsRequest;
+  static deserializeBinaryFromReader(message: SampleAgentConversationsRequest, reader: jspb.BinaryReader): SampleAgentConversationsRequest;
+}
+
+export namespace SampleAgentConversationsRequest {
+  export type AsObject = {
+    scorecardId: number,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    maxAgentEvaluations: number,
+    samplePercentage: number,
+    agentUserIdsList: Array<string>,
+  }
+}
+
+export class SampleAgentConversationsResponse extends jspb.Message {
+  clearAgentConversationsList(): void;
+  getAgentConversationsList(): Array<AgentConversation>;
+  setAgentConversationsList(value: Array<AgentConversation>): void;
+  addAgentConversations(value?: AgentConversation, index?: number): AgentConversation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SampleAgentConversationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SampleAgentConversationsResponse): SampleAgentConversationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SampleAgentConversationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SampleAgentConversationsResponse;
+  static deserializeBinaryFromReader(message: SampleAgentConversationsResponse, reader: jspb.BinaryReader): SampleAgentConversationsResponse;
+}
+
+export namespace SampleAgentConversationsResponse {
+  export type AsObject = {
+    agentConversationsList: Array<AgentConversation.AsObject>,
+  }
+}
+
+export class AgentConversation extends jspb.Message {
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  getChannel(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+  setChannel(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
+
+  getAgentUserId(): string;
+  setAgentUserId(value: string): void;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasCallMetadata(): boolean;
+  clearCallMetadata(): void;
+  getCallMetadata(): AgentConversation.CallMetadata | undefined;
+  setCallMetadata(value?: AgentConversation.CallMetadata): void;
+
+  hasSmsMetadata(): boolean;
+  clearSmsMetadata(): void;
+  getSmsMetadata(): AgentConversation.SmsMetadata | undefined;
+  setSmsMetadata(value?: AgentConversation.SmsMetadata): void;
+
+  getMetadataCase(): AgentConversation.MetadataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentConversation.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentConversation): AgentConversation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentConversation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentConversation;
+  static deserializeBinaryFromReader(message: AgentConversation, reader: jspb.BinaryReader): AgentConversation;
+}
+
+export namespace AgentConversation {
+  export type AsObject = {
+    transcriptSid: number,
+    channel: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    agentUserId: string,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    callMetadata?: AgentConversation.CallMetadata.AsObject,
+    smsMetadata?: AgentConversation.SmsMetadata.AsObject,
+  }
+
+  export class CallMetadata extends jspb.Message {
+    getCallSid(): number;
+    setCallSid(value: number): void;
+
+    getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+    hasCallDuration(): boolean;
+    clearCallDuration(): void;
+    getCallDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setCallDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasSpeechDuration(): boolean;
+    clearSpeechDuration(): void;
+    getSpeechDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setSpeechDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasSilenceDuration(): boolean;
+    clearSilenceDuration(): void;
+    getSilenceDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setSilenceDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallMetadata.AsObject;
+    static toObject(includeInstance: boolean, msg: CallMetadata): CallMetadata.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallMetadata, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallMetadata;
+    static deserializeBinaryFromReader(message: CallMetadata, reader: jspb.BinaryReader): CallMetadata;
+  }
+
+  export namespace CallMetadata {
+    export type AsObject = {
+      callSid: number,
+      callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+      callDuration?: google_protobuf_duration_pb.Duration.AsObject,
+      speechDuration?: google_protobuf_duration_pb.Duration.AsObject,
+      silenceDuration?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class SmsMetadata extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    getCampaignSid(): number;
+    setCampaignSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SmsMetadata.AsObject;
+    static toObject(includeInstance: boolean, msg: SmsMetadata): SmsMetadata.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SmsMetadata, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SmsMetadata;
+    static deserializeBinaryFromReader(message: SmsMetadata, reader: jspb.BinaryReader): SmsMetadata;
+  }
+
+  export namespace SmsMetadata {
+    export type AsObject = {
+      conversationSid: number,
+      campaignSid: number,
+    }
+  }
+
+  export enum MetadataCase {
+    METADATA_NOT_SET = 0,
+    CALL_METADATA = 10,
+    SMS_METADATA = 11,
   }
 }
 

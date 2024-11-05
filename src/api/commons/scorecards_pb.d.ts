@@ -1369,6 +1369,7 @@ export interface CategoryTypeMap {
   INVALID: 0;
   SKILL_CALLS: 1;
   MANUAL_DIAL: 2;
+  SKILL_GROUPS: 3;
 }
 
 export const CategoryType: CategoryTypeMap;
