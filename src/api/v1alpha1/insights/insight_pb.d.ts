@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_insights_pb from "../../../api/commons/insights_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class Insight extends jspb.Message {
   getInsightId(): string;
@@ -40,6 +41,16 @@ export class Insight extends jspb.Message {
   getDatasourceName(): string;
   setDatasourceName(value: string): void;
 
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -63,6 +74,8 @@ export namespace Insight {
     standardInsight: boolean,
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
     datasourceName: string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -175,6 +188,28 @@ export class ListInsightsRequest extends jspb.Message {
 export namespace ListInsightsRequest {
   export type AsObject = {
     insightPermissionTypesList: Array<api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap]>,
+  }
+}
+
+export class ListInsightsStreamResponse extends jspb.Message {
+  hasInsights(): boolean;
+  clearInsights(): void;
+  getInsights(): Insight | undefined;
+  setInsights(value?: Insight): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInsightsStreamResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInsightsStreamResponse): ListInsightsStreamResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListInsightsStreamResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInsightsStreamResponse;
+  static deserializeBinaryFromReader(message: ListInsightsStreamResponse, reader: jspb.BinaryReader): ListInsightsStreamResponse;
+}
+
+export namespace ListInsightsStreamResponse {
+  export type AsObject = {
+    insights?: Insight.AsObject,
   }
 }
 
@@ -894,6 +929,16 @@ export class OutputConfiguration extends jspb.Message {
   getTableVisualization(): TableVisualization | undefined;
   setTableVisualization(value?: TableVisualization): void;
 
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getBodyCase(): OutputConfiguration.BodyCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OutputConfiguration.AsObject;
@@ -914,6 +959,8 @@ export namespace OutputConfiguration {
     isDefault: boolean,
     blob: string,
     tableVisualization?: TableVisualization.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
   export enum BodyCase {
