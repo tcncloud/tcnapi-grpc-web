@@ -10658,8 +10658,7 @@ proto.api.commons.SmartEvaluationQuestion.prototype.hasDeleteTime = function() {
 proto.api.commons.CategoryType = {
   INVALID: 0,
   SKILL_CALLS: 1,
-  MANUAL_DIAL: 2,
-  SKILL_GROUPS: 3
+  MANUAL_DIAL: 2
 };
 
 /**
