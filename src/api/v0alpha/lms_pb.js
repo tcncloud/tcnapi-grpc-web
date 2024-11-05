@@ -24603,7 +24603,8 @@ cjsCollectionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 enabled: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 cron: jspb.Message.getFieldWithDefault(msg, 6, ""),
 timezone: jspb.Message.getFieldWithDefault(msg, 7, ""),
-dedup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+dedup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+useZeroValues: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -24659,6 +24660,10 @@ proto.api.v0alpha.CjsImportProcess.deserializeBinaryFromReader = function(msg, r
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDedup(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseZeroValues(value);
       break;
     default:
       reader.skipField();
@@ -24721,6 +24726,13 @@ proto.api.v0alpha.CjsImportProcess.serializeBinaryToWriter = function(message, w
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getUseZeroValues();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -24814,6 +24826,24 @@ proto.api.v0alpha.CjsImportProcess.prototype.getDedup = function() {
  */
 proto.api.v0alpha.CjsImportProcess.prototype.setDedup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional bool use_zero_values = 9;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CjsImportProcess.prototype.getUseZeroValues = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CjsImportProcess} returns this
+ */
+proto.api.v0alpha.CjsImportProcess.prototype.setUseZeroValues = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -25186,7 +25216,8 @@ enrichType: jspb.Message.getFieldWithDefault(msg, 5, 0),
 primarySource: jspb.Message.getFieldWithDefault(msg, 6, 0),
 cjsKeyFieldName: jspb.Message.getFieldWithDefault(msg, 7, ""),
 columnOverwrite: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-dedupKeyPolicy: jspb.Message.getFieldWithDefault(msg, 9, 0)
+dedupKeyPolicy: jspb.Message.getFieldWithDefault(msg, 9, 0),
+useZeroValues: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -25250,6 +25281,10 @@ proto.api.v0alpha.CjsEnrichmentProcess.deserializeBinaryFromReader = function(ms
     case 9:
       var value = /** @type {!proto.api.commons.DedupKeyPolicy} */ (reader.readEnum());
       msg.setDedupKeyPolicy(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseZeroValues(value);
       break;
     default:
       reader.skipField();
@@ -25326,6 +25361,13 @@ proto.api.v0alpha.CjsEnrichmentProcess.serializeBinaryToWriter = function(messag
   if (f !== 0.0) {
     writer.writeEnum(
       9,
+      f
+    );
+  }
+  f = message.getUseZeroValues();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -25455,6 +25497,24 @@ proto.api.v0alpha.CjsEnrichmentProcess.prototype.getDedupKeyPolicy = function() 
  */
 proto.api.v0alpha.CjsEnrichmentProcess.prototype.setDedupKeyPolicy = function(value) {
   return jspb.Message.setProto3EnumField(this, 9, value);
+};
+
+
+/**
+ * optional bool use_zero_values = 10;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CjsEnrichmentProcess.prototype.getUseZeroValues = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CjsEnrichmentProcess} returns this
+ */
+proto.api.v0alpha.CjsEnrichmentProcess.prototype.setUseZeroValues = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -39788,6 +39848,7 @@ proto.api.v0alpha.ReshapeAction.toObject = function(includeInstance, msg) {
 field: jspb.Message.getFieldWithDefault(msg, 19, ""),
 matchingType: jspb.Message.getFieldWithDefault(msg, 20, 0),
 predicate: (f = msg.getPredicate()) && proto.api.v0alpha.FilterCheck.toObject(includeInstance, f),
+operations: (f = msg.getOperations()) && proto.api.v0alpha.FilterOperation.toObject(includeInstance, f),
 rename: (f = msg.getRename()) && proto.api.v0alpha.ReshapeAction.Rename.toObject(includeInstance, f),
 addValue: (f = msg.getAddValue()) && proto.api.v0alpha.ReshapeAction.AddValue.toObject(includeInstance, f),
 addField: (f = msg.getAddField()) && proto.api.v0alpha.ReshapeAction.AddField.toObject(includeInstance, f),
@@ -39856,6 +39917,11 @@ proto.api.v0alpha.ReshapeAction.deserializeBinaryFromReader = function(msg, read
       var value = new proto.api.v0alpha.FilterCheck;
       reader.readMessage(value,proto.api.v0alpha.FilterCheck.deserializeBinaryFromReader);
       msg.setPredicate(value);
+      break;
+    case 55:
+      var value = new proto.api.v0alpha.FilterOperation;
+      reader.readMessage(value,proto.api.v0alpha.FilterOperation.deserializeBinaryFromReader);
+      msg.setOperations(value);
       break;
     case 22:
       var value = new proto.api.v0alpha.ReshapeAction.Rename;
@@ -40006,6 +40072,14 @@ proto.api.v0alpha.ReshapeAction.serializeBinaryToWriter = function(message, writ
       50,
       f,
       proto.api.v0alpha.FilterCheck.serializeBinaryToWriter
+    );
+  }
+  f = message.getOperations();
+  if (f != null) {
+    writer.writeMessage(
+      55,
+      f,
+      proto.api.v0alpha.FilterOperation.serializeBinaryToWriter
     );
   }
   f = message.getRename();
@@ -44193,6 +44267,43 @@ proto.api.v0alpha.ReshapeAction.prototype.clearPredicate = function() {
  */
 proto.api.v0alpha.ReshapeAction.prototype.hasPredicate = function() {
   return jspb.Message.getField(this, 50) != null;
+};
+
+
+/**
+ * optional FilterOperation operations = 55;
+ * @return {?proto.api.v0alpha.FilterOperation}
+ */
+proto.api.v0alpha.ReshapeAction.prototype.getOperations = function() {
+  return /** @type{?proto.api.v0alpha.FilterOperation} */ (
+    jspb.Message.getWrapperField(this, proto.api.v0alpha.FilterOperation, 55));
+};
+
+
+/**
+ * @param {?proto.api.v0alpha.FilterOperation|undefined} value
+ * @return {!proto.api.v0alpha.ReshapeAction} returns this
+*/
+proto.api.v0alpha.ReshapeAction.prototype.setOperations = function(value) {
+  return jspb.Message.setWrapperField(this, 55, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ReshapeAction} returns this
+ */
+proto.api.v0alpha.ReshapeAction.prototype.clearOperations = function() {
+  return this.setOperations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ReshapeAction.prototype.hasOperations = function() {
+  return jspb.Message.getField(this, 55) != null;
 };
 
 

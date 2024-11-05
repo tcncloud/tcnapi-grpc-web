@@ -2812,6 +2812,9 @@ export class CjsImportProcess extends jspb.Message {
   getDedup(): boolean;
   setDedup(value: boolean): void;
 
+  getUseZeroValues(): boolean;
+  setUseZeroValues(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CjsImportProcess.AsObject;
   static toObject(includeInstance: boolean, msg: CjsImportProcess): CjsImportProcess.AsObject;
@@ -2829,6 +2832,7 @@ export namespace CjsImportProcess {
     cron: string,
     timezone: string,
     dedup: boolean,
+    useZeroValues: boolean,
   }
 }
 
@@ -2900,6 +2904,9 @@ export class CjsEnrichmentProcess extends jspb.Message {
   getDedupKeyPolicy(): api_commons_lms_pb.DedupKeyPolicyMap[keyof api_commons_lms_pb.DedupKeyPolicyMap];
   setDedupKeyPolicy(value: api_commons_lms_pb.DedupKeyPolicyMap[keyof api_commons_lms_pb.DedupKeyPolicyMap]): void;
 
+  getUseZeroValues(): boolean;
+  setUseZeroValues(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CjsEnrichmentProcess.AsObject;
   static toObject(includeInstance: boolean, msg: CjsEnrichmentProcess): CjsEnrichmentProcess.AsObject;
@@ -2919,6 +2926,7 @@ export namespace CjsEnrichmentProcess {
     cjsKeyFieldName: string,
     columnOverwrite: boolean,
     dedupKeyPolicy: api_commons_lms_pb.DedupKeyPolicyMap[keyof api_commons_lms_pb.DedupKeyPolicyMap],
+    useZeroValues: boolean,
   }
 }
 
@@ -4943,6 +4951,11 @@ export class ReshapeAction extends jspb.Message {
   getPredicate(): FilterCheck | undefined;
   setPredicate(value?: FilterCheck): void;
 
+  hasOperations(): boolean;
+  clearOperations(): void;
+  getOperations(): FilterOperation | undefined;
+  setOperations(value?: FilterOperation): void;
+
   hasRename(): boolean;
   clearRename(): void;
   getRename(): ReshapeAction.Rename | undefined;
@@ -5059,6 +5072,7 @@ export namespace ReshapeAction {
     field: string,
     matchingType: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap],
     predicate?: FilterCheck.AsObject,
+    operations?: FilterOperation.AsObject,
     rename?: ReshapeAction.Rename.AsObject,
     addValue?: ReshapeAction.AddValue.AsObject,
     addField?: ReshapeAction.AddField.AsObject,
