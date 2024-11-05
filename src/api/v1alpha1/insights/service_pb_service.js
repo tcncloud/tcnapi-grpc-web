@@ -35,7 +35,7 @@ Insights.ListInsightsStream = {
   requestStream: false,
   responseStream: true,
   requestType: api_v1alpha1_insights_insight_pb.ListInsightsRequest,
-  responseType: api_v1alpha1_insights_insight_pb.ListInsightsResponse
+  responseType: api_v1alpha1_insights_insight_pb.ListInsightsStreamResponse
 };
 
 Insights.ListOrgInsights = {

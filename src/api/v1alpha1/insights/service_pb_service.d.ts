@@ -29,7 +29,7 @@ type InsightsListInsightsStream = {
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_v1alpha1_insights_insight_pb.ListInsightsRequest;
-  readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListInsightsResponse;
+  readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListInsightsStreamResponse;
 };
 
 type InsightsListOrgInsights = {
@@ -269,7 +269,7 @@ export class InsightsClient {
     requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListInsightsResponse|null) => void
   ): UnaryResponse;
-  listInsightsStream(requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListInsightsResponse>;
+  listInsightsStream(requestMessage: api_v1alpha1_insights_insight_pb.ListInsightsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListInsightsStreamResponse>;
   listOrgInsights(
     requestMessage: api_v1alpha1_insights_insight_pb.ListOrgInsightsRequest,
     metadata: grpc.Metadata,
