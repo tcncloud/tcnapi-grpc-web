@@ -96,7 +96,7 @@ HuntGroupsService.ListAgentScripts = {
   methodName: "ListAgentScripts",
   service: HuntGroupsService,
   requestStream: false,
-  responseStream: false,
+  responseStream: true,
   requestType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest,
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse
 };
@@ -387,32 +387,40 @@ HuntGroupsServiceClient.prototype.adminListHuntGroups = function adminListHuntGr
   };
 };
 
-HuntGroupsServiceClient.prototype.listAgentScripts = function listAgentScripts(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(HuntGroupsService.ListAgentScripts, {
+HuntGroupsServiceClient.prototype.listAgentScripts = function listAgentScripts(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(HuntGroupsService.ListAgentScripts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
     }
   });
   return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
     cancel: function () {
-      callback = null;
+      listeners = null;
       client.close();
     }
   };

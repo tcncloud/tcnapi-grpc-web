@@ -90,7 +90,7 @@ type HuntGroupsServiceListAgentScripts = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
   readonly requestStream: false;
-  readonly responseStream: false;
+  readonly responseStream: true;
   readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest;
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse;
 };
@@ -222,14 +222,6 @@ export class HuntGroupsServiceClient {
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse|null) => void
   ): UnaryResponse;
-  listAgentScripts(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse|null) => void
-  ): UnaryResponse;
-  listAgentScripts(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse|null) => void
-  ): UnaryResponse;
+  listAgentScripts(requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest, metadata?: grpc.Metadata): ResponseStream<services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse>;
 }
 
