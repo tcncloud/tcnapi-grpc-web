@@ -92,6 +92,15 @@ HuntGroupsService.AdminListHuntGroups = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse
 };
 
+HuntGroupsService.ListAgentScripts = {
+  methodName: "ListAgentScripts",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse
+};
+
 exports.HuntGroupsService = HuntGroupsService;
 
 function HuntGroupsServiceClient(serviceHost, options) {
@@ -352,6 +361,37 @@ HuntGroupsServiceClient.prototype.adminListHuntGroups = function adminListHuntGr
     callback = arguments[1];
   }
   var client = grpc.unary(HuntGroupsService.AdminListHuntGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.listAgentScripts = function listAgentScripts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.ListAgentScripts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

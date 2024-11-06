@@ -711,6 +711,62 @@ export namespace AdminListHuntGroupsResponse {
   }
 }
 
+export class ListAgentScriptsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentScriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentScriptsRequest): ListAgentScriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentScriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentScriptsRequest;
+  static deserializeBinaryFromReader(message: ListAgentScriptsRequest, reader: jspb.BinaryReader): ListAgentScriptsRequest;
+}
+
+export namespace ListAgentScriptsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAgentScriptsResponse extends jspb.Message {
+  clearScriptsList(): void;
+  getScriptsList(): Array<api_commons_org_huntgroup_pb.HuntGroupScript>;
+  setScriptsList(value: Array<api_commons_org_huntgroup_pb.HuntGroupScript>): void;
+  addScripts(value?: api_commons_org_huntgroup_pb.HuntGroupScript, index?: number): api_commons_org_huntgroup_pb.HuntGroupScript;
+
+  clearHuntGroupSidsList(): void;
+  getHuntGroupSidsList(): Array<number>;
+  setHuntGroupSidsList(value: Array<number>): void;
+  addHuntGroupSids(value: number, index?: number): number;
+
+  clearOutboundBroadcastTemplateSidsList(): void;
+  getOutboundBroadcastTemplateSidsList(): Array<number>;
+  setOutboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addOutboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  clearInboundBroadcastTemplateSidsList(): void;
+  getInboundBroadcastTemplateSidsList(): Array<number>;
+  setInboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addInboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentScriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentScriptsResponse): ListAgentScriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentScriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentScriptsResponse;
+  static deserializeBinaryFromReader(message: ListAgentScriptsResponse, reader: jspb.BinaryReader): ListAgentScriptsResponse;
+}
+
+export namespace ListAgentScriptsResponse {
+  export type AsObject = {
+    scriptsList: Array<api_commons_org_huntgroup_pb.HuntGroupScript.AsObject>,
+    huntGroupSidsList: Array<number>,
+    outboundBroadcastTemplateSidsList: Array<number>,
+    inboundBroadcastTemplateSidsList: Array<number>,
+  }
+}
+
 export interface AgentStatusMap {
   AGENT_STATUS_UNSPECIFIED: 0;
   AGENT_STATUS_LOGGED_IN: 1;
