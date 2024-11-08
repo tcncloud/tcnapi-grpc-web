@@ -831,7 +831,9 @@ proto.services.org.exile_certificate_manager.v1alpha1.ExileConfigurationType = {
   EXILE_CONFIGURATION_TYPE_ARTIVA_HCX: 2,
   EXILE_CONFIGURATION_TYPE_ARTIVA_RM: 3,
   EXILE_CONFIGURATION_TYPE_FACS: 4,
-  EXILE_CONFIGURATION_TYPE_VELOSIDY: 5
+  EXILE_CONFIGURATION_TYPE_VELOSIDY: 5,
+  EXILE_CONFIGURATION_TYPE_LATITUDE_CLASSIC: 6,
+  EXILE_CONFIGURATION_TYPE_LATITUDE_LIQUID: 7
 };
 
 goog.object.extend(exports, proto.services.org.exile_certificate_manager.v1alpha1);
