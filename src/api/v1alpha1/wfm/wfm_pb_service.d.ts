@@ -580,6 +580,15 @@ type WFMListCandidateSchedulingActivities = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesRes;
 };
 
+type WFMListSchedulingActivities = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesResponse;
+};
+
 type WFMGetOnCallSchedulingActivity = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1978,6 +1987,7 @@ export class WFM {
   static readonly ListNonSkillActivities: WFMListNonSkillActivities;
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
+  static readonly ListSchedulingActivities: WFMListSchedulingActivities;
   static readonly GetOnCallSchedulingActivity: WFMGetOnCallSchedulingActivity;
   static readonly ListPatternsForSchedulingActivityClassifications: WFMListPatternsForSchedulingActivityClassifications;
   static readonly GetTimeOffSchedulingActivity: WFMGetTimeOffSchedulingActivity;
@@ -2687,6 +2697,15 @@ export class WFMClient {
   listCandidateSchedulingActivities(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesRes|null) => void
+  ): UnaryResponse;
+  listSchedulingActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesResponse|null) => void
+  ): UnaryResponse;
+  listSchedulingActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSchedulingActivitiesResponse|null) => void
   ): UnaryResponse;
   getOnCallSchedulingActivity(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq,

@@ -3977,6 +3977,11 @@ export class SchedulingActivity extends jspb.Message {
   getActivityClassification(): api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap];
   setActivityClassification(value: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap]): void;
 
+  clearPauseCodesList(): void;
+  getPauseCodesList(): Array<string>;
+  setPauseCodesList(value: Array<string>): void;
+  addPauseCodes(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulingActivity.AsObject;
   static toObject(includeInstance: boolean, msg: SchedulingActivity): SchedulingActivity.AsObject;
@@ -3994,6 +3999,7 @@ export namespace SchedulingActivity {
     activitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     memberNonSkillActivity?: NonSkillActivity.AsObject,
     activityClassification: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap],
+    pauseCodesList: Array<string>,
   }
 }
 
@@ -4040,6 +4046,44 @@ export class ListCandidateSchedulingActivitiesRes extends jspb.Message {
 }
 
 export namespace ListCandidateSchedulingActivitiesRes {
+  export type AsObject = {
+    schedulingActivitiesList: Array<SchedulingActivity.AsObject>,
+  }
+}
+
+export class ListSchedulingActivitiesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSchedulingActivitiesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSchedulingActivitiesRequest): ListSchedulingActivitiesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSchedulingActivitiesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSchedulingActivitiesRequest;
+  static deserializeBinaryFromReader(message: ListSchedulingActivitiesRequest, reader: jspb.BinaryReader): ListSchedulingActivitiesRequest;
+}
+
+export namespace ListSchedulingActivitiesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListSchedulingActivitiesResponse extends jspb.Message {
+  clearSchedulingActivitiesList(): void;
+  getSchedulingActivitiesList(): Array<SchedulingActivity>;
+  setSchedulingActivitiesList(value: Array<SchedulingActivity>): void;
+  addSchedulingActivities(value?: SchedulingActivity, index?: number): SchedulingActivity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSchedulingActivitiesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSchedulingActivitiesResponse): ListSchedulingActivitiesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSchedulingActivitiesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSchedulingActivitiesResponse;
+  static deserializeBinaryFromReader(message: ListSchedulingActivitiesResponse, reader: jspb.BinaryReader): ListSchedulingActivitiesResponse;
+}
+
+export namespace ListSchedulingActivitiesResponse {
   export type AsObject = {
     schedulingActivitiesList: Array<SchedulingActivity.AsObject>,
   }
