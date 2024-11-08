@@ -1546,6 +1546,26 @@ export class ExecuteFlow extends jspb.Message {
   getPayscoutEcheckSale(): ExecutePayScoutEcheckSale | undefined;
   setPayscoutEcheckSale(value?: ExecutePayScoutEcheckSale): void;
 
+  hasPayscoutCreditSaleRecurring(): boolean;
+  clearPayscoutCreditSaleRecurring(): void;
+  getPayscoutCreditSaleRecurring(): ExecutePayScoutCreditCardSaleRecurring | undefined;
+  setPayscoutCreditSaleRecurring(value?: ExecutePayScoutCreditCardSaleRecurring): void;
+
+  hasPayscoutCreditSalePost(): boolean;
+  clearPayscoutCreditSalePost(): void;
+  getPayscoutCreditSalePost(): ExecutePayScoutCreditCardSalePost | undefined;
+  setPayscoutCreditSalePost(value?: ExecutePayScoutCreditCardSalePost): void;
+
+  hasPayscoutEcheckSaleRecurring(): boolean;
+  clearPayscoutEcheckSaleRecurring(): void;
+  getPayscoutEcheckSaleRecurring(): ExecutePayScoutEcheckSaleRecurring | undefined;
+  setPayscoutEcheckSaleRecurring(value?: ExecutePayScoutEcheckSaleRecurring): void;
+
+  hasPayscoutEcheckSalePost(): boolean;
+  clearPayscoutEcheckSalePost(): void;
+  getPayscoutEcheckSalePost(): ExecutePayScoutEcheckSalePost | undefined;
+  setPayscoutEcheckSalePost(value?: ExecutePayScoutEcheckSalePost): void;
+
   hasI2cEcho(): boolean;
   clearI2cEcho(): void;
   getI2cEcho(): ExecuteI2cEcho | undefined;
@@ -2322,6 +2342,10 @@ export namespace ExecuteFlow {
     globalpaymentsReverseSaleOrRefund?: ExecuteGlobalPaymentsReverseSaleOrRefund.AsObject,
     payscoutCreditSale?: ExecutePayScoutCreditCardSale.AsObject,
     payscoutEcheckSale?: ExecutePayScoutEcheckSale.AsObject,
+    payscoutCreditSaleRecurring?: ExecutePayScoutCreditCardSaleRecurring.AsObject,
+    payscoutCreditSalePost?: ExecutePayScoutCreditCardSalePost.AsObject,
+    payscoutEcheckSaleRecurring?: ExecutePayScoutEcheckSaleRecurring.AsObject,
+    payscoutEcheckSalePost?: ExecutePayScoutEcheckSalePost.AsObject,
     i2cEcho?: ExecuteI2cEcho.AsObject,
     i2cBalanceInquiry?: ExecuteI2cBalanceInquiry.AsObject,
     i2cVerifyUser?: ExecuteI2cVerifyUser.AsObject,
@@ -2608,6 +2632,10 @@ export namespace ExecuteFlow {
     GLOBALPAYMENTS_REVERSE_SALE_OR_REFUND = 3005,
     PAYSCOUT_CREDIT_SALE = 3101,
     PAYSCOUT_ECHECK_SALE = 3102,
+    PAYSCOUT_CREDIT_SALE_RECURRING = 3103,
+    PAYSCOUT_CREDIT_SALE_POST = 3104,
+    PAYSCOUT_ECHECK_SALE_RECURRING = 3105,
+    PAYSCOUT_ECHECK_SALE_POST = 3106,
     I2C_ECHO = 3201,
     I2C_BALANCE_INQUIRY = 3202,
     I2C_VERIFY_USER = 3203,
@@ -5936,6 +5964,70 @@ export class ExecutePayScoutEcheckSale extends jspb.Message {
 }
 
 export namespace ExecutePayScoutEcheckSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePayScoutCreditCardSaleRecurring extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutCreditCardSaleRecurring.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutCreditCardSaleRecurring): ExecutePayScoutCreditCardSaleRecurring.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutCreditCardSaleRecurring, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutCreditCardSaleRecurring;
+  static deserializeBinaryFromReader(message: ExecutePayScoutCreditCardSaleRecurring, reader: jspb.BinaryReader): ExecutePayScoutCreditCardSaleRecurring;
+}
+
+export namespace ExecutePayScoutCreditCardSaleRecurring {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePayScoutCreditCardSalePost extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutCreditCardSalePost.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutCreditCardSalePost): ExecutePayScoutCreditCardSalePost.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutCreditCardSalePost, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutCreditCardSalePost;
+  static deserializeBinaryFromReader(message: ExecutePayScoutCreditCardSalePost, reader: jspb.BinaryReader): ExecutePayScoutCreditCardSalePost;
+}
+
+export namespace ExecutePayScoutCreditCardSalePost {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePayScoutEcheckSaleRecurring extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutEcheckSaleRecurring.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutEcheckSaleRecurring): ExecutePayScoutEcheckSaleRecurring.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutEcheckSaleRecurring, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutEcheckSaleRecurring;
+  static deserializeBinaryFromReader(message: ExecutePayScoutEcheckSaleRecurring, reader: jspb.BinaryReader): ExecutePayScoutEcheckSaleRecurring;
+}
+
+export namespace ExecutePayScoutEcheckSaleRecurring {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePayScoutEcheckSalePost extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutEcheckSalePost.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutEcheckSalePost): ExecutePayScoutEcheckSalePost.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutEcheckSalePost, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutEcheckSalePost;
+  static deserializeBinaryFromReader(message: ExecutePayScoutEcheckSalePost, reader: jspb.BinaryReader): ExecutePayScoutEcheckSalePost;
+}
+
+export namespace ExecutePayScoutEcheckSalePost {
   export type AsObject = {
   }
 }
