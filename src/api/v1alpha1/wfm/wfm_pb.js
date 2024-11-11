@@ -6739,7 +6739,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.wfm.PollBuildInProgressResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.PollBuildInProgressResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.wfm.PollBuildInProgressResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -71744,6 +71744,13 @@ proto.api.v1alpha1.wfm.PollBuildInProgressRequest.prototype.setDraftScheduleSid 
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -71776,7 +71783,11 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.toObject = function
 proto.api.v1alpha1.wfm.PollBuildInProgressResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 buildStartDatetime: (f = msg.getBuildStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-buildInProgress: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+buildInProgress: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+buildEndDatetime: (f = msg.getBuildEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+buildStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -71822,6 +71833,20 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.deserializeBinaryFromReader =
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBuildInProgress(value);
       break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setBuildEndDatetime(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.api.commons.BuildDraftStatus} */ (reader.readEnum());
+      msg.setBuildStatus(value);
+      break;
+    case 5:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -71864,6 +71889,29 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.serializeBinaryToWriter = fun
     writer.writeBool(
       2,
       f
+    );
+  }
+  f = message.getBuildEndDatetime();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getBuildStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
     );
   }
 };
@@ -71921,6 +71969,99 @@ proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getBuildInProgress 
  */
 proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setBuildInProgress = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp build_end_datetime = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getBuildEndDatetime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+*/
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setBuildEndDatetime = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.clearBuildEndDatetime = function() {
+  return this.setBuildEndDatetime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.hasBuildEndDatetime = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional api.commons.BuildDraftStatus build_status = 4;
+ * @return {!proto.api.commons.BuildDraftStatus}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getBuildStatus = function() {
+  return /** @type {!proto.api.commons.BuildDraftStatus} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.BuildDraftStatus} value
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setBuildStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 5;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+*/
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.PollBuildInProgressResponse} returns this
+ */
+proto.api.v1alpha1.wfm.PollBuildInProgressResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
 };
 
 
