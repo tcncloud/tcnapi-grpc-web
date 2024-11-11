@@ -895,6 +895,15 @@ type P3ApiGetMailMerge = {
   readonly responseType: typeof api_v0alpha_p3api_pb.GetMailMergeRes;
 };
 
+type P3ApiListDistinctPauseCodes = {
+  readonly methodName: string;
+  readonly service: typeof P3Api;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_p3api_pb.ListDistinctPauseCodesRequest;
+  readonly responseType: typeof api_v0alpha_p3api_pb.ListDistinctPauseCodesResponse;
+};
+
 export class P3Api {
   static readonly serviceName: string;
   static readonly GetAgentHuntGroup: P3ApiGetAgentHuntGroup;
@@ -996,6 +1005,7 @@ export class P3Api {
   static readonly ListCustomReportFilters: P3ApiListCustomReportFilters;
   static readonly ListSmsNumbers: P3ApiListSmsNumbers;
   static readonly GetMailMerge: P3ApiGetMailMerge;
+  static readonly ListDistinctPauseCodes: P3ApiListDistinctPauseCodes;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1904,6 +1914,15 @@ export class P3ApiClient {
   getMailMerge(
     requestMessage: api_v0alpha_p3api_pb.GetMailMergeReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.GetMailMergeRes|null) => void
+  ): UnaryResponse;
+  listDistinctPauseCodes(
+    requestMessage: api_v0alpha_p3api_pb.ListDistinctPauseCodesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.ListDistinctPauseCodesResponse|null) => void
+  ): UnaryResponse;
+  listDistinctPauseCodes(
+    requestMessage: api_v0alpha_p3api_pb.ListDistinctPauseCodesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.ListDistinctPauseCodesResponse|null) => void
   ): UnaryResponse;
 }
 

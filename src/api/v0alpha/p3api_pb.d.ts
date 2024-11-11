@@ -8828,3 +8828,41 @@ export namespace GetMailMergeRes {
   }
 }
 
+export class ListDistinctPauseCodesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDistinctPauseCodesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDistinctPauseCodesRequest): ListDistinctPauseCodesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDistinctPauseCodesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDistinctPauseCodesRequest;
+  static deserializeBinaryFromReader(message: ListDistinctPauseCodesRequest, reader: jspb.BinaryReader): ListDistinctPauseCodesRequest;
+}
+
+export namespace ListDistinctPauseCodesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListDistinctPauseCodesResponse extends jspb.Message {
+  clearPauseCodesList(): void;
+  getPauseCodesList(): Array<string>;
+  setPauseCodesList(value: Array<string>): void;
+  addPauseCodes(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDistinctPauseCodesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDistinctPauseCodesResponse): ListDistinctPauseCodesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDistinctPauseCodesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDistinctPauseCodesResponse;
+  static deserializeBinaryFromReader(message: ListDistinctPauseCodesResponse, reader: jspb.BinaryReader): ListDistinctPauseCodesResponse;
+}
+
+export namespace ListDistinctPauseCodesResponse {
+  export type AsObject = {
+    pauseCodesList: Array<string>,
+  }
+}
+
