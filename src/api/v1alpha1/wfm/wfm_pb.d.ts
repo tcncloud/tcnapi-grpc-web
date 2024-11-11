@@ -8613,6 +8613,9 @@ export namespace CancelBuildInProgressRequest {
 }
 
 export class CancelBuildInProgressResponse extends jspb.Message {
+  getCanceledBuild(): boolean;
+  setCanceledBuild(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CancelBuildInProgressResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CancelBuildInProgressResponse): CancelBuildInProgressResponse.AsObject;
@@ -8625,6 +8628,7 @@ export class CancelBuildInProgressResponse extends jspb.Message {
 
 export namespace CancelBuildInProgressResponse {
   export type AsObject = {
+    canceledBuild: boolean,
   }
 }
 

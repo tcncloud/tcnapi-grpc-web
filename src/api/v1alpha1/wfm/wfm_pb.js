@@ -72227,7 +72227,7 @@ proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+canceledBuild: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -72264,6 +72264,10 @@ proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCanceledBuild(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -72293,6 +72297,31 @@ proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.prototype.serializeBinary =
  */
 proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getCanceledBuild();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool canceled_build = 1;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.prototype.getCanceledBuild = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.CancelBuildInProgressResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CancelBuildInProgressResponse.prototype.setCanceledBuild = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
