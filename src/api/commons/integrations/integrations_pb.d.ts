@@ -2146,6 +2146,11 @@ export class ExecuteFlow extends jspb.Message {
   getHealthpay24AccountsReceivable(): ExecuteHealthpay24AccountsReceivable | undefined;
   setHealthpay24AccountsReceivable(value?: ExecuteHealthpay24AccountsReceivable): void;
 
+  hasFinviFacsProcessPayment(): boolean;
+  clearFinviFacsProcessPayment(): void;
+  getFinviFacsProcessPayment(): ExecuteFinviFacsProcessPayment | undefined;
+  setFinviFacsProcessPayment(value?: ExecuteFinviFacsProcessPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2442,6 +2447,7 @@ export namespace ExecuteFlow {
     acquiredProcessPayment?: ExecuteAcquiredProcessPayment.AsObject,
     genericRequest?: ExecuteGenericRequest.AsObject,
     healthpay24AccountsReceivable?: ExecuteHealthpay24AccountsReceivable.AsObject,
+    finviFacsProcessPayment?: ExecuteFinviFacsProcessPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -2728,6 +2734,7 @@ export namespace ExecuteFlow {
     ACQUIRED_PROCESS_PAYMENT = 5101,
     GENERIC_REQUEST = 5201,
     HEALTHPAY24_ACCOUNTS_RECEIVABLE = 5301,
+    FINVI_FACS_PROCESS_PAYMENT = 5401,
   }
 }
 
@@ -7860,6 +7867,22 @@ export namespace ExecuteHealthpay24AccountsReceivable {
   }
 }
 
+export class ExecuteFinviFacsProcessPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFinviFacsProcessPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviFacsProcessPayment): ExecuteFinviFacsProcessPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFinviFacsProcessPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviFacsProcessPayment;
+  static deserializeBinaryFromReader(message: ExecuteFinviFacsProcessPayment, reader: jspb.BinaryReader): ExecuteFinviFacsProcessPayment;
+}
+
+export namespace ExecuteFinviFacsProcessPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7915,6 +7938,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_ACQUIRED: 5100;
   INTEGRATION_TYPE_GENERIC: 5200;
   INTEGRATION_TYPE_HEALTHPAY24: 5300;
+  INTEGRATION_TYPE_FINVI_FACS: 5400;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8205,6 +8229,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_ACQUIRED_PROCESS_PAYMENT: 5101;
   REQUEST_METHOD_GENERIC_REQUEST: 5201;
   REQUEST_METHOD_HEALTHPAY24_ACCOUNTS_RECEIVABLE: 5301;
+  REQUEST_METHOD_FINVI_FACS_PROCESS_PAYMENT: 5401;
 }
 
 export const RequestMethod: RequestMethodMap;
