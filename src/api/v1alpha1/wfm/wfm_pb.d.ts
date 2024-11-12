@@ -8603,6 +8603,19 @@ export class PollBuildInProgressResponse extends jspb.Message {
   getBuildInProgress(): boolean;
   setBuildInProgress(value: boolean): void;
 
+  hasBuildEndDatetime(): boolean;
+  clearBuildEndDatetime(): void;
+  getBuildEndDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBuildEndDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getBuildStatus(): api_commons_wfm_pb.BuildDraftStatusMap[keyof api_commons_wfm_pb.BuildDraftStatusMap];
+  setBuildStatus(value: api_commons_wfm_pb.BuildDraftStatusMap[keyof api_commons_wfm_pb.BuildDraftStatusMap]): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PollBuildInProgressResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PollBuildInProgressResponse): PollBuildInProgressResponse.AsObject;
@@ -8617,6 +8630,9 @@ export namespace PollBuildInProgressResponse {
   export type AsObject = {
     buildStartDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     buildInProgress: boolean,
+    buildEndDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    buildStatus: api_commons_wfm_pb.BuildDraftStatusMap[keyof api_commons_wfm_pb.BuildDraftStatusMap],
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -8641,6 +8657,9 @@ export namespace CancelBuildInProgressRequest {
 }
 
 export class CancelBuildInProgressResponse extends jspb.Message {
+  getCanceledBuild(): boolean;
+  setCanceledBuild(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CancelBuildInProgressResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CancelBuildInProgressResponse): CancelBuildInProgressResponse.AsObject;
@@ -8653,6 +8672,7 @@ export class CancelBuildInProgressResponse extends jspb.Message {
 
 export namespace CancelBuildInProgressResponse {
   export type AsObject = {
+    canceledBuild: boolean,
   }
 }
 

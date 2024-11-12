@@ -1441,6 +1441,16 @@ export interface SchedulingTargetTypeMap {
 
 export const SchedulingTargetType: SchedulingTargetTypeMap;
 
+export interface BuildDraftStatusMap {
+  NO_BUILD: 0;
+  IN_PROGRESS: 1;
+  SUCCEEDED: 2;
+  FAILED: 3;
+  CANCELED: 4;
+}
+
+export const BuildDraftStatus: BuildDraftStatusMap;
+
 export interface BitmapTypeMap {
   COMPLETE: 0;
   ONLY_WEEKMAPS: 1;

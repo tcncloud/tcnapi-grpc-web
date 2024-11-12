@@ -48,6 +48,7 @@ goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSequence', null, global);
 goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
 goog.exportSymbol('proto.api.commons.BitmapType', null, global);
+goog.exportSymbol('proto.api.commons.BuildDraftStatus', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupAvgs', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupCalls', null, global);
 goog.exportSymbol('proto.api.commons.ClientHistoryCacheInfo', null, global);
@@ -9510,6 +9511,17 @@ proto.api.commons.ScheduleType = {
 proto.api.commons.SchedulingTargetType = {
   COVERAGE: 0,
   SERVICE_LEVEL: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.BuildDraftStatus = {
+  NO_BUILD: 0,
+  IN_PROGRESS: 1,
+  SUCCEEDED: 2,
+  FAILED: 3,
+  CANCELED: 4
 };
 
 /**
