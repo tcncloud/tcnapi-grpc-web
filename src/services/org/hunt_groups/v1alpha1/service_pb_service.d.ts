@@ -86,6 +86,15 @@ type HuntGroupsServiceAdminListHuntGroups = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse;
 };
 
+type HuntGroupsServiceListAgentScripts = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse;
+};
+
 export class HuntGroupsService {
   static readonly serviceName: string;
   static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
@@ -97,6 +106,7 @@ export class HuntGroupsService {
   static readonly CopyHuntGroupToOrganization: HuntGroupsServiceCopyHuntGroupToOrganization;
   static readonly AdminCopyHuntGroupToOrganization: HuntGroupsServiceAdminCopyHuntGroupToOrganization;
   static readonly AdminListHuntGroups: HuntGroupsServiceAdminListHuntGroups;
+  static readonly ListAgentScripts: HuntGroupsServiceListAgentScripts;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -212,5 +222,6 @@ export class HuntGroupsServiceClient {
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse|null) => void
   ): UnaryResponse;
+  listAgentScripts(requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsRequest, metadata?: grpc.Metadata): ResponseStream<services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse>;
 }
 
