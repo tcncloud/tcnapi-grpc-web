@@ -19,6 +19,33 @@ ClassifierFileTemplates.ParseFile = {
   responseType: api_v1alpha1_classifier_service_pb.ParseFileResponse
 };
 
+ClassifierFileTemplates.ListEvents = {
+  methodName: "ListEvents",
+  service: ClassifierFileTemplates,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_classifier_service_pb.ListEventsRequest,
+  responseType: api_v1alpha1_classifier_service_pb.ListEventsResponse
+};
+
+ClassifierFileTemplates.PeekList = {
+  methodName: "PeekList",
+  service: ClassifierFileTemplates,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_classifier_service_pb.PeekListRequest,
+  responseType: api_v1alpha1_classifier_service_pb.PeekListResponse
+};
+
+ClassifierFileTemplates.ParseLargeFile = {
+  methodName: "ParseLargeFile",
+  service: ClassifierFileTemplates,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_classifier_service_pb.ParseLargeFileRequest,
+  responseType: api_v1alpha1_classifier_service_pb.ParseLargeFileResponse
+};
+
 ClassifierFileTemplates.UpdateFileTemplate = {
   methodName: "UpdateFileTemplate",
   service: ClassifierFileTemplates,
@@ -67,6 +94,99 @@ ClassifierFileTemplatesClient.prototype.parseFile = function parseFile(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(ClassifierFileTemplates.ParseFile, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ClassifierFileTemplatesClient.prototype.listEvents = function listEvents(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ClassifierFileTemplates.ListEvents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ClassifierFileTemplatesClient.prototype.peekList = function peekList(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ClassifierFileTemplates.PeekList, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ClassifierFileTemplatesClient.prototype.parseLargeFile = function parseLargeFile(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ClassifierFileTemplates.ParseLargeFile, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

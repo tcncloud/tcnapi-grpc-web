@@ -3,8 +3,10 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_v1alpha1_classifier_entities_pb from "../../../api/v1alpha1/classifier/entities_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ParseFileRequest extends jspb.Message {
   hasRawData(): boolean;
@@ -299,6 +301,326 @@ export class GetFileTemplateResponse extends jspb.Message {
 export namespace GetFileTemplateResponse {
   export type AsObject = {
     fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
+  }
+}
+
+export class ParseLargeFileRequest extends jspb.Message {
+  hasFtsId(): boolean;
+  clearFtsId(): void;
+  getFtsId(): string;
+  setFtsId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getFilePointerCase(): ParseLargeFileRequest.FilePointerCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ParseLargeFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ParseLargeFileRequest): ParseLargeFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ParseLargeFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParseLargeFileRequest;
+  static deserializeBinaryFromReader(message: ParseLargeFileRequest, reader: jspb.BinaryReader): ParseLargeFileRequest;
+}
+
+export namespace ParseLargeFileRequest {
+  export type AsObject = {
+    ftsId: string,
+    name: string,
+  }
+
+  export enum FilePointerCase {
+    FILE_POINTER_NOT_SET = 0,
+    FTS_ID = 1,
+  }
+}
+
+export class ParseLargeFileResponse extends jspb.Message {
+  hasFileTemplate(): boolean;
+  clearFileTemplate(): void;
+  getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
+  setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ParseLargeFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ParseLargeFileResponse): ParseLargeFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ParseLargeFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParseLargeFileResponse;
+  static deserializeBinaryFromReader(message: ParseLargeFileResponse, reader: jspb.BinaryReader): ParseLargeFileResponse;
+}
+
+export namespace ParseLargeFileResponse {
+  export type AsObject = {
+    fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
+  }
+}
+
+export class ListEventsRequest extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  hasBegin(): boolean;
+  clearBegin(): void;
+  getBegin(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBegin(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEnd(): boolean;
+  clearEnd(): void;
+  getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEnd(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTimeRange(): string;
+  setTimeRange(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEventsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEventsRequest): ListEventsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEventsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEventsRequest;
+  static deserializeBinaryFromReader(message: ListEventsRequest, reader: jspb.BinaryReader): ListEventsRequest;
+}
+
+export namespace ListEventsRequest {
+  export type AsObject = {
+    elementId: string,
+    begin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    timeRange: string,
+  }
+}
+
+export class ListEventsResponse extends jspb.Message {
+  clearRowsList(): void;
+  getRowsList(): Array<ListEventsResponse.Row>;
+  setRowsList(value: Array<ListEventsResponse.Row>): void;
+  addRows(value?: ListEventsResponse.Row, index?: number): ListEventsResponse.Row;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEventsResponse): ListEventsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEventsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEventsResponse;
+  static deserializeBinaryFromReader(message: ListEventsResponse, reader: jspb.BinaryReader): ListEventsResponse;
+}
+
+export namespace ListEventsResponse {
+  export type AsObject = {
+    rowsList: Array<ListEventsResponse.Row.AsObject>,
+  }
+
+  export class Row extends jspb.Message {
+    getInputRecordCount(): number;
+    setInputRecordCount(value: number): void;
+
+    getOutputRecordCount(): number;
+    setOutputRecordCount(value: number): void;
+
+    getDiscardedRecordCount(): number;
+    setDiscardedRecordCount(value: number): void;
+
+    hasBegin(): boolean;
+    clearBegin(): void;
+    getBegin(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setBegin(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasEnd(): boolean;
+    clearEnd(): void;
+    getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setEnd(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    getElementId(): string;
+    setElementId(value: string): void;
+
+    clearEntrypointsList(): void;
+    getEntrypointsList(): Array<string>;
+    setEntrypointsList(value: Array<string>): void;
+    addEntrypoints(value: string, index?: number): string;
+
+    clearParentIdsList(): void;
+    getParentIdsList(): Array<string>;
+    setParentIdsList(value: Array<string>): void;
+    addParentIds(value: string, index?: number): string;
+
+    clearColumnsList(): void;
+    getColumnsList(): Array<string>;
+    setColumnsList(value: Array<string>): void;
+    addColumns(value: string, index?: number): string;
+
+    getFieldPiiTypesMap(): jspb.Map<string, api_commons_classifier_pb.ClassifierEntityType[keyof api_commons_classifier_pb.ClassifierEntityType]>;
+    clearFieldPiiTypesMap(): void;
+    getFieldSyntaxTypesMap(): jspb.Map<string, string>;
+    clearFieldSyntaxTypesMap(): void;
+    getTotalQueueWaitSeconds(): number;
+    setTotalQueueWaitSeconds(value: number): void;
+
+    getTotalProcessingSeconds(): number;
+    setTotalProcessingSeconds(value: number): void;
+
+    clearMsgsList(): void;
+    getMsgsList(): Array<string>;
+    setMsgsList(value: Array<string>): void;
+    addMsgs(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Row.AsObject;
+    static toObject(includeInstance: boolean, msg: Row): Row.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Row, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Row;
+    static deserializeBinaryFromReader(message: Row, reader: jspb.BinaryReader): Row;
+  }
+
+  export namespace Row {
+    export type AsObject = {
+      inputRecordCount: number,
+      outputRecordCount: number,
+      discardedRecordCount: number,
+      begin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      elementId: string,
+      entrypointsList: Array<string>,
+      parentIdsList: Array<string>,
+      columnsList: Array<string>,
+      fieldPiiTypesMap: Array<[string, api_commons_classifier_pb.ClassifierEntityType[keyof api_commons_classifier_pb.ClassifierEntityType]]>,
+      fieldSyntaxTypesMap: Array<[string, string]>,
+      totalQueueWaitSeconds: number,
+      totalProcessingSeconds: number,
+      msgsList: Array<string>,
+    }
+  }
+}
+
+export class PeekListRequest extends jspb.Message {
+  hasBegin(): boolean;
+  clearBegin(): void;
+  getBegin(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBegin(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEnd(): boolean;
+  clearEnd(): void;
+  getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEnd(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getPrevId(): number;
+  setPrevId(value: number): void;
+
+  getAsc(): boolean;
+  setAsc(value: boolean): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  clearColumnsList(): void;
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): void;
+  addColumns(value: string, index?: number): string;
+
+  getEntrypointId(): string;
+  setEntrypointId(value: string): void;
+
+  getParentId(): string;
+  setParentId(value: string): void;
+
+  getViewDiscards(): boolean;
+  setViewDiscards(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PeekListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PeekListRequest): PeekListRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PeekListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PeekListRequest;
+  static deserializeBinaryFromReader(message: PeekListRequest, reader: jspb.BinaryReader): PeekListRequest;
+}
+
+export namespace PeekListRequest {
+  export type AsObject = {
+    begin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    prevId: number,
+    asc: boolean,
+    pageSize: number,
+    elementId: string,
+    columnsList: Array<string>,
+    entrypointId: string,
+    parentId: string,
+    viewDiscards: boolean,
+  }
+}
+
+export class PeekListResponse extends jspb.Message {
+  clearColumnsList(): void;
+  getColumnsList(): Array<PeekListResponse.Column>;
+  setColumnsList(value: Array<PeekListResponse.Column>): void;
+  addColumns(value?: PeekListResponse.Column, index?: number): PeekListResponse.Column;
+
+  getRecordCount(): number;
+  setRecordCount(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PeekListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PeekListResponse): PeekListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PeekListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PeekListResponse;
+  static deserializeBinaryFromReader(message: PeekListResponse, reader: jspb.BinaryReader): PeekListResponse;
+}
+
+export namespace PeekListResponse {
+  export type AsObject = {
+    columnsList: Array<PeekListResponse.Column.AsObject>,
+    recordCount: number,
+    pageToken: string,
+  }
+
+  export class Column extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
+
+    getEntityType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+    setEntityType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
+
+    getSyntaxType(): string;
+    setSyntaxType(value: string): void;
+
+    clearValuesList(): void;
+    getValuesList(): Array<string>;
+    setValuesList(value: Array<string>): void;
+    addValues(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Column.AsObject;
+    static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Column, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Column;
+    static deserializeBinaryFromReader(message: Column, reader: jspb.BinaryReader): Column;
+  }
+
+  export namespace Column {
+    export type AsObject = {
+      name: string,
+      entityType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
+      syntaxType: string,
+      valuesList: Array<string>,
+    }
   }
 }
 
