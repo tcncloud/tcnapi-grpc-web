@@ -121,6 +121,31 @@ export class ScrubList extends jspb.Message {
   setEntriesList(value: Array<ScrubEntry>): void;
   addEntries(value?: ScrubEntry, index?: number): ScrubEntry;
 
+  getScrubListId(): number;
+  setScrubListId(value: number): void;
+
+  getListName(): string;
+  setListName(value: string): void;
+
+  getListType(): number;
+  setListType(value: number): void;
+
+  getDecompositions(): string;
+  setDecompositions(value: string): void;
+
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubList.AsObject;
   static toObject(includeInstance: boolean, msg: ScrubList): ScrubList.AsObject;
@@ -135,6 +160,13 @@ export namespace ScrubList {
   export type AsObject = {
     listId: string,
     entriesList: Array<ScrubEntry.AsObject>,
+    scrubListId: number,
+    listName: string,
+    listType: number,
+    decompositions: string,
+    deleted: boolean,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -499,6 +531,15 @@ export class ScrubEntry extends jspb.Message {
   getCountryCode(): google_protobuf_wrappers_pb.StringValue | undefined;
   setCountryCode(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  getScrubListId(): number;
+  setScrubListId(value: number): void;
+
+  getScrubListEntryId(): number;
+  setScrubListEntryId(value: number): void;
+
+  getIsWildCard(): boolean;
+  setIsWildCard(value: boolean): void;
+
   hasCreatedOn(): boolean;
   clearCreatedOn(): void;
   getCreatedOn(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -508,6 +549,16 @@ export class ScrubEntry extends jspb.Message {
   clearCreatedBy(): void;
   getCreatedBy(): google_protobuf_wrappers_pb.StringValue | undefined;
   setCreatedBy(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubEntry.AsObject;
@@ -531,8 +582,13 @@ export namespace ScrubEntry {
     result?: google_protobuf_wrappers_pb.StringValue.AsObject,
     type: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    scrubListId: number,
+    scrubListEntryId: number,
+    isWildCard: boolean,
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
