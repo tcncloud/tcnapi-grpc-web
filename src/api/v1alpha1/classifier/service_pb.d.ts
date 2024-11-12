@@ -304,60 +304,6 @@ export namespace GetFileTemplateResponse {
   }
 }
 
-export class ParseLargeFileRequest extends jspb.Message {
-  hasFtsId(): boolean;
-  clearFtsId(): void;
-  getFtsId(): string;
-  setFtsId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getFilePointerCase(): ParseLargeFileRequest.FilePointerCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ParseLargeFileRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ParseLargeFileRequest): ParseLargeFileRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ParseLargeFileRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ParseLargeFileRequest;
-  static deserializeBinaryFromReader(message: ParseLargeFileRequest, reader: jspb.BinaryReader): ParseLargeFileRequest;
-}
-
-export namespace ParseLargeFileRequest {
-  export type AsObject = {
-    ftsId: string,
-    name: string,
-  }
-
-  export enum FilePointerCase {
-    FILE_POINTER_NOT_SET = 0,
-    FTS_ID = 1,
-  }
-}
-
-export class ParseLargeFileResponse extends jspb.Message {
-  hasFileTemplate(): boolean;
-  clearFileTemplate(): void;
-  getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
-  setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ParseLargeFileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ParseLargeFileResponse): ParseLargeFileResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ParseLargeFileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ParseLargeFileResponse;
-  static deserializeBinaryFromReader(message: ParseLargeFileResponse, reader: jspb.BinaryReader): ParseLargeFileResponse;
-}
-
-export namespace ParseLargeFileResponse {
-  export type AsObject = {
-    fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
-  }
-}
-
 export class ListEventsRequest extends jspb.Message {
   getElementId(): string;
   setElementId(value: string): void;
@@ -375,6 +321,12 @@ export class ListEventsRequest extends jspb.Message {
   getTimeRange(): string;
   setTimeRange(value: string): void;
 
+  getEntrypointId(): string;
+  setEntrypointId(value: string): void;
+
+  getParentId(): string;
+  setParentId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEventsRequest): ListEventsRequest.AsObject;
@@ -391,6 +343,8 @@ export namespace ListEventsRequest {
     begin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     timeRange: string,
+    entrypointId: string,
+    parentId: string,
   }
 }
 
@@ -453,10 +407,6 @@ export namespace ListEventsResponse {
     setColumnsList(value: Array<string>): void;
     addColumns(value: string, index?: number): string;
 
-    getFieldPiiTypesMap(): jspb.Map<string, api_commons_classifier_pb.ClassifierEntityType[keyof api_commons_classifier_pb.ClassifierEntityType]>;
-    clearFieldPiiTypesMap(): void;
-    getFieldSyntaxTypesMap(): jspb.Map<string, string>;
-    clearFieldSyntaxTypesMap(): void;
     getTotalQueueWaitSeconds(): number;
     setTotalQueueWaitSeconds(value: number): void;
 
@@ -489,8 +439,6 @@ export namespace ListEventsResponse {
       entrypointsList: Array<string>,
       parentIdsList: Array<string>,
       columnsList: Array<string>,
-      fieldPiiTypesMap: Array<[string, api_commons_classifier_pb.ClassifierEntityType[keyof api_commons_classifier_pb.ClassifierEntityType]]>,
-      fieldSyntaxTypesMap: Array<[string, string]>,
       totalQueueWaitSeconds: number,
       totalProcessingSeconds: number,
       msgsList: Array<string>,
@@ -509,8 +457,11 @@ export class PeekListRequest extends jspb.Message {
   getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEnd(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getPrevId(): number;
-  setPrevId(value: number): void;
+  getExternalTag(): string;
+  setExternalTag(value: string): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
 
   getAsc(): boolean;
   setAsc(value: boolean): void;
@@ -549,7 +500,8 @@ export namespace PeekListRequest {
   export type AsObject = {
     begin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    prevId: number,
+    externalTag: string,
+    pageToken: string,
     asc: boolean,
     pageSize: number,
     elementId: string,
@@ -561,13 +513,10 @@ export namespace PeekListRequest {
 }
 
 export class PeekListResponse extends jspb.Message {
-  clearColumnsList(): void;
-  getColumnsList(): Array<PeekListResponse.Column>;
-  setColumnsList(value: Array<PeekListResponse.Column>): void;
-  addColumns(value?: PeekListResponse.Column, index?: number): PeekListResponse.Column;
-
-  getRecordCount(): number;
-  setRecordCount(value: number): void;
+  clearJsonRecordsList(): void;
+  getJsonRecordsList(): Array<string>;
+  setJsonRecordsList(value: Array<string>): void;
+  addJsonRecords(value: string, index?: number): string;
 
   getPageToken(): string;
   setPageToken(value: string): void;
@@ -584,43 +533,8 @@ export class PeekListResponse extends jspb.Message {
 
 export namespace PeekListResponse {
   export type AsObject = {
-    columnsList: Array<PeekListResponse.Column.AsObject>,
-    recordCount: number,
+    jsonRecordsList: Array<string>,
     pageToken: string,
-  }
-
-  export class Column extends jspb.Message {
-    getName(): string;
-    setName(value: string): void;
-
-    getEntityType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
-    setEntityType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
-
-    getSyntaxType(): string;
-    setSyntaxType(value: string): void;
-
-    clearValuesList(): void;
-    getValuesList(): Array<string>;
-    setValuesList(value: Array<string>): void;
-    addValues(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Column.AsObject;
-    static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Column, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Column;
-    static deserializeBinaryFromReader(message: Column, reader: jspb.BinaryReader): Column;
-  }
-
-  export namespace Column {
-    export type AsObject = {
-      name: string,
-      entityType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
-      syntaxType: string,
-      valuesList: Array<string>,
-    }
   }
 }
 

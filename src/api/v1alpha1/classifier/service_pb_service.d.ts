@@ -31,15 +31,6 @@ type ClassifierFileTemplatesPeekList = {
   readonly responseType: typeof api_v1alpha1_classifier_service_pb.PeekListResponse;
 };
 
-type ClassifierFileTemplatesParseLargeFile = {
-  readonly methodName: string;
-  readonly service: typeof ClassifierFileTemplates;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_classifier_service_pb.ParseLargeFileRequest;
-  readonly responseType: typeof api_v1alpha1_classifier_service_pb.ParseLargeFileResponse;
-};
-
 type ClassifierFileTemplatesUpdateFileTemplate = {
   readonly methodName: string;
   readonly service: typeof ClassifierFileTemplates;
@@ -81,7 +72,6 @@ export class ClassifierFileTemplates {
   static readonly ParseFile: ClassifierFileTemplatesParseFile;
   static readonly ListEvents: ClassifierFileTemplatesListEvents;
   static readonly PeekList: ClassifierFileTemplatesPeekList;
-  static readonly ParseLargeFile: ClassifierFileTemplatesParseLargeFile;
   static readonly UpdateFileTemplate: ClassifierFileTemplatesUpdateFileTemplate;
   static readonly DeleteFileTemplate: ClassifierFileTemplatesDeleteFileTemplate;
   static readonly ListFileTemplates: ClassifierFileTemplatesListFileTemplates;
@@ -146,15 +136,6 @@ export class ClassifierFileTemplatesClient {
   peekList(
     requestMessage: api_v1alpha1_classifier_service_pb.PeekListRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.PeekListResponse|null) => void
-  ): UnaryResponse;
-  parseLargeFile(
-    requestMessage: api_v1alpha1_classifier_service_pb.ParseLargeFileRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ParseLargeFileResponse|null) => void
-  ): UnaryResponse;
-  parseLargeFile(
-    requestMessage: api_v1alpha1_classifier_service_pb.ParseLargeFileRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_classifier_service_pb.ParseLargeFileResponse|null) => void
   ): UnaryResponse;
   updateFileTemplate(
     requestMessage: api_v1alpha1_classifier_service_pb.UpdateFileTemplateRequest,
