@@ -121,12 +121,6 @@ export class ScrubList extends jspb.Message {
   setEntriesList(value: Array<ScrubEntry>): void;
   addEntries(value?: ScrubEntry, index?: number): ScrubEntry;
 
-  getListType(): number;
-  setListType(value: number): void;
-
-  getDecompositions(): string;
-  setDecompositions(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubList.AsObject;
   static toObject(includeInstance: boolean, msg: ScrubList): ScrubList.AsObject;
@@ -141,8 +135,6 @@ export namespace ScrubList {
   export type AsObject = {
     listId: string,
     entriesList: Array<ScrubEntry.AsObject>,
-    listType: number,
-    decompositions: string,
   }
 }
 
@@ -191,6 +183,46 @@ export namespace CreateScrubListReq {
     scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
     durable: boolean,
     decompositions: string,
+  }
+}
+
+export class UpdateScrubListRequest extends jspb.Message {
+  getListId(): string;
+  setListId(value: string): void;
+
+  getDecompositions(): string;
+  setDecompositions(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateScrubListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateScrubListRequest): UpdateScrubListRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateScrubListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateScrubListRequest;
+  static deserializeBinaryFromReader(message: UpdateScrubListRequest, reader: jspb.BinaryReader): UpdateScrubListRequest;
+}
+
+export namespace UpdateScrubListRequest {
+  export type AsObject = {
+    listId: string,
+    decompositions: string,
+  }
+}
+
+export class UpdateScrubListResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateScrubListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateScrubListResponse): UpdateScrubListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateScrubListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateScrubListResponse;
+  static deserializeBinaryFromReader(message: UpdateScrubListResponse, reader: jspb.BinaryReader): UpdateScrubListResponse;
+}
+
+export namespace UpdateScrubListResponse {
+  export type AsObject = {
   }
 }
 
