@@ -73,6 +73,15 @@ IntegrationsPublic.ProcessWorkflow = {
   responseType: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowRes
 };
 
+IntegrationsPublic.GetLinkDetails = {
+  methodName: "GetLinkDetails",
+  service: IntegrationsPublic,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrationspublic_service_pb.GetLinkDetailsReq,
+  responseType: api_v1alpha1_integrationspublic_service_pb.GetLinkDetailsRes
+};
+
 exports.IntegrationsPublic = IntegrationsPublic;
 
 function IntegrationsPublicClient(serviceHost, options) {
@@ -271,6 +280,37 @@ IntegrationsPublicClient.prototype.processWorkflow = function processWorkflow(re
     callback = arguments[1];
   }
   var client = grpc.unary(IntegrationsPublic.ProcessWorkflow, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+IntegrationsPublicClient.prototype.getLinkDetails = function getLinkDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(IntegrationsPublic.GetLinkDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
