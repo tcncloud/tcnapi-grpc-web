@@ -19,6 +19,12 @@ export class SchemaField extends jspb.Message {
   getColumnDescription(): string;
   setColumnDescription(value: string): void;
 
+  getIsTimeFilterColumn(): boolean;
+  setIsTimeFilterColumn(value: boolean): void;
+
+  getIsDefaultTimeFilterColumn(): boolean;
+  setIsDefaultTimeFilterColumn(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchemaField.AsObject;
   static toObject(includeInstance: boolean, msg: SchemaField): SchemaField.AsObject;
@@ -36,6 +42,8 @@ export namespace SchemaField {
     isPrimaryKey: boolean,
     isLowCardinality: boolean,
     columnDescription: string,
+    isTimeFilterColumn: boolean,
+    isDefaultTimeFilterColumn: boolean,
   }
 }
 
