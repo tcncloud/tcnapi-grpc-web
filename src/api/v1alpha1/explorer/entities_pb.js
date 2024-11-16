@@ -150,7 +150,9 @@ name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 columnType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 isPrimaryKey: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 isLowCardinality: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-columnDescription: jspb.Message.getFieldWithDefault(msg, 5, "")
+columnDescription: jspb.Message.getFieldWithDefault(msg, 5, ""),
+isTimeFilter: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+isDefaultTimeFilter: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -206,6 +208,14 @@ proto.api.v1alpha1.explorer.SchemaField.deserializeBinaryFromReader = function(m
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setColumnDescription(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsTimeFilter(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDefaultTimeFilter(value);
       break;
     default:
       reader.skipField();
@@ -268,6 +278,20 @@ proto.api.v1alpha1.explorer.SchemaField.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getIsTimeFilter();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getIsDefaultTimeFilter();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -361,6 +385,42 @@ proto.api.v1alpha1.explorer.SchemaField.prototype.getColumnDescription = functio
  */
 proto.api.v1alpha1.explorer.SchemaField.prototype.setColumnDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool is_time_filter = 6;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.getIsTimeFilter = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.explorer.SchemaField} returns this
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.setIsTimeFilter = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional bool is_default_time_filter = 7;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.getIsDefaultTimeFilter = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.explorer.SchemaField} returns this
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.setIsDefaultTimeFilter = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
