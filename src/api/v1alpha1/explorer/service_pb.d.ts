@@ -162,3 +162,110 @@ export namespace QueryResponse {
   }
 }
 
+export class GetInsightSupportQueryRequest extends jspb.Message {
+  getDatasourceName(): string;
+  setDatasourceName(value: string): void;
+
+  getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
+  setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
+
+  hasPipeline(): boolean;
+  clearPipeline(): void;
+  getPipeline(): string;
+  setPipeline(value: string): void;
+
+  hasPrql(): boolean;
+  clearPrql(): void;
+  getPrql(): string;
+  setPrql(value: string): void;
+
+  clearOrgIdsList(): void;
+  getOrgIdsList(): Array<string>;
+  setOrgIdsList(value: Array<string>): void;
+  addOrgIds(value: string, index?: number): string;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTime(): boolean;
+  clearEndTime(): void;
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTimezone(): string;
+  setTimezone(value: string): void;
+
+  hasPipelineParameters(): boolean;
+  clearPipelineParameters(): void;
+  getPipelineParameters(): api_v1alpha1_explorer_entities_pb.Parameters | undefined;
+  setPipelineParameters(value?: api_v1alpha1_explorer_entities_pb.Parameters): void;
+
+  getUiTraceId(): string;
+  setUiTraceId(value: string): void;
+
+  getComment(): string;
+  setComment(value: string): void;
+
+  getQueryCase(): GetInsightSupportQueryRequest.QueryCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInsightSupportQueryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInsightSupportQueryRequest): GetInsightSupportQueryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInsightSupportQueryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInsightSupportQueryRequest;
+  static deserializeBinaryFromReader(message: GetInsightSupportQueryRequest, reader: jspb.BinaryReader): GetInsightSupportQueryRequest;
+}
+
+export namespace GetInsightSupportQueryRequest {
+  export type AsObject = {
+    datasourceName: string,
+    datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
+    pipeline: string,
+    prql: string,
+    orgIdsList: Array<string>,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    timezone: string,
+    pipelineParameters?: api_v1alpha1_explorer_entities_pb.Parameters.AsObject,
+    uiTraceId: string,
+    comment: string,
+  }
+
+  export enum QueryCase {
+    QUERY_NOT_SET = 0,
+    PIPELINE = 3,
+    PRQL = 4,
+  }
+}
+
+export class GetInsightSupportQueryResponse extends jspb.Message {
+  getPrql(): string;
+  setPrql(value: string): void;
+
+  getSql(): string;
+  setSql(value: string): void;
+
+  getExplain(): string;
+  setExplain(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInsightSupportQueryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInsightSupportQueryResponse): GetInsightSupportQueryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInsightSupportQueryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInsightSupportQueryResponse;
+  static deserializeBinaryFromReader(message: GetInsightSupportQueryResponse, reader: jspb.BinaryReader): GetInsightSupportQueryResponse;
+}
+
+export namespace GetInsightSupportQueryResponse {
+  export type AsObject = {
+    prql: string,
+    sql: string,
+    explain: string,
+  }
+}
+
