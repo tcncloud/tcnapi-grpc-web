@@ -1488,7 +1488,6 @@ export interface RealTimeManagementStateMap {
   NOT_READY: 10;
   WRAP_UP: 11;
   LOGGED_OUT: 13;
-  PAUSE: 14;
 }
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
