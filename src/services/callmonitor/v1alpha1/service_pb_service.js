@@ -10,13 +10,13 @@ var CallMonitorService = (function () {
   return CallMonitorService;
 }());
 
-CallMonitorService.GetStats = {
-  methodName: "GetStats",
+CallMonitorService.GetHoldQueueStats = {
+  methodName: "GetHoldQueueStats",
   service: CallMonitorService,
   requestStream: false,
   responseStream: false,
-  requestType: services_callmonitor_v1alpha1_service_pb.GetStatsRequest,
-  responseType: services_callmonitor_v1alpha1_service_pb.GetStatsResponse
+  requestType: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsRequest,
+  responseType: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsResponse
 };
 
 exports.CallMonitorService = CallMonitorService;
@@ -26,11 +26,11 @@ function CallMonitorServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-CallMonitorServiceClient.prototype.getStats = function getStats(requestMessage, metadata, callback) {
+CallMonitorServiceClient.prototype.getHoldQueueStats = function getHoldQueueStats(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(CallMonitorService.GetStats, {
+  var client = grpc.unary(CallMonitorService.GetHoldQueueStats, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

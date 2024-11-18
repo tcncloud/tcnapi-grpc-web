@@ -4,7 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class CallStats extends jspb.Message {
+export class HoldQueueCallStats extends jspb.Message {
   getCallId(): string;
   setCallId(value: string): void;
 
@@ -17,8 +17,8 @@ export class CallStats extends jspb.Message {
   getPhoneNumber(): string;
   setPhoneNumber(value: string): void;
 
-  getStatus(): MonitorStatusMap[keyof MonitorStatusMap];
-  setStatus(value: MonitorStatusMap[keyof MonitorStatusMap]): void;
+  getStatus(): HoldQueueMonitorStatusMap[keyof HoldQueueMonitorStatusMap];
+  setStatus(value: HoldQueueMonitorStatusMap[keyof HoldQueueMonitorStatusMap]): void;
 
   getMonitorDurationMillis(): number;
   setMonitorDurationMillis(value: number): void;
@@ -34,34 +34,34 @@ export class CallStats extends jspb.Message {
   setMonitorEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CallStats.AsObject;
-  static toObject(includeInstance: boolean, msg: CallStats): CallStats.AsObject;
+  toObject(includeInstance?: boolean): HoldQueueCallStats.AsObject;
+  static toObject(includeInstance: boolean, msg: HoldQueueCallStats): HoldQueueCallStats.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CallStats, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CallStats;
-  static deserializeBinaryFromReader(message: CallStats, reader: jspb.BinaryReader): CallStats;
+  static serializeBinaryToWriter(message: HoldQueueCallStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HoldQueueCallStats;
+  static deserializeBinaryFromReader(message: HoldQueueCallStats, reader: jspb.BinaryReader): HoldQueueCallStats;
 }
 
-export namespace CallStats {
+export namespace HoldQueueCallStats {
   export type AsObject = {
     callId: string,
     orgId: string,
     campaignId: string,
     phoneNumber: string,
-    status: MonitorStatusMap[keyof MonitorStatusMap],
+    status: HoldQueueMonitorStatusMap[keyof HoldQueueMonitorStatusMap],
     monitorDurationMillis: number,
     monitorStartTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     monitorEndTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
-export interface MonitorStatusMap {
-  MONITOR_STATUS_UNSPECIFIED: 0;
-  MONITOR_STATUS_MONITORING: 1;
-  MONITOR_STATUS_SUCCESS: 2;
-  MONITOR_STATUS_FAILED: 3;
+export interface HoldQueueMonitorStatusMap {
+  HOLD_QUEUE_MONITOR_STATUS_UNSPECIFIED: 0;
+  HOLD_QUEUE_MONITOR_STATUS_MONITORING: 1;
+  HOLD_QUEUE_MONITOR_STATUS_SUCCESS: 2;
+  HOLD_QUEUE_MONITOR_STATUS_FAILED: 3;
 }
 
-export const MonitorStatus: MonitorStatusMap;
+export const HoldQueueMonitorStatus: HoldQueueMonitorStatusMap;
 

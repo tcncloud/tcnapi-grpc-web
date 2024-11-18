@@ -7,7 +7,7 @@ import * as api_commons_callmonitor_pb from "../../../api/commons/callmonitor_pb
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class GetStatsRequest extends jspb.Message {
+export class GetHoldQueueStatsRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -23,30 +23,30 @@ export class GetStatsRequest extends jspb.Message {
 
   hasFilter(): boolean;
   clearFilter(): void;
-  getFilter(): GetStatsRequest.Filter | undefined;
-  setFilter(value?: GetStatsRequest.Filter): void;
+  getFilter(): GetHoldQueueStatsRequest.Filter | undefined;
+  setFilter(value?: GetHoldQueueStatsRequest.Filter): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetStatsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetStatsRequest): GetStatsRequest.AsObject;
+  toObject(includeInstance?: boolean): GetHoldQueueStatsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetHoldQueueStatsRequest): GetHoldQueueStatsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetStatsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetStatsRequest;
-  static deserializeBinaryFromReader(message: GetStatsRequest, reader: jspb.BinaryReader): GetStatsRequest;
+  static serializeBinaryToWriter(message: GetHoldQueueStatsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetHoldQueueStatsRequest;
+  static deserializeBinaryFromReader(message: GetHoldQueueStatsRequest, reader: jspb.BinaryReader): GetHoldQueueStatsRequest;
 }
 
-export namespace GetStatsRequest {
+export namespace GetHoldQueueStatsRequest {
   export type AsObject = {
     orgId: string,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    filter?: GetStatsRequest.Filter.AsObject,
+    filter?: GetHoldQueueStatsRequest.Filter.AsObject,
   }
 
   export class Filter extends jspb.Message {
-    getStatus(): api_commons_callmonitor_pb.MonitorStatusMap[keyof api_commons_callmonitor_pb.MonitorStatusMap];
-    setStatus(value: api_commons_callmonitor_pb.MonitorStatusMap[keyof api_commons_callmonitor_pb.MonitorStatusMap]): void;
+    getStatus(): api_commons_callmonitor_pb.HoldQueueMonitorStatusMap[keyof api_commons_callmonitor_pb.HoldQueueMonitorStatusMap];
+    setStatus(value: api_commons_callmonitor_pb.HoldQueueMonitorStatusMap[keyof api_commons_callmonitor_pb.HoldQueueMonitorStatusMap]): void;
 
     getCampaignId(): string;
     setCampaignId(value: string): void;
@@ -63,17 +63,17 @@ export namespace GetStatsRequest {
 
   export namespace Filter {
     export type AsObject = {
-      status: api_commons_callmonitor_pb.MonitorStatusMap[keyof api_commons_callmonitor_pb.MonitorStatusMap],
+      status: api_commons_callmonitor_pb.HoldQueueMonitorStatusMap[keyof api_commons_callmonitor_pb.HoldQueueMonitorStatusMap],
       campaignId: string,
     }
   }
 }
 
-export class GetStatsResponse extends jspb.Message {
+export class GetHoldQueueStatsResponse extends jspb.Message {
   clearStatsList(): void;
-  getStatsList(): Array<api_commons_callmonitor_pb.CallStats>;
-  setStatsList(value: Array<api_commons_callmonitor_pb.CallStats>): void;
-  addStats(value?: api_commons_callmonitor_pb.CallStats, index?: number): api_commons_callmonitor_pb.CallStats;
+  getStatsList(): Array<api_commons_callmonitor_pb.HoldQueueCallStats>;
+  setStatsList(value: Array<api_commons_callmonitor_pb.HoldQueueCallStats>): void;
+  addStats(value?: api_commons_callmonitor_pb.HoldQueueCallStats, index?: number): api_commons_callmonitor_pb.HoldQueueCallStats;
 
   getTotalNumCalls(): number;
   setTotalNumCalls(value: number): void;
@@ -91,18 +91,18 @@ export class GetStatsResponse extends jspb.Message {
   setTotalNumMonitoring(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetStatsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetStatsResponse): GetStatsResponse.AsObject;
+  toObject(includeInstance?: boolean): GetHoldQueueStatsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetHoldQueueStatsResponse): GetHoldQueueStatsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetStatsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetStatsResponse;
-  static deserializeBinaryFromReader(message: GetStatsResponse, reader: jspb.BinaryReader): GetStatsResponse;
+  static serializeBinaryToWriter(message: GetHoldQueueStatsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetHoldQueueStatsResponse;
+  static deserializeBinaryFromReader(message: GetHoldQueueStatsResponse, reader: jspb.BinaryReader): GetHoldQueueStatsResponse;
 }
 
-export namespace GetStatsResponse {
+export namespace GetHoldQueueStatsResponse {
   export type AsObject = {
-    statsList: Array<api_commons_callmonitor_pb.CallStats.AsObject>,
+    statsList: Array<api_commons_callmonitor_pb.HoldQueueCallStats.AsObject>,
     totalNumCalls: number,
     totalNumSuccessful: number,
     totalNumFailed: number,

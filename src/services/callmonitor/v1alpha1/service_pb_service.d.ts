@@ -4,18 +4,18 @@
 import * as services_callmonitor_v1alpha1_service_pb from "../../../services/callmonitor/v1alpha1/service_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type CallMonitorServiceGetStats = {
+type CallMonitorServiceGetHoldQueueStats = {
   readonly methodName: string;
   readonly service: typeof CallMonitorService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_callmonitor_v1alpha1_service_pb.GetStatsRequest;
-  readonly responseType: typeof services_callmonitor_v1alpha1_service_pb.GetStatsResponse;
+  readonly requestType: typeof services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsRequest;
+  readonly responseType: typeof services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsResponse;
 };
 
 export class CallMonitorService {
   static readonly serviceName: string;
-  static readonly GetStats: CallMonitorServiceGetStats;
+  static readonly GetHoldQueueStats: CallMonitorServiceGetHoldQueueStats;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -50,14 +50,14 @@ export class CallMonitorServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  getStats(
-    requestMessage: services_callmonitor_v1alpha1_service_pb.GetStatsRequest,
+  getHoldQueueStats(
+    requestMessage: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_callmonitor_v1alpha1_service_pb.GetStatsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsResponse|null) => void
   ): UnaryResponse;
-  getStats(
-    requestMessage: services_callmonitor_v1alpha1_service_pb.GetStatsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_callmonitor_v1alpha1_service_pb.GetStatsResponse|null) => void
+  getHoldQueueStats(
+    requestMessage: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_callmonitor_v1alpha1_service_pb.GetHoldQueueStatsResponse|null) => void
   ): UnaryResponse;
 }
 
