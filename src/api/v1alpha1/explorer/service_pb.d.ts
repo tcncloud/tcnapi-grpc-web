@@ -162,7 +162,7 @@ export namespace QueryResponse {
   }
 }
 
-export class GetInsightSupportQueryRequest extends jspb.Message {
+export class GetSupportQueryRequest extends jspb.Message {
   getDatasourceName(): string;
   setDatasourceName(value: string): void;
 
@@ -208,18 +208,18 @@ export class GetInsightSupportQueryRequest extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
-  getQueryCase(): GetInsightSupportQueryRequest.QueryCase;
+  getQueryCase(): GetSupportQueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetInsightSupportQueryRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetInsightSupportQueryRequest): GetInsightSupportQueryRequest.AsObject;
+  toObject(includeInstance?: boolean): GetSupportQueryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSupportQueryRequest): GetSupportQueryRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetInsightSupportQueryRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetInsightSupportQueryRequest;
-  static deserializeBinaryFromReader(message: GetInsightSupportQueryRequest, reader: jspb.BinaryReader): GetInsightSupportQueryRequest;
+  static serializeBinaryToWriter(message: GetSupportQueryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSupportQueryRequest;
+  static deserializeBinaryFromReader(message: GetSupportQueryRequest, reader: jspb.BinaryReader): GetSupportQueryRequest;
 }
 
-export namespace GetInsightSupportQueryRequest {
+export namespace GetSupportQueryRequest {
   export type AsObject = {
     datasourceName: string,
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
@@ -241,7 +241,13 @@ export namespace GetInsightSupportQueryRequest {
   }
 }
 
-export class GetInsightSupportQueryResponse extends jspb.Message {
+export class GetSupportQueryResponse extends jspb.Message {
+  getResultUrl(): string;
+  setResultUrl(value: string): void;
+
+  getResultSizeBytes(): number;
+  setResultSizeBytes(value: number): void;
+
   getPrql(): string;
   setPrql(value: string): void;
 
@@ -252,17 +258,19 @@ export class GetInsightSupportQueryResponse extends jspb.Message {
   setExplain(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetInsightSupportQueryResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetInsightSupportQueryResponse): GetInsightSupportQueryResponse.AsObject;
+  toObject(includeInstance?: boolean): GetSupportQueryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSupportQueryResponse): GetSupportQueryResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetInsightSupportQueryResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetInsightSupportQueryResponse;
-  static deserializeBinaryFromReader(message: GetInsightSupportQueryResponse, reader: jspb.BinaryReader): GetInsightSupportQueryResponse;
+  static serializeBinaryToWriter(message: GetSupportQueryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSupportQueryResponse;
+  static deserializeBinaryFromReader(message: GetSupportQueryResponse, reader: jspb.BinaryReader): GetSupportQueryResponse;
 }
 
-export namespace GetInsightSupportQueryResponse {
+export namespace GetSupportQueryResponse {
   export type AsObject = {
+    resultUrl: string,
+    resultSizeBytes: number,
     prql: string,
     sql: string,
     explain: string,

@@ -28,13 +28,13 @@ ExplorerService.Query = {
   responseType: api_v1alpha1_explorer_service_pb.QueryResponse
 };
 
-ExplorerService.GetInsightSupportQuery = {
-  methodName: "GetInsightSupportQuery",
+ExplorerService.GetSupportQuery = {
+  methodName: "GetSupportQuery",
   service: ExplorerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryRequest,
-  responseType: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryResponse
+  requestType: api_v1alpha1_explorer_service_pb.GetSupportQueryRequest,
+  responseType: api_v1alpha1_explorer_service_pb.GetSupportQueryResponse
 };
 
 exports.ExplorerService = ExplorerService;
@@ -106,11 +106,11 @@ ExplorerServiceClient.prototype.query = function query(requestMessage, metadata,
   };
 };
 
-ExplorerServiceClient.prototype.getInsightSupportQuery = function getInsightSupportQuery(requestMessage, metadata, callback) {
+ExplorerServiceClient.prototype.getSupportQuery = function getSupportQuery(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ExplorerService.GetInsightSupportQuery, {
+  var client = grpc.unary(ExplorerService.GetSupportQuery, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

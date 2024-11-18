@@ -22,20 +22,20 @@ type ExplorerServiceQuery = {
   readonly responseType: typeof api_v1alpha1_explorer_service_pb.QueryResponse;
 };
 
-type ExplorerServiceGetInsightSupportQuery = {
+type ExplorerServiceGetSupportQuery = {
   readonly methodName: string;
   readonly service: typeof ExplorerService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_explorer_service_pb.GetInsightSupportQueryRequest;
-  readonly responseType: typeof api_v1alpha1_explorer_service_pb.GetInsightSupportQueryResponse;
+  readonly requestType: typeof api_v1alpha1_explorer_service_pb.GetSupportQueryRequest;
+  readonly responseType: typeof api_v1alpha1_explorer_service_pb.GetSupportQueryResponse;
 };
 
 export class ExplorerService {
   static readonly serviceName: string;
   static readonly ListDatasourceSchemas: ExplorerServiceListDatasourceSchemas;
   static readonly Query: ExplorerServiceQuery;
-  static readonly GetInsightSupportQuery: ExplorerServiceGetInsightSupportQuery;
+  static readonly GetSupportQuery: ExplorerServiceGetSupportQuery;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -88,14 +88,14 @@ export class ExplorerServiceClient {
     requestMessage: api_v1alpha1_explorer_service_pb.QueryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_explorer_service_pb.QueryResponse|null) => void
   ): UnaryResponse;
-  getInsightSupportQuery(
-    requestMessage: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryRequest,
+  getSupportQuery(
+    requestMessage: api_v1alpha1_explorer_service_pb.GetSupportQueryRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_explorer_service_pb.GetSupportQueryResponse|null) => void
   ): UnaryResponse;
-  getInsightSupportQuery(
-    requestMessage: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_explorer_service_pb.GetInsightSupportQueryResponse|null) => void
+  getSupportQuery(
+    requestMessage: api_v1alpha1_explorer_service_pb.GetSupportQueryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_explorer_service_pb.GetSupportQueryResponse|null) => void
   ): UnaryResponse;
 }
 
