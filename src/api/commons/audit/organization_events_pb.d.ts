@@ -4,6 +4,9 @@
 import * as jspb from "google-protobuf";
 
 export class UserAccessTokenExpiringEvent extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserAccessTokenExpiringEvent.AsObject;
   static toObject(includeInstance: boolean, msg: UserAccessTokenExpiringEvent): UserAccessTokenExpiringEvent.AsObject;
@@ -16,6 +19,7 @@ export class UserAccessTokenExpiringEvent extends jspb.Message {
 
 export namespace UserAccessTokenExpiringEvent {
   export type AsObject = {
+    message: string,
   }
 }
 
