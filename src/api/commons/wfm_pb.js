@@ -9566,7 +9566,8 @@ proto.api.commons.RealTimeManagementState = {
   READY: 9,
   NOT_READY: 10,
   WRAP_UP: 11,
-  LOGGED_OUT: 13
+  LOGGED_OUT: 13,
+  PAUSE: 14
 };
 
 /**
