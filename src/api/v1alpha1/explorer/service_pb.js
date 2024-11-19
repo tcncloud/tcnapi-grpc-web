@@ -1357,7 +1357,8 @@ endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObje
 timezone: jspb.Message.getFieldWithDefault(msg, 8, ""),
 pipelineParameters: (f = msg.getPipelineParameters()) && api_v1alpha1_explorer_entities_pb.Parameters.toObject(includeInstance, f),
 uiTraceId: jspb.Message.getFieldWithDefault(msg, 10, ""),
-comment: jspb.Message.getFieldWithDefault(msg, 11, "")
+comment: jspb.Message.getFieldWithDefault(msg, 11, ""),
+format: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -1440,6 +1441,10 @@ proto.api.v1alpha1.explorer.GetSupportQueryRequest.deserializeBinaryFromReader =
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setComment(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (reader.readEnum());
+      msg.setFormat(value);
       break;
     default:
       reader.skipField();
@@ -1547,6 +1552,13 @@ proto.api.v1alpha1.explorer.GetSupportQueryRequest.serializeBinaryToWriter = fun
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -1860,6 +1872,24 @@ proto.api.v1alpha1.explorer.GetSupportQueryRequest.prototype.getComment = functi
  */
 proto.api.v1alpha1.explorer.GetSupportQueryRequest.prototype.setComment = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional ExportFormat format = 12;
+ * @return {!proto.api.v1alpha1.explorer.ExportFormat}
+ */
+proto.api.v1alpha1.explorer.GetSupportQueryRequest.prototype.getFormat = function() {
+  return /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.explorer.ExportFormat} value
+ * @return {!proto.api.v1alpha1.explorer.GetSupportQueryRequest} returns this
+ */
+proto.api.v1alpha1.explorer.GetSupportQueryRequest.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

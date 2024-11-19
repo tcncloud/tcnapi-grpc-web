@@ -208,6 +208,9 @@ export class GetSupportQueryRequest extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getFormat(): api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap];
+  setFormat(value: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap]): void;
+
   getQueryCase(): GetSupportQueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSupportQueryRequest.AsObject;
@@ -232,6 +235,7 @@ export namespace GetSupportQueryRequest {
     pipelineParameters?: api_v1alpha1_explorer_entities_pb.Parameters.AsObject,
     uiTraceId: string,
     comment: string,
+    format: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap],
   }
 
   export enum QueryCase {
