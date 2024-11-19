@@ -812,8 +812,8 @@ export namespace CreateAgentClientInfoDisplayTemplateRequest {
 }
 
 export class CreateAgentClientInfoDisplayTemplateResponse extends jspb.Message {
-  getTemplateId(): number;
-  setTemplateId(value: number): void;
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAgentClientInfoDisplayTemplateResponse.AsObject;
@@ -827,7 +827,7 @@ export class CreateAgentClientInfoDisplayTemplateResponse extends jspb.Message {
 
 export namespace CreateAgentClientInfoDisplayTemplateResponse {
   export type AsObject = {
-    templateId: number,
+    templateSid: number,
   }
 }
 
@@ -870,8 +870,8 @@ export namespace UpdateAgentClientInfoDisplayTemplateResponse {
 }
 
 export class GetAgentClientInfoDisplayTemplateRequest extends jspb.Message {
-  getTemplateId(): number;
-  setTemplateId(value: number): void;
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAgentClientInfoDisplayTemplateRequest.AsObject;
@@ -885,13 +885,15 @@ export class GetAgentClientInfoDisplayTemplateRequest extends jspb.Message {
 
 export namespace GetAgentClientInfoDisplayTemplateRequest {
   export type AsObject = {
-    templateId: number,
+    templateSid: number,
   }
 }
 
 export class GetAgentClientInfoDisplayTemplateResponse extends jspb.Message {
-  getTemplateSid(): number;
-  setTemplateSid(value: number): void;
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate | undefined;
+  setTemplate(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAgentClientInfoDisplayTemplateResponse.AsObject;
@@ -905,7 +907,7 @@ export class GetAgentClientInfoDisplayTemplateResponse extends jspb.Message {
 
 export namespace GetAgentClientInfoDisplayTemplateResponse {
   export type AsObject = {
-    templateSid: number,
+    template?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject,
   }
 }
 
@@ -948,8 +950,8 @@ export namespace ListAgentClientInfoDisplayTemplatesResponse {
 }
 
 export class DeleteAgentClientInfoDisplayTemplateRequest extends jspb.Message {
-  getTemplateId(): number;
-  setTemplateId(value: number): void;
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAgentClientInfoDisplayTemplateRequest.AsObject;
@@ -963,7 +965,7 @@ export class DeleteAgentClientInfoDisplayTemplateRequest extends jspb.Message {
 
 export namespace DeleteAgentClientInfoDisplayTemplateRequest {
   export type AsObject = {
-    templateId: number,
+    templateSid: number,
   }
 }
 

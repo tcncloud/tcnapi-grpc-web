@@ -6553,7 +6553,7 @@ proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResp
  */
 proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-templateId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+templateSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -6592,7 +6592,7 @@ proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResp
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setTemplateId(value);
+      msg.setTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -6623,7 +6623,7 @@ proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResp
  */
 proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTemplateId();
+  f = message.getTemplateSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -6634,10 +6634,10 @@ proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResp
 
 
 /**
- * optional int64 template_id = 1;
+ * optional int64 template_sid = 1;
  * @return {number}
  */
-proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.prototype.getTemplateId = function() {
+proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.prototype.getTemplateSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -6646,7 +6646,7 @@ proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResp
  * @param {number} value
  * @return {!proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.prototype.setTemplateId = function(value) {
+proto.services.org.hunt_groups.v1alpha1.CreateAgentClientInfoDisplayTemplateResponse.prototype.setTemplateSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -6935,7 +6935,7 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest
  */
 proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-templateId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+templateSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -6974,7 +6974,7 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setTemplateId(value);
+      msg.setTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -7005,7 +7005,7 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest
  */
 proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTemplateId();
+  f = message.getTemplateSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -7016,10 +7016,10 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest
 
 
 /**
- * optional int64 template_id = 1;
+ * optional int64 template_sid = 1;
  * @return {number}
  */
-proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.prototype.getTemplateId = function() {
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.prototype.getTemplateSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -7028,7 +7028,7 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest
  * @param {number} value
  * @return {!proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.prototype.setTemplateId = function(value) {
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRequest.prototype.setTemplateSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -7065,7 +7065,7 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRespons
  */
 proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-templateSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+template: (f = msg.getTemplate()) && api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7103,8 +7103,9 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRespons
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTemplateSid(value);
+      var value = new api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.deserializeBinaryFromReader);
+      msg.setTemplate(value);
       break;
     default:
       reader.skipField();
@@ -7135,31 +7136,51 @@ proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateRespons
  */
 proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTemplateSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getTemplate();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional int64 template_sid = 1;
- * @return {number}
+ * optional api.commons.org.ClientInfoDisplayTemplate template = 1;
+ * @return {?proto.api.commons.org.ClientInfoDisplayTemplate}
  */
-proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.getTemplateSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.getTemplate = function() {
+  return /** @type{?proto.api.commons.org.ClientInfoDisplayTemplate} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.api.commons.org.ClientInfoDisplayTemplate|undefined} value
+ * @return {!proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse} returns this
+*/
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.setTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.setTemplateSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.clearTemplate = function() {
+  return this.setTemplate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.hunt_groups.v1alpha1.GetAgentClientInfoDisplayTemplateResponse.prototype.hasTemplate = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -7456,7 +7477,7 @@ proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequ
  */
 proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-templateId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+templateSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -7495,7 +7516,7 @@ proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequ
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setTemplateId(value);
+      msg.setTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -7526,7 +7547,7 @@ proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequ
  */
 proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTemplateId();
+  f = message.getTemplateSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -7537,10 +7558,10 @@ proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequ
 
 
 /**
- * optional int64 template_id = 1;
+ * optional int64 template_sid = 1;
  * @return {number}
  */
-proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.prototype.getTemplateId = function() {
+proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.prototype.getTemplateSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -7549,7 +7570,7 @@ proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequ
  * @param {number} value
  * @return {!proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.prototype.setTemplateId = function(value) {
+proto.services.org.hunt_groups.v1alpha1.DeleteAgentClientInfoDisplayTemplateRequest.prototype.setTemplateSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
