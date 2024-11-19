@@ -737,6 +737,9 @@ export class ProcessWorkflowReq extends jspb.Message {
   getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
   setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
 
+  getSessionId(): string;
+  setSessionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessWorkflowReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessWorkflowReq): ProcessWorkflowReq.AsObject;
@@ -755,6 +758,7 @@ export namespace ProcessWorkflowReq {
     choice: number,
     paramsMap: Array<[string, Value.AsObject]>,
     requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
+    sessionId: string,
   }
 }
 
@@ -764,6 +768,9 @@ export class ProcessWorkflowRes extends jspb.Message {
 
   getDataMap(): jspb.Map<string, Value>;
   clearDataMap(): void;
+  getSessionId(): string;
+  setSessionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessWorkflowRes.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessWorkflowRes): ProcessWorkflowRes.AsObject;
@@ -778,6 +785,7 @@ export namespace ProcessWorkflowRes {
   export type AsObject = {
     success: boolean,
     dataMap: Array<[string, Value.AsObject]>,
+    sessionId: string,
   }
 }
 
