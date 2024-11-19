@@ -11966,53 +11966,6 @@ export namespace ListRealTimeManagementStatesResponse {
   }
 }
 
-export class ListAdherenceAgentStatesRequest extends jspb.Message {
-  clearWfmAgentSidsList(): void;
-  getWfmAgentSidsList(): Array<number>;
-  setWfmAgentSidsList(value: Array<number>): void;
-  addWfmAgentSids(value: number, index?: number): number;
-
-  hasStartDatetime(): boolean;
-  clearStartDatetime(): void;
-  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAdherenceAgentStatesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesRequest): ListAdherenceAgentStatesRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAdherenceAgentStatesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStatesRequest;
-  static deserializeBinaryFromReader(message: ListAdherenceAgentStatesRequest, reader: jspb.BinaryReader): ListAdherenceAgentStatesRequest;
-}
-
-export namespace ListAdherenceAgentStatesRequest {
-  export type AsObject = {
-    wfmAgentSidsList: Array<number>,
-    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
-}
-
-export class ListAdherenceAgentStatesResponse extends jspb.Message {
-  getAgentStatesMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStates>;
-  clearAgentStatesMap(): void;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesResponse): ListAdherenceAgentStatesResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAdherenceAgentStatesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStatesResponse;
-  static deserializeBinaryFromReader(message: ListAdherenceAgentStatesResponse, reader: jspb.BinaryReader): ListAdherenceAgentStatesResponse;
-}
-
-export namespace ListAdherenceAgentStatesResponse {
-  export type AsObject = {
-    agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
-  }
-}
-
 export class RealTimeManagementStateColor extends jspb.Message {
   getState(): api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap];
   setState(value: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]): void;
