@@ -644,10 +644,10 @@ export class AuditEvent extends jspb.Message {
   getContactManagerEntryExpungeEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
   setContactManagerEntryExpungeEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
 
-  hasUserAccessTokenExpiringEvent(): boolean;
-  clearUserAccessTokenExpiringEvent(): void;
-  getUserAccessTokenExpiringEvent(): api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent | undefined;
-  setUserAccessTokenExpiringEvent(value?: api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent): void;
+  hasUsersAccessTokensExpiringEvent(): boolean;
+  clearUsersAccessTokensExpiringEvent(): void;
+  getUsersAccessTokensExpiringEvent(): api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent | undefined;
+  setUsersAccessTokensExpiringEvent(value?: api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent): void;
 
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
@@ -789,7 +789,7 @@ export namespace AuditEvent {
     contactManagerKycVerificationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
     contactManagerEntryDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
     contactManagerEntryExpungeEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
-    userAccessTokenExpiringEvent?: api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent.AsObject,
+    usersAccessTokensExpiringEvent?: api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent.AsObject,
   }
 
   export enum EventCase {
@@ -915,7 +915,7 @@ export namespace AuditEvent {
     CONTACT_MANAGER_KYC_VERIFICATION_EVENT = 1206,
     CONTACT_MANAGER_ENTRY_DELETE_EVENT = 1207,
     CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT = 1208,
-    USER_ACCESS_TOKEN_EXPIRING_EVENT = 1300,
+    USERS_ACCESS_TOKENS_EXPIRING_EVENT = 1300,
   }
 }
 

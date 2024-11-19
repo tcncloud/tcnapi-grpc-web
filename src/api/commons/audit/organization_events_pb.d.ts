@@ -3,23 +3,27 @@
 
 import * as jspb from "google-protobuf";
 
-export class UserAccessTokenExpiringEvent extends jspb.Message {
-  getMessage(): string;
-  setMessage(value: string): void;
+export class UsersAccessTokensExpiringEvent extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getReport(): string;
+  setReport(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserAccessTokenExpiringEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: UserAccessTokenExpiringEvent): UserAccessTokenExpiringEvent.AsObject;
+  toObject(includeInstance?: boolean): UsersAccessTokensExpiringEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: UsersAccessTokensExpiringEvent): UsersAccessTokensExpiringEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UserAccessTokenExpiringEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserAccessTokenExpiringEvent;
-  static deserializeBinaryFromReader(message: UserAccessTokenExpiringEvent, reader: jspb.BinaryReader): UserAccessTokenExpiringEvent;
+  static serializeBinaryToWriter(message: UsersAccessTokensExpiringEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UsersAccessTokensExpiringEvent;
+  static deserializeBinaryFromReader(message: UsersAccessTokensExpiringEvent, reader: jspb.BinaryReader): UsersAccessTokensExpiringEvent;
 }
 
-export namespace UserAccessTokenExpiringEvent {
+export namespace UsersAccessTokensExpiringEvent {
   export type AsObject = {
-    message: string,
+    orgId: string,
+    report: string,
   }
 }
 

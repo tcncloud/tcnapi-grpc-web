@@ -213,7 +213,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   CONTACT_MANAGER_KYC_VERIFICATION_EVENT: 1206,
   CONTACT_MANAGER_ENTRY_DELETE_EVENT: 1207,
   CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT: 1208,
-  USER_ACCESS_TOKEN_EXPIRING_EVENT: 1300
+  USERS_ACCESS_TOKENS_EXPIRING_EVENT: 1300
 };
 
 /**
@@ -381,7 +381,7 @@ contactManagerListUploadEvent: (f = msg.getContactManagerListUploadEvent()) && a
 contactManagerKycVerificationEvent: (f = msg.getContactManagerKycVerificationEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f),
 contactManagerEntryDeleteEvent: (f = msg.getContactManagerEntryDeleteEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
 contactManagerEntryExpungeEvent: (f = msg.getContactManagerEntryExpungeEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
-userAccessTokenExpiringEvent: (f = msg.getUserAccessTokenExpiringEvent()) && api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent.toObject(includeInstance, f)
+usersAccessTokensExpiringEvent: (f = msg.getUsersAccessTokensExpiringEvent()) && api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1049,9 +1049,9 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       msg.setContactManagerEntryExpungeEvent(value);
       break;
     case 1300:
-      var value = new api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent;
-      reader.readMessage(value,api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent.deserializeBinaryFromReader);
-      msg.setUserAccessTokenExpiringEvent(value);
+      var value = new api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent;
+      reader.readMessage(value,api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent.deserializeBinaryFromReader);
+      msg.setUsersAccessTokensExpiringEvent(value);
       break;
     default:
       reader.skipField();
@@ -2093,12 +2093,12 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.serializeBinaryToWriter
     );
   }
-  f = message.getUserAccessTokenExpiringEvent();
+  f = message.getUsersAccessTokensExpiringEvent();
   if (f != null) {
     writer.writeMessage(
       1300,
       f,
-      api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent.serializeBinaryToWriter
+      api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent.serializeBinaryToWriter
     );
   }
 };
@@ -6709,20 +6709,20 @@ proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntryExpungeEvent 
 
 
 /**
- * optional UserAccessTokenExpiringEvent user_access_token_expiring_event = 1300;
- * @return {?proto.api.commons.audit.UserAccessTokenExpiringEvent}
+ * optional UsersAccessTokensExpiringEvent users_access_tokens_expiring_event = 1300;
+ * @return {?proto.api.commons.audit.UsersAccessTokensExpiringEvent}
  */
-proto.api.commons.audit.AuditEvent.prototype.getUserAccessTokenExpiringEvent = function() {
-  return /** @type{?proto.api.commons.audit.UserAccessTokenExpiringEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_organization_events_pb.UserAccessTokenExpiringEvent, 1300));
+proto.api.commons.audit.AuditEvent.prototype.getUsersAccessTokensExpiringEvent = function() {
+  return /** @type{?proto.api.commons.audit.UsersAccessTokensExpiringEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_organization_events_pb.UsersAccessTokensExpiringEvent, 1300));
 };
 
 
 /**
- * @param {?proto.api.commons.audit.UserAccessTokenExpiringEvent|undefined} value
+ * @param {?proto.api.commons.audit.UsersAccessTokensExpiringEvent|undefined} value
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
-proto.api.commons.audit.AuditEvent.prototype.setUserAccessTokenExpiringEvent = function(value) {
+proto.api.commons.audit.AuditEvent.prototype.setUsersAccessTokensExpiringEvent = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1300, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
@@ -6731,8 +6731,8 @@ proto.api.commons.audit.AuditEvent.prototype.setUserAccessTokenExpiringEvent = f
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.audit.AuditEvent} returns this
  */
-proto.api.commons.audit.AuditEvent.prototype.clearUserAccessTokenExpiringEvent = function() {
-  return this.setUserAccessTokenExpiringEvent(undefined);
+proto.api.commons.audit.AuditEvent.prototype.clearUsersAccessTokensExpiringEvent = function() {
+  return this.setUsersAccessTokensExpiringEvent(undefined);
 };
 
 
@@ -6740,7 +6740,7 @@ proto.api.commons.audit.AuditEvent.prototype.clearUserAccessTokenExpiringEvent =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.audit.AuditEvent.prototype.hasUserAccessTokenExpiringEvent = function() {
+proto.api.commons.audit.AuditEvent.prototype.hasUsersAccessTokensExpiringEvent = function() {
   return jspb.Message.getField(this, 1300) != null;
 };
 
