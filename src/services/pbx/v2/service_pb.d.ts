@@ -192,48 +192,6 @@ export namespace ListSIPAccountsResponse {
   }
 }
 
-export class ListSIPAccountsByRingGroupIdRequest extends jspb.Message {
-  getRingGroupId(): string;
-  setRingGroupId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSIPAccountsByRingGroupIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSIPAccountsByRingGroupIdRequest): ListSIPAccountsByRingGroupIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListSIPAccountsByRingGroupIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSIPAccountsByRingGroupIdRequest;
-  static deserializeBinaryFromReader(message: ListSIPAccountsByRingGroupIdRequest, reader: jspb.BinaryReader): ListSIPAccountsByRingGroupIdRequest;
-}
-
-export namespace ListSIPAccountsByRingGroupIdRequest {
-  export type AsObject = {
-    ringGroupId: string,
-  }
-}
-
-export class ListSIPAccountsByRingGroupIdResponse extends jspb.Message {
-  clearSipAccountsList(): void;
-  getSipAccountsList(): Array<SIPAccount>;
-  setSipAccountsList(value: Array<SIPAccount>): void;
-  addSipAccounts(value?: SIPAccount, index?: number): SIPAccount;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSIPAccountsByRingGroupIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSIPAccountsByRingGroupIdResponse): ListSIPAccountsByRingGroupIdResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListSIPAccountsByRingGroupIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSIPAccountsByRingGroupIdResponse;
-  static deserializeBinaryFromReader(message: ListSIPAccountsByRingGroupIdResponse, reader: jspb.BinaryReader): ListSIPAccountsByRingGroupIdResponse;
-}
-
-export namespace ListSIPAccountsByRingGroupIdResponse {
-  export type AsObject = {
-    sipAccountsList: Array<SIPAccount.AsObject>,
-  }
-}
-
 export class GetSIPAccountByUserIdRequest extends jspb.Message {
   getOrgUserId(): string;
   setOrgUserId(value: string): void;
@@ -393,48 +351,6 @@ export class ListRingGroupsResponse extends jspb.Message {
 }
 
 export namespace ListRingGroupsResponse {
-  export type AsObject = {
-    groupsList: Array<RingGroup.AsObject>,
-  }
-}
-
-export class ListRingGroupsBySipIdRequest extends jspb.Message {
-  getSipAccountId(): string;
-  setSipAccountId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListRingGroupsBySipIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListRingGroupsBySipIdRequest): ListRingGroupsBySipIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListRingGroupsBySipIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListRingGroupsBySipIdRequest;
-  static deserializeBinaryFromReader(message: ListRingGroupsBySipIdRequest, reader: jspb.BinaryReader): ListRingGroupsBySipIdRequest;
-}
-
-export namespace ListRingGroupsBySipIdRequest {
-  export type AsObject = {
-    sipAccountId: string,
-  }
-}
-
-export class ListRingGroupsBySipIdResponse extends jspb.Message {
-  clearGroupsList(): void;
-  getGroupsList(): Array<RingGroup>;
-  setGroupsList(value: Array<RingGroup>): void;
-  addGroups(value?: RingGroup, index?: number): RingGroup;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListRingGroupsBySipIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListRingGroupsBySipIdResponse): ListRingGroupsBySipIdResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListRingGroupsBySipIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListRingGroupsBySipIdResponse;
-  static deserializeBinaryFromReader(message: ListRingGroupsBySipIdResponse, reader: jspb.BinaryReader): ListRingGroupsBySipIdResponse;
-}
-
-export namespace ListRingGroupsBySipIdResponse {
   export type AsObject = {
     groupsList: Array<RingGroup.AsObject>,
   }
