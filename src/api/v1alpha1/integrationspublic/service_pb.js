@@ -5670,7 +5670,8 @@ portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
 choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
 paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-requestOrigin: jspb.Message.getFieldWithDefault(msg, 6, 0)
+requestOrigin: jspb.Message.getFieldWithDefault(msg, 6, 0),
+sessionId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -5732,6 +5733,10 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.deserializeBinaryFromRe
     case 6:
       var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
       msg.setRequestOrigin(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSessionId(value);
       break;
     default:
       reader.skipField();
@@ -5798,6 +5803,13 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.serializeBinaryToWriter
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getSessionId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -5917,6 +5929,24 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.setRequestOri
 };
 
 
+/**
+ * optional string session_id = 7;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.getSessionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq} returns this
+ */
+proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.setSessionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
 
 
 
@@ -5950,7 +5980,8 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.toObject = fu
 proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.toObject = function(includeInstance, msg) {
   var f, obj = {
 success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
+dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+sessionId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5997,6 +6028,10 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.deserializeBinaryFromRe
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.integrationspublic.Value.deserializeBinaryFromReader, "", new proto.api.v1alpha1.integrationspublic.Value());
          });
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSessionId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6036,6 +6071,13 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.serializeBinaryToWriter
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.integrationspublic.Value.serializeBinaryToWriter);
+  }
+  f = message.getSessionId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
   }
 };
 
@@ -6078,6 +6120,24 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.getDataMap = 
 proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.clearDataMap = function() {
   this.getDataMap().clear();
   return this;
+};
+
+
+/**
+ * optional string session_id = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.getSessionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes} returns this
+ */
+proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.setSessionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
