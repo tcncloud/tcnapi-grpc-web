@@ -815,64 +815,6 @@ export namespace AgentStateSequence {
   }
 }
 
-export class AdherenceAgentState extends jspb.Message {
-  getWfmAgentSid(): number;
-  setWfmAgentSid(value: number): void;
-
-  hasStartDatetime(): boolean;
-  clearStartDatetime(): void;
-  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  clearAdmStatesList(): void;
-  getAdmStatesList(): Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>;
-  setAdmStatesList(value: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>): void;
-  addAdmStates(value: RealTimeManagementStateMap[keyof RealTimeManagementStateMap], index?: number): RealTimeManagementStateMap[keyof RealTimeManagementStateMap];
-
-  getPauseCode(): string;
-  setPauseCode(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AdherenceAgentState.AsObject;
-  static toObject(includeInstance: boolean, msg: AdherenceAgentState): AdherenceAgentState.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AdherenceAgentState, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AdherenceAgentState;
-  static deserializeBinaryFromReader(message: AdherenceAgentState, reader: jspb.BinaryReader): AdherenceAgentState;
-}
-
-export namespace AdherenceAgentState {
-  export type AsObject = {
-    wfmAgentSid: number,
-    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    admStatesList: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>,
-    pauseCode: string,
-  }
-}
-
-export class AdherenceAgentStates extends jspb.Message {
-  clearAgentStatesList(): void;
-  getAgentStatesList(): Array<AdherenceAgentState>;
-  setAgentStatesList(value: Array<AdherenceAgentState>): void;
-  addAgentStates(value?: AdherenceAgentState, index?: number): AdherenceAgentState;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AdherenceAgentStates.AsObject;
-  static toObject(includeInstance: boolean, msg: AdherenceAgentStates): AdherenceAgentStates.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AdherenceAgentStates, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AdherenceAgentStates;
-  static deserializeBinaryFromReader(message: AdherenceAgentStates, reader: jspb.BinaryReader): AdherenceAgentStates;
-}
-
-export namespace AdherenceAgentStates {
-  export type AsObject = {
-    agentStatesList: Array<AdherenceAgentState.AsObject>,
-  }
-}
-
 export class AgentLeavePetition extends jspb.Message {
   getAgentLeavePetitionId(): string;
   setAgentLeavePetitionId(value: string): void;

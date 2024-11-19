@@ -9557,8 +9557,7 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.toObject = function(includeIns
   var f, obj = {
 hitsList: jspb.Message.toObjectList(msg.getHitsList(),
     proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.toObject, includeInstance),
-nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-total: jspb.Message.getFieldWithDefault(msg, 3, 0)
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -9604,10 +9603,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.deserializeBinaryFromReader = 
       var value = /** @type {string} */ (reader.readString());
       msg.setNextPageToken(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.setTotal(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -9649,13 +9644,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getTotal();
-  if (f !== 0) {
-    writer.writeUint64(
-      3,
       f
     );
   }
@@ -9866,24 +9854,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.prototype.getNextPageToken = f
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional uint64 total = 3;
- * @return {number}
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.prototype.getTotal = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.wfo.vanalytics.v2.SearchTranscriptsResponse} returns this
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.prototype.setTotal = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

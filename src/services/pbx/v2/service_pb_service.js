@@ -37,15 +37,6 @@ PBXService.ListRingGroups = {
   responseType: services_pbx_v2_service_pb.ListRingGroupsResponse
 };
 
-PBXService.ListRingGroupsBySipId = {
-  methodName: "ListRingGroupsBySipId",
-  service: PBXService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_pbx_v2_service_pb.ListRingGroupsBySipIdRequest,
-  responseType: services_pbx_v2_service_pb.ListRingGroupsBySipIdResponse
-};
-
 PBXService.GetRingGroup = {
   methodName: "GetRingGroup",
   service: PBXService,
@@ -80,15 +71,6 @@ PBXService.ListSIPAccounts = {
   responseStream: false,
   requestType: services_pbx_v2_service_pb.ListSIPAccountsRequest,
   responseType: services_pbx_v2_service_pb.ListSIPAccountsResponse
-};
-
-PBXService.ListSIPAccountsByRingGroupId = {
-  methodName: "ListSIPAccountsByRingGroupId",
-  service: PBXService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdRequest,
-  responseType: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdResponse
 };
 
 PBXService.UpdateSIPAccount = {
@@ -236,37 +218,6 @@ PBXServiceClient.prototype.listRingGroups = function listRingGroups(requestMessa
   };
 };
 
-PBXServiceClient.prototype.listRingGroupsBySipId = function listRingGroupsBySipId(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(PBXService.ListRingGroupsBySipId, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 PBXServiceClient.prototype.getRingGroup = function getRingGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -365,37 +316,6 @@ PBXServiceClient.prototype.listSIPAccounts = function listSIPAccounts(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(PBXService.ListSIPAccounts, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-PBXServiceClient.prototype.listSIPAccountsByRingGroupId = function listSIPAccountsByRingGroupId(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(PBXService.ListSIPAccountsByRingGroupId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
