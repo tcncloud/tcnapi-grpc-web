@@ -1660,6 +1660,15 @@ type WFMListRealTimeManagementStates = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse;
 };
 
+type WFMListAdherenceAgentStates = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesResponse;
+};
+
 type WFMUpsertRealTimeManagementStateColor = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2107,6 +2116,7 @@ export class WFM {
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
+  static readonly ListAdherenceAgentStates: WFMListAdherenceAgentStates;
   static readonly UpsertRealTimeManagementStateColor: WFMUpsertRealTimeManagementStateColor;
   static readonly ListRealTimeManagementStateColors: WFMListRealTimeManagementStateColors;
   static readonly DeleteRealTimeManagementStateColor: WFMDeleteRealTimeManagementStateColor;
@@ -3777,6 +3787,15 @@ export class WFMClient {
   listRealTimeManagementStates(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse|null) => void
+  ): UnaryResponse;
+  listAdherenceAgentStates(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesResponse|null) => void
+  ): UnaryResponse;
+  listAdherenceAgentStates(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentStatesResponse|null) => void
   ): UnaryResponse;
   upsertRealTimeManagementStateColor(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorRequest,
