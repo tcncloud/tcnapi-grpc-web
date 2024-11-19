@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
+import * as api_v1alpha1_integrations_portals_pb from "../../../api/v1alpha1/integrations/portals_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -777,6 +778,70 @@ export namespace ProcessWorkflowRes {
   export type AsObject = {
     success: boolean,
     dataMap: Array<[string, Value.AsObject]>,
+  }
+}
+
+export class GetLinkDetailsReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): PortalLinkId | undefined;
+  setEntity(value?: PortalLinkId): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLinkDetailsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLinkDetailsReq): GetLinkDetailsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetLinkDetailsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLinkDetailsReq;
+  static deserializeBinaryFromReader(message: GetLinkDetailsReq, reader: jspb.BinaryReader): GetLinkDetailsReq;
+}
+
+export namespace GetLinkDetailsReq {
+  export type AsObject = {
+    entity?: PortalLinkId.AsObject,
+  }
+}
+
+export class GetLinkDetailsRes extends jspb.Message {
+  hasPortal(): boolean;
+  clearPortal(): void;
+  getPortal(): api_v1alpha1_integrations_service_pb.Portal | undefined;
+  setPortal(value?: api_v1alpha1_integrations_service_pb.Portal): void;
+
+  hasPortalConfig(): boolean;
+  clearPortalConfig(): void;
+  getPortalConfig(): PortalConfig | undefined;
+  setPortalConfig(value?: PortalConfig): void;
+
+  getExpired(): boolean;
+  setExpired(value: boolean): void;
+
+  getCompleted(): boolean;
+  setCompleted(value: boolean): void;
+
+  hasPortalDefinition(): boolean;
+  clearPortalDefinition(): void;
+  getPortalDefinition(): api_v1alpha1_integrations_portals_pb.PortalDefinition | undefined;
+  setPortalDefinition(value?: api_v1alpha1_integrations_portals_pb.PortalDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLinkDetailsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLinkDetailsRes): GetLinkDetailsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetLinkDetailsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLinkDetailsRes;
+  static deserializeBinaryFromReader(message: GetLinkDetailsRes, reader: jspb.BinaryReader): GetLinkDetailsRes;
+}
+
+export namespace GetLinkDetailsRes {
+  export type AsObject = {
+    portal?: api_v1alpha1_integrations_service_pb.Portal.AsObject,
+    portalConfig?: PortalConfig.AsObject,
+    expired: boolean,
+    completed: boolean,
+    portalDefinition?: api_v1alpha1_integrations_portals_pb.PortalDefinition.AsObject,
   }
 }
 
