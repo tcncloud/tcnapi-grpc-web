@@ -2161,6 +2161,11 @@ export class ExecuteFlow extends jspb.Message {
   getFinviFacsProcessPayment(): ExecuteFinviFacsProcessPayment | undefined;
   setFinviFacsProcessPayment(value?: ExecuteFinviFacsProcessPayment): void;
 
+  hasCloverPaymentCardSaleTransaction(): boolean;
+  clearCloverPaymentCardSaleTransaction(): void;
+  getCloverPaymentCardSaleTransaction(): ExecuteCloverPaymentCardSaleTransaction | undefined;
+  setCloverPaymentCardSaleTransaction(value?: ExecuteCloverPaymentCardSaleTransaction): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2460,6 +2465,7 @@ export namespace ExecuteFlow {
     genericRequest?: ExecuteGenericRequest.AsObject,
     healthpay24AccountsReceivable?: ExecuteHealthpay24AccountsReceivable.AsObject,
     finviFacsProcessPayment?: ExecuteFinviFacsProcessPayment.AsObject,
+    cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
   }
 
   export enum ValueCase {
@@ -2749,6 +2755,7 @@ export namespace ExecuteFlow {
     GENERIC_REQUEST = 5201,
     HEALTHPAY24_ACCOUNTS_RECEIVABLE = 5301,
     FINVI_FACS_PROCESS_PAYMENT = 5401,
+    CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
   }
 }
 
@@ -7929,6 +7936,22 @@ export namespace ExecuteFinviFacsProcessPayment {
   }
 }
 
+export class ExecuteCloverPaymentCardSaleTransaction extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCloverPaymentCardSaleTransaction): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCloverPaymentCardSaleTransaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCloverPaymentCardSaleTransaction;
+  static deserializeBinaryFromReader(message: ExecuteCloverPaymentCardSaleTransaction, reader: jspb.BinaryReader): ExecuteCloverPaymentCardSaleTransaction;
+}
+
+export namespace ExecuteCloverPaymentCardSaleTransaction {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7985,6 +8008,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_GENERIC: 5200;
   INTEGRATION_TYPE_HEALTHPAY24: 5300;
   INTEGRATION_TYPE_FINVI_FACS: 5400;
+  INTEGRATION_TYPE_CLOVER: 5600;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8276,6 +8300,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_GENERIC_REQUEST: 5201;
   REQUEST_METHOD_HEALTHPAY24_ACCOUNTS_RECEIVABLE: 5301;
   REQUEST_METHOD_FINVI_FACS_PROCESS_PAYMENT: 5401;
+  REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
 }
 
 export const RequestMethod: RequestMethodMap;
