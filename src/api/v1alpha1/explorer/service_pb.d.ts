@@ -162,3 +162,107 @@ export namespace QueryResponse {
   }
 }
 
+export class SupportQueryRequest extends jspb.Message {
+  hasQueryRequest(): boolean;
+  clearQueryRequest(): void;
+  getQueryRequest(): QueryRequest | undefined;
+  setQueryRequest(value?: QueryRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SupportQueryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SupportQueryRequest): SupportQueryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SupportQueryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SupportQueryRequest;
+  static deserializeBinaryFromReader(message: SupportQueryRequest, reader: jspb.BinaryReader): SupportQueryRequest;
+}
+
+export namespace SupportQueryRequest {
+  export type AsObject = {
+    queryRequest?: QueryRequest.AsObject,
+  }
+}
+
+export class SupportQueryResponse extends jspb.Message {
+  getResultUrl(): string;
+  setResultUrl(value: string): void;
+
+  getResultSizeBytes(): number;
+  setResultSizeBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SupportQueryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SupportQueryResponse;
+  static deserializeBinaryFromReader(message: SupportQueryResponse, reader: jspb.BinaryReader): SupportQueryResponse;
+}
+
+export namespace SupportQueryResponse {
+  export type AsObject = {
+    resultUrl: string,
+    resultSizeBytes: number,
+  }
+}
+
+export class QueryExplainRequest extends jspb.Message {
+  hasQueryRequest(): boolean;
+  clearQueryRequest(): void;
+  getQueryRequest(): QueryRequest | undefined;
+  setQueryRequest(value?: QueryRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryExplainRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryExplainRequest): QueryExplainRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryExplainRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryExplainRequest;
+  static deserializeBinaryFromReader(message: QueryExplainRequest, reader: jspb.BinaryReader): QueryExplainRequest;
+}
+
+export namespace QueryExplainRequest {
+  export type AsObject = {
+    queryRequest?: QueryRequest.AsObject,
+  }
+}
+
+export class QueryExplainResponse extends jspb.Message {
+  getResultUrl(): string;
+  setResultUrl(value: string): void;
+
+  getResultSizeBytes(): number;
+  setResultSizeBytes(value: number): void;
+
+  getPrql(): string;
+  setPrql(value: string): void;
+
+  getSql(): string;
+  setSql(value: string): void;
+
+  getExplain(): string;
+  setExplain(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryExplainResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryExplainResponse;
+  static deserializeBinaryFromReader(message: QueryExplainResponse, reader: jspb.BinaryReader): QueryExplainResponse;
+}
+
+export namespace QueryExplainResponse {
+  export type AsObject = {
+    resultUrl: string,
+    resultSizeBytes: number,
+    prql: string,
+    sql: string,
+    explain: string,
+  }
+}
+
