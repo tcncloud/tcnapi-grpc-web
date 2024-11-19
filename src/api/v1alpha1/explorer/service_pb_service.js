@@ -33,8 +33,17 @@ ExplorerService.GetSupportQuery = {
   service: ExplorerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_explorer_service_pb.GetSupportQueryRequest,
-  responseType: api_v1alpha1_explorer_service_pb.GetSupportQueryResponse
+  requestType: api_v1alpha1_explorer_service_pb.SupportQueryRequest,
+  responseType: api_v1alpha1_explorer_service_pb.SupportQueryResponse
+};
+
+ExplorerService.GetQueryExplain = {
+  methodName: "GetQueryExplain",
+  service: ExplorerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_explorer_service_pb.QueryExplainRequest,
+  responseType: api_v1alpha1_explorer_service_pb.QueryExplainResponse
 };
 
 exports.ExplorerService = ExplorerService;
@@ -111,6 +120,37 @@ ExplorerServiceClient.prototype.getSupportQuery = function getSupportQuery(reque
     callback = arguments[1];
   }
   var client = grpc.unary(ExplorerService.GetSupportQuery, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ExplorerServiceClient.prototype.getQueryExplain = function getQueryExplain(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ExplorerService.GetQueryExplain, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

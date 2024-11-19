@@ -162,90 +162,75 @@ export namespace QueryResponse {
   }
 }
 
-export class GetSupportQueryRequest extends jspb.Message {
-  getDatasourceName(): string;
-  setDatasourceName(value: string): void;
+export class SupportQueryRequest extends jspb.Message {
+  hasQueryRequest(): boolean;
+  clearQueryRequest(): void;
+  getQueryRequest(): QueryRequest | undefined;
+  setQueryRequest(value?: QueryRequest): void;
 
-  getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
-  setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
-
-  hasPipeline(): boolean;
-  clearPipeline(): void;
-  getPipeline(): string;
-  setPipeline(value: string): void;
-
-  hasPrql(): boolean;
-  clearPrql(): void;
-  getPrql(): string;
-  setPrql(value: string): void;
-
-  clearOrgIdsList(): void;
-  getOrgIdsList(): Array<string>;
-  setOrgIdsList(value: Array<string>): void;
-  addOrgIds(value: string, index?: number): string;
-
-  hasStartTime(): boolean;
-  clearStartTime(): void;
-  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasEndTime(): boolean;
-  clearEndTime(): void;
-  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getTimezone(): string;
-  setTimezone(value: string): void;
-
-  hasPipelineParameters(): boolean;
-  clearPipelineParameters(): void;
-  getPipelineParameters(): api_v1alpha1_explorer_entities_pb.Parameters | undefined;
-  setPipelineParameters(value?: api_v1alpha1_explorer_entities_pb.Parameters): void;
-
-  getUiTraceId(): string;
-  setUiTraceId(value: string): void;
-
-  getComment(): string;
-  setComment(value: string): void;
-
-  getFormat(): api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap];
-  setFormat(value: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap]): void;
-
-  getQueryCase(): GetSupportQueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSupportQueryRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSupportQueryRequest): GetSupportQueryRequest.AsObject;
+  toObject(includeInstance?: boolean): SupportQueryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SupportQueryRequest): SupportQueryRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSupportQueryRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSupportQueryRequest;
-  static deserializeBinaryFromReader(message: GetSupportQueryRequest, reader: jspb.BinaryReader): GetSupportQueryRequest;
+  static serializeBinaryToWriter(message: SupportQueryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SupportQueryRequest;
+  static deserializeBinaryFromReader(message: SupportQueryRequest, reader: jspb.BinaryReader): SupportQueryRequest;
 }
 
-export namespace GetSupportQueryRequest {
+export namespace SupportQueryRequest {
   export type AsObject = {
-    datasourceName: string,
-    datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
-    pipeline: string,
-    prql: string,
-    orgIdsList: Array<string>,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    timezone: string,
-    pipelineParameters?: api_v1alpha1_explorer_entities_pb.Parameters.AsObject,
-    uiTraceId: string,
-    comment: string,
-    format: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap],
-  }
-
-  export enum QueryCase {
-    QUERY_NOT_SET = 0,
-    PIPELINE = 3,
-    PRQL = 4,
+    queryRequest?: QueryRequest.AsObject,
   }
 }
 
-export class GetSupportQueryResponse extends jspb.Message {
+export class SupportQueryResponse extends jspb.Message {
+  getResultUrl(): string;
+  setResultUrl(value: string): void;
+
+  getResultSizeBytes(): number;
+  setResultSizeBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SupportQueryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SupportQueryResponse;
+  static deserializeBinaryFromReader(message: SupportQueryResponse, reader: jspb.BinaryReader): SupportQueryResponse;
+}
+
+export namespace SupportQueryResponse {
+  export type AsObject = {
+    resultUrl: string,
+    resultSizeBytes: number,
+  }
+}
+
+export class QueryExplainRequest extends jspb.Message {
+  hasQueryRequest(): boolean;
+  clearQueryRequest(): void;
+  getQueryRequest(): QueryRequest | undefined;
+  setQueryRequest(value?: QueryRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryExplainRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryExplainRequest): QueryExplainRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryExplainRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryExplainRequest;
+  static deserializeBinaryFromReader(message: QueryExplainRequest, reader: jspb.BinaryReader): QueryExplainRequest;
+}
+
+export namespace QueryExplainRequest {
+  export type AsObject = {
+    queryRequest?: QueryRequest.AsObject,
+  }
+}
+
+export class QueryExplainResponse extends jspb.Message {
   getResultUrl(): string;
   setResultUrl(value: string): void;
 
@@ -262,16 +247,16 @@ export class GetSupportQueryResponse extends jspb.Message {
   setExplain(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetSupportQueryResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetSupportQueryResponse): GetSupportQueryResponse.AsObject;
+  toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetSupportQueryResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetSupportQueryResponse;
-  static deserializeBinaryFromReader(message: GetSupportQueryResponse, reader: jspb.BinaryReader): GetSupportQueryResponse;
+  static serializeBinaryToWriter(message: QueryExplainResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryExplainResponse;
+  static deserializeBinaryFromReader(message: QueryExplainResponse, reader: jspb.BinaryReader): QueryExplainResponse;
 }
 
-export namespace GetSupportQueryResponse {
+export namespace QueryExplainResponse {
   export type AsObject = {
     resultUrl: string,
     resultSizeBytes: number,
