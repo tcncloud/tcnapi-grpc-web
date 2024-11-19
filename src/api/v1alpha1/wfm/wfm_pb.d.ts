@@ -2257,26 +2257,6 @@ export namespace ListCallProfileTemplatesRes {
   }
 }
 
-export class ListForecastIntervalsForSkillProfileReq extends jspb.Message {
-  getSkillProfileSid(): number;
-  setSkillProfileSid(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListForecastIntervalsForSkillProfileReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ListForecastIntervalsForSkillProfileReq): ListForecastIntervalsForSkillProfileReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListForecastIntervalsForSkillProfileReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListForecastIntervalsForSkillProfileReq;
-  static deserializeBinaryFromReader(message: ListForecastIntervalsForSkillProfileReq, reader: jspb.BinaryReader): ListForecastIntervalsForSkillProfileReq;
-}
-
-export namespace ListForecastIntervalsForSkillProfileReq {
-  export type AsObject = {
-    skillProfileSid: number,
-  }
-}
-
 export class ListForecastIntervalsReq extends jspb.Message {
   hasSkillProfileCategory(): boolean;
   clearSkillProfileCategory(): void;
