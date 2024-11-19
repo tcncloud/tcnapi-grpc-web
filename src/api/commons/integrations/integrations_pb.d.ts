@@ -2181,6 +2181,11 @@ export class ExecuteFlow extends jspb.Message {
   getFinviVelosidyPlanRecurringCreate(): ExecuteFinviVelosidyPlanRecurringCreate | undefined;
   setFinviVelosidyPlanRecurringCreate(value?: ExecuteFinviVelosidyPlanRecurringCreate): void;
 
+  hasCloverPaymentCardSaleTransaction(): boolean;
+  clearCloverPaymentCardSaleTransaction(): void;
+  getCloverPaymentCardSaleTransaction(): ExecuteCloverPaymentCardSaleTransaction | undefined;
+  setCloverPaymentCardSaleTransaction(value?: ExecuteCloverPaymentCardSaleTransaction): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2484,6 +2489,7 @@ export namespace ExecuteFlow {
     finviVelosidyOneTimeSale?: ExecuteFinviVelosidyOneTimeSale.AsObject,
     finviVelosidyPlanOffer?: ExecuteFinviVelosidyPlanOffer.AsObject,
     finviVelosidyPlanRecurringCreate?: ExecuteFinviVelosidyPlanRecurringCreate.AsObject,
+    cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
   }
 
   export enum ValueCase {
@@ -2777,6 +2783,7 @@ export namespace ExecuteFlow {
     FINVI_VELOSIDY_ONE_TIME_SALE = 5502,
     FINVI_VELOSIDY_PLAN_OFFER = 5503,
     FINVI_VELOSIDY_PLAN_RECURRING_CREATE = 5504,
+    CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
   }
 }
 
@@ -8021,6 +8028,22 @@ export namespace ExecuteFinviVelosidyPlanRecurringCreate {
   }
 }
 
+export class ExecuteCloverPaymentCardSaleTransaction extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCloverPaymentCardSaleTransaction): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCloverPaymentCardSaleTransaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCloverPaymentCardSaleTransaction;
+  static deserializeBinaryFromReader(message: ExecuteCloverPaymentCardSaleTransaction, reader: jspb.BinaryReader): ExecuteCloverPaymentCardSaleTransaction;
+}
+
+export namespace ExecuteCloverPaymentCardSaleTransaction {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -8078,6 +8101,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_HEALTHPAY24: 5300;
   INTEGRATION_TYPE_FINVI_FACS: 5400;
   INTEGRATION_TYPE_FINVI_VELOSIDY: 5500;
+  INTEGRATION_TYPE_CLOVER: 5600;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8373,6 +8397,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_VELOSIDY_ONE_TIME_SALE: 5502;
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_OFFER: 5503;
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_RECURRING_CREATE: 5504;
+  REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
 }
 
 export const RequestMethod: RequestMethodMap;
