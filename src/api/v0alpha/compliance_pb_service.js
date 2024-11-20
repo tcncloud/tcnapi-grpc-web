@@ -111,15 +111,6 @@ Compliance.CreateScrubList = {
   responseType: api_v0alpha_compliance_pb.ScrubListRes
 };
 
-Compliance.UpdateScrubList = {
-  methodName: "UpdateScrubList",
-  service: Compliance,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UpdateScrubListRequest,
-  responseType: api_v0alpha_compliance_pb.UpdateScrubListResponse
-};
-
 Compliance.AddScrubListEntries = {
   methodName: "AddScrubListEntries",
   service: Compliance,
@@ -945,37 +936,6 @@ ComplianceClient.prototype.createScrubList = function createScrubList(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(Compliance.CreateScrubList, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ComplianceClient.prototype.updateScrubList = function updateScrubList(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Compliance.UpdateScrubList, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

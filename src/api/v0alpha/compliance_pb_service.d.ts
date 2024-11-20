@@ -105,15 +105,6 @@ type ComplianceCreateScrubList = {
   readonly responseType: typeof api_v0alpha_compliance_pb.ScrubListRes;
 };
 
-type ComplianceUpdateScrubList = {
-  readonly methodName: string;
-  readonly service: typeof Compliance;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_compliance_pb.UpdateScrubListRequest;
-  readonly responseType: typeof api_v0alpha_compliance_pb.UpdateScrubListResponse;
-};
-
 type ComplianceAddScrubListEntries = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -622,7 +613,6 @@ export class Compliance {
   static readonly EnableRuleSet: ComplianceEnableRuleSet;
   static readonly DisableRuleSet: ComplianceDisableRuleSet;
   static readonly CreateScrubList: ComplianceCreateScrubList;
-  static readonly UpdateScrubList: ComplianceUpdateScrubList;
   static readonly AddScrubListEntries: ComplianceAddScrubListEntries;
   static readonly UpdateScrubEntry: ComplianceUpdateScrubEntry;
   static readonly DeleteScrubListEntries: ComplianceDeleteScrubListEntries;
@@ -802,15 +792,6 @@ export class ComplianceClient {
   createScrubList(
     requestMessage: api_v0alpha_compliance_pb.CreateScrubListReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.ScrubListRes|null) => void
-  ): UnaryResponse;
-  updateScrubList(
-    requestMessage: api_v0alpha_compliance_pb.UpdateScrubListRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.UpdateScrubListResponse|null) => void
-  ): UnaryResponse;
-  updateScrubList(
-    requestMessage: api_v0alpha_compliance_pb.UpdateScrubListRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.UpdateScrubListResponse|null) => void
   ): UnaryResponse;
   addScrubListEntries(
     requestMessage: api_v0alpha_compliance_pb.AddScrubListEntriesReq,

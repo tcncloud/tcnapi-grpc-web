@@ -161,11 +161,6 @@ export class CreateScrubListReq extends jspb.Message {
   getDurable(): boolean;
   setDurable(value: boolean): void;
 
-  hasDecompositions(): boolean;
-  clearDecompositions(): void;
-  getDecompositions(): api_commons_compliance_pb.Decompositions | undefined;
-  setDecompositions(value?: api_commons_compliance_pb.Decompositions): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateScrubListReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateScrubListReq): CreateScrubListReq.AsObject;
@@ -184,49 +179,6 @@ export namespace CreateScrubListReq {
     countryCode: string,
     scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
     durable: boolean,
-    decompositions?: api_commons_compliance_pb.Decompositions.AsObject,
-  }
-}
-
-export class UpdateScrubListRequest extends jspb.Message {
-  getListId(): string;
-  setListId(value: string): void;
-
-  hasDecompositions(): boolean;
-  clearDecompositions(): void;
-  getDecompositions(): api_commons_compliance_pb.Decompositions | undefined;
-  setDecompositions(value?: api_commons_compliance_pb.Decompositions): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateScrubListRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateScrubListRequest): UpdateScrubListRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateScrubListRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateScrubListRequest;
-  static deserializeBinaryFromReader(message: UpdateScrubListRequest, reader: jspb.BinaryReader): UpdateScrubListRequest;
-}
-
-export namespace UpdateScrubListRequest {
-  export type AsObject = {
-    listId: string,
-    decompositions?: api_commons_compliance_pb.Decompositions.AsObject,
-  }
-}
-
-export class UpdateScrubListResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateScrubListResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateScrubListResponse): UpdateScrubListResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateScrubListResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateScrubListResponse;
-  static deserializeBinaryFromReader(message: UpdateScrubListResponse, reader: jspb.BinaryReader): UpdateScrubListResponse;
-}
-
-export namespace UpdateScrubListResponse {
-  export type AsObject = {
   }
 }
 
@@ -547,9 +499,6 @@ export class ScrubEntry extends jspb.Message {
   getCountryCode(): google_protobuf_wrappers_pb.StringValue | undefined;
   setCountryCode(value?: google_protobuf_wrappers_pb.StringValue): void;
 
-  getIsWildCard(): boolean;
-  setIsWildCard(value: boolean): void;
-
   hasCreatedOn(): boolean;
   clearCreatedOn(): void;
   getCreatedOn(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -582,7 +531,6 @@ export namespace ScrubEntry {
     result?: google_protobuf_wrappers_pb.StringValue.AsObject,
     type: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    isWildCard: boolean,
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
