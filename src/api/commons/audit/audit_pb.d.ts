@@ -12,6 +12,7 @@ import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/ev
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
 import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
 import * as api_commons_audit_omnichannel_events_pb from "../../../api/commons/audit/omnichannel_events_pb";
+import * as api_commons_audit_organization_events_pb from "../../../api/commons/audit/organization_events_pb";
 import * as api_commons_audit_scorecards_events_pb from "../../../api/commons/audit/scorecards_events_pb";
 import * as api_commons_audit_tickets_events_pb from "../../../api/commons/audit/tickets_events_pb";
 import * as api_commons_audit_vana_events_pb from "../../../api/commons/audit/vana_events_pb";
@@ -643,6 +644,11 @@ export class AuditEvent extends jspb.Message {
   getContactManagerEntryExpungeEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
   setContactManagerEntryExpungeEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
 
+  hasAccessTokensExpiringEvent(): boolean;
+  clearAccessTokensExpiringEvent(): void;
+  getAccessTokensExpiringEvent(): api_commons_audit_organization_events_pb.AccessTokensExpiringEvent | undefined;
+  setAccessTokensExpiringEvent(value?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -783,6 +789,7 @@ export namespace AuditEvent {
     contactManagerKycVerificationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
     contactManagerEntryDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
     contactManagerEntryExpungeEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
+    accessTokensExpiringEvent?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.AsObject,
   }
 
   export enum EventCase {
@@ -908,6 +915,7 @@ export namespace AuditEvent {
     CONTACT_MANAGER_KYC_VERIFICATION_EVENT = 1206,
     CONTACT_MANAGER_ENTRY_DELETE_EVENT = 1207,
     CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT = 1208,
+    ACCESS_TOKENS_EXPIRING_EVENT = 1300,
   }
 }
 
