@@ -321,6 +321,9 @@ export class Sms extends jspb.Message {
   getCampaignSid(): string;
   setCampaignSid(value: string): void;
 
+  getCampaignDirection(): api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap];
+  setCampaignDirection(value: api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
   static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -338,6 +341,7 @@ export namespace Sms {
     phone?: Sms.Phone.AsObject,
     callerId: string,
     campaignSid: string,
+    campaignDirection: api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap],
   }
 
   export class Phone extends jspb.Message {
@@ -2542,6 +2546,11 @@ export namespace TranscriptQuery {
     getCampaignSid(): TranscriptQuery.Sms.CampaignSid | undefined;
     setCampaignSid(value?: TranscriptQuery.Sms.CampaignSid): void;
 
+    hasCampaignDirection(): boolean;
+    clearCampaignDirection(): void;
+    getCampaignDirection(): TranscriptQuery.Sms.OmniCampaignDirection | undefined;
+    setCampaignDirection(value?: TranscriptQuery.Sms.OmniCampaignDirection): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
     static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -2556,6 +2565,7 @@ export namespace TranscriptQuery {
     export type AsObject = {
       conversationSid?: TranscriptQuery.Sms.ConversationSid.AsObject,
       campaignSid?: TranscriptQuery.Sms.CampaignSid.AsObject,
+      campaignDirection?: TranscriptQuery.Sms.OmniCampaignDirection.AsObject,
     }
 
     export class ConversationSid extends jspb.Message {
@@ -2599,6 +2609,28 @@ export namespace TranscriptQuery {
     export namespace CampaignSid {
       export type AsObject = {
         anyList: Array<string>,
+      }
+    }
+
+    export class OmniCampaignDirection extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap]>;
+      setAnyList(value: Array<api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap]>): void;
+      addAny(value: api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap], index?: number): api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap];
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): OmniCampaignDirection.AsObject;
+      static toObject(includeInstance: boolean, msg: OmniCampaignDirection): OmniCampaignDirection.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: OmniCampaignDirection, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): OmniCampaignDirection;
+      static deserializeBinaryFromReader(message: OmniCampaignDirection, reader: jspb.BinaryReader): OmniCampaignDirection;
+    }
+
+    export namespace OmniCampaignDirection {
+      export type AsObject = {
+        anyList: Array<api_commons_omnichannel_pb.OmniCampaignDirectionMap[keyof api_commons_omnichannel_pb.OmniCampaignDirectionMap]>,
       }
     }
   }
