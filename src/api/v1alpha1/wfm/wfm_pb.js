@@ -97166,7 +97166,8 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentStatesMap: (f = msg.getAgentStatesMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStates.toObject) : []
+agentStatesMap: (f = msg.getAgentStatesMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStates.toObject) : [],
+datetimeOfLastestState: (f = msg.getDatetimeOfLastestState()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -97209,6 +97210,11 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.deserializeBinaryFromRea
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt64, jspb.BinaryReader.prototype.readMessage, proto.api.commons.AdherenceAgentStates.deserializeBinaryFromReader, 0, new proto.api.commons.AdherenceAgentStates());
          });
       break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDatetimeOfLastestState(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -97242,6 +97248,14 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.serializeBinaryToWriter 
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeInt64, jspb.BinaryWriter.prototype.writeMessage, proto.api.commons.AdherenceAgentStates.serializeBinaryToWriter);
   }
+  f = message.getDatetimeOfLastestState();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -97265,6 +97279,43 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.getAgentStates
 proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.clearAgentStatesMap = function() {
   this.getAgentStatesMap().clear();
   return this;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp datetime_of_lastest_state = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.getDatetimeOfLastestState = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.setDatetimeOfLastestState = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.clearDatetimeOfLastestState = function() {
+  return this.setDatetimeOfLastestState(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.hasDatetimeOfLastestState = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
