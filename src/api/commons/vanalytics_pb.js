@@ -24,7 +24,6 @@ var global = localGlobalThis ||
     Function('return this')();
 
 goog.exportSymbol('proto.api.commons.Interval', null, global);
-goog.exportSymbol('proto.api.commons.RecordingType', null, global);
 goog.exportSymbol('proto.api.commons.TranscriptSentimentTone', null, global);
 goog.exportSymbol('proto.api.commons.TranscriptSummaryStatus', null, global);
 /**
@@ -63,15 +62,6 @@ proto.api.commons.TranscriptSentimentTone = {
   TRANSCRIPT_SENTIMENT_TONE_NEGATIVE: 1,
   TRANSCRIPT_SENTIMENT_TONE_NEUTRAL: 2,
   TRANSCRIPT_SENTIMENT_TONE_POSITIVE: 3
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.RecordingType = {
-  RECORDING_TYPE_TCN: 0,
-  RECORDING_TYPE_EXTERNAL: 1,
-  RECORDING_TYPE_VOICEMAIL: 2
 };
 
 goog.object.extend(exports, proto.api.commons);
