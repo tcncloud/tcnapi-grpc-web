@@ -997,6 +997,9 @@ export class SearchTranscriptsResponse extends jspb.Message {
   getNextPageToken(): string;
   setNextPageToken(value: string): void;
 
+  getTotal(): number;
+  setTotal(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchTranscriptsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SearchTranscriptsResponse): SearchTranscriptsResponse.AsObject;
@@ -1011,6 +1014,7 @@ export namespace SearchTranscriptsResponse {
   export type AsObject = {
     hitsList: Array<SearchTranscriptsResponse.Hit.AsObject>,
     nextPageToken: string,
+    total: number,
   }
 
   export class Hit extends jspb.Message {

@@ -2161,6 +2161,31 @@ export class ExecuteFlow extends jspb.Message {
   getFinviFacsProcessPayment(): ExecuteFinviFacsProcessPayment | undefined;
   setFinviFacsProcessPayment(value?: ExecuteFinviFacsProcessPayment): void;
 
+  hasFinviVelosidyAccountSearch(): boolean;
+  clearFinviVelosidyAccountSearch(): void;
+  getFinviVelosidyAccountSearch(): ExecuteFinviVelosidyAccountSearch | undefined;
+  setFinviVelosidyAccountSearch(value?: ExecuteFinviVelosidyAccountSearch): void;
+
+  hasFinviVelosidyOneTimeSale(): boolean;
+  clearFinviVelosidyOneTimeSale(): void;
+  getFinviVelosidyOneTimeSale(): ExecuteFinviVelosidyOneTimeSale | undefined;
+  setFinviVelosidyOneTimeSale(value?: ExecuteFinviVelosidyOneTimeSale): void;
+
+  hasFinviVelosidyPlanOffer(): boolean;
+  clearFinviVelosidyPlanOffer(): void;
+  getFinviVelosidyPlanOffer(): ExecuteFinviVelosidyPlanOffer | undefined;
+  setFinviVelosidyPlanOffer(value?: ExecuteFinviVelosidyPlanOffer): void;
+
+  hasFinviVelosidyPlanRecurringCreate(): boolean;
+  clearFinviVelosidyPlanRecurringCreate(): void;
+  getFinviVelosidyPlanRecurringCreate(): ExecuteFinviVelosidyPlanRecurringCreate | undefined;
+  setFinviVelosidyPlanRecurringCreate(value?: ExecuteFinviVelosidyPlanRecurringCreate): void;
+
+  hasCloverPaymentCardSaleTransaction(): boolean;
+  clearCloverPaymentCardSaleTransaction(): void;
+  getCloverPaymentCardSaleTransaction(): ExecuteCloverPaymentCardSaleTransaction | undefined;
+  setCloverPaymentCardSaleTransaction(value?: ExecuteCloverPaymentCardSaleTransaction): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2460,6 +2485,11 @@ export namespace ExecuteFlow {
     genericRequest?: ExecuteGenericRequest.AsObject,
     healthpay24AccountsReceivable?: ExecuteHealthpay24AccountsReceivable.AsObject,
     finviFacsProcessPayment?: ExecuteFinviFacsProcessPayment.AsObject,
+    finviVelosidyAccountSearch?: ExecuteFinviVelosidyAccountSearch.AsObject,
+    finviVelosidyOneTimeSale?: ExecuteFinviVelosidyOneTimeSale.AsObject,
+    finviVelosidyPlanOffer?: ExecuteFinviVelosidyPlanOffer.AsObject,
+    finviVelosidyPlanRecurringCreate?: ExecuteFinviVelosidyPlanRecurringCreate.AsObject,
+    cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
   }
 
   export enum ValueCase {
@@ -2749,6 +2779,11 @@ export namespace ExecuteFlow {
     GENERIC_REQUEST = 5201,
     HEALTHPAY24_ACCOUNTS_RECEIVABLE = 5301,
     FINVI_FACS_PROCESS_PAYMENT = 5401,
+    FINVI_VELOSIDY_ACCOUNT_SEARCH = 5501,
+    FINVI_VELOSIDY_ONE_TIME_SALE = 5502,
+    FINVI_VELOSIDY_PLAN_OFFER = 5503,
+    FINVI_VELOSIDY_PLAN_RECURRING_CREATE = 5504,
+    CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
   }
 }
 
@@ -7929,6 +7964,86 @@ export namespace ExecuteFinviFacsProcessPayment {
   }
 }
 
+export class ExecuteFinviVelosidyAccountSearch extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFinviVelosidyAccountSearch.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviVelosidyAccountSearch): ExecuteFinviVelosidyAccountSearch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFinviVelosidyAccountSearch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviVelosidyAccountSearch;
+  static deserializeBinaryFromReader(message: ExecuteFinviVelosidyAccountSearch, reader: jspb.BinaryReader): ExecuteFinviVelosidyAccountSearch;
+}
+
+export namespace ExecuteFinviVelosidyAccountSearch {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFinviVelosidyOneTimeSale extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFinviVelosidyOneTimeSale.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviVelosidyOneTimeSale): ExecuteFinviVelosidyOneTimeSale.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFinviVelosidyOneTimeSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviVelosidyOneTimeSale;
+  static deserializeBinaryFromReader(message: ExecuteFinviVelosidyOneTimeSale, reader: jspb.BinaryReader): ExecuteFinviVelosidyOneTimeSale;
+}
+
+export namespace ExecuteFinviVelosidyOneTimeSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFinviVelosidyPlanOffer extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFinviVelosidyPlanOffer.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviVelosidyPlanOffer): ExecuteFinviVelosidyPlanOffer.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFinviVelosidyPlanOffer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviVelosidyPlanOffer;
+  static deserializeBinaryFromReader(message: ExecuteFinviVelosidyPlanOffer, reader: jspb.BinaryReader): ExecuteFinviVelosidyPlanOffer;
+}
+
+export namespace ExecuteFinviVelosidyPlanOffer {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFinviVelosidyPlanRecurringCreate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFinviVelosidyPlanRecurringCreate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviVelosidyPlanRecurringCreate): ExecuteFinviVelosidyPlanRecurringCreate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFinviVelosidyPlanRecurringCreate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviVelosidyPlanRecurringCreate;
+  static deserializeBinaryFromReader(message: ExecuteFinviVelosidyPlanRecurringCreate, reader: jspb.BinaryReader): ExecuteFinviVelosidyPlanRecurringCreate;
+}
+
+export namespace ExecuteFinviVelosidyPlanRecurringCreate {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteCloverPaymentCardSaleTransaction extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCloverPaymentCardSaleTransaction): ExecuteCloverPaymentCardSaleTransaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCloverPaymentCardSaleTransaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCloverPaymentCardSaleTransaction;
+  static deserializeBinaryFromReader(message: ExecuteCloverPaymentCardSaleTransaction, reader: jspb.BinaryReader): ExecuteCloverPaymentCardSaleTransaction;
+}
+
+export namespace ExecuteCloverPaymentCardSaleTransaction {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7985,6 +8100,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_GENERIC: 5200;
   INTEGRATION_TYPE_HEALTHPAY24: 5300;
   INTEGRATION_TYPE_FINVI_FACS: 5400;
+  INTEGRATION_TYPE_FINVI_VELOSIDY: 5500;
+  INTEGRATION_TYPE_CLOVER: 5600;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8278,6 +8395,11 @@ export interface RequestMethodMap {
   REQUEST_METHOD_GENERIC_REQUEST: 5201;
   REQUEST_METHOD_HEALTHPAY24_ACCOUNTS_RECEIVABLE: 5301;
   REQUEST_METHOD_FINVI_FACS_PROCESS_PAYMENT: 5401;
+  REQUEST_METHOD_FINVI_VELOSIDY_ACCOUNT_SEARCH: 5501;
+  REQUEST_METHOD_FINVI_VELOSIDY_ONE_TIME_SALE: 5502;
+  REQUEST_METHOD_FINVI_VELOSIDY_PLAN_OFFER: 5503;
+  REQUEST_METHOD_FINVI_VELOSIDY_PLAN_RECURRING_CREATE: 5504;
+  REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
 }
 
 export const RequestMethod: RequestMethodMap;
