@@ -27,6 +27,8 @@ var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
 var api_commons_omnichannel_pb = require('../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.AutoEvaluation', null, global);
@@ -6950,7 +6952,9 @@ isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
 customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
 callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
 updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-channelsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f
+channelsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f,
+minimumCallLength: (f = msg.getMinimumCallLength()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+minimumSmsMessageCount: jspb.Message.getFieldWithDefault(msg, 24, 0)
   };
 
   if (includeInstance) {
@@ -7065,6 +7069,15 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
       for (var i = 0; i < values.length; i++) {
         msg.addChannels(values[i]);
       }
+      break;
+    case 23:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setMinimumCallLength(value);
+      break;
+    case 24:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMinimumSmsMessageCount(value);
       break;
     default:
       reader.skipField();
@@ -7221,6 +7234,21 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writePackedEnum(
       22,
+      f
+    );
+  }
+  f = message.getMinimumCallLength();
+  if (f != null) {
+    writer.writeMessage(
+      23,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
+  f = message.getMinimumSmsMessageCount();
+  if (f !== 0) {
+    writer.writeInt32(
+      24,
       f
     );
   }
@@ -7663,6 +7691,61 @@ proto.api.commons.Scorecard.prototype.addChannels = function(value, opt_index) {
  */
 proto.api.commons.Scorecard.prototype.clearChannelsList = function() {
   return this.setChannelsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Duration minimum_call_length = 23;
+ * @return {?proto.google.protobuf.Duration}
+ */
+proto.api.commons.Scorecard.prototype.getMinimumCallLength = function() {
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 23));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.api.commons.Scorecard} returns this
+*/
+proto.api.commons.Scorecard.prototype.setMinimumCallLength = function(value) {
+  return jspb.Message.setWrapperField(this, 23, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.clearMinimumCallLength = function() {
+  return this.setMinimumCallLength(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.Scorecard.prototype.hasMinimumCallLength = function() {
+  return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional int32 minimum_sms_message_count = 24;
+ * @return {number}
+ */
+proto.api.commons.Scorecard.prototype.getMinimumSmsMessageCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.setMinimumSmsMessageCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 24, value);
 };
 
 
