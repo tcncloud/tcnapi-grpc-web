@@ -38,3 +38,11 @@ export interface TranscriptSentimentToneMap {
 
 export const TranscriptSentimentTone: TranscriptSentimentToneMap;
 
+export interface RecordingTypeMap {
+  RECORDING_TYPE_TCN: 0;
+  RECORDING_TYPE_EXTERNAL: 1;
+  RECORDING_TYPE_VOICEMAIL: 2;
+}
+
+export const RecordingType: RecordingTypeMap;
+
