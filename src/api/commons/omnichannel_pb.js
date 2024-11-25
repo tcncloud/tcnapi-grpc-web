@@ -12199,8 +12199,7 @@ campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 19, "0"),
 lastMessageGroupTime: (f = msg.getLastMessageGroupTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 21, 0),
 result: jspb.Message.getFieldWithDefault(msg, 22, 0),
-lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-conversationType: jspb.Message.getFieldWithDefault(msg, 24, 0)
+lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12339,10 +12338,6 @@ proto.api.commons.OmniConversation.deserializeBinaryFromReader = function(msg, r
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastStateChangedTime(value);
-      break;
-    case 24:
-      var value = /** @type {!proto.api.commons.ConversationType} */ (reader.readEnum());
-      msg.setConversationType(value);
       break;
     default:
       reader.skipField();
@@ -12540,13 +12535,6 @@ proto.api.commons.OmniConversation.serializeBinaryToWriter = function(message, w
       23,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getConversationType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      24,
-      f
     );
   }
 };
@@ -13477,24 +13465,6 @@ proto.api.commons.OmniConversation.prototype.clearLastStateChangedTime = functio
  */
 proto.api.commons.OmniConversation.prototype.hasLastStateChangedTime = function() {
   return jspb.Message.getField(this, 23) != null;
-};
-
-
-/**
- * optional ConversationType conversation_type = 24;
- * @return {!proto.api.commons.ConversationType}
- */
-proto.api.commons.OmniConversation.prototype.getConversationType = function() {
-  return /** @type {!proto.api.commons.ConversationType} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.ConversationType} value
- * @return {!proto.api.commons.OmniConversation} returns this
- */
-proto.api.commons.OmniConversation.prototype.setConversationType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 24, value);
 };
 
 
