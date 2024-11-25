@@ -789,6 +789,202 @@ export namespace ListAgentScriptsResponse {
   }
 }
 
+export class CreateAgentClientInfoDisplayTemplateRequest extends jspb.Message {
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate | undefined;
+  setTemplate(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAgentClientInfoDisplayTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAgentClientInfoDisplayTemplateRequest): CreateAgentClientInfoDisplayTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAgentClientInfoDisplayTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAgentClientInfoDisplayTemplateRequest;
+  static deserializeBinaryFromReader(message: CreateAgentClientInfoDisplayTemplateRequest, reader: jspb.BinaryReader): CreateAgentClientInfoDisplayTemplateRequest;
+}
+
+export namespace CreateAgentClientInfoDisplayTemplateRequest {
+  export type AsObject = {
+    template?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject,
+  }
+}
+
+export class CreateAgentClientInfoDisplayTemplateResponse extends jspb.Message {
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAgentClientInfoDisplayTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAgentClientInfoDisplayTemplateResponse): CreateAgentClientInfoDisplayTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAgentClientInfoDisplayTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAgentClientInfoDisplayTemplateResponse;
+  static deserializeBinaryFromReader(message: CreateAgentClientInfoDisplayTemplateResponse, reader: jspb.BinaryReader): CreateAgentClientInfoDisplayTemplateResponse;
+}
+
+export namespace CreateAgentClientInfoDisplayTemplateResponse {
+  export type AsObject = {
+    templateSid: number,
+  }
+}
+
+export class UpdateAgentClientInfoDisplayTemplateRequest extends jspb.Message {
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate | undefined;
+  setTemplate(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAgentClientInfoDisplayTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAgentClientInfoDisplayTemplateRequest): UpdateAgentClientInfoDisplayTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAgentClientInfoDisplayTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAgentClientInfoDisplayTemplateRequest;
+  static deserializeBinaryFromReader(message: UpdateAgentClientInfoDisplayTemplateRequest, reader: jspb.BinaryReader): UpdateAgentClientInfoDisplayTemplateRequest;
+}
+
+export namespace UpdateAgentClientInfoDisplayTemplateRequest {
+  export type AsObject = {
+    template?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject,
+  }
+}
+
+export class UpdateAgentClientInfoDisplayTemplateResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAgentClientInfoDisplayTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAgentClientInfoDisplayTemplateResponse): UpdateAgentClientInfoDisplayTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAgentClientInfoDisplayTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAgentClientInfoDisplayTemplateResponse;
+  static deserializeBinaryFromReader(message: UpdateAgentClientInfoDisplayTemplateResponse, reader: jspb.BinaryReader): UpdateAgentClientInfoDisplayTemplateResponse;
+}
+
+export namespace UpdateAgentClientInfoDisplayTemplateResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetAgentClientInfoDisplayTemplateRequest extends jspb.Message {
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAgentClientInfoDisplayTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAgentClientInfoDisplayTemplateRequest): GetAgentClientInfoDisplayTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAgentClientInfoDisplayTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAgentClientInfoDisplayTemplateRequest;
+  static deserializeBinaryFromReader(message: GetAgentClientInfoDisplayTemplateRequest, reader: jspb.BinaryReader): GetAgentClientInfoDisplayTemplateRequest;
+}
+
+export namespace GetAgentClientInfoDisplayTemplateRequest {
+  export type AsObject = {
+    templateSid: number,
+  }
+}
+
+export class GetAgentClientInfoDisplayTemplateResponse extends jspb.Message {
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate | undefined;
+  setTemplate(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAgentClientInfoDisplayTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAgentClientInfoDisplayTemplateResponse): GetAgentClientInfoDisplayTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAgentClientInfoDisplayTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAgentClientInfoDisplayTemplateResponse;
+  static deserializeBinaryFromReader(message: GetAgentClientInfoDisplayTemplateResponse, reader: jspb.BinaryReader): GetAgentClientInfoDisplayTemplateResponse;
+}
+
+export namespace GetAgentClientInfoDisplayTemplateResponse {
+  export type AsObject = {
+    template?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject,
+  }
+}
+
+export class ListAgentClientInfoDisplayTemplatesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentClientInfoDisplayTemplatesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentClientInfoDisplayTemplatesRequest): ListAgentClientInfoDisplayTemplatesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentClientInfoDisplayTemplatesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentClientInfoDisplayTemplatesRequest;
+  static deserializeBinaryFromReader(message: ListAgentClientInfoDisplayTemplatesRequest, reader: jspb.BinaryReader): ListAgentClientInfoDisplayTemplatesRequest;
+}
+
+export namespace ListAgentClientInfoDisplayTemplatesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAgentClientInfoDisplayTemplatesResponse extends jspb.Message {
+  clearTemplatesList(): void;
+  getTemplatesList(): Array<api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate>;
+  setTemplatesList(value: Array<api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate>): void;
+  addTemplates(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate, index?: number): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentClientInfoDisplayTemplatesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentClientInfoDisplayTemplatesResponse): ListAgentClientInfoDisplayTemplatesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentClientInfoDisplayTemplatesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentClientInfoDisplayTemplatesResponse;
+  static deserializeBinaryFromReader(message: ListAgentClientInfoDisplayTemplatesResponse, reader: jspb.BinaryReader): ListAgentClientInfoDisplayTemplatesResponse;
+}
+
+export namespace ListAgentClientInfoDisplayTemplatesResponse {
+  export type AsObject = {
+    templatesList: Array<api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject>,
+  }
+}
+
+export class DeleteAgentClientInfoDisplayTemplateRequest extends jspb.Message {
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAgentClientInfoDisplayTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAgentClientInfoDisplayTemplateRequest): DeleteAgentClientInfoDisplayTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAgentClientInfoDisplayTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAgentClientInfoDisplayTemplateRequest;
+  static deserializeBinaryFromReader(message: DeleteAgentClientInfoDisplayTemplateRequest, reader: jspb.BinaryReader): DeleteAgentClientInfoDisplayTemplateRequest;
+}
+
+export namespace DeleteAgentClientInfoDisplayTemplateRequest {
+  export type AsObject = {
+    templateSid: number,
+  }
+}
+
+export class DeleteAgentClientInfoDisplayTemplateResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAgentClientInfoDisplayTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAgentClientInfoDisplayTemplateResponse): DeleteAgentClientInfoDisplayTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAgentClientInfoDisplayTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAgentClientInfoDisplayTemplateResponse;
+  static deserializeBinaryFromReader(message: DeleteAgentClientInfoDisplayTemplateResponse, reader: jspb.BinaryReader): DeleteAgentClientInfoDisplayTemplateResponse;
+}
+
+export namespace DeleteAgentClientInfoDisplayTemplateResponse {
+  export type AsObject = {
+  }
+}
+
 export interface AgentStatusMap {
   AGENT_STATUS_UNSPECIFIED: 0;
   AGENT_STATUS_LOGGED_IN: 1;

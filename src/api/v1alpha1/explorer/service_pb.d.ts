@@ -168,6 +168,9 @@ export class SupportQueryRequest extends jspb.Message {
   getQueryRequest(): QueryRequest | undefined;
   setQueryRequest(value?: QueryRequest): void;
 
+  getIncludeExplain(): boolean;
+  setIncludeExplain(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SupportQueryRequest): SupportQueryRequest.AsObject;
@@ -181,6 +184,7 @@ export class SupportQueryRequest extends jspb.Message {
 export namespace SupportQueryRequest {
   export type AsObject = {
     queryRequest?: QueryRequest.AsObject,
+    includeExplain: boolean,
   }
 }
 
@@ -190,6 +194,15 @@ export class SupportQueryResponse extends jspb.Message {
 
   getResultSizeBytes(): number;
   setResultSizeBytes(value: number): void;
+
+  getPrql(): string;
+  setPrql(value: string): void;
+
+  getSql(): string;
+  setSql(value: string): void;
+
+  getExplain(): string;
+  setExplain(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
@@ -205,6 +218,9 @@ export namespace SupportQueryResponse {
   export type AsObject = {
     resultUrl: string,
     resultSizeBytes: number,
+    prql: string,
+    sql: string,
+    explain: string,
   }
 }
 

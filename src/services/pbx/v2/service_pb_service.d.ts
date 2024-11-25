@@ -31,6 +31,15 @@ type PBXServiceListRingGroups = {
   readonly responseType: typeof services_pbx_v2_service_pb.ListRingGroupsResponse;
 };
 
+type PBXServiceListRingGroupsBySipId = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.ListRingGroupsBySipIdRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.ListRingGroupsBySipIdResponse;
+};
+
 type PBXServiceGetRingGroup = {
   readonly methodName: string;
   readonly service: typeof PBXService;
@@ -65,6 +74,15 @@ type PBXServiceListSIPAccounts = {
   readonly responseStream: false;
   readonly requestType: typeof services_pbx_v2_service_pb.ListSIPAccountsRequest;
   readonly responseType: typeof services_pbx_v2_service_pb.ListSIPAccountsResponse;
+};
+
+type PBXServiceListSIPAccountsByRingGroupId = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdResponse;
 };
 
 type PBXServiceUpdateSIPAccount = {
@@ -117,10 +135,12 @@ export class PBXService {
   static readonly ListPBXUsers: PBXServiceListPBXUsers;
   static readonly GetPBXUser: PBXServiceGetPBXUser;
   static readonly ListRingGroups: PBXServiceListRingGroups;
+  static readonly ListRingGroupsBySipId: PBXServiceListRingGroupsBySipId;
   static readonly GetRingGroup: PBXServiceGetRingGroup;
   static readonly GetSIPAccount: PBXServiceGetSIPAccount;
   static readonly GetSIPAccountByUserId: PBXServiceGetSIPAccountByUserId;
   static readonly ListSIPAccounts: PBXServiceListSIPAccounts;
+  static readonly ListSIPAccountsByRingGroupId: PBXServiceListSIPAccountsByRingGroupId;
   static readonly UpdateSIPAccount: PBXServiceUpdateSIPAccount;
   static readonly UpdateRingGroup: PBXServiceUpdateRingGroup;
   static readonly CreateRingGroup: PBXServiceCreateRingGroup;
@@ -187,6 +207,15 @@ export class PBXServiceClient {
     requestMessage: services_pbx_v2_service_pb.ListRingGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListRingGroupsResponse|null) => void
   ): UnaryResponse;
+  listRingGroupsBySipId(
+    requestMessage: services_pbx_v2_service_pb.ListRingGroupsBySipIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListRingGroupsBySipIdResponse|null) => void
+  ): UnaryResponse;
+  listRingGroupsBySipId(
+    requestMessage: services_pbx_v2_service_pb.ListRingGroupsBySipIdRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListRingGroupsBySipIdResponse|null) => void
+  ): UnaryResponse;
   getRingGroup(
     requestMessage: services_pbx_v2_service_pb.GetRingGroupRequest,
     metadata: grpc.Metadata,
@@ -222,6 +251,15 @@ export class PBXServiceClient {
   listSIPAccounts(
     requestMessage: services_pbx_v2_service_pb.ListSIPAccountsRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListSIPAccountsResponse|null) => void
+  ): UnaryResponse;
+  listSIPAccountsByRingGroupId(
+    requestMessage: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdResponse|null) => void
+  ): UnaryResponse;
+  listSIPAccountsByRingGroupId(
+    requestMessage: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListSIPAccountsByRingGroupIdResponse|null) => void
   ): UnaryResponse;
   updateSIPAccount(
     requestMessage: services_pbx_v2_service_pb.UpdateSIPAccountRequest,
