@@ -12087,10 +12087,10 @@ export namespace ListAdherenceAgentStatesRequest {
 export class ListAdherenceAgentStatesResponse extends jspb.Message {
   getAgentStatesMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStates>;
   clearAgentStatesMap(): void;
-  hasDatetimeOfLatestState(): boolean;
-  clearDatetimeOfLatestState(): void;
-  getDatetimeOfLatestState(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDatetimeOfLatestState(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasLatestAgentStateDatetime(): boolean;
+  clearLatestAgentStateDatetime(): void;
+  getLatestAgentStateDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatestAgentStateDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
@@ -12105,7 +12105,7 @@ export class ListAdherenceAgentStatesResponse extends jspb.Message {
 export namespace ListAdherenceAgentStatesResponse {
   export type AsObject = {
     agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
-    datetimeOfLatestState?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    latestAgentStateDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
