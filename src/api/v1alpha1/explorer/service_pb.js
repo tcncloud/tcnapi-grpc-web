@@ -1358,7 +1358,7 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.toObject = function(op
 proto.api.v1alpha1.explorer.SupportQueryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 queryRequest: (f = msg.getQueryRequest()) && proto.api.v1alpha1.explorer.QueryRequest.toObject(includeInstance, f),
-includeExplain: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+debug: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -1402,7 +1402,7 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.deserializeBinaryFromReader = fu
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeExplain(value);
+      msg.setDebug(value);
       break;
     default:
       reader.skipField();
@@ -1441,7 +1441,7 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.serializeBinaryToWriter = functi
       proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter
     );
   }
-  f = message.getIncludeExplain();
+  f = message.getDebug();
   if (f) {
     writer.writeBool(
       2,
@@ -1489,10 +1489,10 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.hasQueryRequest = func
 
 
 /**
- * optional bool include_explain = 2;
+ * optional bool debug = 2;
  * @return {boolean}
  */
-proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.getIncludeExplain = function() {
+proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.getDebug = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -1501,7 +1501,7 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.getIncludeExplain = fu
  * @param {boolean} value
  * @return {!proto.api.v1alpha1.explorer.SupportQueryRequest} returns this
  */
-proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.setIncludeExplain = function(value) {
+proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.setDebug = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
