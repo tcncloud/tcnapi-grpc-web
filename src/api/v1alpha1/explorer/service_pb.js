@@ -1357,8 +1357,7 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.explorer.SupportQueryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-queryRequest: (f = msg.getQueryRequest()) && proto.api.v1alpha1.explorer.QueryRequest.toObject(includeInstance, f),
-debug: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+queryRequest: (f = msg.getQueryRequest()) && proto.api.v1alpha1.explorer.QueryRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1400,10 +1399,6 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader);
       msg.setQueryRequest(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDebug(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1439,13 +1434,6 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.serializeBinaryToWriter = functi
       1,
       f,
       proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter
-    );
-  }
-  f = message.getDebug();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
     );
   }
 };
@@ -1488,24 +1476,6 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.hasQueryRequest = func
 };
 
 
-/**
- * optional bool debug = 2;
- * @return {boolean}
- */
-proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.getDebug = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.explorer.SupportQueryRequest} returns this
- */
-proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.setDebug = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
-};
-
-
 
 
 
@@ -1539,10 +1509,7 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.toObject = function(o
 proto.api.v1alpha1.explorer.SupportQueryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 resultUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-prql: jspb.Message.getFieldWithDefault(msg, 3, ""),
-sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
-explain: jspb.Message.getFieldWithDefault(msg, 5, "")
+resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1587,18 +1554,6 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.deserializeBinaryFromReader = f
       var value = /** @type {number} */ (reader.readInt64());
       msg.setResultSizeBytes(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPrql(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSql(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setExplain(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1642,27 +1597,6 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getPrql();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getSql();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getExplain();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
 };
 
 
@@ -1699,60 +1633,6 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getResultSizeBytes = 
  */
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setResultSizeBytes = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional string prql = 3;
- * @return {string}
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getPrql = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setPrql = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string sql = 4;
- * @return {string}
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getSql = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setSql = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string explain = 5;
- * @return {string}
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getExplain = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setExplain = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
