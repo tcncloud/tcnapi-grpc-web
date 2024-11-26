@@ -891,3 +891,53 @@ export namespace ListClientArticlesResponse {
   }
 }
 
+export class CreatePublishedClientArticleRequest extends jspb.Message {
+  getNewArticleSid(): string;
+  setNewArticleSid(value: string): void;
+
+  getDisplayToUser(): boolean;
+  setDisplayToUser(value: boolean): void;
+
+  getArticleLink(): string;
+  setArticleLink(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedClientArticleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedClientArticleRequest): CreatePublishedClientArticleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedClientArticleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedClientArticleRequest;
+  static deserializeBinaryFromReader(message: CreatePublishedClientArticleRequest, reader: jspb.BinaryReader): CreatePublishedClientArticleRequest;
+}
+
+export namespace CreatePublishedClientArticleRequest {
+  export type AsObject = {
+    newArticleSid: string,
+    displayToUser: boolean,
+    articleLink: string,
+  }
+}
+
+export class CreatePublishedClientArticleResponse extends jspb.Message {
+  hasPublishedArticleDetails(): boolean;
+  clearPublishedArticleDetails(): void;
+  getPublishedArticleDetails(): PublishedArticleDetails | undefined;
+  setPublishedArticleDetails(value?: PublishedArticleDetails): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedClientArticleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedClientArticleResponse): CreatePublishedClientArticleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedClientArticleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedClientArticleResponse;
+  static deserializeBinaryFromReader(message: CreatePublishedClientArticleResponse, reader: jspb.BinaryReader): CreatePublishedClientArticleResponse;
+}
+
+export namespace CreatePublishedClientArticleResponse {
+  export type AsObject = {
+    publishedArticleDetails?: PublishedArticleDetails.AsObject,
+  }
+}
+

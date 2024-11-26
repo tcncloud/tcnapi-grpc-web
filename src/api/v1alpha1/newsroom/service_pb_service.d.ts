@@ -140,6 +140,15 @@ type NewsroomAPIListClientArticles = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.ListClientArticlesResponse;
 };
 
+type NewsroomAPICreatePublishedClientArticle = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -157,6 +166,7 @@ export class NewsroomAPI {
   static readonly CreateClientArticle: NewsroomAPICreateClientArticle;
   static readonly UpdateClientArticle: NewsroomAPIUpdateClientArticle;
   static readonly ListClientArticles: NewsroomAPIListClientArticles;
+  static readonly CreatePublishedClientArticle: NewsroomAPICreatePublishedClientArticle;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -325,6 +335,15 @@ export class NewsroomAPIClient {
   listClientArticles(
     requestMessage: api_v1alpha1_newsroom_entities_pb.ListClientArticlesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListClientArticlesResponse|null) => void
+  ): UnaryResponse;
+  createPublishedClientArticle(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse|null) => void
+  ): UnaryResponse;
+  createPublishedClientArticle(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse|null) => void
   ): UnaryResponse;
 }
 
