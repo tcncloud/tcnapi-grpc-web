@@ -983,3 +983,47 @@ export namespace GetPublishedClientArticleByIdResponse {
   }
 }
 
+export class StoreClientArticleImageRequest extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StoreClientArticleImageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreClientArticleImageRequest): StoreClientArticleImageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StoreClientArticleImageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreClientArticleImageRequest;
+  static deserializeBinaryFromReader(message: StoreClientArticleImageRequest, reader: jspb.BinaryReader): StoreClientArticleImageRequest;
+}
+
+export namespace StoreClientArticleImageRequest {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
+  }
+}
+
+export class StoreClientArticleImageResponse extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StoreClientArticleImageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreClientArticleImageResponse): StoreClientArticleImageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StoreClientArticleImageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreClientArticleImageResponse;
+  static deserializeBinaryFromReader(message: StoreClientArticleImageResponse, reader: jspb.BinaryReader): StoreClientArticleImageResponse;
+}
+
+export namespace StoreClientArticleImageResponse {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
+  }
+}
+

@@ -158,6 +158,15 @@ type NewsroomAPIGetPublishedClientArticleById = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse;
 };
 
+type NewsroomAPIStoreClientArticleImage = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -177,6 +186,7 @@ export class NewsroomAPI {
   static readonly ListClientArticles: NewsroomAPIListClientArticles;
   static readonly CreatePublishedClientArticle: NewsroomAPICreatePublishedClientArticle;
   static readonly GetPublishedClientArticleById: NewsroomAPIGetPublishedClientArticleById;
+  static readonly StoreClientArticleImage: NewsroomAPIStoreClientArticleImage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -363,6 +373,15 @@ export class NewsroomAPIClient {
   getPublishedClientArticleById(
     requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse|null) => void
+  ): UnaryResponse;
+  storeClientArticleImage(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageResponse|null) => void
+  ): UnaryResponse;
+  storeClientArticleImage(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageResponse|null) => void
   ): UnaryResponse;
 }
 
