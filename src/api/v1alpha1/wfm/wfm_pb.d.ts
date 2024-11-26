@@ -7896,8 +7896,11 @@ export class PerformanceMetricV3 extends jspb.Message {
   getMetricsAllSkills(): Basic_PerformanceMetricV3 | undefined;
   setMetricsAllSkills(value?: Basic_PerformanceMetricV3): void;
 
-  getMetricsBySkillCollectionMap(): jspb.Map<number, Basic_PerformanceMetricV3>;
-  clearMetricsBySkillCollectionMap(): void;
+  clearMetricsBySkillCollectionList(): void;
+  getMetricsBySkillCollectionList(): Array<PerformanceMetricV3.MetricByCollection>;
+  setMetricsBySkillCollectionList(value: Array<PerformanceMetricV3.MetricByCollection>): void;
+  addMetricsBySkillCollection(value?: PerformanceMetricV3.MetricByCollection, index?: number): PerformanceMetricV3.MetricByCollection;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PerformanceMetricV3.AsObject;
   static toObject(includeInstance: boolean, msg: PerformanceMetricV3): PerformanceMetricV3.AsObject;
@@ -7911,7 +7914,35 @@ export class PerformanceMetricV3 extends jspb.Message {
 export namespace PerformanceMetricV3 {
   export type AsObject = {
     metricsAllSkills?: Basic_PerformanceMetricV3.AsObject,
-    metricsBySkillCollectionMap: Array<[number, Basic_PerformanceMetricV3.AsObject]>,
+    metricsBySkillCollectionList: Array<PerformanceMetricV3.MetricByCollection.AsObject>,
+  }
+
+  export class MetricByCollection extends jspb.Message {
+    hasSkillCollection(): boolean;
+    clearSkillCollection(): void;
+    getSkillCollection(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+    setSkillCollection(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+    hasMetric(): boolean;
+    clearMetric(): void;
+    getMetric(): Basic_PerformanceMetricV3 | undefined;
+    setMetric(value?: Basic_PerformanceMetricV3): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MetricByCollection.AsObject;
+    static toObject(includeInstance: boolean, msg: MetricByCollection): MetricByCollection.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MetricByCollection, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MetricByCollection;
+    static deserializeBinaryFromReader(message: MetricByCollection, reader: jspb.BinaryReader): MetricByCollection;
+  }
+
+  export namespace MetricByCollection {
+    export type AsObject = {
+      skillCollection?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+      metric?: Basic_PerformanceMetricV3.AsObject,
+    }
   }
 }
 
