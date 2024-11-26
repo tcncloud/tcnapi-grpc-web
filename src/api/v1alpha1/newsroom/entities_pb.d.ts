@@ -841,3 +841,53 @@ export namespace UpdateClientArticleResponse {
   }
 }
 
+export class ListClientArticlesRequest extends jspb.Message {
+  clearStatusesList(): void;
+  getStatusesList(): Array<api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap]>;
+  setStatusesList(value: Array<api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap]>): void;
+  addStatuses(value: api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap], index?: number): api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap];
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListClientArticlesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListClientArticlesRequest): ListClientArticlesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListClientArticlesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListClientArticlesRequest;
+  static deserializeBinaryFromReader(message: ListClientArticlesRequest, reader: jspb.BinaryReader): ListClientArticlesRequest;
+}
+
+export namespace ListClientArticlesRequest {
+  export type AsObject = {
+    statusesList: Array<api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap]>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class ListClientArticlesResponse extends jspb.Message {
+  clearArticleDetailsList(): void;
+  getArticleDetailsList(): Array<NewsArticleDetails>;
+  setArticleDetailsList(value: Array<NewsArticleDetails>): void;
+  addArticleDetails(value?: NewsArticleDetails, index?: number): NewsArticleDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListClientArticlesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListClientArticlesResponse): ListClientArticlesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListClientArticlesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListClientArticlesResponse;
+  static deserializeBinaryFromReader(message: ListClientArticlesResponse, reader: jspb.BinaryReader): ListClientArticlesResponse;
+}
+
+export namespace ListClientArticlesResponse {
+  export type AsObject = {
+    articleDetailsList: Array<NewsArticleDetails.AsObject>,
+  }
+}
+

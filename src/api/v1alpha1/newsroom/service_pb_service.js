@@ -137,6 +137,15 @@ NewsroomAPI.UpdateClientArticle = {
   responseType: api_v1alpha1_newsroom_entities_pb.UpdateClientArticleResponse
 };
 
+NewsroomAPI.ListClientArticles = {
+  methodName: "ListClientArticles",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListClientArticlesRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListClientArticlesResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -552,6 +561,37 @@ NewsroomAPIClient.prototype.updateClientArticle = function updateClientArticle(r
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.UpdateClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listClientArticles = function listClientArticles(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListClientArticles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
