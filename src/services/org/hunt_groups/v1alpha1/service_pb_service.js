@@ -101,6 +101,51 @@ HuntGroupsService.ListAgentScripts = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentScriptsResponse
 };
 
+HuntGroupsService.CreateAgentClientInfoDisplayTemplate = {
+  methodName: "CreateAgentClientInfoDisplayTemplate",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.CreateAgentClientInfoDisplayTemplateRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.CreateAgentClientInfoDisplayTemplateResponse
+};
+
+HuntGroupsService.UpdateAgentClientInfoDisplayTemplate = {
+  methodName: "UpdateAgentClientInfoDisplayTemplate",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateAgentClientInfoDisplayTemplateRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateAgentClientInfoDisplayTemplateResponse
+};
+
+HuntGroupsService.GetAgentClientInfoDisplayTemplate = {
+  methodName: "GetAgentClientInfoDisplayTemplate",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.GetAgentClientInfoDisplayTemplateRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.GetAgentClientInfoDisplayTemplateResponse
+};
+
+HuntGroupsService.ListAgentClientInfoDisplayTemplates = {
+  methodName: "ListAgentClientInfoDisplayTemplates",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesResponse
+};
+
+HuntGroupsService.DeleteAgentClientInfoDisplayTemplate = {
+  methodName: "DeleteAgentClientInfoDisplayTemplate",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse
+};
+
 exports.HuntGroupsService = HuntGroupsService;
 
 function HuntGroupsServiceClient(serviceHost, options) {
@@ -421,6 +466,161 @@ HuntGroupsServiceClient.prototype.listAgentScripts = function listAgentScripts(r
     },
     cancel: function () {
       listeners = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.createAgentClientInfoDisplayTemplate = function createAgentClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.CreateAgentClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.updateAgentClientInfoDisplayTemplate = function updateAgentClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.UpdateAgentClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.getAgentClientInfoDisplayTemplate = function getAgentClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.GetAgentClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.listAgentClientInfoDisplayTemplates = function listAgentClientInfoDisplayTemplates(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.ListAgentClientInfoDisplayTemplates, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.deleteAgentClientInfoDisplayTemplate = function deleteAgentClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.DeleteAgentClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
       client.close();
     }
   };
