@@ -1027,3 +1027,89 @@ export namespace StoreClientArticleImageResponse {
   }
 }
 
+export class ListImagesForClientArticleRequest extends jspb.Message {
+  getNewArticleSid(): string;
+  setNewArticleSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListImagesForClientArticleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListImagesForClientArticleRequest): ListImagesForClientArticleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListImagesForClientArticleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListImagesForClientArticleRequest;
+  static deserializeBinaryFromReader(message: ListImagesForClientArticleRequest, reader: jspb.BinaryReader): ListImagesForClientArticleRequest;
+}
+
+export namespace ListImagesForClientArticleRequest {
+  export type AsObject = {
+    newArticleSid: string,
+  }
+}
+
+export class ListImagesForClientArticleResponse extends jspb.Message {
+  clearNewsArticleImagesList(): void;
+  getNewsArticleImagesList(): Array<NewsArticleImage>;
+  setNewsArticleImagesList(value: Array<NewsArticleImage>): void;
+  addNewsArticleImages(value?: NewsArticleImage, index?: number): NewsArticleImage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListImagesForClientArticleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListImagesForClientArticleResponse): ListImagesForClientArticleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListImagesForClientArticleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListImagesForClientArticleResponse;
+  static deserializeBinaryFromReader(message: ListImagesForClientArticleResponse, reader: jspb.BinaryReader): ListImagesForClientArticleResponse;
+}
+
+export namespace ListImagesForClientArticleResponse {
+  export type AsObject = {
+    newsArticleImagesList: Array<NewsArticleImage.AsObject>,
+  }
+}
+
+export class UploadClientArticleImageRequest extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadClientArticleImageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadClientArticleImageRequest): UploadClientArticleImageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadClientArticleImageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadClientArticleImageRequest;
+  static deserializeBinaryFromReader(message: UploadClientArticleImageRequest, reader: jspb.BinaryReader): UploadClientArticleImageRequest;
+}
+
+export namespace UploadClientArticleImageRequest {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
+  }
+}
+
+export class UploadClientArticleImageResponse extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadClientArticleImageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadClientArticleImageResponse): UploadClientArticleImageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadClientArticleImageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadClientArticleImageResponse;
+  static deserializeBinaryFromReader(message: UploadClientArticleImageResponse, reader: jspb.BinaryReader): UploadClientArticleImageResponse;
+}
+
+export namespace UploadClientArticleImageResponse {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
+  }
+}
+

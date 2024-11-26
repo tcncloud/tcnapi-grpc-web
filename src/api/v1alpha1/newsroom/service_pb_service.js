@@ -173,6 +173,24 @@ NewsroomAPI.StoreClientArticleImage = {
   responseType: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageResponse
 };
 
+NewsroomAPI.ListImagesForClientArticle = {
+  methodName: "ListImagesForClientArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListImagesForClientArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListImagesForClientArticleResponse
+};
+
+NewsroomAPI.UploadClientArticleImage = {
+  methodName: "UploadClientArticleImage",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -712,6 +730,68 @@ NewsroomAPIClient.prototype.storeClientArticleImage = function storeClientArticl
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.StoreClientArticleImage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listImagesForClientArticle = function listImagesForClientArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListImagesForClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.uploadClientArticleImage = function uploadClientArticleImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.UploadClientArticleImage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
