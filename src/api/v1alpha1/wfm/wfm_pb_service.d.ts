@@ -337,15 +337,6 @@ type WFMListForecastIntervals = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CallDataByInterval;
 };
 
-type WFMListForecastIntervalsV2 = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Request;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Response;
-};
-
 type WFMBuildRegressionForecastByInterval = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1978,7 +1969,6 @@ export class WFM {
   static readonly ListRegressionTemplates: WFMListRegressionTemplates;
   static readonly ListForecastIntervalsForSkillProfile: WFMListForecastIntervalsForSkillProfile;
   static readonly ListForecastIntervals: WFMListForecastIntervals;
-  static readonly ListForecastIntervalsV2: WFMListForecastIntervalsV2;
   static readonly BuildRegressionForecastByInterval: WFMBuildRegressionForecastByInterval;
   static readonly BuildRegressionForecastByIntervalWithStats: WFMBuildRegressionForecastByIntervalWithStats;
   static readonly ListCallProfileTemplates: WFMListCallProfileTemplates;
@@ -2491,15 +2481,6 @@ export class WFMClient {
   ): UnaryResponse;
   listForecastIntervalsForSkillProfile(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   listForecastIntervals(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
-  listForecastIntervalsV2(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Request,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Response|null) => void
-  ): UnaryResponse;
-  listForecastIntervalsV2(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Request,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsV2Response|null) => void
-  ): UnaryResponse;
   buildRegressionForecastByInterval(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   buildRegressionForecastByIntervalWithStats(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsRes>;
   listCallProfileTemplates(
