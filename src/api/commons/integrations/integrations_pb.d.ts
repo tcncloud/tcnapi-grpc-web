@@ -1306,6 +1306,11 @@ export class ExecuteFlow extends jspb.Message {
   getJourneyUpdate(): ExecuteJourneyUpdate | undefined;
   setJourneyUpdate(value?: ExecuteJourneyUpdate): void;
 
+  hasJourneySearch(): boolean;
+  clearJourneySearch(): void;
+  getJourneySearch(): ExecuteJourneySearch | undefined;
+  setJourneySearch(value?: ExecuteJourneySearch): void;
+
   hasAthenahealthGetPatients(): boolean;
   clearAthenahealthGetPatients(): void;
   getAthenahealthGetPatients(): ExecuteAthenahealthGetPatients | undefined;
@@ -2314,6 +2319,7 @@ export namespace ExecuteFlow {
     journeyLatest?: ExecuteJourneyLatest.AsObject,
     journeyList?: ExecuteJourneyList.AsObject,
     journeyUpdate?: ExecuteJourneyUpdate.AsObject,
+    journeySearch?: ExecuteJourneySearch.AsObject,
     athenahealthGetPatients?: ExecuteAthenahealthGetPatients.AsObject,
     athenahealthGetPatientsWithId?: ExecuteAthenahealthGetPatientsWithId.AsObject,
     athenahealthCcPayment?: ExecuteAthenahealthCcPayment.AsObject,
@@ -2608,6 +2614,7 @@ export namespace ExecuteFlow {
     JOURNEY_LATEST = 2401,
     JOURNEY_LIST = 2402,
     JOURNEY_UPDATE = 2403,
+    JOURNEY_SEARCH = 2404,
     ATHENAHEALTH_GET_PATIENTS = 2501,
     ATHENAHEALTH_GET_PATIENTS_WITH_ID = 2502,
     ATHENAHEALTH_CC_PAYMENT = 2503,
@@ -5224,6 +5231,22 @@ export class ExecuteJourneyUpdate extends jspb.Message {
 }
 
 export namespace ExecuteJourneyUpdate {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteJourneySearch extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteJourneySearch.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteJourneySearch): ExecuteJourneySearch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteJourneySearch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteJourneySearch;
+  static deserializeBinaryFromReader(message: ExecuteJourneySearch, reader: jspb.BinaryReader): ExecuteJourneySearch;
+}
+
+export namespace ExecuteJourneySearch {
   export type AsObject = {
   }
 }
@@ -8222,6 +8245,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_JOURNEY_LATEST: 2401;
   REQUEST_METHOD_JOURNEY_LIST: 2402;
   REQUEST_METHOD_JOURNEY_UPDATE: 2403;
+  REQUEST_METHOD_JOURNEY_SEARCH: 2404;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTS: 2501;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTSWITHID: 2502;
   REQUEST_METHOD_ATHENAHEALTH_CCPAYMENT: 2503;
