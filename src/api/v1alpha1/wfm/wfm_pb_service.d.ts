@@ -598,6 +598,24 @@ type WFMGetOnCallSchedulingActivity = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes;
 };
 
+type WFMCreateSchedulingActivityPauseCodes = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesResponse;
+};
+
+type WFMDeleteSchedulingActivityPauseCodes = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesResponse;
+};
+
 type WFMListPatternsForSchedulingActivityClassifications = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1998,6 +2016,8 @@ export class WFM {
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly ListSchedulingActivities: WFMListSchedulingActivities;
   static readonly GetOnCallSchedulingActivity: WFMGetOnCallSchedulingActivity;
+  static readonly CreateSchedulingActivityPauseCodes: WFMCreateSchedulingActivityPauseCodes;
+  static readonly DeleteSchedulingActivityPauseCodes: WFMDeleteSchedulingActivityPauseCodes;
   static readonly ListPatternsForSchedulingActivityClassifications: WFMListPatternsForSchedulingActivityClassifications;
   static readonly GetTimeOffSchedulingActivity: WFMGetTimeOffSchedulingActivity;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
@@ -2725,6 +2745,24 @@ export class WFMClient {
   getOnCallSchedulingActivity(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes|null) => void
+  ): UnaryResponse;
+  createSchedulingActivityPauseCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesResponse|null) => void
+  ): UnaryResponse;
+  createSchedulingActivityPauseCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSchedulingActivityPauseCodesResponse|null) => void
+  ): UnaryResponse;
+  deleteSchedulingActivityPauseCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesResponse|null) => void
+  ): UnaryResponse;
+  deleteSchedulingActivityPauseCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingActivityPauseCodesResponse|null) => void
   ): UnaryResponse;
   listPatternsForSchedulingActivityClassifications(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsRequest,

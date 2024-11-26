@@ -4127,6 +4127,90 @@ export namespace GetOnCallSchedulingActivityRes {
   }
 }
 
+export class CreateSchedulingActivityPauseCodesRequest extends jspb.Message {
+  getSchedulingActivitySid(): number;
+  setSchedulingActivitySid(value: number): void;
+
+  clearPauseCodesList(): void;
+  getPauseCodesList(): Array<string>;
+  setPauseCodesList(value: Array<string>): void;
+  addPauseCodes(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSchedulingActivityPauseCodesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSchedulingActivityPauseCodesRequest): CreateSchedulingActivityPauseCodesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSchedulingActivityPauseCodesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSchedulingActivityPauseCodesRequest;
+  static deserializeBinaryFromReader(message: CreateSchedulingActivityPauseCodesRequest, reader: jspb.BinaryReader): CreateSchedulingActivityPauseCodesRequest;
+}
+
+export namespace CreateSchedulingActivityPauseCodesRequest {
+  export type AsObject = {
+    schedulingActivitySid: number,
+    pauseCodesList: Array<string>,
+  }
+}
+
+export class CreateSchedulingActivityPauseCodesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSchedulingActivityPauseCodesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSchedulingActivityPauseCodesResponse): CreateSchedulingActivityPauseCodesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSchedulingActivityPauseCodesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSchedulingActivityPauseCodesResponse;
+  static deserializeBinaryFromReader(message: CreateSchedulingActivityPauseCodesResponse, reader: jspb.BinaryReader): CreateSchedulingActivityPauseCodesResponse;
+}
+
+export namespace CreateSchedulingActivityPauseCodesResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteSchedulingActivityPauseCodesRequest extends jspb.Message {
+  getSchedulingActivitySid(): number;
+  setSchedulingActivitySid(value: number): void;
+
+  clearPauseCodesList(): void;
+  getPauseCodesList(): Array<string>;
+  setPauseCodesList(value: Array<string>): void;
+  addPauseCodes(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSchedulingActivityPauseCodesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSchedulingActivityPauseCodesRequest): DeleteSchedulingActivityPauseCodesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteSchedulingActivityPauseCodesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSchedulingActivityPauseCodesRequest;
+  static deserializeBinaryFromReader(message: DeleteSchedulingActivityPauseCodesRequest, reader: jspb.BinaryReader): DeleteSchedulingActivityPauseCodesRequest;
+}
+
+export namespace DeleteSchedulingActivityPauseCodesRequest {
+  export type AsObject = {
+    schedulingActivitySid: number,
+    pauseCodesList: Array<string>,
+  }
+}
+
+export class DeleteSchedulingActivityPauseCodesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSchedulingActivityPauseCodesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSchedulingActivityPauseCodesResponse): DeleteSchedulingActivityPauseCodesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteSchedulingActivityPauseCodesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSchedulingActivityPauseCodesResponse;
+  static deserializeBinaryFromReader(message: DeleteSchedulingActivityPauseCodesResponse, reader: jspb.BinaryReader): DeleteSchedulingActivityPauseCodesResponse;
+}
+
+export namespace DeleteSchedulingActivityPauseCodesResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListPatternsForSchedulingActivityClassificationsRequest extends jspb.Message {
   hasParentEntity(): boolean;
   clearParentEntity(): void;
@@ -12229,6 +12313,11 @@ export namespace ListAdherenceAgentStatesRequest {
 export class ListAdherenceAgentStatesResponse extends jspb.Message {
   getAgentStatesMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStates>;
   clearAgentStatesMap(): void;
+  hasLatestAgentStateDatetime(): boolean;
+  clearLatestAgentStateDatetime(): void;
+  getLatestAgentStateDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatestAgentStateDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesResponse): ListAdherenceAgentStatesResponse.AsObject;
@@ -12242,6 +12331,7 @@ export class ListAdherenceAgentStatesResponse extends jspb.Message {
 export namespace ListAdherenceAgentStatesResponse {
   export type AsObject = {
     agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
+    latestAgentStateDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
