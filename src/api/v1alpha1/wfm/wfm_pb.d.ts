@@ -2299,6 +2299,50 @@ export namespace ListForecastIntervalsReq {
   }
 }
 
+export class ListForecastIntervalsV2Request extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListForecastIntervalsV2Request.AsObject;
+  static toObject(includeInstance: boolean, msg: ListForecastIntervalsV2Request): ListForecastIntervalsV2Request.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListForecastIntervalsV2Request, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListForecastIntervalsV2Request;
+  static deserializeBinaryFromReader(message: ListForecastIntervalsV2Request, reader: jspb.BinaryReader): ListForecastIntervalsV2Request;
+}
+
+export namespace ListForecastIntervalsV2Request {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
+export class ListForecastIntervalsV2Response extends jspb.Message {
+  clearIntervalsList(): void;
+  getIntervalsList(): Array<CallDataByInterval>;
+  setIntervalsList(value: Array<CallDataByInterval>): void;
+  addIntervals(value?: CallDataByInterval, index?: number): CallDataByInterval;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListForecastIntervalsV2Response.AsObject;
+  static toObject(includeInstance: boolean, msg: ListForecastIntervalsV2Response): ListForecastIntervalsV2Response.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListForecastIntervalsV2Response, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListForecastIntervalsV2Response;
+  static deserializeBinaryFromReader(message: ListForecastIntervalsV2Response, reader: jspb.BinaryReader): ListForecastIntervalsV2Response;
+}
+
+export namespace ListForecastIntervalsV2Response {
+  export type AsObject = {
+    intervalsList: Array<CallDataByInterval.AsObject>,
+  }
+}
+
 export class UpsertRegressionForecastReq extends jspb.Message {
   hasRegressionTemplate(): boolean;
   clearRegressionTemplate(): void;
