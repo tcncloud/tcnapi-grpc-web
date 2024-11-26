@@ -2186,6 +2186,11 @@ export class ExecuteFlow extends jspb.Message {
   getCloverPaymentCardSaleTransaction(): ExecuteCloverPaymentCardSaleTransaction | undefined;
   setCloverPaymentCardSaleTransaction(value?: ExecuteCloverPaymentCardSaleTransaction): void;
 
+  hasNuveiPayment(): boolean;
+  clearNuveiPayment(): void;
+  getNuveiPayment(): ExecuteNuveiPayment | undefined;
+  setNuveiPayment(value?: ExecuteNuveiPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2490,6 +2495,7 @@ export namespace ExecuteFlow {
     finviVelosidyPlanOffer?: ExecuteFinviVelosidyPlanOffer.AsObject,
     finviVelosidyPlanRecurringCreate?: ExecuteFinviVelosidyPlanRecurringCreate.AsObject,
     cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
+    nuveiPayment?: ExecuteNuveiPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -2784,6 +2790,7 @@ export namespace ExecuteFlow {
     FINVI_VELOSIDY_PLAN_OFFER = 5503,
     FINVI_VELOSIDY_PLAN_RECURRING_CREATE = 5504,
     CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
+    NUVEI_PAYMENT = 5701,
   }
 }
 
@@ -8044,6 +8051,22 @@ export namespace ExecuteCloverPaymentCardSaleTransaction {
   }
 }
 
+export class ExecuteNuveiPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNuveiPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNuveiPayment): ExecuteNuveiPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNuveiPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNuveiPayment;
+  static deserializeBinaryFromReader(message: ExecuteNuveiPayment, reader: jspb.BinaryReader): ExecuteNuveiPayment;
+}
+
+export namespace ExecuteNuveiPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -8102,6 +8125,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_FINVI_FACS: 5400;
   INTEGRATION_TYPE_FINVI_VELOSIDY: 5500;
   INTEGRATION_TYPE_CLOVER: 5600;
+  INTEGRATION_TYPE_NUVEI: 5700;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8400,6 +8424,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_OFFER: 5503;
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_RECURRING_CREATE: 5504;
   REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
+  REQUEST_METHOD_NUVEI_PAYMENT: 5701;
 }
 
 export const RequestMethod: RequestMethodMap;
