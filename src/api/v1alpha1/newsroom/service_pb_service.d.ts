@@ -149,6 +149,15 @@ type NewsroomAPICreatePublishedClientArticle = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse;
 };
 
+type NewsroomAPIGetPublishedClientArticleById = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -167,6 +176,7 @@ export class NewsroomAPI {
   static readonly UpdateClientArticle: NewsroomAPIUpdateClientArticle;
   static readonly ListClientArticles: NewsroomAPIListClientArticles;
   static readonly CreatePublishedClientArticle: NewsroomAPICreatePublishedClientArticle;
+  static readonly GetPublishedClientArticleById: NewsroomAPIGetPublishedClientArticleById;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -344,6 +354,15 @@ export class NewsroomAPIClient {
   createPublishedClientArticle(
     requestMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse|null) => void
+  ): UnaryResponse;
+  getPublishedClientArticleById(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse|null) => void
+  ): UnaryResponse;
+  getPublishedClientArticleById(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse|null) => void
   ): UnaryResponse;
 }
 

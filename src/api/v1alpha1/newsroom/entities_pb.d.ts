@@ -941,3 +941,45 @@ export namespace CreatePublishedClientArticleResponse {
   }
 }
 
+export class GetPublishedClientArticleByIdRequest extends jspb.Message {
+  getPublishedArticleSid(): string;
+  setPublishedArticleSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPublishedClientArticleByIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPublishedClientArticleByIdRequest): GetPublishedClientArticleByIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPublishedClientArticleByIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPublishedClientArticleByIdRequest;
+  static deserializeBinaryFromReader(message: GetPublishedClientArticleByIdRequest, reader: jspb.BinaryReader): GetPublishedClientArticleByIdRequest;
+}
+
+export namespace GetPublishedClientArticleByIdRequest {
+  export type AsObject = {
+    publishedArticleSid: string,
+  }
+}
+
+export class GetPublishedClientArticleByIdResponse extends jspb.Message {
+  hasPublishedArticleDetails(): boolean;
+  clearPublishedArticleDetails(): void;
+  getPublishedArticleDetails(): PublishedArticleDetails | undefined;
+  setPublishedArticleDetails(value?: PublishedArticleDetails): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPublishedClientArticleByIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPublishedClientArticleByIdResponse): GetPublishedClientArticleByIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPublishedClientArticleByIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPublishedClientArticleByIdResponse;
+  static deserializeBinaryFromReader(message: GetPublishedClientArticleByIdResponse, reader: jspb.BinaryReader): GetPublishedClientArticleByIdResponse;
+}
+
+export namespace GetPublishedClientArticleByIdResponse {
+  export type AsObject = {
+    publishedArticleDetails?: PublishedArticleDetails.AsObject,
+  }
+}
+
