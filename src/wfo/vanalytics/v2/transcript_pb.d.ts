@@ -508,6 +508,9 @@ export class Call extends jspb.Message {
   getAudioBytes(): number;
   setAudioBytes(value: number): void;
 
+  getRecordingType(): api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap];
+  setRecordingType(value: api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Call.AsObject;
   static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -535,6 +538,7 @@ export namespace Call {
     agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.AsObject,
     phone?: Call.Phone.AsObject,
     audioBytes: number,
+    recordingType: api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap],
   }
 
   export class Phone extends jspb.Message {
@@ -1712,6 +1716,11 @@ export namespace TranscriptQuery {
     getAudioBytes(): TranscriptQuery.Call.AudioBytes | undefined;
     setAudioBytes(value?: TranscriptQuery.Call.AudioBytes): void;
 
+    hasRecordingType(): boolean;
+    clearRecordingType(): void;
+    getRecordingType(): TranscriptQuery.Call.RecordingType | undefined;
+    setRecordingType(value?: TranscriptQuery.Call.RecordingType): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
     static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -1736,6 +1745,29 @@ export namespace TranscriptQuery {
       huntGroupSids?: TranscriptQuery.Call.HuntGroupSids.AsObject,
       agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery.AsObject,
       audioBytes?: TranscriptQuery.Call.AudioBytes.AsObject,
+      recordingType?: TranscriptQuery.Call.RecordingType.AsObject,
+    }
+
+    export class RecordingType extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>;
+      setAnyList(value: Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>): void;
+      addAny(value: api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap], index?: number): api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap];
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): RecordingType.AsObject;
+      static toObject(includeInstance: boolean, msg: RecordingType): RecordingType.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: RecordingType, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): RecordingType;
+      static deserializeBinaryFromReader(message: RecordingType, reader: jspb.BinaryReader): RecordingType;
+    }
+
+    export namespace RecordingType {
+      export type AsObject = {
+        anyList: Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>,
+      }
     }
 
     export class AudioBytes extends jspb.Message {
