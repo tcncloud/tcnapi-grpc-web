@@ -7890,6 +7890,181 @@ export namespace PerformanceMetricV2 {
   }
 }
 
+export class PerformanceMetricV3 extends jspb.Message {
+  hasMetricsAllSkills(): boolean;
+  clearMetricsAllSkills(): void;
+  getMetricsAllSkills(): Basic_PerformanceMetricV3 | undefined;
+  setMetricsAllSkills(value?: Basic_PerformanceMetricV3): void;
+
+  getMetricsBySkillCollectionMap(): jspb.Map<number, Basic_PerformanceMetricV3>;
+  clearMetricsBySkillCollectionMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformanceMetricV3.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformanceMetricV3): PerformanceMetricV3.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformanceMetricV3, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformanceMetricV3;
+  static deserializeBinaryFromReader(message: PerformanceMetricV3, reader: jspb.BinaryReader): PerformanceMetricV3;
+}
+
+export namespace PerformanceMetricV3 {
+  export type AsObject = {
+    metricsAllSkills?: Basic_PerformanceMetricV3.AsObject,
+    metricsBySkillCollectionMap: Array<[number, Basic_PerformanceMetricV3.AsObject]>,
+  }
+}
+
+export class Basic_PerformanceMetricV3 extends jspb.Message {
+  hasDateRange(): boolean;
+  clearDateRange(): void;
+  getDateRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDateRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getIntervalWidthInMinutes(): number;
+  setIntervalWidthInMinutes(value: number): void;
+
+  getTotalRequiredFte(): number;
+  setTotalRequiredFte(value: number): void;
+
+  getTotalAchievedFte(): number;
+  setTotalAchievedFte(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
+
+  getTotalAchievedFteWithShrinkageApplied(): number;
+  setTotalAchievedFteWithShrinkageApplied(value: number): void;
+
+  getTotalProductiveFteWithShrinkageApplied(): number;
+  setTotalProductiveFteWithShrinkageApplied(value: number): void;
+
+  getNumIntervalsWithCallFtes(): number;
+  setNumIntervalsWithCallFtes(value: number): void;
+
+  getNumIntervalsWithShiftFtes(): number;
+  setNumIntervalsWithShiftFtes(value: number): void;
+
+  getNumIntervalsWithCallFtesButNoShifts(): number;
+  setNumIntervalsWithCallFtesButNoShifts(value: number): void;
+
+  getNumIntervalsWithShiftsButNoCallFtes(): number;
+  setNumIntervalsWithShiftsButNoCallFtes(value: number): void;
+
+  getTotalUnderscheduledCallFtes(): number;
+  setTotalUnderscheduledCallFtes(value: number): void;
+
+  getTotalOverscheduledCallFtes(): number;
+  setTotalOverscheduledCallFtes(value: number): void;
+
+  getServiceLevelAchievedPercentCalls(): number;
+  setServiceLevelAchievedPercentCalls(value: number): void;
+
+  getServiceLevelAchievedTargetSeconds(): number;
+  setServiceLevelAchievedTargetSeconds(value: number): void;
+
+  getEstimatedTotalAgentShortfallForServiceLevel(): number;
+  setEstimatedTotalAgentShortfallForServiceLevel(value: number): void;
+
+  clearMetricIntervalsList(): void;
+  getMetricIntervalsList(): Array<V3_MetricIntervalStat>;
+  setMetricIntervalsList(value: Array<V3_MetricIntervalStat>): void;
+  addMetricIntervals(value?: V3_MetricIntervalStat, index?: number): V3_MetricIntervalStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Basic_PerformanceMetricV3.AsObject;
+  static toObject(includeInstance: boolean, msg: Basic_PerformanceMetricV3): Basic_PerformanceMetricV3.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Basic_PerformanceMetricV3, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Basic_PerformanceMetricV3;
+  static deserializeBinaryFromReader(message: Basic_PerformanceMetricV3, reader: jspb.BinaryReader): Basic_PerformanceMetricV3;
+}
+
+export namespace Basic_PerformanceMetricV3 {
+  export type AsObject = {
+    dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    intervalWidthInMinutes: number,
+    totalRequiredFte: number,
+    totalAchievedFte: number,
+    totalProductiveFte: number,
+    totalAchievedFteWithShrinkageApplied: number,
+    totalProductiveFteWithShrinkageApplied: number,
+    numIntervalsWithCallFtes: number,
+    numIntervalsWithShiftFtes: number,
+    numIntervalsWithCallFtesButNoShifts: number,
+    numIntervalsWithShiftsButNoCallFtes: number,
+    totalUnderscheduledCallFtes: number,
+    totalOverscheduledCallFtes: number,
+    serviceLevelAchievedPercentCalls: number,
+    serviceLevelAchievedTargetSeconds: number,
+    estimatedTotalAgentShortfallForServiceLevel: number,
+    metricIntervalsList: Array<V3_MetricIntervalStat.AsObject>,
+  }
+}
+
+export class V3_MetricIntervalStat extends jspb.Message {
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getRequiredFte(): number;
+  setRequiredFte(value: number): void;
+
+  getAchievedFte(): number;
+  setAchievedFte(value: number): void;
+
+  getAchievedFteWithShrinkageApplied(): number;
+  setAchievedFteWithShrinkageApplied(value: number): void;
+
+  getProductiveFte(): number;
+  setProductiveFte(value: number): void;
+
+  getProductiveFteWithShrinkageApplied(): number;
+  setProductiveFteWithShrinkageApplied(value: number): void;
+
+  getAchievedServiceLevelPercent(): number;
+  setAchievedServiceLevelPercent(value: number): void;
+
+  getEstimatedAgentShortfallForTargetServiceLevel(): number;
+  setEstimatedAgentShortfallForTargetServiceLevel(value: number): void;
+
+  getNumCalls(): number;
+  setNumCalls(value: number): void;
+
+  getNumAgents(): number;
+  setNumAgents(value: number): void;
+
+  getErlangRequiredAgents(): number;
+  setErlangRequiredAgents(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): V3_MetricIntervalStat.AsObject;
+  static toObject(includeInstance: boolean, msg: V3_MetricIntervalStat): V3_MetricIntervalStat.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: V3_MetricIntervalStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): V3_MetricIntervalStat;
+  static deserializeBinaryFromReader(message: V3_MetricIntervalStat, reader: jspb.BinaryReader): V3_MetricIntervalStat;
+}
+
+export namespace V3_MetricIntervalStat {
+  export type AsObject = {
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    requiredFte: number,
+    achievedFte: number,
+    achievedFteWithShrinkageApplied: number,
+    productiveFte: number,
+    productiveFteWithShrinkageApplied: number,
+    achievedServiceLevelPercent: number,
+    estimatedAgentShortfallForTargetServiceLevel: number,
+    numCalls: number,
+    numAgents: number,
+    erlangRequiredAgents: number,
+  }
+}
+
 export class ServiceLevelInterval extends jspb.Message {
   hasStartDatetime(): boolean;
   clearStartDatetime(): void;
@@ -9963,6 +10138,12 @@ export class GetPerformanceMetricsReq extends jspb.Message {
   getResyncCallStats(): boolean;
   setResyncCallStats(value: boolean): void;
 
+  getServiceLevelTargetPercentage(): number;
+  setServiceLevelTargetPercentage(value: number): void;
+
+  getServiceLevelTargetDurationSeconds(): number;
+  setServiceLevelTargetDurationSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPerformanceMetricsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetPerformanceMetricsReq): GetPerformanceMetricsReq.AsObject;
@@ -9981,6 +10162,8 @@ export namespace GetPerformanceMetricsReq {
     metricParamsList: Array<PerformanceMetricParameter.AsObject>,
     intervalWidthInMinutes: number,
     resyncCallStats: boolean,
+    serviceLevelTargetPercentage: number,
+    serviceLevelTargetDurationSeconds: number,
   }
 }
 
@@ -9994,6 +10177,16 @@ export class GetPerformanceMetricsRes extends jspb.Message {
   getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
   setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
   addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
+  hasPerformanceMetricsV3(): boolean;
+  clearPerformanceMetricsV3(): void;
+  getPerformanceMetricsV3(): PerformanceMetricV3 | undefined;
+  setPerformanceMetricsV3(value?: PerformanceMetricV3): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPerformanceMetricsRes.AsObject;
@@ -10009,6 +10202,8 @@ export namespace GetPerformanceMetricsRes {
   export type AsObject = {
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
     performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
+    performanceMetricsV3?: PerformanceMetricV3.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -11963,6 +12158,59 @@ export class ListRealTimeManagementStatesResponse extends jspb.Message {
 export namespace ListRealTimeManagementStatesResponse {
   export type AsObject = {
     statesList: Array<api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]>,
+  }
+}
+
+export class ListAdherenceAgentStatesRequest extends jspb.Message {
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndDatetime(): boolean;
+  clearEndDatetime(): void;
+  getEndDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceAgentStatesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesRequest): ListAdherenceAgentStatesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceAgentStatesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStatesRequest;
+  static deserializeBinaryFromReader(message: ListAdherenceAgentStatesRequest, reader: jspb.BinaryReader): ListAdherenceAgentStatesRequest;
+}
+
+export namespace ListAdherenceAgentStatesRequest {
+  export type AsObject = {
+    wfmAgentSidsList: Array<number>,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ListAdherenceAgentStatesResponse extends jspb.Message {
+  getAgentStatesMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStates>;
+  clearAgentStatesMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesResponse): ListAdherenceAgentStatesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceAgentStatesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStatesResponse;
+  static deserializeBinaryFromReader(message: ListAdherenceAgentStatesResponse, reader: jspb.BinaryReader): ListAdherenceAgentStatesResponse;
+}
+
+export namespace ListAdherenceAgentStatesResponse {
+  export type AsObject = {
+    agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
   }
 }
 
