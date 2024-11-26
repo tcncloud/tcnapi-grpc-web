@@ -508,6 +508,11 @@ export class Call extends jspb.Message {
   getAudioBytes(): number;
   setAudioBytes(value: number): void;
 
+  clearRecordingTypeList(): void;
+  getRecordingTypeList(): Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>;
+  setRecordingTypeList(value: Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>): void;
+  addRecordingType(value: api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap], index?: number): api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Call.AsObject;
   static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -535,6 +540,7 @@ export namespace Call {
     agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.AsObject,
     phone?: Call.Phone.AsObject,
     audioBytes: number,
+    recordingTypeList: Array<api_commons_vanalytics_pb.RecordingTypeMap[keyof api_commons_vanalytics_pb.RecordingTypeMap]>,
   }
 
   export class Phone extends jspb.Message {

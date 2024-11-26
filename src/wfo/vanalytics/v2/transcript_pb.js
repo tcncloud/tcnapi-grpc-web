@@ -5610,7 +5610,7 @@ proto.wfo.vanalytics.v2.Sms.prototype.setCampaignSid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.wfo.vanalytics.v2.Call.repeatedFields_ = [4,11];
+proto.wfo.vanalytics.v2.Call.repeatedFields_ = [4,11,17];
 
 
 
@@ -5658,7 +5658,8 @@ huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefi
 numberFormat: jspb.Message.getFieldWithDefault(msg, 12, ""),
 agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.toObject(includeInstance, f),
 phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Call.Phone.toObject(includeInstance, f),
-audioBytes: jspb.Message.getFieldWithDefault(msg, 16, 0)
+audioBytes: jspb.Message.getFieldWithDefault(msg, 16, 0),
+recordingTypeList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5764,6 +5765,12 @@ proto.wfo.vanalytics.v2.Call.deserializeBinaryFromReader = function(msg, reader)
     case 16:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAudioBytes(value);
+      break;
+    case 17:
+      var values = /** @type {!Array<!proto.api.commons.RecordingType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addRecordingType(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -5899,6 +5906,13 @@ proto.wfo.vanalytics.v2.Call.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeInt64(
       16,
+      f
+    );
+  }
+  f = message.getRecordingTypeList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      17,
       f
     );
   }
@@ -8288,6 +8302,43 @@ proto.wfo.vanalytics.v2.Call.prototype.getAudioBytes = function() {
  */
 proto.wfo.vanalytics.v2.Call.prototype.setAudioBytes = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
+};
+
+
+/**
+ * repeated api.commons.RecordingType recording_type = 17;
+ * @return {!Array<!proto.api.commons.RecordingType>}
+ */
+proto.wfo.vanalytics.v2.Call.prototype.getRecordingTypeList = function() {
+  return /** @type {!Array<!proto.api.commons.RecordingType>} */ (jspb.Message.getRepeatedField(this, 17));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.RecordingType>} value
+ * @return {!proto.wfo.vanalytics.v2.Call} returns this
+ */
+proto.wfo.vanalytics.v2.Call.prototype.setRecordingTypeList = function(value) {
+  return jspb.Message.setField(this, 17, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.RecordingType} value
+ * @param {number=} opt_index
+ * @return {!proto.wfo.vanalytics.v2.Call} returns this
+ */
+proto.wfo.vanalytics.v2.Call.prototype.addRecordingType = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wfo.vanalytics.v2.Call} returns this
+ */
+proto.wfo.vanalytics.v2.Call.prototype.clearRecordingTypeList = function() {
+  return this.setRecordingTypeList([]);
 };
 
 
