@@ -746,6 +746,16 @@ export class ExecuteFlow extends jspb.Message {
   getBraintreeBankSale(): ExecuteBraintreeBankSale | undefined;
   setBraintreeBankSale(value?: ExecuteBraintreeBankSale): void;
 
+  hasBraintreeAuthorizePaymentMethod(): boolean;
+  clearBraintreeAuthorizePaymentMethod(): void;
+  getBraintreeAuthorizePaymentMethod(): ExecuteBraintreeAuthorizePaymentMethod | undefined;
+  setBraintreeAuthorizePaymentMethod(value?: ExecuteBraintreeAuthorizePaymentMethod): void;
+
+  hasBraintreeAuthorizeCreditCard(): boolean;
+  clearBraintreeAuthorizeCreditCard(): void;
+  getBraintreeAuthorizeCreditCard(): ExecuteBraintreeAuthorizeCreditCard | undefined;
+  setBraintreeAuthorizeCreditCard(value?: ExecuteBraintreeAuthorizeCreditCard): void;
+
   hasRelatientGetPatientBalance(): boolean;
   clearRelatientGetPatientBalance(): void;
   getRelatientGetPatientBalance(): ExecuteRelatientGetPatientBalance | undefined;
@@ -2212,6 +2222,8 @@ export namespace ExecuteFlow {
     pluginInstanceId: string,
     braintreeCreditSale?: ExecuteBraintreeCreditSale.AsObject,
     braintreeBankSale?: ExecuteBraintreeBankSale.AsObject,
+    braintreeAuthorizePaymentMethod?: ExecuteBraintreeAuthorizePaymentMethod.AsObject,
+    braintreeAuthorizeCreditCard?: ExecuteBraintreeAuthorizeCreditCard.AsObject,
     relatientGetPatientBalance?: ExecuteRelatientGetPatientBalance.AsObject,
     relatientGetPatientCcTokens?: ExecuteRelatientGetPatientCcTokens.AsObject,
     relatientPostPatientToken?: ExecuteRelatientPostPatientToken.AsObject,
@@ -2508,6 +2520,8 @@ export namespace ExecuteFlow {
     VALUE_NOT_SET = 0,
     BRAINTREE_CREDIT_SALE = 101,
     BRAINTREE_BANK_SALE = 102,
+    BRAINTREE_AUTHORIZE_PAYMENT_METHOD = 103,
+    BRAINTREE_AUTHORIZE_CREDIT_CARD = 104,
     RELATIENT_GET_PATIENT_BALANCE = 201,
     RELATIENT_GET_PATIENT_CC_TOKENS = 202,
     RELATIENT_POST_PATIENT_TOKEN = 203,
@@ -3446,6 +3460,38 @@ export class ExecuteBraintreeBankSale extends jspb.Message {
 }
 
 export namespace ExecuteBraintreeBankSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBraintreeAuthorizePaymentMethod extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBraintreeAuthorizePaymentMethod.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBraintreeAuthorizePaymentMethod): ExecuteBraintreeAuthorizePaymentMethod.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBraintreeAuthorizePaymentMethod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBraintreeAuthorizePaymentMethod;
+  static deserializeBinaryFromReader(message: ExecuteBraintreeAuthorizePaymentMethod, reader: jspb.BinaryReader): ExecuteBraintreeAuthorizePaymentMethod;
+}
+
+export namespace ExecuteBraintreeAuthorizePaymentMethod {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBraintreeAuthorizeCreditCard extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBraintreeAuthorizeCreditCard.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBraintreeAuthorizeCreditCard): ExecuteBraintreeAuthorizeCreditCard.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBraintreeAuthorizeCreditCard, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBraintreeAuthorizeCreditCard;
+  static deserializeBinaryFromReader(message: ExecuteBraintreeAuthorizeCreditCard, reader: jspb.BinaryReader): ExecuteBraintreeAuthorizeCreditCard;
+}
+
+export namespace ExecuteBraintreeAuthorizeCreditCard {
   export type AsObject = {
   }
 }
@@ -8157,6 +8203,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_UNKNOWN: 0;
   REQUEST_METHOD_BRAINTREE_CREDITSALE: 101;
   REQUEST_METHOD_BRAINTREE_BANKSALE: 102;
+  REQUEST_METHOD_BRAINTREE_AUTHORIZEPAYMENTMETHOD: 103;
+  REQUEST_METHOD_BRAINTREE_AUTHORIZECREDITCARD: 104;
   REQUEST_METHOD_RELATIENT_GETPATIENTBALANCE: 201;
   REQUEST_METHOD_RELATIENT_GETPATIENTCCTOKENS: 202;
   REQUEST_METHOD_RELATIENT_POSTPATIENTTOKEN: 203;
