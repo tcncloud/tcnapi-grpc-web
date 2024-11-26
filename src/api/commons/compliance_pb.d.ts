@@ -1069,6 +1069,56 @@ export namespace InvalidScrubListEntry {
   }
 }
 
+export class Decomposition extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getStartDigit(): number;
+  setStartDigit(value: number): void;
+
+  getEndDigit(): number;
+  setEndDigit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Decomposition.AsObject;
+  static toObject(includeInstance: boolean, msg: Decomposition): Decomposition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Decomposition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Decomposition;
+  static deserializeBinaryFromReader(message: Decomposition, reader: jspb.BinaryReader): Decomposition;
+}
+
+export namespace Decomposition {
+  export type AsObject = {
+    name: string,
+    startDigit: number,
+    endDigit: number,
+  }
+}
+
+export class Decompositions extends jspb.Message {
+  clearItemsList(): void;
+  getItemsList(): Array<Decomposition>;
+  setItemsList(value: Array<Decomposition>): void;
+  addItems(value?: Decomposition, index?: number): Decomposition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Decompositions.AsObject;
+  static toObject(includeInstance: boolean, msg: Decompositions): Decompositions.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Decompositions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Decompositions;
+  static deserializeBinaryFromReader(message: Decompositions, reader: jspb.BinaryReader): Decompositions;
+}
+
+export namespace Decompositions {
+  export type AsObject = {
+    itemsList: Array<Decomposition.AsObject>,
+  }
+}
+
 export interface VerbMap {
   V_UNKNOWN: 0;
   V_ALLOW: 1;
