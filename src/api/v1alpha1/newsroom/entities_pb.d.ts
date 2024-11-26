@@ -737,3 +737,57 @@ export namespace UploadNewsArticleImageResponse {
   }
 }
 
+export class CreateClientArticleRequest extends jspb.Message {
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getContent(): string;
+  setContent(value: string): void;
+
+  getAuthor(): string;
+  setAuthor(value: string): void;
+
+  getImageReferenceId(): string;
+  setImageReferenceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateClientArticleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateClientArticleRequest): CreateClientArticleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateClientArticleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateClientArticleRequest;
+  static deserializeBinaryFromReader(message: CreateClientArticleRequest, reader: jspb.BinaryReader): CreateClientArticleRequest;
+}
+
+export namespace CreateClientArticleRequest {
+  export type AsObject = {
+    title: string,
+    content: string,
+    author: string,
+    imageReferenceId: string,
+  }
+}
+
+export class CreateClientArticleResponse extends jspb.Message {
+  hasArticleDetails(): boolean;
+  clearArticleDetails(): void;
+  getArticleDetails(): NewsArticleDetails | undefined;
+  setArticleDetails(value?: NewsArticleDetails): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateClientArticleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateClientArticleResponse): CreateClientArticleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateClientArticleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateClientArticleResponse;
+  static deserializeBinaryFromReader(message: CreateClientArticleResponse, reader: jspb.BinaryReader): CreateClientArticleResponse;
+}
+
+export namespace CreateClientArticleResponse {
+  export type AsObject = {
+    articleDetails?: NewsArticleDetails.AsObject,
+  }
+}
+
