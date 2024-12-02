@@ -67,6 +67,15 @@ type PBXServiceGetSIPAccountByUserId = {
   readonly responseType: typeof services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse;
 };
 
+type PBXServiceGetSIPSessionPassword = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.GetSIPSessionPasswordRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.GetSIPSessionPasswordResponse;
+};
+
 type PBXServiceListSIPAccounts = {
   readonly methodName: string;
   readonly service: typeof PBXService;
@@ -139,6 +148,7 @@ export class PBXService {
   static readonly GetRingGroup: PBXServiceGetRingGroup;
   static readonly GetSIPAccount: PBXServiceGetSIPAccount;
   static readonly GetSIPAccountByUserId: PBXServiceGetSIPAccountByUserId;
+  static readonly GetSIPSessionPassword: PBXServiceGetSIPSessionPassword;
   static readonly ListSIPAccounts: PBXServiceListSIPAccounts;
   static readonly ListSIPAccountsByRingGroupId: PBXServiceListSIPAccountsByRingGroupId;
   static readonly UpdateSIPAccount: PBXServiceUpdateSIPAccount;
@@ -242,6 +252,15 @@ export class PBXServiceClient {
   getSIPAccountByUserId(
     requestMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountByUserIdResponse|null) => void
+  ): UnaryResponse;
+  getSIPSessionPassword(
+    requestMessage: services_pbx_v2_service_pb.GetSIPSessionPasswordRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPSessionPasswordResponse|null) => void
+  ): UnaryResponse;
+  getSIPSessionPassword(
+    requestMessage: services_pbx_v2_service_pb.GetSIPSessionPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPSessionPasswordResponse|null) => void
   ): UnaryResponse;
   listSIPAccounts(
     requestMessage: services_pbx_v2_service_pb.ListSIPAccountsRequest,

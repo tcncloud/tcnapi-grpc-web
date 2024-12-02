@@ -318,6 +318,42 @@ export namespace GetSIPAccountResponse {
   }
 }
 
+export class GetSIPSessionPasswordRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSIPSessionPasswordRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSIPSessionPasswordRequest): GetSIPSessionPasswordRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSIPSessionPasswordRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSIPSessionPasswordRequest;
+  static deserializeBinaryFromReader(message: GetSIPSessionPasswordRequest, reader: jspb.BinaryReader): GetSIPSessionPasswordRequest;
+}
+
+export namespace GetSIPSessionPasswordRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetSIPSessionPasswordResponse extends jspb.Message {
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSIPSessionPasswordResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSIPSessionPasswordResponse): GetSIPSessionPasswordResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSIPSessionPasswordResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSIPSessionPasswordResponse;
+  static deserializeBinaryFromReader(message: GetSIPSessionPasswordResponse, reader: jspb.BinaryReader): GetSIPSessionPasswordResponse;
+}
+
+export namespace GetSIPSessionPasswordResponse {
+  export type AsObject = {
+    password: string,
+  }
+}
+
 export class GetPBXUserRequest extends jspb.Message {
   getPbxUserId(): string;
   setPbxUserId(value: string): void;
