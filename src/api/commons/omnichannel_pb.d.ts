@@ -2949,14 +2949,6 @@ export interface OmniMessageStatusMap {
 
 export const OmniMessageStatus: OmniMessageStatusMap;
 
-export interface ConversationTypeMap {
-  CONVERSATION_TYPE_INBOUND: 0;
-  CONVERSATION_TYPE_OUTBOUND: 1;
-  CONVERSATION_TYPE_MANUAL: 2;
-}
-
-export const ConversationType: ConversationTypeMap;
-
 export interface OmniConversationResultMap {
   NONE: 0;
   ABANDONED: 1;

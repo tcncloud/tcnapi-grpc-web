@@ -60,7 +60,6 @@ goog.exportSymbol('proto.api.commons.ConversationCustomerInformation', null, glo
 goog.exportSymbol('proto.api.commons.ConversationStateChangeTimerName', null, global);
 goog.exportSymbol('proto.api.commons.ConversationStatus', null, global);
 goog.exportSymbol('proto.api.commons.ConversationTimeoutMessageConfig', null, global);
-goog.exportSymbol('proto.api.commons.ConversationType', null, global);
 goog.exportSymbol('proto.api.commons.CustomerChatWidgetMessage', null, global);
 goog.exportSymbol('proto.api.commons.CustomerCollectedData', null, global);
 goog.exportSymbol('proto.api.commons.CustomerCollectedDataItem', null, global);
@@ -22383,15 +22382,6 @@ proto.api.commons.OmniMessageStatus = {
   OMNI_OUTBOUND_MESSAGE_BLOCKED: 16250,
   OMNI_OUTBOUND_MESSAGE_UNCONFIRMED_DELIVERY: 16260,
   OMNI_SYSTEM_MESSAGE: 16050
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.ConversationType = {
-  CONVERSATION_TYPE_INBOUND: 0,
-  CONVERSATION_TYPE_OUTBOUND: 1,
-  CONVERSATION_TYPE_MANUAL: 2
 };
 
 /**
