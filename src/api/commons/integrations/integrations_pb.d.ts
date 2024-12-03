@@ -746,6 +746,11 @@ export class ExecuteFlow extends jspb.Message {
   getBraintreeBankSale(): ExecuteBraintreeBankSale | undefined;
   setBraintreeBankSale(value?: ExecuteBraintreeBankSale): void;
 
+  hasBraintreeCreditAuthorizePayment(): boolean;
+  clearBraintreeCreditAuthorizePayment(): void;
+  getBraintreeCreditAuthorizePayment(): ExecuteBraintreeCreditAuthorizePayment | undefined;
+  setBraintreeCreditAuthorizePayment(value?: ExecuteBraintreeCreditAuthorizePayment): void;
+
   hasRelatientGetPatientBalance(): boolean;
   clearRelatientGetPatientBalance(): void;
   getRelatientGetPatientBalance(): ExecuteRelatientGetPatientBalance | undefined;
@@ -1561,6 +1566,11 @@ export class ExecuteFlow extends jspb.Message {
   getPayscoutEcheckSaleRecurring(): ExecutePayScoutEcheckSaleRecurring | undefined;
   setPayscoutEcheckSaleRecurring(value?: ExecutePayScoutEcheckSaleRecurring): void;
 
+  hasPayscoutGetConsumerFee(): boolean;
+  clearPayscoutGetConsumerFee(): void;
+  getPayscoutGetConsumerFee(): ExecutePayScoutGetConsumerFee | undefined;
+  setPayscoutGetConsumerFee(value?: ExecutePayScoutGetConsumerFee): void;
+
   hasI2cEcho(): boolean;
   clearI2cEcho(): void;
   getI2cEcho(): ExecuteI2cEcho | undefined;
@@ -2212,6 +2222,7 @@ export namespace ExecuteFlow {
     pluginInstanceId: string,
     braintreeCreditSale?: ExecuteBraintreeCreditSale.AsObject,
     braintreeBankSale?: ExecuteBraintreeBankSale.AsObject,
+    braintreeCreditAuthorizePayment?: ExecuteBraintreeCreditAuthorizePayment.AsObject,
     relatientGetPatientBalance?: ExecuteRelatientGetPatientBalance.AsObject,
     relatientGetPatientCcTokens?: ExecuteRelatientGetPatientCcTokens.AsObject,
     relatientPostPatientToken?: ExecuteRelatientPostPatientToken.AsObject,
@@ -2375,6 +2386,7 @@ export namespace ExecuteFlow {
     payscoutEcheckSale?: ExecutePayScoutEcheckSale.AsObject,
     payscoutCreditSaleRecurring?: ExecutePayScoutCreditCardSaleRecurring.AsObject,
     payscoutEcheckSaleRecurring?: ExecutePayScoutEcheckSaleRecurring.AsObject,
+    payscoutGetConsumerFee?: ExecutePayScoutGetConsumerFee.AsObject,
     i2cEcho?: ExecuteI2cEcho.AsObject,
     i2cBalanceInquiry?: ExecuteI2cBalanceInquiry.AsObject,
     i2cVerifyUser?: ExecuteI2cVerifyUser.AsObject,
@@ -2508,6 +2520,7 @@ export namespace ExecuteFlow {
     VALUE_NOT_SET = 0,
     BRAINTREE_CREDIT_SALE = 101,
     BRAINTREE_BANK_SALE = 102,
+    BRAINTREE_CREDIT_AUTHORIZE_PAYMENT = 103,
     RELATIENT_GET_PATIENT_BALANCE = 201,
     RELATIENT_GET_PATIENT_CC_TOKENS = 202,
     RELATIENT_POST_PATIENT_TOKEN = 203,
@@ -2671,6 +2684,7 @@ export namespace ExecuteFlow {
     PAYSCOUT_ECHECK_SALE = 3102,
     PAYSCOUT_CREDIT_SALE_RECURRING = 3103,
     PAYSCOUT_ECHECK_SALE_RECURRING = 3104,
+    PAYSCOUT_GET_CONSUMER_FEE = 3105,
     I2C_ECHO = 3201,
     I2C_BALANCE_INQUIRY = 3202,
     I2C_VERIFY_USER = 3203,
@@ -3446,6 +3460,22 @@ export class ExecuteBraintreeBankSale extends jspb.Message {
 }
 
 export namespace ExecuteBraintreeBankSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBraintreeCreditAuthorizePayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBraintreeCreditAuthorizePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBraintreeCreditAuthorizePayment): ExecuteBraintreeCreditAuthorizePayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBraintreeCreditAuthorizePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBraintreeCreditAuthorizePayment;
+  static deserializeBinaryFromReader(message: ExecuteBraintreeCreditAuthorizePayment, reader: jspb.BinaryReader): ExecuteBraintreeCreditAuthorizePayment;
+}
+
+export namespace ExecuteBraintreeCreditAuthorizePayment {
   export type AsObject = {
   }
 }
@@ -6058,6 +6088,22 @@ export namespace ExecutePayScoutEcheckSaleRecurring {
   }
 }
 
+export class ExecutePayScoutGetConsumerFee extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutGetConsumerFee.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutGetConsumerFee): ExecutePayScoutGetConsumerFee.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutGetConsumerFee, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutGetConsumerFee;
+  static deserializeBinaryFromReader(message: ExecutePayScoutGetConsumerFee, reader: jspb.BinaryReader): ExecutePayScoutGetConsumerFee;
+}
+
+export namespace ExecutePayScoutGetConsumerFee {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteI2cEcho extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteI2cEcho.AsObject;
@@ -8157,6 +8203,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_UNKNOWN: 0;
   REQUEST_METHOD_BRAINTREE_CREDITSALE: 101;
   REQUEST_METHOD_BRAINTREE_BANKSALE: 102;
+  REQUEST_METHOD_BRAINTREE_CREDITAUTHORIZEPAYMENT: 103;
   REQUEST_METHOD_RELATIENT_GETPATIENTBALANCE: 201;
   REQUEST_METHOD_RELATIENT_GETPATIENTCCTOKENS: 202;
   REQUEST_METHOD_RELATIENT_POSTPATIENTTOKEN: 203;
@@ -8320,6 +8367,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PAY_SCOUT_ECHECK_SALE: 3102;
   REQUEST_METHOD_PAY_SCOUT_CREDIT_CARD_SALE_RECURRING: 3103;
   REQUEST_METHOD_PAY_SCOUT_ECHECK_SALE_RECURRING: 3104;
+  REQUEST_METHOD_PAY_SCOUT_GET_CONSUMER_FEE: 3105;
   REQUEST_METHOD_I2C_ECHO: 3201;
   REQUEST_METHOD_I2C_BALANCE_INQUIRY: 3202;
   REQUEST_METHOD_I2C_VERIFY_USER: 3203;
