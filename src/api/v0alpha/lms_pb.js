@@ -58621,7 +58621,7 @@ poolId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 cronInterval: jspb.Message.getFieldWithDefault(msg, 2, ""),
 disabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 timezone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-filename: jspb.Message.getFieldWithDefault(msg, 5, "")
+filenamePattern: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -58676,7 +58676,7 @@ proto.api.v0alpha.FinviEntrypoint.deserializeBinaryFromReader = function(msg, re
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFilename(value);
+      msg.setFilenamePattern(value);
       break;
     default:
       reader.skipField();
@@ -58735,7 +58735,7 @@ proto.api.v0alpha.FinviEntrypoint.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getFilename();
+  f = message.getFilenamePattern();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -58818,10 +58818,10 @@ proto.api.v0alpha.FinviEntrypoint.prototype.setTimezone = function(value) {
 
 
 /**
- * optional string filename = 5;
+ * optional string filename_pattern = 5;
  * @return {string}
  */
-proto.api.v0alpha.FinviEntrypoint.prototype.getFilename = function() {
+proto.api.v0alpha.FinviEntrypoint.prototype.getFilenamePattern = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -58830,7 +58830,7 @@ proto.api.v0alpha.FinviEntrypoint.prototype.getFilename = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
  */
-proto.api.v0alpha.FinviEntrypoint.prototype.setFilename = function(value) {
+proto.api.v0alpha.FinviEntrypoint.prototype.setFilenamePattern = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 

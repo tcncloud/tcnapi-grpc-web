@@ -7589,8 +7589,8 @@ export class FinviEntrypoint extends jspb.Message {
   getTimezone(): string;
   setTimezone(value: string): void;
 
-  getFilename(): string;
-  setFilename(value: string): void;
+  getFilenamePattern(): string;
+  setFilenamePattern(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FinviEntrypoint.AsObject;
@@ -7608,7 +7608,7 @@ export namespace FinviEntrypoint {
     cronInterval: string,
     disabled: boolean,
     timezone: string,
-    filename: string,
+    filenamePattern: string,
   }
 }
 
