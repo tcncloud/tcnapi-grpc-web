@@ -58620,7 +58620,8 @@ proto.api.v0alpha.FinviEntrypoint.toObject = function(includeInstance, msg) {
 poolId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 cronInterval: jspb.Message.getFieldWithDefault(msg, 2, ""),
 disabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-timezone: jspb.Message.getFieldWithDefault(msg, 4, "")
+timezone: jspb.Message.getFieldWithDefault(msg, 4, ""),
+filename: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -58672,6 +58673,10 @@ proto.api.v0alpha.FinviEntrypoint.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimezone(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilename(value);
       break;
     default:
       reader.skipField();
@@ -58727,6 +58732,13 @@ proto.api.v0alpha.FinviEntrypoint.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getFilename();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -58802,6 +58814,24 @@ proto.api.v0alpha.FinviEntrypoint.prototype.getTimezone = function() {
  */
 proto.api.v0alpha.FinviEntrypoint.prototype.setTimezone = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string filename = 5;
+ * @return {string}
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.getFilename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.setFilename = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
