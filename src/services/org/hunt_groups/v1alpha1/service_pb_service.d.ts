@@ -140,6 +140,24 @@ type HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse;
 };
 
+type HuntGroupsServiceAssignClientInfoDisplayTemplateToHuntGroups = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse;
+};
+
+type HuntGroupsServiceUnassignClientInfoDisplayTemplateFromHuntGroups = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse;
+};
+
 export class HuntGroupsService {
   static readonly serviceName: string;
   static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
@@ -157,6 +175,8 @@ export class HuntGroupsService {
   static readonly GetAgentClientInfoDisplayTemplate: HuntGroupsServiceGetAgentClientInfoDisplayTemplate;
   static readonly ListAgentClientInfoDisplayTemplates: HuntGroupsServiceListAgentClientInfoDisplayTemplates;
   static readonly DeleteAgentClientInfoDisplayTemplate: HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate;
+  static readonly AssignClientInfoDisplayTemplateToHuntGroups: HuntGroupsServiceAssignClientInfoDisplayTemplateToHuntGroups;
+  static readonly UnassignClientInfoDisplayTemplateFromHuntGroups: HuntGroupsServiceUnassignClientInfoDisplayTemplateFromHuntGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -317,6 +337,24 @@ export class HuntGroupsServiceClient {
   deleteAgentClientInfoDisplayTemplate(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  assignClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  assignClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  unassignClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  unassignClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
   ): UnaryResponse;
 }
 

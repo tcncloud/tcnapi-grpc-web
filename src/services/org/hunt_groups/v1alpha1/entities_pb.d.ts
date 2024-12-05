@@ -985,6 +985,86 @@ export namespace DeleteAgentClientInfoDisplayTemplateResponse {
   }
 }
 
+export class AssignClientInfoDisplayTemplateToHuntGroupsRequest extends jspb.Message {
+  getTemplateSid(): number;
+  setTemplateSid(value: number): void;
+
+  clearHuntGroupSidsList(): void;
+  getHuntGroupSidsList(): Array<number>;
+  setHuntGroupSidsList(value: Array<number>): void;
+  addHuntGroupSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignClientInfoDisplayTemplateToHuntGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignClientInfoDisplayTemplateToHuntGroupsRequest): AssignClientInfoDisplayTemplateToHuntGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignClientInfoDisplayTemplateToHuntGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignClientInfoDisplayTemplateToHuntGroupsRequest;
+  static deserializeBinaryFromReader(message: AssignClientInfoDisplayTemplateToHuntGroupsRequest, reader: jspb.BinaryReader): AssignClientInfoDisplayTemplateToHuntGroupsRequest;
+}
+
+export namespace AssignClientInfoDisplayTemplateToHuntGroupsRequest {
+  export type AsObject = {
+    templateSid: number,
+    huntGroupSidsList: Array<number>,
+  }
+}
+
+export class AssignClientInfoDisplayTemplateToHuntGroupsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignClientInfoDisplayTemplateToHuntGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignClientInfoDisplayTemplateToHuntGroupsResponse): AssignClientInfoDisplayTemplateToHuntGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignClientInfoDisplayTemplateToHuntGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignClientInfoDisplayTemplateToHuntGroupsResponse;
+  static deserializeBinaryFromReader(message: AssignClientInfoDisplayTemplateToHuntGroupsResponse, reader: jspb.BinaryReader): AssignClientInfoDisplayTemplateToHuntGroupsResponse;
+}
+
+export namespace AssignClientInfoDisplayTemplateToHuntGroupsResponse {
+  export type AsObject = {
+  }
+}
+
+export class UnassignClientInfoDisplayTemplateFromHuntGroupsRequest extends jspb.Message {
+  clearHuntGroupSidsList(): void;
+  getHuntGroupSidsList(): Array<number>;
+  setHuntGroupSidsList(value: Array<number>): void;
+  addHuntGroupSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignClientInfoDisplayTemplateFromHuntGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignClientInfoDisplayTemplateFromHuntGroupsRequest): UnassignClientInfoDisplayTemplateFromHuntGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignClientInfoDisplayTemplateFromHuntGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignClientInfoDisplayTemplateFromHuntGroupsRequest;
+  static deserializeBinaryFromReader(message: UnassignClientInfoDisplayTemplateFromHuntGroupsRequest, reader: jspb.BinaryReader): UnassignClientInfoDisplayTemplateFromHuntGroupsRequest;
+}
+
+export namespace UnassignClientInfoDisplayTemplateFromHuntGroupsRequest {
+  export type AsObject = {
+    huntGroupSidsList: Array<number>,
+  }
+}
+
+export class UnassignClientInfoDisplayTemplateFromHuntGroupsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignClientInfoDisplayTemplateFromHuntGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignClientInfoDisplayTemplateFromHuntGroupsResponse): UnassignClientInfoDisplayTemplateFromHuntGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignClientInfoDisplayTemplateFromHuntGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignClientInfoDisplayTemplateFromHuntGroupsResponse;
+  static deserializeBinaryFromReader(message: UnassignClientInfoDisplayTemplateFromHuntGroupsResponse, reader: jspb.BinaryReader): UnassignClientInfoDisplayTemplateFromHuntGroupsResponse;
+}
+
+export namespace UnassignClientInfoDisplayTemplateFromHuntGroupsResponse {
+  export type AsObject = {
+  }
+}
+
 export interface AgentStatusMap {
   AGENT_STATUS_UNSPECIFIED: 0;
   AGENT_STATUS_LOGGED_IN: 1;
