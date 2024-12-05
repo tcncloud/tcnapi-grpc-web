@@ -140,22 +140,22 @@ type HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse;
 };
 
-type HuntGroupsServiceAssignClientInfoDisplayTemplateToHuntGroups = {
+type HuntGroupsServiceAssignAgentClientInfoDisplayTemplateToHuntGroups = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest;
-  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse;
 };
 
-type HuntGroupsServiceUnassignClientInfoDisplayTemplateFromHuntGroups = {
+type HuntGroupsServiceUnassignAgentClientInfoDisplayTemplateFromHuntGroups = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest;
-  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse;
 };
 
 export class HuntGroupsService {
@@ -175,8 +175,8 @@ export class HuntGroupsService {
   static readonly GetAgentClientInfoDisplayTemplate: HuntGroupsServiceGetAgentClientInfoDisplayTemplate;
   static readonly ListAgentClientInfoDisplayTemplates: HuntGroupsServiceListAgentClientInfoDisplayTemplates;
   static readonly DeleteAgentClientInfoDisplayTemplate: HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate;
-  static readonly AssignClientInfoDisplayTemplateToHuntGroups: HuntGroupsServiceAssignClientInfoDisplayTemplateToHuntGroups;
-  static readonly UnassignClientInfoDisplayTemplateFromHuntGroups: HuntGroupsServiceUnassignClientInfoDisplayTemplateFromHuntGroups;
+  static readonly AssignAgentClientInfoDisplayTemplateToHuntGroups: HuntGroupsServiceAssignAgentClientInfoDisplayTemplateToHuntGroups;
+  static readonly UnassignAgentClientInfoDisplayTemplateFromHuntGroups: HuntGroupsServiceUnassignAgentClientInfoDisplayTemplateFromHuntGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -338,23 +338,23 @@ export class HuntGroupsServiceClient {
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse|null) => void
   ): UnaryResponse;
-  assignClientInfoDisplayTemplateToHuntGroups(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest,
+  assignAgentClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
   ): UnaryResponse;
-  assignClientInfoDisplayTemplateToHuntGroups(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+  assignAgentClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
   ): UnaryResponse;
-  unassignClientInfoDisplayTemplateFromHuntGroups(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest,
+  unassignAgentClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
   ): UnaryResponse;
-  unassignClientInfoDisplayTemplateFromHuntGroups(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
+  unassignAgentClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
   ): UnaryResponse;
 }
 

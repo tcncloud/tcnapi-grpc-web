@@ -146,22 +146,22 @@ HuntGroupsService.DeleteAgentClientInfoDisplayTemplate = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse
 };
 
-HuntGroupsService.AssignClientInfoDisplayTemplateToHuntGroups = {
-  methodName: "AssignClientInfoDisplayTemplateToHuntGroups",
+HuntGroupsService.AssignAgentClientInfoDisplayTemplateToHuntGroups = {
+  methodName: "AssignAgentClientInfoDisplayTemplateToHuntGroups",
   service: HuntGroupsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsRequest,
-  responseType: services_org_hunt_groups_v1alpha1_entities_pb.AssignClientInfoDisplayTemplateToHuntGroupsResponse
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse
 };
 
-HuntGroupsService.UnassignClientInfoDisplayTemplateFromHuntGroups = {
-  methodName: "UnassignClientInfoDisplayTemplateFromHuntGroups",
+HuntGroupsService.UnassignAgentClientInfoDisplayTemplateFromHuntGroups = {
+  methodName: "UnassignAgentClientInfoDisplayTemplateFromHuntGroups",
   service: HuntGroupsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsRequest,
-  responseType: services_org_hunt_groups_v1alpha1_entities_pb.UnassignClientInfoDisplayTemplateFromHuntGroupsResponse
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse
 };
 
 exports.HuntGroupsService = HuntGroupsService;
@@ -644,11 +644,11 @@ HuntGroupsServiceClient.prototype.deleteAgentClientInfoDisplayTemplate = functio
   };
 };
 
-HuntGroupsServiceClient.prototype.assignClientInfoDisplayTemplateToHuntGroups = function assignClientInfoDisplayTemplateToHuntGroups(requestMessage, metadata, callback) {
+HuntGroupsServiceClient.prototype.assignAgentClientInfoDisplayTemplateToHuntGroups = function assignAgentClientInfoDisplayTemplateToHuntGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(HuntGroupsService.AssignClientInfoDisplayTemplateToHuntGroups, {
+  var client = grpc.unary(HuntGroupsService.AssignAgentClientInfoDisplayTemplateToHuntGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -675,11 +675,11 @@ HuntGroupsServiceClient.prototype.assignClientInfoDisplayTemplateToHuntGroups = 
   };
 };
 
-HuntGroupsServiceClient.prototype.unassignClientInfoDisplayTemplateFromHuntGroups = function unassignClientInfoDisplayTemplateFromHuntGroups(requestMessage, metadata, callback) {
+HuntGroupsServiceClient.prototype.unassignAgentClientInfoDisplayTemplateFromHuntGroups = function unassignAgentClientInfoDisplayTemplateFromHuntGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(HuntGroupsService.UnassignClientInfoDisplayTemplateFromHuntGroups, {
+  var client = grpc.unary(HuntGroupsService.UnassignAgentClientInfoDisplayTemplateFromHuntGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
