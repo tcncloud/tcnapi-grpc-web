@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var api_commons_scorecards_pb = require('../../../api/commons/scorecards_pb.js');
 goog.object.extend(proto, api_commons_scorecards_pb);
 goog.exportSymbol('proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest', null, global);
@@ -620,7 +622,7 @@ proto.api.v1alpha1.scorecards.GetAutoEvaluationResponse.prototype.hasAutoEvaluat
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.repeatedFields_ = [2,5,7,11];
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.repeatedFields_ = [2,5,7,11,12];
 
 
 
@@ -661,7 +663,8 @@ agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefine
 pageSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
 orderBy: jspb.Message.getFieldWithDefault(msg, 9, ""),
 pageToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
-riskLevelsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
+riskLevelsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
+channelTypesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -740,6 +743,12 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.deserializeBinaryFromRe
       var values = /** @type {!Array<!proto.api.commons.RiskLevel>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addRiskLevels(values[i]);
+      }
+      break;
+    case 12:
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addChannelTypes(values[i]);
       }
       break;
     default:
@@ -833,6 +842,13 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writePackedEnum(
       11,
+      f
+    );
+  }
+  f = message.getChannelTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      12,
       f
     );
   }
@@ -1420,6 +1436,43 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.addRiskLevels
  */
 proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.clearRiskLevelsList = function() {
   return this.setRiskLevelsList([]);
+};
+
+
+/**
+ * repeated api.commons.ChannelType channel_types = 12;
+ * @return {!Array<!proto.api.commons.ChannelType>}
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.getChannelTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.ChannelType>} value
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.setChannelTypesList = function(value) {
+  return jspb.Message.setField(this, 12, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.addChannelTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.clearChannelTypesList = function() {
+  return this.setChannelTypesList([]);
 };
 
 

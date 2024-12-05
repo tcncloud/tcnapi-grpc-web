@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var api_commons_scorecards_pb = require('../../../api/commons/scorecards_pb.js');
 goog.object.extend(proto, api_commons_scorecards_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');

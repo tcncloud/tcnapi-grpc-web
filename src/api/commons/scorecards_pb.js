@@ -1517,7 +1517,8 @@ transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
 customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
 deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
-isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+channelType: jspb.Message.getFieldWithDefault(msg, 22, 0)
   };
 
   if (includeInstance) {
@@ -1617,6 +1618,10 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsRecoverable(value);
+      break;
+    case 22:
+      var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
+      msg.setChannelType(value);
       break;
     default:
       reader.skipField();
@@ -1753,6 +1758,13 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
   if (f) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = message.getChannelType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      22,
       f
     );
   }
@@ -2264,6 +2276,24 @@ proto.api.commons.Evaluation.prototype.getIsRecoverable = function() {
  */
 proto.api.commons.Evaluation.prototype.setIsRecoverable = function(value) {
   return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional ChannelType channel_type = 22;
+ * @return {!proto.api.commons.ChannelType}
+ */
+proto.api.commons.Evaluation.prototype.getChannelType = function() {
+  return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.setChannelType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 22, value);
 };
 
 
@@ -3546,7 +3576,8 @@ expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
 riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
 callLength: jspb.Message.getFieldWithDefault(msg, 16, 0),
 scorecardInfo: (f = msg.getScorecardInfo()) && proto.api.commons.AutoEvaluation.ScorecardInfo.toObject(includeInstance, f),
-categoryInfo: (f = msg.getCategoryInfo()) && proto.api.commons.AutoEvaluation.CategoryInfo.toObject(includeInstance, f)
+categoryInfo: (f = msg.getCategoryInfo()) && proto.api.commons.AutoEvaluation.CategoryInfo.toObject(includeInstance, f),
+channelType: jspb.Message.getFieldWithDefault(msg, 19, 0)
   };
 
   if (includeInstance) {
@@ -3643,6 +3674,10 @@ proto.api.commons.AutoEvaluation.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.api.commons.AutoEvaluation.CategoryInfo;
       reader.readMessage(value,proto.api.commons.AutoEvaluation.CategoryInfo.deserializeBinaryFromReader);
       msg.setCategoryInfo(value);
+      break;
+    case 19:
+      var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
+      msg.setChannelType(value);
       break;
     default:
       reader.skipField();
@@ -3774,6 +3809,13 @@ proto.api.commons.AutoEvaluation.serializeBinaryToWriter = function(message, wri
       18,
       f,
       proto.api.commons.AutoEvaluation.CategoryInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getChannelType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      19,
+      f
     );
   }
 };
@@ -4384,6 +4426,24 @@ proto.api.commons.AutoEvaluation.prototype.clearCategoryInfo = function() {
  */
 proto.api.commons.AutoEvaluation.prototype.hasCategoryInfo = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional ChannelType channel_type = 19;
+ * @return {!proto.api.commons.ChannelType}
+ */
+proto.api.commons.AutoEvaluation.prototype.getChannelType = function() {
+  return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @return {!proto.api.commons.AutoEvaluation} returns this
+ */
+proto.api.commons.AutoEvaluation.prototype.setChannelType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 19, value);
 };
 
 
@@ -9316,7 +9376,8 @@ scorecardVersion: jspb.Message.getFieldWithDefault(msg, 8, 0),
 completeTime: (f = msg.getCompleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 smartEvaluationSectionsList: jspb.Message.toObjectList(msg.getSmartEvaluationSectionsList(),
-    proto.api.commons.SmartEvaluationSection.toObject, includeInstance)
+    proto.api.commons.SmartEvaluationSection.toObject, includeInstance),
+channelType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -9395,6 +9456,10 @@ proto.api.commons.SmartEvaluation.deserializeBinaryFromReader = function(msg, re
       var value = new proto.api.commons.SmartEvaluationSection;
       reader.readMessage(value,proto.api.commons.SmartEvaluationSection.deserializeBinaryFromReader);
       msg.addSmartEvaluationSections(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
+      msg.setChannelType(value);
       break;
     default:
       reader.skipField();
@@ -9496,6 +9561,13 @@ proto.api.commons.SmartEvaluation.serializeBinaryToWriter = function(message, wr
       11,
       f,
       proto.api.commons.SmartEvaluationSection.serializeBinaryToWriter
+    );
+  }
+  f = message.getChannelType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
+      f
     );
   }
 };
@@ -9736,6 +9808,24 @@ proto.api.commons.SmartEvaluation.prototype.addSmartEvaluationSections = functio
  */
 proto.api.commons.SmartEvaluation.prototype.clearSmartEvaluationSectionsList = function() {
   return this.setSmartEvaluationSectionsList([]);
+};
+
+
+/**
+ * optional ChannelType channel_type = 12;
+ * @return {!proto.api.commons.ChannelType}
+ */
+proto.api.commons.SmartEvaluation.prototype.getChannelType = function() {
+  return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @return {!proto.api.commons.SmartEvaluation} returns this
+ */
+proto.api.commons.SmartEvaluation.prototype.setChannelType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
