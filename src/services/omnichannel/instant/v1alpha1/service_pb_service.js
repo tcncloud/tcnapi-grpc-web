@@ -10,13 +10,13 @@ var OauthService = (function () {
   return OauthService;
 }());
 
-OauthService.GetContantCenterSnapshot = {
-  methodName: "GetContantCenterSnapshot",
+OauthService.StreamContantCenterSnapshot = {
+  methodName: "StreamContantCenterSnapshot",
   service: OauthService,
   requestStream: false,
-  responseStream: false,
-  requestType: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotRequest,
-  responseType: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotResponse
+  responseStream: true,
+  requestType: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest,
+  responseType: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse
 };
 
 exports.OauthService = OauthService;
@@ -26,32 +26,40 @@ function OauthServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-OauthServiceClient.prototype.getContantCenterSnapshot = function getContantCenterSnapshot(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OauthService.GetContantCenterSnapshot, {
+OauthServiceClient.prototype.streamContantCenterSnapshot = function streamContantCenterSnapshot(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(OauthService.StreamContantCenterSnapshot, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
     }
   });
   return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
     cancel: function () {
-      callback = null;
+      listeners = null;
       client.close();
     }
   };

@@ -4,18 +4,18 @@
 import * as services_omnichannel_instant_v1alpha1_service_pb from "../../../../services/omnichannel/instant/v1alpha1/service_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type OauthServiceGetContantCenterSnapshot = {
+type OauthServiceStreamContantCenterSnapshot = {
   readonly methodName: string;
   readonly service: typeof OauthService;
   readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotRequest;
-  readonly responseType: typeof services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotResponse;
+  readonly responseStream: true;
+  readonly requestType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest;
+  readonly responseType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse;
 };
 
 export class OauthService {
   static readonly serviceName: string;
-  static readonly GetContantCenterSnapshot: OauthServiceGetContantCenterSnapshot;
+  static readonly StreamContantCenterSnapshot: OauthServiceStreamContantCenterSnapshot;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -50,14 +50,6 @@ export class OauthServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  getContantCenterSnapshot(
-    requestMessage: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotResponse|null) => void
-  ): UnaryResponse;
-  getContantCenterSnapshot(
-    requestMessage: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotRequest,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_instant_v1alpha1_service_pb.GetContantCenterSnapshotResponse|null) => void
-  ): UnaryResponse;
+  streamContantCenterSnapshot(requestMessage: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest, metadata?: grpc.Metadata): ResponseStream<services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse>;
 }
 
