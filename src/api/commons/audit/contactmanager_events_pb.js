@@ -893,7 +893,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.toObject = function(includeInst
 contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-fieldsChangesList: jspb.Message.toObjectList(msg.getFieldsChangesList(),
+fieldChangesList: jspb.Message.toObjectList(msg.getFieldChangesList(),
     proto.api.commons.audit.ContactFieldChanges.toObject, includeInstance),
 contactUpdateTaskId: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
@@ -949,7 +949,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.deserializeBinaryFromReader = f
     case 4:
       var value = new proto.api.commons.audit.ContactFieldChanges;
       reader.readMessage(value,proto.api.commons.audit.ContactFieldChanges.deserializeBinaryFromReader);
-      msg.addFieldsChanges(value);
+      msg.addFieldChanges(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readInt64String());
@@ -1005,7 +1005,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getFieldsChangesList();
+  f = message.getFieldChangesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -1097,10 +1097,10 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearContactmanageren
 
 
 /**
- * repeated ContactFieldChanges fields_changes = 4;
+ * repeated ContactFieldChanges field_changes = 4;
  * @return {!Array<!proto.api.commons.audit.ContactFieldChanges>}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldsChangesList = function() {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldChangesList = function() {
   return /** @type{!Array<!proto.api.commons.audit.ContactFieldChanges>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.commons.audit.ContactFieldChanges, 4));
 };
@@ -1110,7 +1110,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldsChangesList 
  * @param {!Array<!proto.api.commons.audit.ContactFieldChanges>} value
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
 */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldsChangesList = function(value) {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldChangesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -1120,7 +1120,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldsChangesList 
  * @param {number=} opt_index
  * @return {!proto.api.commons.audit.ContactFieldChanges}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldsChanges = function(opt_value, opt_index) {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldChanges = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.commons.audit.ContactFieldChanges, opt_index);
 };
 
@@ -1129,8 +1129,8 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldsChanges = fu
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearFieldsChangesList = function() {
-  return this.setFieldsChangesList([]);
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearFieldChangesList = function() {
+  return this.setFieldChangesList([]);
 };
 
 
@@ -2387,9 +2387,10 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.toObject 
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-fromEntity: jspb.Message.getFieldWithDefault(msg, 3, ""),
-toEntity: jspb.Message.getFieldWithDefault(msg, 4, "")
+contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+fromEntity: jspb.Message.getFieldWithDefault(msg, 2, ""),
+toEntity: jspb.Message.getFieldWithDefault(msg, 3, ""),
+entityType: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2426,17 +2427,21 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.deserializeBinaryFr
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setContactmanagerentryid(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setFromEntity(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setToEntity(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEntityType(value);
       break;
     default:
       reader.skipField();
@@ -2470,18 +2475,25 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.serializeBinaryToWr
   f = message.getContactmanagerentryid();
   if (f !== 0) {
     writer.writeInt64(
-      2,
+      1,
       f
     );
   }
   f = message.getFromEntity();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getToEntity();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getEntityType();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -2492,11 +2504,11 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.serializeBinaryToWr
 
 
 /**
- * optional int64 ContactManagerEntryId = 2;
+ * optional int64 ContactManagerEntryId = 1;
  * @return {number}
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getContactmanagerentryid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -2505,16 +2517,16 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getContac
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setContactmanagerentryid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string from_entity = 3;
+ * optional string from_entity = 2;
  * @return {string}
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getFromEntity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2523,16 +2535,16 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getFromEn
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setFromEntity = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string to_entity = 4;
+ * optional string to_entity = 3;
  * @return {string}
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getToEntity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -2541,6 +2553,24 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getToEnti
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setToEntity = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string entity_type = 4;
+ * @return {string}
+ */
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getEntityType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setEntityType = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

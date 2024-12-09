@@ -20,15 +20,6 @@ ContactManager.GetContactList = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactListResponse
 };
 
-ContactManager.ListContactUpdateTask = {
-  methodName: "ListContactUpdateTask",
-  service: ContactManager,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.ListContactUpdateTaskRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.ListContactUpdateTaskResponse
-};
-
 ContactManager.ListContactEntryList = {
   methodName: "ListContactEntryList",
   service: ContactManager,
@@ -122,37 +113,6 @@ ContactManagerClient.prototype.getContactList = function getContactList(requestM
     callback = arguments[1];
   }
   var client = grpc.unary(ContactManager.GetContactList, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ContactManagerClient.prototype.listContactUpdateTask = function listContactUpdateTask(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(ContactManager.ListContactUpdateTask, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

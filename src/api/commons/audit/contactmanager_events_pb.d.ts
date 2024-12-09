@@ -105,10 +105,10 @@ export class ContactManagerEntryEvent extends jspb.Message {
   setContactmanagerentrylistidsList(value: Array<number>): void;
   addContactmanagerentrylistids(value: number, index?: number): number;
 
-  clearFieldsChangesList(): void;
-  getFieldsChangesList(): Array<ContactFieldChanges>;
-  setFieldsChangesList(value: Array<ContactFieldChanges>): void;
-  addFieldsChanges(value?: ContactFieldChanges, index?: number): ContactFieldChanges;
+  clearFieldChangesList(): void;
+  getFieldChangesList(): Array<ContactFieldChanges>;
+  setFieldChangesList(value: Array<ContactFieldChanges>): void;
+  addFieldChanges(value?: ContactFieldChanges, index?: number): ContactFieldChanges;
 
   hasContactUpdateTaskId(): boolean;
   clearContactUpdateTaskId(): void;
@@ -130,7 +130,7 @@ export namespace ContactManagerEntryEvent {
     contactmanagerlistid: number,
     contactmanagerentryid: number,
     contactmanagerentrylistidsList: Array<number>,
-    fieldsChangesList: Array<ContactFieldChanges.AsObject>,
+    fieldChangesList: Array<ContactFieldChanges.AsObject>,
     contactUpdateTaskId: string,
   }
 }
@@ -309,6 +309,9 @@ export class ContactManagerEntityAssociationEvent extends jspb.Message {
   getToEntity(): string;
   setToEntity(value: string): void;
 
+  getEntityType(): string;
+  setEntityType(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntityAssociationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntityAssociationEvent): ContactManagerEntityAssociationEvent.AsObject;
@@ -324,6 +327,7 @@ export namespace ContactManagerEntityAssociationEvent {
     contactmanagerentryid: number,
     fromEntity: string,
     toEntity: string,
+    entityType: string,
   }
 }
 

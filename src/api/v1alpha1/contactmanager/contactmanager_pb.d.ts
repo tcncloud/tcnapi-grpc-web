@@ -77,9 +77,6 @@ export class ListContactEntryListRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
-  getContactUpdateTaskId(): string;
-  setContactUpdateTaskId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListRequest): ListContactEntryListRequest.AsObject;
@@ -97,7 +94,6 @@ export namespace ListContactEntryListRequest {
     projectId: string,
     pageSize: number,
     pageToken: string,
-    contactUpdateTaskId: string,
   }
 }
 
@@ -153,16 +149,6 @@ export class GetEncContactEntryResponse extends jspb.Message {
   setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
   addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
 
-  clearFileNameList(): void;
-  getFileNameList(): Array<string>;
-  setFileNameList(value: Array<string>): void;
-  addFileName(value: string, index?: number): string;
-
-  clearListNameList(): void;
-  getListNameList(): Array<string>;
-  setListNameList(value: Array<string>): void;
-  addListName(value: string, index?: number): string;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetEncContactEntryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetEncContactEntryResponse): GetEncContactEntryResponse.AsObject;
@@ -176,8 +162,6 @@ export class GetEncContactEntryResponse extends jspb.Message {
 export namespace GetEncContactEntryResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
-    fileNameList: Array<string>,
-    listNameList: Array<string>,
   }
 }
 
@@ -272,52 +256,6 @@ export class GetKYCKeysResponse extends jspb.Message {
 export namespace GetKYCKeysResponse {
   export type AsObject = {
     entryTypeList: Array<string>,
-  }
-}
-
-export class ListContactUpdateTaskRequest extends jspb.Message {
-  getProjectSid(): string;
-  setProjectSid(value: string): void;
-
-  getListName(): string;
-  setListName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContactUpdateTaskRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContactUpdateTaskRequest): ListContactUpdateTaskRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContactUpdateTaskRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContactUpdateTaskRequest;
-  static deserializeBinaryFromReader(message: ListContactUpdateTaskRequest, reader: jspb.BinaryReader): ListContactUpdateTaskRequest;
-}
-
-export namespace ListContactUpdateTaskRequest {
-  export type AsObject = {
-    projectSid: string,
-    listName: string,
-  }
-}
-
-export class ListContactUpdateTaskResponse extends jspb.Message {
-  clearContactUpdateTaskList(): void;
-  getContactUpdateTaskList(): Array<ContactUpdateTaskDetails>;
-  setContactUpdateTaskList(value: Array<ContactUpdateTaskDetails>): void;
-  addContactUpdateTask(value?: ContactUpdateTaskDetails, index?: number): ContactUpdateTaskDetails;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContactUpdateTaskResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContactUpdateTaskResponse): ListContactUpdateTaskResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContactUpdateTaskResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContactUpdateTaskResponse;
-  static deserializeBinaryFromReader(message: ListContactUpdateTaskResponse, reader: jspb.BinaryReader): ListContactUpdateTaskResponse;
-}
-
-export namespace ListContactUpdateTaskResponse {
-  export type AsObject = {
-    contactUpdateTaskList: Array<ContactUpdateTaskDetails.AsObject>,
   }
 }
 
@@ -424,80 +362,6 @@ export namespace ContactManagerList {
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
     status: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap],
-  }
-}
-
-export class ContactUpdateTaskDetails extends jspb.Message {
-  getContactUpdateTaskId(): string;
-  setContactUpdateTaskId(value: string): void;
-
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
-  getProjectId(): string;
-  setProjectId(value: string): void;
-
-  hasFileName(): boolean;
-  clearFileName(): void;
-  getFileName(): string;
-  setFileName(value: string): void;
-
-  hasListName(): boolean;
-  clearListName(): void;
-  getListName(): string;
-  setListName(value: string): void;
-
-  clearColumnListList(): void;
-  getColumnListList(): Array<string>;
-  setColumnListList(value: Array<string>): void;
-  addColumnList(value: string, index?: number): string;
-
-  getAppName(): string;
-  setAppName(value: string): void;
-
-  getTtl(): number;
-  setTtl(value: number): void;
-
-  getDedupfieldtype(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
-  setDedupfieldtype(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
-
-  getDedupmergestrategy(): api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap];
-  setDedupmergestrategy(value: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap]): void;
-
-  getUpdateType(): string;
-  setUpdateType(value: string): void;
-
-  getUpdatedBy(): string;
-  setUpdatedBy(value: string): void;
-
-  getUpdatedOn(): string;
-  setUpdatedOn(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ContactUpdateTaskDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ContactUpdateTaskDetails): ContactUpdateTaskDetails.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ContactUpdateTaskDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ContactUpdateTaskDetails;
-  static deserializeBinaryFromReader(message: ContactUpdateTaskDetails, reader: jspb.BinaryReader): ContactUpdateTaskDetails;
-}
-
-export namespace ContactUpdateTaskDetails {
-  export type AsObject = {
-    contactUpdateTaskId: string,
-    orgId: string,
-    projectId: string,
-    fileName: string,
-    listName: string,
-    columnListList: Array<string>,
-    appName: string,
-    ttl: number,
-    dedupfieldtype: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
-    dedupmergestrategy: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap],
-    updateType: string,
-    updatedBy: string,
-    updatedOn: string,
   }
 }
 
