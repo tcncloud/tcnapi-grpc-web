@@ -5,34 +5,34 @@ import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../../annotations/authz_pb";
 import * as google_api_annotations_pb from "../../../../google/api/annotations_pb";
 
-export class StreamContantCenterSnapshotRequest extends jspb.Message {
+export class StreamContactCenterSnapshotRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StreamContantCenterSnapshotRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: StreamContantCenterSnapshotRequest): StreamContantCenterSnapshotRequest.AsObject;
+  toObject(includeInstance?: boolean): StreamContactCenterSnapshotRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamContactCenterSnapshotRequest): StreamContactCenterSnapshotRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: StreamContantCenterSnapshotRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StreamContantCenterSnapshotRequest;
-  static deserializeBinaryFromReader(message: StreamContantCenterSnapshotRequest, reader: jspb.BinaryReader): StreamContantCenterSnapshotRequest;
+  static serializeBinaryToWriter(message: StreamContactCenterSnapshotRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamContactCenterSnapshotRequest;
+  static deserializeBinaryFromReader(message: StreamContactCenterSnapshotRequest, reader: jspb.BinaryReader): StreamContactCenterSnapshotRequest;
 }
 
-export namespace StreamContantCenterSnapshotRequest {
+export namespace StreamContactCenterSnapshotRequest {
   export type AsObject = {
   }
 }
 
-export class StreamContantCenterSnapshotResponse extends jspb.Message {
+export class StreamContactCenterSnapshotResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StreamContantCenterSnapshotResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: StreamContantCenterSnapshotResponse): StreamContantCenterSnapshotResponse.AsObject;
+  toObject(includeInstance?: boolean): StreamContactCenterSnapshotResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamContactCenterSnapshotResponse): StreamContactCenterSnapshotResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: StreamContantCenterSnapshotResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StreamContantCenterSnapshotResponse;
-  static deserializeBinaryFromReader(message: StreamContantCenterSnapshotResponse, reader: jspb.BinaryReader): StreamContantCenterSnapshotResponse;
+  static serializeBinaryToWriter(message: StreamContactCenterSnapshotResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamContactCenterSnapshotResponse;
+  static deserializeBinaryFromReader(message: StreamContactCenterSnapshotResponse, reader: jspb.BinaryReader): StreamContactCenterSnapshotResponse;
 }
 
-export namespace StreamContantCenterSnapshotResponse {
+export namespace StreamContactCenterSnapshotResponse {
   export type AsObject = {
   }
 }

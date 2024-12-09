@@ -10,13 +10,13 @@ var OauthService = (function () {
   return OauthService;
 }());
 
-OauthService.StreamContantCenterSnapshot = {
-  methodName: "StreamContantCenterSnapshot",
+OauthService.StreamContactCenterSnapshot = {
+  methodName: "StreamContactCenterSnapshot",
   service: OauthService,
   requestStream: false,
   responseStream: true,
-  requestType: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest,
-  responseType: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse
+  requestType: services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotRequest,
+  responseType: services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotResponse
 };
 
 exports.OauthService = OauthService;
@@ -26,13 +26,13 @@ function OauthServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-OauthServiceClient.prototype.streamContantCenterSnapshot = function streamContantCenterSnapshot(requestMessage, metadata) {
+OauthServiceClient.prototype.streamContactCenterSnapshot = function streamContactCenterSnapshot(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(OauthService.StreamContantCenterSnapshot, {
+  var client = grpc.invoke(OauthService.StreamContactCenterSnapshot, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

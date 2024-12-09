@@ -4,18 +4,18 @@
 import * as services_omnichannel_instant_v1alpha1_service_pb from "../../../../services/omnichannel/instant/v1alpha1/service_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type OauthServiceStreamContantCenterSnapshot = {
+type OauthServiceStreamContactCenterSnapshot = {
   readonly methodName: string;
   readonly service: typeof OauthService;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest;
-  readonly responseType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse;
+  readonly requestType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotRequest;
+  readonly responseType: typeof services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotResponse;
 };
 
 export class OauthService {
   static readonly serviceName: string;
-  static readonly StreamContantCenterSnapshot: OauthServiceStreamContantCenterSnapshot;
+  static readonly StreamContactCenterSnapshot: OauthServiceStreamContactCenterSnapshot;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -50,6 +50,6 @@ export class OauthServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  streamContantCenterSnapshot(requestMessage: services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotRequest, metadata?: grpc.Metadata): ResponseStream<services_omnichannel_instant_v1alpha1_service_pb.StreamContantCenterSnapshotResponse>;
+  streamContactCenterSnapshot(requestMessage: services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotRequest, metadata?: grpc.Metadata): ResponseStream<services_omnichannel_instant_v1alpha1_service_pb.StreamContactCenterSnapshotResponse>;
 }
 
