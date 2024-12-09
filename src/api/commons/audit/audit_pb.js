@@ -85,7 +85,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1300]];
 
 /**
  * @enum {number}
@@ -213,7 +213,6 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   CONTACT_MANAGER_KYC_VERIFICATION_EVENT: 1206,
   CONTACT_MANAGER_ENTRY_DELETE_EVENT: 1207,
   CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT: 1208,
-  CONTACT_MANAGER_ENTITY_ASSOCIATION_EVENT: 1209,
   ACCESS_TOKENS_EXPIRING_EVENT: 1300
 };
 
@@ -382,7 +381,6 @@ contactManagerListUploadEvent: (f = msg.getContactManagerListUploadEvent()) && a
 contactManagerKycVerificationEvent: (f = msg.getContactManagerKycVerificationEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f),
 contactManagerEntryDeleteEvent: (f = msg.getContactManagerEntryDeleteEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
 contactManagerEntryExpungeEvent: (f = msg.getContactManagerEntryExpungeEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
-contactManagerEntityAssociationEvent: (f = msg.getContactManagerEntityAssociationEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.toObject(includeInstance, f),
 accessTokensExpiringEvent: (f = msg.getAccessTokensExpiringEvent()) && api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.toObject(includeInstance, f)
   };
 
@@ -1049,11 +1047,6 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent;
       reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.deserializeBinaryFromReader);
       msg.setContactManagerEntryExpungeEvent(value);
-      break;
-    case 1209:
-      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent;
-      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.deserializeBinaryFromReader);
-      msg.setContactManagerEntityAssociationEvent(value);
       break;
     case 1300:
       var value = new api_commons_audit_organization_events_pb.AccessTokensExpiringEvent;
@@ -2098,14 +2091,6 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       1208,
       f,
       api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getContactManagerEntityAssociationEvent();
-  if (f != null) {
-    writer.writeMessage(
-      1209,
-      f,
-      api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.serializeBinaryToWriter
     );
   }
   f = message.getAccessTokensExpiringEvent();
@@ -6720,43 +6705,6 @@ proto.api.commons.audit.AuditEvent.prototype.clearContactManagerEntryExpungeEven
  */
 proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntryExpungeEvent = function() {
   return jspb.Message.getField(this, 1208) != null;
-};
-
-
-/**
- * optional ContactManagerEntityAssociationEvent contact_manager_entity_association_event = 1209;
- * @return {?proto.api.commons.audit.ContactManagerEntityAssociationEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getContactManagerEntityAssociationEvent = function() {
-  return /** @type{?proto.api.commons.audit.ContactManagerEntityAssociationEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent, 1209));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.ContactManagerEntityAssociationEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setContactManagerEntityAssociationEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1209, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearContactManagerEntityAssociationEvent = function() {
-  return this.setContactManagerEntityAssociationEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntityAssociationEvent = function() {
-  return jspb.Message.getField(this, 1209) != null;
 };
 
 
