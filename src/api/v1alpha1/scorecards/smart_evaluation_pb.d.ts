@@ -2,7 +2,6 @@
 // file: api/v1alpha1/scorecards/smart_evaluation.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
