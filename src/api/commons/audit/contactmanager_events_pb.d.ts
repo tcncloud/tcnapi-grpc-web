@@ -105,6 +105,16 @@ export class ContactManagerEntryEvent extends jspb.Message {
   setContactmanagerentrylistidsList(value: Array<number>): void;
   addContactmanagerentrylistids(value: number, index?: number): number;
 
+  clearFieldsChangesList(): void;
+  getFieldsChangesList(): Array<ContactFieldChanges>;
+  setFieldsChangesList(value: Array<ContactFieldChanges>): void;
+  addFieldsChanges(value?: ContactFieldChanges, index?: number): ContactFieldChanges;
+
+  hasContactUpdateTaskId(): boolean;
+  clearContactUpdateTaskId(): void;
+  getContactUpdateTaskId(): string;
+  setContactUpdateTaskId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntryEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntryEvent): ContactManagerEntryEvent.AsObject;
@@ -120,6 +130,70 @@ export namespace ContactManagerEntryEvent {
     contactmanagerlistid: number,
     contactmanagerentryid: number,
     contactmanagerentrylistidsList: Array<number>,
+    fieldsChangesList: Array<ContactFieldChanges.AsObject>,
+    contactUpdateTaskId: string,
+  }
+}
+
+export class ContactFieldChanges extends jspb.Message {
+  hasFromValue(): boolean;
+  clearFromValue(): void;
+  getFromValue(): AuditedContactField | undefined;
+  setFromValue(value?: AuditedContactField): void;
+
+  hasToValue(): boolean;
+  clearToValue(): void;
+  getToValue(): AuditedContactField | undefined;
+  setToValue(value?: AuditedContactField): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactFieldChanges.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactFieldChanges): ContactFieldChanges.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactFieldChanges, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactFieldChanges;
+  static deserializeBinaryFromReader(message: ContactFieldChanges, reader: jspb.BinaryReader): ContactFieldChanges;
+}
+
+export namespace ContactFieldChanges {
+  export type AsObject = {
+    fromValue?: AuditedContactField.AsObject,
+    toValue?: AuditedContactField.AsObject,
+  }
+}
+
+export class AuditedContactField extends jspb.Message {
+  getContactFieldId(): number;
+  setContactFieldId(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuditedContactField.AsObject;
+  static toObject(includeInstance: boolean, msg: AuditedContactField): AuditedContactField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AuditedContactField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuditedContactField;
+  static deserializeBinaryFromReader(message: AuditedContactField, reader: jspb.BinaryReader): AuditedContactField;
+}
+
+export namespace AuditedContactField {
+  export type AsObject = {
+    contactFieldId: number,
+    name: string,
+    type: string,
+    value: string,
   }
 }
 
@@ -148,6 +222,20 @@ export class ContactManagerListUploadEvent extends jspb.Message {
   getDedupmergestrategy(): api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap];
   setDedupmergestrategy(value: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap]): void;
 
+  getContactManagerListName(): string;
+  setContactManagerListName(value: string): void;
+
+  hasFileName(): boolean;
+  clearFileName(): void;
+  getFileName(): string;
+  setFileName(value: string): void;
+
+  getUploadTaskId(): number;
+  setUploadTaskId(value: number): void;
+
+  getTtl(): number;
+  setTtl(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerListUploadEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerListUploadEvent): ContactManagerListUploadEvent.AsObject;
@@ -168,6 +256,10 @@ export namespace ContactManagerListUploadEvent {
     numberofduplicatecontacts: number,
     dedupfieldtype: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
     dedupmergestrategy: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap],
+    contactManagerListName: string,
+    fileName: string,
+    uploadTaskId: number,
+    ttl: number,
   }
 }
 
@@ -204,6 +296,34 @@ export namespace ContactManagerKycEvent {
     contactmanagerentryid: number,
     typesList: Array<string>,
     contactmanagerentrylistidsList: Array<number>,
+  }
+}
+
+export class ContactManagerEntityAssociationEvent extends jspb.Message {
+  getContactmanagerentryid(): number;
+  setContactmanagerentryid(value: number): void;
+
+  getFromEntity(): string;
+  setFromEntity(value: string): void;
+
+  getToEntity(): string;
+  setToEntity(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerEntityAssociationEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerEntityAssociationEvent): ContactManagerEntityAssociationEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerEntityAssociationEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerEntityAssociationEvent;
+  static deserializeBinaryFromReader(message: ContactManagerEntityAssociationEvent, reader: jspb.BinaryReader): ContactManagerEntityAssociationEvent;
+}
+
+export namespace ContactManagerEntityAssociationEvent {
+  export type AsObject = {
+    contactmanagerentryid: number,
+    fromEntity: string,
+    toEntity: string,
   }
 }
 
