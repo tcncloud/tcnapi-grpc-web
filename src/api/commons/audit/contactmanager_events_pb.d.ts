@@ -300,8 +300,8 @@ export namespace ContactManagerKycEvent {
 }
 
 export class ContactManagerEntityAssociationEvent extends jspb.Message {
-  getContactmanagerentryid(): number;
-  setContactmanagerentryid(value: number): void;
+  getContactManagerEntryId(): number;
+  setContactManagerEntryId(value: number): void;
 
   getFromEntity(): string;
   setFromEntity(value: string): void;
@@ -324,7 +324,7 @@ export class ContactManagerEntityAssociationEvent extends jspb.Message {
 
 export namespace ContactManagerEntityAssociationEvent {
   export type AsObject = {
-    contactmanagerentryid: number,
+    contactManagerEntryId: number,
     fromEntity: string,
     toEntity: string,
     entityType: string,

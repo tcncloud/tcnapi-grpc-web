@@ -2387,7 +2387,7 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.toObject 
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
 fromEntity: jspb.Message.getFieldWithDefault(msg, 2, ""),
 toEntity: jspb.Message.getFieldWithDefault(msg, 3, ""),
 entityType: jspb.Message.getFieldWithDefault(msg, 4, "")
@@ -2429,7 +2429,7 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.deserializeBinaryFr
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setContactmanagerentryid(value);
+      msg.setContactManagerEntryId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2472,7 +2472,7 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.serialize
  */
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactmanagerentryid();
+  f = message.getContactManagerEntryId();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -2504,10 +2504,10 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.serializeBinaryToWr
 
 
 /**
- * optional int64 ContactManagerEntryId = 1;
+ * optional int64 contact_manager_entry_id = 1;
  * @return {number}
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getContactmanagerentryid = function() {
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getContactManagerEntryId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2516,7 +2516,7 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getContac
  * @param {number} value
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setContactmanagerentryid = function(value) {
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setContactManagerEntryId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
