@@ -185,6 +185,15 @@ type NewsroomAPIUploadClientArticleImage = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageResponse;
 };
 
+type NewsroomAPIListPublishedClientArticles = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -207,6 +216,7 @@ export class NewsroomAPI {
   static readonly StoreClientArticleImage: NewsroomAPIStoreClientArticleImage;
   static readonly ListImagesForClientArticle: NewsroomAPIListImagesForClientArticle;
   static readonly UploadClientArticleImage: NewsroomAPIUploadClientArticleImage;
+  static readonly ListPublishedClientArticles: NewsroomAPIListPublishedClientArticles;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -420,6 +430,15 @@ export class NewsroomAPIClient {
   uploadClientArticleImage(
     requestMessage: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageResponse|null) => void
+  ): UnaryResponse;
+  listPublishedClientArticles(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesResponse|null) => void
+  ): UnaryResponse;
+  listPublishedClientArticles(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedClientArticlesResponse|null) => void
   ): UnaryResponse;
 }
 

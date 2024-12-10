@@ -272,6 +272,9 @@ export class PublishedArticleDetails extends jspb.Message {
   getDisplayToUser(): boolean;
   setDisplayToUser(value: boolean): void;
 
+  getAlwaysDisplay(): boolean;
+  setAlwaysDisplay(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishedArticleDetails.AsObject;
   static toObject(includeInstance: boolean, msg: PublishedArticleDetails): PublishedArticleDetails.AsObject;
@@ -288,6 +291,7 @@ export namespace PublishedArticleDetails {
     newsArticleDetails?: NewsArticleDetails.AsObject,
     datePublished?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     displayToUser: boolean,
+    alwaysDisplay: boolean,
   }
 }
 
@@ -1110,6 +1114,44 @@ export class UploadClientArticleImageResponse extends jspb.Message {
 export namespace UploadClientArticleImageResponse {
   export type AsObject = {
     image?: NewsArticleImage.AsObject,
+  }
+}
+
+export class ListPublishedClientArticlesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublishedClientArticlesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublishedClientArticlesRequest): ListPublishedClientArticlesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublishedClientArticlesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublishedClientArticlesRequest;
+  static deserializeBinaryFromReader(message: ListPublishedClientArticlesRequest, reader: jspb.BinaryReader): ListPublishedClientArticlesRequest;
+}
+
+export namespace ListPublishedClientArticlesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListPublishedClientArticlesResponse extends jspb.Message {
+  clearPublishedArticleDetailsList(): void;
+  getPublishedArticleDetailsList(): Array<PublishedArticleDetails>;
+  setPublishedArticleDetailsList(value: Array<PublishedArticleDetails>): void;
+  addPublishedArticleDetails(value?: PublishedArticleDetails, index?: number): PublishedArticleDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublishedClientArticlesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublishedClientArticlesResponse): ListPublishedClientArticlesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublishedClientArticlesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublishedClientArticlesResponse;
+  static deserializeBinaryFromReader(message: ListPublishedClientArticlesResponse, reader: jspb.BinaryReader): ListPublishedClientArticlesResponse;
+}
+
+export namespace ListPublishedClientArticlesResponse {
+  export type AsObject = {
+    publishedArticleDetailsList: Array<PublishedArticleDetails.AsObject>,
   }
 }
 
