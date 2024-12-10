@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_insights_pb from "../../../api/commons/insights_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
+import * as api_v1alpha1_insights_insight_content_pb from "../../../api/v1alpha1/insights/insight_content_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -51,6 +52,12 @@ export class Insight extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasPipeline(): boolean;
+  clearPipeline(): void;
+  getPipeline(): api_v1alpha1_insights_insight_content_pb.Pipeline | undefined;
+  setPipeline(value?: api_v1alpha1_insights_insight_content_pb.Pipeline): void;
+
+  getInsightContentCase(): Insight.InsightContentCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -76,6 +83,12 @@ export namespace Insight {
     datasourceName: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pipeline?: api_v1alpha1_insights_insight_content_pb.Pipeline.AsObject,
+  }
+
+  export enum InsightContentCase {
+    INSIGHT_CONTENT_NOT_SET = 0,
+    PIPELINE = 16,
   }
 }
 
@@ -604,6 +617,120 @@ export namespace TableVisualization {
     delimiter: string,
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
     noHeader: boolean,
+  }
+}
+
+export class CardVisualization extends jspb.Message {
+  clearTextValuesList(): void;
+  getTextValuesList(): Array<TextValue>;
+  setTextValuesList(value: Array<TextValue>): void;
+  addTextValues(value?: TextValue, index?: number): TextValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CardVisualization.AsObject;
+  static toObject(includeInstance: boolean, msg: CardVisualization): CardVisualization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CardVisualization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CardVisualization;
+  static deserializeBinaryFromReader(message: CardVisualization, reader: jspb.BinaryReader): CardVisualization;
+}
+
+export namespace CardVisualization {
+  export type AsObject = {
+    textValuesList: Array<TextValue.AsObject>,
+  }
+}
+
+export class TextValue extends jspb.Message {
+  clearConditionsList(): void;
+  getConditionsList(): Array<TextValueCondition>;
+  setConditionsList(value: Array<TextValueCondition>): void;
+  addConditions(value?: TextValueCondition, index?: number): TextValueCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TextValue.AsObject;
+  static toObject(includeInstance: boolean, msg: TextValue): TextValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TextValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TextValue;
+  static deserializeBinaryFromReader(message: TextValue, reader: jspb.BinaryReader): TextValue;
+}
+
+export namespace TextValue {
+  export type AsObject = {
+    conditionsList: Array<TextValueCondition.AsObject>,
+  }
+}
+
+export class TextValueCondition extends jspb.Message {
+  hasExpression(): boolean;
+  clearExpression(): void;
+  getExpression(): api_v1alpha1_insights_insight_content_pb.ExpressionNode | undefined;
+  setExpression(value?: api_v1alpha1_insights_insight_content_pb.ExpressionNode): void;
+
+  getSize(): number;
+  setSize(value: number): void;
+
+  clearOperationsList(): void;
+  getOperationsList(): Array<ColumnOperation>;
+  setOperationsList(value: Array<ColumnOperation>): void;
+  addOperations(value?: ColumnOperation, index?: number): ColumnOperation;
+
+  getIconName(): string;
+  setIconName(value: string): void;
+
+  hasIconColor(): boolean;
+  clearIconColor(): void;
+  getIconColor(): TextValueCondition.Color | undefined;
+  setIconColor(value?: TextValueCondition.Color): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TextValueCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: TextValueCondition): TextValueCondition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TextValueCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TextValueCondition;
+  static deserializeBinaryFromReader(message: TextValueCondition, reader: jspb.BinaryReader): TextValueCondition;
+}
+
+export namespace TextValueCondition {
+  export type AsObject = {
+    expression?: api_v1alpha1_insights_insight_content_pb.ExpressionNode.AsObject,
+    size: number,
+    operationsList: Array<ColumnOperation.AsObject>,
+    iconName: string,
+    iconColor?: TextValueCondition.Color.AsObject,
+  }
+
+  export class Color extends jspb.Message {
+    getRed(): number;
+    setRed(value: number): void;
+
+    getGreen(): number;
+    setGreen(value: number): void;
+
+    getBlue(): number;
+    setBlue(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Color.AsObject;
+    static toObject(includeInstance: boolean, msg: Color): Color.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Color, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Color;
+    static deserializeBinaryFromReader(message: Color, reader: jspb.BinaryReader): Color;
+  }
+
+  export namespace Color {
+    export type AsObject = {
+      red: number,
+      green: number,
+      blue: number,
+    }
   }
 }
 
@@ -1273,6 +1400,7 @@ export interface OutputConfigurationTypeMap {
   OUTPUT_CONFIGURATION_TYPE_PIE_CHART: 3;
   OUTPUT_CONFIGURATION_TYPE_FIXED_WIDTH: 4;
   OUTPUT_CONFIGURATION_TYPE_TIMELINE: 5;
+  OUTPUT_CONFIGURATION_TYPE_TEXT_VALUES: 6;
 }
 
 export const OutputConfigurationType: OutputConfigurationTypeMap;
