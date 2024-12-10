@@ -7,6 +7,52 @@ import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explor
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class GetWeeksOfDataRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetWeeksOfDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWeeksOfDataRequest): GetWeeksOfDataRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetWeeksOfDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWeeksOfDataRequest;
+  static deserializeBinaryFromReader(message: GetWeeksOfDataRequest, reader: jspb.BinaryReader): GetWeeksOfDataRequest;
+}
+
+export namespace GetWeeksOfDataRequest {
+  export type AsObject = {
+    orgId: string,
+  }
+}
+
+export class GetWeeksOfDataResponse extends jspb.Message {
+  getWeeksOfData(): number;
+  setWeeksOfData(value: number): void;
+
+  hasAccessStartDate(): boolean;
+  clearAccessStartDate(): void;
+  getAccessStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAccessStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetWeeksOfDataResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWeeksOfDataResponse): GetWeeksOfDataResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetWeeksOfDataResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWeeksOfDataResponse;
+  static deserializeBinaryFromReader(message: GetWeeksOfDataResponse, reader: jspb.BinaryReader): GetWeeksOfDataResponse;
+}
+
+export namespace GetWeeksOfDataResponse {
+  export type AsObject = {
+    weeksOfData: number,
+    accessStartDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ListDatasourceSchemasRequest extends jspb.Message {
   clearDatasourceNamesList(): void;
   getDatasourceNamesList(): Array<string>;
