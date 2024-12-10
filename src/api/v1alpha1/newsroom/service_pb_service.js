@@ -119,6 +119,78 @@ NewsroomAPI.UploadNewsArticleImage = {
   responseType: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageResponse
 };
 
+NewsroomAPI.CreateClientArticle = {
+  methodName: "CreateClientArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.CreateClientArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.CreateClientArticleResponse
+};
+
+NewsroomAPI.UpdateClientArticle = {
+  methodName: "UpdateClientArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.UpdateClientArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UpdateClientArticleResponse
+};
+
+NewsroomAPI.ListClientArticles = {
+  methodName: "ListClientArticles",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListClientArticlesRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListClientArticlesResponse
+};
+
+NewsroomAPI.CreatePublishedClientArticle = {
+  methodName: "CreatePublishedClientArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.CreatePublishedClientArticleResponse
+};
+
+NewsroomAPI.GetPublishedClientArticleById = {
+  methodName: "GetPublishedClientArticleById",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.GetPublishedClientArticleByIdResponse
+};
+
+NewsroomAPI.StoreClientArticleImage = {
+  methodName: "StoreClientArticleImage",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.StoreClientArticleImageResponse
+};
+
+NewsroomAPI.ListImagesForClientArticle = {
+  methodName: "ListImagesForClientArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListImagesForClientArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListImagesForClientArticleResponse
+};
+
+NewsroomAPI.UploadClientArticleImage = {
+  methodName: "UploadClientArticleImage",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UploadClientArticleImageResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -472,6 +544,254 @@ NewsroomAPIClient.prototype.uploadNewsArticleImage = function uploadNewsArticleI
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.UploadNewsArticleImage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.createClientArticle = function createClientArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.CreateClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.updateClientArticle = function updateClientArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.UpdateClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listClientArticles = function listClientArticles(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListClientArticles, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.createPublishedClientArticle = function createPublishedClientArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.CreatePublishedClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.getPublishedClientArticleById = function getPublishedClientArticleById(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.GetPublishedClientArticleById, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.storeClientArticleImage = function storeClientArticleImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.StoreClientArticleImage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listImagesForClientArticle = function listImagesForClientArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListImagesForClientArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.uploadClientArticleImage = function uploadClientArticleImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.UploadClientArticleImage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
