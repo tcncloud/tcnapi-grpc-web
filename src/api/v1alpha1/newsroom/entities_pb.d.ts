@@ -905,6 +905,9 @@ export class CreatePublishedClientArticleRequest extends jspb.Message {
   getArticleLink(): string;
   setArticleLink(value: string): void;
 
+  getAlwaysShow(): boolean;
+  setAlwaysShow(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePublishedClientArticleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreatePublishedClientArticleRequest): CreatePublishedClientArticleRequest.AsObject;
@@ -920,6 +923,7 @@ export namespace CreatePublishedClientArticleRequest {
     newArticleSid: string,
     displayToUser: boolean,
     articleLink: string,
+    alwaysShow: boolean,
   }
 }
 

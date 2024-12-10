@@ -7312,7 +7312,8 @@ proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.toObject = funct
   var f, obj = {
 newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-articleLink: jspb.Message.getFieldWithDefault(msg, 3, "")
+articleLink: jspb.Message.getFieldWithDefault(msg, 3, ""),
+alwaysShow: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -7361,6 +7362,10 @@ proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.deserializeBinar
       var value = /** @type {string} */ (reader.readString());
       msg.setArticleLink(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAlwaysShow(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7408,6 +7413,13 @@ proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.serializeBinaryT
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getAlwaysShow();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -7465,6 +7477,24 @@ proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.prototype.getArt
  */
 proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.prototype.setArticleLink = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bool always_show = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.prototype.getAlwaysShow = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest} returns this
+ */
+proto.api.v1alpha1.newsroom.CreatePublishedClientArticleRequest.prototype.setAlwaysShow = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
