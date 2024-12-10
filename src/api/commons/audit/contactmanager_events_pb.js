@@ -893,9 +893,9 @@ proto.api.commons.audit.ContactManagerEntryEvent.toObject = function(includeInst
 contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-fieldChangesList: jspb.Message.toObjectList(msg.getFieldChangesList(),
+fieldchangesList: jspb.Message.toObjectList(msg.getFieldchangesList(),
     proto.api.commons.audit.ContactFieldChanges.toObject, includeInstance),
-contactUpdateTaskId: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+contactupdatetaskid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -949,11 +949,11 @@ proto.api.commons.audit.ContactManagerEntryEvent.deserializeBinaryFromReader = f
     case 4:
       var value = new proto.api.commons.audit.ContactFieldChanges;
       reader.readMessage(value,proto.api.commons.audit.ContactFieldChanges.deserializeBinaryFromReader);
-      msg.addFieldChanges(value);
+      msg.addFieldchanges(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readInt64String());
-      msg.setContactUpdateTaskId(value);
+      msg.setContactupdatetaskid(value);
       break;
     default:
       reader.skipField();
@@ -1005,7 +1005,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getFieldChangesList();
+  f = message.getFieldchangesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -1097,10 +1097,10 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearContactmanageren
 
 
 /**
- * repeated ContactFieldChanges field_changes = 4;
+ * repeated ContactFieldChanges FieldChanges = 4;
  * @return {!Array<!proto.api.commons.audit.ContactFieldChanges>}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldChangesList = function() {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldchangesList = function() {
   return /** @type{!Array<!proto.api.commons.audit.ContactFieldChanges>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.commons.audit.ContactFieldChanges, 4));
 };
@@ -1110,7 +1110,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.getFieldChangesList =
  * @param {!Array<!proto.api.commons.audit.ContactFieldChanges>} value
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
 */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldChangesList = function(value) {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldchangesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -1120,7 +1120,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.setFieldChangesList =
  * @param {number=} opt_index
  * @return {!proto.api.commons.audit.ContactFieldChanges}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldChanges = function(opt_value, opt_index) {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldchanges = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.commons.audit.ContactFieldChanges, opt_index);
 };
 
@@ -1129,16 +1129,16 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.addFieldChanges = fun
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearFieldChangesList = function() {
-  return this.setFieldChangesList([]);
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearFieldchangesList = function() {
+  return this.setFieldchangesList([]);
 };
 
 
 /**
- * optional int64 contact_update_task_id = 5;
+ * optional int64 ContactUpdateTaskId = 5;
  * @return {string}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.getContactUpdateTaskId = function() {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.getContactupdatetaskid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
 };
 
@@ -1147,7 +1147,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.getContactUpdateTaskI
  * @param {string} value
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.setContactUpdateTaskId = function(value) {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.setContactupdatetaskid = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -1156,7 +1156,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.setContactUpdateTaskI
  * Clears the field making it undefined.
  * @return {!proto.api.commons.audit.ContactManagerEntryEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearContactUpdateTaskId = function() {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearContactupdatetaskid = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -1165,7 +1165,7 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.clearContactUpdateTas
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.audit.ContactManagerEntryEvent.prototype.hasContactUpdateTaskId = function() {
+proto.api.commons.audit.ContactManagerEntryEvent.prototype.hasContactupdatetaskid = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1650,9 +1650,9 @@ numberofnewcontacts: jspb.Message.getFieldWithDefault(msg, 5, 0),
 numberofduplicatecontacts: jspb.Message.getFieldWithDefault(msg, 6, 0),
 dedupfieldtype: jspb.Message.getFieldWithDefault(msg, 7, 0),
 dedupmergestrategy: jspb.Message.getFieldWithDefault(msg, 8, 0),
-contactManagerListName: jspb.Message.getFieldWithDefault(msg, 9, ""),
-fileName: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-uploadTaskId: jspb.Message.getFieldWithDefault(msg, 11, 0),
+contactmanagerlistname: jspb.Message.getFieldWithDefault(msg, 9, ""),
+filename: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+updatetaskid: jspb.Message.getFieldWithDefault(msg, 11, 0),
 ttl: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
@@ -1724,15 +1724,15 @@ proto.api.commons.audit.ContactManagerListUploadEvent.deserializeBinaryFromReade
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setContactManagerListName(value);
+      msg.setContactmanagerlistname(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFileName(value);
+      msg.setFilename(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setUploadTaskId(value);
+      msg.setUpdatetaskid(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readInt64());
@@ -1823,7 +1823,7 @@ proto.api.commons.audit.ContactManagerListUploadEvent.serializeBinaryToWriter = 
       f
     );
   }
-  f = message.getContactManagerListName();
+  f = message.getContactmanagerlistname();
   if (f.length > 0) {
     writer.writeString(
       9,
@@ -1837,7 +1837,7 @@ proto.api.commons.audit.ContactManagerListUploadEvent.serializeBinaryToWriter = 
       f
     );
   }
-  f = message.getUploadTaskId();
+  f = message.getUpdatetaskid();
   if (f !== 0) {
     writer.writeInt64(
       11,
@@ -1999,10 +1999,10 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setDedupmergestr
 
 
 /**
- * optional string contact_manager_list_name = 9;
+ * optional string ContactManagerListName = 9;
  * @return {string}
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getContactManagerListName = function() {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getContactmanagerlistname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -2011,16 +2011,16 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getContactManage
  * @param {string} value
  * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setContactManagerListName = function(value) {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setContactmanagerlistname = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional string file_name = 10;
+ * optional string FileName = 10;
  * @return {string}
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getFileName = function() {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getFilename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -2029,7 +2029,7 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getFileName = fu
  * @param {string} value
  * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setFileName = function(value) {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setFilename = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -2038,7 +2038,7 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setFileName = fu
  * Clears the field making it undefined.
  * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.clearFileName = function() {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.clearFilename = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -2047,16 +2047,16 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.clearFileName = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.hasFileName = function() {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.hasFilename = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional int64 upload_task_id = 11;
+ * optional int64 UpdateTaskId = 11;
  * @return {number}
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getUploadTaskId = function() {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getUpdatetaskid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -2065,13 +2065,13 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getUploadTaskId 
  * @param {number} value
  * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
  */
-proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setUploadTaskId = function(value) {
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setUpdatetaskid = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int64 ttl = 12;
+ * optional int64 Ttl = 12;
  * @return {number}
  */
 proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getTtl = function() {
@@ -2388,9 +2388,9 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.toObject 
 proto.api.commons.audit.ContactManagerEntityAssociationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
 contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-fromEntity: jspb.Message.getFieldWithDefault(msg, 2, ""),
-toEntity: jspb.Message.getFieldWithDefault(msg, 3, ""),
-entityType: jspb.Message.getFieldWithDefault(msg, 4, "")
+entityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+isActive: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -2433,15 +2433,15 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.deserializeBinaryFr
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFromEntity(value);
+      msg.setEntityId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setToEntity(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleted(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEntityType(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActive(value);
       break;
     default:
       reader.skipField();
@@ -2479,23 +2479,23 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.serializeBinaryToWr
       f
     );
   }
-  f = message.getFromEntity();
+  f = message.getEntityId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getToEntity();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDeleted();
+  if (f) {
+    writer.writeBool(
       3,
       f
     );
   }
-  f = message.getEntityType();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsActive();
+  if (f) {
+    writer.writeBool(
       4,
       f
     );
@@ -2522,10 +2522,10 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setContac
 
 
 /**
- * optional string from_entity = 2;
+ * optional string entity_id = 2;
  * @return {string}
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getFromEntity = function() {
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getEntityId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2534,44 +2534,44 @@ proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getFromEn
  * @param {string} value
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setFromEntity = function(value) {
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setEntityId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string to_entity = 3;
- * @return {string}
+ * optional bool deleted = 3;
+ * @return {boolean}
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getToEntity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setToEntity = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
 /**
- * optional string entity_type = 4;
- * @return {string}
+ * optional bool is_active = 4;
+ * @return {boolean}
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getEntityType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.getIsActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.api.commons.audit.ContactManagerEntityAssociationEvent} returns this
  */
-proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setEntityType = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.api.commons.audit.ContactManagerEntityAssociationEvent.prototype.setIsActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

@@ -105,15 +105,15 @@ export class ContactManagerEntryEvent extends jspb.Message {
   setContactmanagerentrylistidsList(value: Array<number>): void;
   addContactmanagerentrylistids(value: number, index?: number): number;
 
-  clearFieldChangesList(): void;
-  getFieldChangesList(): Array<ContactFieldChanges>;
-  setFieldChangesList(value: Array<ContactFieldChanges>): void;
-  addFieldChanges(value?: ContactFieldChanges, index?: number): ContactFieldChanges;
+  clearFieldchangesList(): void;
+  getFieldchangesList(): Array<ContactFieldChanges>;
+  setFieldchangesList(value: Array<ContactFieldChanges>): void;
+  addFieldchanges(value?: ContactFieldChanges, index?: number): ContactFieldChanges;
 
-  hasContactUpdateTaskId(): boolean;
-  clearContactUpdateTaskId(): void;
-  getContactUpdateTaskId(): string;
-  setContactUpdateTaskId(value: string): void;
+  hasContactupdatetaskid(): boolean;
+  clearContactupdatetaskid(): void;
+  getContactupdatetaskid(): string;
+  setContactupdatetaskid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntryEvent.AsObject;
@@ -130,8 +130,8 @@ export namespace ContactManagerEntryEvent {
     contactmanagerlistid: number,
     contactmanagerentryid: number,
     contactmanagerentrylistidsList: Array<number>,
-    fieldChangesList: Array<ContactFieldChanges.AsObject>,
-    contactUpdateTaskId: string,
+    fieldchangesList: Array<ContactFieldChanges.AsObject>,
+    contactupdatetaskid: string,
   }
 }
 
@@ -222,16 +222,16 @@ export class ContactManagerListUploadEvent extends jspb.Message {
   getDedupmergestrategy(): api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap];
   setDedupmergestrategy(value: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap]): void;
 
-  getContactManagerListName(): string;
-  setContactManagerListName(value: string): void;
+  getContactmanagerlistname(): string;
+  setContactmanagerlistname(value: string): void;
 
-  hasFileName(): boolean;
-  clearFileName(): void;
-  getFileName(): string;
-  setFileName(value: string): void;
+  hasFilename(): boolean;
+  clearFilename(): void;
+  getFilename(): string;
+  setFilename(value: string): void;
 
-  getUploadTaskId(): number;
-  setUploadTaskId(value: number): void;
+  getUpdatetaskid(): number;
+  setUpdatetaskid(value: number): void;
 
   getTtl(): number;
   setTtl(value: number): void;
@@ -256,9 +256,9 @@ export namespace ContactManagerListUploadEvent {
     numberofduplicatecontacts: number,
     dedupfieldtype: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
     dedupmergestrategy: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap],
-    contactManagerListName: string,
-    fileName: string,
-    uploadTaskId: number,
+    contactmanagerlistname: string,
+    filename: string,
+    updatetaskid: number,
     ttl: number,
   }
 }
@@ -303,14 +303,14 @@ export class ContactManagerEntityAssociationEvent extends jspb.Message {
   getContactManagerEntryId(): number;
   setContactManagerEntryId(value: number): void;
 
-  getFromEntity(): string;
-  setFromEntity(value: string): void;
+  getEntityId(): string;
+  setEntityId(value: string): void;
 
-  getToEntity(): string;
-  setToEntity(value: string): void;
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
 
-  getEntityType(): string;
-  setEntityType(value: string): void;
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntityAssociationEvent.AsObject;
@@ -325,9 +325,9 @@ export class ContactManagerEntityAssociationEvent extends jspb.Message {
 export namespace ContactManagerEntityAssociationEvent {
   export type AsObject = {
     contactManagerEntryId: number,
-    fromEntity: string,
-    toEntity: string,
-    entityType: string,
+    entityId: string,
+    deleted: boolean,
+    isActive: boolean,
   }
 }
 
