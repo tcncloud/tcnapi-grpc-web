@@ -140,6 +140,24 @@ type HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse;
 };
 
+type HuntGroupsServiceAssignAgentClientInfoDisplayTemplateToHuntGroups = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse;
+};
+
+type HuntGroupsServiceUnassignAgentClientInfoDisplayTemplateFromHuntGroups = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse;
+};
+
 export class HuntGroupsService {
   static readonly serviceName: string;
   static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
@@ -157,6 +175,8 @@ export class HuntGroupsService {
   static readonly GetAgentClientInfoDisplayTemplate: HuntGroupsServiceGetAgentClientInfoDisplayTemplate;
   static readonly ListAgentClientInfoDisplayTemplates: HuntGroupsServiceListAgentClientInfoDisplayTemplates;
   static readonly DeleteAgentClientInfoDisplayTemplate: HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate;
+  static readonly AssignAgentClientInfoDisplayTemplateToHuntGroups: HuntGroupsServiceAssignAgentClientInfoDisplayTemplateToHuntGroups;
+  static readonly UnassignAgentClientInfoDisplayTemplateFromHuntGroups: HuntGroupsServiceUnassignAgentClientInfoDisplayTemplateFromHuntGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -317,6 +337,24 @@ export class HuntGroupsServiceClient {
   deleteAgentClientInfoDisplayTemplate(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  assignAgentClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  assignAgentClientInfoDisplayTemplateToHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AssignAgentClientInfoDisplayTemplateToHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  unassignAgentClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  unassignAgentClientInfoDisplayTemplateFromHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UnassignAgentClientInfoDisplayTemplateFromHuntGroupsResponse|null) => void
   ): UnaryResponse;
 }
 
