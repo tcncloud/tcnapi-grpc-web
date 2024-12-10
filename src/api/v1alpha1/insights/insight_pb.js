@@ -65,6 +65,7 @@ goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse', null, glob
 goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse.Field', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.GroupNode', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.Insight', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.Insight.InsightContentCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction.ActionCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualActionType', null, global);
@@ -130,7 +131,7 @@ goog.exportSymbol('proto.api.v1alpha1.insights.ValuesReplacement', null, global)
  * @constructor
  */
 proto.api.v1alpha1.insights.Insight = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.insights.Insight.oneofGroups_);
 };
 goog.inherits(proto.api.v1alpha1.insights.Insight, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1758,6 +1759,31 @@ if (goog.DEBUG && !COMPILED) {
   proto.api.v1alpha1.insights.StringManipulationNode.displayName = 'proto.api.v1alpha1.insights.StringManipulationNode';
 }
 
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.insights.Insight.oneofGroups_ = [[16]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.insights.Insight.InsightContentCase = {
+  INSIGHT_CONTENT_NOT_SET: 0,
+  PIPELINE_NODE: 16
+};
+
+/**
+ * @return {proto.api.v1alpha1.insights.Insight.InsightContentCase}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getInsightContentCase = function() {
+  return /** @type {proto.api.v1alpha1.insights.Insight.InsightContentCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.insights.Insight.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1801,7 +1827,8 @@ standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 11, 0),
 datasourceName: jspb.Message.getFieldWithDefault(msg, 12, ""),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+pipelineNode: (f = msg.getPipelineNode()) && proto.api.v1alpha1.insights.PipelineNode.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1891,6 +1918,11 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
+      break;
+    case 16:
+      var value = new proto.api.v1alpha1.insights.PipelineNode;
+      reader.readMessage(value,proto.api.v1alpha1.insights.PipelineNode.deserializeBinaryFromReader);
+      msg.setPipelineNode(value);
       break;
     default:
       reader.skipField();
@@ -2012,6 +2044,14 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
       14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPipelineNode();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      proto.api.v1alpha1.insights.PipelineNode.serializeBinaryToWriter
     );
   }
 };
@@ -2286,6 +2326,43 @@ proto.api.v1alpha1.insights.Insight.prototype.clearUpdateTime = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional PipelineNode pipeline_node = 16;
+ * @return {?proto.api.v1alpha1.insights.PipelineNode}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getPipelineNode = function() {
+  return /** @type{?proto.api.v1alpha1.insights.PipelineNode} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.PipelineNode, 16));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.insights.PipelineNode|undefined} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+*/
+proto.api.v1alpha1.insights.Insight.prototype.setPipelineNode = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 16, proto.api.v1alpha1.insights.Insight.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.clearPipelineNode = function() {
+  return this.setPipelineNode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.hasPipelineNode = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

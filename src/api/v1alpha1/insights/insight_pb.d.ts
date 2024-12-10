@@ -51,6 +51,12 @@ export class Insight extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasPipelineNode(): boolean;
+  clearPipelineNode(): void;
+  getPipelineNode(): PipelineNode | undefined;
+  setPipelineNode(value?: PipelineNode): void;
+
+  getInsightContentCase(): Insight.InsightContentCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -76,6 +82,12 @@ export namespace Insight {
     datasourceName: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pipelineNode?: PipelineNode.AsObject,
+  }
+
+  export enum InsightContentCase {
+    INSIGHT_CONTENT_NOT_SET = 0,
+    PIPELINE_NODE = 16,
   }
 }
 
