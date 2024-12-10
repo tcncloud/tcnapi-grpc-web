@@ -276,7 +276,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.contactmanager.ContactManagerEntry = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.contactmanager.ContactManagerEntry.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.contactmanager.ContactManagerEntry, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2345,6 +2345,13 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.clearEntryTypeLis
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.repeatedFields_ = [10,11];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2382,7 +2389,12 @@ key: jspb.Message.getFieldWithDefault(msg, 3, ""),
 value: jspb.Message.getFieldWithDefault(msg, 4, ""),
 type: jspb.Message.getFieldWithDefault(msg, 5, ""),
 dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-status: jspb.Message.getFieldWithDefault(msg, 7, 0)
+status: jspb.Message.getFieldWithDefault(msg, 7, 0),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+ttl: jspb.Message.getFieldWithDefault(msg, 9, 0),
+fileNameList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
+fieldList: jspb.Message.toObjectList(msg.getFieldList(),
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2447,6 +2459,24 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReade
     case 7:
       var value = /** @type {!proto.api.commons.ContactEntryStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateModified(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTtl(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFileName(value);
+      break;
+    case 11:
+      var value = new proto.api.v1alpha1.contactmanager.ContactField;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
+      msg.addField(value);
       break;
     default:
       reader.skipField();
@@ -2525,6 +2555,36 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter = 
     writer.writeEnum(
       7,
       f
+    );
+  }
+  f = message.getDateModified();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTtl();
+  if (f !== 0) {
+    writer.writeInt64(
+      9,
+      f
+    );
+  }
+  f = message.getFileNameList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      10,
+      f
+    );
+  }
+  f = message.getFieldList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
     );
   }
 };
@@ -2675,6 +2735,136 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setStatus = func
 };
 
 
+/**
+ * optional google.protobuf.Timestamp date_modified = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getDateModified = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+*/
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setDateModified = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearDateModified = function() {
+  return this.setDateModified(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.hasDateModified = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional int64 ttl = 9;
+ * @return {number}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setTtl = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * repeated string file_name = 10;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getFileNameList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setFileNameList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.addFileName = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearFileNameList = function() {
+  return this.setFileNameList([]);
+};
+
+
+/**
+ * repeated ContactField field = 11;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactField>}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getFieldList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactField>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactField, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactField>} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+*/
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setFieldList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactField=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactField}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.addField = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.api.v1alpha1.contactmanager.ContactField, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearFieldList = function() {
+  return this.setFieldList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2723,7 +2913,8 @@ listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined
 ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
 dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-status: jspb.Message.getFieldWithDefault(msg, 10, 0)
+status: jspb.Message.getFieldWithDefault(msg, 10, 0),
+contactManagerListName: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -2800,6 +2991,10 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.deserializeBinaryFromReader
     case 10:
       var value = /** @type {!proto.api.commons.ContactListStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContactManagerListName(value);
       break;
     default:
       reader.skipField();
@@ -2898,6 +3093,13 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.serializeBinaryToWriter = f
   if (f !== 0.0) {
     writer.writeEnum(
       10,
+      f
+    );
+  }
+  f = message.getContactManagerListName();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -3119,6 +3321,24 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.getStatus = funct
  */
 proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional string contact_manager_list_name = 11;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.getContactManagerListName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerList} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.setContactManagerListName = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

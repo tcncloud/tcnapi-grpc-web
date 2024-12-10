@@ -283,6 +283,24 @@ export class ContactManagerEntry extends jspb.Message {
   getStatus(): api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap];
   setStatus(value: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap]): void;
 
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTtl(): number;
+  setTtl(value: number): void;
+
+  clearFileNameList(): void;
+  getFileNameList(): Array<string>;
+  setFileNameList(value: Array<string>): void;
+  addFileName(value: string, index?: number): string;
+
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntry): ContactManagerEntry.AsObject;
@@ -302,6 +320,10 @@ export namespace ContactManagerEntry {
     type: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     status: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap],
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ttl: number,
+    fileNameList: Array<string>,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -340,6 +362,9 @@ export class ContactManagerList extends jspb.Message {
   getStatus(): api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap];
   setStatus(value: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap]): void;
 
+  getContactManagerListName(): string;
+  setContactManagerListName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerList.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerList): ContactManagerList.AsObject;
@@ -362,6 +387,7 @@ export namespace ContactManagerList {
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
     status: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap],
+    contactManagerListName: string,
   }
 }
 
