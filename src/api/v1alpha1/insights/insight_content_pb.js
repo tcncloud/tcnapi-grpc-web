@@ -920,7 +920,7 @@ proto.api.v1alpha1.insights.Node.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v1alpha1.insights.Node.toObject = function(includeInstance, msg) {
   var f, obj = {
-id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+nodeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 type: jspb.Message.getFieldWithDefault(msg, 2, ""),
 title: jspb.Message.getFieldWithDefault(msg, 3, ""),
 inputIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
@@ -976,7 +976,7 @@ proto.api.v1alpha1.insights.Node.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setNodeId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1088,7 +1088,7 @@ proto.api.v1alpha1.insights.Node.prototype.serializeBinary = function() {
  */
 proto.api.v1alpha1.insights.Node.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getNodeId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1231,10 +1231,10 @@ proto.api.v1alpha1.insights.Node.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string id = 1;
+ * optional string node_id = 1;
  * @return {string}
  */
-proto.api.v1alpha1.insights.Node.prototype.getId = function() {
+proto.api.v1alpha1.insights.Node.prototype.getNodeId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1243,7 +1243,7 @@ proto.api.v1alpha1.insights.Node.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.api.v1alpha1.insights.Node} returns this
  */
-proto.api.v1alpha1.insights.Node.prototype.setId = function(value) {
+proto.api.v1alpha1.insights.Node.prototype.setNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4455,7 +4455,7 @@ proto.api.v1alpha1.insights.Parent.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.insights.Parent.toObject = function(includeInstance, msg) {
   var f, obj = {
-id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+parentId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 title: jspb.Message.getFieldWithDefault(msg, 2, ""),
 renamedColumnsMap: (f = msg.getRenamedColumnsMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -4496,7 +4496,7 @@ proto.api.v1alpha1.insights.Parent.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setParentId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -4537,7 +4537,7 @@ proto.api.v1alpha1.insights.Parent.prototype.serializeBinary = function() {
  */
 proto.api.v1alpha1.insights.Parent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getParentId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -4559,10 +4559,10 @@ proto.api.v1alpha1.insights.Parent.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string id = 1;
+ * optional string parent_id = 1;
  * @return {string}
  */
-proto.api.v1alpha1.insights.Parent.prototype.getId = function() {
+proto.api.v1alpha1.insights.Parent.prototype.getParentId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4571,7 +4571,7 @@ proto.api.v1alpha1.insights.Parent.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.api.v1alpha1.insights.Parent} returns this
  */
-proto.api.v1alpha1.insights.Parent.prototype.setId = function(value) {
+proto.api.v1alpha1.insights.Parent.prototype.setParentId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

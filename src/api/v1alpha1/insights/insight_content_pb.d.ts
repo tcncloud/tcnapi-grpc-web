@@ -26,8 +26,8 @@ export namespace Pipeline {
 }
 
 export class Node extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
+  getNodeId(): string;
+  setNodeId(value: string): void;
 
   getType(): string;
   setType(value: string): void;
@@ -123,7 +123,7 @@ export class Node extends jspb.Message {
 
 export namespace Node {
   export type AsObject = {
-    id: string,
+    nodeId: string,
     type: string,
     title: string,
     inputIdsList: Array<string>,
@@ -522,8 +522,8 @@ export namespace JoinColumn {
 }
 
 export class Parent extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
+  getParentId(): string;
+  setParentId(value: string): void;
 
   getTitle(): string;
   setTitle(value: string): void;
@@ -542,7 +542,7 @@ export class Parent extends jspb.Message {
 
 export namespace Parent {
   export type AsObject = {
-    id: string,
+    parentId: string,
     title: string,
     renamedColumnsMap: Array<[string, string]>,
   }
