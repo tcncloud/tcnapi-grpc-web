@@ -665,6 +665,11 @@ export namespace TextValue {
 }
 
 export class TextValueCondition extends jspb.Message {
+  hasExpression(): boolean;
+  clearExpression(): void;
+  getExpression(): api_v1alpha1_insights_insight_content_pb.ExpressionNode | undefined;
+  setExpression(value?: api_v1alpha1_insights_insight_content_pb.ExpressionNode): void;
+
   getSize(): number;
   setSize(value: number): void;
 
@@ -693,6 +698,7 @@ export class TextValueCondition extends jspb.Message {
 
 export namespace TextValueCondition {
   export type AsObject = {
+    expression?: api_v1alpha1_insights_insight_content_pb.ExpressionNode.AsObject,
     size: number,
     operationsList: Array<ColumnOperation.AsObject>,
     iconName: string,

@@ -5809,6 +5809,7 @@ proto.api.v1alpha1.insights.TextValueCondition.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.insights.TextValueCondition.toObject = function(includeInstance, msg) {
   var f, obj = {
+expression: (f = msg.getExpression()) && api_v1alpha1_insights_insight_content_pb.ExpressionNode.toObject(includeInstance, f),
 size: jspb.Message.getFieldWithDefault(msg, 2, 0),
 operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
     proto.api.v1alpha1.insights.ColumnOperation.toObject, includeInstance),
@@ -5850,6 +5851,11 @@ proto.api.v1alpha1.insights.TextValueCondition.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new api_v1alpha1_insights_insight_content_pb.ExpressionNode;
+      reader.readMessage(value,api_v1alpha1_insights_insight_content_pb.ExpressionNode.deserializeBinaryFromReader);
+      msg.setExpression(value);
+      break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSize(value);
@@ -5897,6 +5903,14 @@ proto.api.v1alpha1.insights.TextValueCondition.prototype.serializeBinary = funct
  */
 proto.api.v1alpha1.insights.TextValueCondition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getExpression();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_v1alpha1_insights_insight_content_pb.ExpressionNode.serializeBinaryToWriter
+    );
+  }
   f = message.getSize();
   if (f !== 0) {
     writer.writeInt64(
@@ -6117,6 +6131,43 @@ proto.api.v1alpha1.insights.TextValueCondition.Color.prototype.getBlue = functio
  */
 proto.api.v1alpha1.insights.TextValueCondition.Color.prototype.setBlue = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional ExpressionNode expression = 1;
+ * @return {?proto.api.v1alpha1.insights.ExpressionNode}
+ */
+proto.api.v1alpha1.insights.TextValueCondition.prototype.getExpression = function() {
+  return /** @type{?proto.api.v1alpha1.insights.ExpressionNode} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_insights_insight_content_pb.ExpressionNode, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.insights.ExpressionNode|undefined} value
+ * @return {!proto.api.v1alpha1.insights.TextValueCondition} returns this
+*/
+proto.api.v1alpha1.insights.TextValueCondition.prototype.setExpression = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.insights.TextValueCondition} returns this
+ */
+proto.api.v1alpha1.insights.TextValueCondition.prototype.clearExpression = function() {
+  return this.setExpression(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.TextValueCondition.prototype.hasExpression = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
