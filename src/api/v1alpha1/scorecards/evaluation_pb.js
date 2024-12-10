@@ -2090,7 +2090,7 @@ proto.api.v1alpha1.scorecards.ScoreEvaluationResponse.prototype.hasEvaluation = 
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.repeatedFields_ = [2,4,5,6];
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.repeatedFields_ = [2,4,5,6,14];
 
 
 
@@ -2129,7 +2129,8 @@ categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined
 agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
 returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+channelTypesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2199,6 +2200,12 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.deserializeBinaryFromReader
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDeleted(value);
+      break;
+    case 14:
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addChannelTypes(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -2277,6 +2284,13 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.serializeBinaryToWriter = f
   if (f) {
     writer.writeBool(
       11,
+      f
+    );
+  }
+  f = message.getChannelTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      14,
       f
     );
   }
@@ -2520,6 +2534,43 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getIsDeleted = fu
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setIsDeleted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
+/**
+ * repeated api.commons.ChannelType channel_types = 14;
+ * @return {!Array<!proto.api.commons.ChannelType>}
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getChannelTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.ChannelType>} value
+ * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setChannelTypesList = function(value) {
+  return jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.addChannelTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearChannelTypesList = function() {
+  return this.setChannelTypesList([]);
 };
 
 

@@ -263,6 +263,11 @@ export class ListEvaluationsRequest extends jspb.Message {
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
 
+  clearChannelTypesList(): void;
+  getChannelTypesList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
+  setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
+  addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -282,6 +287,7 @@ export namespace ListEvaluationsRequest {
     scorecardIdsList: Array<number>,
     returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     isDeleted: boolean,
+    channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
   }
 }
 

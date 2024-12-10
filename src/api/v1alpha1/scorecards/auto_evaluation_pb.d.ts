@@ -2,6 +2,7 @@
 // file: api/v1alpha1/scorecards/auto_evaluation.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
 
 export class GetAutoEvaluationRequest extends jspb.Message {
@@ -86,6 +87,11 @@ export class ListAutoEvaluationsRequest extends jspb.Message {
   setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
   addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
 
+  clearChannelTypesList(): void;
+  getChannelTypesList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
+  setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
+  addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAutoEvaluationsRequest): ListAutoEvaluationsRequest.AsObject;
@@ -107,6 +113,7 @@ export namespace ListAutoEvaluationsRequest {
     orderBy: string,
     pageToken: string,
     riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
+    channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
   }
 
   export class CallSidFilter extends jspb.Message {
