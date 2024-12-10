@@ -46,6 +46,15 @@ ExplorerService.GetQueryExplain = {
   responseType: api_v1alpha1_explorer_service_pb.QueryExplainResponse
 };
 
+ExplorerService.GetWeeksOfData = {
+  methodName: "GetWeeksOfData",
+  service: ExplorerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_explorer_service_pb.GetWeeksOfDataRequest,
+  responseType: api_v1alpha1_explorer_service_pb.GetWeeksOfDataResponse
+};
+
 exports.ExplorerService = ExplorerService;
 
 function ExplorerServiceClient(serviceHost, options) {
@@ -151,6 +160,37 @@ ExplorerServiceClient.prototype.getQueryExplain = function getQueryExplain(reque
     callback = arguments[1];
   }
   var client = grpc.unary(ExplorerService.GetQueryExplain, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ExplorerServiceClient.prototype.getWeeksOfData = function getWeeksOfData(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ExplorerService.GetWeeksOfData, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
