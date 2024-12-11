@@ -86,6 +86,15 @@ type ContactManagerGetContactFieldType = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse;
 };
 
+type ContactManagerListContactActivityLog = {
+  readonly methodName: string;
+  readonly service: typeof ContactManager;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogRequest;
+  readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogResponse;
+};
+
 export class ContactManager {
   static readonly serviceName: string;
   static readonly GetContactList: ContactManagerGetContactList;
@@ -97,6 +106,7 @@ export class ContactManager {
   static readonly EditContactEntry: ContactManagerEditContactEntry;
   static readonly ListContactsByEntity: ContactManagerListContactsByEntity;
   static readonly GetContactFieldType: ContactManagerGetContactFieldType;
+  static readonly ListContactActivityLog: ContactManagerListContactActivityLog;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -211,6 +221,15 @@ export class ContactManagerClient {
   getContactFieldType(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse|null) => void
+  ): UnaryResponse;
+  listContactActivityLog(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogResponse|null) => void
+  ): UnaryResponse;
+  listContactActivityLog(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactActivityLogResponse|null) => void
   ): UnaryResponse;
 }
 

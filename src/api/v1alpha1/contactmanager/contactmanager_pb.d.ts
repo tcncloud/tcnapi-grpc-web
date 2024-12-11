@@ -691,3 +691,97 @@ export namespace GetContactFieldTypeResponse {
   }
 }
 
+export class ListContactActivityLogRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactActivityLogRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactActivityLogRequest): ListContactActivityLogRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactActivityLogRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactActivityLogRequest;
+  static deserializeBinaryFromReader(message: ListContactActivityLogRequest, reader: jspb.BinaryReader): ListContactActivityLogRequest;
+}
+
+export namespace ListContactActivityLogRequest {
+  export type AsObject = {
+    orgId: string,
+    projectId: string,
+    contactManagerEntryId: string,
+  }
+}
+
+export class ListContactActivityLogResponse extends jspb.Message {
+  clearContactActivityLogList(): void;
+  getContactActivityLogList(): Array<ContactActivityLog>;
+  setContactActivityLogList(value: Array<ContactActivityLog>): void;
+  addContactActivityLog(value?: ContactActivityLog, index?: number): ContactActivityLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactActivityLogResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactActivityLogResponse): ListContactActivityLogResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactActivityLogResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactActivityLogResponse;
+  static deserializeBinaryFromReader(message: ListContactActivityLogResponse, reader: jspb.BinaryReader): ListContactActivityLogResponse;
+}
+
+export namespace ListContactActivityLogResponse {
+  export type AsObject = {
+    contactActivityLogList: Array<ContactActivityLog.AsObject>,
+  }
+}
+
+export class ContactActivityLog extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
+
+  getEventUser(): string;
+  setEventUser(value: string): void;
+
+  getEventTime(): string;
+  setEventTime(value: string): void;
+
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getEventType(): string;
+  setEventType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactActivityLog.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactActivityLog): ContactActivityLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactActivityLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactActivityLog;
+  static deserializeBinaryFromReader(message: ContactActivityLog, reader: jspb.BinaryReader): ContactActivityLog;
+}
+
+export namespace ContactActivityLog {
+  export type AsObject = {
+    orgId: string,
+    projectId: string,
+    contactManagerEntryId: string,
+    eventUser: string,
+    eventTime: string,
+    event: string,
+    eventType: string,
+  }
+}
+
