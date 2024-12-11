@@ -2,6 +2,7 @@
 // file: api/v1alpha1/contactmanager/contactmanager.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_audit_audit_pb from "../../../api/commons/audit/audit_pb";
 import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_contactmanager_pb from "../../../api/commons/contactmanager_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -754,14 +755,10 @@ export class ContactActivityLog extends jspb.Message {
   getEventUser(): string;
   setEventUser(value: string): void;
 
-  getEventTime(): string;
-  setEventTime(value: string): void;
-
-  getEvent(): string;
-  setEvent(value: string): void;
-
-  getEventType(): string;
-  setEventType(value: string): void;
+  clearEventsList(): void;
+  getEventsList(): Array<api_commons_audit_audit_pb.AuditEvent>;
+  setEventsList(value: Array<api_commons_audit_audit_pb.AuditEvent>): void;
+  addEvents(value?: api_commons_audit_audit_pb.AuditEvent, index?: number): api_commons_audit_audit_pb.AuditEvent;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactActivityLog.AsObject;
@@ -779,9 +776,7 @@ export namespace ContactActivityLog {
     projectId: string,
     contactManagerEntryId: string,
     eventUser: string,
-    eventTime: string,
-    event: string,
-    eventType: string,
+    eventsList: Array<api_commons_audit_audit_pb.AuditEvent.AsObject>,
   }
 }
 

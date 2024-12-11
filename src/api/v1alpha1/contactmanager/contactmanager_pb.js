@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_audit_audit_pb = require('../../../api/commons/audit/audit_pb.js');
+goog.object.extend(proto, api_commons_audit_audit_pb);
 var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
 goog.object.extend(proto, api_commons_classifier_pb);
 var api_commons_contactmanager_pb = require('../../../api/commons/contactmanager_pb.js');
@@ -615,7 +617,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.contactmanager.ContactActivityLog = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.contactmanager.ContactActivityLog.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.contactmanager.ContactActivityLog, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5829,6 +5831,13 @@ proto.api.v1alpha1.contactmanager.ListContactActivityLogResponse.prototype.clear
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.contactmanager.ContactActivityLog.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5864,9 +5873,8 @@ orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
 eventUser: jspb.Message.getFieldWithDefault(msg, 4, ""),
-eventTime: jspb.Message.getFieldWithDefault(msg, 5, ""),
-event: jspb.Message.getFieldWithDefault(msg, 6, ""),
-eventType: jspb.Message.getFieldWithDefault(msg, 7, "")
+eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+    api_commons_audit_audit_pb.AuditEvent.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5920,16 +5928,9 @@ proto.api.v1alpha1.contactmanager.ContactActivityLog.deserializeBinaryFromReader
       msg.setEventUser(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventTime(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEvent(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventType(value);
+      var value = new api_commons_audit_audit_pb.AuditEvent;
+      reader.readMessage(value,api_commons_audit_audit_pb.AuditEvent.deserializeBinaryFromReader);
+      msg.addEvents(value);
       break;
     default:
       reader.skipField();
@@ -5988,25 +5989,12 @@ proto.api.v1alpha1.contactmanager.ContactActivityLog.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getEventTime();
+  f = message.getEventsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedMessage(
       5,
-      f
-    );
-  }
-  f = message.getEvent();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getEventType();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
+      f,
+      api_commons_audit_audit_pb.AuditEvent.serializeBinaryToWriter
     );
   }
 };
@@ -6085,56 +6073,40 @@ proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.setEventUser = fu
 
 
 /**
- * optional string event_time = 5;
- * @return {string}
+ * repeated api.commons.audit.AuditEvent events = 5;
+ * @return {!Array<!proto.api.commons.audit.AuditEvent>}
  */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.getEventTime = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.getEventsList = function() {
+  return /** @type{!Array<!proto.api.commons.audit.AuditEvent>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_audit_audit_pb.AuditEvent, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {!Array<!proto.api.commons.audit.AuditEvent>} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactActivityLog} returns this
+*/
+proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.setEventsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.audit.AuditEvent=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.audit.AuditEvent}
+ */
+proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.addEvents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.api.commons.audit.AuditEvent, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.contactmanager.ContactActivityLog} returns this
  */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.setEventTime = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string event = 6;
- * @return {string}
- */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.getEvent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.contactmanager.ContactActivityLog} returns this
- */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.setEvent = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string event_type = 7;
- * @return {string}
- */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.getEventType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.contactmanager.ContactActivityLog} returns this
- */
-proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.setEventType = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+proto.api.v1alpha1.contactmanager.ContactActivityLog.prototype.clearEventsList = function() {
+  return this.setEventsList([]);
 };
 
 
