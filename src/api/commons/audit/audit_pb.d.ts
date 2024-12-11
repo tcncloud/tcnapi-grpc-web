@@ -644,6 +644,11 @@ export class AuditEvent extends jspb.Message {
   getContactManagerEntryExpungeEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
   setContactManagerEntryExpungeEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
 
+  hasContactManagerEntityAssociationEvent(): boolean;
+  clearContactManagerEntityAssociationEvent(): void;
+  getContactManagerEntityAssociationEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent | undefined;
+  setContactManagerEntityAssociationEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent): void;
+
   hasAccessTokensExpiringEvent(): boolean;
   clearAccessTokensExpiringEvent(): void;
   getAccessTokensExpiringEvent(): api_commons_audit_organization_events_pb.AccessTokensExpiringEvent | undefined;
@@ -789,6 +794,7 @@ export namespace AuditEvent {
     contactManagerKycVerificationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
     contactManagerEntryDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
     contactManagerEntryExpungeEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
+    contactManagerEntityAssociationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.AsObject,
     accessTokensExpiringEvent?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.AsObject,
   }
 
@@ -915,6 +921,7 @@ export namespace AuditEvent {
     CONTACT_MANAGER_KYC_VERIFICATION_EVENT = 1206,
     CONTACT_MANAGER_ENTRY_DELETE_EVENT = 1207,
     CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT = 1208,
+    CONTACT_MANAGER_ENTITY_ASSOCIATION_EVENT = 1209,
     ACCESS_TOKENS_EXPIRING_EVENT = 1300,
   }
 }

@@ -2,6 +2,7 @@
 // file: api/v1alpha1/contactmanager/contactmanager.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_audit_audit_pb from "../../../api/commons/audit/audit_pb";
 import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_contactmanager_pb from "../../../api/commons/contactmanager_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -283,6 +284,24 @@ export class ContactManagerEntry extends jspb.Message {
   getStatus(): api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap];
   setStatus(value: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap]): void;
 
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTtl(): number;
+  setTtl(value: number): void;
+
+  clearFileNameList(): void;
+  getFileNameList(): Array<string>;
+  setFileNameList(value: Array<string>): void;
+  addFileName(value: string, index?: number): string;
+
+  clearFieldList(): void;
+  getFieldList(): Array<ContactField>;
+  setFieldList(value: Array<ContactField>): void;
+  addField(value?: ContactField, index?: number): ContactField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntry): ContactManagerEntry.AsObject;
@@ -302,6 +321,10 @@ export namespace ContactManagerEntry {
     type: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     status: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap],
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ttl: number,
+    fileNameList: Array<string>,
+    fieldList: Array<ContactField.AsObject>,
   }
 }
 
@@ -340,6 +363,9 @@ export class ContactManagerList extends jspb.Message {
   getStatus(): api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap];
   setStatus(value: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap]): void;
 
+  getContactManagerListName(): string;
+  setContactManagerListName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerList.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerList): ContactManagerList.AsObject;
@@ -362,6 +388,7 @@ export namespace ContactManagerList {
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
     status: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap],
+    contactManagerListName: string,
   }
 }
 
@@ -688,6 +715,94 @@ export class GetContactFieldTypeResponse extends jspb.Message {
 export namespace GetContactFieldTypeResponse {
   export type AsObject = {
     fieldType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
+  }
+}
+
+export class ListContactActivityLogRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactActivityLogRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactActivityLogRequest): ListContactActivityLogRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactActivityLogRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactActivityLogRequest;
+  static deserializeBinaryFromReader(message: ListContactActivityLogRequest, reader: jspb.BinaryReader): ListContactActivityLogRequest;
+}
+
+export namespace ListContactActivityLogRequest {
+  export type AsObject = {
+    orgId: string,
+    projectId: string,
+    contactManagerEntryId: string,
+  }
+}
+
+export class ListContactActivityLogResponse extends jspb.Message {
+  clearContactActivityLogList(): void;
+  getContactActivityLogList(): Array<ContactActivityLog>;
+  setContactActivityLogList(value: Array<ContactActivityLog>): void;
+  addContactActivityLog(value?: ContactActivityLog, index?: number): ContactActivityLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactActivityLogResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactActivityLogResponse): ListContactActivityLogResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactActivityLogResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactActivityLogResponse;
+  static deserializeBinaryFromReader(message: ListContactActivityLogResponse, reader: jspb.BinaryReader): ListContactActivityLogResponse;
+}
+
+export namespace ListContactActivityLogResponse {
+  export type AsObject = {
+    contactActivityLogList: Array<ContactActivityLog.AsObject>,
+  }
+}
+
+export class ContactActivityLog extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
+
+  getEventUser(): string;
+  setEventUser(value: string): void;
+
+  hasEvent(): boolean;
+  clearEvent(): void;
+  getEvent(): api_commons_audit_audit_pb.AuditEvent | undefined;
+  setEvent(value?: api_commons_audit_audit_pb.AuditEvent): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactActivityLog.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactActivityLog): ContactActivityLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactActivityLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactActivityLog;
+  static deserializeBinaryFromReader(message: ContactActivityLog, reader: jspb.BinaryReader): ContactActivityLog;
+}
+
+export namespace ContactActivityLog {
+  export type AsObject = {
+    orgId: string,
+    projectId: string,
+    contactManagerEntryId: string,
+    eventUser: string,
+    event?: api_commons_audit_audit_pb.AuditEvent.AsObject,
   }
 }
 
