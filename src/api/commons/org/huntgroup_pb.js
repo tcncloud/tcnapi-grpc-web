@@ -6589,7 +6589,7 @@ name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 description: jspb.Message.getFieldWithDefault(msg, 2, ""),
 displayAllFields: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 definedFieldCount: jspb.Message.getFieldWithDefault(msg, 4, 0),
-propertySid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+templateSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -6644,7 +6644,7 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.deserial
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setPropertySid(value);
+      msg.setTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -6703,7 +6703,7 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.serializ
       f
     );
   }
-  f = message.getPropertySid();
+  f = message.getTemplateSid();
   if (f !== 0) {
     writer.writeInt64(
       5,
@@ -6786,10 +6786,10 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototyp
 
 
 /**
- * optional int64 property_sid = 5;
+ * optional int64 template_sid = 5;
  * @return {number}
  */
-proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.getPropertySid = function() {
+proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.getTemplateSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -6798,7 +6798,7 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototyp
  * @param {number} value
  * @return {!proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails} returns this
  */
-proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.setPropertySid = function(value) {
+proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.setTemplateSid = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
