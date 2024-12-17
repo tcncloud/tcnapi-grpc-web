@@ -152,7 +152,8 @@ isPrimaryKey: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 isLowCardinality: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
 columnDescription: jspb.Message.getFieldWithDefault(msg, 5, ""),
 isTimeFilter: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-isDefaultTimeFilter: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+isDefaultTimeFilter: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+isJoinColumn: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -216,6 +217,10 @@ proto.api.v1alpha1.explorer.SchemaField.deserializeBinaryFromReader = function(m
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDefaultTimeFilter(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsJoinColumn(value);
       break;
     default:
       reader.skipField();
@@ -292,6 +297,13 @@ proto.api.v1alpha1.explorer.SchemaField.serializeBinaryToWriter = function(messa
   if (f) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = message.getIsJoinColumn();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -421,6 +433,24 @@ proto.api.v1alpha1.explorer.SchemaField.prototype.getIsDefaultTimeFilter = funct
  */
 proto.api.v1alpha1.explorer.SchemaField.prototype.setIsDefaultTimeFilter = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional bool is_join_column = 8;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.getIsJoinColumn = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.explorer.SchemaField} returns this
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.setIsJoinColumn = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 

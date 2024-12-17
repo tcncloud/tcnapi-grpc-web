@@ -1056,6 +1056,11 @@ export class OutputConfiguration extends jspb.Message {
   getTableVisualization(): TableVisualization | undefined;
   setTableVisualization(value?: TableVisualization): void;
 
+  hasCardVisualization(): boolean;
+  clearCardVisualization(): void;
+  getCardVisualization(): CardVisualization | undefined;
+  setCardVisualization(value?: CardVisualization): void;
+
   hasCreateTime(): boolean;
   clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -1086,6 +1091,7 @@ export namespace OutputConfiguration {
     isDefault: boolean,
     blob: string,
     tableVisualization?: TableVisualization.AsObject,
+    cardVisualization?: CardVisualization.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
@@ -1094,6 +1100,7 @@ export namespace OutputConfiguration {
     BODY_NOT_SET = 0,
     BLOB = 7,
     TABLE_VISUALIZATION = 8,
+    CARD_VISUALIZATION = 11,
   }
 }
 
