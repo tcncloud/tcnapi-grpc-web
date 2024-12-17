@@ -851,6 +851,56 @@ export namespace AdherenceAgentState {
   }
 }
 
+export class AdherenceAgentStateViolation extends jspb.Message {
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearExpectedRtmStatesList(): void;
+  getExpectedRtmStatesList(): Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>;
+  setExpectedRtmStatesList(value: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>): void;
+  addExpectedRtmStates(value: RealTimeManagementStateMap[keyof RealTimeManagementStateMap], index?: number): RealTimeManagementStateMap[keyof RealTimeManagementStateMap];
+
+  getExpectedPauseCode(): string;
+  setExpectedPauseCode(value: string): void;
+
+  clearActualRtmStatesList(): void;
+  getActualRtmStatesList(): Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>;
+  setActualRtmStatesList(value: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>): void;
+  addActualRtmStates(value: RealTimeManagementStateMap[keyof RealTimeManagementStateMap], index?: number): RealTimeManagementStateMap[keyof RealTimeManagementStateMap];
+
+  getActualPauseCode(): string;
+  setActualPauseCode(value: string): void;
+
+  getViolationDurationSeconds(): number;
+  setViolationDurationSeconds(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceAgentStateViolation.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceAgentStateViolation): AdherenceAgentStateViolation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceAgentStateViolation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceAgentStateViolation;
+  static deserializeBinaryFromReader(message: AdherenceAgentStateViolation, reader: jspb.BinaryReader): AdherenceAgentStateViolation;
+}
+
+export namespace AdherenceAgentStateViolation {
+  export type AsObject = {
+    wfmAgentSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expectedRtmStatesList: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>,
+    expectedPauseCode: string,
+    actualRtmStatesList: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>,
+    actualPauseCode: string,
+    violationDurationSeconds: number,
+  }
+}
+
 export class AdherenceAgentStates extends jspb.Message {
   clearAgentStatesList(): void;
   getAgentStatesList(): Array<AdherenceAgentState>;
@@ -870,6 +920,28 @@ export class AdherenceAgentStates extends jspb.Message {
 export namespace AdherenceAgentStates {
   export type AsObject = {
     agentStatesList: Array<AdherenceAgentState.AsObject>,
+  }
+}
+
+export class AdherenceAgentStateViolations extends jspb.Message {
+  clearViolationsList(): void;
+  getViolationsList(): Array<AdherenceAgentStateViolation>;
+  setViolationsList(value: Array<AdherenceAgentStateViolation>): void;
+  addViolations(value?: AdherenceAgentStateViolation, index?: number): AdherenceAgentStateViolation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceAgentStateViolations.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceAgentStateViolations): AdherenceAgentStateViolations.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceAgentStateViolations, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceAgentStateViolations;
+  static deserializeBinaryFromReader(message: AdherenceAgentStateViolations, reader: jspb.BinaryReader): AdherenceAgentStateViolations;
+}
+
+export namespace AdherenceAgentStateViolations {
+  export type AsObject = {
+    violationsList: Array<AdherenceAgentStateViolation.AsObject>,
   }
 }
 

@@ -12336,6 +12336,9 @@ export class ListAdherenceAgentStatesRequest extends jspb.Message {
   getEndDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEndDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getIncludeViolations(): boolean;
+  setIncludeViolations(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStatesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesRequest): ListAdherenceAgentStatesRequest.AsObject;
@@ -12351,6 +12354,7 @@ export namespace ListAdherenceAgentStatesRequest {
     wfmAgentSidsList: Array<number>,
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    includeViolations: boolean,
   }
 }
 
@@ -12362,6 +12366,8 @@ export class ListAdherenceAgentStatesResponse extends jspb.Message {
   getLatestAgentStateDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLatestAgentStateDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getAgentStateViolationsMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStateViolations>;
+  clearAgentStateViolationsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesResponse): ListAdherenceAgentStatesResponse.AsObject;
@@ -12376,6 +12382,7 @@ export namespace ListAdherenceAgentStatesResponse {
   export type AsObject = {
     agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
     latestAgentStateDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    agentStateViolationsMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStateViolations.AsObject]>,
   }
 }
 

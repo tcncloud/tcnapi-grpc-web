@@ -99047,7 +99047,8 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.toObject = function(inclu
   var f, obj = {
 wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
 startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-endDatetime: (f = msg.getEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+endDatetime: (f = msg.getEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+includeViolations: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -99100,6 +99101,10 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.deserializeBinaryFromRead
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEndDatetime(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludeViolations(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -99150,6 +99155,13 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.serializeBinaryToWriter =
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getIncludeViolations();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
     );
   }
 };
@@ -99266,6 +99278,24 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.prototype.hasEndDatetime 
 };
 
 
+/**
+ * optional bool include_violations = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.prototype.getIncludeViolations = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesRequest.prototype.setIncludeViolations = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
 
 
 
@@ -99299,7 +99329,8 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.toObject = fun
 proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 agentStatesMap: (f = msg.getAgentStatesMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStates.toObject) : [],
-latestAgentStateDatetime: (f = msg.getLatestAgentStateDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+latestAgentStateDatetime: (f = msg.getLatestAgentStateDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentStateViolationsMap: (f = msg.getAgentStateViolationsMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStateViolations.toObject) : []
   };
 
   if (includeInstance) {
@@ -99347,6 +99378,12 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.deserializeBinaryFromRea
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLatestAgentStateDatetime(value);
       break;
+    case 3:
+      var value = msg.getAgentStateViolationsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt64, jspb.BinaryReader.prototype.readMessage, proto.api.commons.AdherenceAgentStateViolations.deserializeBinaryFromReader, 0, new proto.api.commons.AdherenceAgentStateViolations());
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -99387,6 +99424,10 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.serializeBinaryToWriter 
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
+  }
+  f = message.getAgentStateViolationsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeInt64, jspb.BinaryWriter.prototype.writeMessage, proto.api.commons.AdherenceAgentStateViolations.serializeBinaryToWriter);
   }
 };
 
@@ -99448,6 +99489,29 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.clearLatestAge
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.hasLatestAgentStateDatetime = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * map<int64, api.commons.AdherenceAgentStateViolations> agent_state_violations = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,!proto.api.commons.AdherenceAgentStateViolations>}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.getAgentStateViolationsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,!proto.api.commons.AdherenceAgentStateViolations>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      proto.api.commons.AdherenceAgentStateViolations));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.clearAgentStateViolationsMap = function() {
+  this.getAgentStateViolationsMap().clear();
+  return this;
 };
 
 
