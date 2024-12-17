@@ -2976,7 +2976,8 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.toObject = functi
  */
 proto.api.commons.audit.VanaCreateSentimentEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3017,6 +3018,10 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.deserializeBinaryFromReader
       var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMessageCount(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3053,6 +3058,13 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getMessageCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3071,6 +3083,24 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.getConversationSi
  */
 proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.setConversationSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 message_count = 2;
+ * @return {number}
+ */
+proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.getMessageCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Sms} returns this
+ */
+proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.setMessageCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3626,7 +3656,8 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.toObject = function
  */
 proto.api.commons.audit.VanaCreateSummaryEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3667,6 +3698,10 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.deserializeBinaryFromReader =
       var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMessageCount(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3703,6 +3738,13 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.serializeBinaryToWriter = fun
       f
     );
   }
+  f = message.getMessageCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3721,6 +3763,24 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.getConversationSid 
  */
 proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.setConversationSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 message_count = 2;
+ * @return {number}
+ */
+proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.getMessageCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Sms} returns this
+ */
+proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.setMessageCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

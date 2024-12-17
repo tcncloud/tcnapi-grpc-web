@@ -381,6 +381,9 @@ export namespace VanaCreateSentimentEvent {
     getConversationSid(): number;
     setConversationSid(value: number): void;
 
+    getMessageCount(): number;
+    setMessageCount(value: number): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
     static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -394,6 +397,7 @@ export namespace VanaCreateSentimentEvent {
   export namespace Sms {
     export type AsObject = {
       conversationSid: number,
+      messageCount: number,
     }
   }
 
@@ -476,6 +480,9 @@ export namespace VanaCreateSummaryEvent {
     getConversationSid(): number;
     setConversationSid(value: number): void;
 
+    getMessageCount(): number;
+    setMessageCount(value: number): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
     static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -489,6 +496,7 @@ export namespace VanaCreateSummaryEvent {
   export namespace Sms {
     export type AsObject = {
       conversationSid: number,
+      messageCount: number,
     }
   }
 
