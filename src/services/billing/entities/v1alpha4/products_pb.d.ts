@@ -221,6 +221,16 @@ export class ProductConfig extends jspb.Message {
   getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
   setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
 
+  hasWorkforceEngagementWorkforceOptimizationAiBundle(): boolean;
+  clearWorkforceEngagementWorkforceOptimizationAiBundle(): void;
+  getWorkforceEngagementWorkforceOptimizationAiBundle(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforceEngagementWorkforceOptimizationAiBundle(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
+  hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedCallTranscripts(): boolean;
+  clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedCallTranscripts(): void;
+  getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
   getConfigCase(): ProductConfig.ConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductConfig.AsObject;
@@ -277,6 +287,8 @@ export namespace ProductConfig {
     dataManagementComplianceComplianceRndQueryCached?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforceEngagementWorkforceOptimizationAiBundle?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforceEngagementWorkforceOptimizationAiBundleAccumulatedCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
   }
 
   export enum ConfigCase {
@@ -324,6 +336,8 @@ export namespace ProductConfig {
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED = 10001,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS = 20000,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS = 20001,
+    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE = 30000,
+    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_CALL_TRANSCRIPTS = 30001,
   }
 }
 
