@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -1016,6 +1017,105 @@ export namespace ScorecardsCreateAutoEvaluationEvent {
     transcriptSid: number,
     riskLevel: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap],
     autoEvaluation?: api_commons_scorecards_pb.AutoEvaluation.AsObject,
+  }
+}
+
+export class ScorecardsCreateSmartEvaluationEvent extends jspb.Message {
+  getSmartEvaluationId(): number;
+  setSmartEvaluationId(value: number): void;
+
+  hasCall(): boolean;
+  clearCall(): void;
+  getCall(): ScorecardsCreateSmartEvaluationEvent.Call | undefined;
+  setCall(value?: ScorecardsCreateSmartEvaluationEvent.Call): void;
+
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): ScorecardsCreateSmartEvaluationEvent.Sms | undefined;
+  setSms(value?: ScorecardsCreateSmartEvaluationEvent.Sms): void;
+
+  getMetadataCase(): ScorecardsCreateSmartEvaluationEvent.MetadataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScorecardsCreateSmartEvaluationEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ScorecardsCreateSmartEvaluationEvent): ScorecardsCreateSmartEvaluationEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScorecardsCreateSmartEvaluationEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScorecardsCreateSmartEvaluationEvent;
+  static deserializeBinaryFromReader(message: ScorecardsCreateSmartEvaluationEvent, reader: jspb.BinaryReader): ScorecardsCreateSmartEvaluationEvent;
+}
+
+export namespace ScorecardsCreateSmartEvaluationEvent {
+  export type AsObject = {
+    smartEvaluationId: number,
+    call?: ScorecardsCreateSmartEvaluationEvent.Call.AsObject,
+    sms?: ScorecardsCreateSmartEvaluationEvent.Sms.AsObject,
+  }
+
+  export class Call extends jspb.Message {
+    getCallSid(): number;
+    setCallSid(value: number): void;
+
+    getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+    hasTalkTime(): boolean;
+    clearTalkTime(): void;
+    getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
+    setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasAudioTime(): boolean;
+    clearAudioTime(): void;
+    getAudioTime(): google_protobuf_duration_pb.Duration | undefined;
+    setAudioTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Call.AsObject;
+    static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Call, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Call;
+    static deserializeBinaryFromReader(message: Call, reader: jspb.BinaryReader): Call;
+  }
+
+  export namespace Call {
+    export type AsObject = {
+      callSid: number,
+      callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+      talkTime?: google_protobuf_duration_pb.Duration.AsObject,
+      audioTime?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class Sms extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    getMessageCount(): number;
+    setMessageCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Sms.AsObject;
+    static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Sms, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Sms;
+    static deserializeBinaryFromReader(message: Sms, reader: jspb.BinaryReader): Sms;
+  }
+
+  export namespace Sms {
+    export type AsObject = {
+      conversationSid: number,
+      messageCount: number,
+    }
+  }
+
+  export enum MetadataCase {
+    METADATA_NOT_SET = 0,
+    CALL = 2,
+    SMS = 3,
   }
 }
 
