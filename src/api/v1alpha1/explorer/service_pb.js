@@ -1553,7 +1553,8 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.toObject = function(opt_incl
 proto.api.v1alpha1.explorer.QueryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 resultUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0)
+resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -1598,6 +1599,12 @@ proto.api.v1alpha1.explorer.QueryResponse.deserializeBinaryFromReader = function
       var value = /** @type {number} */ (reader.readInt64());
       msg.setResultSizeBytes(value);
       break;
+    case 3:
+      var value = msg.getTimeFilteredDatasourcesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -1641,6 +1648,10 @@ proto.api.v1alpha1.explorer.QueryResponse.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getTimeFilteredDatasourcesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+  }
 };
 
 
@@ -1677,6 +1688,29 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.getResultSizeBytes = functio
  */
 proto.api.v1alpha1.explorer.QueryResponse.prototype.setResultSizeBytes = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * map<string, bool> time_filtered_datasources = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.api.v1alpha1.explorer.QueryResponse.prototype.getTimeFilteredDatasourcesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.explorer.QueryResponse} returns this
+ */
+proto.api.v1alpha1.explorer.QueryResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
+  this.getTimeFilteredDatasourcesMap().clear();
+  return this;
 };
 
 
@@ -1897,7 +1931,8 @@ resultUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
 resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 prql: jspb.Message.getFieldWithDefault(msg, 3, ""),
 sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
-explain: jspb.Message.getFieldWithDefault(msg, 5, "")
+explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -1953,6 +1988,12 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.deserializeBinaryFromReader = f
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setExplain(value);
+      break;
+    case 6:
+      var value = msg.getTimeFilteredDatasourcesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     default:
       reader.skipField();
@@ -2017,6 +2058,10 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.serializeBinaryToWriter = funct
       5,
       f
     );
+  }
+  f = message.getTimeFilteredDatasourcesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
 };
 
@@ -2108,6 +2153,29 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getExplain = function
  */
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setExplain = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * map<string, bool> time_filtered_datasources = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getTimeFilteredDatasourcesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
+ */
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
+  this.getTimeFilteredDatasourcesMap().clear();
+  return this;
 };
 
 
@@ -2298,7 +2366,8 @@ resultUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
 resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 prql: jspb.Message.getFieldWithDefault(msg, 3, ""),
 sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
-explain: jspb.Message.getFieldWithDefault(msg, 5, "")
+explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2354,6 +2423,12 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.deserializeBinaryFromReader = f
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setExplain(value);
+      break;
+    case 6:
+      var value = msg.getTimeFilteredDatasourcesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     default:
       reader.skipField();
@@ -2418,6 +2493,10 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.serializeBinaryToWriter = funct
       5,
       f
     );
+  }
+  f = message.getTimeFilteredDatasourcesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
 };
 
@@ -2509,6 +2588,29 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getExplain = function
  */
 proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setExplain = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * map<string, bool> time_filtered_datasources = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getTimeFilteredDatasourcesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.explorer.QueryExplainResponse} returns this
+ */
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
+  this.getTimeFilteredDatasourcesMap().clear();
+  return this;
 };
 
 

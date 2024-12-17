@@ -191,6 +191,8 @@ export class QueryResponse extends jspb.Message {
   getResultSizeBytes(): number;
   setResultSizeBytes(value: number): void;
 
+  getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
+  clearTimeFilteredDatasourcesMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResponse): QueryResponse.AsObject;
@@ -205,6 +207,7 @@ export namespace QueryResponse {
   export type AsObject = {
     resultUrl: string,
     resultSizeBytes: number,
+    timeFilteredDatasourcesMap: Array<[string, boolean]>,
   }
 }
 
@@ -250,6 +253,8 @@ export class SupportQueryResponse extends jspb.Message {
   getExplain(): string;
   setExplain(value: string): void;
 
+  getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
+  clearTimeFilteredDatasourcesMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
@@ -267,6 +272,7 @@ export namespace SupportQueryResponse {
     prql: string,
     sql: string,
     explain: string,
+    timeFilteredDatasourcesMap: Array<[string, boolean]>,
   }
 }
 
@@ -308,6 +314,8 @@ export class QueryExplainResponse extends jspb.Message {
   getExplain(): string;
   setExplain(value: string): void;
 
+  getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
+  clearTimeFilteredDatasourcesMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
@@ -325,6 +333,7 @@ export namespace QueryExplainResponse {
     prql: string,
     sql: string,
     explain: string,
+    timeFilteredDatasourcesMap: Array<[string, boolean]>,
   }
 }
 
