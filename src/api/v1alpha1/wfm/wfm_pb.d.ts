@@ -12156,6 +12156,576 @@ export namespace ReplaceAgentOnScheduleRes {
   }
 }
 
+export class CreatePublishedShiftRequest extends jspb.Message {
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsLocked(): boolean;
+  setIsLocked(value: boolean): void;
+
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedShiftRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedShiftRequest): CreatePublishedShiftRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedShiftRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedShiftRequest;
+  static deserializeBinaryFromReader(message: CreatePublishedShiftRequest, reader: jspb.BinaryReader): CreatePublishedShiftRequest;
+}
+
+export namespace CreatePublishedShiftRequest {
+  export type AsObject = {
+    shiftTemplateSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isLocked: boolean,
+    wfmAgentSidsList: Array<number>,
+  }
+}
+
+export class CreatePublishedShiftResponse extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedShiftResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedShiftResponse): CreatePublishedShiftResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedShiftResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedShiftResponse;
+  static deserializeBinaryFromReader(message: CreatePublishedShiftResponse, reader: jspb.BinaryReader): CreatePublishedShiftResponse;
+}
+
+export namespace CreatePublishedShiftResponse {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class CreatePublishedShiftWithSegmentsRequest extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  getIgnoreDiagnosticsErrors(): boolean;
+  setIgnoreDiagnosticsErrors(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedShiftWithSegmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedShiftWithSegmentsRequest): CreatePublishedShiftWithSegmentsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedShiftWithSegmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedShiftWithSegmentsRequest;
+  static deserializeBinaryFromReader(message: CreatePublishedShiftWithSegmentsRequest, reader: jspb.BinaryReader): CreatePublishedShiftWithSegmentsRequest;
+}
+
+export namespace CreatePublishedShiftWithSegmentsRequest {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    ignoreDiagnosticsErrors: boolean,
+  }
+}
+
+export class CreatePublishedShiftWithSegmentsResponse extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePublishedShiftWithSegmentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePublishedShiftWithSegmentsResponse): CreatePublishedShiftWithSegmentsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePublishedShiftWithSegmentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePublishedShiftWithSegmentsResponse;
+  static deserializeBinaryFromReader(message: CreatePublishedShiftWithSegmentsResponse, reader: jspb.BinaryReader): CreatePublishedShiftWithSegmentsResponse;
+}
+
+export namespace CreatePublishedShiftWithSegmentsResponse {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class UpdatePublishedShiftRequest extends jspb.Message {
+  getShiftInstanceSid(): number;
+  setShiftInstanceSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getWidthInMinutes(): number;
+  setWidthInMinutes(value: number): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  getIsLocked(): boolean;
+  setIsLocked(value: boolean): void;
+
+  getPlannedShrinkagePercent(): number;
+  setPlannedShrinkagePercent(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePublishedShiftRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePublishedShiftRequest): UpdatePublishedShiftRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePublishedShiftRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePublishedShiftRequest;
+  static deserializeBinaryFromReader(message: UpdatePublishedShiftRequest, reader: jspb.BinaryReader): UpdatePublishedShiftRequest;
+}
+
+export namespace UpdatePublishedShiftRequest {
+  export type AsObject = {
+    shiftInstanceSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    widthInMinutes: number,
+    wfmAgentSid: number,
+    isLocked: boolean,
+    plannedShrinkagePercent: number,
+  }
+}
+
+export class UpdatePublishedShiftResponse extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePublishedShiftResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePublishedShiftResponse): UpdatePublishedShiftResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePublishedShiftResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePublishedShiftResponse;
+  static deserializeBinaryFromReader(message: UpdatePublishedShiftResponse, reader: jspb.BinaryReader): UpdatePublishedShiftResponse;
+}
+
+export namespace UpdatePublishedShiftResponse {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class UpdatePublishedShiftWithSegmentsRequest extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  getIgnoreDiagnosticsErrors(): boolean;
+  setIgnoreDiagnosticsErrors(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePublishedShiftWithSegmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePublishedShiftWithSegmentsRequest): UpdatePublishedShiftWithSegmentsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePublishedShiftWithSegmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePublishedShiftWithSegmentsRequest;
+  static deserializeBinaryFromReader(message: UpdatePublishedShiftWithSegmentsRequest, reader: jspb.BinaryReader): UpdatePublishedShiftWithSegmentsRequest;
+}
+
+export namespace UpdatePublishedShiftWithSegmentsRequest {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    ignoreDiagnosticsErrors: boolean,
+  }
+}
+
+export class UpdatePublishedShiftWithSegmentsResponse extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePublishedShiftWithSegmentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePublishedShiftWithSegmentsResponse): UpdatePublishedShiftWithSegmentsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePublishedShiftWithSegmentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePublishedShiftWithSegmentsResponse;
+  static deserializeBinaryFromReader(message: UpdatePublishedShiftWithSegmentsResponse, reader: jspb.BinaryReader): UpdatePublishedShiftWithSegmentsResponse;
+}
+
+export namespace UpdatePublishedShiftWithSegmentsResponse {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class SplitPublishedShiftRequest extends jspb.Message {
+  getShiftInstanceSid(): number;
+  setShiftInstanceSid(value: number): void;
+
+  hasTimeToSplit(): boolean;
+  clearTimeToSplit(): void;
+  getTimeToSplit(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeToSplit(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitPublishedShiftRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitPublishedShiftRequest): SplitPublishedShiftRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitPublishedShiftRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitPublishedShiftRequest;
+  static deserializeBinaryFromReader(message: SplitPublishedShiftRequest, reader: jspb.BinaryReader): SplitPublishedShiftRequest;
+}
+
+export namespace SplitPublishedShiftRequest {
+  export type AsObject = {
+    shiftInstanceSid: number,
+    timeToSplit?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class SplitPublishedShiftResponse extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitPublishedShiftResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitPublishedShiftResponse): SplitPublishedShiftResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitPublishedShiftResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitPublishedShiftResponse;
+  static deserializeBinaryFromReader(message: SplitPublishedShiftResponse, reader: jspb.BinaryReader): SplitPublishedShiftResponse;
+}
+
+export namespace SplitPublishedShiftResponse {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class SwapPublishedShiftsRequest extends jspb.Message {
+  getWfmAgentSid1(): number;
+  setWfmAgentSid1(value: number): void;
+
+  getWfmAgentSid2(): number;
+  setWfmAgentSid2(value: number): void;
+
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SwapPublishedShiftsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SwapPublishedShiftsRequest): SwapPublishedShiftsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SwapPublishedShiftsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SwapPublishedShiftsRequest;
+  static deserializeBinaryFromReader(message: SwapPublishedShiftsRequest, reader: jspb.BinaryReader): SwapPublishedShiftsRequest;
+}
+
+export namespace SwapPublishedShiftsRequest {
+  export type AsObject = {
+    wfmAgentSid1: number,
+    wfmAgentSid2: number,
+    shiftInstanceSidsList: Array<number>,
+  }
+}
+
+export class SwapPublishedShiftsResponse extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SwapPublishedShiftsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SwapPublishedShiftsResponse): SwapPublishedShiftsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SwapPublishedShiftsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SwapPublishedShiftsResponse;
+  static deserializeBinaryFromReader(message: SwapPublishedShiftsResponse, reader: jspb.BinaryReader): SwapPublishedShiftsResponse;
+}
+
+export namespace SwapPublishedShiftsResponse {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class DeletePublishedShiftsRequest extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePublishedShiftsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePublishedShiftsRequest): DeletePublishedShiftsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePublishedShiftsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePublishedShiftsRequest;
+  static deserializeBinaryFromReader(message: DeletePublishedShiftsRequest, reader: jspb.BinaryReader): DeletePublishedShiftsRequest;
+}
+
+export namespace DeletePublishedShiftsRequest {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+  }
+}
+
+export class DeletePublishedShiftsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePublishedShiftsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePublishedShiftsResponse): DeletePublishedShiftsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePublishedShiftsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePublishedShiftsResponse;
+  static deserializeBinaryFromReader(message: DeletePublishedShiftsResponse, reader: jspb.BinaryReader): DeletePublishedShiftsResponse;
+}
+
+export namespace DeletePublishedShiftsResponse {
+  export type AsObject = {
+  }
+}
+
+export class ReplaceAgentOnPublishedScheduleRequest extends jspb.Message {
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getWfmAgentSidToRemove(): number;
+  setWfmAgentSidToRemove(value: number): void;
+
+  getWfmAgentSidToAdd(): number;
+  setWfmAgentSidToAdd(value: number): void;
+
+  getSkipOverlappingShifts(): boolean;
+  setSkipOverlappingShifts(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReplaceAgentOnPublishedScheduleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ReplaceAgentOnPublishedScheduleRequest): ReplaceAgentOnPublishedScheduleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReplaceAgentOnPublishedScheduleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReplaceAgentOnPublishedScheduleRequest;
+  static deserializeBinaryFromReader(message: ReplaceAgentOnPublishedScheduleRequest, reader: jspb.BinaryReader): ReplaceAgentOnPublishedScheduleRequest;
+}
+
+export namespace ReplaceAgentOnPublishedScheduleRequest {
+  export type AsObject = {
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    wfmAgentSidToRemove: number,
+    wfmAgentSidToAdd: number,
+    skipOverlappingShifts: boolean,
+  }
+}
+
+export class ReplaceAgentOnPublishedScheduleResponse extends jspb.Message {
+  clearUpdatedShiftInstancesList(): void;
+  getUpdatedShiftInstancesList(): Array<ShiftInstance>;
+  setUpdatedShiftInstancesList(value: Array<ShiftInstance>): void;
+  addUpdatedShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReplaceAgentOnPublishedScheduleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ReplaceAgentOnPublishedScheduleResponse): ReplaceAgentOnPublishedScheduleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReplaceAgentOnPublishedScheduleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReplaceAgentOnPublishedScheduleResponse;
+  static deserializeBinaryFromReader(message: ReplaceAgentOnPublishedScheduleResponse, reader: jspb.BinaryReader): ReplaceAgentOnPublishedScheduleResponse;
+}
+
+export namespace ReplaceAgentOnPublishedScheduleResponse {
+  export type AsObject = {
+    updatedShiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class RemoveAgentFromPublishedScheduleRequest extends jspb.Message {
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromPublishedScheduleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromPublishedScheduleRequest): RemoveAgentFromPublishedScheduleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromPublishedScheduleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromPublishedScheduleRequest;
+  static deserializeBinaryFromReader(message: RemoveAgentFromPublishedScheduleRequest, reader: jspb.BinaryReader): RemoveAgentFromPublishedScheduleRequest;
+}
+
+export namespace RemoveAgentFromPublishedScheduleRequest {
+  export type AsObject = {
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    wfmAgentSid: number,
+    nodeSelector?: ParentEntity.AsObject,
+    scheduleScenarioSid: number,
+  }
+}
+
+export class RemoveAgentFromPublishedScheduleResponse extends jspb.Message {
+  getUnassignedWfmAgentSid(): number;
+  setUnassignedWfmAgentSid(value: number): void;
+
+  clearUpdatedShiftsList(): void;
+  getUpdatedShiftsList(): Array<ShiftInstance>;
+  setUpdatedShiftsList(value: Array<ShiftInstance>): void;
+  addUpdatedShifts(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromPublishedScheduleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromPublishedScheduleResponse): RemoveAgentFromPublishedScheduleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromPublishedScheduleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromPublishedScheduleResponse;
+  static deserializeBinaryFromReader(message: RemoveAgentFromPublishedScheduleResponse, reader: jspb.BinaryReader): RemoveAgentFromPublishedScheduleResponse;
+}
+
+export namespace RemoveAgentFromPublishedScheduleResponse {
+  export type AsObject = {
+    unassignedWfmAgentSid: number,
+    updatedShiftsList: Array<ShiftInstance.AsObject>,
+  }
+}
+
+export class CopyShiftsToPublishedScheduleRequest extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getOverlapAsWarning(): boolean;
+  setOverlapAsWarning(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftsToPublishedScheduleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftsToPublishedScheduleRequest): CopyShiftsToPublishedScheduleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftsToPublishedScheduleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftsToPublishedScheduleRequest;
+  static deserializeBinaryFromReader(message: CopyShiftsToPublishedScheduleRequest, reader: jspb.BinaryReader): CopyShiftsToPublishedScheduleRequest;
+}
+
+export namespace CopyShiftsToPublishedScheduleRequest {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+    overlapAsWarning: boolean,
+  }
+}
+
+export class CopyShiftsToPublishedScheduleResponse extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftsToPublishedScheduleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftsToPublishedScheduleResponse): CopyShiftsToPublishedScheduleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftsToPublishedScheduleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftsToPublishedScheduleResponse;
+  static deserializeBinaryFromReader(message: CopyShiftsToPublishedScheduleResponse, reader: jspb.BinaryReader): CopyShiftsToPublishedScheduleResponse;
+}
+
+export namespace CopyShiftsToPublishedScheduleResponse {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class RgbaColor extends jspb.Message {
   getRed(): number;
   setRed(value: number): void;

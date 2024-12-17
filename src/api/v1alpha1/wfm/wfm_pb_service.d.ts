@@ -1615,6 +1615,96 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
+type WFMCreatePublishedShift = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftResponse;
+};
+
+type WFMCreatePublishedShiftWithSegments = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsResponse;
+};
+
+type WFMUpdatePublishedShift = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftResponse;
+};
+
+type WFMUpdatePublishedShiftWithSegments = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsResponse;
+};
+
+type WFMSplitPublishedShift = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftResponse;
+};
+
+type WFMSwapPublishedShifts = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsResponse;
+};
+
+type WFMDeletePublishedShifts = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsResponse;
+};
+
+type WFMReplaceAgentOnPublishedSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleResponse;
+};
+
+type WFMRemoveAgentFromPublishedSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleResponse;
+};
+
+type WFMCopyShiftsToPublishedSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleResponse;
+};
+
 type WFMCreateAgentLeavePetition = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2138,6 +2228,16 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
+  static readonly CreatePublishedShift: WFMCreatePublishedShift;
+  static readonly CreatePublishedShiftWithSegments: WFMCreatePublishedShiftWithSegments;
+  static readonly UpdatePublishedShift: WFMUpdatePublishedShift;
+  static readonly UpdatePublishedShiftWithSegments: WFMUpdatePublishedShiftWithSegments;
+  static readonly SplitPublishedShift: WFMSplitPublishedShift;
+  static readonly SwapPublishedShifts: WFMSwapPublishedShifts;
+  static readonly DeletePublishedShifts: WFMDeletePublishedShifts;
+  static readonly ReplaceAgentOnPublishedSchedule: WFMReplaceAgentOnPublishedSchedule;
+  static readonly RemoveAgentFromPublishedSchedule: WFMRemoveAgentFromPublishedSchedule;
+  static readonly CopyShiftsToPublishedSchedule: WFMCopyShiftsToPublishedSchedule;
   static readonly CreateAgentLeavePetition: WFMCreateAgentLeavePetition;
   static readonly ListAgentLeavePetitions: WFMListAgentLeavePetitions;
   static readonly ArchiveAgentLeavePetition: WFMArchiveAgentLeavePetition;
@@ -3772,6 +3872,96 @@ export class WFMClient {
   removeAgentFromSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
+  ): UnaryResponse;
+  createPublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  createPublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  createPublishedShiftWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  createPublishedShiftWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  updatePublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  updatePublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  updatePublishedShiftWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  updatePublishedShiftWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  splitPublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  splitPublishedShift(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftResponse|null) => void
+  ): UnaryResponse;
+  swapPublishedShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsResponse|null) => void
+  ): UnaryResponse;
+  swapPublishedShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsResponse|null) => void
+  ): UnaryResponse;
+  deletePublishedShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsResponse|null) => void
+  ): UnaryResponse;
+  deletePublishedShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsResponse|null) => void
+  ): UnaryResponse;
+  replaceAgentOnPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleResponse|null) => void
+  ): UnaryResponse;
+  replaceAgentOnPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleResponse|null) => void
+  ): UnaryResponse;
+  removeAgentFromPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleResponse|null) => void
+  ): UnaryResponse;
+  removeAgentFromPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleResponse|null) => void
+  ): UnaryResponse;
+  copyShiftsToPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleResponse|null) => void
+  ): UnaryResponse;
+  copyShiftsToPublishedSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleResponse|null) => void
   ): UnaryResponse;
   createAgentLeavePetition(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionRequest,

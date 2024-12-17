@@ -1621,6 +1621,96 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
+WFM.CreatePublishedShift = {
+  methodName: "CreatePublishedShift",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftResponse
+};
+
+WFM.CreatePublishedShiftWithSegments = {
+  methodName: "CreatePublishedShiftWithSegments",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreatePublishedShiftWithSegmentsResponse
+};
+
+WFM.UpdatePublishedShift = {
+  methodName: "UpdatePublishedShift",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftResponse
+};
+
+WFM.UpdatePublishedShiftWithSegments = {
+  methodName: "UpdatePublishedShiftWithSegments",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdatePublishedShiftWithSegmentsResponse
+};
+
+WFM.SplitPublishedShift = {
+  methodName: "SplitPublishedShift",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.SplitPublishedShiftResponse
+};
+
+WFM.SwapPublishedShifts = {
+  methodName: "SwapPublishedShifts",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.SwapPublishedShiftsResponse
+};
+
+WFM.DeletePublishedShifts = {
+  methodName: "DeletePublishedShifts",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeletePublishedShiftsResponse
+};
+
+WFM.ReplaceAgentOnPublishedSchedule = {
+  methodName: "ReplaceAgentOnPublishedSchedule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnPublishedScheduleResponse
+};
+
+WFM.RemoveAgentFromPublishedSchedule = {
+  methodName: "RemoveAgentFromPublishedSchedule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromPublishedScheduleResponse
+};
+
+WFM.CopyShiftsToPublishedSchedule = {
+  methodName: "CopyShiftsToPublishedSchedule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CopyShiftsToPublishedScheduleResponse
+};
+
 WFM.CreateAgentLeavePetition = {
   methodName: "CreateAgentLeavePetition",
   service: WFM,
@@ -7541,6 +7631,316 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.RemoveAgentFromSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createPublishedShift = function createPublishedShift(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreatePublishedShift, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createPublishedShiftWithSegments = function createPublishedShiftWithSegments(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreatePublishedShiftWithSegments, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updatePublishedShift = function updatePublishedShift(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdatePublishedShift, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updatePublishedShiftWithSegments = function updatePublishedShiftWithSegments(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdatePublishedShiftWithSegments, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.splitPublishedShift = function splitPublishedShift(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SplitPublishedShift, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.swapPublishedShifts = function swapPublishedShifts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SwapPublishedShifts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deletePublishedShifts = function deletePublishedShifts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeletePublishedShifts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.replaceAgentOnPublishedSchedule = function replaceAgentOnPublishedSchedule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ReplaceAgentOnPublishedSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.removeAgentFromPublishedSchedule = function removeAgentFromPublishedSchedule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.RemoveAgentFromPublishedSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.copyShiftsToPublishedSchedule = function copyShiftsToPublishedSchedule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CopyShiftsToPublishedSchedule, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
