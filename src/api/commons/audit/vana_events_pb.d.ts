@@ -309,3 +309,193 @@ export namespace VanaCreateTranscriptEvent {
   }
 }
 
+export class VanaCreateSentimentEvent extends jspb.Message {
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  hasCall(): boolean;
+  clearCall(): void;
+  getCall(): VanaCreateSentimentEvent.Call | undefined;
+  setCall(value?: VanaCreateSentimentEvent.Call): void;
+
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): VanaCreateSentimentEvent.Sms | undefined;
+  setSms(value?: VanaCreateSentimentEvent.Sms): void;
+
+  getMetadataCase(): VanaCreateSentimentEvent.MetadataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VanaCreateSentimentEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VanaCreateSentimentEvent): VanaCreateSentimentEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VanaCreateSentimentEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VanaCreateSentimentEvent;
+  static deserializeBinaryFromReader(message: VanaCreateSentimentEvent, reader: jspb.BinaryReader): VanaCreateSentimentEvent;
+}
+
+export namespace VanaCreateSentimentEvent {
+  export type AsObject = {
+    transcriptSid: number,
+    call?: VanaCreateSentimentEvent.Call.AsObject,
+    sms?: VanaCreateSentimentEvent.Sms.AsObject,
+  }
+
+  export class Call extends jspb.Message {
+    getCallSid(): number;
+    setCallSid(value: number): void;
+
+    getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+    hasTalkTime(): boolean;
+    clearTalkTime(): void;
+    getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
+    setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasAudioTime(): boolean;
+    clearAudioTime(): void;
+    getAudioTime(): google_protobuf_duration_pb.Duration | undefined;
+    setAudioTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Call.AsObject;
+    static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Call, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Call;
+    static deserializeBinaryFromReader(message: Call, reader: jspb.BinaryReader): Call;
+  }
+
+  export namespace Call {
+    export type AsObject = {
+      callSid: number,
+      callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+      talkTime?: google_protobuf_duration_pb.Duration.AsObject,
+      audioTime?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class Sms extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Sms.AsObject;
+    static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Sms, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Sms;
+    static deserializeBinaryFromReader(message: Sms, reader: jspb.BinaryReader): Sms;
+  }
+
+  export namespace Sms {
+    export type AsObject = {
+      conversationSid: number,
+    }
+  }
+
+  export enum MetadataCase {
+    METADATA_NOT_SET = 0,
+    CALL = 2,
+    SMS = 3,
+  }
+}
+
+export class VanaCreateSummaryEvent extends jspb.Message {
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  hasCall(): boolean;
+  clearCall(): void;
+  getCall(): VanaCreateSummaryEvent.Call | undefined;
+  setCall(value?: VanaCreateSummaryEvent.Call): void;
+
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): VanaCreateSummaryEvent.Sms | undefined;
+  setSms(value?: VanaCreateSummaryEvent.Sms): void;
+
+  getMetadataCase(): VanaCreateSummaryEvent.MetadataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VanaCreateSummaryEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VanaCreateSummaryEvent): VanaCreateSummaryEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VanaCreateSummaryEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VanaCreateSummaryEvent;
+  static deserializeBinaryFromReader(message: VanaCreateSummaryEvent, reader: jspb.BinaryReader): VanaCreateSummaryEvent;
+}
+
+export namespace VanaCreateSummaryEvent {
+  export type AsObject = {
+    transcriptSid: number,
+    call?: VanaCreateSummaryEvent.Call.AsObject,
+    sms?: VanaCreateSummaryEvent.Sms.AsObject,
+  }
+
+  export class Call extends jspb.Message {
+    getCallSid(): number;
+    setCallSid(value: number): void;
+
+    getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+    hasTalkTime(): boolean;
+    clearTalkTime(): void;
+    getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
+    setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasAudioTime(): boolean;
+    clearAudioTime(): void;
+    getAudioTime(): google_protobuf_duration_pb.Duration | undefined;
+    setAudioTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Call.AsObject;
+    static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Call, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Call;
+    static deserializeBinaryFromReader(message: Call, reader: jspb.BinaryReader): Call;
+  }
+
+  export namespace Call {
+    export type AsObject = {
+      callSid: number,
+      callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+      talkTime?: google_protobuf_duration_pb.Duration.AsObject,
+      audioTime?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class Sms extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Sms.AsObject;
+    static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Sms, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Sms;
+    static deserializeBinaryFromReader(message: Sms, reader: jspb.BinaryReader): Sms;
+  }
+
+  export namespace Sms {
+    export type AsObject = {
+      conversationSid: number,
+    }
+  }
+
+  export enum MetadataCase {
+    METADATA_NOT_SET = 0,
+    CALL = 2,
+    SMS = 3,
+  }
+}
+

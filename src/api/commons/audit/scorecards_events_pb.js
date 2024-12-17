@@ -8396,7 +8396,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.toObj
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
 conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-messages: jspb.Message.getFieldWithDefault(msg, 2, 0)
+messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -8439,7 +8439,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.deserializeBina
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setMessages(value);
+      msg.setMessageCount(value);
       break;
     default:
       reader.skipField();
@@ -8477,7 +8477,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.serializeBinary
       f
     );
   }
-  f = message.getMessages();
+  f = message.getMessageCount();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -8506,10 +8506,10 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.setCo
 
 
 /**
- * optional int64 messages = 2;
+ * optional int64 message_count = 2;
  * @return {number}
  */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.getMessages = function() {
+proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.getMessageCount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -8518,7 +8518,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.getMe
  * @param {number} value
  * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms} returns this
  */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.setMessages = function(value) {
+proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.setMessageCount = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 

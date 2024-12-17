@@ -1092,8 +1092,8 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
     getConversationSid(): number;
     setConversationSid(value: number): void;
 
-    getMessages(): number;
-    setMessages(value: number): void;
+    getMessageCount(): number;
+    setMessageCount(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
@@ -1108,7 +1108,7 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
   export namespace Sms {
     export type AsObject = {
       conversationSid: number,
-      messages: number,
+      messageCount: number,
     }
   }
 

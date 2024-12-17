@@ -85,7 +85,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
 
 /**
  * @enum {number}
@@ -99,6 +99,8 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   VANA_FLAG_SUMMARY_EVENT: 203,
   VANA_PHRASE_CORRECTION_EVENT: 204,
   VANA_CREATE_TRANSCRIPT_EVENT: 205,
+  VANA_CREATE_SENTIMENT_EVENT: 206,
+  VANA_CREATE_SUMMARY_EVENT: 207,
   OMNICHANNEL_CREATE_PROJECT_EVENT: 300,
   OMNICHANNEL_CREATE_CAMPAIGN_EVENT: 301,
   OMNICHANNEL_DAILY_PROJECT_REPORT_EVENT: 302,
@@ -183,6 +185,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   SCORECARDS_DELETE_SCORECARD_QUESTION_EVENT: 520,
   SCORECARDS_CREATE_AUTO_EVALUATION_EVENT: 521,
   SCORECARDS_UPDATE_EVALUATION_EVENT: 522,
+  SCORECARDS_CREATE_SMART_EVALUATION_EVENT: 523,
   TICKET_EVENT: 601,
   COMPLIANCE_RND_QUERY_EVENT: 700,
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701,
@@ -268,6 +271,8 @@ vanaBillingReportEvent: (f = msg.getVanaBillingReportEvent()) && api_commons_aud
 vanaFlagSummaryEvent: (f = msg.getVanaFlagSummaryEvent()) && api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.toObject(includeInstance, f),
 vanaPhraseCorrectionEvent: (f = msg.getVanaPhraseCorrectionEvent()) && api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.toObject(includeInstance, f),
 vanaCreateTranscriptEvent: (f = msg.getVanaCreateTranscriptEvent()) && api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent.toObject(includeInstance, f),
+vanaCreateSentimentEvent: (f = msg.getVanaCreateSentimentEvent()) && api_commons_audit_vana_events_pb.VanaCreateSentimentEvent.toObject(includeInstance, f),
+vanaCreateSummaryEvent: (f = msg.getVanaCreateSummaryEvent()) && api_commons_audit_vana_events_pb.VanaCreateSummaryEvent.toObject(includeInstance, f),
 omnichannelCreateProjectEvent: (f = msg.getOmnichannelCreateProjectEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent.toObject(includeInstance, f),
 omnichannelCreateCampaignEvent: (f = msg.getOmnichannelCreateCampaignEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCreateCampaignEvent.toObject(includeInstance, f),
 omnichannelDailyProjectReportEvent: (f = msg.getOmnichannelDailyProjectReportEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelDailyProjectReportEvent.toObject(includeInstance, f),
@@ -352,6 +357,7 @@ scorecardsUpdateScorecardQuestionEvent: (f = msg.getScorecardsUpdateScorecardQue
 scorecardsDeleteScorecardQuestionEvent: (f = msg.getScorecardsDeleteScorecardQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsDeleteScorecardQuestionEvent.toObject(includeInstance, f),
 scorecardsCreateAutoEvaluationEvent: (f = msg.getScorecardsCreateAutoEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.toObject(includeInstance, f),
 scorecardsUpdateEvaluationEvent: (f = msg.getScorecardsUpdateEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.toObject(includeInstance, f),
+scorecardsCreateSmartEvaluationEvent: (f = msg.getScorecardsCreateSmartEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.toObject(includeInstance, f),
 ticketEvent: (f = msg.getTicketEvent()) && api_commons_audit_tickets_events_pb.TicketEvent.toObject(includeInstance, f),
 complianceRndQueryEvent: (f = msg.getComplianceRndQueryEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
 complianceRndQueryCachedEvent: (f = msg.getComplianceRndQueryCachedEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
@@ -479,6 +485,16 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent;
       reader.readMessage(value,api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent.deserializeBinaryFromReader);
       msg.setVanaCreateTranscriptEvent(value);
+      break;
+    case 206:
+      var value = new api_commons_audit_vana_events_pb.VanaCreateSentimentEvent;
+      reader.readMessage(value,api_commons_audit_vana_events_pb.VanaCreateSentimentEvent.deserializeBinaryFromReader);
+      msg.setVanaCreateSentimentEvent(value);
+      break;
+    case 207:
+      var value = new api_commons_audit_vana_events_pb.VanaCreateSummaryEvent;
+      reader.readMessage(value,api_commons_audit_vana_events_pb.VanaCreateSummaryEvent.deserializeBinaryFromReader);
+      msg.setVanaCreateSummaryEvent(value);
       break;
     case 300:
       var value = new api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent;
@@ -900,6 +916,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.deserializeBinaryFromReader);
       msg.setScorecardsUpdateEvaluationEvent(value);
       break;
+    case 523:
+      var value = new api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent;
+      reader.readMessage(value,api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.deserializeBinaryFromReader);
+      msg.setScorecardsCreateSmartEvaluationEvent(value);
+      break;
     case 601:
       var value = new api_commons_audit_tickets_events_pb.TicketEvent;
       reader.readMessage(value,api_commons_audit_tickets_events_pb.TicketEvent.deserializeBinaryFromReader);
@@ -1186,6 +1207,22 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       205,
       f,
       api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getVanaCreateSentimentEvent();
+  if (f != null) {
+    writer.writeMessage(
+      206,
+      f,
+      api_commons_audit_vana_events_pb.VanaCreateSentimentEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getVanaCreateSummaryEvent();
+  if (f != null) {
+    writer.writeMessage(
+      207,
+      f,
+      api_commons_audit_vana_events_pb.VanaCreateSummaryEvent.serializeBinaryToWriter
     );
   }
   f = message.getOmnichannelCreateProjectEvent();
@@ -1860,6 +1897,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.serializeBinaryToWriter
     );
   }
+  f = message.getScorecardsCreateSmartEvaluationEvent();
+  if (f != null) {
+    writer.writeMessage(
+      523,
+      f,
+      api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.serializeBinaryToWriter
+    );
+  }
   f = message.getTicketEvent();
   if (f != null) {
     writer.writeMessage(
@@ -2502,6 +2547,80 @@ proto.api.commons.audit.AuditEvent.prototype.clearVanaCreateTranscriptEvent = fu
  */
 proto.api.commons.audit.AuditEvent.prototype.hasVanaCreateTranscriptEvent = function() {
   return jspb.Message.getField(this, 205) != null;
+};
+
+
+/**
+ * optional VanaCreateSentimentEvent vana_create_sentiment_event = 206;
+ * @return {?proto.api.commons.audit.VanaCreateSentimentEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getVanaCreateSentimentEvent = function() {
+  return /** @type{?proto.api.commons.audit.VanaCreateSentimentEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_vana_events_pb.VanaCreateSentimentEvent, 206));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.VanaCreateSentimentEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setVanaCreateSentimentEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 206, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearVanaCreateSentimentEvent = function() {
+  return this.setVanaCreateSentimentEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasVanaCreateSentimentEvent = function() {
+  return jspb.Message.getField(this, 206) != null;
+};
+
+
+/**
+ * optional VanaCreateSummaryEvent vana_create_summary_event = 207;
+ * @return {?proto.api.commons.audit.VanaCreateSummaryEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getVanaCreateSummaryEvent = function() {
+  return /** @type{?proto.api.commons.audit.VanaCreateSummaryEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_vana_events_pb.VanaCreateSummaryEvent, 207));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.VanaCreateSummaryEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setVanaCreateSummaryEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 207, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearVanaCreateSummaryEvent = function() {
+  return this.setVanaCreateSummaryEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasVanaCreateSummaryEvent = function() {
+  return jspb.Message.getField(this, 207) != null;
 };
 
 
@@ -5610,6 +5729,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearScorecardsUpdateEvaluationEven
  */
 proto.api.commons.audit.AuditEvent.prototype.hasScorecardsUpdateEvaluationEvent = function() {
   return jspb.Message.getField(this, 522) != null;
+};
+
+
+/**
+ * optional ScorecardsCreateSmartEvaluationEvent scorecards_create_smart_evaluation_event = 523;
+ * @return {?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getScorecardsCreateSmartEvaluationEvent = function() {
+  return /** @type{?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent, 523));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setScorecardsCreateSmartEvaluationEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 523, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearScorecardsCreateSmartEvaluationEvent = function() {
+  return this.setScorecardsCreateSmartEvaluationEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasScorecardsCreateSmartEvaluationEvent = function() {
+  return jspb.Message.getField(this, 523) != null;
 };
 
 
