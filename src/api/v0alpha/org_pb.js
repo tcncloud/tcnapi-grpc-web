@@ -18549,7 +18549,8 @@ proto.api.v0alpha.GetTempUserTokenByUserIdReq.prototype.toObject = function(opt_
  */
 proto.api.v0alpha.GetTempUserTokenByUserIdReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -18590,6 +18591,10 @@ proto.api.v0alpha.GetTempUserTokenByUserIdReq.deserializeBinaryFromReader = func
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18626,6 +18631,13 @@ proto.api.v0alpha.GetTempUserTokenByUserIdReq.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -18644,6 +18656,24 @@ proto.api.v0alpha.GetTempUserTokenByUserIdReq.prototype.getUserId = function() {
  */
 proto.api.v0alpha.GetTempUserTokenByUserIdReq.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string org_id = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.GetTempUserTokenByUserIdReq.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.GetTempUserTokenByUserIdReq} returns this
+ */
+proto.api.v0alpha.GetTempUserTokenByUserIdReq.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

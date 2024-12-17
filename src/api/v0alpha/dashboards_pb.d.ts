@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as annotations_perms_license_pb from "../../annotations/perms/license_pb";
+import * as api_commons_bireportgenerator_pb from "../../api/commons/bireportgenerator_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
@@ -560,6 +561,9 @@ export class HistoricConfig extends jspb.Message {
   getTimeZone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
   setTimeZone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
 
+  getTimePeriod(): api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap];
+  setTimePeriod(value: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap]): void;
+
   getTimeSpanCase(): HistoricConfig.TimeSpanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistoricConfig.AsObject;
@@ -576,6 +580,7 @@ export namespace HistoricConfig {
     timeSpanSimple: TimeSpan.IntervalMap[keyof TimeSpan.IntervalMap],
     timeSpanRange?: TimeSpan.Range.AsObject,
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    timePeriod: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap],
   }
 
   export enum TimeSpanCase {

@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireportgenerator_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
 import * as api_v1alpha1_insights_insight_content_pb from "../../../api/v1alpha1/insights/insight_content_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
@@ -156,6 +157,14 @@ export class QueryRequest extends jspb.Message {
   getFormat(): api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap];
   setFormat(value: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap]): void;
 
+  getTimePeriod(): api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap];
+  setTimePeriod(value: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap]): void;
+
+  hasReportDate(): boolean;
+  clearReportDate(): void;
+  getReportDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReportDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getQueryCase(): QueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryRequest.AsObject;
@@ -182,6 +191,8 @@ export namespace QueryRequest {
     uiTraceId: string,
     comment: string,
     format: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap],
+    timePeriod: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap],
+    reportDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
   export enum QueryCase {

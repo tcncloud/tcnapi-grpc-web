@@ -867,6 +867,9 @@ export class GetTempUserTokenByUserIdReq extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTempUserTokenByUserIdReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetTempUserTokenByUserIdReq): GetTempUserTokenByUserIdReq.AsObject;
@@ -880,6 +883,7 @@ export class GetTempUserTokenByUserIdReq extends jspb.Message {
 export namespace GetTempUserTokenByUserIdReq {
   export type AsObject = {
     userId: string,
+    orgId: string,
   }
 }
 

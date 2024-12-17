@@ -27,6 +27,8 @@ var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var annotations_perms_license_pb = require('../../annotations/perms/license_pb.js');
 goog.object.extend(proto, annotations_perms_license_pb);
+var api_commons_bireportgenerator_pb = require('../../api/commons/bireportgenerator_pb.js');
+goog.object.extend(proto, api_commons_bireportgenerator_pb);
 var api_commons_org_pb = require('../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
@@ -4568,7 +4570,8 @@ proto.api.v0alpha.HistoricConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
 timeSpanSimple: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 timeSpanRange: (f = msg.getTimeSpanRange()) && proto.api.v0alpha.TimeSpan.Range.toObject(includeInstance, f),
-timeZone: jspb.Message.getFieldWithDefault(msg, 4, 0)
+timeZone: jspb.Message.getFieldWithDefault(msg, 4, 0),
+timePeriod: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -4618,6 +4621,10 @@ proto.api.v0alpha.HistoricConfig.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {!proto.api.commons.TimeZone} */ (reader.readEnum());
       msg.setTimeZone(value);
       break;
+    case 5:
+      var value = /** @type {!proto.api.commons.TimePeriod} */ (reader.readEnum());
+      msg.setTimePeriod(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4666,6 +4673,13 @@ proto.api.v0alpha.HistoricConfig.serializeBinaryToWriter = function(message, wri
   if (f !== 0.0) {
     writer.writeEnum(
       4,
+      f
+    );
+  }
+  f = message.getTimePeriod();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
       f
     );
   }
@@ -4760,6 +4774,24 @@ proto.api.v0alpha.HistoricConfig.prototype.getTimeZone = function() {
  */
 proto.api.v0alpha.HistoricConfig.prototype.setTimeZone = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional api.commons.TimePeriod time_period = 5;
+ * @return {!proto.api.commons.TimePeriod}
+ */
+proto.api.v0alpha.HistoricConfig.prototype.getTimePeriod = function() {
+  return /** @type {!proto.api.commons.TimePeriod} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TimePeriod} value
+ * @return {!proto.api.v0alpha.HistoricConfig} returns this
+ */
+proto.api.v0alpha.HistoricConfig.prototype.setTimePeriod = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
