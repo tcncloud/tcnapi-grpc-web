@@ -12684,9 +12684,6 @@ export class CopyShiftsToPublishedScheduleRequest extends jspb.Message {
   setShiftInstanceSidsList(value: Array<number>): void;
   addShiftInstanceSids(value: number, index?: number): number;
 
-  getOverlapAsWarning(): boolean;
-  setOverlapAsWarning(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyShiftsToPublishedScheduleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CopyShiftsToPublishedScheduleRequest): CopyShiftsToPublishedScheduleRequest.AsObject;
@@ -12700,7 +12697,6 @@ export class CopyShiftsToPublishedScheduleRequest extends jspb.Message {
 export namespace CopyShiftsToPublishedScheduleRequest {
   export type AsObject = {
     shiftInstanceSidsList: Array<number>,
-    overlapAsWarning: boolean,
   }
 }
 

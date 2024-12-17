@@ -102172,8 +102172,7 @@ proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.toObject =
  */
 proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-overlapAsWarning: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -102216,10 +102215,6 @@ proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.deserializeBinaryFro
         msg.addShiftInstanceSids(values[i]);
       }
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOverlapAsWarning(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -102253,13 +102248,6 @@ proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.serializeBinaryToWri
   if (f.length > 0) {
     writer.writePackedInt64(
       1,
-      f
-    );
-  }
-  f = message.getOverlapAsWarning();
-  if (f) {
-    writer.writeBool(
-      2,
       f
     );
   }
@@ -102300,24 +102288,6 @@ proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.addShiftIn
  */
 proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.clearShiftInstanceSidsList = function() {
   return this.setShiftInstanceSidsList([]);
-};
-
-
-/**
- * optional bool overlap_as_warning = 2;
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.getOverlapAsWarning = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} returns this
- */
-proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.setOverlapAsWarning = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
