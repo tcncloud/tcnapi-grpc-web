@@ -119,10 +119,10 @@ export class QueryRequest extends jspb.Message {
   getPrql(): string;
   setPrql(value: string): void;
 
-  hasPipelineNode(): boolean;
-  clearPipelineNode(): void;
-  getPipelineNode(): api_v1alpha1_insights_insight_content_pb.Pipeline | undefined;
-  setPipelineNode(value?: api_v1alpha1_insights_insight_content_pb.Pipeline): void;
+  hasInsightBody(): boolean;
+  clearInsightBody(): void;
+  getInsightBody(): api_v1alpha1_insights_insight_content_pb.Pipeline | undefined;
+  setInsightBody(value?: api_v1alpha1_insights_insight_content_pb.Pipeline): void;
 
   clearOrgIdsList(): void;
   getOrgIdsList(): Array<string>;
@@ -173,7 +173,7 @@ export namespace QueryRequest {
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
     pipeline: string,
     prql: string,
-    pipelineNode?: api_v1alpha1_insights_insight_content_pb.Pipeline.AsObject,
+    insightBody?: api_v1alpha1_insights_insight_content_pb.Pipeline.AsObject,
     orgIdsList: Array<string>,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -188,7 +188,7 @@ export namespace QueryRequest {
     QUERY_NOT_SET = 0,
     PIPELINE = 3,
     PRQL = 4,
-    PIPELINE_NODE = 13,
+    INSIGHT_BODY = 13,
   }
 }
 

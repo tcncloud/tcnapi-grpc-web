@@ -936,7 +936,7 @@ proto.api.v1alpha1.explorer.QueryRequest.QueryCase = {
   QUERY_NOT_SET: 0,
   PIPELINE: 3,
   PRQL: 4,
-  PIPELINE_NODE: 13
+  INSIGHT_BODY: 13
 };
 
 /**
@@ -981,7 +981,7 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 pipeline: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 prql: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-pipelineNode: (f = msg.getPipelineNode()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
+insightBody: (f = msg.getInsightBody()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
 orgIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1045,7 +1045,7 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
     case 13:
       var value = new api_v1alpha1_insights_insight_content_pb.Pipeline;
       reader.readMessage(value,api_v1alpha1_insights_insight_content_pb.Pipeline.deserializeBinaryFromReader);
-      msg.setPipelineNode(value);
+      msg.setInsightBody(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1139,7 +1139,7 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getPipelineNode();
+  f = message.getInsightBody();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -1318,10 +1318,10 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.hasPrql = function() {
 
 
 /**
- * optional api.v1alpha1.insights.Pipeline pipeline_node = 13;
+ * optional api.v1alpha1.insights.Pipeline insight_body = 13;
  * @return {?proto.api.v1alpha1.insights.Pipeline}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.getPipelineNode = function() {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getInsightBody = function() {
   return /** @type{?proto.api.v1alpha1.insights.Pipeline} */ (
     jspb.Message.getWrapperField(this, api_v1alpha1_insights_insight_content_pb.Pipeline, 13));
 };
@@ -1331,7 +1331,7 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.getPipelineNode = function() 
  * @param {?proto.api.v1alpha1.insights.Pipeline|undefined} value
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
 */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.setPipelineNode = function(value) {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setInsightBody = function(value) {
   return jspb.Message.setOneofWrapperField(this, 13, proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_[0], value);
 };
 
@@ -1340,8 +1340,8 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.setPipelineNode = function(va
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.clearPipelineNode = function() {
-  return this.setPipelineNode(undefined);
+proto.api.v1alpha1.explorer.QueryRequest.prototype.clearInsightBody = function() {
+  return this.setInsightBody(undefined);
 };
 
 
@@ -1349,7 +1349,7 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.clearPipelineNode = function(
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.hasPipelineNode = function() {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.hasInsightBody = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
