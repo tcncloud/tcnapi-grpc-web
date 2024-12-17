@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
+var api_commons_bireportgenerator_pb = require('../../../api/commons/bireportgenerator_pb.js');
+goog.object.extend(proto, api_commons_bireportgenerator_pb);
 var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/entities_pb.js');
 goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
@@ -985,7 +987,9 @@ timezone: jspb.Message.getFieldWithDefault(msg, 8, ""),
 pipelineParameters: (f = msg.getPipelineParameters()) && api_v1alpha1_explorer_entities_pb.Parameters.toObject(includeInstance, f),
 uiTraceId: jspb.Message.getFieldWithDefault(msg, 10, ""),
 comment: jspb.Message.getFieldWithDefault(msg, 11, ""),
-format: jspb.Message.getFieldWithDefault(msg, 12, 0)
+format: jspb.Message.getFieldWithDefault(msg, 12, 0),
+timePeriod: jspb.Message.getFieldWithDefault(msg, 13, 0),
+reportDate: (f = msg.getReportDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1072,6 +1076,15 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
     case 12:
       var value = /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (reader.readEnum());
       msg.setFormat(value);
+      break;
+    case 13:
+      var value = /** @type {!proto.api.commons.TimePeriod} */ (reader.readEnum());
+      msg.setTimePeriod(value);
+      break;
+    case 14:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setReportDate(value);
       break;
     default:
       reader.skipField();
@@ -1187,6 +1200,21 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
     writer.writeEnum(
       12,
       f
+    );
+  }
+  f = message.getTimePeriod();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      13,
+      f
+    );
+  }
+  f = message.getReportDate();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1517,6 +1545,61 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.getFormat = function() {
  */
 proto.api.v1alpha1.explorer.QueryRequest.prototype.setFormat = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional api.commons.TimePeriod time_period = 13;
+ * @return {!proto.api.commons.TimePeriod}
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getTimePeriod = function() {
+  return /** @type {!proto.api.commons.TimePeriod} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TimePeriod} value
+ * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setTimePeriod = function(value) {
+  return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp report_date = 14;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getReportDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
+*/
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setReportDate = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.clearReportDate = function() {
+  return this.setReportDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.hasReportDate = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

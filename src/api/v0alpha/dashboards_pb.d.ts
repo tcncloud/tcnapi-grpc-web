@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as annotations_perms_license_pb from "../../annotations/perms/license_pb";
+import * as api_commons_bireportgenerator_pb from "../../api/commons/bireportgenerator_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
@@ -560,6 +561,9 @@ export class HistoricConfig extends jspb.Message {
   getTimeZone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
   setTimeZone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
 
+  getTimePeriod(): api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap];
+  setTimePeriod(value: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap]): void;
+
   getTimeSpanCase(): HistoricConfig.TimeSpanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistoricConfig.AsObject;
@@ -576,6 +580,7 @@ export namespace HistoricConfig {
     timeSpanSimple: TimeSpan.IntervalMap[keyof TimeSpan.IntervalMap],
     timeSpanRange?: TimeSpan.Range.AsObject,
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    timePeriod: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap],
   }
 
   export enum TimeSpanCase {
@@ -818,31 +823,6 @@ export namespace TimeSpan {
     THIS_MONTH: 6;
     THIS_DAY_LAST_WEEK: 7;
     PREVIOUS_MONTH: 8;
-    THIS_YEAR: 9;
-    THE_DAY_SO_FAR: 10;
-    WEEK_TO_DATE: 11;
-    YEAR_TO_DATE: 12;
-    DAY_BEFORE_YESTERDAY: 13;
-    PREVIOUS_WEEK: 14;
-    PREVIOUS_YEAR: 15;
-    LAST_15_MINUTES: 16;
-    LAST_30_MINUTES: 17;
-    LAST_1_HOUR: 18;
-    LAST_2_HOURS: 19;
-    LAST_3_HOURS: 20;
-    LAST_4_HOURS: 21;
-    LAST_6_HOURS: 22;
-    LAST_12_HOURS: 23;
-    LAST_24_HOURS: 24;
-    LAST_2_DAYS: 25;
-    LAST_3_DAYS: 26;
-    LAST_7_DAYS: 27;
-    LAST_60_DAYS: 28;
-    LAST_90_DAYS: 29;
-    LAST_6_MONTHS: 30;
-    LAST_1_YEAR: 31;
-    LAST_2_YEARS: 32;
-    LAST_5_YEARS: 33;
   }
 
   export const Interval: IntervalMap;
