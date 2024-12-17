@@ -74,16 +74,6 @@ export class AuditEvent extends jspb.Message {
   getVanaCreateTranscriptEvent(): api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent | undefined;
   setVanaCreateTranscriptEvent(value?: api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent): void;
 
-  hasVanaCreateSentimentEvent(): boolean;
-  clearVanaCreateSentimentEvent(): void;
-  getVanaCreateSentimentEvent(): api_commons_audit_vana_events_pb.VanaCreateSentimentEvent | undefined;
-  setVanaCreateSentimentEvent(value?: api_commons_audit_vana_events_pb.VanaCreateSentimentEvent): void;
-
-  hasVanaCreateSummaryEvent(): boolean;
-  clearVanaCreateSummaryEvent(): void;
-  getVanaCreateSummaryEvent(): api_commons_audit_vana_events_pb.VanaCreateSummaryEvent | undefined;
-  setVanaCreateSummaryEvent(value?: api_commons_audit_vana_events_pb.VanaCreateSummaryEvent): void;
-
   hasOmnichannelCreateProjectEvent(): boolean;
   clearOmnichannelCreateProjectEvent(): void;
   getOmnichannelCreateProjectEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent | undefined;
@@ -504,11 +494,6 @@ export class AuditEvent extends jspb.Message {
   getScorecardsUpdateEvaluationEvent(): api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent | undefined;
   setScorecardsUpdateEvaluationEvent(value?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent): void;
 
-  hasScorecardsCreateSmartEvaluationEvent(): boolean;
-  clearScorecardsCreateSmartEvaluationEvent(): void;
-  getScorecardsCreateSmartEvaluationEvent(): api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent | undefined;
-  setScorecardsCreateSmartEvaluationEvent(value?: api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent): void;
-
   hasTicketEvent(): boolean;
   clearTicketEvent(): void;
   getTicketEvent(): api_commons_audit_tickets_events_pb.TicketEvent | undefined;
@@ -695,8 +680,6 @@ export namespace AuditEvent {
     vanaFlagSummaryEvent?: api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.AsObject,
     vanaPhraseCorrectionEvent?: api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.AsObject,
     vanaCreateTranscriptEvent?: api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent.AsObject,
-    vanaCreateSentimentEvent?: api_commons_audit_vana_events_pb.VanaCreateSentimentEvent.AsObject,
-    vanaCreateSummaryEvent?: api_commons_audit_vana_events_pb.VanaCreateSummaryEvent.AsObject,
     omnichannelCreateProjectEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent.AsObject,
     omnichannelCreateCampaignEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateCampaignEvent.AsObject,
     omnichannelDailyProjectReportEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelDailyProjectReportEvent.AsObject,
@@ -781,7 +764,6 @@ export namespace AuditEvent {
     scorecardsDeleteScorecardQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsDeleteScorecardQuestionEvent.AsObject,
     scorecardsCreateAutoEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.AsObject,
     scorecardsUpdateEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.AsObject,
-    scorecardsCreateSmartEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.AsObject,
     ticketEvent?: api_commons_audit_tickets_events_pb.TicketEvent.AsObject,
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
@@ -825,8 +807,6 @@ export namespace AuditEvent {
     VANA_FLAG_SUMMARY_EVENT = 203,
     VANA_PHRASE_CORRECTION_EVENT = 204,
     VANA_CREATE_TRANSCRIPT_EVENT = 205,
-    VANA_CREATE_SENTIMENT_EVENT = 206,
-    VANA_CREATE_SUMMARY_EVENT = 207,
     OMNICHANNEL_CREATE_PROJECT_EVENT = 300,
     OMNICHANNEL_CREATE_CAMPAIGN_EVENT = 301,
     OMNICHANNEL_DAILY_PROJECT_REPORT_EVENT = 302,
@@ -911,7 +891,6 @@ export namespace AuditEvent {
     SCORECARDS_DELETE_SCORECARD_QUESTION_EVENT = 520,
     SCORECARDS_CREATE_AUTO_EVALUATION_EVENT = 521,
     SCORECARDS_UPDATE_EVALUATION_EVENT = 522,
-    SCORECARDS_CREATE_SMART_EVALUATION_EVENT = 523,
     TICKET_EVENT = 601,
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,

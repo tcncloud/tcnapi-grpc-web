@@ -221,36 +221,6 @@ export class ProductConfig extends jspb.Message {
   getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
   setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
 
-  hasWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
-  hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
-  hasWorkforceEngagementWorkforceOptimizationAiBundleSentiments(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleSentiments(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleSentiments(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleSentiments(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
-  hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
-  hasWorkforceEngagementWorkforceOptimizationAiBundleSummaries(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleSummaries(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleSummaries(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleSummaries(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
-  hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(): boolean;
-  clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(): void;
-  getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
-  setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
-
   getConfigCase(): ProductConfig.ConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductConfig.AsObject;
@@ -307,12 +277,6 @@ export namespace ProductConfig {
     dataManagementComplianceComplianceRndQueryCached?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleSmartEvaluations?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleSentiments?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleSummaries?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
-    workforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
   }
 
   export enum ConfigCase {
@@ -360,12 +324,6 @@ export namespace ProductConfig {
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED = 10001,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS = 20000,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS = 20001,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SMART_EVALUATIONS = 30000,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SMART_EVALUATIONS = 30001,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SENTIMENTS = 30100,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SENTIMENTS = 30103,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SUMMARIES = 30200,
-    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SUMMARIES = 30201,
   }
 }
 
