@@ -801,6 +801,26 @@ export class ExecuteFlow extends jspb.Message {
   getRelatientFortisTokenCcPayment(): ExecuteRelatientFortisTokenCcPayment | undefined;
   setRelatientFortisTokenCcPayment(value?: ExecuteRelatientFortisTokenCcPayment): void;
 
+  hasRelatientGetPatientBalanceNew(): boolean;
+  clearRelatientGetPatientBalanceNew(): void;
+  getRelatientGetPatientBalanceNew(): ExecuteRelatientGetPatientBalanceNew | undefined;
+  setRelatientGetPatientBalanceNew(value?: ExecuteRelatientGetPatientBalanceNew): void;
+
+  hasRelatientGetPatientCcTokensNew(): boolean;
+  clearRelatientGetPatientCcTokensNew(): void;
+  getRelatientGetPatientCcTokensNew(): ExecuteRelatientGetPatientCcTokensNew | undefined;
+  setRelatientGetPatientCcTokensNew(value?: ExecuteRelatientGetPatientCcTokensNew): void;
+
+  hasRelatientPostPatientTokenNew(): boolean;
+  clearRelatientPostPatientTokenNew(): void;
+  getRelatientPostPatientTokenNew(): ExecuteRelatientPostPatientTokenNew | undefined;
+  setRelatientPostPatientTokenNew(value?: ExecuteRelatientPostPatientTokenNew): void;
+
+  hasRelatientPostPatientBalanceNew(): boolean;
+  clearRelatientPostPatientBalanceNew(): void;
+  getRelatientPostPatientBalanceNew(): ExecuteRelatientPostPatientBalanceNew | undefined;
+  setRelatientPostPatientBalanceNew(value?: ExecuteRelatientPostPatientBalanceNew): void;
+
   hasCybersourceCreditPayment(): boolean;
   clearCybersourceCreditPayment(): void;
   getCybersourceCreditPayment(): ExecuteCybersourceCreditPayment | undefined;
@@ -2233,6 +2253,10 @@ export namespace ExecuteFlow {
     relatientCreateFortisCctoken?: ExecuteRelatientCreateFortisCctoken.AsObject,
     relatientFortisTokenAchDebitPayment?: ExecuteRelatientFortisTokenAchDebitPayment.AsObject,
     relatientFortisTokenCcPayment?: ExecuteRelatientFortisTokenCcPayment.AsObject,
+    relatientGetPatientBalanceNew?: ExecuteRelatientGetPatientBalanceNew.AsObject,
+    relatientGetPatientCcTokensNew?: ExecuteRelatientGetPatientCcTokensNew.AsObject,
+    relatientPostPatientTokenNew?: ExecuteRelatientPostPatientTokenNew.AsObject,
+    relatientPostPatientBalanceNew?: ExecuteRelatientPostPatientBalanceNew.AsObject,
     cybersourceCreditPayment?: ExecuteCybersourceCreditPayment.AsObject,
     cybersourceEcheckPayment?: ExecuteCybersourceEcheckPayment.AsObject,
     circproPhoneLookupWithBundle?: ExecuteCircproPhoneLookupWithBundle.AsObject,
@@ -2531,6 +2555,10 @@ export namespace ExecuteFlow {
     RELATIENT_CREATE_FORTIS_CCTOKEN = 208,
     RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209,
     RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210,
+    RELATIENT_GET_PATIENT_BALANCE_NEW = 211,
+    RELATIENT_GET_PATIENT_CC_TOKENS_NEW = 212,
+    RELATIENT_POST_PATIENT_TOKEN_NEW = 213,
+    RELATIENT_POST_PATIENT_BALANCE_NEW = 214,
     CYBERSOURCE_CREDIT_PAYMENT = 301,
     CYBERSOURCE_ECHECK_PAYMENT = 302,
     CIRCPRO_PHONE_LOOKUP_WITH_BUNDLE = 401,
@@ -3636,6 +3664,70 @@ export class ExecuteRelatientFortisTokenCcPayment extends jspb.Message {
 }
 
 export namespace ExecuteRelatientFortisTokenCcPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientGetPatientBalanceNew extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientGetPatientBalanceNew.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientGetPatientBalanceNew): ExecuteRelatientGetPatientBalanceNew.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientGetPatientBalanceNew, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientGetPatientBalanceNew;
+  static deserializeBinaryFromReader(message: ExecuteRelatientGetPatientBalanceNew, reader: jspb.BinaryReader): ExecuteRelatientGetPatientBalanceNew;
+}
+
+export namespace ExecuteRelatientGetPatientBalanceNew {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientGetPatientCcTokensNew extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientGetPatientCcTokensNew.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientGetPatientCcTokensNew): ExecuteRelatientGetPatientCcTokensNew.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientGetPatientCcTokensNew, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientGetPatientCcTokensNew;
+  static deserializeBinaryFromReader(message: ExecuteRelatientGetPatientCcTokensNew, reader: jspb.BinaryReader): ExecuteRelatientGetPatientCcTokensNew;
+}
+
+export namespace ExecuteRelatientGetPatientCcTokensNew {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientPostPatientTokenNew extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientPostPatientTokenNew.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientPostPatientTokenNew): ExecuteRelatientPostPatientTokenNew.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientPostPatientTokenNew, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientPostPatientTokenNew;
+  static deserializeBinaryFromReader(message: ExecuteRelatientPostPatientTokenNew, reader: jspb.BinaryReader): ExecuteRelatientPostPatientTokenNew;
+}
+
+export namespace ExecuteRelatientPostPatientTokenNew {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientPostPatientBalanceNew extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientPostPatientBalanceNew.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientPostPatientBalanceNew): ExecuteRelatientPostPatientBalanceNew.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientPostPatientBalanceNew, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientPostPatientBalanceNew;
+  static deserializeBinaryFromReader(message: ExecuteRelatientPostPatientBalanceNew, reader: jspb.BinaryReader): ExecuteRelatientPostPatientBalanceNew;
+}
+
+export namespace ExecuteRelatientPostPatientBalanceNew {
   export type AsObject = {
   }
 }
@@ -8214,6 +8306,10 @@ export interface RequestMethodMap {
   REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN: 208;
   REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT: 209;
   REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT: 210;
+  REQUEST_METHOD_RELATIENT_GETPATIENTBALANCE_NEW: 211;
+  REQUEST_METHOD_RELATIENT_GETPATIENTCCTOKENS_NEW: 212;
+  REQUEST_METHOD_RELATIENT_POSTPATIENTTOKEN_NEW: 213;
+  REQUEST_METHOD_RELATIENT_POSTPATIENTBALANCE_NEW: 214;
   REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT: 301;
   REQUEST_METHOD_CYBERSOURCE_ECHECKPAYMENT: 302;
   REQUEST_METHOD_CIRCPRO_PHONELOOKUPWITHBUNDLE: 401;
