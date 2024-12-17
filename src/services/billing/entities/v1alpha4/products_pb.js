@@ -59,7 +59,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_ = [[1000,1001,1002,1010,1011,1012,1020,1021,1022,1030,1031,1032,1100,1101,1102,1110,1111,1112,1120,1121,1122,1130,1131,1132,1200,1201,1202,1210,1211,1212,1220,1221,1222,1230,1231,1232,1300,1400,1401,10000,10001,20000,20001]];
+proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_ = [[1000,1001,1002,1010,1011,1012,1020,1021,1022,1030,1031,1032,1100,1101,1102,1110,1111,1112,1120,1121,1122,1130,1131,1132,1200,1201,1202,1210,1211,1212,1220,1221,1222,1230,1231,1232,1300,1400,1401,10000,10001,20000,20001,30000,30001,30100,30103,30200,30201]];
 
 /**
  * @enum {number}
@@ -108,7 +108,13 @@ proto.services.billing.entities.v1alpha4.ProductConfig.ConfigCase = {
   DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY: 10000,
   DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED: 10001,
   WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS: 20000,
-  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS: 20001
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS: 20001,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SMART_EVALUATIONS: 30000,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SMART_EVALUATIONS: 30001,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SENTIMENTS: 30100,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SENTIMENTS: 30103,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SUMMARIES: 30200,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SUMMARIES: 30201
 };
 
 /**
@@ -191,7 +197,13 @@ communicationsOmniResourcesConnectedInboxCreated: (f = msg.getCommunicationsOmni
 dataManagementComplianceComplianceRndQuery: (f = msg.getDataManagementComplianceComplianceRndQuery()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 dataManagementComplianceComplianceRndQueryCached: (f = msg.getDataManagementComplianceComplianceRndQueryCached()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 workforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts: (f = msg.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
-workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts: (f = msg.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f)
+workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts: (f = msg.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleSmartEvaluations: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleSentiments: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleSentiments()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleSummaries: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleSummaries()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries: (f = msg.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -442,6 +454,36 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
       var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
       msg.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value);
+      break;
+    case 30000:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(value);
+      break;
+    case 30001:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(value);
+      break;
+    case 30100:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleSentiments(value);
+      break;
+    case 30103:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(value);
+      break;
+    case 30200:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleSummaries(value);
+      break;
+    case 30201:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(value);
       break;
     default:
       reader.skipField();
@@ -812,6 +854,54 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
   if (f != null) {
     writer.writeMessage(
       20001,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations();
+  if (f != null) {
+    writer.writeMessage(
+      30000,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations();
+  if (f != null) {
+    writer.writeMessage(
+      30001,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleSentiments();
+  if (f != null) {
+    writer.writeMessage(
+      30100,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments();
+  if (f != null) {
+    writer.writeMessage(
+      30103,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleSummaries();
+  if (f != null) {
+    writer.writeMessage(
+      30200,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries();
+  if (f != null) {
+    writer.writeMessage(
+      30201,
       f,
       services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
     );
@@ -2407,6 +2497,228 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceE
  */
 proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts = function() {
   return jspb.Message.getField(this, 20001) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_smart_evaluations = 30000;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30000));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30000, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleSmartEvaluations = function() {
+  return jspb.Message.getField(this, 30000) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_accumulated_smart_evaluations = 30001;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30001));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30001, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSmartEvaluations = function() {
+  return jspb.Message.getField(this, 30001) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_sentiments = 30100;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleSentiments = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30100));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleSentiments = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30100, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleSentiments = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleSentiments(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleSentiments = function() {
+  return jspb.Message.getField(this, 30100) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_accumulated_sentiments = 30103;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30103));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30103, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments = function() {
+  return jspb.Message.getField(this, 30103) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_summaries = 30200;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleSummaries = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30200));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleSummaries = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30200, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleSummaries = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleSummaries(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleSummaries = function() {
+  return jspb.Message.getField(this, 30200) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_ai_bundle_accumulated_summaries = 30201;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 30201));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 30201, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries = function() {
+  return jspb.Message.getField(this, 30201) != null;
 };
 
 
