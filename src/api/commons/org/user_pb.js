@@ -2614,7 +2614,8 @@ proto.api.commons.org.MfaInfo.Totp.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.org.MfaInfo.Totp.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+secret: jspb.Message.getFieldWithDefault(msg, 1, ""),
+verified: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -2651,6 +2652,14 @@ proto.api.commons.org.MfaInfo.Totp.deserializeBinaryFromReader = function(msg, r
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSecret(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setVerified(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2680,6 +2689,56 @@ proto.api.commons.org.MfaInfo.Totp.prototype.serializeBinary = function() {
  */
 proto.api.commons.org.MfaInfo.Totp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSecret();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getVerified();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string secret = 1;
+ * @return {string}
+ */
+proto.api.commons.org.MfaInfo.Totp.prototype.getSecret = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.MfaInfo.Totp} returns this
+ */
+proto.api.commons.org.MfaInfo.Totp.prototype.setSecret = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bool verified = 2;
+ * @return {boolean}
+ */
+proto.api.commons.org.MfaInfo.Totp.prototype.getVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.MfaInfo.Totp} returns this
+ */
+proto.api.commons.org.MfaInfo.Totp.prototype.setVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 

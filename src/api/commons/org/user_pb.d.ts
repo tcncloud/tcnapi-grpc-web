@@ -348,6 +348,12 @@ export namespace MfaInfo {
   }
 
   export class Totp extends jspb.Message {
+    getSecret(): string;
+    setSecret(value: string): void;
+
+    getVerified(): boolean;
+    setVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Totp.AsObject;
     static toObject(includeInstance: boolean, msg: Totp): Totp.AsObject;
@@ -360,6 +366,8 @@ export namespace MfaInfo {
 
   export namespace Totp {
     export type AsObject = {
+      secret: string,
+      verified: boolean,
     }
   }
 
