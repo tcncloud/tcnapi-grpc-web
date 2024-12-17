@@ -93,6 +93,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.CopyScheduleToScheduleReq', null, glob
 goog.exportSymbol('proto.api.v1alpha1.wfm.CopyScheduleToScheduleRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseRequest', null, global);
@@ -135,6 +137,10 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePlacementRuleReq', null, global)
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePlacementRuleRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateProgramNodeReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateProgramNodeRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePublishedShiftRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePublishedShiftResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateRegressionTemplateReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateRegressionTemplateRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateRgbaColorRequest', null, global);
@@ -201,6 +207,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.DeleteOpenTimesPatternReq', null, glob
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeleteOpenTimesPatternRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeletePlacementRuleReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeletePlacementRuleRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeleteRealTimeManagementStateColorRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeleteRealTimeManagementStateColorResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DeleteRegressionTemplateReq', null, global);
@@ -419,8 +427,12 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.RealTimeManagementStateColor', null, g
 goog.exportSymbol('proto.api.v1alpha1.wfm.RegressionTemplate', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromScheduleRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.RemoveAgentFromScheduleResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.RequiredCallsInterval', null, global);
@@ -447,8 +459,12 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.Skill', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProficiency', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProfile', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProfileGroup', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SplitPublishedShiftRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SplitPublishedShiftResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SplitShiftInstanceReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SplitShiftInstanceRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SwapShiftInstancesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SwapShiftInstancesRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.TourAgentCollection', null, global);
@@ -490,6 +506,10 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePlacementRuleReq', null, global)
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePlacementRuleRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateProgramNodeReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateProgramNodeRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateRgbaColorRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateRgbaColorResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateScheduleScenarioReq', null, global);
@@ -9534,6 +9554,426 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes.displayName = 'proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreatePublishedShiftRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.displayName = 'proto.api.v1alpha1.wfm.CreatePublishedShiftRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreatePublishedShiftResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.displayName = 'proto.api.v1alpha1.wfm.CreatePublishedShiftResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.displayName = 'proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.displayName = 'proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.displayName = 'proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.displayName = 'proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.displayName = 'proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.displayName = 'proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SplitPublishedShiftRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.displayName = 'proto.api.v1alpha1.wfm.SplitPublishedShiftRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SplitPublishedShiftResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.displayName = 'proto.api.v1alpha1.wfm.SplitPublishedShiftResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.displayName = 'proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.displayName = 'proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.displayName = 'proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.displayName = 'proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.displayName = 'proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.displayName = 'proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.displayName = 'proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.displayName = 'proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.displayName = 'proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.displayName = 'proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -97870,6 +98310,4143 @@ proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes.prototype.addDiagnostics = func
  * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes} returns this
  */
 proto.api.v1alpha1.wfm.ReplaceAgentOnScheduleRes.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreatePublishedShiftRequest;
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setShiftTemplateSid(value);
+      break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartDatetime(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsLocked(value);
+      break;
+    case 4:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addWfmAgentSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftTemplateSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getStartDatetime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsLocked();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getWfmAgentSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 shift_template_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.getShiftTemplateSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.setShiftTemplateSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_datetime = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.getStartDatetime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.setStartDatetime = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.clearStartDatetime = function() {
+  return this.setStartDatetime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.hasStartDatetime = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool is_locked = 3;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.getIsLocked = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.setIsLocked = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * repeated int64 wfm_agent_sids = 4;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.getWfmAgentSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.setWfmAgentSidsList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.addWfmAgentSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftRequest.prototype.clearWfmAgentSidsList = function() {
+  return this.setWfmAgentSidsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreatePublishedShiftResponse;
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.addShiftInstances(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstancesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ShiftInstance shift_instances = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.getShiftInstancesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.setShiftInstancesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.addShiftInstances = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.clearShiftInstancesList = function() {
+  return this.setShiftInstancesList([]);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
+ignoreDiagnosticsErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest;
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.setShiftInstance(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreDiagnosticsErrors(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getIgnoreDiagnosticsErrors();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ShiftInstance shift_instance = 1;
+ * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.getShiftInstance = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.setShiftInstance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.clearShiftInstance = function() {
+  return this.setShiftInstance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.hasShiftInstance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool ignore_diagnostics_errors = 2;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.getIgnoreDiagnosticsErrors = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsRequest.prototype.setIgnoreDiagnosticsErrors = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse;
+  return proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.setShiftInstance(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ShiftInstance shift_instance = 1;
+ * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.getShiftInstance = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.setShiftInstance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.clearShiftInstance = function() {
+  return this.setShiftInstance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.hasShiftInstance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CreatePublishedShiftWithSegmentsResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstanceSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+plannedShrinkagePercent: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest;
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setShiftInstanceSid(value);
+      break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartDatetime(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setWidthInMinutes(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSid(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsLocked(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPlannedShrinkagePercent(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstanceSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getStartDatetime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getWidthInMinutes();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getWfmAgentSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = message.getIsLocked();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getPlannedShrinkagePercent();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 shift_instance_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getShiftInstanceSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setShiftInstanceSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_datetime = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getStartDatetime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setStartDatetime = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.clearStartDatetime = function() {
+  return this.setStartDatetime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.hasStartDatetime = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 width_in_minutes = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getWidthInMinutes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setWidthInMinutes = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int64 wfm_agent_sid = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getWfmAgentSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setWfmAgentSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_locked = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getIsLocked = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setIsLocked = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional float planned_shrinkage_percent = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.getPlannedShrinkagePercent = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftRequest.prototype.setPlannedShrinkagePercent = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse;
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.setShiftInstance(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ShiftInstance shift_instance = 1;
+ * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.getShiftInstance = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.setShiftInstance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.clearShiftInstance = function() {
+  return this.setShiftInstance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.hasShiftInstance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
+ignoreDiagnosticsErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest;
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.setShiftInstance(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreDiagnosticsErrors(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getIgnoreDiagnosticsErrors();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ShiftInstance shift_instance = 1;
+ * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.getShiftInstance = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.setShiftInstance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.clearShiftInstance = function() {
+  return this.setShiftInstance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.hasShiftInstance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool ignore_diagnostics_errors = 2;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.getIgnoreDiagnosticsErrors = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsRequest.prototype.setIgnoreDiagnosticsErrors = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse;
+  return proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.setShiftInstance(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ShiftInstance shift_instance = 1;
+ * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.getShiftInstance = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.setShiftInstance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.clearShiftInstance = function() {
+  return this.setShiftInstance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.hasShiftInstance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.UpdatePublishedShiftWithSegmentsResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstanceSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+timeToSplit: (f = msg.getTimeToSplit()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SplitPublishedShiftRequest;
+  return proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setShiftInstanceSid(value);
+      break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setTimeToSplit(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstanceSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getTimeToSplit();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 shift_instance_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.getShiftInstanceSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.setShiftInstanceSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp time_to_split = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.getTimeToSplit = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} returns this
+*/
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.setTimeToSplit = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.clearTimeToSplit = function() {
+  return this.setTimeToSplit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftRequest.prototype.hasTimeToSplit = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SplitPublishedShiftResponse;
+  return proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.addShiftInstances(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstancesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ShiftInstance shift_instances = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.getShiftInstancesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.setShiftInstancesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.addShiftInstances = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.clearShiftInstancesList = function() {
+  return this.setShiftInstancesList([]);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} returns this
+*/
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SplitPublishedShiftResponse} returns this
+ */
+proto.api.v1alpha1.wfm.SplitPublishedShiftResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.repeatedFields_ = [3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+wfmAgentSid1: jspb.Message.getFieldWithDefault(msg, 1, 0),
+wfmAgentSid2: jspb.Message.getFieldWithDefault(msg, 2, 0),
+shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest;
+  return proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSid1(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSid2(value);
+      break;
+    case 3:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShiftInstanceSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWfmAgentSid1();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getWfmAgentSid2();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = message.getShiftInstanceSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 wfm_agent_sid1 = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.getWfmAgentSid1 = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.setWfmAgentSid1 = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 wfm_agent_sid2 = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.getWfmAgentSid2 = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.setWfmAgentSid2 = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * repeated int64 shift_instance_sids = 3;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.getShiftInstanceSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.setShiftInstanceSidsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.addShiftInstanceSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsRequest.prototype.clearShiftInstanceSidsList = function() {
+  return this.setShiftInstanceSidsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse;
+  return proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.addShiftInstances(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstancesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ShiftInstance shift_instances = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.getShiftInstancesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.setShiftInstancesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.addShiftInstances = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.clearShiftInstancesList = function() {
+  return this.setShiftInstancesList([]);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.SwapPublishedShiftsResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest;
+  return proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShiftInstanceSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstanceSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int64 shift_instance_sids = 1;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.getShiftInstanceSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.setShiftInstanceSidsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.addShiftInstanceSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest} returns this
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsRequest.prototype.clearShiftInstanceSidsList = function() {
+  return this.setShiftInstanceSidsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse;
+  return proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.DeletePublishedShiftsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+nodeSelector: (f = msg.getNodeSelector()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
+wfmAgentSidToRemove: jspb.Message.getFieldWithDefault(msg, 3, 0),
+wfmAgentSidToAdd: jspb.Message.getFieldWithDefault(msg, 4, 0),
+skipOverlappingShifts: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest;
+  return proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new api_commons_wfm_pb.DatetimeRange;
+      reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
+      msg.setDatetimeRange(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.ParentEntity;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ParentEntity.deserializeBinaryFromReader);
+      msg.setNodeSelector(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSidToRemove(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSidToAdd(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkipOverlappingShifts(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDatetimeRange();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getNodeSelector();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.ParentEntity.serializeBinaryToWriter
+    );
+  }
+  f = message.getWfmAgentSidToRemove();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = message.getWfmAgentSidToAdd();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = message.getSkipOverlappingShifts();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.DatetimeRange datetime_range = 1;
+ * @return {?proto.api.commons.DatetimeRange}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.getDatetimeRange = function() {
+  return /** @type{?proto.api.commons.DatetimeRange} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.DatetimeRange, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.DatetimeRange|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+*/
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.setDatetimeRange = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.clearDatetimeRange = function() {
+  return this.setDatetimeRange(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.hasDatetimeRange = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ParentEntity node_selector = 2;
+ * @return {?proto.api.v1alpha1.wfm.ParentEntity}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.getNodeSelector = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ParentEntity} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ParentEntity, 2));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ParentEntity|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+*/
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.setNodeSelector = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.clearNodeSelector = function() {
+  return this.setNodeSelector(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.hasNodeSelector = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 wfm_agent_sid_to_remove = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.getWfmAgentSidToRemove = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.setWfmAgentSidToRemove = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int64 wfm_agent_sid_to_add = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.getWfmAgentSidToAdd = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.setWfmAgentSidToAdd = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional bool skip_overlapping_shifts = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.getSkipOverlappingShifts = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleRequest.prototype.setSkipOverlappingShifts = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+updatedShiftInstancesList: jspb.Message.toObjectList(msg.getUpdatedShiftInstancesList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse;
+  return proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.addUpdatedShiftInstances(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUpdatedShiftInstancesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ShiftInstance updated_shift_instances = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.getUpdatedShiftInstancesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.setUpdatedShiftInstancesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.addUpdatedShiftInstances = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.clearUpdatedShiftInstancesList = function() {
+  return this.setUpdatedShiftInstancesList([]);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ReplaceAgentOnPublishedScheduleResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+nodeSelector: (f = msg.getNodeSelector()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
+scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest;
+  return proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new api_commons_wfm_pb.DatetimeRange;
+      reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
+      msg.setDatetimeRange(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWfmAgentSid(value);
+      break;
+    case 3:
+      var value = new proto.api.v1alpha1.wfm.ParentEntity;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ParentEntity.deserializeBinaryFromReader);
+      msg.setNodeSelector(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScheduleScenarioSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDatetimeRange();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getWfmAgentSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = message.getNodeSelector();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.wfm.ParentEntity.serializeBinaryToWriter
+    );
+  }
+  f = message.getScheduleScenarioSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.DatetimeRange datetime_range = 1;
+ * @return {?proto.api.commons.DatetimeRange}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.getDatetimeRange = function() {
+  return /** @type{?proto.api.commons.DatetimeRange} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.DatetimeRange, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.DatetimeRange|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+*/
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.setDatetimeRange = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.clearDatetimeRange = function() {
+  return this.setDatetimeRange(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.hasDatetimeRange = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int64 wfm_agent_sid = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.getWfmAgentSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.setWfmAgentSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional ParentEntity node_selector = 3;
+ * @return {?proto.api.v1alpha1.wfm.ParentEntity}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.getNodeSelector = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ParentEntity} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ParentEntity, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ParentEntity|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+*/
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.setNodeSelector = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.clearNodeSelector = function() {
+  return this.setNodeSelector(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.hasNodeSelector = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 schedule_scenario_sid = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.getScheduleScenarioSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleRequest.prototype.setScheduleScenarioSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+unassignedWfmAgentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+updatedShiftsList: jspb.Message.toObjectList(msg.getUpdatedShiftsList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse;
+  return proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setUnassignedWfmAgentSid(value);
+      break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.ShiftInstance;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
+      msg.addUpdatedShifts(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUnassignedWfmAgentSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getUpdatedShiftsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 unassigned_wfm_agent_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.getUnassignedWfmAgentSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.setUnassignedWfmAgentSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated ShiftInstance updated_shifts = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.getUpdatedShiftsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} returns this
+*/
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.setUpdatedShiftsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.addUpdatedShifts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse} returns this
+ */
+proto.api.v1alpha1.wfm.RemoveAgentFromPublishedScheduleResponse.prototype.clearUpdatedShiftsList = function() {
+  return this.setUpdatedShiftsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest;
+  return proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShiftInstanceSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getShiftInstanceSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int64 shift_instance_sids = 1;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.getShiftInstanceSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.setShiftInstanceSidsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.addShiftInstanceSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleRequest.prototype.clearShiftInstanceSidsList = function() {
+  return this.setShiftInstanceSidsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse;
+  return proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CopyShiftsToPublishedScheduleResponse.prototype.clearDiagnosticsList = function() {
   return this.setDiagnosticsList([]);
 };
 
