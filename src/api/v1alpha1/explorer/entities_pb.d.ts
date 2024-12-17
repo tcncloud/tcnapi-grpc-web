@@ -25,6 +25,9 @@ export class SchemaField extends jspb.Message {
   getIsDefaultTimeFilter(): boolean;
   setIsDefaultTimeFilter(value: boolean): void;
 
+  getIsJoinColumn(): boolean;
+  setIsJoinColumn(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchemaField.AsObject;
   static toObject(includeInstance: boolean, msg: SchemaField): SchemaField.AsObject;
@@ -44,6 +47,7 @@ export namespace SchemaField {
     columnDescription: string,
     isTimeFilter: boolean,
     isDefaultTimeFilter: boolean,
+    isJoinColumn: boolean,
   }
 }
 

@@ -8379,7 +8379,7 @@ proto.api.v1alpha1.insights.DrillThroughParameter.prototype.setColumnName = func
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.v1alpha1.insights.OutputConfiguration.oneofGroups_ = [[7,8]];
+proto.api.v1alpha1.insights.OutputConfiguration.oneofGroups_ = [[7,8,11]];
 
 /**
  * @enum {number}
@@ -8387,7 +8387,8 @@ proto.api.v1alpha1.insights.OutputConfiguration.oneofGroups_ = [[7,8]];
 proto.api.v1alpha1.insights.OutputConfiguration.BodyCase = {
   BODY_NOT_SET: 0,
   BLOB: 7,
-  TABLE_VISUALIZATION: 8
+  TABLE_VISUALIZATION: 8,
+  CARD_VISUALIZATION: 11
 };
 
 /**
@@ -8435,6 +8436,7 @@ insightResourceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
 isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 blob: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
 tableVisualization: (f = msg.getTableVisualization()) && proto.api.v1alpha1.insights.TableVisualization.toObject(includeInstance, f),
+cardVisualization: (f = msg.getCardVisualization()) && proto.api.v1alpha1.insights.CardVisualization.toObject(includeInstance, f),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -8501,6 +8503,11 @@ proto.api.v1alpha1.insights.OutputConfiguration.deserializeBinaryFromReader = fu
       var value = new proto.api.v1alpha1.insights.TableVisualization;
       reader.readMessage(value,proto.api.v1alpha1.insights.TableVisualization.deserializeBinaryFromReader);
       msg.setTableVisualization(value);
+      break;
+    case 11:
+      var value = new proto.api.v1alpha1.insights.CardVisualization;
+      reader.readMessage(value,proto.api.v1alpha1.insights.CardVisualization.deserializeBinaryFromReader);
+      msg.setCardVisualization(value);
       break;
     case 9:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -8589,6 +8596,14 @@ proto.api.v1alpha1.insights.OutputConfiguration.serializeBinaryToWriter = functi
       8,
       f,
       proto.api.v1alpha1.insights.TableVisualization.serializeBinaryToWriter
+    );
+  }
+  f = message.getCardVisualization();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.api.v1alpha1.insights.CardVisualization.serializeBinaryToWriter
     );
   }
   f = message.getCreateTime();
@@ -8770,6 +8785,43 @@ proto.api.v1alpha1.insights.OutputConfiguration.prototype.clearTableVisualizatio
  */
 proto.api.v1alpha1.insights.OutputConfiguration.prototype.hasTableVisualization = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional CardVisualization card_visualization = 11;
+ * @return {?proto.api.v1alpha1.insights.CardVisualization}
+ */
+proto.api.v1alpha1.insights.OutputConfiguration.prototype.getCardVisualization = function() {
+  return /** @type{?proto.api.v1alpha1.insights.CardVisualization} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.CardVisualization, 11));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.insights.CardVisualization|undefined} value
+ * @return {!proto.api.v1alpha1.insights.OutputConfiguration} returns this
+*/
+proto.api.v1alpha1.insights.OutputConfiguration.prototype.setCardVisualization = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 11, proto.api.v1alpha1.insights.OutputConfiguration.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.insights.OutputConfiguration} returns this
+ */
+proto.api.v1alpha1.insights.OutputConfiguration.prototype.clearCardVisualization = function() {
+  return this.setCardVisualization(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.OutputConfiguration.prototype.hasCardVisualization = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
