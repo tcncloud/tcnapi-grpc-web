@@ -5047,6 +5047,7 @@ proto.api.v0alpha.Pool.prototype.toObject = function(opt_includeInstance) {
 proto.api.v0alpha.Pool.toObject = function(includeInstance, msg) {
   var f, obj = {
 id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 desc: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -5088,6 +5089,10 @@ proto.api.v0alpha.Pool.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setDesc(value);
@@ -5128,6 +5133,13 @@ proto.api.v0alpha.Pool.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getDesc();
   if (f.length > 0) {
     writer.writeString(
@@ -5153,6 +5165,24 @@ proto.api.v0alpha.Pool.prototype.getId = function() {
  */
 proto.api.v0alpha.Pool.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.Pool.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.Pool} returns this
+ */
+proto.api.v0alpha.Pool.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

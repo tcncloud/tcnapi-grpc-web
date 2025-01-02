@@ -56,6 +56,9 @@ export class Pool extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
+  getName(): string;
+  setName(value: string): void;
+
   getDesc(): string;
   setDesc(value: string): void;
 
@@ -72,6 +75,7 @@ export class Pool extends jspb.Message {
 export namespace Pool {
   export type AsObject = {
     id: string,
+    name: string,
     desc: string,
   }
 }
