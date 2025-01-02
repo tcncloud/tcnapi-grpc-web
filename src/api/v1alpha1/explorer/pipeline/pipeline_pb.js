@@ -1,4 +1,4 @@
-// source: api/v1alpha1/explorer/pipeline.proto
+// source: api/v1alpha1/explorer/pipeline/pipeline.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -12,7 +12,7 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
+var localGlobalThis = require("../../../../global.js");
 var proto = localGlobalThis.proto;
 var goog = jspb;
 var global = localGlobalThis || 

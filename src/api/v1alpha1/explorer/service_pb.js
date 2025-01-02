@@ -29,8 +29,8 @@ var api_commons_bireportgenerator_pb = require('../../../api/commons/bireportgen
 goog.object.extend(proto, api_commons_bireportgenerator_pb);
 var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/entities_pb.js');
 goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
-var api_v1alpha1_explorer_pipeline_pb = require('../../../api/v1alpha1/explorer/pipeline_pb.js');
-goog.object.extend(proto, api_v1alpha1_explorer_pipeline_pb);
+var api_v1alpha1_explorer_pipeline_pipeline_pb = require('../../../api/v1alpha1/explorer/pipeline/pipeline_pb.js');
+goog.object.extend(proto, api_v1alpha1_explorer_pipeline_pipeline_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -983,7 +983,7 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 pipeline: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 prql: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-queryContent: (f = msg.getQueryContent()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f),
+queryContent: (f = msg.getQueryContent()) && api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.toObject(includeInstance, f),
 orgIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1047,8 +1047,8 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
       msg.setPrql(value);
       break;
     case 16:
-      var value = new api_v1alpha1_explorer_pipeline_pb.Pipeline;
-      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pb.Pipeline.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline;
+      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.deserializeBinaryFromReader);
       msg.setQueryContent(value);
       break;
     case 5:
@@ -1157,7 +1157,7 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
     writer.writeMessage(
       16,
       f,
-      api_v1alpha1_explorer_pipeline_pb.Pipeline.serializeBinaryToWriter
+      api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.serializeBinaryToWriter
     );
   }
   f = message.getOrgIdsList();
@@ -1351,7 +1351,7 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.hasPrql = function() {
  */
 proto.api.v1alpha1.explorer.QueryRequest.prototype.getQueryContent = function() {
   return /** @type{?proto.api.v1alpha1.explorer.pipeline.Pipeline} */ (
-    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pb.Pipeline, 16));
+    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline, 16));
 };
 
 
