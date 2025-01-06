@@ -938,7 +938,7 @@ proto.api.v1alpha1.explorer.QueryRequest.QueryCase = {
   QUERY_NOT_SET: 0,
   PIPELINE: 3,
   PRQL: 4,
-  QUERY_CONTENT: 16
+  QUERY_PIPELINE: 16
 };
 
 /**
@@ -983,7 +983,7 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 pipeline: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 prql: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-queryContent: (f = msg.getQueryContent()) && api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.toObject(includeInstance, f),
+queryPipeline: (f = msg.getQueryPipeline()) && api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.toObject(includeInstance, f),
 orgIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1049,7 +1049,7 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
     case 16:
       var value = new api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline;
       reader.readMessage(value,api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.deserializeBinaryFromReader);
-      msg.setQueryContent(value);
+      msg.setQueryPipeline(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1152,7 +1152,7 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getQueryContent();
+  f = message.getQueryPipeline();
   if (f != null) {
     writer.writeMessage(
       16,
@@ -1346,10 +1346,10 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.hasPrql = function() {
 
 
 /**
- * optional pipeline.Pipeline query_content = 16;
+ * optional pipeline.Pipeline query_pipeline = 16;
  * @return {?proto.api.v1alpha1.explorer.pipeline.Pipeline}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.getQueryContent = function() {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getQueryPipeline = function() {
   return /** @type{?proto.api.v1alpha1.explorer.pipeline.Pipeline} */ (
     jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline, 16));
 };
@@ -1359,7 +1359,7 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.getQueryContent = function() 
  * @param {?proto.api.v1alpha1.explorer.pipeline.Pipeline|undefined} value
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
 */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.setQueryContent = function(value) {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setQueryPipeline = function(value) {
   return jspb.Message.setOneofWrapperField(this, 16, proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_[0], value);
 };
 
@@ -1368,8 +1368,8 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.setQueryContent = function(va
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.clearQueryContent = function() {
-  return this.setQueryContent(undefined);
+proto.api.v1alpha1.explorer.QueryRequest.prototype.clearQueryPipeline = function() {
+  return this.setQueryPipeline(undefined);
 };
 
 
@@ -1377,7 +1377,7 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.clearQueryContent = function(
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.hasQueryContent = function() {
+proto.api.v1alpha1.explorer.QueryRequest.prototype.hasQueryPipeline = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 

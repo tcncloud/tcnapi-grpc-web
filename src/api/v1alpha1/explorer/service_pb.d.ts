@@ -120,10 +120,10 @@ export class QueryRequest extends jspb.Message {
   getPrql(): string;
   setPrql(value: string): void;
 
-  hasQueryContent(): boolean;
-  clearQueryContent(): void;
-  getQueryContent(): api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline | undefined;
-  setQueryContent(value?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline): void;
+  hasQueryPipeline(): boolean;
+  clearQueryPipeline(): void;
+  getQueryPipeline(): api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline | undefined;
+  setQueryPipeline(value?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline): void;
 
   clearOrgIdsList(): void;
   getOrgIdsList(): Array<string>;
@@ -182,7 +182,7 @@ export namespace QueryRequest {
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
     pipeline: string,
     prql: string,
-    queryContent?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.AsObject,
+    queryPipeline?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.AsObject,
     orgIdsList: Array<string>,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -199,7 +199,7 @@ export namespace QueryRequest {
     QUERY_NOT_SET = 0,
     PIPELINE = 3,
     PRQL = 4,
-    QUERY_CONTENT = 16,
+    QUERY_PIPELINE = 16,
   }
 }
 
