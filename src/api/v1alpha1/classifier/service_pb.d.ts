@@ -413,6 +413,12 @@ export namespace ListEventsResponse {
     getTotalProcessingSeconds(): number;
     setTotalProcessingSeconds(value: number): void;
 
+    getTotalQueueWaitMilliseconds(): number;
+    setTotalQueueWaitMilliseconds(value: number): void;
+
+    getTotalProcessingMilliseconds(): number;
+    setTotalProcessingMilliseconds(value: number): void;
+
     clearMsgsList(): void;
     getMsgsList(): Array<string>;
     setMsgsList(value: Array<string>): void;
@@ -441,6 +447,8 @@ export namespace ListEventsResponse {
       columnsList: Array<string>,
       totalQueueWaitSeconds: number,
       totalProcessingSeconds: number,
+      totalQueueWaitMilliseconds: number,
+      totalProcessingMilliseconds: number,
       msgsList: Array<string>,
     }
   }
