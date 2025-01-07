@@ -1161,6 +1161,36 @@ export class ExecuteFlow extends jspb.Message {
   getBillingtreeSubmitCardSaleRequest(): ExecuteBillingtreeSubmitCardSaleRequest | undefined;
   setBillingtreeSubmitCardSaleRequest(value?: ExecuteBillingtreeSubmitCardSaleRequest): void;
 
+  hasBillingtreeGetAccessToken(): boolean;
+  clearBillingtreeGetAccessToken(): void;
+  getBillingtreeGetAccessToken(): ExecuteBillingtreeGetAccessToken | undefined;
+  setBillingtreeGetAccessToken(value?: ExecuteBillingtreeGetAccessToken): void;
+
+  hasBillingtreeTokenizeCard(): boolean;
+  clearBillingtreeTokenizeCard(): void;
+  getBillingtreeTokenizeCard(): ExecuteBillingtreeTokenizeCard | undefined;
+  setBillingtreeTokenizeCard(value?: ExecuteBillingtreeTokenizeCard): void;
+
+  hasBillingtreeTokenizeAch(): boolean;
+  clearBillingtreeTokenizeAch(): void;
+  getBillingtreeTokenizeAch(): ExecuteBillingtreeTokenizeAch | undefined;
+  setBillingtreeTokenizeAch(value?: ExecuteBillingtreeTokenizeAch): void;
+
+  hasBillingtreeTransactionCardSale(): boolean;
+  clearBillingtreeTransactionCardSale(): void;
+  getBillingtreeTransactionCardSale(): ExecuteBillingtreeTransactionCardSale | undefined;
+  setBillingtreeTransactionCardSale(value?: ExecuteBillingtreeTransactionCardSale): void;
+
+  hasBillingtreeTransactionAchSale(): boolean;
+  clearBillingtreeTransactionAchSale(): void;
+  getBillingtreeTransactionAchSale(): ExecuteBillingtreeTransactionAchSale | undefined;
+  setBillingtreeTransactionAchSale(value?: ExecuteBillingtreeTransactionAchSale): void;
+
+  hasBillingtreeQueryFee(): boolean;
+  clearBillingtreeQueryFee(): void;
+  getBillingtreeQueryFee(): ExecuteBillingtreeQueryFee | undefined;
+  setBillingtreeQueryFee(value?: ExecuteBillingtreeQueryFee): void;
+
   hasExperianCcPaymentRequest(): boolean;
   clearExperianCcPaymentRequest(): void;
   getExperianCcPaymentRequest(): ExecuteExperianCcPaymentRequest | undefined;
@@ -2325,6 +2355,12 @@ export namespace ExecuteFlow {
     paywayCreateTokenRequest?: ExecutePaywayCreateTokenRequest.AsObject,
     paywaySubmitAchSaleRequest?: ExecutePaywaySubmitACHSaleRequest.AsObject,
     billingtreeSubmitCardSaleRequest?: ExecuteBillingtreeSubmitCardSaleRequest.AsObject,
+    billingtreeGetAccessToken?: ExecuteBillingtreeGetAccessToken.AsObject,
+    billingtreeTokenizeCard?: ExecuteBillingtreeTokenizeCard.AsObject,
+    billingtreeTokenizeAch?: ExecuteBillingtreeTokenizeAch.AsObject,
+    billingtreeTransactionCardSale?: ExecuteBillingtreeTransactionCardSale.AsObject,
+    billingtreeTransactionAchSale?: ExecuteBillingtreeTransactionAchSale.AsObject,
+    billingtreeQueryFee?: ExecuteBillingtreeQueryFee.AsObject,
     experianCcPaymentRequest?: ExecuteExperianCcPaymentRequest.AsObject,
     experianCcPaymentPlanRequest?: ExecuteExperianCcPaymentPlanRequest.AsObject,
     experianBalancerequest?: ExecuteExperianBalancerequest.AsObject,
@@ -2627,6 +2663,12 @@ export namespace ExecuteFlow {
     PAYWAY_CREATE_TOKEN_REQUEST = 1802,
     PAYWAY_SUBMIT_ACH_SALE_REQUEST = 1803,
     BILLINGTREE_SUBMIT_CARD_SALE_REQUEST = 1901,
+    BILLINGTREE_GET_ACCESS_TOKEN = 1902,
+    BILLINGTREE_TOKENIZE_CARD = 1903,
+    BILLINGTREE_TOKENIZE_ACH = 1904,
+    BILLINGTREE_TRANSACTION_CARD_SALE = 1905,
+    BILLINGTREE_TRANSACTION_ACH_SALE = 1906,
+    BILLINGTREE_QUERY_FEE = 1907,
     EXPERIAN_CC_PAYMENT_REQUEST = 2001,
     EXPERIAN_CC_PAYMENT_PLAN_REQUEST = 2002,
     EXPERIAN_BALANCEREQUEST = 2003,
@@ -4816,6 +4858,102 @@ export class ExecuteBillingtreeSubmitCardSaleRequest extends jspb.Message {
 }
 
 export namespace ExecuteBillingtreeSubmitCardSaleRequest {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeGetAccessToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeGetAccessToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeGetAccessToken): ExecuteBillingtreeGetAccessToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeGetAccessToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeGetAccessToken;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeGetAccessToken, reader: jspb.BinaryReader): ExecuteBillingtreeGetAccessToken;
+}
+
+export namespace ExecuteBillingtreeGetAccessToken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeTokenizeCard extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeTokenizeCard.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeTokenizeCard): ExecuteBillingtreeTokenizeCard.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeTokenizeCard, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeTokenizeCard;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeTokenizeCard, reader: jspb.BinaryReader): ExecuteBillingtreeTokenizeCard;
+}
+
+export namespace ExecuteBillingtreeTokenizeCard {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeTokenizeAch extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeTokenizeAch.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeTokenizeAch): ExecuteBillingtreeTokenizeAch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeTokenizeAch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeTokenizeAch;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeTokenizeAch, reader: jspb.BinaryReader): ExecuteBillingtreeTokenizeAch;
+}
+
+export namespace ExecuteBillingtreeTokenizeAch {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeTransactionCardSale extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeTransactionCardSale.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeTransactionCardSale): ExecuteBillingtreeTransactionCardSale.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeTransactionCardSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeTransactionCardSale;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeTransactionCardSale, reader: jspb.BinaryReader): ExecuteBillingtreeTransactionCardSale;
+}
+
+export namespace ExecuteBillingtreeTransactionCardSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeTransactionAchSale extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeTransactionAchSale.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeTransactionAchSale): ExecuteBillingtreeTransactionAchSale.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeTransactionAchSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeTransactionAchSale;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeTransactionAchSale, reader: jspb.BinaryReader): ExecuteBillingtreeTransactionAchSale;
+}
+
+export namespace ExecuteBillingtreeTransactionAchSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteBillingtreeQueryFee extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBillingtreeQueryFee.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBillingtreeQueryFee): ExecuteBillingtreeQueryFee.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBillingtreeQueryFee, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBillingtreeQueryFee;
+  static deserializeBinaryFromReader(message: ExecuteBillingtreeQueryFee, reader: jspb.BinaryReader): ExecuteBillingtreeQueryFee;
+}
+
+export namespace ExecuteBillingtreeQueryFee {
   export type AsObject = {
   }
 }
@@ -8378,6 +8516,12 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PAYWAY_CREATETOKENREQUEST: 1802;
   REQUEST_METHOD_PAYWAY_SUBMITACHSALEREQUEST: 1803;
   REQUEST_METHOD_BILLINGTREE_SUBMITCARDSALEREQUEST: 1901;
+  REQUEST_METHOD_BILLINGTREE_GETACCESSTOKEN: 1902;
+  REQUEST_METHOD_BILLINGTREE_TOKENIZE_CARD: 1903;
+  REQUEST_METHOD_BILLINGTREE_TOKENIZE_ACH: 1904;
+  REQUEST_METHOD_BILLINGTREE_TRANSACTION_CARD_SALE: 1905;
+  REQUEST_METHOD_BILLINGTREE_TRANSACTION_ACH_SALE: 1906;
+  REQUEST_METHOD_BILLINGTREE_QUERYFEE: 1907;
   REQUEST_METHOD_EXPERIAN_CC_PAYMENT_REQUEST: 2001;
   REQUEST_METHOD_EXPERIAN_CC_PAYMENTPLANREQUEST: 2002;
   REQUEST_METHOD_EXPERIAN_BALANCEREQUEST: 2003;
