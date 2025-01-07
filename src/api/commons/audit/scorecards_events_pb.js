@@ -8134,9 +8134,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.toOb
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
 callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-talkTime: (f = msg.getTalkTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-audioTime: (f = msg.getAudioTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -8181,16 +8179,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.deserializeBin
       var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
       msg.setCallType(value);
       break;
-    case 3:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setTalkTime(value);
-      break;
-    case 4:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setAudioTime(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -8234,22 +8222,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.serializeBinar
       f
     );
   }
-  f = message.getTalkTime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
-  f = message.getAudioTime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -8289,80 +8261,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.setC
 };
 
 
-/**
- * optional google.protobuf.Duration talk_time = 3;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.getTalkTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call} returns this
-*/
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.setTalkTime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call} returns this
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.clearTalkTime = function() {
-  return this.setTalkTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.hasTalkTime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.Duration audio_time = 4;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.getAudioTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call} returns this
-*/
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.setAudioTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call} returns this
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.clearAudioTime = function() {
-  return this.setAudioTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.prototype.hasAudioTime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
 
 
 
@@ -8395,8 +8293,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.toObj
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -8437,10 +8334,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.deserializeBina
       var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setMessageCount(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -8477,13 +8370,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.serializeBinary
       f
     );
   }
-  f = message.getMessageCount();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -8502,24 +8388,6 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.getCo
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.setConversationSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional int64 message_count = 2;
- * @return {number}
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.getMessageCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms} returns this
- */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.prototype.setMessageCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

@@ -1059,16 +1059,6 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
     getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
     setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
 
-    hasTalkTime(): boolean;
-    clearTalkTime(): void;
-    getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
-    setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
-
-    hasAudioTime(): boolean;
-    clearAudioTime(): void;
-    getAudioTime(): google_protobuf_duration_pb.Duration | undefined;
-    setAudioTime(value?: google_protobuf_duration_pb.Duration): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
     static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -1083,17 +1073,12 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
     export type AsObject = {
       callSid: number,
       callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
-      talkTime?: google_protobuf_duration_pb.Duration.AsObject,
-      audioTime?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 
   export class Sms extends jspb.Message {
     getConversationSid(): number;
     setConversationSid(value: number): void;
-
-    getMessageCount(): number;
-    setMessageCount(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
@@ -1108,7 +1093,6 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
   export namespace Sms {
     export type AsObject = {
       conversationSid: number,
-      messageCount: number,
     }
   }
 

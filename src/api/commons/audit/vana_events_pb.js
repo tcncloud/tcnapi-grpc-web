@@ -2715,9 +2715,7 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.toObject = funct
 proto.api.commons.audit.VanaCreateSentimentEvent.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
 callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-talkTime: (f = msg.getTalkTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-audioTime: (f = msg.getAudioTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2762,16 +2760,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Call.deserializeBinaryFromReade
       var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
       msg.setCallType(value);
       break;
-    case 3:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setTalkTime(value);
-      break;
-    case 4:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setAudioTime(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2815,22 +2803,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Call.serializeBinaryToWriter = 
       f
     );
   }
-  f = message.getTalkTime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
-  f = message.getAudioTime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -2870,80 +2842,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.setCallType = fu
 };
 
 
-/**
- * optional google.protobuf.Duration talk_time = 3;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.getTalkTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Call} returns this
-*/
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.setTalkTime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Call} returns this
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.clearTalkTime = function() {
-  return this.setTalkTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.hasTalkTime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.Duration audio_time = 4;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.getAudioTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Call} returns this
-*/
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.setAudioTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Call} returns this
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.clearAudioTime = function() {
-  return this.setAudioTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Call.prototype.hasAudioTime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
 
 
 
@@ -2976,8 +2874,7 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.toObject = functi
  */
 proto.api.commons.audit.VanaCreateSentimentEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3018,10 +2915,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.deserializeBinaryFromReader
       var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setMessageCount(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3058,13 +2951,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getMessageCount();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -3083,24 +2969,6 @@ proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.getConversationSi
  */
 proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.setConversationSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional int64 message_count = 2;
- * @return {number}
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.getMessageCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.VanaCreateSentimentEvent.Sms} returns this
- */
-proto.api.commons.audit.VanaCreateSentimentEvent.Sms.prototype.setMessageCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3395,9 +3263,7 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.toObject = functio
 proto.api.commons.audit.VanaCreateSummaryEvent.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
 callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-talkTime: (f = msg.getTalkTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-audioTime: (f = msg.getAudioTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3442,16 +3308,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Call.deserializeBinaryFromReader 
       var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
       msg.setCallType(value);
       break;
-    case 3:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setTalkTime(value);
-      break;
-    case 4:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setAudioTime(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3495,22 +3351,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Call.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getTalkTime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
-  f = message.getAudioTime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -3550,80 +3390,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.setCallType = func
 };
 
 
-/**
- * optional google.protobuf.Duration talk_time = 3;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.getTalkTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Call} returns this
-*/
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.setTalkTime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Call} returns this
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.clearTalkTime = function() {
-  return this.setTalkTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.hasTalkTime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.Duration audio_time = 4;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.getAudioTime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Call} returns this
-*/
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.setAudioTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Call} returns this
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.clearAudioTime = function() {
-  return this.setAudioTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Call.prototype.hasAudioTime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
 
 
 
@@ -3656,8 +3422,7 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.toObject = function
  */
 proto.api.commons.audit.VanaCreateSummaryEvent.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-messageCount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3698,10 +3463,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.deserializeBinaryFromReader =
       var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setMessageCount(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3738,13 +3499,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.serializeBinaryToWriter = fun
       f
     );
   }
-  f = message.getMessageCount();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -3763,24 +3517,6 @@ proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.getConversationSid 
  */
 proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.setConversationSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional int64 message_count = 2;
- * @return {number}
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.getMessageCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.VanaCreateSummaryEvent.Sms} returns this
- */
-proto.api.commons.audit.VanaCreateSummaryEvent.Sms.prototype.setMessageCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
