@@ -6785,7 +6785,7 @@ proto.api.commons.AdherenceAgentState.prototype.setPauseCode = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.AdherenceAgentStateViolation.repeatedFields_ = [3,5];
+proto.api.commons.AdherenceAgentStateViolation.repeatedFields_ = [3,5,8];
 
 
 
@@ -6824,7 +6824,8 @@ expectedRtmStatesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? und
 expectedPauseCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
 actualRtmStatesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 actualPauseCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
-violationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0)
+violationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
+expectedPauseCodesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6893,6 +6894,10 @@ proto.api.commons.AdherenceAgentStateViolation.deserializeBinaryFromReader = fun
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setViolationDurationSeconds(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addExpectedPauseCodes(value);
       break;
     default:
       reader.skipField();
@@ -6970,6 +6975,13 @@ proto.api.commons.AdherenceAgentStateViolation.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt32(
       7,
+      f
+    );
+  }
+  f = message.getExpectedPauseCodesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
       f
     );
   }
@@ -7156,6 +7168,43 @@ proto.api.commons.AdherenceAgentStateViolation.prototype.getViolationDurationSec
  */
 proto.api.commons.AdherenceAgentStateViolation.prototype.setViolationDurationSeconds = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * repeated string expected_pause_codes = 8;
+ * @return {!Array<string>}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getExpectedPauseCodesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setExpectedPauseCodesList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.addExpectedPauseCodes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.clearExpectedPauseCodesList = function() {
+  return this.setExpectedPauseCodesList([]);
 };
 
 
