@@ -1,5 +1,5 @@
-// package: api.v1alpha1.explorer.pipeline
-// file: api/v1alpha1/explorer/pipeline/pipeline.proto
+// package: api.v1alpha1.explorer
+// file: api/v1alpha1/explorer/pipeline.proto
 
 import * as jspb from "google-protobuf";
 
@@ -688,49 +688,6 @@ export namespace UnnestToColumnsNode {
     columnsList: Array<string>,
     primaryKeysList: Array<string>,
     jsonColumnsList: Array<Column.AsObject>,
-  }
-}
-
-export class Parameters extends jspb.Message {
-  getParametersMap(): jspb.Map<string, Parameters.Parameter>;
-  clearParametersMap(): void;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Parameters.AsObject;
-  static toObject(includeInstance: boolean, msg: Parameters): Parameters.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Parameters, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Parameters;
-  static deserializeBinaryFromReader(message: Parameters, reader: jspb.BinaryReader): Parameters;
-}
-
-export namespace Parameters {
-  export type AsObject = {
-    parametersMap: Array<[string, Parameters.Parameter.AsObject]>,
-  }
-
-  export class Parameter extends jspb.Message {
-    getValue(): string;
-    setValue(value: string): void;
-
-    getDataType(): string;
-    setDataType(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Parameter.AsObject;
-    static toObject(includeInstance: boolean, msg: Parameter): Parameter.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Parameter, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Parameter;
-    static deserializeBinaryFromReader(message: Parameter, reader: jspb.BinaryReader): Parameter;
-  }
-
-  export namespace Parameter {
-    export type AsObject = {
-      value: string,
-      dataType: string,
-    }
   }
 }
 

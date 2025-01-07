@@ -5,7 +5,7 @@ import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireportgenerator_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
-import * as api_v1alpha1_explorer_pipeline_pipeline_pb from "../../../api/v1alpha1/explorer/pipeline/pipeline_pb";
+import * as api_v1alpha1_explorer_pipeline_pb from "../../../api/v1alpha1/explorer/pipeline_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -122,8 +122,8 @@ export class QueryRequest extends jspb.Message {
 
   hasQueryPipeline(): boolean;
   clearQueryPipeline(): void;
-  getQueryPipeline(): api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline | undefined;
-  setQueryPipeline(value?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline): void;
+  getQueryPipeline(): api_v1alpha1_explorer_pipeline_pb.Pipeline | undefined;
+  setQueryPipeline(value?: api_v1alpha1_explorer_pipeline_pb.Pipeline): void;
 
   clearOrgIdsList(): void;
   getOrgIdsList(): Array<string>;
@@ -182,7 +182,7 @@ export namespace QueryRequest {
     datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
     pipeline: string,
     prql: string,
-    queryPipeline?: api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.AsObject,
+    queryPipeline?: api_v1alpha1_explorer_pipeline_pb.Pipeline.AsObject,
     orgIdsList: Array<string>,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

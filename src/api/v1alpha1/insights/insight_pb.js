@@ -27,8 +27,8 @@ var api_commons_insights_pb = require('../../../api/commons/insights_pb.js');
 goog.object.extend(proto, api_commons_insights_pb);
 var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/entities_pb.js');
 goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
-var api_v1alpha1_explorer_pipeline_pipeline_pb = require('../../../api/v1alpha1/explorer/pipeline/pipeline_pb.js');
-goog.object.extend(proto, api_v1alpha1_explorer_pipeline_pipeline_pb);
+var api_v1alpha1_explorer_pipeline_pb = require('../../../api/v1alpha1/explorer/pipeline_pb.js');
+goog.object.extend(proto, api_v1alpha1_explorer_pipeline_pb);
 var api_v1alpha1_insights_insight_content_pb = require('../../../api/v1alpha1/insights/insight_content_pb.js');
 goog.object.extend(proto, api_v1alpha1_insights_insight_content_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -1261,7 +1261,7 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 12, ""),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 pipeline: (f = msg.getPipeline()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
-insightBody: (f = msg.getInsightBody()) && api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.toObject(includeInstance, f)
+insightBody: (f = msg.getInsightBody()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1358,8 +1358,8 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
       msg.setPipeline(value);
       break;
     case 17:
-      var value = new api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline;
-      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_pipeline_pb.Pipeline;
+      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pb.Pipeline.deserializeBinaryFromReader);
       msg.setInsightBody(value);
       break;
     default:
@@ -1497,7 +1497,7 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
     writer.writeMessage(
       17,
       f,
-      api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline.serializeBinaryToWriter
+      api_v1alpha1_explorer_pipeline_pb.Pipeline.serializeBinaryToWriter
     );
   }
 };
@@ -1813,17 +1813,17 @@ proto.api.v1alpha1.insights.Insight.prototype.hasPipeline = function() {
 
 
 /**
- * optional api.v1alpha1.explorer.pipeline.Pipeline insight_body = 17;
- * @return {?proto.api.v1alpha1.explorer.pipeline.Pipeline}
+ * optional api.v1alpha1.explorer.Pipeline insight_body = 17;
+ * @return {?proto.api.v1alpha1.explorer.Pipeline}
  */
 proto.api.v1alpha1.insights.Insight.prototype.getInsightBody = function() {
-  return /** @type{?proto.api.v1alpha1.explorer.pipeline.Pipeline} */ (
-    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pipeline_pb.Pipeline, 17));
+  return /** @type{?proto.api.v1alpha1.explorer.Pipeline} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pb.Pipeline, 17));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.explorer.pipeline.Pipeline|undefined} value
+ * @param {?proto.api.v1alpha1.explorer.Pipeline|undefined} value
  * @return {!proto.api.v1alpha1.insights.Insight} returns this
 */
 proto.api.v1alpha1.insights.Insight.prototype.setInsightBody = function(value) {
@@ -5869,7 +5869,7 @@ operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
     proto.api.v1alpha1.insights.ColumnOperation.toObject, includeInstance),
 iconName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 iconColor: (f = msg.getIconColor()) && proto.api.v1alpha1.insights.TextValueCondition.Color.toObject(includeInstance, f),
-expressionNode: (f = msg.getExpressionNode()) && api_v1alpha1_explorer_pipeline_pipeline_pb.ExpressionNode.toObject(includeInstance, f)
+expressionNode: (f = msg.getExpressionNode()) && api_v1alpha1_explorer_pipeline_pb.ExpressionNode.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5930,8 +5930,8 @@ proto.api.v1alpha1.insights.TextValueCondition.deserializeBinaryFromReader = fun
       msg.setIconColor(value);
       break;
     case 6:
-      var value = new api_v1alpha1_explorer_pipeline_pipeline_pb.ExpressionNode;
-      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pipeline_pb.ExpressionNode.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_pipeline_pb.ExpressionNode;
+      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pb.ExpressionNode.deserializeBinaryFromReader);
       msg.setExpressionNode(value);
       break;
     default:
@@ -6006,7 +6006,7 @@ proto.api.v1alpha1.insights.TextValueCondition.serializeBinaryToWriter = functio
     writer.writeMessage(
       6,
       f,
-      api_v1alpha1_explorer_pipeline_pipeline_pb.ExpressionNode.serializeBinaryToWriter
+      api_v1alpha1_explorer_pipeline_pb.ExpressionNode.serializeBinaryToWriter
     );
   }
 };
@@ -6351,17 +6351,17 @@ proto.api.v1alpha1.insights.TextValueCondition.prototype.hasIconColor = function
 
 
 /**
- * optional api.v1alpha1.explorer.pipeline.ExpressionNode expression_node = 6;
- * @return {?proto.api.v1alpha1.explorer.pipeline.ExpressionNode}
+ * optional api.v1alpha1.explorer.ExpressionNode expression_node = 6;
+ * @return {?proto.api.v1alpha1.explorer.ExpressionNode}
  */
 proto.api.v1alpha1.insights.TextValueCondition.prototype.getExpressionNode = function() {
-  return /** @type{?proto.api.v1alpha1.explorer.pipeline.ExpressionNode} */ (
-    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pipeline_pb.ExpressionNode, 6));
+  return /** @type{?proto.api.v1alpha1.explorer.ExpressionNode} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pb.ExpressionNode, 6));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.explorer.pipeline.ExpressionNode|undefined} value
+ * @param {?proto.api.v1alpha1.explorer.ExpressionNode|undefined} value
  * @return {!proto.api.v1alpha1.insights.TextValueCondition} returns this
 */
 proto.api.v1alpha1.insights.TextValueCondition.prototype.setExpressionNode = function(value) {
