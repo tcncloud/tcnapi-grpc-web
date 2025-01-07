@@ -29,8 +29,8 @@ var api_commons_bireportgenerator_pb = require('../../../api/commons/bireportgen
 goog.object.extend(proto, api_commons_bireportgenerator_pb);
 var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/entities_pb.js');
 goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
-var api_v1alpha1_insights_insight_content_pb = require('../../../api/v1alpha1/insights/insight_content_pb.js');
-goog.object.extend(proto, api_v1alpha1_insights_insight_content_pb);
+var api_v1alpha1_explorer_pipeline_pb = require('../../../api/v1alpha1/explorer/pipeline_pb.js');
+goog.object.extend(proto, api_v1alpha1_explorer_pipeline_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -929,7 +929,7 @@ proto.api.v1alpha1.explorer.QueryRequest.repeatedFields_ = [5];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_ = [[3,4,13]];
+proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_ = [[3,4,16]];
 
 /**
  * @enum {number}
@@ -938,7 +938,7 @@ proto.api.v1alpha1.explorer.QueryRequest.QueryCase = {
   QUERY_NOT_SET: 0,
   PIPELINE: 3,
   PRQL: 4,
-  INSIGHT_BODY: 13
+  QUERY_PIPELINE: 16
 };
 
 /**
@@ -983,7 +983,7 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 pipeline: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 prql: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-insightBody: (f = msg.getInsightBody()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
+queryPipeline: (f = msg.getQueryPipeline()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f),
 orgIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1046,10 +1046,10 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setPrql(value);
       break;
-    case 13:
-      var value = new api_v1alpha1_insights_insight_content_pb.Pipeline;
-      reader.readMessage(value,api_v1alpha1_insights_insight_content_pb.Pipeline.deserializeBinaryFromReader);
-      msg.setInsightBody(value);
+    case 16:
+      var value = new api_v1alpha1_explorer_pipeline_pb.Pipeline;
+      reader.readMessage(value,api_v1alpha1_explorer_pipeline_pb.Pipeline.deserializeBinaryFromReader);
+      msg.setQueryPipeline(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1152,12 +1152,12 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getInsightBody();
+  f = message.getQueryPipeline();
   if (f != null) {
     writer.writeMessage(
-      13,
+      16,
       f,
-      api_v1alpha1_insights_insight_content_pb.Pipeline.serializeBinaryToWriter
+      api_v1alpha1_explorer_pipeline_pb.Pipeline.serializeBinaryToWriter
     );
   }
   f = message.getOrgIdsList();
@@ -1346,21 +1346,21 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.hasPrql = function() {
 
 
 /**
- * optional api.v1alpha1.insights.Pipeline insight_body = 13;
- * @return {?proto.api.v1alpha1.insights.Pipeline}
+ * optional Pipeline query_pipeline = 16;
+ * @return {?proto.api.v1alpha1.explorer.Pipeline}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.getInsightBody = function() {
-  return /** @type{?proto.api.v1alpha1.insights.Pipeline} */ (
-    jspb.Message.getWrapperField(this, api_v1alpha1_insights_insight_content_pb.Pipeline, 13));
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getQueryPipeline = function() {
+  return /** @type{?proto.api.v1alpha1.explorer.Pipeline} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_pipeline_pb.Pipeline, 16));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.insights.Pipeline|undefined} value
+ * @param {?proto.api.v1alpha1.explorer.Pipeline|undefined} value
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
 */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.setInsightBody = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 13, proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_[0], value);
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setQueryPipeline = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 16, proto.api.v1alpha1.explorer.QueryRequest.oneofGroups_[0], value);
 };
 
 
@@ -1368,8 +1368,8 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.setInsightBody = function(val
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.clearInsightBody = function() {
-  return this.setInsightBody(undefined);
+proto.api.v1alpha1.explorer.QueryRequest.prototype.clearQueryPipeline = function() {
+  return this.setQueryPipeline(undefined);
 };
 
 
@@ -1377,8 +1377,8 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.clearInsightBody = function()
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.explorer.QueryRequest.prototype.hasInsightBody = function() {
-  return jspb.Message.getField(this, 13) != null;
+proto.api.v1alpha1.explorer.QueryRequest.prototype.hasQueryPipeline = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

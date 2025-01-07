@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_insights_pb from "../../../api/commons/insights_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
+import * as api_v1alpha1_explorer_pipeline_pb from "../../../api/v1alpha1/explorer/pipeline_pb";
 import * as api_v1alpha1_insights_insight_content_pb from "../../../api/v1alpha1/insights/insight_content_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -57,6 +58,11 @@ export class Insight extends jspb.Message {
   getPipeline(): api_v1alpha1_insights_insight_content_pb.Pipeline | undefined;
   setPipeline(value?: api_v1alpha1_insights_insight_content_pb.Pipeline): void;
 
+  hasInsightBody(): boolean;
+  clearInsightBody(): void;
+  getInsightBody(): api_v1alpha1_explorer_pipeline_pb.Pipeline | undefined;
+  setInsightBody(value?: api_v1alpha1_explorer_pipeline_pb.Pipeline): void;
+
   getInsightContentCase(): Insight.InsightContentCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
@@ -84,11 +90,13 @@ export namespace Insight {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     pipeline?: api_v1alpha1_insights_insight_content_pb.Pipeline.AsObject,
+    insightBody?: api_v1alpha1_explorer_pipeline_pb.Pipeline.AsObject,
   }
 
   export enum InsightContentCase {
     INSIGHT_CONTENT_NOT_SET = 0,
     PIPELINE = 16,
+    INSIGHT_BODY = 17,
   }
 }
 
@@ -686,6 +694,11 @@ export class TextValueCondition extends jspb.Message {
   getIconColor(): TextValueCondition.Color | undefined;
   setIconColor(value?: TextValueCondition.Color): void;
 
+  hasExpressionNode(): boolean;
+  clearExpressionNode(): void;
+  getExpressionNode(): api_v1alpha1_explorer_pipeline_pb.ExpressionNode | undefined;
+  setExpressionNode(value?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TextValueCondition.AsObject;
   static toObject(includeInstance: boolean, msg: TextValueCondition): TextValueCondition.AsObject;
@@ -703,6 +716,7 @@ export namespace TextValueCondition {
     operationsList: Array<ColumnOperation.AsObject>,
     iconName: string,
     iconColor?: TextValueCondition.Color.AsObject,
+    expressionNode?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode.AsObject,
   }
 
   export class Color extends jspb.Message {
