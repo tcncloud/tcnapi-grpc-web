@@ -6588,7 +6588,8 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.toObject
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 description: jspb.Message.getFieldWithDefault(msg, 2, ""),
 displayAllFields: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-definedFieldCount: jspb.Message.getFieldWithDefault(msg, 4, 0)
+definedFieldCount: jspb.Message.getFieldWithDefault(msg, 4, 0),
+templateSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -6640,6 +6641,10 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.deserial
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setDefinedFieldCount(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -6695,6 +6700,13 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.serializ
   if (f !== 0) {
     writer.writeInt64(
       4,
+      f
+    );
+  }
+  f = message.getTemplateSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
       f
     );
   }
@@ -6770,6 +6782,24 @@ proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototyp
  */
 proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.setDefinedFieldCount = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 template_sid = 5;
+ * @return {number}
+ */
+proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.getTemplateSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails} returns this
+ */
+proto.api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails.prototype.setTemplateSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

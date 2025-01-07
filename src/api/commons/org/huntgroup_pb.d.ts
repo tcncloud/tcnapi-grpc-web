@@ -688,6 +688,9 @@ export namespace HuntGroupDetails {
     getDefinedFieldCount(): number;
     setDefinedFieldCount(value: number): void;
 
+    getTemplateSid(): number;
+    setTemplateSid(value: number): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ClientInfoDisplayTemplateDetails.AsObject;
     static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplateDetails): ClientInfoDisplayTemplateDetails.AsObject;
@@ -704,6 +707,7 @@ export namespace HuntGroupDetails {
       description: string,
       displayAllFields: boolean,
       definedFieldCount: number,
+      templateSid: number,
     }
   }
 
