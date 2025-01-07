@@ -36,6 +36,30 @@ export namespace PBXUser {
   }
 }
 
+export class SIPAccountRingGroup extends jspb.Message {
+  getRingGroupId(): string;
+  setRingGroupId(value: string): void;
+
+  getRingGroupName(): string;
+  setRingGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SIPAccountRingGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: SIPAccountRingGroup): SIPAccountRingGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SIPAccountRingGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SIPAccountRingGroup;
+  static deserializeBinaryFromReader(message: SIPAccountRingGroup, reader: jspb.BinaryReader): SIPAccountRingGroup;
+}
+
+export namespace SIPAccountRingGroup {
+  export type AsObject = {
+    ringGroupId: string,
+    ringGroupName: string,
+  }
+}
+
 export class SIPAccount extends jspb.Message {
   getSipId(): string;
   setSipId(value: string): void;
@@ -54,6 +78,11 @@ export class SIPAccount extends jspb.Message {
   getOrgUserId(): string;
   setOrgUserId(value: string): void;
 
+  clearRingGroupsList(): void;
+  getRingGroupsList(): Array<SIPAccountRingGroup>;
+  setRingGroupsList(value: Array<SIPAccountRingGroup>): void;
+  addRingGroups(value?: SIPAccountRingGroup, index?: number): SIPAccountRingGroup;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SIPAccount.AsObject;
   static toObject(includeInstance: boolean, msg: SIPAccount): SIPAccount.AsObject;
@@ -71,6 +100,7 @@ export namespace SIPAccount {
     extension: string,
     ringGroupIdsList: Array<string>,
     orgUserId: string,
+    ringGroupsList: Array<SIPAccountRingGroup.AsObject>,
   }
 }
 
