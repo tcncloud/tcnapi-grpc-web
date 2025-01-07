@@ -1024,6 +1024,9 @@ export class ScorecardsCreateSmartEvaluationEvent extends jspb.Message {
   getSmartEvaluationId(): number;
   setSmartEvaluationId(value: number): void;
 
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
   hasCall(): boolean;
   clearCall(): void;
   getCall(): ScorecardsCreateSmartEvaluationEvent.Call | undefined;
@@ -1048,6 +1051,7 @@ export class ScorecardsCreateSmartEvaluationEvent extends jspb.Message {
 export namespace ScorecardsCreateSmartEvaluationEvent {
   export type AsObject = {
     smartEvaluationId: number,
+    transcriptSid: number,
     call?: ScorecardsCreateSmartEvaluationEvent.Call.AsObject,
     sms?: ScorecardsCreateSmartEvaluationEvent.Sms.AsObject,
   }
@@ -1098,8 +1102,8 @@ export namespace ScorecardsCreateSmartEvaluationEvent {
 
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
-    CALL = 2,
-    SMS = 3,
+    CALL = 3,
+    SMS = 4,
   }
 }
 

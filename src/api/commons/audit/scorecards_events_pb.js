@@ -7944,15 +7944,15 @@ proto.api.commons.audit.ScorecardsCreateAutoEvaluationEvent.prototype.hasAutoEva
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_ = [[2,3]];
+proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_ = [[3,4]];
 
 /**
  * @enum {number}
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.MetadataCase = {
   METADATA_NOT_SET: 0,
-  CALL: 2,
-  SMS: 3
+  CALL: 3,
+  SMS: 4
 };
 
 /**
@@ -7994,6 +7994,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.toObject 
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
 smartEvaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 call: (f = msg.getCall()) && proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.toObject(includeInstance, f),
 sms: (f = msg.getSms()) && proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.toObject(includeInstance, f)
   };
@@ -8037,11 +8038,15 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.deserializeBinaryFr
       msg.setSmartEvaluationId(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTranscriptSid(value);
+      break;
+    case 3:
       var value = new proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call;
       reader.readMessage(value,proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.deserializeBinaryFromReader);
       msg.setCall(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms;
       reader.readMessage(value,proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.deserializeBinaryFromReader);
       msg.setSms(value);
@@ -8082,10 +8087,17 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.serializeBinaryToWr
       f
     );
   }
+  f = message.getTranscriptSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
   f = message.getCall();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call.serializeBinaryToWriter
     );
@@ -8093,7 +8105,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.serializeBinaryToWr
   f = message.getSms();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms.serializeBinaryToWriter
     );
@@ -8410,12 +8422,30 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.setSmartE
 
 
 /**
- * optional Call call = 2;
+ * optional int64 transcript_sid = 2;
+ * @return {number}
+ */
+proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.getTranscriptSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent} returns this
+ */
+proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.setTranscriptSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional Call call = 3;
  * @return {?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call}
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.getCall = function() {
   return /** @type{?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call, 2));
+    jspb.Message.getWrapperField(this, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Call, 3));
 };
 
 
@@ -8424,7 +8454,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.getCall =
  * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent} returns this
 */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.setCall = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 3, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_[0], value);
 };
 
 
@@ -8442,17 +8472,17 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.clearCall
  * @return {boolean}
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.hasCall = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional Sms sms = 3;
+ * optional Sms sms = 4;
  * @return {?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms}
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.getSms = function() {
   return /** @type{?proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms, 3));
+    jspb.Message.getWrapperField(this, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.Sms, 4));
 };
 
 
@@ -8461,7 +8491,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.getSms = 
  * @return {!proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent} returns this
 */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.setSms = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 4, proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.oneofGroups_[0], value);
 };
 
 
@@ -8479,7 +8509,7 @@ proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.clearSms 
  * @return {boolean}
  */
 proto.api.commons.audit.ScorecardsCreateSmartEvaluationEvent.prototype.hasSms = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
