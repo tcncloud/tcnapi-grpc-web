@@ -176,6 +176,15 @@ type PortalManagerApiDeletePluginInstance = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.DeletePluginInstanceRes;
 };
 
+type PortalManagerApiDuplicatePluginInstance = {
+  readonly methodName: string;
+  readonly service: typeof PortalManagerApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceReq;
+  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceRes;
+};
+
 type PortalManagerApiListPluginInstance = {
   readonly methodName: string;
   readonly service: typeof PortalManagerApi;
@@ -269,6 +278,7 @@ export class PortalManagerApi {
   static readonly UpsertPluginInstance: PortalManagerApiUpsertPluginInstance;
   static readonly GetPluginInstance: PortalManagerApiGetPluginInstance;
   static readonly DeletePluginInstance: PortalManagerApiDeletePluginInstance;
+  static readonly DuplicatePluginInstance: PortalManagerApiDuplicatePluginInstance;
   static readonly ListPluginInstance: PortalManagerApiListPluginInstance;
   static readonly ListFlowFieldNames: PortalManagerApiListFlowFieldNames;
   static readonly ListAvailableVerificationFields: PortalManagerApiListAvailableVerificationFields;
@@ -481,6 +491,15 @@ export class PortalManagerApiClient {
   deletePluginInstance(
     requestMessage: api_v1alpha1_integrations_portals_pb.DeletePluginInstanceReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.DeletePluginInstanceRes|null) => void
+  ): UnaryResponse;
+  duplicatePluginInstance(
+    requestMessage: api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceRes|null) => void
+  ): UnaryResponse;
+  duplicatePluginInstance(
+    requestMessage: api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.DuplicatePluginInstanceRes|null) => void
   ): UnaryResponse;
   listPluginInstance(
     requestMessage: api_v1alpha1_integrations_portals_pb.ListPluginInstanceReq,

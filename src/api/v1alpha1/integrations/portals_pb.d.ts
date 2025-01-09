@@ -751,6 +751,54 @@ export namespace DeletePluginInstanceRes {
   }
 }
 
+export class DuplicatePluginInstanceReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): api_v1alpha1_integrations_service_pb.PluginInstanceId | undefined;
+  setEntity(value?: api_v1alpha1_integrations_service_pb.PluginInstanceId): void;
+
+  getNewPluginName(): string;
+  setNewPluginName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicatePluginInstanceReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicatePluginInstanceReq): DuplicatePluginInstanceReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicatePluginInstanceReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicatePluginInstanceReq;
+  static deserializeBinaryFromReader(message: DuplicatePluginInstanceReq, reader: jspb.BinaryReader): DuplicatePluginInstanceReq;
+}
+
+export namespace DuplicatePluginInstanceReq {
+  export type AsObject = {
+    entity?: api_v1alpha1_integrations_service_pb.PluginInstanceId.AsObject,
+    newPluginName: string,
+  }
+}
+
+export class DuplicatePluginInstanceRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): api_v1alpha1_integrations_service_pb.PluginInstanceId | undefined;
+  setEntity(value?: api_v1alpha1_integrations_service_pb.PluginInstanceId): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicatePluginInstanceRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicatePluginInstanceRes): DuplicatePluginInstanceRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicatePluginInstanceRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicatePluginInstanceRes;
+  static deserializeBinaryFromReader(message: DuplicatePluginInstanceRes, reader: jspb.BinaryReader): DuplicatePluginInstanceRes;
+}
+
+export namespace DuplicatePluginInstanceRes {
+  export type AsObject = {
+    entity?: api_v1alpha1_integrations_service_pb.PluginInstanceId.AsObject,
+  }
+}
+
 export class ListPluginInstanceReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
