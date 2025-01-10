@@ -1236,6 +1236,46 @@ export namespace ProcessScrubListDeleteUploadRes {
   }
 }
 
+export class ScrubListDeleteRequest extends jspb.Message {
+  getListId(): string;
+  setListId(value: string): void;
+
+  getNotificationMessage(): string;
+  setNotificationMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScrubListDeleteRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ScrubListDeleteRequest): ScrubListDeleteRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScrubListDeleteRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScrubListDeleteRequest;
+  static deserializeBinaryFromReader(message: ScrubListDeleteRequest, reader: jspb.BinaryReader): ScrubListDeleteRequest;
+}
+
+export namespace ScrubListDeleteRequest {
+  export type AsObject = {
+    listId: string,
+    notificationMessage: string,
+  }
+}
+
+export class ScrubListDeleteResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScrubListDeleteResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ScrubListDeleteResponse): ScrubListDeleteResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScrubListDeleteResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScrubListDeleteResponse;
+  static deserializeBinaryFromReader(message: ScrubListDeleteResponse, reader: jspb.BinaryReader): ScrubListDeleteResponse;
+}
+
+export namespace ScrubListDeleteResponse {
+  export type AsObject = {
+  }
+}
+
 export class ExportScrubListReq extends jspb.Message {
   getListId(): string;
   setListId(value: string): void;
