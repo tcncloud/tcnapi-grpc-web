@@ -107,6 +107,11 @@ export class ListContactEntryListResponse extends jspb.Message {
   getNextPageToken(): string;
   setNextPageToken(value: string): void;
 
+  clearCmEntryList(): void;
+  getCmEntryList(): Array<ContactManagerEntry>;
+  setCmEntryList(value: Array<ContactManagerEntry>): void;
+  addCmEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListResponse): ListContactEntryListResponse.AsObject;
@@ -121,6 +126,7 @@ export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
     nextPageToken: string,
+    cmEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
