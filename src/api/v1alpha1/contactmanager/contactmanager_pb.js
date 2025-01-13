@@ -2515,7 +2515,8 @@ dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timest
 ttl: jspb.Message.getFieldWithDefault(msg, 9, 0),
 fileNameList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
 fieldList: jspb.Message.toObjectList(msg.getFieldList(),
-    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance),
+expiryDate: (f = msg.getExpiryDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2598,6 +2599,11 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReade
       var value = new proto.api.v1alpha1.contactmanager.ContactField;
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
       msg.addField(value);
+      break;
+    case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiryDate(value);
       break;
     default:
       reader.skipField();
@@ -2706,6 +2712,14 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter = 
       11,
       f,
       proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiryDate();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2983,6 +2997,43 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.addField = funct
  */
 proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearFieldList = function() {
   return this.setFieldList([]);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expiry_date = 12;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getExpiryDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+*/
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setExpiryDate = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearExpiryDate = function() {
+  return this.setExpiryDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.hasExpiryDate = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
