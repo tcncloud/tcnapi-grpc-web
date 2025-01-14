@@ -107,6 +107,11 @@ export class ListContactEntryListResponse extends jspb.Message {
   getNextPageToken(): string;
   setNextPageToken(value: string): void;
 
+  clearCmEntryList(): void;
+  getCmEntryList(): Array<ContactManagerEntry>;
+  setCmEntryList(value: Array<ContactManagerEntry>): void;
+  addCmEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListResponse): ListContactEntryListResponse.AsObject;
@@ -121,6 +126,7 @@ export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
     nextPageToken: string,
+    cmEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
@@ -302,6 +308,11 @@ export class ContactManagerEntry extends jspb.Message {
   setFieldList(value: Array<ContactField>): void;
   addField(value?: ContactField, index?: number): ContactField;
 
+  hasExpiryDate(): boolean;
+  clearExpiryDate(): void;
+  getExpiryDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiryDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntry): ContactManagerEntry.AsObject;
@@ -325,6 +336,7 @@ export namespace ContactManagerEntry {
     ttl: number,
     fileNameList: Array<string>,
     fieldList: Array<ContactField.AsObject>,
+    expiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
