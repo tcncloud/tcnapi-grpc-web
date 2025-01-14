@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
-import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_wfm_pb from "../../../api/commons/wfm_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
@@ -171,11 +170,6 @@ export class SkillProfile extends jspb.Message {
   getAreAveragesManual(): boolean;
   setAreAveragesManual(value: boolean): void;
 
-  clearChannelTypesList(): void;
-  getChannelTypesList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
-  setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
-  addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfile.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfile): SkillProfile.AsObject;
@@ -202,7 +196,6 @@ export namespace SkillProfile {
     averageAfterCallWorkInSeconds: number,
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
-    channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
   }
 }
 
@@ -279,11 +272,6 @@ export class ListSkillProfilesReq extends jspb.Message {
   getWithSkills(): boolean;
   setWithSkills(value: boolean): void;
 
-  clearChannelTypesList(): void;
-  getChannelTypesList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
-  setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
-  addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSkillProfilesReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListSkillProfilesReq): ListSkillProfilesReq.AsObject;
@@ -298,7 +286,6 @@ export namespace ListSkillProfilesReq {
   export type AsObject = {
     activeOnly: boolean,
     withSkills: boolean,
-    channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
   }
 }
 
