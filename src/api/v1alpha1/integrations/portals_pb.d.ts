@@ -751,6 +751,54 @@ export namespace DeletePluginInstanceRes {
   }
 }
 
+export class ClonePluginInstanceReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): api_v1alpha1_integrations_service_pb.PluginInstanceId | undefined;
+  setEntity(value?: api_v1alpha1_integrations_service_pb.PluginInstanceId): void;
+
+  getNewPluginName(): string;
+  setNewPluginName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClonePluginInstanceReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ClonePluginInstanceReq): ClonePluginInstanceReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClonePluginInstanceReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClonePluginInstanceReq;
+  static deserializeBinaryFromReader(message: ClonePluginInstanceReq, reader: jspb.BinaryReader): ClonePluginInstanceReq;
+}
+
+export namespace ClonePluginInstanceReq {
+  export type AsObject = {
+    entity?: api_v1alpha1_integrations_service_pb.PluginInstanceId.AsObject,
+    newPluginName: string,
+  }
+}
+
+export class ClonePluginInstanceRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): api_v1alpha1_integrations_service_pb.PluginInstanceId | undefined;
+  setEntity(value?: api_v1alpha1_integrations_service_pb.PluginInstanceId): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClonePluginInstanceRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ClonePluginInstanceRes): ClonePluginInstanceRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClonePluginInstanceRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClonePluginInstanceRes;
+  static deserializeBinaryFromReader(message: ClonePluginInstanceRes, reader: jspb.BinaryReader): ClonePluginInstanceRes;
+}
+
+export namespace ClonePluginInstanceRes {
+  export type AsObject = {
+    entity?: api_v1alpha1_integrations_service_pb.PluginInstanceId.AsObject,
+  }
+}
+
 export class ListPluginInstanceReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
