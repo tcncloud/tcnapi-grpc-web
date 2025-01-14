@@ -222,6 +222,15 @@ type ComplianceProcessScrubListDeleteUpload = {
   readonly responseType: typeof google_longrunning_operations_pb.Operation;
 };
 
+type ComplianceScrubListDelete = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.ScrubListDeleteRequest;
+  readonly responseType: typeof google_longrunning_operations_pb.Operation;
+};
+
 type ComplianceExportScrubList = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -635,6 +644,7 @@ export class Compliance {
   static readonly ProcessScrubListUpload: ComplianceProcessScrubListUpload;
   static readonly ScrubListDownload: ComplianceScrubListDownload;
   static readonly ProcessScrubListDeleteUpload: ComplianceProcessScrubListDeleteUpload;
+  static readonly ScrubListDelete: ComplianceScrubListDelete;
   static readonly ExportScrubList: ComplianceExportScrubList;
   static readonly PurgeScrubList: CompliancePurgeScrubList;
   static readonly CreateScenario: ComplianceCreateScenario;
@@ -918,6 +928,15 @@ export class ComplianceClient {
   ): UnaryResponse;
   processScrubListDeleteUpload(
     requestMessage: api_v0alpha_compliance_pb.ProcessScrubListDeleteUploadReq,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  scrubListDelete(
+    requestMessage: api_v0alpha_compliance_pb.ScrubListDeleteRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  scrubListDelete(
+    requestMessage: api_v0alpha_compliance_pb.ScrubListDeleteRequest,
     callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
   ): UnaryResponse;
   exportScrubList(
