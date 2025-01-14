@@ -1272,7 +1272,7 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.setPageT
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.repeatedFields_ = [2];
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.repeatedFields_ = [2,4];
 
 
 
@@ -1307,7 +1307,9 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.toObject = functi
   var f, obj = {
 contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
     proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance),
-nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+cmEntryList: jspb.Message.toObjectList(msg.getCmEntryList(),
+    proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1353,6 +1355,11 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.deserializeBinary
       var value = /** @type {string} */ (reader.readString());
       msg.setNextPageToken(value);
       break;
+    case 4:
+      var value = new proto.api.v1alpha1.contactmanager.ContactManagerEntry;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReader);
+      msg.addCmEntry(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1395,6 +1402,14 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.serializeBinaryTo
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getCmEntryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter
     );
   }
 };
@@ -1453,6 +1468,44 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.getNext
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated ContactManagerEntry cm_entry = 4;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.getCmEntryList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactManagerEntry, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>} value
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListResponse} returns this
+*/
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.setCmEntryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactManagerEntry=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry}
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.addCmEntry = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.v1alpha1.contactmanager.ContactManagerEntry, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.ListContactEntryListResponse} returns this
+ */
+proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.clearCmEntryList = function() {
+  return this.setCmEntryList([]);
 };
 
 
@@ -2462,7 +2515,8 @@ dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timest
 ttl: jspb.Message.getFieldWithDefault(msg, 9, 0),
 fileNameList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
 fieldList: jspb.Message.toObjectList(msg.getFieldList(),
-    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance),
+expiryDate: (f = msg.getExpiryDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2545,6 +2599,11 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReade
       var value = new proto.api.v1alpha1.contactmanager.ContactField;
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
       msg.addField(value);
+      break;
+    case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiryDate(value);
       break;
     default:
       reader.skipField();
@@ -2653,6 +2712,14 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter = 
       11,
       f,
       proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiryDate();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2930,6 +2997,43 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.addField = funct
  */
 proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearFieldList = function() {
   return this.setFieldList([]);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expiry_date = 12;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getExpiryDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+*/
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setExpiryDate = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.clearExpiryDate = function() {
+  return this.setExpiryDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.hasExpiryDate = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

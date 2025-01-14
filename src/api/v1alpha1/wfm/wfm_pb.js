@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
+var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var api_commons_org_pb = require('../../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
 var api_commons_wfm_pb = require('../../../api/commons/wfm_pb.js');
@@ -725,7 +727,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.wfm.ListSkillProfilesReq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ListSkillProfilesReq.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.wfm.ListSkillProfilesReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -12374,7 +12376,7 @@ proto.api.v1alpha1.wfm.Skill.prototype.setProficiency = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.SkillProfile.repeatedFields_ = [7];
+proto.api.v1alpha1.wfm.SkillProfile.repeatedFields_ = [7,15];
 
 
 
@@ -12421,7 +12423,8 @@ averageSpeedOfAnswerInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg
 averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
-areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+channelTypesList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12516,6 +12519,12 @@ proto.api.v1alpha1.wfm.SkillProfile.deserializeBinaryFromReader = function(msg, 
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAreAveragesManual(value);
+      break;
+    case 15:
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addChannelTypes(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -12644,6 +12653,13 @@ proto.api.v1alpha1.wfm.SkillProfile.serializeBinaryToWriter = function(message, 
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getChannelTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      15,
       f
     );
   }
@@ -12957,6 +12973,43 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.getAreAveragesManual = function() 
  */
 proto.api.v1alpha1.wfm.SkillProfile.prototype.setAreAveragesManual = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * repeated api.commons.ChannelType channel_types = 15;
+ * @return {!Array<!proto.api.commons.ChannelType>}
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.getChannelTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 15));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.ChannelType>} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfile} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.setChannelTypesList = function(value) {
+  return jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.SkillProfile} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.addChannelTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SkillProfile} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.clearChannelTypesList = function() {
+  return this.setChannelTypesList([]);
 };
 
 
@@ -13461,6 +13514,13 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.hasDatetimeSetToInactive = fu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ListSkillProfilesReq.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -13493,7 +13553,8 @@ proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.toObject = function(opt_in
 proto.api.v1alpha1.wfm.ListSkillProfilesReq.toObject = function(includeInstance, msg) {
   var f, obj = {
 activeOnly: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-withSkills: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+withSkills: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+channelTypesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13538,6 +13599,12 @@ proto.api.v1alpha1.wfm.ListSkillProfilesReq.deserializeBinaryFromReader = functi
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithSkills(value);
       break;
+    case 3:
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addChannelTypes(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -13581,6 +13648,13 @@ proto.api.v1alpha1.wfm.ListSkillProfilesReq.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getChannelTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -13617,6 +13691,43 @@ proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.getWithSkills = function()
  */
 proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.setWithSkills = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * repeated api.commons.ChannelType channel_types = 3;
+ * @return {!Array<!proto.api.commons.ChannelType>}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.getChannelTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.ChannelType>} value
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfilesReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.setChannelTypesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfilesReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.addChannelTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfilesReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfilesReq.prototype.clearChannelTypesList = function() {
+  return this.setChannelTypesList([]);
 };
 
 
