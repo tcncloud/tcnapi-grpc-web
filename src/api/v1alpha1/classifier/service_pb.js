@@ -2935,6 +2935,8 @@ parentIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined :
 columnsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
 totalQueueWaitSeconds: jspb.Message.getFieldWithDefault(msg, 10, 0),
 totalProcessingSeconds: jspb.Message.getFieldWithDefault(msg, 11, 0),
+totalQueueWaitMilliseconds: jspb.Message.getFieldWithDefault(msg, 13, 0),
+totalProcessingMilliseconds: jspb.Message.getFieldWithDefault(msg, 14, 0),
 msgsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
@@ -3017,6 +3019,14 @@ proto.api.v1alpha1.classifier.ListEventsResponse.Row.deserializeBinaryFromReader
     case 11:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTotalProcessingSeconds(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalQueueWaitMilliseconds(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalProcessingMilliseconds(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
@@ -3127,6 +3137,20 @@ proto.api.v1alpha1.classifier.ListEventsResponse.Row.serializeBinaryToWriter = f
   if (f !== 0) {
     writer.writeInt64(
       11,
+      f
+    );
+  }
+  f = message.getTotalQueueWaitMilliseconds();
+  if (f !== 0) {
+    writer.writeInt64(
+      13,
+      f
+    );
+  }
+  f = message.getTotalProcessingMilliseconds();
+  if (f !== 0) {
+    writer.writeInt64(
+      14,
       f
     );
   }
@@ -3430,6 +3454,42 @@ proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.getTotalProcessin
  */
 proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.setTotalProcessingSeconds = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional int64 total_queue_wait_milliseconds = 13;
+ * @return {number}
+ */
+proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.getTotalQueueWaitMilliseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.classifier.ListEventsResponse.Row} returns this
+ */
+proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.setTotalQueueWaitMilliseconds = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional int64 total_processing_milliseconds = 14;
+ * @return {number}
+ */
+proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.getTotalProcessingMilliseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.classifier.ListEventsResponse.Row} returns this
+ */
+proto.api.v1alpha1.classifier.ListEventsResponse.Row.prototype.setTotalProcessingMilliseconds = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
