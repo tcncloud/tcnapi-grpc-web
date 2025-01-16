@@ -228,6 +228,11 @@ export class VanaCreateTranscriptEvent extends jspb.Message {
   getSms(): VanaCreateTranscriptEvent.Sms | undefined;
   setSms(value?: VanaCreateTranscriptEvent.Sms): void;
 
+  hasChat(): boolean;
+  clearChat(): void;
+  getChat(): VanaCreateTranscriptEvent.Chat | undefined;
+  setChat(value?: VanaCreateTranscriptEvent.Chat): void;
+
   getMetadataCase(): VanaCreateTranscriptEvent.MetadataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VanaCreateTranscriptEvent.AsObject;
@@ -244,6 +249,7 @@ export namespace VanaCreateTranscriptEvent {
     transcriptSid: number,
     call?: VanaCreateTranscriptEvent.Call.AsObject,
     sms?: VanaCreateTranscriptEvent.Sms.AsObject,
+    chat?: VanaCreateTranscriptEvent.Chat.AsObject,
   }
 
   export class Call extends jspb.Message {
@@ -302,10 +308,31 @@ export namespace VanaCreateTranscriptEvent {
     }
   }
 
+  export class Chat extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Chat.AsObject;
+    static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Chat, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Chat;
+    static deserializeBinaryFromReader(message: Chat, reader: jspb.BinaryReader): Chat;
+  }
+
+  export namespace Chat {
+    export type AsObject = {
+      conversationSid: number,
+    }
+  }
+
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
     CALL = 2,
     SMS = 3,
+    CHAT = 4,
   }
 }
 
@@ -323,6 +350,11 @@ export class VanaCreateSentimentEvent extends jspb.Message {
   getSms(): VanaCreateSentimentEvent.Sms | undefined;
   setSms(value?: VanaCreateSentimentEvent.Sms): void;
 
+  hasChat(): boolean;
+  clearChat(): void;
+  getChat(): VanaCreateSentimentEvent.Chat | undefined;
+  setChat(value?: VanaCreateSentimentEvent.Chat): void;
+
   getMetadataCase(): VanaCreateSentimentEvent.MetadataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VanaCreateSentimentEvent.AsObject;
@@ -339,6 +371,7 @@ export namespace VanaCreateSentimentEvent {
     transcriptSid: number,
     call?: VanaCreateSentimentEvent.Call.AsObject,
     sms?: VanaCreateSentimentEvent.Sms.AsObject,
+    chat?: VanaCreateSentimentEvent.Chat.AsObject,
   }
 
   export class Call extends jspb.Message {
@@ -385,10 +418,31 @@ export namespace VanaCreateSentimentEvent {
     }
   }
 
+  export class Chat extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Chat.AsObject;
+    static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Chat, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Chat;
+    static deserializeBinaryFromReader(message: Chat, reader: jspb.BinaryReader): Chat;
+  }
+
+  export namespace Chat {
+    export type AsObject = {
+      conversationSid: number,
+    }
+  }
+
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
     CALL = 2,
     SMS = 3,
+    CHAT = 4,
   }
 }
 
@@ -406,6 +460,11 @@ export class VanaCreateSummaryEvent extends jspb.Message {
   getSms(): VanaCreateSummaryEvent.Sms | undefined;
   setSms(value?: VanaCreateSummaryEvent.Sms): void;
 
+  hasChat(): boolean;
+  clearChat(): void;
+  getChat(): VanaCreateSummaryEvent.Chat | undefined;
+  setChat(value?: VanaCreateSummaryEvent.Chat): void;
+
   getMetadataCase(): VanaCreateSummaryEvent.MetadataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VanaCreateSummaryEvent.AsObject;
@@ -422,6 +481,7 @@ export namespace VanaCreateSummaryEvent {
     transcriptSid: number,
     call?: VanaCreateSummaryEvent.Call.AsObject,
     sms?: VanaCreateSummaryEvent.Sms.AsObject,
+    chat?: VanaCreateSummaryEvent.Chat.AsObject,
   }
 
   export class Call extends jspb.Message {
@@ -468,10 +528,31 @@ export namespace VanaCreateSummaryEvent {
     }
   }
 
+  export class Chat extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Chat.AsObject;
+    static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Chat, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Chat;
+    static deserializeBinaryFromReader(message: Chat, reader: jspb.BinaryReader): Chat;
+  }
+
+  export namespace Chat {
+    export type AsObject = {
+      conversationSid: number,
+    }
+  }
+
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
     CALL = 2,
     SMS = 3,
+    CHAT = 4,
   }
 }
 
