@@ -268,6 +268,15 @@ export class ListEvaluationsRequest extends jspb.Message {
   setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
   addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
 
+  getOrderBy(): string;
+  setOrderBy(value: string): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -288,6 +297,9 @@ export namespace ListEvaluationsRequest {
     returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     isDeleted: boolean,
     channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
+    orderBy: string,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -296,6 +308,9 @@ export class ListEvaluationsResponse extends jspb.Message {
   getEvaluationsList(): Array<api_commons_scorecards_pb.Evaluation>;
   setEvaluationsList(value: Array<api_commons_scorecards_pb.Evaluation>): void;
   addEvaluations(value?: api_commons_scorecards_pb.Evaluation, index?: number): api_commons_scorecards_pb.Evaluation;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsResponse.AsObject;
@@ -310,6 +325,7 @@ export class ListEvaluationsResponse extends jspb.Message {
 export namespace ListEvaluationsResponse {
   export type AsObject = {
     evaluationsList: Array<api_commons_scorecards_pb.Evaluation.AsObject>,
+    nextPageToken: string,
   }
 }
 
