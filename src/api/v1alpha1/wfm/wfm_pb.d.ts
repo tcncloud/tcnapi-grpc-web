@@ -3929,6 +3929,9 @@ export namespace UpdateNonSkillActivityRes {
 }
 
 export class ListNonSkillActivitiesReq extends jspb.Message {
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNonSkillActivitiesReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesReq): ListNonSkillActivitiesReq.AsObject;
@@ -3941,6 +3944,7 @@ export class ListNonSkillActivitiesReq extends jspb.Message {
 
 export namespace ListNonSkillActivitiesReq {
   export type AsObject = {
+    includeInactive: boolean,
   }
 }
 
@@ -4109,6 +4113,9 @@ export namespace ListCandidateSchedulingActivitiesRes {
 }
 
 export class ListSchedulingActivitiesRequest extends jspb.Message {
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSchedulingActivitiesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSchedulingActivitiesRequest): ListSchedulingActivitiesRequest.AsObject;
@@ -4121,6 +4128,7 @@ export class ListSchedulingActivitiesRequest extends jspb.Message {
 
 export namespace ListSchedulingActivitiesRequest {
   export type AsObject = {
+    includeInactive: boolean,
   }
 }
 
