@@ -4525,7 +4525,8 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.toObject = function(op
 proto.api.v1alpha1.newsroom.UserActivityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-force: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+force: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+publishedClientArticleSid: jspb.Message.getFieldWithDefault(msg, 3, "0")
   };
 
   if (includeInstance) {
@@ -4570,6 +4571,10 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.deserializeBinaryFromReader = fu
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setForce(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setPublishedClientArticleSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4613,6 +4618,13 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getPublishedClientArticleSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -4649,6 +4661,24 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.getForce = function() 
  */
 proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.setForce = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional int64 published_client_article_sid = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.getPublishedClientArticleSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.newsroom.UserActivityRequest} returns this
+ */
+proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.setPublishedClientArticleSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 3, value);
 };
 
 
