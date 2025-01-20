@@ -961,7 +961,7 @@ reportJobId: jspb.Message.getFieldWithDefault(msg, 3, 0),
 executionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
 reportName: jspb.Message.getFieldWithDefault(msg, 5, ""),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-jobCompleteTime: (f = msg.getJobCompleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+jobCompletedTime: (f = msg.getJobCompletedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 executionResult: jspb.Message.getFieldWithDefault(msg, 8, 0),
 failureReason: jspb.Message.getFieldWithDefault(msg, 9, ""),
 attemptNumber: jspb.Message.getFieldWithDefault(msg, 10, 0),
@@ -1032,7 +1032,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
     case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setJobCompleteTime(value);
+      msg.setJobCompletedTime(value);
       break;
     case 8:
       var value = /** @type {!proto.api.v1alpha1.bireportgenerator.ExecutionResult} */ (reader.readEnum());
@@ -1132,7 +1132,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getJobCompleteTime();
+  f = message.getJobCompletedTime();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -1315,10 +1315,10 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobRequestedTime = f
 
 
 /**
- * optional google.protobuf.Timestamp job_complete_time = 7;
+ * optional google.protobuf.Timestamp job_completed_time = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompleteTime = function() {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompletedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
@@ -1328,7 +1328,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompleteTime = fu
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobCompleteTime = function(value) {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobCompletedTime = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -1337,8 +1337,8 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobCompleteTime = fu
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobCompleteTime = function() {
-  return this.setJobCompleteTime(undefined);
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobCompletedTime = function() {
+  return this.setJobCompletedTime(undefined);
 };
 
 
@@ -1346,7 +1346,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobCompleteTime = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobCompleteTime = function() {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobCompletedTime = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
