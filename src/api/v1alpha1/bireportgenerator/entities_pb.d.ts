@@ -142,6 +142,9 @@ export class ReportLog extends jspb.Message {
   getRetryCount(): number;
   setRetryCount(value: number): void;
 
+  getFailureReason(): string;
+  setFailureReason(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportLog.AsObject;
   static toObject(includeInstance: boolean, msg: ReportLog): ReportLog.AsObject;
@@ -161,6 +164,7 @@ export namespace ReportLog {
     jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     jobCompletedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     retryCount: number,
+    failureReason: string,
   }
 }
 

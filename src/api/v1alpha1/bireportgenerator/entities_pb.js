@@ -960,7 +960,8 @@ reportName: jspb.Message.getFieldWithDefault(msg, 3, ""),
 reportStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 jobCompletedTime: (f = msg.getJobCompletedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-retryCount: jspb.Message.getFieldWithDefault(msg, 7, 0)
+retryCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+failureReason: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1026,6 +1027,10 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
     case 7:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setRetryCount(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailureReason(value);
       break;
     default:
       reader.skipField();
@@ -1104,6 +1109,13 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt64(
       7,
+      f
+    );
+  }
+  f = message.getFailureReason();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -1271,6 +1283,24 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getRetryCount = functio
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setRetryCount = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional string failure_reason = 8;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFailureReason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setFailureReason = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
