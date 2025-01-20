@@ -4113,9 +4113,6 @@ export namespace ListCandidateSchedulingActivitiesRes {
 }
 
 export class ListSchedulingActivitiesRequest extends jspb.Message {
-  getIncludeInactive(): boolean;
-  setIncludeInactive(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSchedulingActivitiesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSchedulingActivitiesRequest): ListSchedulingActivitiesRequest.AsObject;
@@ -4128,7 +4125,6 @@ export class ListSchedulingActivitiesRequest extends jspb.Message {
 
 export namespace ListSchedulingActivitiesRequest {
   export type AsObject = {
-    includeInactive: boolean,
   }
 }
 

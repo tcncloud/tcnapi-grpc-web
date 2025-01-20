@@ -40647,7 +40647,7 @@ proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+
   };
 
   if (includeInstance) {
@@ -40684,10 +40684,6 @@ proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.deserializeBinaryFromRead
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeInactive(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -40717,31 +40713,6 @@ proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.prototype.serializeBinary
  */
 proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIncludeInactive();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bool include_inactive = 1;
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.prototype.getIncludeInactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest} returns this
- */
-proto.api.v1alpha1.wfm.ListSchedulingActivitiesRequest.prototype.setIncludeInactive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
