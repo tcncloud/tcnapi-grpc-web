@@ -2901,7 +2901,8 @@ publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 newsArticleDetails: (f = msg.getNewsArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f),
 datePublished: (f = msg.getDatePublished()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-alwaysDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+alwaysDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+isClientArticle: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -2959,6 +2960,10 @@ proto.api.v1alpha1.newsroom.PublishedArticleDetails.deserializeBinaryFromReader 
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAlwaysDisplay(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsClientArticle(value);
       break;
     default:
       reader.skipField();
@@ -3023,6 +3028,13 @@ proto.api.v1alpha1.newsroom.PublishedArticleDetails.serializeBinaryToWriter = fu
   if (f) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = message.getIsClientArticle();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -3154,6 +3166,24 @@ proto.api.v1alpha1.newsroom.PublishedArticleDetails.prototype.getAlwaysDisplay =
  */
 proto.api.v1alpha1.newsroom.PublishedArticleDetails.prototype.setAlwaysDisplay = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional bool is_client_article = 6;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.newsroom.PublishedArticleDetails.prototype.getIsClientArticle = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.newsroom.PublishedArticleDetails} returns this
+ */
+proto.api.v1alpha1.newsroom.PublishedArticleDetails.prototype.setIsClientArticle = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3329,7 +3359,8 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.toObject 
  */
 proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+publishedClientArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -3370,6 +3401,10 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setPublishedArticleSid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setPublishedClientArticleSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3406,6 +3441,13 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.serializeBinaryToWr
       f
     );
   }
+  f = message.getPublishedClientArticleSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3424,6 +3466,24 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.getPublis
  */
 proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.setPublishedArticleSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 published_client_article_sid = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.getPublishedClientArticleSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails} returns this
+ */
+proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.setPublishedClientArticleSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
