@@ -137,6 +137,11 @@ export class ReportLog extends jspb.Message {
   getJobRequestedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setJobRequestedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasJobCompleteTime(): boolean;
+  clearJobCompleteTime(): void;
+  getJobCompleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setJobCompleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getExecutionResult(): ExecutionResultMap[keyof ExecutionResultMap];
   setExecutionResult(value: ExecutionResultMap[keyof ExecutionResultMap]): void;
 
@@ -177,6 +182,7 @@ export namespace ReportLog {
     executionId: number,
     reportName: string,
     jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    jobCompleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     executionResult: ExecutionResultMap[keyof ExecutionResultMap],
     failureReason: string,
     attemptNumber: number,
