@@ -120,6 +120,9 @@ export class ReportLog extends jspb.Message {
   getReportLogId(): number;
   setReportLogId(value: number): void;
 
+  getReportJobId(): number;
+  setReportJobId(value: number): void;
+
   getReportName(): string;
   setReportName(value: string): void;
 
@@ -147,6 +150,7 @@ export class ReportLog extends jspb.Message {
 export namespace ReportLog {
   export type AsObject = {
     reportLogId: number,
+    reportJobId: number,
     reportName: string,
     reportStatus: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap],
     requestedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
