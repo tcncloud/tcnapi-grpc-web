@@ -330,9 +330,6 @@ export namespace UserActivity {
     getPublishedArticleSid(): string;
     setPublishedArticleSid(value: string): void;
 
-    getPublishedClientArticleSid(): string;
-    setPublishedClientArticleSid(value: string): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserActivityDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserActivityDetails): UserActivityDetails.AsObject;
@@ -346,7 +343,6 @@ export namespace UserActivity {
   export namespace UserActivityDetails {
     export type AsObject = {
       publishedArticleSid: string,
-      publishedClientArticleSid: string,
     }
   }
 }
