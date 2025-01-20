@@ -961,7 +961,8 @@ reportStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 jobCompletedTime: (f = msg.getJobCompletedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 retryCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
-failureReason: jspb.Message.getFieldWithDefault(msg, 8, "")
+lastRetryTime: (f = msg.getLastRetryTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+failureReason: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1029,6 +1030,11 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
       msg.setRetryCount(value);
       break;
     case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastRetryTime(value);
+      break;
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailureReason(value);
       break;
@@ -1112,10 +1118,18 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getLastRetryTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getFailureReason();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      9,
       f
     );
   }
@@ -1287,11 +1301,48 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setRetryCount = functio
 
 
 /**
- * optional string failure_reason = 8;
+ * optional google.protobuf.Timestamp last_retry_time = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getLastRetryTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setLastRetryTime = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearLastRetryTime = function() {
+  return this.setLastRetryTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasLastRetryTime = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string failure_reason = 9;
  * @return {string}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFailureReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -1300,7 +1351,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFailureReason = func
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setFailureReason = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

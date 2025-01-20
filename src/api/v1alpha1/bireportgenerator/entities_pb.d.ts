@@ -142,6 +142,11 @@ export class ReportLog extends jspb.Message {
   getRetryCount(): number;
   setRetryCount(value: number): void;
 
+  hasLastRetryTime(): boolean;
+  clearLastRetryTime(): void;
+  getLastRetryTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastRetryTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getFailureReason(): string;
   setFailureReason(value: string): void;
 
@@ -164,6 +169,7 @@ export namespace ReportLog {
     jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     jobCompletedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     retryCount: number,
+    lastRetryTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     failureReason: string,
   }
 }
