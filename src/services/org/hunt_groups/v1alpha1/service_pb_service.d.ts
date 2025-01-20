@@ -131,15 +131,6 @@ type HuntGroupsServiceListAgentClientInfoDisplayTemplates = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesResponse;
 };
 
-type HuntGroupsServiceListAgentCampaignClientInfoDisplayTemplates = {
-  readonly methodName: string;
-  readonly service: typeof HuntGroupsService;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesRequest;
-  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesResponse;
-};
-
 type HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
@@ -183,7 +174,6 @@ export class HuntGroupsService {
   static readonly UpdateAgentClientInfoDisplayTemplate: HuntGroupsServiceUpdateAgentClientInfoDisplayTemplate;
   static readonly GetAgentClientInfoDisplayTemplate: HuntGroupsServiceGetAgentClientInfoDisplayTemplate;
   static readonly ListAgentClientInfoDisplayTemplates: HuntGroupsServiceListAgentClientInfoDisplayTemplates;
-  static readonly ListAgentCampaignClientInfoDisplayTemplates: HuntGroupsServiceListAgentCampaignClientInfoDisplayTemplates;
   static readonly DeleteAgentClientInfoDisplayTemplate: HuntGroupsServiceDeleteAgentClientInfoDisplayTemplate;
   static readonly AssignAgentClientInfoDisplayTemplateToHuntGroups: HuntGroupsServiceAssignAgentClientInfoDisplayTemplateToHuntGroups;
   static readonly UnassignAgentClientInfoDisplayTemplateFromHuntGroups: HuntGroupsServiceUnassignAgentClientInfoDisplayTemplateFromHuntGroups;
@@ -339,7 +329,6 @@ export class HuntGroupsServiceClient {
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesResponse|null) => void
   ): UnaryResponse;
-  listAgentCampaignClientInfoDisplayTemplates(requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesRequest, metadata?: grpc.Metadata): ResponseStream<services_org_hunt_groups_v1alpha1_entities_pb.ListAgentClientInfoDisplayTemplatesResponse>;
   deleteAgentClientInfoDisplayTemplate(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.DeleteAgentClientInfoDisplayTemplateRequest,
     metadata: grpc.Metadata,
