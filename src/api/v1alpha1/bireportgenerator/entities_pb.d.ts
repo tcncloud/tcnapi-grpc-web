@@ -117,38 +117,37 @@ export namespace ReportJob {
 }
 
 export class ReportLog extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getReportLogId(): number;
   setReportLogId(value: number): void;
 
   getReportJobId(): number;
   setReportJobId(value: number): void;
 
+  getExecutionId(): number;
+  setExecutionId(value: number): void;
+
   getReportName(): string;
   setReportName(value: string): void;
-
-  getReportStatus(): api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap];
-  setReportStatus(value: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap]): void;
 
   hasJobRequestedTime(): boolean;
   clearJobRequestedTime(): void;
   getJobRequestedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setJobRequestedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasJobCompletedTime(): boolean;
-  clearJobCompletedTime(): void;
-  getJobCompletedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setJobCompletedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getRetryCount(): number;
-  setRetryCount(value: number): void;
-
-  hasLastRetryTime(): boolean;
-  clearLastRetryTime(): void;
-  getLastRetryTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastRetryTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  getExecutionResult(): ExecutionResultMap[keyof ExecutionResultMap];
+  setExecutionResult(value: ExecutionResultMap[keyof ExecutionResultMap]): void;
 
   getFailureReason(): string;
   setFailureReason(value: string): void;
+
+  getAttemptNumber(): number;
+  setAttemptNumber(value: number): void;
+
+  getMaxAttempts(): number;
+  setMaxAttempts(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportLog.AsObject;
@@ -162,15 +161,24 @@ export class ReportLog extends jspb.Message {
 
 export namespace ReportLog {
   export type AsObject = {
+    orgId: string,
     reportLogId: number,
     reportJobId: number,
+    executionId: number,
     reportName: string,
-    reportStatus: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap],
     jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    jobCompletedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    retryCount: number,
-    lastRetryTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    executionResult: ExecutionResultMap[keyof ExecutionResultMap],
     failureReason: string,
+    attemptNumber: number,
+    maxAttempts: number,
   }
 }
+
+export interface ExecutionResultMap {
+  EXECUTION_RESULT_UNSPECIFIED: 0;
+  EXECUTION_RESULT_SUCCESS: 1;
+  EXECUTION_RESULT_FAILURE: 2;
+}
+
+export const ExecutionResult: ExecutionResultMap;
 

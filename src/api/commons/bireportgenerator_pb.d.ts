@@ -310,12 +310,3 @@ export interface FilenamePartTypeMap {
 
 export const FilenamePartType: FilenamePartTypeMap;
 
-export interface ReportStatusMap {
-  REPORT_STATUS_UNSPECIFIED: 0;
-  REPORT_STATUS_PENDING: 1;
-  REPORT_STATUS_COMPLETED: 2;
-  REPORT_STATUS_FAILED: 3;
-}
-
-export const ReportStatus: ReportStatusMap;
-

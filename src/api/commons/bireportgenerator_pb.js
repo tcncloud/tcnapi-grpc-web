@@ -37,7 +37,6 @@ goog.exportSymbol('proto.api.commons.FilenamePartType', null, global);
 goog.exportSymbol('proto.api.commons.FormatOptions', null, global);
 goog.exportSymbol('proto.api.commons.RepeatFrequency', null, global);
 goog.exportSymbol('proto.api.commons.ReportFormat', null, global);
-goog.exportSymbol('proto.api.commons.ReportStatus', null, global);
 goog.exportSymbol('proto.api.commons.TimePeriod', null, global);
 goog.exportSymbol('proto.api.commons.TransferOptions', null, global);
 /**
@@ -1911,16 +1910,6 @@ proto.api.commons.FilenamePartType = {
   FILENAME_PART_TYPE_END_DATE_TIME: 6,
   FILENAME_PART_TYPE_REPORT_DATE_TIME: 7,
   FILENAME_PART_TYPE_STATIC_TEXT: 8
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.ReportStatus = {
-  REPORT_STATUS_UNSPECIFIED: 0,
-  REPORT_STATUS_PENDING: 1,
-  REPORT_STATUS_COMPLETED: 2,
-  REPORT_STATUS_FAILED: 3
 };
 
 goog.object.extend(exports, proto.api.commons);
