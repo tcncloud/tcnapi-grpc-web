@@ -956,7 +956,6 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.toObject = function(includeInstan
   var f, obj = {
 reportLogId: jspb.Message.getFieldWithDefault(msg, 1, 0),
 reportJobId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-reportJobHash: jspb.Message.getFieldWithDefault(msg, 3, 0),
 reportName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 reportStatus: jspb.Message.getFieldWithDefault(msg, 5, 0),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1006,10 +1005,6 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setReportJobId(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setReportJobHash(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -1077,13 +1072,6 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt64(
       2,
-      f
-    );
-  }
-  f = message.getReportJobHash();
-  if (f !== 0) {
-    writer.writeInt64(
-      3,
       f
     );
   }
@@ -1167,24 +1155,6 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportJobId = functi
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportJobId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional int64 report_job_hash = 3;
- * @return {number}
- */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportJobHash = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
- */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportJobHash = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
