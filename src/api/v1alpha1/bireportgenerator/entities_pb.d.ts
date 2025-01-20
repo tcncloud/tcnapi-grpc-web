@@ -6,6 +6,7 @@ import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireport
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_types_pb from "../../../api/commons/types_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ReportJob extends jspb.Message {
   getReportJobId(): string;
@@ -112,6 +113,44 @@ export namespace ReportJob {
     transferConfigSid: number,
     cronExpression?: api_commons_types_pb.CronExpression.AsObject,
     transferOptions?: api_commons_bireportgenerator_pb.TransferOptions.AsObject,
+  }
+}
+
+export class ReportLog extends jspb.Message {
+  getReportLogId(): number;
+  setReportLogId(value: number): void;
+
+  getReportName(): string;
+  setReportName(value: string): void;
+
+  getReportStatus(): api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap];
+  setReportStatus(value: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap]): void;
+
+  hasRequestedDate(): boolean;
+  clearRequestedDate(): void;
+  getRequestedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setRequestedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getRetryCount(): number;
+  setRetryCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportLog.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportLog): ReportLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReportLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportLog;
+  static deserializeBinaryFromReader(message: ReportLog, reader: jspb.BinaryReader): ReportLog;
+}
+
+export namespace ReportLog {
+  export type AsObject = {
+    reportLogId: number,
+    reportName: string,
+    reportStatus: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap],
+    requestedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    retryCount: number,
   }
 }
 
