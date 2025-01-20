@@ -129,9 +129,6 @@ export class ReportLog extends jspb.Message {
   getExecutionId(): number;
   setExecutionId(value: number): void;
 
-  getCalendarAlarmId(): string;
-  setCalendarAlarmId(value: string): void;
-
   getReportName(): string;
   setReportName(value: string): void;
 
@@ -183,7 +180,6 @@ export namespace ReportLog {
     reportLogId: number,
     reportJobId: number,
     executionId: number,
-    calendarAlarmId: string,
     reportName: string,
     jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     jobCompleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
