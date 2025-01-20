@@ -3329,7 +3329,8 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.toObject 
  */
 proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+publishedClientArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -3370,6 +3371,10 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setPublishedArticleSid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setPublishedClientArticleSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3406,6 +3411,13 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.serializeBinaryToWr
       f
     );
   }
+  f = message.getPublishedClientArticleSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3424,6 +3436,24 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.getPublis
  */
 proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.setPublishedArticleSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 published_client_article_sid = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.getPublishedClientArticleSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails} returns this
+ */
+proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.setPublishedClientArticleSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
