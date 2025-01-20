@@ -149,6 +149,16 @@ export class ReportLog extends jspb.Message {
   getMaxAttempts(): number;
   setMaxAttempts(value: number): void;
 
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportLog.AsObject;
   static toObject(includeInstance: boolean, msg: ReportLog): ReportLog.AsObject;
@@ -171,6 +181,8 @@ export namespace ReportLog {
     failureReason: string,
     attemptNumber: number,
     maxAttempts: number,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

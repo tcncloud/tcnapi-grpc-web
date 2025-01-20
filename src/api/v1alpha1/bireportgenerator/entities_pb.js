@@ -964,7 +964,9 @@ jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_p
 executionResult: jspb.Message.getFieldWithDefault(msg, 7, 0),
 failureReason: jspb.Message.getFieldWithDefault(msg, 8, ""),
 attemptNumber: jspb.Message.getFieldWithDefault(msg, 9, 0),
-maxAttempts: jspb.Message.getFieldWithDefault(msg, 10, 0)
+maxAttempts: jspb.Message.getFieldWithDefault(msg, 10, 0),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1041,6 +1043,16 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
     case 10:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setMaxAttempts(value);
+      break;
+    case 11:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
       break;
     default:
       reader.skipField();
@@ -1140,6 +1152,22 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
     writer.writeInt64(
       10,
       f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1341,6 +1369,80 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getMaxAttempts = functi
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setMaxAttempts = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 11;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 12;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
