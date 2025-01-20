@@ -959,13 +959,14 @@ orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 reportLogId: jspb.Message.getFieldWithDefault(msg, 2, 0),
 reportJobId: jspb.Message.getFieldWithDefault(msg, 3, 0),
 executionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-reportName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+calendarAlarmId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+reportName: jspb.Message.getFieldWithDefault(msg, 6, ""),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 jobCompleteTime: (f = msg.getJobCompleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-executionResult: jspb.Message.getFieldWithDefault(msg, 8, 0),
-failureReason: jspb.Message.getFieldWithDefault(msg, 9, ""),
-attemptNumber: jspb.Message.getFieldWithDefault(msg, 10, 0),
-maxAttempts: jspb.Message.getFieldWithDefault(msg, 11, 0),
+executionResult: jspb.Message.getFieldWithDefault(msg, 9, 0),
+failureReason: jspb.Message.getFieldWithDefault(msg, 10, ""),
+attemptNumber: jspb.Message.getFieldWithDefault(msg, 11, 0),
+maxAttempts: jspb.Message.getFieldWithDefault(msg, 12, 0),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -1022,40 +1023,44 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReportName(value);
+      msg.setCalendarAlarmId(value);
       break;
     case 6:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setJobRequestedTime(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReportName(value);
       break;
     case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setJobCompleteTime(value);
+      msg.setJobRequestedTime(value);
       break;
     case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setJobCompleteTime(value);
+      break;
+    case 9:
       var value = /** @type {!proto.api.v1alpha1.bireportgenerator.ExecutionResult} */ (reader.readEnum());
       msg.setExecutionResult(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailureReason(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAttemptNumber(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setMaxAttempts(value);
       break;
-    case 12:
+    case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
-    case 13:
+    case 14:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
@@ -1117,22 +1122,21 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getReportName();
+  f = message.getCalendarAlarmId();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getJobRequestedTime();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getReportName();
+  if (f.length > 0) {
+    writer.writeString(
       6,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getJobCompleteTime();
+  f = message.getJobRequestedTime();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -1140,38 +1144,46 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getJobCompleteTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getExecutionResult();
   if (f !== 0.0) {
     writer.writeEnum(
-      8,
+      9,
       f
     );
   }
   f = message.getFailureReason();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
   f = message.getAttemptNumber();
   if (f !== 0) {
     writer.writeInt64(
-      10,
+      11,
       f
     );
   }
   f = message.getMaxAttempts();
   if (f !== 0) {
     writer.writeInt64(
-      11,
+      12,
       f
     );
   }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
-      12,
+      13,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1179,7 +1191,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
   f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
-      13,
+      14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1260,10 +1272,10 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setExecutionId = functi
 
 
 /**
- * optional string report_name = 5;
+ * optional string calendar_alarm_id = 5;
  * @return {string}
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportName = function() {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getCalendarAlarmId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1272,18 +1284,36 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportName = functio
  * @param {string} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportName = function(value) {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setCalendarAlarmId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp job_requested_time = 6;
+ * optional string report_name = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportName = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp job_requested_time = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobRequestedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
 
 
@@ -1292,7 +1322,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobRequestedTime = f
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobRequestedTime = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1310,17 +1340,17 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobRequestedTime =
  * @return {boolean}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobRequestedTime = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp job_complete_time = 7;
+ * optional google.protobuf.Timestamp job_complete_time = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompleteTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
 
 
@@ -1329,7 +1359,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompleteTime = fu
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobCompleteTime = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -1347,16 +1377,16 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobCompleteTime = 
  * @return {boolean}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobCompleteTime = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional ExecutionResult execution_result = 8;
+ * optional ExecutionResult execution_result = 9;
  * @return {!proto.api.v1alpha1.bireportgenerator.ExecutionResult}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getExecutionResult = function() {
-  return /** @type {!proto.api.v1alpha1.bireportgenerator.ExecutionResult} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.v1alpha1.bireportgenerator.ExecutionResult} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
@@ -1365,16 +1395,16 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getExecutionResult = fu
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setExecutionResult = function(value) {
-  return jspb.Message.setProto3EnumField(this, 8, value);
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
 /**
- * optional string failure_reason = 9;
+ * optional string failure_reason = 10;
  * @return {string}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFailureReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -1383,33 +1413,15 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFailureReason = func
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setFailureReason = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional int64 attempt_number = 10;
+ * optional int64 attempt_number = 11;
  * @return {number}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getAttemptNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
- */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setAttemptNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
-};
-
-
-/**
- * optional int64 max_attempts = 11;
- * @return {number}
- */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getMaxAttempts = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -1418,18 +1430,36 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getMaxAttempts = functi
  * @param {number} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setMaxAttempts = function(value) {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setAttemptNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_time = 12;
+ * optional int64 max_attempts = 12;
+ * @return {number}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getMaxAttempts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setMaxAttempts = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
 
 
@@ -1438,7 +1468,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getCreateTime = functio
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -1456,17 +1486,17 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearCreateTime = funct
  * @return {boolean}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_time = 13;
+ * optional google.protobuf.Timestamp update_time = 14;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
 };
 
 
@@ -1475,7 +1505,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getUpdateTime = functio
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1493,7 +1523,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearUpdateTime = funct
  * @return {boolean}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
