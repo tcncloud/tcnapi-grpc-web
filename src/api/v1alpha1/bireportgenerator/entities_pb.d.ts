@@ -129,10 +129,15 @@ export class ReportLog extends jspb.Message {
   getReportStatus(): api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap];
   setReportStatus(value: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap]): void;
 
-  hasRequestedDate(): boolean;
-  clearRequestedDate(): void;
-  getRequestedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setRequestedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasJobRequestedTime(): boolean;
+  clearJobRequestedTime(): void;
+  getJobRequestedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setJobRequestedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasJobCompletedTime(): boolean;
+  clearJobCompletedTime(): void;
+  getJobCompletedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setJobCompletedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   getRetryCount(): number;
   setRetryCount(value: number): void;
@@ -153,7 +158,8 @@ export namespace ReportLog {
     reportJobId: number,
     reportName: string,
     reportStatus: api_commons_bireportgenerator_pb.ReportStatusMap[keyof api_commons_bireportgenerator_pb.ReportStatusMap],
-    requestedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    jobCompletedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     retryCount: number,
   }
 }

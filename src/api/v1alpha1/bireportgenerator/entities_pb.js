@@ -958,8 +958,9 @@ reportLogId: jspb.Message.getFieldWithDefault(msg, 1, 0),
 reportJobId: jspb.Message.getFieldWithDefault(msg, 2, 0),
 reportName: jspb.Message.getFieldWithDefault(msg, 3, ""),
 reportStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
-requestedDate: (f = msg.getRequestedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-retryCount: jspb.Message.getFieldWithDefault(msg, 6, 0)
+jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+jobCompletedTime: (f = msg.getJobCompletedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+retryCount: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -1015,9 +1016,14 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setRequestedDate(value);
+      msg.setJobRequestedTime(value);
       break;
     case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setJobCompletedTime(value);
+      break;
+    case 7:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setRetryCount(value);
       break;
@@ -1078,7 +1084,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getRequestedDate();
+  f = message.getJobRequestedTime();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -1086,10 +1092,18 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getJobCompletedTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getRetryCount();
   if (f !== 0) {
     writer.writeInt64(
-      6,
+      7,
       f
     );
   }
@@ -1169,10 +1183,10 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportStatus = funct
 
 
 /**
- * optional google.protobuf.Timestamp requested_date = 5;
+ * optional google.protobuf.Timestamp job_requested_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getRequestedDate = function() {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobRequestedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
@@ -1182,7 +1196,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getRequestedDate = func
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
 */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setRequestedDate = function(value) {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobRequestedTime = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -1191,8 +1205,8 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setRequestedDate = func
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearRequestedDate = function() {
-  return this.setRequestedDate(undefined);
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobRequestedTime = function() {
+  return this.setJobRequestedTime(undefined);
 };
 
 
@@ -1200,17 +1214,54 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearRequestedDate = fu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasRequestedDate = function() {
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobRequestedTime = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int64 retry_count = 6;
+ * optional google.protobuf.Timestamp job_completed_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getJobCompletedTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setJobCompletedTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearJobCompletedTime = function() {
+  return this.setJobCompletedTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasJobCompletedTime = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 retry_count = 7;
  * @return {number}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getRetryCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -1219,7 +1270,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getRetryCount = functio
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setRetryCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
