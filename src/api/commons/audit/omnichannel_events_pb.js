@@ -13986,7 +13986,9 @@ attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
 providerMessageCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
-messageType: jspb.Message.getFieldWithDefault(msg, 10, 0)
+messageType: jspb.Message.getFieldWithDefault(msg, 10, 0),
+provider: jspb.Message.getFieldWithDefault(msg, 11, 0),
+status: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -14062,6 +14064,14 @@ proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.deserializeBinaryF
     case 10:
       var value = /** @type {!proto.api.commons.OmniMessageType} */ (reader.readEnum());
       msg.setMessageType(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.commons.SmsNumberProvider} */ (reader.readEnum());
+      msg.setProvider(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.commons.OmniMessageStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -14159,6 +14169,20 @@ proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.serializeBinaryToW
   if (f !== 0.0) {
     writer.writeEnum(
       10,
+      f
+    );
+  }
+  f = message.getProvider();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -14342,6 +14366,42 @@ proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.getMessa
  */
 proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.setMessageType = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional api.commons.SmsNumberProvider provider = 11;
+ * @return {!proto.api.commons.SmsNumberProvider}
+ */
+proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.getProvider = function() {
+  return /** @type {!proto.api.commons.SmsNumberProvider} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.SmsNumberProvider} value
+ * @return {!proto.api.commons.audit.OmnichannelProviderMessageFailedEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.setProvider = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional api.commons.OmniMessageStatus status = 12;
+ * @return {!proto.api.commons.OmniMessageStatus}
+ */
+proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.OmniMessageStatus} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OmniMessageStatus} value
+ * @return {!proto.api.commons.audit.OmnichannelProviderMessageFailedEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelProviderMessageFailedEvent.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

@@ -1816,6 +1816,12 @@ export class OmnichannelProviderMessageFailedEvent extends jspb.Message {
   getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
   setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
 
+  getProvider(): api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap];
+  setProvider(value: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap]): void;
+
+  getStatus(): api_commons_omnichannel_pb.OmniMessageStatusMap[keyof api_commons_omnichannel_pb.OmniMessageStatusMap];
+  setStatus(value: api_commons_omnichannel_pb.OmniMessageStatusMap[keyof api_commons_omnichannel_pb.OmniMessageStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelProviderMessageFailedEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelProviderMessageFailedEvent): OmnichannelProviderMessageFailedEvent.AsObject;
@@ -1838,6 +1844,8 @@ export namespace OmnichannelProviderMessageFailedEvent {
     userId: string,
     providerMessageCount: number,
     messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
+    provider: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap],
+    status: api_commons_omnichannel_pb.OmniMessageStatusMap[keyof api_commons_omnichannel_pb.OmniMessageStatusMap],
   }
 }
 
