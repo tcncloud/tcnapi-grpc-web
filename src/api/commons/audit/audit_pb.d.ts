@@ -339,6 +339,11 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelProviderResponseEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent | undefined;
   setOmnichannelProviderResponseEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent): void;
 
+  hasOmnichannelProviderMessageFailedEvent(): boolean;
+  clearOmnichannelProviderMessageFailedEvent(): void;
+  getOmnichannelProviderMessageFailedEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelProviderMessageFailedEvent | undefined;
+  setOmnichannelProviderMessageFailedEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderMessageFailedEvent): void;
+
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
   getAsmAgentLoginEvent(): api_commons_audit_asm_events_pb.AsmAgentLoginEvent | undefined;
@@ -748,6 +753,7 @@ export namespace AuditEvent {
     omnichannelTranscriptSavedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.AsObject,
     omnichannelMessageSentEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.AsObject,
     omnichannelProviderResponseEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent.AsObject,
+    omnichannelProviderMessageFailedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderMessageFailedEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -878,6 +884,7 @@ export namespace AuditEvent {
     OMNICHANNEL_TRANSCRIPT_SAVED_EVENT = 362,
     OMNICHANNEL_MESSAGE_SENT_EVENT = 363,
     OMNICHANNEL_PROVIDER_RESPONSE_EVENT = 364,
+    OMNICHANNEL_PROVIDER_MESSAGE_FAILED_EVENT = 365,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,
