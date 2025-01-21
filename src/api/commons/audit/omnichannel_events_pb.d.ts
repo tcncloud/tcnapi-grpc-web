@@ -1785,3 +1785,59 @@ export namespace OmnichannelProviderResponseEvent {
   }
 }
 
+export class OmnichannelProviderMessageFailedEvent extends jspb.Message {
+  getOmniMessageSid(): number;
+  setOmniMessageSid(value: number): void;
+
+  getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+  setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
+
+  getSentFrom(): string;
+  setSentFrom(value: string): void;
+
+  getSentTo(): string;
+  setSentTo(value: string): void;
+
+  getMessageSize(): number;
+  setMessageSize(value: number): void;
+
+  getAttachmentSize(): number;
+  setAttachmentSize(value: number): void;
+
+  getSenderType(): api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap];
+  setSenderType(value: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap]): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getProviderMessageCount(): number;
+  setProviderMessageCount(value: number): void;
+
+  getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
+  setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelProviderMessageFailedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelProviderMessageFailedEvent): OmnichannelProviderMessageFailedEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelProviderMessageFailedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelProviderMessageFailedEvent;
+  static deserializeBinaryFromReader(message: OmnichannelProviderMessageFailedEvent, reader: jspb.BinaryReader): OmnichannelProviderMessageFailedEvent;
+}
+
+export namespace OmnichannelProviderMessageFailedEvent {
+  export type AsObject = {
+    omniMessageSid: number,
+    channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    sentFrom: string,
+    sentTo: string,
+    messageSize: number,
+    attachmentSize: number,
+    senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
+    userId: string,
+    providerMessageCount: number,
+    messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
+  }
+}
+
