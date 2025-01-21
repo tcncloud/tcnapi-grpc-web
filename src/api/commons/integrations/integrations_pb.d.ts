@@ -1571,6 +1571,11 @@ export class ExecuteFlow extends jspb.Message {
   getElavonMccCreditCardSale(): ExecuteElavonMccCreditCardSale | undefined;
   setElavonMccCreditCardSale(value?: ExecuteElavonMccCreditCardSale): void;
 
+  hasElavonElectronicCheckPurchase(): boolean;
+  clearElavonElectronicCheckPurchase(): void;
+  getElavonElectronicCheckPurchase(): ExecuteElavonElectronicCheckPurchase | undefined;
+  setElavonElectronicCheckPurchase(value?: ExecuteElavonElectronicCheckPurchase): void;
+
   hasGlobalpaymentsCardSale(): boolean;
   clearGlobalpaymentsCardSale(): void;
   getGlobalpaymentsCardSale(): ExecuteGlobalPaymentsCardSale | undefined;
@@ -2447,6 +2452,7 @@ export namespace ExecuteFlow {
     elavonUpdateInstallment?: ExecuteElavonUpdateInstallment.AsObject,
     elavonDeleteInstallment?: ExecuteElavonDeleteInstallment.AsObject,
     elavonMccCreditCardSale?: ExecuteElavonMccCreditCardSale.AsObject,
+    elavonElectronicCheckPurchase?: ExecuteElavonElectronicCheckPurchase.AsObject,
     globalpaymentsCardSale?: ExecuteGlobalPaymentsCardSale.AsObject,
     globalpaymentsGetTransactionById?: ExecuteGlobalPaymentsGetTransactionByID.AsObject,
     globalpaymentsListTransactions?: ExecuteGlobalPaymentsListTransactions.AsObject,
@@ -2757,6 +2763,7 @@ export namespace ExecuteFlow {
     ELAVON_UPDATE_INSTALLMENT = 2908,
     ELAVON_DELETE_INSTALLMENT = 2909,
     ELAVON_MCC_CREDIT_CARD_SALE = 2910,
+    ELAVON_ELECTRONIC_CHECK_PURCHASE = 2911,
     GLOBALPAYMENTS_CARD_SALE = 3001,
     GLOBALPAYMENTS_GET_TRANSACTION_BY_ID = 3002,
     GLOBALPAYMENTS_LIST_TRANSACTIONS = 3003,
@@ -6188,6 +6195,22 @@ export namespace ExecuteElavonUpdateInstallment {
   }
 }
 
+export class ExecuteElavonElectronicCheckPurchase extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteElavonElectronicCheckPurchase.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteElavonElectronicCheckPurchase): ExecuteElavonElectronicCheckPurchase.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteElavonElectronicCheckPurchase, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteElavonElectronicCheckPurchase;
+  static deserializeBinaryFromReader(message: ExecuteElavonElectronicCheckPurchase, reader: jspb.BinaryReader): ExecuteElavonElectronicCheckPurchase;
+}
+
+export namespace ExecuteElavonElectronicCheckPurchase {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteGlobalPaymentsCardSale extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteGlobalPaymentsCardSale.AsObject;
@@ -8644,6 +8667,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_ELAVON_UPDATE_INSTALLMENT: 2908;
   REQUEST_METHOD_ELAVON_DELETE_INSTALLMENT: 2909;
   REQUEST_METHOD_ELAVON_MCC_CREDIT_CARD_SALE: 2910;
+  REQUEST_METHOD_ELAVON_ELECTRONIC_CHECK_PURCHASE: 2911;
   REQUEST_METHOD_GLOBALPAYMENTS_CARDSALE: 3001;
   REQUEST_METHOD_GLOBALPAYMENTS_GET_TRANSACTION_BY_ID: 3002;
   REQUEST_METHOD_GLOBALPAYMENTS_LIST_TRANSACTIONS: 3003;
