@@ -957,7 +957,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.toObject = function(includeInstan
   var f, obj = {
 orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 reportLogId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-reportJobId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+reportJobId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 executionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 reportName: jspb.Message.getFieldWithDefault(msg, 5, ""),
 jobRequestedTime: (f = msg.getJobRequestedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1013,7 +1013,7 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
       msg.setReportLogId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setReportJobId(value);
       break;
     case 4:
@@ -1104,8 +1104,8 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
     );
   }
   f = message.getReportJobId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -1224,20 +1224,20 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportLogId = functi
 
 
 /**
- * optional int64 report_job_id = 3;
- * @return {number}
+ * optional string report_job_id = 3;
+ * @return {string}
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportJobId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportJobId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
