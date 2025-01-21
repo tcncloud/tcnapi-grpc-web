@@ -58,6 +58,15 @@ type BIReportGeneratorServiceGenerateReport = {
   readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse;
 };
 
+type BIReportGeneratorServiceListReportLogsStream = {
+  readonly methodName: string;
+  readonly service: typeof BIReportGeneratorService;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamRequest;
+  readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamResponse;
+};
+
 export class BIReportGeneratorService {
   static readonly serviceName: string;
   static readonly CreateReportJob: BIReportGeneratorServiceCreateReportJob;
@@ -66,6 +75,7 @@ export class BIReportGeneratorService {
   static readonly DeleteReportJob: BIReportGeneratorServiceDeleteReportJob;
   static readonly GetReportJob: BIReportGeneratorServiceGetReportJob;
   static readonly GenerateReport: BIReportGeneratorServiceGenerateReport;
+  static readonly ListReportLogsStream: BIReportGeneratorServiceListReportLogsStream;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -154,5 +164,6 @@ export class BIReportGeneratorServiceClient {
     requestMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse|null) => void
   ): UnaryResponse;
+  listReportLogsStream(requestMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamResponse>;
 }
 

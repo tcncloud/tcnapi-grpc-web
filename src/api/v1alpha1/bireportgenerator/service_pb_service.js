@@ -64,6 +64,15 @@ BIReportGeneratorService.GenerateReport = {
   responseType: api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse
 };
 
+BIReportGeneratorService.ListReportLogsStream = {
+  methodName: "ListReportLogsStream",
+  service: BIReportGeneratorService,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamRequest,
+  responseType: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamResponse
+};
+
 exports.BIReportGeneratorService = BIReportGeneratorService;
 
 function BIReportGeneratorServiceClient(serviceHost, options) {
@@ -252,6 +261,45 @@ BIReportGeneratorServiceClient.prototype.generateReport = function generateRepor
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+BIReportGeneratorServiceClient.prototype.listReportLogsStream = function listReportLogsStream(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(BIReportGeneratorService.ListReportLogsStream, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };

@@ -6,6 +6,7 @@ import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireport
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_types_pb from "../../../api/commons/types_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ReportJob extends jspb.Message {
   getReportJobId(): string;
@@ -112,6 +113,82 @@ export namespace ReportJob {
     transferConfigSid: number,
     cronExpression?: api_commons_types_pb.CronExpression.AsObject,
     transferOptions?: api_commons_bireportgenerator_pb.TransferOptions.AsObject,
+  }
+}
+
+export class ReportLog extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getReportLogId(): number;
+  setReportLogId(value: number): void;
+
+  getReportJobId(): string;
+  setReportJobId(value: string): void;
+
+  getExecutionId(): string;
+  setExecutionId(value: string): void;
+
+  getReportName(): string;
+  setReportName(value: string): void;
+
+  hasJobRequestedTime(): boolean;
+  clearJobRequestedTime(): void;
+  getJobRequestedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setJobRequestedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasJobCompletedTime(): boolean;
+  clearJobCompletedTime(): void;
+  getJobCompletedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setJobCompletedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
+
+  getFailureReason(): string;
+  setFailureReason(value: string): void;
+
+  getAttemptNumber(): number;
+  setAttemptNumber(value: number): void;
+
+  getMaxAttempts(): number;
+  setMaxAttempts(value: number): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportLog.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportLog): ReportLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReportLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportLog;
+  static deserializeBinaryFromReader(message: ReportLog, reader: jspb.BinaryReader): ReportLog;
+}
+
+export namespace ReportLog {
+  export type AsObject = {
+    orgId: string,
+    reportLogId: number,
+    reportJobId: string,
+    executionId: string,
+    reportName: string,
+    jobRequestedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    jobCompletedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    success: boolean,
+    failureReason: string,
+    attemptNumber: number,
+    maxAttempts: number,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
