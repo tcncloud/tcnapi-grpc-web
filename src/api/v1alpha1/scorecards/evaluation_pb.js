@@ -2130,10 +2130,7 @@ agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefine
 scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
 returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
 isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-channelTypesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
-orderBy: jspb.Message.getFieldWithDefault(msg, 15, ""),
-pageSize: jspb.Message.getFieldWithDefault(msg, 16, 0),
-pageToken: jspb.Message.getFieldWithDefault(msg, 17, "")
+channelTypesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2209,18 +2206,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.deserializeBinaryFromReader
       for (var i = 0; i < values.length; i++) {
         msg.addChannelTypes(values[i]);
       }
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrderBy(value);
-      break;
-    case 16:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPageSize(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPageToken(value);
       break;
     default:
       reader.skipField();
@@ -2306,27 +2291,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writePackedEnum(
       14,
-      f
-    );
-  }
-  f = message.getOrderBy();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getPageSize();
-  if (f !== 0) {
-    writer.writeInt32(
-      16,
-      f
-    );
-  }
-  f = message.getPageToken();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
       f
     );
   }
@@ -2610,60 +2574,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearChannelTypes
 };
 
 
-/**
- * optional string order_by = 15;
- * @return {string}
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getOrderBy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setOrderBy = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional int32 page_size = 16;
- * @return {number}
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getPageSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setPageSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 16, value);
-};
-
-
-/**
- * optional string page_token = 17;
- * @return {string}
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getPageToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setPageToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
 
 /**
  * List of repeated fields within this message type.
@@ -2704,8 +2614,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.toObject = funct
 proto.api.v1alpha1.scorecards.ListEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 evaluationsList: jspb.Message.toObjectList(msg.getEvaluationsList(),
-    api_commons_scorecards_pb.Evaluation.toObject, includeInstance),
-nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+    api_commons_scorecards_pb.Evaluation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2747,10 +2656,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsResponse.deserializeBinaryFromReade
       reader.readMessage(value,api_commons_scorecards_pb.Evaluation.deserializeBinaryFromReader);
       msg.addEvaluations(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNextPageToken(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2786,13 +2691,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsResponse.serializeBinaryToWriter = 
       1,
       f,
       api_commons_scorecards_pb.Evaluation.serializeBinaryToWriter
-    );
-  }
-  f = message.getNextPageToken();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
     );
   }
 };
@@ -2833,24 +2731,6 @@ proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.addEvaluations =
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.clearEvaluationsList = function() {
   return this.setEvaluationsList([]);
-};
-
-
-/**
- * optional string next_page_token = 2;
- * @return {string}
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.getNextPageToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsResponse} returns this
- */
-proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.setNextPageToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
