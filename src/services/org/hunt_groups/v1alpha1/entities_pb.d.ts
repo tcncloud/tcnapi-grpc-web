@@ -933,6 +933,11 @@ export class ListAgentClientInfoDisplayTemplatesResponse extends jspb.Message {
   setTemplatesList(value: Array<api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate>): void;
   addTemplates(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate, index?: number): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate;
 
+  clearDisplayTemplatesList(): void;
+  getDisplayTemplatesList(): Array<ListAgentClientInfoDisplayTemplatesResponse.TemplateInfo>;
+  setDisplayTemplatesList(value: Array<ListAgentClientInfoDisplayTemplatesResponse.TemplateInfo>): void;
+  addDisplayTemplates(value?: ListAgentClientInfoDisplayTemplatesResponse.TemplateInfo, index?: number): ListAgentClientInfoDisplayTemplatesResponse.TemplateInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAgentClientInfoDisplayTemplatesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAgentClientInfoDisplayTemplatesResponse): ListAgentClientInfoDisplayTemplatesResponse.AsObject;
@@ -946,6 +951,47 @@ export class ListAgentClientInfoDisplayTemplatesResponse extends jspb.Message {
 export namespace ListAgentClientInfoDisplayTemplatesResponse {
   export type AsObject = {
     templatesList: Array<api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject>,
+    displayTemplatesList: Array<ListAgentClientInfoDisplayTemplatesResponse.TemplateInfo.AsObject>,
+  }
+
+  export class TemplateInfo extends jspb.Message {
+    hasTemplate(): boolean;
+    clearTemplate(): void;
+    getTemplate(): api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate | undefined;
+    setTemplate(value?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate): void;
+
+    clearHuntGroupSidsList(): void;
+    getHuntGroupSidsList(): Array<number>;
+    setHuntGroupSidsList(value: Array<number>): void;
+    addHuntGroupSids(value: number, index?: number): number;
+
+    clearOutboundBroadcastTemplateSidsList(): void;
+    getOutboundBroadcastTemplateSidsList(): Array<number>;
+    setOutboundBroadcastTemplateSidsList(value: Array<number>): void;
+    addOutboundBroadcastTemplateSids(value: number, index?: number): number;
+
+    clearInboundBroadcastTemplateSidsList(): void;
+    getInboundBroadcastTemplateSidsList(): Array<number>;
+    setInboundBroadcastTemplateSidsList(value: Array<number>): void;
+    addInboundBroadcastTemplateSids(value: number, index?: number): number;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TemplateInfo.AsObject;
+    static toObject(includeInstance: boolean, msg: TemplateInfo): TemplateInfo.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TemplateInfo, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TemplateInfo;
+    static deserializeBinaryFromReader(message: TemplateInfo, reader: jspb.BinaryReader): TemplateInfo;
+  }
+
+  export namespace TemplateInfo {
+    export type AsObject = {
+      template?: api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.AsObject,
+      huntGroupSidsList: Array<number>,
+      outboundBroadcastTemplateSidsList: Array<number>,
+      inboundBroadcastTemplateSidsList: Array<number>,
+    }
   }
 }
 
