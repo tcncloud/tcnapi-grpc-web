@@ -275,6 +275,9 @@ export class PublishedArticleDetails extends jspb.Message {
   getAlwaysDisplay(): boolean;
   setAlwaysDisplay(value: boolean): void;
 
+  getIsClientArticle(): boolean;
+  setIsClientArticle(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishedArticleDetails.AsObject;
   static toObject(includeInstance: boolean, msg: PublishedArticleDetails): PublishedArticleDetails.AsObject;
@@ -292,6 +295,7 @@ export namespace PublishedArticleDetails {
     datePublished?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     displayToUser: boolean,
     alwaysDisplay: boolean,
+    isClientArticle: boolean,
   }
 }
 
@@ -330,6 +334,9 @@ export namespace UserActivity {
     getPublishedArticleSid(): string;
     setPublishedArticleSid(value: string): void;
 
+    getPublishedClientArticleSid(): string;
+    setPublishedClientArticleSid(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserActivityDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserActivityDetails): UserActivityDetails.AsObject;
@@ -343,6 +350,7 @@ export namespace UserActivity {
   export namespace UserActivityDetails {
     export type AsObject = {
       publishedArticleSid: string,
+      publishedClientArticleSid: string,
     }
   }
 }
@@ -488,6 +496,9 @@ export class UserActivityRequest extends jspb.Message {
   getForce(): boolean;
   setForce(value: boolean): void;
 
+  getPublishedClientArticleSid(): string;
+  setPublishedClientArticleSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserActivityRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UserActivityRequest): UserActivityRequest.AsObject;
@@ -502,6 +513,7 @@ export namespace UserActivityRequest {
   export type AsObject = {
     publishedArticleSid: string,
     force: boolean,
+    publishedClientArticleSid: string,
   }
 }
 
