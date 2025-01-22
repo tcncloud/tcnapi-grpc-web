@@ -60,6 +60,54 @@ export namespace SIPAccountRingGroup {
   }
 }
 
+export class SIPAccountSkill extends jspb.Message {
+  getSkillId(): string;
+  setSkillId(value: string): void;
+
+  getSkillName(): string;
+  setSkillName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SIPAccountSkill.AsObject;
+  static toObject(includeInstance: boolean, msg: SIPAccountSkill): SIPAccountSkill.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SIPAccountSkill, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SIPAccountSkill;
+  static deserializeBinaryFromReader(message: SIPAccountSkill, reader: jspb.BinaryReader): SIPAccountSkill;
+}
+
+export namespace SIPAccountSkill {
+  export type AsObject = {
+    skillId: string,
+    skillName: string,
+  }
+}
+
+export class SIPAccountPermissionGroup extends jspb.Message {
+  getPermissionGroupId(): string;
+  setPermissionGroupId(value: string): void;
+
+  getPermissionGroupName(): string;
+  setPermissionGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SIPAccountPermissionGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: SIPAccountPermissionGroup): SIPAccountPermissionGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SIPAccountPermissionGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SIPAccountPermissionGroup;
+  static deserializeBinaryFromReader(message: SIPAccountPermissionGroup, reader: jspb.BinaryReader): SIPAccountPermissionGroup;
+}
+
+export namespace SIPAccountPermissionGroup {
+  export type AsObject = {
+    permissionGroupId: string,
+    permissionGroupName: string,
+  }
+}
+
 export class SIPAccount extends jspb.Message {
   getSipId(): string;
   setSipId(value: string): void;
@@ -83,6 +131,22 @@ export class SIPAccount extends jspb.Message {
   setRingGroupsList(value: Array<SIPAccountRingGroup>): void;
   addRingGroups(value?: SIPAccountRingGroup, index?: number): SIPAccountRingGroup;
 
+  getName(): string;
+  setName(value: string): void;
+
+  getHuntGroup(): string;
+  setHuntGroup(value: string): void;
+
+  clearSkillsList(): void;
+  getSkillsList(): Array<SIPAccountSkill>;
+  setSkillsList(value: Array<SIPAccountSkill>): void;
+  addSkills(value?: SIPAccountSkill, index?: number): SIPAccountSkill;
+
+  clearPermissionGroupsList(): void;
+  getPermissionGroupsList(): Array<SIPAccountPermissionGroup>;
+  setPermissionGroupsList(value: Array<SIPAccountPermissionGroup>): void;
+  addPermissionGroups(value?: SIPAccountPermissionGroup, index?: number): SIPAccountPermissionGroup;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SIPAccount.AsObject;
   static toObject(includeInstance: boolean, msg: SIPAccount): SIPAccount.AsObject;
@@ -101,6 +165,10 @@ export namespace SIPAccount {
     ringGroupIdsList: Array<string>,
     orgUserId: string,
     ringGroupsList: Array<SIPAccountRingGroup.AsObject>,
+    name: string,
+    huntGroup: string,
+    skillsList: Array<SIPAccountSkill.AsObject>,
+    permissionGroupsList: Array<SIPAccountPermissionGroup.AsObject>,
   }
 }
 
