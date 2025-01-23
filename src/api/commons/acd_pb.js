@@ -2383,6 +2383,8 @@ proto.api.commons.TransferMember.toObject = function(includeInstance, msg) {
 identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
 displayLabel: jspb.Message.getFieldWithDefault(msg, 2, ""),
 memberType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 4, ""),
+isMuted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 agentSession: (f = msg.getAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
 callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
 outboundId: (f = jspb.Message.getField(msg, 102)) == null ? undefined : f
@@ -2433,6 +2435,14 @@ proto.api.commons.TransferMember.deserializeBinaryFromReader = function(msg, rea
     case 3:
       var value = /** @type {!proto.api.commons.TransferMemberType} */ (reader.readEnum());
       msg.setMemberType(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhoneNumber(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsMuted(value);
       break;
     case 100:
       var value = new proto.api.commons.AgentSession;
@@ -2495,6 +2505,20 @@ proto.api.commons.TransferMember.serializeBinaryToWriter = function(message, wri
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getPhoneNumber();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getIsMuted();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -2575,6 +2599,42 @@ proto.api.commons.TransferMember.prototype.getMemberType = function() {
  */
 proto.api.commons.TransferMember.prototype.setMemberType = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string phone_number = 4;
+ * @return {string}
+ */
+proto.api.commons.TransferMember.prototype.getPhoneNumber = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.setPhoneNumber = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_muted = 5;
+ * @return {boolean}
+ */
+proto.api.commons.TransferMember.prototype.getIsMuted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.setIsMuted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
