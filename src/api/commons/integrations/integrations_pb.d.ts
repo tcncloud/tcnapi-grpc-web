@@ -25,6 +25,192 @@ export namespace Receipt {
   }
 }
 
+export class Payment extends jspb.Message {
+  clearFeesList(): void;
+  getFeesList(): Array<Fee>;
+  setFeesList(value: Array<Fee>): void;
+  addFees(value?: Fee, index?: number): Fee;
+
+  getAmountKey(): string;
+  setAmountKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Payment.AsObject;
+  static toObject(includeInstance: boolean, msg: Payment): Payment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Payment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Payment;
+  static deserializeBinaryFromReader(message: Payment, reader: jspb.BinaryReader): Payment;
+}
+
+export namespace Payment {
+  export type AsObject = {
+    feesList: Array<Fee.AsObject>,
+    amountKey: string,
+  }
+}
+
+export class Fee extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  hasFlat(): boolean;
+  clearFlat(): void;
+  getFlat(): string;
+  setFlat(value: string): void;
+
+  hasComputed(): boolean;
+  clearComputed(): void;
+  getComputed(): ComputedAmount | undefined;
+  setComputed(value?: ComputedAmount): void;
+
+  hasLookup(): boolean;
+  clearLookup(): void;
+  getLookup(): Lookup | undefined;
+  setLookup(value?: Lookup): void;
+
+  getDisplay(): boolean;
+  setDisplay(value: boolean): void;
+
+  getDestinationField(): string;
+  setDestinationField(value: string): void;
+
+  getRateCase(): Fee.RateCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Fee.AsObject;
+  static toObject(includeInstance: boolean, msg: Fee): Fee.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Fee, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Fee;
+  static deserializeBinaryFromReader(message: Fee, reader: jspb.BinaryReader): Fee;
+}
+
+export namespace Fee {
+  export type AsObject = {
+    name: string,
+    flat: string,
+    computed?: ComputedAmount.AsObject,
+    lookup?: Lookup.AsObject,
+    display: boolean,
+    destinationField: string,
+  }
+
+  export enum RateCase {
+    RATE_NOT_SET = 0,
+    FLAT = 2,
+    COMPUTED = 3,
+    LOOKUP = 4,
+  }
+}
+
+export class ComputedAmount extends jspb.Message {
+  hasPercentage(): boolean;
+  clearPercentage(): void;
+  getPercentage(): number;
+  setPercentage(value: number): void;
+
+  hasFlatAndPercentage(): boolean;
+  clearFlatAndPercentage(): void;
+  getFlatAndPercentage(): FlatAndPercentage | undefined;
+  setFlatAndPercentage(value?: FlatAndPercentage): void;
+
+  getComputedTypeCase(): ComputedAmount.ComputedTypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComputedAmount.AsObject;
+  static toObject(includeInstance: boolean, msg: ComputedAmount): ComputedAmount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ComputedAmount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComputedAmount;
+  static deserializeBinaryFromReader(message: ComputedAmount, reader: jspb.BinaryReader): ComputedAmount;
+}
+
+export namespace ComputedAmount {
+  export type AsObject = {
+    percentage: number,
+    flatAndPercentage?: FlatAndPercentage.AsObject,
+  }
+
+  export enum ComputedTypeCase {
+    COMPUTED_TYPE_NOT_SET = 0,
+    PERCENTAGE = 1,
+    FLAT_AND_PERCENTAGE = 2,
+  }
+}
+
+export class FlatAndPercentage extends jspb.Message {
+  getFlat(): string;
+  setFlat(value: string): void;
+
+  getPercentage(): number;
+  setPercentage(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlatAndPercentage.AsObject;
+  static toObject(includeInstance: boolean, msg: FlatAndPercentage): FlatAndPercentage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FlatAndPercentage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlatAndPercentage;
+  static deserializeBinaryFromReader(message: FlatAndPercentage, reader: jspb.BinaryReader): FlatAndPercentage;
+}
+
+export namespace FlatAndPercentage {
+  export type AsObject = {
+    flat: string,
+    percentage: number,
+  }
+}
+
+export class Lookup extends jspb.Message {
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  hasMethodId(): boolean;
+  clearMethodId(): void;
+  getMethodId(): number;
+  setMethodId(value: number): void;
+
+  hasUrl(): boolean;
+  clearUrl(): void;
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getResponsePath(): string;
+  setResponsePath(value: string): void;
+
+  getAsPercentage(): boolean;
+  setAsPercentage(value: boolean): void;
+
+  getLookupTypeCase(): Lookup.LookupTypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Lookup.AsObject;
+  static toObject(includeInstance: boolean, msg: Lookup): Lookup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Lookup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Lookup;
+  static deserializeBinaryFromReader(message: Lookup, reader: jspb.BinaryReader): Lookup;
+}
+
+export namespace Lookup {
+  export type AsObject = {
+    pluginInstanceId: string,
+    methodId: number,
+    url: string,
+    responsePath: string,
+    asPercentage: boolean,
+  }
+
+  export enum LookupTypeCase {
+    LOOKUP_TYPE_NOT_SET = 0,
+    METHOD_ID = 2,
+    URL = 3,
+  }
+}
+
 export class ReceiptField extends jspb.Message {
   getName(): string;
   setName(value: string): void;

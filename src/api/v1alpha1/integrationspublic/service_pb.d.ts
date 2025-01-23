@@ -2,6 +2,7 @@
 // file: api/v1alpha1/integrationspublic/service.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
 import * as api_v1alpha1_integrations_portals_pb from "../../../api/v1alpha1/integrations/portals_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
@@ -850,6 +851,70 @@ export namespace GetLinkDetailsRes {
     expired: boolean,
     completed: boolean,
     portalDefinition?: api_v1alpha1_integrations_portals_pb.PortalDefinition.AsObject,
+  }
+}
+
+export class CalculateFeesReq extends jspb.Message {
+  clearFeesList(): void;
+  getFeesList(): Array<api_commons_integrations_integrations_pb.Fee>;
+  setFeesList(value: Array<api_commons_integrations_integrations_pb.Fee>): void;
+  addFees(value?: api_commons_integrations_integrations_pb.Fee, index?: number): api_commons_integrations_integrations_pb.Fee;
+
+  getParamsMap(): jspb.Map<string, Value>;
+  clearParamsMap(): void;
+  getPaymentAmountKey(): string;
+  setPaymentAmountKey(value: string): void;
+
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
+  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CalculateFeesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CalculateFeesReq): CalculateFeesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CalculateFeesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CalculateFeesReq;
+  static deserializeBinaryFromReader(message: CalculateFeesReq, reader: jspb.BinaryReader): CalculateFeesReq;
+}
+
+export namespace CalculateFeesReq {
+  export type AsObject = {
+    feesList: Array<api_commons_integrations_integrations_pb.Fee.AsObject>,
+    paramsMap: Array<[string, Value.AsObject]>,
+    paymentAmountKey: string,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
+  }
+}
+
+export class CalculateFeesRes extends jspb.Message {
+  getCalculatedFeesMap(): jspb.Map<string, string>;
+  clearCalculatedFeesMap(): void;
+  getTotalAmountDue(): string;
+  setTotalAmountDue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CalculateFeesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CalculateFeesRes): CalculateFeesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CalculateFeesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CalculateFeesRes;
+  static deserializeBinaryFromReader(message: CalculateFeesRes, reader: jspb.BinaryReader): CalculateFeesRes;
+}
+
+export namespace CalculateFeesRes {
+  export type AsObject = {
+    calculatedFeesMap: Array<[string, string]>,
+    totalAmountDue: string,
   }
 }
 
