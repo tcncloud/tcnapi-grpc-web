@@ -582,12 +582,6 @@ export class TransferMember extends jspb.Message {
   getMemberType(): TransferMemberTypeMap[keyof TransferMemberTypeMap];
   setMemberType(value: TransferMemberTypeMap[keyof TransferMemberTypeMap]): void;
 
-  getPhoneNumber(): string;
-  setPhoneNumber(value: string): void;
-
-  getIsMuted(): boolean;
-  setIsMuted(value: boolean): void;
-
   hasAgentSession(): boolean;
   clearAgentSession(): void;
   getAgentSession(): AgentSession | undefined;
@@ -619,8 +613,6 @@ export namespace TransferMember {
     identifier: string,
     displayLabel: string,
     memberType: TransferMemberTypeMap[keyof TransferMemberTypeMap],
-    phoneNumber: string,
-    isMuted: boolean,
     agentSession?: AgentSession.AsObject,
     callerSid?: CallerSid.AsObject,
     outboundId: string,
