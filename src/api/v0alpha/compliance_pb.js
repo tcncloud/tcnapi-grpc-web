@@ -5649,7 +5649,9 @@ entriesAdded: jspb.Message.getFieldWithDefault(msg, 4, 0),
 invalidEntriesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 totalInvalid: jspb.Message.getFieldWithDefault(msg, 6, 0),
 invalidListList: jspb.Message.toObjectList(msg.getInvalidListList(),
-    api_commons_compliance_pb.InvalidScrubListEntry.toObject, includeInstance)
+    api_commons_compliance_pb.InvalidScrubListEntry.toObject, includeInstance),
+countryCode: jspb.Message.getFieldWithDefault(msg, 8, ""),
+decompositions: (f = msg.getDecompositions()) && api_commons_compliance_pb.Decompositions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5714,6 +5716,15 @@ proto.api.v0alpha.ScrubListRes.deserializeBinaryFromReader = function(msg, reade
       var value = new api_commons_compliance_pb.InvalidScrubListEntry;
       reader.readMessage(value,api_commons_compliance_pb.InvalidScrubListEntry.deserializeBinaryFromReader);
       msg.addInvalidList(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountryCode(value);
+      break;
+    case 9:
+      var value = new api_commons_compliance_pb.Decompositions;
+      reader.readMessage(value,api_commons_compliance_pb.Decompositions.deserializeBinaryFromReader);
+      msg.setDecompositions(value);
       break;
     default:
       reader.skipField();
@@ -5792,6 +5803,21 @@ proto.api.v0alpha.ScrubListRes.serializeBinaryToWriter = function(message, write
       7,
       f,
       api_commons_compliance_pb.InvalidScrubListEntry.serializeBinaryToWriter
+    );
+  }
+  f = message.getCountryCode();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getDecompositions();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      api_commons_compliance_pb.Decompositions.serializeBinaryToWriter
     );
   }
 };
@@ -5959,6 +5985,61 @@ proto.api.v0alpha.ScrubListRes.prototype.addInvalidList = function(opt_value, op
  */
 proto.api.v0alpha.ScrubListRes.prototype.clearInvalidListList = function() {
   return this.setInvalidListList([]);
+};
+
+
+/**
+ * optional string country_code = 8;
+ * @return {string}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.getCountryCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+ */
+proto.api.v0alpha.ScrubListRes.prototype.setCountryCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional api.commons.Decompositions decompositions = 9;
+ * @return {?proto.api.commons.Decompositions}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.getDecompositions = function() {
+  return /** @type{?proto.api.commons.Decompositions} */ (
+    jspb.Message.getWrapperField(this, api_commons_compliance_pb.Decompositions, 9));
+};
+
+
+/**
+ * @param {?proto.api.commons.Decompositions|undefined} value
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+*/
+proto.api.v0alpha.ScrubListRes.prototype.setDecompositions = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+ */
+proto.api.v0alpha.ScrubListRes.prototype.clearDecompositions = function() {
+  return this.setDecompositions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.hasDecompositions = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -10612,7 +10693,8 @@ filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
 listId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 contentType: jspb.Message.getFieldWithDefault(msg, 10, 0),
 notificationMessage: jspb.Message.getFieldWithDefault(msg, 11, ""),
-countryCode: jspb.Message.getFieldWithDefault(msg, 12, "")
+countryCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
+decompositions: (f = msg.getDecompositions()) && api_commons_compliance_pb.Decompositions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10668,6 +10750,11 @@ proto.api.v0alpha.ProcessScrubListUploadReq.deserializeBinaryFromReader = functi
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountryCode(value);
+      break;
+    case 13:
+      var value = new api_commons_compliance_pb.Decompositions;
+      reader.readMessage(value,api_commons_compliance_pb.Decompositions.deserializeBinaryFromReader);
+      msg.setDecompositions(value);
       break;
     default:
       reader.skipField();
@@ -10731,6 +10818,14 @@ proto.api.v0alpha.ProcessScrubListUploadReq.serializeBinaryToWriter = function(m
     writer.writeString(
       12,
       f
+    );
+  }
+  f = message.getDecompositions();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      api_commons_compliance_pb.Decompositions.serializeBinaryToWriter
     );
   }
 };
@@ -10823,6 +10918,43 @@ proto.api.v0alpha.ProcessScrubListUploadReq.prototype.getCountryCode = function(
  */
 proto.api.v0alpha.ProcessScrubListUploadReq.prototype.setCountryCode = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional api.commons.Decompositions decompositions = 13;
+ * @return {?proto.api.commons.Decompositions}
+ */
+proto.api.v0alpha.ProcessScrubListUploadReq.prototype.getDecompositions = function() {
+  return /** @type{?proto.api.commons.Decompositions} */ (
+    jspb.Message.getWrapperField(this, api_commons_compliance_pb.Decompositions, 13));
+};
+
+
+/**
+ * @param {?proto.api.commons.Decompositions|undefined} value
+ * @return {!proto.api.v0alpha.ProcessScrubListUploadReq} returns this
+*/
+proto.api.v0alpha.ProcessScrubListUploadReq.prototype.setDecompositions = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ProcessScrubListUploadReq} returns this
+ */
+proto.api.v0alpha.ProcessScrubListUploadReq.prototype.clearDecompositions = function() {
+  return this.setDecompositions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ProcessScrubListUploadReq.prototype.hasDecompositions = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
