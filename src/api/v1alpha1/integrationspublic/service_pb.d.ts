@@ -874,6 +874,11 @@ export class CalculateFeesReq extends jspb.Message {
   getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
   setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
 
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): PortalLinkId | undefined;
+  setEntity(value?: PortalLinkId): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CalculateFeesReq.AsObject;
   static toObject(includeInstance: boolean, msg: CalculateFeesReq): CalculateFeesReq.AsObject;
@@ -892,6 +897,7 @@ export namespace CalculateFeesReq {
     callSid: number,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
+    entity?: PortalLinkId.AsObject,
   }
 }
 

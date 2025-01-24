@@ -6742,7 +6742,8 @@ paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1al
 paymentAmountKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
 callSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
 callType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-requestOrigin: jspb.Message.getFieldWithDefault(msg, 6, 0)
+requestOrigin: jspb.Message.getFieldWithDefault(msg, 6, 0),
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6805,6 +6806,11 @@ proto.api.v1alpha1.integrationspublic.CalculateFeesReq.deserializeBinaryFromRead
     case 6:
       var value = /** @type {!proto.api.commons.integrations.RequestOrigin} */ (reader.readEnum());
       msg.setRequestOrigin(value);
+      break;
+    case 7:
+      var value = new proto.api.v1alpha1.integrationspublic.PortalLinkId;
+      reader.readMessage(value,proto.api.v1alpha1.integrationspublic.PortalLinkId.deserializeBinaryFromReader);
+      msg.setEntity(value);
       break;
     default:
       reader.skipField();
@@ -6873,6 +6879,14 @@ proto.api.v1alpha1.integrationspublic.CalculateFeesReq.serializeBinaryToWriter =
     writer.writeEnum(
       6,
       f
+    );
+  }
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.api.v1alpha1.integrationspublic.PortalLinkId.serializeBinaryToWriter
     );
   }
 };
@@ -7008,6 +7022,43 @@ proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.getRequestOrigi
  */
 proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.setRequestOrigin = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional PortalLinkId entity = 7;
+ * @return {?proto.api.v1alpha1.integrationspublic.PortalLinkId}
+ */
+proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.integrationspublic.PortalLinkId} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.integrationspublic.PortalLinkId, 7));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.integrationspublic.PortalLinkId|undefined} value
+ * @return {!proto.api.v1alpha1.integrationspublic.CalculateFeesReq} returns this
+*/
+proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.integrationspublic.CalculateFeesReq} returns this
+ */
+proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.integrationspublic.CalculateFeesReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
