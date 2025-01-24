@@ -109,12 +109,6 @@ export class AgentEvent extends jspb.Message {
   getEventTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEventTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getAgentName(): string;
-  setAgentName(value: string): void;
-
-  getStatus(): api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap];
-  setStatus(value: api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap]): void;
-
   getEventData(): string;
   setEventData(value: string): void;
 
@@ -135,8 +129,6 @@ export namespace AgentEvent {
     agentSid: number,
     userId: string,
     eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    agentName: string,
-    status: api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap],
     eventData: string,
   }
 }
@@ -159,9 +151,6 @@ export class CallerEvent extends jspb.Message {
   getEventTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEventTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getStatus(): api_commons_acd_pb.CallerStatus.EnumMap[keyof api_commons_acd_pb.CallerStatus.EnumMap];
-  setStatus(value: api_commons_acd_pb.CallerStatus.EnumMap[keyof api_commons_acd_pb.CallerStatus.EnumMap]): void;
-
   getEventData(): string;
   setEventData(value: string): void;
 
@@ -182,7 +171,6 @@ export namespace CallerEvent {
     callerSid: number,
     callerType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    status: api_commons_acd_pb.CallerStatus.EnumMap[keyof api_commons_acd_pb.CallerStatus.EnumMap],
     eventData: string,
   }
 }
