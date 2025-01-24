@@ -609,6 +609,12 @@ export class TableVisualization extends jspb.Message {
   getNoHeader(): boolean;
   setNoHeader(value: boolean): void;
 
+  getHeaderBackgroundColor(): string;
+  setHeaderBackgroundColor(value: string): void;
+
+  getHeaderTextColor(): string;
+  setHeaderTextColor(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableVisualization.AsObject;
   static toObject(includeInstance: boolean, msg: TableVisualization): TableVisualization.AsObject;
@@ -625,6 +631,8 @@ export namespace TableVisualization {
     delimiter: string,
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
     noHeader: boolean,
+    headerBackgroundColor: string,
+    headerTextColor: string,
   }
 }
 
