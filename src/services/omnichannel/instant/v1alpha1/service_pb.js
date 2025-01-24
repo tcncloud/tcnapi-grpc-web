@@ -780,6 +780,8 @@ clientSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+status: jspb.Message.getFieldWithDefault(msg, 8, 0),
 eventData: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -837,6 +839,14 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.deserializeBinaryFromRead
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEventTime(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAgentName(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.commons.AgentStatus.Enum} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -905,6 +915,20 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.serializeBinaryToWriter =
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
+      f
     );
   }
   f = message.getEventData();
@@ -1027,6 +1051,42 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.hasEventTime = 
 
 
 /**
+ * optional string agent_name = 7;
+ * @return {string}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getAgentName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setAgentName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional api.commons.AgentStatus.Enum status = 8;
+ * @return {!proto.api.commons.AgentStatus.Enum}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.AgentStatus.Enum} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.AgentStatus.Enum} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 8, value);
+};
+
+
+/**
  * optional string event_data = 6;
  * @return {string}
  */
@@ -1081,6 +1141,7 @@ clientSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 callerSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
 callerType: jspb.Message.getFieldWithDefault(msg, 4, 0),
 eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 7, 0),
 eventData: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -1138,6 +1199,10 @@ proto.services.omnichannel.instant.v1alpha1.CallerEvent.deserializeBinaryFromRea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEventTime(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.CallerStatus.Enum} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -1206,6 +1271,13 @@ proto.services.omnichannel.instant.v1alpha1.CallerEvent.serializeBinaryToWriter 
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
     );
   }
   f = message.getEventData();
@@ -1324,6 +1396,24 @@ proto.services.omnichannel.instant.v1alpha1.CallerEvent.prototype.clearEventTime
  */
 proto.services.omnichannel.instant.v1alpha1.CallerEvent.prototype.hasEventTime = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional api.commons.CallerStatus.Enum status = 7;
+ * @return {!proto.api.commons.CallerStatus.Enum}
+ */
+proto.services.omnichannel.instant.v1alpha1.CallerEvent.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.CallerStatus.Enum} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CallerStatus.Enum} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.CallerEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.CallerEvent.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
