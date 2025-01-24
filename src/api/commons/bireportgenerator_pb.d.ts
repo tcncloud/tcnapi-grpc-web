@@ -214,6 +214,9 @@ export class TransferOptions extends jspb.Message {
   setFilenamePartsList(value: Array<FilenamePart>): void;
   addFilenameParts(value?: FilenamePart, index?: number): FilenamePart;
 
+  getDeliveryDefinitionTitle(): string;
+  setDeliveryDefinitionTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransferOptions.AsObject;
   static toObject(includeInstance: boolean, msg: TransferOptions): TransferOptions.AsObject;
@@ -228,6 +231,7 @@ export namespace TransferOptions {
   export type AsObject = {
     transferConfigSid: string,
     filenamePartsList: Array<FilenamePart.AsObject>,
+    deliveryDefinitionTitle: string,
   }
 }
 
