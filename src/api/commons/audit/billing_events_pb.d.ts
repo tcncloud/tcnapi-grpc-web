@@ -3,6 +3,40 @@
 
 import * as jspb from "google-protobuf";
 
+export class BillingAccumulatedItemEvent extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProductType(): number;
+  setProductType(value: number): void;
+
+  clearEventLogIdsList(): void;
+  getEventLogIdsList(): Array<number>;
+  setEventLogIdsList(value: Array<number>): void;
+  addEventLogIds(value: number, index?: number): number;
+
+  getCycle(): string;
+  setCycle(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BillingAccumulatedItemEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingAccumulatedItemEvent): BillingAccumulatedItemEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BillingAccumulatedItemEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingAccumulatedItemEvent;
+  static deserializeBinaryFromReader(message: BillingAccumulatedItemEvent, reader: jspb.BinaryReader): BillingAccumulatedItemEvent;
+}
+
+export namespace BillingAccumulatedItemEvent {
+  export type AsObject = {
+    orgId: string,
+    productType: number,
+    eventLogIdsList: Array<number>,
+    cycle: string,
+  }
+}
+
 export class BillingCommitBillingPlanEvent extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
