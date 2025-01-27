@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 
-export class BillingAccumulatedItemEvent extends jspb.Message {
+export class BillingAccumulatedItemsEvent extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -15,25 +15,25 @@ export class BillingAccumulatedItemEvent extends jspb.Message {
   setEventLogIdsList(value: Array<number>): void;
   addEventLogIds(value: number, index?: number): number;
 
-  getCycle(): string;
-  setCycle(value: string): void;
+  getBillingCycle(): string;
+  setBillingCycle(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BillingAccumulatedItemEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: BillingAccumulatedItemEvent): BillingAccumulatedItemEvent.AsObject;
+  toObject(includeInstance?: boolean): BillingAccumulatedItemsEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingAccumulatedItemsEvent): BillingAccumulatedItemsEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BillingAccumulatedItemEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BillingAccumulatedItemEvent;
-  static deserializeBinaryFromReader(message: BillingAccumulatedItemEvent, reader: jspb.BinaryReader): BillingAccumulatedItemEvent;
+  static serializeBinaryToWriter(message: BillingAccumulatedItemsEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingAccumulatedItemsEvent;
+  static deserializeBinaryFromReader(message: BillingAccumulatedItemsEvent, reader: jspb.BinaryReader): BillingAccumulatedItemsEvent;
 }
 
-export namespace BillingAccumulatedItemEvent {
+export namespace BillingAccumulatedItemsEvent {
   export type AsObject = {
     orgId: string,
     productType: number,
     eventLogIdsList: Array<number>,
-    cycle: string,
+    billingCycle: string,
   }
 }
 
