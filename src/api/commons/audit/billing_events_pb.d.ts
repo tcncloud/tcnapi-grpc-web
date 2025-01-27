@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 
-export class BillingAccumulatedItemsEvent extends jspb.Message {
+export class BillingAccumulateItemsEvent extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -19,16 +19,16 @@ export class BillingAccumulatedItemsEvent extends jspb.Message {
   setBillingCycle(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BillingAccumulatedItemsEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: BillingAccumulatedItemsEvent): BillingAccumulatedItemsEvent.AsObject;
+  toObject(includeInstance?: boolean): BillingAccumulateItemsEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingAccumulateItemsEvent): BillingAccumulateItemsEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BillingAccumulatedItemsEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BillingAccumulatedItemsEvent;
-  static deserializeBinaryFromReader(message: BillingAccumulatedItemsEvent, reader: jspb.BinaryReader): BillingAccumulatedItemsEvent;
+  static serializeBinaryToWriter(message: BillingAccumulateItemsEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingAccumulateItemsEvent;
+  static deserializeBinaryFromReader(message: BillingAccumulateItemsEvent, reader: jspb.BinaryReader): BillingAccumulateItemsEvent;
 }
 
-export namespace BillingAccumulatedItemsEvent {
+export namespace BillingAccumulateItemsEvent {
   export type AsObject = {
     orgId: string,
     productType: number,
