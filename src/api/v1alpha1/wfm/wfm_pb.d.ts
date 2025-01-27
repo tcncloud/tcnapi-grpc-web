@@ -176,11 +176,6 @@ export class SkillProfile extends jspb.Message {
   setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
   addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
 
-  hasSms(): boolean;
-  clearSms(): void;
-  getSms(): SkillProfile.SmsMetadata | undefined;
-  setSms(value?: SkillProfile.SmsMetadata): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfile.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfile): SkillProfile.AsObject;
@@ -208,27 +203,6 @@ export namespace SkillProfile {
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
     channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
-    sms?: SkillProfile.SmsMetadata.AsObject,
-  }
-
-  export class SmsMetadata extends jspb.Message {
-    getAverageConversationLength(): number;
-    setAverageConversationLength(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SmsMetadata.AsObject;
-    static toObject(includeInstance: boolean, msg: SmsMetadata): SmsMetadata.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: SmsMetadata, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SmsMetadata;
-    static deserializeBinaryFromReader(message: SmsMetadata, reader: jspb.BinaryReader): SmsMetadata;
-  }
-
-  export namespace SmsMetadata {
-    export type AsObject = {
-      averageConversationLength: number,
-    }
   }
 }
 
