@@ -12551,7 +12551,7 @@ proto.api.v1alpha1.wfm.SkillProfile.deserializeBinaryFromReader = function(msg, 
         msg.addChannelTypes(values[i]);
       }
       break;
-    case 17:
+    case 16:
       var value = new proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata;
       reader.readMessage(value,proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.deserializeBinaryFromReader);
       msg.setSms(value);
@@ -12696,7 +12696,7 @@ proto.api.v1alpha1.wfm.SkillProfile.serializeBinaryToWriter = function(message, 
   f = message.getSms();
   if (f != null) {
     writer.writeMessage(
-      17,
+      16,
       f,
       proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.serializeBinaryToWriter
     );
@@ -13203,12 +13203,12 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.clearChannelTypesList = function()
 
 
 /**
- * optional SmsMetadata sms = 17;
+ * optional SmsMetadata sms = 16;
  * @return {?proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata}
  */
 proto.api.v1alpha1.wfm.SkillProfile.prototype.getSms = function() {
   return /** @type{?proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata, 17));
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata, 16));
 };
 
 
@@ -13217,7 +13217,7 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.getSms = function() {
  * @return {!proto.api.v1alpha1.wfm.SkillProfile} returns this
 */
 proto.api.v1alpha1.wfm.SkillProfile.prototype.setSms = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -13235,7 +13235,7 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.clearSms = function() {
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.SkillProfile.prototype.hasSms = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
