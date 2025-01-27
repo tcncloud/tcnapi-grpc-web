@@ -780,6 +780,8 @@ clientSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+huntGroupName: jspb.Message.getFieldWithDefault(msg, 8, ""),
 eventData: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -837,6 +839,14 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.deserializeBinaryFromRead
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEventTime(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAgentName(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHuntGroupName(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -905,6 +915,20 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.serializeBinaryToWriter =
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getHuntGroupName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
   f = message.getEventData();
@@ -1023,6 +1047,42 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.clearEventTime 
  */
 proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.hasEventTime = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string agent_name = 7;
+ * @return {string}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getAgentName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setAgentName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string hunt_group_name = 8;
+ * @return {string}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getHuntGroupName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setHuntGroupName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

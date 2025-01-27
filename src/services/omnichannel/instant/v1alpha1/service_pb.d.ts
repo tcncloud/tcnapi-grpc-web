@@ -109,6 +109,12 @@ export class AgentEvent extends jspb.Message {
   getEventTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEventTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getAgentName(): string;
+  setAgentName(value: string): void;
+
+  getHuntGroupName(): string;
+  setHuntGroupName(value: string): void;
+
   getEventData(): string;
   setEventData(value: string): void;
 
@@ -129,6 +135,8 @@ export namespace AgentEvent {
     agentSid: number,
     userId: string,
     eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    agentName: string,
+    huntGroupName: string,
     eventData: string,
   }
 }
