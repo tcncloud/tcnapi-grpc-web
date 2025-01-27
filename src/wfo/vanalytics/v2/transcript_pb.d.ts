@@ -841,16 +841,14 @@ export class Chat extends jspb.Message {
   getPhone(): Chat.Phone | undefined;
   setPhone(value?: Chat.Phone): void;
 
-  hasEmail(): boolean;
-  clearEmail(): void;
-  getEmail(): Chat.Email | undefined;
-  setEmail(value?: Chat.Email): void;
-
   getCustomerName(): string;
   setCustomerName(value: string): void;
 
   getCampaignSid(): string;
   setCampaignSid(value: string): void;
+
+  getEmailAddress(): string;
+  setEmailAddress(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Chat.AsObject;
@@ -867,9 +865,9 @@ export namespace Chat {
     conversationSid: string,
     threadsList: Array<Chat.Thread.AsObject>,
     phone?: Chat.Phone.AsObject,
-    email?: Chat.Email.AsObject,
     customerName: string,
     campaignSid: string,
+    emailAddress: string,
   }
 
   export class Thread extends jspb.Message {
@@ -949,26 +947,6 @@ export namespace Chat {
   }
 
   export namespace Phone {
-    export type AsObject = {
-      raw: string,
-    }
-  }
-
-  export class Email extends jspb.Message {
-    getRaw(): string;
-    setRaw(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Email.AsObject;
-    static toObject(includeInstance: boolean, msg: Email): Email.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Email, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Email;
-    static deserializeBinaryFromReader(message: Email, reader: jspb.BinaryReader): Email;
-  }
-
-  export namespace Email {
     export type AsObject = {
       raw: string,
     }
@@ -1272,11 +1250,6 @@ export class TranscriptQuery extends jspb.Message {
   getSkills(): TranscriptQuery.SkillsQuery | undefined;
   setSkills(value?: TranscriptQuery.SkillsQuery): void;
 
-  hasEmail(): boolean;
-  clearEmail(): void;
-  getEmail(): TranscriptQuery.Email | undefined;
-  setEmail(value?: TranscriptQuery.Email): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -1299,7 +1272,6 @@ export namespace TranscriptQuery {
     phone?: TranscriptQuery.Phone.AsObject,
     channelType?: TranscriptQuery.Channel.AsObject,
     skills?: TranscriptQuery.SkillsQuery.AsObject,
-    email?: TranscriptQuery.Email.AsObject,
   }
 
   export class SkillsQuery extends jspb.Message {
@@ -2818,6 +2790,11 @@ export namespace TranscriptQuery {
     getCustomerName(): TranscriptQuery.Chat.CustomerName | undefined;
     setCustomerName(value?: TranscriptQuery.Chat.CustomerName): void;
 
+    hasEmailAddress(): boolean;
+    clearEmailAddress(): void;
+    getEmailAddress(): TranscriptQuery.Chat.EmailAddress | undefined;
+    setEmailAddress(value?: TranscriptQuery.Chat.EmailAddress): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Chat.AsObject;
     static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
@@ -2833,6 +2810,7 @@ export namespace TranscriptQuery {
       conversationSid?: TranscriptQuery.Chat.ConversationSid.AsObject,
       campaignSid?: TranscriptQuery.Chat.CampaignSid.AsObject,
       customerName?: TranscriptQuery.Chat.CustomerName.AsObject,
+      emailAddress?: TranscriptQuery.Chat.EmailAddress.AsObject,
     }
 
     export class ConversationSid extends jspb.Message {
@@ -2896,6 +2874,28 @@ export namespace TranscriptQuery {
     }
 
     export namespace CustomerName {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class EmailAddress extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): EmailAddress.AsObject;
+      static toObject(includeInstance: boolean, msg: EmailAddress): EmailAddress.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: EmailAddress, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): EmailAddress;
+      static deserializeBinaryFromReader(message: EmailAddress, reader: jspb.BinaryReader): EmailAddress;
+    }
+
+    export namespace EmailAddress {
       export type AsObject = {
         anyList: Array<string>,
       }
@@ -3343,50 +3343,6 @@ export namespace TranscriptQuery {
       lte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    }
-  }
-
-  export class Email extends jspb.Message {
-    hasRaw(): boolean;
-    clearRaw(): void;
-    getRaw(): TranscriptQuery.Email.Raw | undefined;
-    setRaw(value?: TranscriptQuery.Email.Raw): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Email.AsObject;
-    static toObject(includeInstance: boolean, msg: Email): Email.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Email, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Email;
-    static deserializeBinaryFromReader(message: Email, reader: jspb.BinaryReader): Email;
-  }
-
-  export namespace Email {
-    export type AsObject = {
-      raw?: TranscriptQuery.Email.Raw.AsObject,
-    }
-
-    export class Raw extends jspb.Message {
-      clearAnyList(): void;
-      getAnyList(): Array<string>;
-      setAnyList(value: Array<string>): void;
-      addAny(value: string, index?: number): string;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Raw.AsObject;
-      static toObject(includeInstance: boolean, msg: Raw): Raw.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: Raw, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): Raw;
-      static deserializeBinaryFromReader(message: Raw, reader: jspb.BinaryReader): Raw;
-    }
-
-    export namespace Raw {
-      export type AsObject = {
-        anyList: Array<string>,
-      }
     }
   }
 }
