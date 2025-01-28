@@ -440,6 +440,14 @@ export class ScrubListRes extends jspb.Message {
   setInvalidListList(value: Array<api_commons_compliance_pb.InvalidScrubListEntry>): void;
   addInvalidList(value?: api_commons_compliance_pb.InvalidScrubListEntry, index?: number): api_commons_compliance_pb.InvalidScrubListEntry;
 
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
+  hasDecompositions(): boolean;
+  clearDecompositions(): void;
+  getDecompositions(): api_commons_compliance_pb.Decompositions | undefined;
+  setDecompositions(value?: api_commons_compliance_pb.Decompositions): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubListRes.AsObject;
   static toObject(includeInstance: boolean, msg: ScrubListRes): ScrubListRes.AsObject;
@@ -459,6 +467,8 @@ export namespace ScrubListRes {
     invalidEntriesList: Array<string>,
     totalInvalid: number,
     invalidListList: Array<api_commons_compliance_pb.InvalidScrubListEntry.AsObject>,
+    countryCode: string,
+    decompositions?: api_commons_compliance_pb.Decompositions.AsObject,
   }
 }
 
@@ -1146,6 +1156,11 @@ export class ProcessScrubListUploadReq extends jspb.Message {
   getCountryCode(): string;
   setCountryCode(value: string): void;
 
+  hasDecompositions(): boolean;
+  clearDecompositions(): void;
+  getDecompositions(): api_commons_compliance_pb.Decompositions | undefined;
+  setDecompositions(value?: api_commons_compliance_pb.Decompositions): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessScrubListUploadReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessScrubListUploadReq): ProcessScrubListUploadReq.AsObject;
@@ -1163,6 +1178,7 @@ export namespace ProcessScrubListUploadReq {
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     notificationMessage: string,
     countryCode: string,
+    decompositions?: api_commons_compliance_pb.Decompositions.AsObject,
   }
 }
 
