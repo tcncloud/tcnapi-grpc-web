@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../../../api/commons/acd_pb";
+import * as api_commons_org_user_pb from "../../../../api/commons/org/user_pb";
 import * as google_api_annotations_pb from "../../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -118,6 +119,11 @@ export class AgentEvent extends jspb.Message {
   getHuntGroupName(): string;
   setHuntGroupName(value: string): void;
 
+  clearSkillsList(): void;
+  getSkillsList(): Array<api_commons_org_user_pb.Skill>;
+  setSkillsList(value: Array<api_commons_org_user_pb.Skill>): void;
+  addSkills(value?: api_commons_org_user_pb.Skill, index?: number): api_commons_org_user_pb.Skill;
+
   getEventData(): string;
   setEventData(value: string): void;
 
@@ -141,6 +147,7 @@ export namespace AgentEvent {
     agentFirstName: string,
     agentLastName: string,
     huntGroupName: string,
+    skillsList: Array<api_commons_org_user_pb.Skill.AsObject>,
     eventData: string,
   }
 }

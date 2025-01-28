@@ -27,6 +27,8 @@ var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var api_commons_acd_pb = require('../../../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
+var api_commons_org_user_pb = require('../../../../api/commons/org/user_pb.js');
+goog.object.extend(proto, api_commons_org_user_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -132,7 +134,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.omnichannel.instant.v1alpha1.AgentEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.omnichannel.instant.v1alpha1.AgentEvent.repeatedFields_, null);
 };
 goog.inherits(proto.services.omnichannel.instant.v1alpha1.AgentEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -744,6 +746,13 @@ proto.services.omnichannel.instant.v1alpha1.StreamCallerEventsResponse.prototype
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -783,6 +792,8 @@ eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.to
 agentFirstName: jspb.Message.getFieldWithDefault(msg, 7, ""),
 agentLastName: jspb.Message.getFieldWithDefault(msg, 8, ""),
 huntGroupName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+skillsList: jspb.Message.toObjectList(msg.getSkillsList(),
+    api_commons_org_user_pb.Skill.toObject, includeInstance),
 eventData: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -852,6 +863,11 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.deserializeBinaryFromRead
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setHuntGroupName(value);
+      break;
+    case 10:
+      var value = new api_commons_org_user_pb.Skill;
+      reader.readMessage(value,api_commons_org_user_pb.Skill.deserializeBinaryFromReader);
+      msg.addSkills(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -941,6 +957,14 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.serializeBinaryToWriter =
     writer.writeString(
       9,
       f
+    );
+  }
+  f = message.getSkillsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      api_commons_org_user_pb.Skill.serializeBinaryToWriter
     );
   }
   f = message.getEventData();
@@ -1113,6 +1137,44 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getHuntGroupNam
  */
 proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setHuntGroupName = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * repeated api.commons.org.Skill skills = 10;
+ * @return {!Array<!proto.api.commons.org.Skill>}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getSkillsList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Skill>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_user_pb.Skill, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Skill>} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+*/
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setSkillsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Skill=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Skill}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.addSkills = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Skill, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.clearSkillsList = function() {
+  return this.setSkillsList([]);
 };
 
 
