@@ -67,7 +67,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.bireportgenerator.ReportLog.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.bireportgenerator.ReportLog, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -923,6 +923,13 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasTransferOptions = fu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.repeatedFields_ = [20,22];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -966,7 +973,18 @@ failureReason: jspb.Message.getFieldWithDefault(msg, 9, ""),
 attemptNumber: jspb.Message.getFieldWithDefault(msg, 10, 0),
 maxAttempts: jspb.Message.getFieldWithDefault(msg, 11, 0),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dashboardTitle: jspb.Message.getFieldWithDefault(msg, 14, ""),
+scheduledTime: (f = msg.getScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+executionStartTime: (f = msg.getExecutionStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+executionEndTime: (f = msg.getExecutionEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+reportStartDate: (f = msg.getReportStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+reportEndDate: (f = msg.getReportEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+commentsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+timezone: jspb.Message.getFieldWithDefault(msg, 21, ""),
+filenamesList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f,
+insightCount: jspb.Message.getFieldWithDefault(msg, 23, 0),
+deliveryDefinitionTitle: jspb.Message.getFieldWithDefault(msg, 24, "")
   };
 
   if (includeInstance) {
@@ -1058,6 +1076,55 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.deserializeBinaryFromReader = fun
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDashboardTitle(value);
+      break;
+    case 15:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setScheduledTime(value);
+      break;
+    case 16:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExecutionStartTime(value);
+      break;
+    case 17:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExecutionEndTime(value);
+      break;
+    case 18:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setReportStartDate(value);
+      break;
+    case 19:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setReportEndDate(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addComments(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimezone(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFilenames(value);
+      break;
+    case 23:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setInsightCount(value);
+      break;
+    case 24:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDeliveryDefinitionTitle(value);
       break;
     default:
       reader.skipField();
@@ -1181,6 +1248,88 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.serializeBinaryToWriter = functio
       13,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDashboardTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getScheduledTime();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getExecutionStartTime();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getExecutionEndTime();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getReportStartDate();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getReportEndDate();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getCommentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      20,
+      f
+    );
+  }
+  f = message.getTimezone();
+  if (f.length > 0) {
+    writer.writeString(
+      21,
+      f
+    );
+  }
+  f = message.getFilenamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      22,
+      f
+    );
+  }
+  f = message.getInsightCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      23,
+      f
+    );
+  }
+  f = message.getDeliveryDefinitionTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      24,
+      f
     );
   }
 };
@@ -1493,6 +1642,337 @@ proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearUpdateTime = funct
  */
 proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional string dashboard_title = 14;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getDashboardTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setDashboardTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp scheduled_time = 15;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getScheduledTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setScheduledTime = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearScheduledTime = function() {
+  return this.setScheduledTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasScheduledTime = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp execution_start_time = 16;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getExecutionStartTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setExecutionStartTime = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearExecutionStartTime = function() {
+  return this.setExecutionStartTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasExecutionStartTime = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp execution_end_time = 17;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getExecutionEndTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setExecutionEndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearExecutionEndTime = function() {
+  return this.setExecutionEndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasExecutionEndTime = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp report_start_date = 18;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportStartDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportStartDate = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearReportStartDate = function() {
+  return this.setReportStartDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasReportStartDate = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp report_end_date = 19;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getReportEndDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 19));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setReportEndDate = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearReportEndDate = function() {
+  return this.setReportEndDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.hasReportEndDate = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * repeated string comments = 20;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getCommentsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setCommentsList = function(value) {
+  return jspb.Message.setField(this, 20, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.addComments = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearCommentsList = function() {
+  return this.setCommentsList([]);
+};
+
+
+/**
+ * optional string timezone = 21;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getTimezone = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setTimezone = function(value) {
+  return jspb.Message.setProto3StringField(this, 21, value);
+};
+
+
+/**
+ * repeated string filenames = 22;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getFilenamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 22));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setFilenamesList = function(value) {
+  return jspb.Message.setField(this, 22, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.addFilenames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 22, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.clearFilenamesList = function() {
+  return this.setFilenamesList([]);
+};
+
+
+/**
+ * optional int64 insight_count = 23;
+ * @return {number}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getInsightCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setInsightCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 23, value);
+};
+
+
+/**
+ * optional string delivery_definition_title = 24;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.getDeliveryDefinitionTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportLog} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportLog.prototype.setDeliveryDefinitionTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
