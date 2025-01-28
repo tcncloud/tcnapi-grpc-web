@@ -60,6 +60,78 @@ export namespace SIPAccountRingGroup {
   }
 }
 
+export class OrgSkill extends jspb.Message {
+  getSkillSid(): string;
+  setSkillSid(value: string): void;
+
+  getSkillName(): string;
+  setSkillName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrgSkill.AsObject;
+  static toObject(includeInstance: boolean, msg: OrgSkill): OrgSkill.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrgSkill, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrgSkill;
+  static deserializeBinaryFromReader(message: OrgSkill, reader: jspb.BinaryReader): OrgSkill;
+}
+
+export namespace OrgSkill {
+  export type AsObject = {
+    skillSid: string,
+    skillName: string,
+  }
+}
+
+export class OrgPermissionGroup extends jspb.Message {
+  getPermissionGroupId(): string;
+  setPermissionGroupId(value: string): void;
+
+  getPermissionGroupName(): string;
+  setPermissionGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrgPermissionGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: OrgPermissionGroup): OrgPermissionGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrgPermissionGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrgPermissionGroup;
+  static deserializeBinaryFromReader(message: OrgPermissionGroup, reader: jspb.BinaryReader): OrgPermissionGroup;
+}
+
+export namespace OrgPermissionGroup {
+  export type AsObject = {
+    permissionGroupId: string,
+    permissionGroupName: string,
+  }
+}
+
+export class OrgHuntGroup extends jspb.Message {
+  getHuntGroupSid(): string;
+  setHuntGroupSid(value: string): void;
+
+  getHuntGroupName(): string;
+  setHuntGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrgHuntGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: OrgHuntGroup): OrgHuntGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrgHuntGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrgHuntGroup;
+  static deserializeBinaryFromReader(message: OrgHuntGroup, reader: jspb.BinaryReader): OrgHuntGroup;
+}
+
+export namespace OrgHuntGroup {
+  export type AsObject = {
+    huntGroupSid: string,
+    huntGroupName: string,
+  }
+}
+
 export class SIPAccount extends jspb.Message {
   getSipId(): string;
   setSipId(value: string): void;
@@ -83,6 +155,27 @@ export class SIPAccount extends jspb.Message {
   setRingGroupsList(value: Array<SIPAccountRingGroup>): void;
   addRingGroups(value?: SIPAccountRingGroup, index?: number): SIPAccountRingGroup;
 
+  getOrgUsername(): string;
+  setOrgUsername(value: string): void;
+
+  getOrgFullName(): string;
+  setOrgFullName(value: string): void;
+
+  hasOrgHuntGroup(): boolean;
+  clearOrgHuntGroup(): void;
+  getOrgHuntGroup(): OrgHuntGroup | undefined;
+  setOrgHuntGroup(value?: OrgHuntGroup): void;
+
+  clearOrgSkillsList(): void;
+  getOrgSkillsList(): Array<OrgSkill>;
+  setOrgSkillsList(value: Array<OrgSkill>): void;
+  addOrgSkills(value?: OrgSkill, index?: number): OrgSkill;
+
+  clearOrgPermissionGroupsList(): void;
+  getOrgPermissionGroupsList(): Array<OrgPermissionGroup>;
+  setOrgPermissionGroupsList(value: Array<OrgPermissionGroup>): void;
+  addOrgPermissionGroups(value?: OrgPermissionGroup, index?: number): OrgPermissionGroup;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SIPAccount.AsObject;
   static toObject(includeInstance: boolean, msg: SIPAccount): SIPAccount.AsObject;
@@ -101,6 +194,11 @@ export namespace SIPAccount {
     ringGroupIdsList: Array<string>,
     orgUserId: string,
     ringGroupsList: Array<SIPAccountRingGroup.AsObject>,
+    orgUsername: string,
+    orgFullName: string,
+    orgHuntGroup?: OrgHuntGroup.AsObject,
+    orgSkillsList: Array<OrgSkill.AsObject>,
+    orgPermissionGroupsList: Array<OrgPermissionGroup.AsObject>,
   }
 }
 
