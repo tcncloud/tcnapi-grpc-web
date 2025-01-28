@@ -80,6 +80,9 @@ export class CreateUserRequest extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  getPasswordResetRequired(): boolean;
+  setPasswordResetRequired(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
@@ -110,6 +113,7 @@ export namespace CreateUserRequest {
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     huntGroupSid: number,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    passwordResetRequired: boolean,
   }
 }
 
