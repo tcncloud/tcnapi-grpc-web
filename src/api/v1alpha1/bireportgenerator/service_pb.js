@@ -2107,7 +2107,9 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.toObj
 proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2154,6 +2156,14 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.deserializeBina
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEndTime(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2197,6 +2207,20 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.serializeBinary
       2,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -2276,6 +2300,42 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.hasEn
 };
 
 
+/**
+ * optional int64 page_size = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 
 
@@ -2308,7 +2368,8 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.prototype.toOb
  */
 proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-reportLog: (f = msg.getReportLog()) && api_v1alpha1_bireportgenerator_entities_pb.ReportLog.toObject(includeInstance, f)
+reportLog: (f = msg.getReportLog()) && api_v1alpha1_bireportgenerator_entities_pb.ReportLog.toObject(includeInstance, f),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2350,6 +2411,10 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.deserializeBin
       reader.readMessage(value,api_v1alpha1_bireportgenerator_entities_pb.ReportLog.deserializeBinaryFromReader);
       msg.setReportLog(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2385,6 +2450,13 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.serializeBinar
       1,
       f,
       api_v1alpha1_bireportgenerator_entities_pb.ReportLog.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -2424,6 +2496,24 @@ proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.prototype.clea
  */
 proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.prototype.hasReportLog = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ListReportLogsStreamResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -274,6 +274,12 @@ export class ListReportLogsStreamRequest extends jspb.Message {
   getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReportLogsStreamRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListReportLogsStreamRequest): ListReportLogsStreamRequest.AsObject;
@@ -288,6 +294,8 @@ export namespace ListReportLogsStreamRequest {
   export type AsObject = {
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -296,6 +304,9 @@ export class ListReportLogsStreamResponse extends jspb.Message {
   clearReportLog(): void;
   getReportLog(): api_v1alpha1_bireportgenerator_entities_pb.ReportLog | undefined;
   setReportLog(value?: api_v1alpha1_bireportgenerator_entities_pb.ReportLog): void;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReportLogsStreamResponse.AsObject;
@@ -310,6 +321,7 @@ export class ListReportLogsStreamResponse extends jspb.Message {
 export namespace ListReportLogsStreamResponse {
   export type AsObject = {
     reportLog?: api_v1alpha1_bireportgenerator_entities_pb.ReportLog.AsObject,
+    nextPageToken: string,
   }
 }
 
