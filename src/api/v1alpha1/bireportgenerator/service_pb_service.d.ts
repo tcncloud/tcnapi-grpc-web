@@ -67,15 +67,6 @@ type BIReportGeneratorServiceListReportLogsStream = {
   readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamResponse;
 };
 
-type BIReportGeneratorServiceListReportLogs = {
-  readonly methodName: string;
-  readonly service: typeof BIReportGeneratorService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_bireportgenerator_service_pb.ListReportLogsRequest;
-  readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.ListReportLogsResponse;
-};
-
 export class BIReportGeneratorService {
   static readonly serviceName: string;
   static readonly CreateReportJob: BIReportGeneratorServiceCreateReportJob;
@@ -85,7 +76,6 @@ export class BIReportGeneratorService {
   static readonly GetReportJob: BIReportGeneratorServiceGetReportJob;
   static readonly GenerateReport: BIReportGeneratorServiceGenerateReport;
   static readonly ListReportLogsStream: BIReportGeneratorServiceListReportLogsStream;
-  static readonly ListReportLogs: BIReportGeneratorServiceListReportLogs;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -175,14 +165,5 @@ export class BIReportGeneratorServiceClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse|null) => void
   ): UnaryResponse;
   listReportLogsStream(requestMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_bireportgenerator_service_pb.ListReportLogsStreamResponse>;
-  listReportLogs(
-    requestMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsResponse|null) => void
-  ): UnaryResponse;
-  listReportLogs(
-    requestMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.ListReportLogsResponse|null) => void
-  ): UnaryResponse;
 }
 
