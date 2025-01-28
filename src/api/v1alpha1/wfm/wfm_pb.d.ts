@@ -7,6 +7,7 @@ import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_wfm_pb from "../../../api/commons/wfm_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
@@ -176,6 +177,11 @@ export class SkillProfile extends jspb.Message {
   setChannelTypesList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
   addChannelTypes(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
 
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): SkillProfile.SmsMetadata | undefined;
+  setSms(value?: SkillProfile.SmsMetadata): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfile.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfile): SkillProfile.AsObject;
@@ -203,6 +209,29 @@ export namespace SkillProfile {
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
     channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
+    sms?: SkillProfile.SmsMetadata.AsObject,
+  }
+
+  export class SmsMetadata extends jspb.Message {
+    hasAverageConversationLength(): boolean;
+    clearAverageConversationLength(): void;
+    getAverageConversationLength(): google_protobuf_duration_pb.Duration | undefined;
+    setAverageConversationLength(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SmsMetadata.AsObject;
+    static toObject(includeInstance: boolean, msg: SmsMetadata): SmsMetadata.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SmsMetadata, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SmsMetadata;
+    static deserializeBinaryFromReader(message: SmsMetadata, reader: jspb.BinaryReader): SmsMetadata;
+  }
+
+  export namespace SmsMetadata {
+    export type AsObject = {
+      averageConversationLength?: google_protobuf_duration_pb.Duration.AsObject,
+    }
   }
 }
 
