@@ -164,6 +164,53 @@ export class ReportLog extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getDashboardTitle(): string;
+  setDashboardTitle(value: string): void;
+
+  hasScheduledTime(): boolean;
+  clearScheduledTime(): void;
+  getScheduledTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setScheduledTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasExecutionStartTime(): boolean;
+  clearExecutionStartTime(): void;
+  getExecutionStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExecutionStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasExecutionEndTime(): boolean;
+  clearExecutionEndTime(): void;
+  getExecutionEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExecutionEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasReportStartDate(): boolean;
+  clearReportStartDate(): void;
+  getReportStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReportStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasReportEndDate(): boolean;
+  clearReportEndDate(): void;
+  getReportEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReportEndDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearCommentsList(): void;
+  getCommentsList(): Array<string>;
+  setCommentsList(value: Array<string>): void;
+  addComments(value: string, index?: number): string;
+
+  getTimezone(): string;
+  setTimezone(value: string): void;
+
+  clearFilenamesList(): void;
+  getFilenamesList(): Array<string>;
+  setFilenamesList(value: Array<string>): void;
+  addFilenames(value: string, index?: number): string;
+
+  getInsightCount(): number;
+  setInsightCount(value: number): void;
+
+  getDeliveryDefinitionTitle(): string;
+  setDeliveryDefinitionTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportLog.AsObject;
   static toObject(includeInstance: boolean, msg: ReportLog): ReportLog.AsObject;
@@ -189,6 +236,17 @@ export namespace ReportLog {
     maxAttempts: number,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dashboardTitle: string,
+    scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    executionStartTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    executionEndTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    reportStartDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    reportEndDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    commentsList: Array<string>,
+    timezone: string,
+    filenamesList: Array<string>,
+    insightCount: number,
+    deliveryDefinitionTitle: string,
   }
 }
 
