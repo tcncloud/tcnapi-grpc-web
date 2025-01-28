@@ -1679,7 +1679,8 @@ proto.api.commons.TransferOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
 transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, ""),
 filenamePartsList: jspb.Message.toObjectList(msg.getFilenamePartsList(),
-    proto.api.commons.FilenamePart.toObject, includeInstance)
+    proto.api.commons.FilenamePart.toObject, includeInstance),
+deliveryDefinitionTitle: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1725,6 +1726,10 @@ proto.api.commons.TransferOptions.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,proto.api.commons.FilenamePart.deserializeBinaryFromReader);
       msg.addFilenameParts(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDeliveryDefinitionTitle(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1767,6 +1772,13 @@ proto.api.commons.TransferOptions.serializeBinaryToWriter = function(message, wr
       2,
       f,
       proto.api.commons.FilenamePart.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeliveryDefinitionTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -1825,6 +1837,24 @@ proto.api.commons.TransferOptions.prototype.addFilenameParts = function(opt_valu
  */
 proto.api.commons.TransferOptions.prototype.clearFilenamePartsList = function() {
   return this.setFilenamePartsList([]);
+};
+
+
+/**
+ * optional string delivery_definition_title = 3;
+ * @return {string}
+ */
+proto.api.commons.TransferOptions.prototype.getDeliveryDefinitionTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TransferOptions} returns this
+ */
+proto.api.commons.TransferOptions.prototype.setDeliveryDefinitionTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
