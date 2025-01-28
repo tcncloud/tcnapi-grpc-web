@@ -2191,6 +2191,21 @@ export class ExecuteFlow extends jspb.Message {
   getVeradigmPracticeManagementSaveVoucherPayment(): ExecuteVeradigmPracticeManagementSaveVoucherPayment | undefined;
   setVeradigmPracticeManagementSaveVoucherPayment(value?: ExecuteVeradigmPracticeManagementSaveVoucherPayment): void;
 
+  hasVeradigmPracticeManagementGetPractitioners(): boolean;
+  clearVeradigmPracticeManagementGetPractitioners(): void;
+  getVeradigmPracticeManagementGetPractitioners(): ExecuteVeradigmPracticeManagementGetPractitioners | undefined;
+  setVeradigmPracticeManagementGetPractitioners(value?: ExecuteVeradigmPracticeManagementGetPractitioners): void;
+
+  hasVeradigmPracticeManagementGetTransactionCodes(): boolean;
+  clearVeradigmPracticeManagementGetTransactionCodes(): void;
+  getVeradigmPracticeManagementGetTransactionCodes(): ExecuteVeradigmPracticeManagementGetTransactionCodes | undefined;
+  setVeradigmPracticeManagementGetTransactionCodes(value?: ExecuteVeradigmPracticeManagementGetTransactionCodes): void;
+
+  hasVeradigmPracticeManagementGetDepartments(): boolean;
+  clearVeradigmPracticeManagementGetDepartments(): void;
+  getVeradigmPracticeManagementGetDepartments(): ExecuteVeradigmPracticeManagementGetDepartments | undefined;
+  setVeradigmPracticeManagementGetDepartments(value?: ExecuteVeradigmPracticeManagementGetDepartments): void;
+
   hasPdcflowTokenizeCreditCard(): boolean;
   clearPdcflowTokenizeCreditCard(): void;
   getPdcflowTokenizeCreditCard(): ExecutePDCFlowTokenizeCreditCard | undefined;
@@ -2576,6 +2591,9 @@ export namespace ExecuteFlow {
     veradigmPracticeManagementSavePaymentTransaction?: ExecuteVeradigmPracticeManagementSavePaymentTransaction.AsObject,
     veradigmPracticeManagementSaveRefundTransaction?: ExecuteVeradigmPracticeManagementSaveRefundTransaction.AsObject,
     veradigmPracticeManagementSaveVoucherPayment?: ExecuteVeradigmPracticeManagementSaveVoucherPayment.AsObject,
+    veradigmPracticeManagementGetPractitioners?: ExecuteVeradigmPracticeManagementGetPractitioners.AsObject,
+    veradigmPracticeManagementGetTransactionCodes?: ExecuteVeradigmPracticeManagementGetTransactionCodes.AsObject,
+    veradigmPracticeManagementGetDepartments?: ExecuteVeradigmPracticeManagementGetDepartments.AsObject,
     pdcflowTokenizeCreditCard?: ExecutePDCFlowTokenizeCreditCard.AsObject,
     pdcflowCcTransaction?: ExecutePDCFlowCCTransaction.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
@@ -2887,6 +2905,9 @@ export namespace ExecuteFlow {
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_PAYMENT_TRANSACTION = 4807,
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_REFUND_TRANSACTION = 4808,
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_VOUCHER_PAYMENT = 4809,
+    VERADIGM_PRACTICE_MANAGEMENT_GET_PRACTITIONERS = 4810,
+    VERADIGM_PRACTICE_MANAGEMENT_GET_TRANSACTION_CODES = 4811,
+    VERADIGM_PRACTICE_MANAGEMENT_GET_DEPARTMENTS = 4812,
     PDCFLOW_TOKENIZE_CREDIT_CARD = 4901,
     PDCFLOW_CC_TRANSACTION = 4902,
     DEBUG_ECHO = 5001,
@@ -8211,6 +8232,54 @@ export namespace ExecuteVeradigmPracticeManagementSaveVoucherPayment {
   }
 }
 
+export class ExecuteVeradigmPracticeManagementGetPractitioners extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmPracticeManagementGetPractitioners.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmPracticeManagementGetPractitioners): ExecuteVeradigmPracticeManagementGetPractitioners.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmPracticeManagementGetPractitioners, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmPracticeManagementGetPractitioners;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmPracticeManagementGetPractitioners, reader: jspb.BinaryReader): ExecuteVeradigmPracticeManagementGetPractitioners;
+}
+
+export namespace ExecuteVeradigmPracticeManagementGetPractitioners {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmPracticeManagementGetTransactionCodes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmPracticeManagementGetTransactionCodes.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmPracticeManagementGetTransactionCodes): ExecuteVeradigmPracticeManagementGetTransactionCodes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmPracticeManagementGetTransactionCodes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmPracticeManagementGetTransactionCodes;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmPracticeManagementGetTransactionCodes, reader: jspb.BinaryReader): ExecuteVeradigmPracticeManagementGetTransactionCodes;
+}
+
+export namespace ExecuteVeradigmPracticeManagementGetTransactionCodes {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmPracticeManagementGetDepartments extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmPracticeManagementGetDepartments.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmPracticeManagementGetDepartments): ExecuteVeradigmPracticeManagementGetDepartments.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmPracticeManagementGetDepartments, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmPracticeManagementGetDepartments;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmPracticeManagementGetDepartments, reader: jspb.BinaryReader): ExecuteVeradigmPracticeManagementGetDepartments;
+}
+
+export namespace ExecuteVeradigmPracticeManagementGetDepartments {
+  export type AsObject = {
+  }
+}
+
 export class ExecutePDCFlowTokenizeCreditCard extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePDCFlowTokenizeCreditCard.AsObject;
@@ -8793,6 +8862,9 @@ export interface RequestMethodMap {
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_PAYMENT_TRANSACTION: 4807;
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_REFUND_TRANSACTION: 4808;
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_VOUCHER_PAYMENT: 4809;
+  REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_GET_PRACTITIONERS: 4810;
+  REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_GET_TRANSACTION_CODES: 4811;
+  REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_GET_DEPARTMENTS: 4812;
   REQUEST_METHOD_PDCFLOW_TOKENIZE_CREDIT_CARD: 4901;
   REQUEST_METHOD_PDCFLOW_CC_TRANSACTION: 4902;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
