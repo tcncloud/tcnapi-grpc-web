@@ -5297,7 +5297,9 @@ tableColumnDetailsList: jspb.Message.toObjectList(msg.getTableColumnDetailsList(
     proto.api.v1alpha1.insights.TableColumnConfig.toObject, includeInstance),
 delimiter: jspb.Message.getFieldWithDefault(msg, 2, ""),
 quoteCharacter: jspb.Message.getFieldWithDefault(msg, 3, 0),
-noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+headerBackgroundColor: jspb.Message.getFieldWithDefault(msg, 5, ""),
+headerTextColor: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -5350,6 +5352,14 @@ proto.api.v1alpha1.insights.TableVisualization.deserializeBinaryFromReader = fun
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setNoHeader(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHeaderBackgroundColor(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHeaderTextColor(value);
       break;
     default:
       reader.skipField();
@@ -5406,6 +5416,20 @@ proto.api.v1alpha1.insights.TableVisualization.serializeBinaryToWriter = functio
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = message.getHeaderBackgroundColor();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getHeaderTextColor();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -5501,6 +5525,42 @@ proto.api.v1alpha1.insights.TableVisualization.prototype.getNoHeader = function(
  */
 proto.api.v1alpha1.insights.TableVisualization.prototype.setNoHeader = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional string header_background_color = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.getHeaderBackgroundColor = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.insights.TableVisualization} returns this
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.setHeaderBackgroundColor = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string header_text_color = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.getHeaderTextColor = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.insights.TableVisualization} returns this
+ */
+proto.api.v1alpha1.insights.TableVisualization.prototype.setHeaderTextColor = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
