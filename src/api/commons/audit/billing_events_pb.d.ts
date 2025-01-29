@@ -2,6 +2,7 @@
 // file: api/commons/audit/billing_events.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 
 export class BillingAccumulateItemsEvent extends jspb.Message {
   getOrgId(): string;
@@ -17,6 +18,11 @@ export class BillingAccumulateItemsEvent extends jspb.Message {
 
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
+
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): google_protobuf_any_pb.Any | undefined;
+  setPayload(value?: google_protobuf_any_pb.Any): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingAccumulateItemsEvent.AsObject;
@@ -34,6 +40,7 @@ export namespace BillingAccumulateItemsEvent {
     productType: number,
     eventLogIdsList: Array<number>,
     billingCycle: string,
+    payload?: google_protobuf_any_pb.Any.AsObject,
   }
 }
 

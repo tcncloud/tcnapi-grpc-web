@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.api.commons.audit.BillingAccumulateItemsEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCommitBillingPlanEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCreateBillingPlanEvent', null, global);
@@ -373,7 +375,8 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.toObject = function(includeI
 orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 productType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 eventLogIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-billingCycle: jspb.Message.getFieldWithDefault(msg, 4, "")
+billingCycle: jspb.Message.getFieldWithDefault(msg, 4, ""),
+payload: (f = msg.getPayload()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -427,6 +430,11 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.deserializeBinaryFromReader 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setBillingCycle(value);
+      break;
+    case 5:
+      var value = new google_protobuf_any_pb.Any;
+      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+      msg.setPayload(value);
       break;
     default:
       reader.skipField();
@@ -483,6 +491,14 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.serializeBinaryToWriter = fu
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getPayload();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
   }
 };
@@ -576,6 +592,43 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getBillingCycle = 
  */
 proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setBillingCycle = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Any payload = 5;
+ * @return {?proto.google.protobuf.Any}
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getPayload = function() {
+  return /** @type{?proto.google.protobuf.Any} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
+*/
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setPayload = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.clearPayload = function() {
+  return this.setPayload(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.hasPayload = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
