@@ -23,8 +23,6 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.api.commons.audit.BillingAccumulateItemsEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCommitBillingPlanEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCreateBillingPlanEvent', null, global);
@@ -376,8 +374,7 @@ orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 productType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 eventLogIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 billingCycle: jspb.Message.getFieldWithDefault(msg, 4, ""),
-eventDataList: jspb.Message.toObjectList(msg.getEventDataList(),
-    google_protobuf_any_pb.Any.toObject, includeInstance)
+eventDataList: msg.getEventDataList_asB64()
   };
 
   if (includeInstance) {
@@ -433,8 +430,7 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.deserializeBinaryFromReader 
       msg.setBillingCycle(value);
       break;
     case 5:
-      var value = new google_protobuf_any_pb.Any;
-      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.addEventData(value);
       break;
     default:
@@ -494,12 +490,11 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getEventDataList();
+  f = message.getEventDataList_asU8();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeRepeatedBytes(
       5,
-      f,
-      google_protobuf_any_pb.Any.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -597,31 +592,54 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setBillingCycle = 
 
 
 /**
- * repeated google.protobuf.Any event_data = 5;
- * @return {!Array<!proto.google.protobuf.Any>}
+ * repeated bytes event_data = 5;
+ * @return {!Array<string>}
  */
 proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getEventDataList = function() {
-  return /** @type{!Array<!proto.google.protobuf.Any>} */ (
-    jspb.Message.getRepeatedWrapperField(this, google_protobuf_any_pb.Any, 5));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
- * @param {!Array<!proto.google.protobuf.Any>} value
- * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
-*/
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setEventDataList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.google.protobuf.Any=} opt_value
- * @param {number=} opt_index
- * @return {!proto.google.protobuf.Any}
+ * repeated bytes event_data = 5;
+ * This is a type-conversion wrapper around `getEventDataList()`
+ * @return {!Array<string>}
  */
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.addEventData = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.google.protobuf.Any, opt_index);
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getEventDataList_asB64 = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+      this.getEventDataList()));
+};
+
+
+/**
+ * repeated bytes event_data = 5;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getEventDataList()`
+ * @return {!Array<!Uint8Array>}
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getEventDataList_asU8 = function() {
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getEventDataList()));
+};
+
+
+/**
+ * @param {!(Array<!Uint8Array>|Array<string>)} value
+ * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setEventDataList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.addEventData = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
