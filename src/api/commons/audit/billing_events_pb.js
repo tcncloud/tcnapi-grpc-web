@@ -339,7 +339,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.audit.BillingAccumulateItemsEvent.repeatedFields_ = [3];
+proto.api.commons.audit.BillingAccumulateItemsEvent.repeatedFields_ = [3,5];
 
 
 
@@ -376,7 +376,8 @@ orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 productType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 eventLogIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 billingCycle: jspb.Message.getFieldWithDefault(msg, 4, ""),
-payload: (f = msg.getPayload()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
+eventDataList: jspb.Message.toObjectList(msg.getEventDataList(),
+    google_protobuf_any_pb.Any.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -434,7 +435,7 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.deserializeBinaryFromReader 
     case 5:
       var value = new google_protobuf_any_pb.Any;
       reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
-      msg.setPayload(value);
+      msg.addEventData(value);
       break;
     default:
       reader.skipField();
@@ -493,9 +494,9 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getPayload();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getEventDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       5,
       f,
       google_protobuf_any_pb.Any.serializeBinaryToWriter
@@ -596,39 +597,40 @@ proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setBillingCycle = 
 
 
 /**
- * optional google.protobuf.Any payload = 5;
- * @return {?proto.google.protobuf.Any}
+ * repeated google.protobuf.Any event_data = 5;
+ * @return {!Array<!proto.google.protobuf.Any>}
  */
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getPayload = function() {
-  return /** @type{?proto.google.protobuf.Any} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 5));
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.getEventDataList = function() {
+  return /** @type{!Array<!proto.google.protobuf.Any>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_any_pb.Any, 5));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Any|undefined} value
+ * @param {!Array<!proto.google.protobuf.Any>} value
  * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
 */
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setPayload = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.setEventDataList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.google.protobuf.Any=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.protobuf.Any}
+ */
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.addEventData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.google.protobuf.Any, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.audit.BillingAccumulateItemsEvent} returns this
  */
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.clearPayload = function() {
-  return this.setPayload(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.hasPayload = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.api.commons.audit.BillingAccumulateItemsEvent.prototype.clearEventDataList = function() {
+  return this.setEventDataList([]);
 };
 
 

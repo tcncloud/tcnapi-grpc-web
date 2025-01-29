@@ -19,10 +19,10 @@ export class BillingAccumulateItemsEvent extends jspb.Message {
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
-  hasPayload(): boolean;
-  clearPayload(): void;
-  getPayload(): google_protobuf_any_pb.Any | undefined;
-  setPayload(value?: google_protobuf_any_pb.Any): void;
+  clearEventDataList(): void;
+  getEventDataList(): Array<google_protobuf_any_pb.Any>;
+  setEventDataList(value: Array<google_protobuf_any_pb.Any>): void;
+  addEventData(value?: google_protobuf_any_pb.Any, index?: number): google_protobuf_any_pb.Any;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingAccumulateItemsEvent.AsObject;
@@ -40,7 +40,7 @@ export namespace BillingAccumulateItemsEvent {
     productType: number,
     eventLogIdsList: Array<number>,
     billingCycle: string,
-    payload?: google_protobuf_any_pb.Any.AsObject,
+    eventDataList: Array<google_protobuf_any_pb.Any.AsObject>,
   }
 }
 
