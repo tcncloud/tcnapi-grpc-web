@@ -2386,8 +2386,7 @@ userCallerId: jspb.Message.getFieldWithDefault(msg, 14, ""),
 agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 15, ""),
 labelIdsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
 timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
-huntGroupSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
-passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
   if (includeInstance) {
@@ -2492,10 +2491,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.deserializeBinaryFromReader = fun
     case 18:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setHuntGroupSid(value);
-      break;
-    case 19:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPasswordResetRequired(value);
       break;
     default:
       reader.skipField();
@@ -2643,13 +2638,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt64(
       18,
-      f
-    );
-  }
-  f = message.getPasswordResetRequired();
-  if (f) {
-    writer.writeBool(
-      19,
       f
     );
   }
@@ -3054,24 +3042,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.prototype.getHuntGroupSid = funct
  */
 proto.api.v1alpha1.org.users.CreateUserRequest.prototype.setHuntGroupSid = function(value) {
   return jspb.Message.setProto3IntField(this, 18, value);
-};
-
-
-/**
- * optional bool password_reset_required = 19;
- * @return {boolean}
- */
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.getPasswordResetRequired = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.org.users.CreateUserRequest} returns this
- */
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.setPasswordResetRequired = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
