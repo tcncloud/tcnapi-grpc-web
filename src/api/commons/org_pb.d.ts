@@ -89,6 +89,8 @@ export interface TimeZoneMap {
   TIME_ZONE_ASIA_SINGAPORE: 42;
   TIME_ZONE_ASIA_JAPAN: 43;
   TIME_ZONE_AMERICA_SANTIAGO: 44;
+  TIME_ZONE_AMERICA_BOGOTA: 45;
+  TIME_ZONE_AMERICA_LIMA: 46;
 }
 
 export const TimeZone: TimeZoneMap;
