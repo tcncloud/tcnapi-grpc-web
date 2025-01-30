@@ -292,6 +292,15 @@ type IntegrationsInsertPrivateField = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes;
 };
 
+type IntegrationsCalculateFees = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.CalculateFeesReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.CalculateFeesRes;
+};
+
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -326,6 +335,7 @@ export class Integrations {
   static readonly PopulateIntegrationLink: IntegrationsPopulateIntegrationLink;
   static readonly ProcessWorkflow: IntegrationsProcessWorkflow;
   static readonly InsertPrivateField: IntegrationsInsertPrivateField;
+  static readonly CalculateFees: IntegrationsCalculateFees;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -647,6 +657,15 @@ export class IntegrationsClient {
   insertPrivateField(
     requestMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes|null) => void
+  ): UnaryResponse;
+  calculateFees(
+    requestMessage: api_v1alpha1_integrations_service_pb.CalculateFeesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.CalculateFeesRes|null) => void
+  ): UnaryResponse;
+  calculateFees(
+    requestMessage: api_v1alpha1_integrations_service_pb.CalculateFeesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.CalculateFeesRes|null) => void
   ): UnaryResponse;
 }
 

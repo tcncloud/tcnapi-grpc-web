@@ -2,11 +2,13 @@
 // file: api/v1alpha1/integrationspublic/service.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
 import * as api_v1alpha1_integrations_portals_pb from "../../../api/v1alpha1/integrations/portals_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_type_money_pb from "../../../google/type/money_pb";
 
 export class Values extends jspb.Message {
   getValuesMap(): jspb.Map<string, Value>;
@@ -850,6 +852,74 @@ export namespace GetLinkDetailsRes {
     expired: boolean,
     completed: boolean,
     portalDefinition?: api_v1alpha1_integrations_portals_pb.PortalDefinition.AsObject,
+  }
+}
+
+export class CalculateFeesReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): PortalLinkId | undefined;
+  setEntity(value?: PortalLinkId): void;
+
+  clearFeesList(): void;
+  getFeesList(): Array<api_commons_integrations_integrations_pb.Fee>;
+  setFeesList(value: Array<api_commons_integrations_integrations_pb.Fee>): void;
+  addFees(value?: api_commons_integrations_integrations_pb.Fee, index?: number): api_commons_integrations_integrations_pb.Fee;
+
+  getParamsMap(): jspb.Map<string, Value>;
+  clearParamsMap(): void;
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  getRequestOrigin(): api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap];
+  setRequestOrigin(value: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CalculateFeesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CalculateFeesReq): CalculateFeesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CalculateFeesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CalculateFeesReq;
+  static deserializeBinaryFromReader(message: CalculateFeesReq, reader: jspb.BinaryReader): CalculateFeesReq;
+}
+
+export namespace CalculateFeesReq {
+  export type AsObject = {
+    entity?: PortalLinkId.AsObject,
+    feesList: Array<api_commons_integrations_integrations_pb.Fee.AsObject>,
+    paramsMap: Array<[string, Value.AsObject]>,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    requestOrigin: api_commons_integrations_integrations_pb.RequestOriginMap[keyof api_commons_integrations_integrations_pb.RequestOriginMap],
+  }
+}
+
+export class CalculateFeesRes extends jspb.Message {
+  getCalculatedFeesMap(): jspb.Map<string, google_type_money_pb.Money>;
+  clearCalculatedFeesMap(): void;
+  hasTotalAmountDue(): boolean;
+  clearTotalAmountDue(): void;
+  getTotalAmountDue(): google_type_money_pb.Money | undefined;
+  setTotalAmountDue(value?: google_type_money_pb.Money): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CalculateFeesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CalculateFeesRes): CalculateFeesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CalculateFeesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CalculateFeesRes;
+  static deserializeBinaryFromReader(message: CalculateFeesRes, reader: jspb.BinaryReader): CalculateFeesRes;
+}
+
+export namespace CalculateFeesRes {
+  export type AsObject = {
+    calculatedFeesMap: Array<[string, google_type_money_pb.Money.AsObject]>,
+    totalAmountDue?: google_type_money_pb.Money.AsObject,
   }
 }
 
