@@ -926,16 +926,13 @@ export class TransposeNode extends jspb.Message {
   setGroupByColumnsList(value: Array<string>): void;
   addGroupByColumns(value: string, index?: number): string;
 
-  getPivotColumn(): string;
-  setPivotColumn(value: string): void;
+  getKeyColumn(): string;
+  setKeyColumn(value: string): void;
 
-  getValueColumn(): string;
-  setValueColumn(value: string): void;
-
-  clearSourceVariantsList(): void;
-  getSourceVariantsList(): Array<Column>;
-  setSourceVariantsList(value: Array<Column>): void;
-  addSourceVariants(value?: Column, index?: number): Column;
+  clearOptionsList(): void;
+  getOptionsList(): Array<TransposeNode.option>;
+  setOptionsList(value: Array<TransposeNode.option>): void;
+  addOptions(value?: TransposeNode.option, index?: number): TransposeNode.option;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransposeNode.AsObject;
@@ -950,9 +947,36 @@ export class TransposeNode extends jspb.Message {
 export namespace TransposeNode {
   export type AsObject = {
     groupByColumnsList: Array<string>,
-    pivotColumn: string,
-    valueColumn: string,
-    sourceVariantsList: Array<Column.AsObject>,
+    keyColumn: string,
+    optionsList: Array<TransposeNode.option.AsObject>,
+  }
+
+  export class option extends jspb.Message {
+    getKeyName(): string;
+    setKeyName(value: string): void;
+
+    getValueColumn(): string;
+    setValueColumn(value: string): void;
+
+    getValueType(): string;
+    setValueType(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): option.AsObject;
+    static toObject(includeInstance: boolean, msg: option): option.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: option, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): option;
+    static deserializeBinaryFromReader(message: option, reader: jspb.BinaryReader): option;
+  }
+
+  export namespace option {
+    export type AsObject = {
+      keyName: string,
+      valueColumn: string,
+      valueType: string,
+    }
   }
 }
 
