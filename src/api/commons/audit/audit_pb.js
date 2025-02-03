@@ -85,7 +85,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
 
 /**
  * @enum {number}
@@ -206,6 +206,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   BILLING_UPDATE_INVOICE_EVENT: 1009,
   BILLING_UPDATE_RATE_DEFINITION_EVENT: 1010,
   BILLING_RATED_ITEMS_GENERATED_EVENT: 1011,
+  BILLING_ACCUMULATE_ITEMS_EVENT: 1012,
   DELIVERY_FAILURE_EVENT: 1100,
   DELIVERY_SUCCESS_EVENT: 1101,
   CONTACT_MANAGER_ENTRY_ADD_EVENT: 1200,
@@ -379,6 +380,7 @@ billingUpdateBillingPlanEvent: (f = msg.getBillingUpdateBillingPlanEvent()) && a
 billingUpdateInvoiceEvent: (f = msg.getBillingUpdateInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.toObject(includeInstance, f),
 billingUpdateRateDefinitionEvent: (f = msg.getBillingUpdateRateDefinitionEvent()) && api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.toObject(includeInstance, f),
 billingRatedItemsGeneratedEvent: (f = msg.getBillingRatedItemsGeneratedEvent()) && api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent.toObject(includeInstance, f),
+billingAccumulateItemsEvent: (f = msg.getBillingAccumulateItemsEvent()) && api_commons_audit_billing_events_pb.BillingAccumulateItemsEvent.toObject(includeInstance, f),
 deliveryFailureEvent: (f = msg.getDeliveryFailureEvent()) && api_commons_audit_delivery_events_pb.DeliveryFailureEvent.toObject(includeInstance, f),
 deliverySuccessEvent: (f = msg.getDeliverySuccessEvent()) && api_commons_audit_delivery_events_pb.DeliverySuccessEvent.toObject(includeInstance, f),
 contactManagerEntryAddEvent: (f = msg.getContactManagerEntryAddEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.toObject(includeInstance, f),
@@ -1022,6 +1024,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent.deserializeBinaryFromReader);
       msg.setBillingRatedItemsGeneratedEvent(value);
+      break;
+    case 1012:
+      var value = new api_commons_audit_billing_events_pb.BillingAccumulateItemsEvent;
+      reader.readMessage(value,api_commons_audit_billing_events_pb.BillingAccumulateItemsEvent.deserializeBinaryFromReader);
+      msg.setBillingAccumulateItemsEvent(value);
       break;
     case 1100:
       var value = new api_commons_audit_delivery_events_pb.DeliveryFailureEvent;
@@ -2070,6 +2077,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       1011,
       f,
       api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getBillingAccumulateItemsEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1012,
+      f,
+      api_commons_audit_billing_events_pb.BillingAccumulateItemsEvent.serializeBinaryToWriter
     );
   }
   f = message.getDeliveryFailureEvent();
@@ -6521,6 +6536,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingRatedItemsGeneratedEven
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingRatedItemsGeneratedEvent = function() {
   return jspb.Message.getField(this, 1011) != null;
+};
+
+
+/**
+ * optional BillingAccumulateItemsEvent billing_accumulate_items_event = 1012;
+ * @return {?proto.api.commons.audit.BillingAccumulateItemsEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getBillingAccumulateItemsEvent = function() {
+  return /** @type{?proto.api.commons.audit.BillingAccumulateItemsEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingAccumulateItemsEvent, 1012));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.BillingAccumulateItemsEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setBillingAccumulateItemsEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1012, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearBillingAccumulateItemsEvent = function() {
+  return this.setBillingAccumulateItemsEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasBillingAccumulateItemsEvent = function() {
+  return jspb.Message.getField(this, 1012) != null;
 };
 
 
