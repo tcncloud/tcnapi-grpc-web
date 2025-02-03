@@ -172,6 +172,9 @@ export class Evaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
   static toObject(includeInstance: boolean, msg: Evaluation): Evaluation.AsObject;
@@ -200,6 +203,7 @@ export namespace Evaluation {
     deletedBy: string,
     isRecoverable: boolean,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    conversationSid: string,
   }
 
   export class CustomField extends jspb.Message {
@@ -451,6 +455,9 @@ export class AutoEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: AutoEvaluation): AutoEvaluation.AsObject;
@@ -478,6 +485,7 @@ export namespace AutoEvaluation {
     scorecardInfo?: AutoEvaluation.ScorecardInfo.AsObject,
     categoryInfo?: AutoEvaluation.CategoryInfo.AsObject,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    conversationSid: string,
   }
 
   export class ScorecardInfo extends jspb.Message {
@@ -1224,6 +1232,12 @@ export class SmartEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SmartEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: SmartEvaluation): SmartEvaluation.AsObject;
@@ -1247,6 +1261,8 @@ export namespace SmartEvaluation {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     smartEvaluationSectionsList: Array<SmartEvaluationSection.AsObject>,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    callSid: number,
+    conversationSid: string,
   }
 }
 

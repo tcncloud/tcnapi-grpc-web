@@ -1518,7 +1518,8 @@ customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
 deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
 isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
-channelType: jspb.Message.getFieldWithDefault(msg, 22, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 22, 0),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 23, "0")
   };
 
   if (includeInstance) {
@@ -1622,6 +1623,10 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
     case 22:
       var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannelType(value);
+      break;
+    case 23:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setConversationSid(value);
       break;
     default:
       reader.skipField();
@@ -1765,6 +1770,13 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
   if (f !== 0.0) {
     writer.writeEnum(
       22,
+      f
+    );
+  }
+  f = message.getConversationSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      23,
       f
     );
   }
@@ -2294,6 +2306,24 @@ proto.api.commons.Evaluation.prototype.getChannelType = function() {
  */
 proto.api.commons.Evaluation.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 22, value);
+};
+
+
+/**
+ * optional int64 conversation_sid = 23;
+ * @return {string}
+ */
+proto.api.commons.Evaluation.prototype.getConversationSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.setConversationSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 23, value);
 };
 
 
@@ -3577,7 +3607,8 @@ riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
 callLength: jspb.Message.getFieldWithDefault(msg, 16, 0),
 scorecardInfo: (f = msg.getScorecardInfo()) && proto.api.commons.AutoEvaluation.ScorecardInfo.toObject(includeInstance, f),
 categoryInfo: (f = msg.getCategoryInfo()) && proto.api.commons.AutoEvaluation.CategoryInfo.toObject(includeInstance, f),
-channelType: jspb.Message.getFieldWithDefault(msg, 19, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 19, 0),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 20, "0")
   };
 
   if (includeInstance) {
@@ -3678,6 +3709,10 @@ proto.api.commons.AutoEvaluation.deserializeBinaryFromReader = function(msg, rea
     case 19:
       var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannelType(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setConversationSid(value);
       break;
     default:
       reader.skipField();
@@ -3815,6 +3850,13 @@ proto.api.commons.AutoEvaluation.serializeBinaryToWriter = function(message, wri
   if (f !== 0.0) {
     writer.writeEnum(
       19,
+      f
+    );
+  }
+  f = message.getConversationSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      20,
       f
     );
   }
@@ -4444,6 +4486,24 @@ proto.api.commons.AutoEvaluation.prototype.getChannelType = function() {
  */
 proto.api.commons.AutoEvaluation.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 19, value);
+};
+
+
+/**
+ * optional int64 conversation_sid = 20;
+ * @return {string}
+ */
+proto.api.commons.AutoEvaluation.prototype.getConversationSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AutoEvaluation} returns this
+ */
+proto.api.commons.AutoEvaluation.prototype.setConversationSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 20, value);
 };
 
 
@@ -9377,7 +9437,9 @@ completeTime: (f = msg.getCompleteTime()) && google_protobuf_timestamp_pb.Timest
 deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 smartEvaluationSectionsList: jspb.Message.toObjectList(msg.getSmartEvaluationSectionsList(),
     proto.api.commons.SmartEvaluationSection.toObject, includeInstance),
-channelType: jspb.Message.getFieldWithDefault(msg, 12, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 12, 0),
+callSid: jspb.Message.getFieldWithDefault(msg, 13, 0),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 14, "0")
   };
 
   if (includeInstance) {
@@ -9460,6 +9522,14 @@ proto.api.commons.SmartEvaluation.deserializeBinaryFromReader = function(msg, re
     case 12:
       var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannelType(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCallSid(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setConversationSid(value);
       break;
     default:
       reader.skipField();
@@ -9567,6 +9637,20 @@ proto.api.commons.SmartEvaluation.serializeBinaryToWriter = function(message, wr
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getCallSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      13,
+      f
+    );
+  }
+  f = message.getConversationSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      14,
       f
     );
   }
@@ -9826,6 +9910,42 @@ proto.api.commons.SmartEvaluation.prototype.getChannelType = function() {
  */
 proto.api.commons.SmartEvaluation.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional int64 call_sid = 13;
+ * @return {number}
+ */
+proto.api.commons.SmartEvaluation.prototype.getCallSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.SmartEvaluation} returns this
+ */
+proto.api.commons.SmartEvaluation.prototype.setCallSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional int64 conversation_sid = 14;
+ * @return {string}
+ */
+proto.api.commons.SmartEvaluation.prototype.getConversationSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.SmartEvaluation} returns this
+ */
+proto.api.commons.SmartEvaluation.prototype.setConversationSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 14, value);
 };
 
 
