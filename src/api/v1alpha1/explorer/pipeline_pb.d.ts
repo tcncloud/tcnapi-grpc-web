@@ -110,6 +110,11 @@ export class Node extends jspb.Message {
   getStringManipulationNode(): StringManipulationNode | undefined;
   setStringManipulationNode(value?: StringManipulationNode): void;
 
+  hasTransposeNode(): boolean;
+  clearTransposeNode(): void;
+  getTransposeNode(): TransposeNode | undefined;
+  setTransposeNode(value?: TransposeNode): void;
+
   getBodyCase(): Node.BodyCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Node.AsObject;
@@ -141,6 +146,7 @@ export namespace Node {
     replaceNode?: ReplaceNode.AsObject,
     sortNode?: SortNode.AsObject,
     stringManipulationNode?: StringManipulationNode.AsObject,
+    transposeNode?: TransposeNode.AsObject,
   }
 
   export enum BodyCase {
@@ -158,6 +164,7 @@ export namespace Node {
     REPLACE_NODE = 16,
     SORT_NODE = 17,
     STRING_MANIPULATION_NODE = 18,
+    TRANSPOSE_NODE = 19,
   }
 }
 
@@ -910,6 +917,42 @@ export namespace StringManipulationNode {
     targetColumnName: string,
     stringManipulationSplit?: StringManipulationSplit.AsObject,
     stringManipulationReplace?: StringManipulationReplace.AsObject,
+  }
+}
+
+export class TransposeNode extends jspb.Message {
+  clearGroupByColumnsList(): void;
+  getGroupByColumnsList(): Array<string>;
+  setGroupByColumnsList(value: Array<string>): void;
+  addGroupByColumns(value: string, index?: number): string;
+
+  getPivotColumn(): string;
+  setPivotColumn(value: string): void;
+
+  getValueColumn(): string;
+  setValueColumn(value: string): void;
+
+  clearSourceVariantsList(): void;
+  getSourceVariantsList(): Array<Column>;
+  setSourceVariantsList(value: Array<Column>): void;
+  addSourceVariants(value?: Column, index?: number): Column;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TransposeNode.AsObject;
+  static toObject(includeInstance: boolean, msg: TransposeNode): TransposeNode.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TransposeNode, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TransposeNode;
+  static deserializeBinaryFromReader(message: TransposeNode, reader: jspb.BinaryReader): TransposeNode;
+}
+
+export namespace TransposeNode {
+  export type AsObject = {
+    groupByColumnsList: Array<string>,
+    pivotColumn: string,
+    valueColumn: string,
+    sourceVariantsList: Array<Column.AsObject>,
   }
 }
 
