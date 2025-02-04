@@ -2286,16 +2286,6 @@ export class ExecuteFlow extends jspb.Message {
   getNuveiPayment(): ExecuteNuveiPayment | undefined;
   setNuveiPayment(value?: ExecuteNuveiPayment): void;
 
-  hasCallipayCcPayment(): boolean;
-  clearCallipayCcPayment(): void;
-  getCallipayCcPayment(): ExecuteCallipayCcPayment | undefined;
-  setCallipayCcPayment(value?: ExecuteCallipayCcPayment): void;
-
-  hasCallipayCheckPayment(): boolean;
-  clearCallipayCheckPayment(): void;
-  getCallipayCheckPayment(): ExecuteCallipayCheckPayment | undefined;
-  setCallipayCheckPayment(value?: ExecuteCallipayCheckPayment): void;
-
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2620,8 +2610,6 @@ export namespace ExecuteFlow {
     finviVelosidyPlanOneTimeFuture?: ExecuteFinviVelosidyPlanOneTimeFuture.AsObject,
     cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
     nuveiPayment?: ExecuteNuveiPayment.AsObject,
-    callipayCcPayment?: ExecuteCallipayCcPayment.AsObject,
-    callipayCheckPayment?: ExecuteCallipayCheckPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -2936,8 +2924,6 @@ export namespace ExecuteFlow {
     FINVI_VELOSIDY_PLAN_ONE_TIME_FUTURE = 5506,
     CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
     NUVEI_PAYMENT = 5701,
-    CALLIPAY_CC_PAYMENT = 5801,
-    CALLIPAY_CHECK_PAYMENT = 5802,
   }
 }
 
@@ -8518,38 +8504,6 @@ export namespace ExecuteNuveiPayment {
   }
 }
 
-export class ExecuteCallipayCcPayment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteCallipayCcPayment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteCallipayCcPayment): ExecuteCallipayCcPayment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteCallipayCcPayment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteCallipayCcPayment;
-  static deserializeBinaryFromReader(message: ExecuteCallipayCcPayment, reader: jspb.BinaryReader): ExecuteCallipayCcPayment;
-}
-
-export namespace ExecuteCallipayCcPayment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteCallipayCheckPayment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteCallipayCheckPayment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteCallipayCheckPayment): ExecuteCallipayCheckPayment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteCallipayCheckPayment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteCallipayCheckPayment;
-  static deserializeBinaryFromReader(message: ExecuteCallipayCheckPayment, reader: jspb.BinaryReader): ExecuteCallipayCheckPayment;
-}
-
-export namespace ExecuteCallipayCheckPayment {
-  export type AsObject = {
-  }
-}
-
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -8609,7 +8563,6 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_FINVI_VELOSIDY: 5500;
   INTEGRATION_TYPE_CLOVER: 5600;
   INTEGRATION_TYPE_NUVEI: 5700;
-  INTEGRATION_TYPE_CALLIPAY: 5800;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8928,8 +8881,6 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_ONE_TIME_FUTURE: 5506;
   REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
   REQUEST_METHOD_NUVEI_PAYMENT: 5701;
-  REQUEST_METHOD_CALLIPAY_CC_PAYMENT: 5801;
-  REQUEST_METHOD_CALLIPAY_CHECK_PAYMENT: 5802;
 }
 
 export const RequestMethod: RequestMethodMap;
