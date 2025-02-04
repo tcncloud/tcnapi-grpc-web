@@ -51,7 +51,7 @@ goog.exportSymbol('proto.api.v1alpha1.explorer.StringManipulationReplace', null,
 goog.exportSymbol('proto.api.v1alpha1.explorer.StringManipulationSplit', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.TakeNode', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.TransposeNode', null, global);
-goog.exportSymbol('proto.api.v1alpha1.explorer.TransposeNode.option', null, global);
+goog.exportSymbol('proto.api.v1alpha1.explorer.TransposeNode.Option', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.UnnestToColumnsNode', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ValuesReplacement', null, global);
 /**
@@ -673,16 +673,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.explorer.TransposeNode.option = function(opt_data) {
+proto.api.v1alpha1.explorer.TransposeNode.Option = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.v1alpha1.explorer.TransposeNode.option, jspb.Message);
+goog.inherits(proto.api.v1alpha1.explorer.TransposeNode.Option, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.explorer.TransposeNode.option.displayName = 'proto.api.v1alpha1.explorer.TransposeNode.option';
+  proto.api.v1alpha1.explorer.TransposeNode.Option.displayName = 'proto.api.v1alpha1.explorer.TransposeNode.Option';
 }
 
 /**
@@ -7371,7 +7371,7 @@ proto.api.v1alpha1.explorer.TransposeNode.toObject = function(includeInstance, m
 groupByColumnsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
 keyColumn: jspb.Message.getFieldWithDefault(msg, 2, ""),
 optionsList: jspb.Message.toObjectList(msg.getOptionsList(),
-    proto.api.v1alpha1.explorer.TransposeNode.option.toObject, includeInstance)
+    proto.api.v1alpha1.explorer.TransposeNode.Option.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7417,8 +7417,8 @@ proto.api.v1alpha1.explorer.TransposeNode.deserializeBinaryFromReader = function
       msg.setKeyColumn(value);
       break;
     case 3:
-      var value = new proto.api.v1alpha1.explorer.TransposeNode.option;
-      reader.readMessage(value,proto.api.v1alpha1.explorer.TransposeNode.option.deserializeBinaryFromReader);
+      var value = new proto.api.v1alpha1.explorer.TransposeNode.Option;
+      reader.readMessage(value,proto.api.v1alpha1.explorer.TransposeNode.Option.deserializeBinaryFromReader);
       msg.addOptions(value);
       break;
     default:
@@ -7469,7 +7469,7 @@ proto.api.v1alpha1.explorer.TransposeNode.serializeBinaryToWriter = function(mes
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.api.v1alpha1.explorer.TransposeNode.option.serializeBinaryToWriter
+      proto.api.v1alpha1.explorer.TransposeNode.Option.serializeBinaryToWriter
     );
   }
 };
@@ -7491,8 +7491,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.explorer.TransposeNode.option.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.explorer.TransposeNode.Option.toObject(opt_includeInstance, this);
 };
 
 
@@ -7501,11 +7501,11 @@ proto.api.v1alpha1.explorer.TransposeNode.option.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.explorer.TransposeNode.option} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.explorer.TransposeNode.Option} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.toObject = function(includeInstance, msg) {
   var f, obj = {
 keyName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 valueColumn: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -7523,23 +7523,23 @@ valueType: jspb.Message.getFieldWithDefault(msg, 4, "")
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option}
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.explorer.TransposeNode.option;
-  return proto.api.v1alpha1.explorer.TransposeNode.option.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.explorer.TransposeNode.Option;
+  return proto.api.v1alpha1.explorer.TransposeNode.Option.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.explorer.TransposeNode.option} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.explorer.TransposeNode.Option} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option}
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7571,9 +7571,9 @@ proto.api.v1alpha1.explorer.TransposeNode.option.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.serializeBinary = function() {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.explorer.TransposeNode.option.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.explorer.TransposeNode.Option.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7581,11 +7581,11 @@ proto.api.v1alpha1.explorer.TransposeNode.option.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.explorer.TransposeNode.option} message
+ * @param {!proto.api.v1alpha1.explorer.TransposeNode.Option} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getKeyName();
   if (f.length > 0) {
@@ -7615,16 +7615,16 @@ proto.api.v1alpha1.explorer.TransposeNode.option.serializeBinaryToWriter = funct
  * optional string key_name = 2;
  * @return {string}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.getKeyName = function() {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.getKeyName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option} returns this
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option} returns this
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.setKeyName = function(value) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.setKeyName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7633,16 +7633,16 @@ proto.api.v1alpha1.explorer.TransposeNode.option.prototype.setKeyName = function
  * optional string value_column = 3;
  * @return {string}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.getValueColumn = function() {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.getValueColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option} returns this
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option} returns this
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.setValueColumn = function(value) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.setValueColumn = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -7651,16 +7651,16 @@ proto.api.v1alpha1.explorer.TransposeNode.option.prototype.setValueColumn = func
  * optional string value_type = 4;
  * @return {string}
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.getValueType = function() {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.getValueType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option} returns this
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option} returns this
  */
-proto.api.v1alpha1.explorer.TransposeNode.option.prototype.setValueType = function(value) {
+proto.api.v1alpha1.explorer.TransposeNode.Option.prototype.setValueType = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -7721,17 +7721,17 @@ proto.api.v1alpha1.explorer.TransposeNode.prototype.setKeyColumn = function(valu
 
 
 /**
- * repeated option options = 3;
- * @return {!Array<!proto.api.v1alpha1.explorer.TransposeNode.option>}
+ * repeated Option options = 3;
+ * @return {!Array<!proto.api.v1alpha1.explorer.TransposeNode.Option>}
  */
 proto.api.v1alpha1.explorer.TransposeNode.prototype.getOptionsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.TransposeNode.option>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.explorer.TransposeNode.option, 3));
+  return /** @type{!Array<!proto.api.v1alpha1.explorer.TransposeNode.Option>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.explorer.TransposeNode.Option, 3));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.TransposeNode.option>} value
+ * @param {!Array<!proto.api.v1alpha1.explorer.TransposeNode.Option>} value
  * @return {!proto.api.v1alpha1.explorer.TransposeNode} returns this
 */
 proto.api.v1alpha1.explorer.TransposeNode.prototype.setOptionsList = function(value) {
@@ -7740,12 +7740,12 @@ proto.api.v1alpha1.explorer.TransposeNode.prototype.setOptionsList = function(va
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.TransposeNode.option=} opt_value
+ * @param {!proto.api.v1alpha1.explorer.TransposeNode.Option=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.TransposeNode.option}
+ * @return {!proto.api.v1alpha1.explorer.TransposeNode.Option}
  */
 proto.api.v1alpha1.explorer.TransposeNode.prototype.addOptions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v1alpha1.explorer.TransposeNode.option, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v1alpha1.explorer.TransposeNode.Option, opt_index);
 };
 
 

@@ -930,9 +930,9 @@ export class TransposeNode extends jspb.Message {
   setKeyColumn(value: string): void;
 
   clearOptionsList(): void;
-  getOptionsList(): Array<TransposeNode.option>;
-  setOptionsList(value: Array<TransposeNode.option>): void;
-  addOptions(value?: TransposeNode.option, index?: number): TransposeNode.option;
+  getOptionsList(): Array<TransposeNode.Option>;
+  setOptionsList(value: Array<TransposeNode.Option>): void;
+  addOptions(value?: TransposeNode.Option, index?: number): TransposeNode.Option;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransposeNode.AsObject;
@@ -948,10 +948,10 @@ export namespace TransposeNode {
   export type AsObject = {
     groupByColumnsList: Array<string>,
     keyColumn: string,
-    optionsList: Array<TransposeNode.option.AsObject>,
+    optionsList: Array<TransposeNode.Option.AsObject>,
   }
 
-  export class option extends jspb.Message {
+  export class Option extends jspb.Message {
     getKeyName(): string;
     setKeyName(value: string): void;
 
@@ -962,16 +962,16 @@ export namespace TransposeNode {
     setValueType(value: string): void;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): option.AsObject;
-    static toObject(includeInstance: boolean, msg: option): option.AsObject;
+    toObject(includeInstance?: boolean): Option.AsObject;
+    static toObject(includeInstance: boolean, msg: Option): Option.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: option, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): option;
-    static deserializeBinaryFromReader(message: option, reader: jspb.BinaryReader): option;
+    static serializeBinaryToWriter(message: Option, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Option;
+    static deserializeBinaryFromReader(message: Option, reader: jspb.BinaryReader): Option;
   }
 
-  export namespace option {
+  export namespace Option {
     export type AsObject = {
       keyName: string,
       valueColumn: string,
