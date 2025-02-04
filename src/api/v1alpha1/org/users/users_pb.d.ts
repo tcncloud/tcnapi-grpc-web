@@ -75,6 +75,9 @@ export class CreateUserRequest extends jspb.Message {
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
 
+  getPasswordResetRequired(): boolean;
+  setPasswordResetRequired(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
@@ -104,6 +107,7 @@ export namespace CreateUserRequest {
     labelIdsList: Array<string>,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     huntGroupSid: number,
+    passwordResetRequired: boolean,
   }
 }
 
