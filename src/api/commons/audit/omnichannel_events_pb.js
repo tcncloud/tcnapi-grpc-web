@@ -13215,7 +13215,8 @@ messageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
 attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-messageType: jspb.Message.getFieldWithDefault(msg, 9, 0)
+messageType: jspb.Message.getFieldWithDefault(msg, 9, 0),
+providerType: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -13287,6 +13288,10 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinaryFromReader 
     case 9:
       var value = /** @type {!proto.api.commons.OmniMessageType} */ (reader.readEnum());
       msg.setMessageType(value);
+      break;
+    case 10:
+      var value = /** @type {!proto.api.commons.SmsNumberProvider} */ (reader.readEnum());
+      msg.setProviderType(value);
       break;
     default:
       reader.skipField();
@@ -13377,6 +13382,13 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.serializeBinaryToWriter = fu
   if (f !== 0.0) {
     writer.writeEnum(
       9,
+      f
+    );
+  }
+  f = message.getProviderType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      10,
       f
     );
   }
@@ -13545,6 +13557,24 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setMessageType = f
 };
 
 
+/**
+ * optional api.commons.SmsNumberProvider provider_type = 10;
+ * @return {!proto.api.commons.SmsNumberProvider}
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getProviderType = function() {
+  return /** @type {!proto.api.commons.SmsNumberProvider} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.SmsNumberProvider} value
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setProviderType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
 
 
 
@@ -13586,7 +13616,8 @@ attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
 providerMessageCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
-messageType: jspb.Message.getFieldWithDefault(msg, 10, 0)
+messageType: jspb.Message.getFieldWithDefault(msg, 10, 0),
+providerType: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -13662,6 +13693,10 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.deserializeBinaryFromRe
     case 10:
       var value = /** @type {!proto.api.commons.OmniMessageType} */ (reader.readEnum());
       msg.setMessageType(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.commons.SmsNumberProvider} */ (reader.readEnum());
+      msg.setProviderType(value);
       break;
     default:
       reader.skipField();
@@ -13759,6 +13794,13 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.serializeBinaryToWriter
   if (f !== 0.0) {
     writer.writeEnum(
       10,
+      f
+    );
+  }
+  f = message.getProviderType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
       f
     );
   }
@@ -13942,6 +13984,24 @@ proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.getMessageTyp
  */
 proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.setMessageType = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional api.commons.SmsNumberProvider provider_type = 11;
+ * @return {!proto.api.commons.SmsNumberProvider}
+ */
+proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.getProviderType = function() {
+  return /** @type {!proto.api.commons.SmsNumberProvider} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.SmsNumberProvider} value
+ * @return {!proto.api.commons.audit.OmnichannelProviderResponseEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelProviderResponseEvent.prototype.setProviderType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
