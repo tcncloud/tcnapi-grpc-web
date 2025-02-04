@@ -1705,6 +1705,9 @@ export class OmnichannelMessageSentEvent extends jspb.Message {
   getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
   setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
 
+  getProviderType(): api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap];
+  setProviderType(value: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelMessageSentEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelMessageSentEvent): OmnichannelMessageSentEvent.AsObject;
@@ -1726,6 +1729,7 @@ export namespace OmnichannelMessageSentEvent {
     senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
     userId: string,
     messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
+    providerType: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap],
   }
 }
 
@@ -1760,6 +1764,9 @@ export class OmnichannelProviderResponseEvent extends jspb.Message {
   getMessageType(): api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap];
   setMessageType(value: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap]): void;
 
+  getProviderType(): api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap];
+  setProviderType(value: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelProviderResponseEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelProviderResponseEvent): OmnichannelProviderResponseEvent.AsObject;
@@ -1782,6 +1789,7 @@ export namespace OmnichannelProviderResponseEvent {
     userId: string,
     providerMessageCount: number,
     messageType: api_commons_omnichannel_pb.OmniMessageTypeMap[keyof api_commons_omnichannel_pb.OmniMessageTypeMap],
+    providerType: api_commons_omnichannel_pb.SmsNumberProviderMap[keyof api_commons_omnichannel_pb.SmsNumberProviderMap],
   }
 }
 

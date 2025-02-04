@@ -18,6 +18,13 @@ export class BillingAccumulateItemsEvent extends jspb.Message {
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
+  clearEventDataList(): void;
+  getEventDataList(): Array<Uint8Array | string>;
+  getEventDataList_asU8(): Array<Uint8Array>;
+  getEventDataList_asB64(): Array<string>;
+  setEventDataList(value: Array<Uint8Array | string>): void;
+  addEventData(value: Uint8Array | string, index?: number): Uint8Array | string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingAccumulateItemsEvent.AsObject;
   static toObject(includeInstance: boolean, msg: BillingAccumulateItemsEvent): BillingAccumulateItemsEvent.AsObject;
@@ -34,6 +41,7 @@ export namespace BillingAccumulateItemsEvent {
     productType: number,
     eventLogIdsList: Array<number>,
     billingCycle: string,
+    eventDataList: Array<Uint8Array | string>,
   }
 }
 
