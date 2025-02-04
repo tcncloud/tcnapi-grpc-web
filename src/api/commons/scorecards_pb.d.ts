@@ -172,8 +172,15 @@ export class Evaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  getConversationSid(): string;
-  setConversationSid(value: string): void;
+  hasCallInfo(): boolean;
+  clearCallInfo(): void;
+  getCallInfo(): CallInfo | undefined;
+  setCallInfo(value?: CallInfo): void;
+
+  hasConversationInfo(): boolean;
+  clearConversationInfo(): void;
+  getConversationInfo(): ConversationInfo | undefined;
+  setConversationInfo(value?: ConversationInfo): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
@@ -203,7 +210,8 @@ export namespace Evaluation {
     deletedBy: string,
     isRecoverable: boolean,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
-    conversationSid: string,
+    callInfo?: CallInfo.AsObject,
+    conversationInfo?: ConversationInfo.AsObject,
   }
 
   export class CustomField extends jspb.Message {
@@ -455,8 +463,15 @@ export class AutoEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  getConversationSid(): string;
-  setConversationSid(value: string): void;
+  hasCallInfo(): boolean;
+  clearCallInfo(): void;
+  getCallInfo(): CallInfo | undefined;
+  setCallInfo(value?: CallInfo): void;
+
+  hasConversationInfo(): boolean;
+  clearConversationInfo(): void;
+  getConversationInfo(): ConversationInfo | undefined;
+  setConversationInfo(value?: ConversationInfo): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluation.AsObject;
@@ -485,7 +500,8 @@ export namespace AutoEvaluation {
     scorecardInfo?: AutoEvaluation.ScorecardInfo.AsObject,
     categoryInfo?: AutoEvaluation.CategoryInfo.AsObject,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
-    conversationSid: string,
+    callInfo?: CallInfo.AsObject,
+    conversationInfo?: ConversationInfo.AsObject,
   }
 
   export class ScorecardInfo extends jspb.Message {
@@ -1232,11 +1248,15 @@ export class SmartEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  getCallSid(): number;
-  setCallSid(value: number): void;
+  hasCallInfo(): boolean;
+  clearCallInfo(): void;
+  getCallInfo(): CallInfo | undefined;
+  setCallInfo(value?: CallInfo): void;
 
-  getConversationSid(): string;
-  setConversationSid(value: string): void;
+  hasConversationInfo(): boolean;
+  clearConversationInfo(): void;
+  getConversationInfo(): ConversationInfo | undefined;
+  setConversationInfo(value?: ConversationInfo): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SmartEvaluation.AsObject;
@@ -1261,7 +1281,51 @@ export namespace SmartEvaluation {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     smartEvaluationSectionsList: Array<SmartEvaluationSection.AsObject>,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    callInfo?: CallInfo.AsObject,
+    conversationInfo?: ConversationInfo.AsObject,
+  }
+}
+
+export class CallInfo extends jspb.Message {
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: CallInfo): CallInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallInfo;
+  static deserializeBinaryFromReader(message: CallInfo, reader: jspb.BinaryReader): CallInfo;
+}
+
+export namespace CallInfo {
+  export type AsObject = {
     callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+  }
+}
+
+export class ConversationInfo extends jspb.Message {
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConversationInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ConversationInfo): ConversationInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConversationInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConversationInfo;
+  static deserializeBinaryFromReader(message: ConversationInfo, reader: jspb.BinaryReader): ConversationInfo;
+}
+
+export namespace ConversationInfo {
+  export type AsObject = {
     conversationSid: string,
   }
 }
