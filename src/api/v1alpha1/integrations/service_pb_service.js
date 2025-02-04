@@ -298,6 +298,15 @@ Integrations.InsertPrivateField = {
   responseType: api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes
 };
 
+Integrations.CalculateFees = {
+  methodName: "CalculateFees",
+  service: Integrations,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrations_service_pb.CalculateFeesReq,
+  responseType: api_v1alpha1_integrations_service_pb.CalculateFeesRes
+};
+
 exports.Integrations = Integrations;
 
 function IntegrationsClient(serviceHost, options) {
@@ -1271,6 +1280,37 @@ IntegrationsClient.prototype.insertPrivateField = function insertPrivateField(re
     callback = arguments[1];
   }
   var client = grpc.unary(Integrations.InsertPrivateField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+IntegrationsClient.prototype.calculateFees = function calculateFees(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Integrations.CalculateFees, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

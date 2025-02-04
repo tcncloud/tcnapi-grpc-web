@@ -76,6 +76,15 @@ type IntegrationsPublicGetLinkDetails = {
   readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetLinkDetailsRes;
 };
 
+type IntegrationsPublicCalculateFees = {
+  readonly methodName: string;
+  readonly service: typeof IntegrationsPublic;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq;
+  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes;
+};
+
 export class IntegrationsPublic {
   static readonly serviceName: string;
   static readonly GetLinkData: IntegrationsPublicGetLinkData;
@@ -86,6 +95,7 @@ export class IntegrationsPublic {
   static readonly GetReceipt: IntegrationsPublicGetReceipt;
   static readonly ProcessWorkflow: IntegrationsPublicProcessWorkflow;
   static readonly GetLinkDetails: IntegrationsPublicGetLinkDetails;
+  static readonly CalculateFees: IntegrationsPublicCalculateFees;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -191,6 +201,15 @@ export class IntegrationsPublicClient {
   getLinkDetails(
     requestMessage: api_v1alpha1_integrationspublic_service_pb.GetLinkDetailsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetLinkDetailsRes|null) => void
+  ): UnaryResponse;
+  calculateFees(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes|null) => void
+  ): UnaryResponse;
+  calculateFees(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes|null) => void
   ): UnaryResponse;
 }
 

@@ -2,6 +2,7 @@
 // file: api/commons/integrations/integrations.proto
 
 import * as jspb from "google-protobuf";
+import * as google_type_money_pb from "../../../google/type/money_pb";
 
 export class Receipt extends jspb.Message {
   clearFieldsList(): void;
@@ -22,6 +23,173 @@ export class Receipt extends jspb.Message {
 export namespace Receipt {
   export type AsObject = {
     fieldsList: Array<ReceiptField.AsObject>,
+  }
+}
+
+export class Payment extends jspb.Message {
+  clearFeesList(): void;
+  getFeesList(): Array<Fee>;
+  setFeesList(value: Array<Fee>): void;
+  addFees(value?: Fee, index?: number): Fee;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Payment.AsObject;
+  static toObject(includeInstance: boolean, msg: Payment): Payment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Payment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Payment;
+  static deserializeBinaryFromReader(message: Payment, reader: jspb.BinaryReader): Payment;
+}
+
+export namespace Payment {
+  export type AsObject = {
+    feesList: Array<Fee.AsObject>,
+  }
+}
+
+export class Fee extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  hasFlat(): boolean;
+  clearFlat(): void;
+  getFlat(): google_type_money_pb.Money | undefined;
+  setFlat(value?: google_type_money_pb.Money): void;
+
+  hasPercentage(): boolean;
+  clearPercentage(): void;
+  getPercentage(): Percentage | undefined;
+  setPercentage(value?: Percentage): void;
+
+  hasFlatAndPercentage(): boolean;
+  clearFlatAndPercentage(): void;
+  getFlatAndPercentage(): FlatAndPercentage | undefined;
+  setFlatAndPercentage(value?: FlatAndPercentage): void;
+
+  hasLookup(): boolean;
+  clearLookup(): void;
+  getLookup(): Lookup | undefined;
+  setLookup(value?: Lookup): void;
+
+  getDisplay(): boolean;
+  setDisplay(value: boolean): void;
+
+  getDestinationField(): string;
+  setDestinationField(value: string): void;
+
+  getRateCase(): Fee.RateCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Fee.AsObject;
+  static toObject(includeInstance: boolean, msg: Fee): Fee.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Fee, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Fee;
+  static deserializeBinaryFromReader(message: Fee, reader: jspb.BinaryReader): Fee;
+}
+
+export namespace Fee {
+  export type AsObject = {
+    name: string,
+    flat?: google_type_money_pb.Money.AsObject,
+    percentage?: Percentage.AsObject,
+    flatAndPercentage?: FlatAndPercentage.AsObject,
+    lookup?: Lookup.AsObject,
+    display: boolean,
+    destinationField: string,
+  }
+
+  export enum RateCase {
+    RATE_NOT_SET = 0,
+    FLAT = 2,
+    PERCENTAGE = 3,
+    FLAT_AND_PERCENTAGE = 4,
+    LOOKUP = 5,
+  }
+}
+
+export class Percentage extends jspb.Message {
+  getIntegerValue(): number;
+  setIntegerValue(value: number): void;
+
+  getFractionalValue(): number;
+  setFractionalValue(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Percentage.AsObject;
+  static toObject(includeInstance: boolean, msg: Percentage): Percentage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Percentage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Percentage;
+  static deserializeBinaryFromReader(message: Percentage, reader: jspb.BinaryReader): Percentage;
+}
+
+export namespace Percentage {
+  export type AsObject = {
+    integerValue: number,
+    fractionalValue: number,
+  }
+}
+
+export class FlatAndPercentage extends jspb.Message {
+  hasFlat(): boolean;
+  clearFlat(): void;
+  getFlat(): google_type_money_pb.Money | undefined;
+  setFlat(value?: google_type_money_pb.Money): void;
+
+  hasPercentage(): boolean;
+  clearPercentage(): void;
+  getPercentage(): Percentage | undefined;
+  setPercentage(value?: Percentage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlatAndPercentage.AsObject;
+  static toObject(includeInstance: boolean, msg: FlatAndPercentage): FlatAndPercentage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FlatAndPercentage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlatAndPercentage;
+  static deserializeBinaryFromReader(message: FlatAndPercentage, reader: jspb.BinaryReader): FlatAndPercentage;
+}
+
+export namespace FlatAndPercentage {
+  export type AsObject = {
+    flat?: google_type_money_pb.Money.AsObject,
+    percentage?: Percentage.AsObject,
+  }
+}
+
+export class Lookup extends jspb.Message {
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  getMethod(): RequestMethodMap[keyof RequestMethodMap];
+  setMethod(value: RequestMethodMap[keyof RequestMethodMap]): void;
+
+  getResponseField(): string;
+  setResponseField(value: string): void;
+
+  getAsPercentage(): boolean;
+  setAsPercentage(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Lookup.AsObject;
+  static toObject(includeInstance: boolean, msg: Lookup): Lookup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Lookup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Lookup;
+  static deserializeBinaryFromReader(message: Lookup, reader: jspb.BinaryReader): Lookup;
+}
+
+export namespace Lookup {
+  export type AsObject = {
+    pluginInstanceId: string,
+    method: RequestMethodMap[keyof RequestMethodMap],
+    responseField: string,
+    asPercentage: boolean,
   }
 }
 
