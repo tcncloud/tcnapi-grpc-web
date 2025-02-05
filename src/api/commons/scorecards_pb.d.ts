@@ -172,15 +172,15 @@ export class Evaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  hasCallInfo(): boolean;
-  clearCallInfo(): void;
-  getCallInfo(): CallInfo | undefined;
-  setCallInfo(value?: CallInfo): void;
+  hasCallMetadata(): boolean;
+  clearCallMetadata(): void;
+  getCallMetadata(): CallMetadata | undefined;
+  setCallMetadata(value?: CallMetadata): void;
 
-  hasConversationInfo(): boolean;
-  clearConversationInfo(): void;
-  getConversationInfo(): ConversationInfo | undefined;
-  setConversationInfo(value?: ConversationInfo): void;
+  hasConversationMetadata(): boolean;
+  clearConversationMetadata(): void;
+  getConversationMetadata(): ConversationMetadata | undefined;
+  setConversationMetadata(value?: ConversationMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
@@ -210,8 +210,8 @@ export namespace Evaluation {
     deletedBy: string,
     isRecoverable: boolean,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
-    callInfo?: CallInfo.AsObject,
-    conversationInfo?: ConversationInfo.AsObject,
+    callMetadata?: CallMetadata.AsObject,
+    conversationMetadata?: ConversationMetadata.AsObject,
   }
 
   export class CustomField extends jspb.Message {
@@ -463,15 +463,15 @@ export class AutoEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  hasCallInfo(): boolean;
-  clearCallInfo(): void;
-  getCallInfo(): CallInfo | undefined;
-  setCallInfo(value?: CallInfo): void;
+  hasCallMetadata(): boolean;
+  clearCallMetadata(): void;
+  getCallMetadata(): CallMetadata | undefined;
+  setCallMetadata(value?: CallMetadata): void;
 
-  hasConversationInfo(): boolean;
-  clearConversationInfo(): void;
-  getConversationInfo(): ConversationInfo | undefined;
-  setConversationInfo(value?: ConversationInfo): void;
+  hasConversationMetadata(): boolean;
+  clearConversationMetadata(): void;
+  getConversationMetadata(): ConversationMetadata | undefined;
+  setConversationMetadata(value?: ConversationMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluation.AsObject;
@@ -500,8 +500,8 @@ export namespace AutoEvaluation {
     scorecardInfo?: AutoEvaluation.ScorecardInfo.AsObject,
     categoryInfo?: AutoEvaluation.CategoryInfo.AsObject,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
-    callInfo?: CallInfo.AsObject,
-    conversationInfo?: ConversationInfo.AsObject,
+    callMetadata?: CallMetadata.AsObject,
+    conversationMetadata?: ConversationMetadata.AsObject,
   }
 
   export class ScorecardInfo extends jspb.Message {
@@ -1248,15 +1248,15 @@ export class SmartEvaluation extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
-  hasCallInfo(): boolean;
-  clearCallInfo(): void;
-  getCallInfo(): CallInfo | undefined;
-  setCallInfo(value?: CallInfo): void;
+  hasCallMetadata(): boolean;
+  clearCallMetadata(): void;
+  getCallMetadata(): CallMetadata | undefined;
+  setCallMetadata(value?: CallMetadata): void;
 
-  hasConversationInfo(): boolean;
-  clearConversationInfo(): void;
-  getConversationInfo(): ConversationInfo | undefined;
-  setConversationInfo(value?: ConversationInfo): void;
+  hasConversationMetadata(): boolean;
+  clearConversationMetadata(): void;
+  getConversationMetadata(): ConversationMetadata | undefined;
+  setConversationMetadata(value?: ConversationMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SmartEvaluation.AsObject;
@@ -1281,12 +1281,12 @@ export namespace SmartEvaluation {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     smartEvaluationSectionsList: Array<SmartEvaluationSection.AsObject>,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
-    callInfo?: CallInfo.AsObject,
-    conversationInfo?: ConversationInfo.AsObject,
+    callMetadata?: CallMetadata.AsObject,
+    conversationMetadata?: ConversationMetadata.AsObject,
   }
 }
 
-export class CallInfo extends jspb.Message {
+export class CallMetadata extends jspb.Message {
   getCallSid(): number;
   setCallSid(value: number): void;
 
@@ -1294,37 +1294,37 @@ export class CallInfo extends jspb.Message {
   setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CallInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: CallInfo): CallInfo.AsObject;
+  toObject(includeInstance?: boolean): CallMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: CallMetadata): CallMetadata.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CallInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CallInfo;
-  static deserializeBinaryFromReader(message: CallInfo, reader: jspb.BinaryReader): CallInfo;
+  static serializeBinaryToWriter(message: CallMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallMetadata;
+  static deserializeBinaryFromReader(message: CallMetadata, reader: jspb.BinaryReader): CallMetadata;
 }
 
-export namespace CallInfo {
+export namespace CallMetadata {
   export type AsObject = {
     callSid: number,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
   }
 }
 
-export class ConversationInfo extends jspb.Message {
+export class ConversationMetadata extends jspb.Message {
   getConversationSid(): string;
   setConversationSid(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationInfo): ConversationInfo.AsObject;
+  toObject(includeInstance?: boolean): ConversationMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: ConversationMetadata): ConversationMetadata.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConversationInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationInfo;
-  static deserializeBinaryFromReader(message: ConversationInfo, reader: jspb.BinaryReader): ConversationInfo;
+  static serializeBinaryToWriter(message: ConversationMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConversationMetadata;
+  static deserializeBinaryFromReader(message: ConversationMetadata, reader: jspb.BinaryReader): ConversationMetadata;
 }
 
-export namespace ConversationInfo {
+export namespace ConversationMetadata {
   export type AsObject = {
     conversationSid: string,
   }
