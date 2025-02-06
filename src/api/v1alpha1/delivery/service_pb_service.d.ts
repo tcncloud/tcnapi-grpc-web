@@ -247,6 +247,15 @@ type DeliveryApiListSMSNumbers = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.ListSMSNumbersRes;
 };
 
+type DeliveryApiSendTestEmail = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.SendTestEmailReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.SendTestEmailRes;
+};
+
 export class DeliveryApi {
   static readonly serviceName: string;
   static readonly CreateTransferConfig: DeliveryApiCreateTransferConfig;
@@ -276,6 +285,7 @@ export class DeliveryApi {
   static readonly ListEncryptions: DeliveryApiListEncryptions;
   static readonly UpdateEncryption: DeliveryApiUpdateEncryption;
   static readonly ListSMSNumbers: DeliveryApiListSMSNumbers;
+  static readonly SendTestEmail: DeliveryApiSendTestEmail;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -552,6 +562,15 @@ export class DeliveryApiClient {
   listSMSNumbers(
     requestMessage: api_v1alpha1_delivery_service_pb.ListSMSNumbersReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListSMSNumbersRes|null) => void
+  ): UnaryResponse;
+  sendTestEmail(
+    requestMessage: api_v1alpha1_delivery_service_pb.SendTestEmailReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.SendTestEmailRes|null) => void
+  ): UnaryResponse;
+  sendTestEmail(
+    requestMessage: api_v1alpha1_delivery_service_pb.SendTestEmailReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.SendTestEmailRes|null) => void
   ): UnaryResponse;
 }
 

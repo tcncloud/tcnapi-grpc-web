@@ -10,6 +10,38 @@ import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class SendTestEmailReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendTestEmailReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SendTestEmailReq): SendTestEmailReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendTestEmailReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendTestEmailReq;
+  static deserializeBinaryFromReader(message: SendTestEmailReq, reader: jspb.BinaryReader): SendTestEmailReq;
+}
+
+export namespace SendTestEmailReq {
+  export type AsObject = {
+  }
+}
+
+export class SendTestEmailRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendTestEmailRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SendTestEmailRes): SendTestEmailRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendTestEmailRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendTestEmailRes;
+  static deserializeBinaryFromReader(message: SendTestEmailRes, reader: jspb.BinaryReader): SendTestEmailRes;
+}
+
+export namespace SendTestEmailRes {
+  export type AsObject = {
+  }
+}
+
 export class CreateTransferConfigReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
