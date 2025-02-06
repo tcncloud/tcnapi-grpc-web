@@ -2454,6 +2454,36 @@ export class ExecuteFlow extends jspb.Message {
   getNuveiPayment(): ExecuteNuveiPayment | undefined;
   setNuveiPayment(value?: ExecuteNuveiPayment): void;
 
+  hasCallipayCcPayment(): boolean;
+  clearCallipayCcPayment(): void;
+  getCallipayCcPayment(): ExecuteCallipayCcPayment | undefined;
+  setCallipayCcPayment(value?: ExecuteCallipayCcPayment): void;
+
+  hasCallipayCheckPayment(): boolean;
+  clearCallipayCheckPayment(): void;
+  getCallipayCheckPayment(): ExecuteCallipayCheckPayment | undefined;
+  setCallipayCheckPayment(value?: ExecuteCallipayCheckPayment): void;
+
+  hasTrattaCcCharge(): boolean;
+  clearTrattaCcCharge(): void;
+  getTrattaCcCharge(): ExecuteTrattaCcCharge | undefined;
+  setTrattaCcCharge(value?: ExecuteTrattaCcCharge): void;
+
+  hasTrattaAchCharge(): boolean;
+  clearTrattaAchCharge(): void;
+  getTrattaAchCharge(): ExecuteTrattaAchCharge | undefined;
+  setTrattaAchCharge(value?: ExecuteTrattaAchCharge): void;
+
+  hasTrattaCcChargePostDated(): boolean;
+  clearTrattaCcChargePostDated(): void;
+  getTrattaCcChargePostDated(): ExecuteTrattaCcChargePostDated | undefined;
+  setTrattaCcChargePostDated(value?: ExecuteTrattaCcChargePostDated): void;
+
+  hasTrattaAchChargePostDated(): boolean;
+  clearTrattaAchChargePostDated(): void;
+  getTrattaAchChargePostDated(): ExecuteTrattaAchChargePostDated | undefined;
+  setTrattaAchChargePostDated(value?: ExecuteTrattaAchChargePostDated): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2778,6 +2808,12 @@ export namespace ExecuteFlow {
     finviVelosidyPlanOneTimeFuture?: ExecuteFinviVelosidyPlanOneTimeFuture.AsObject,
     cloverPaymentCardSaleTransaction?: ExecuteCloverPaymentCardSaleTransaction.AsObject,
     nuveiPayment?: ExecuteNuveiPayment.AsObject,
+    callipayCcPayment?: ExecuteCallipayCcPayment.AsObject,
+    callipayCheckPayment?: ExecuteCallipayCheckPayment.AsObject,
+    trattaCcCharge?: ExecuteTrattaCcCharge.AsObject,
+    trattaAchCharge?: ExecuteTrattaAchCharge.AsObject,
+    trattaCcChargePostDated?: ExecuteTrattaCcChargePostDated.AsObject,
+    trattaAchChargePostDated?: ExecuteTrattaAchChargePostDated.AsObject,
   }
 
   export enum ValueCase {
@@ -3092,6 +3128,12 @@ export namespace ExecuteFlow {
     FINVI_VELOSIDY_PLAN_ONE_TIME_FUTURE = 5506,
     CLOVER_PAYMENT_CARD_SALE_TRANSACTION = 5601,
     NUVEI_PAYMENT = 5701,
+    CALLIPAY_CC_PAYMENT = 5801,
+    CALLIPAY_CHECK_PAYMENT = 5802,
+    TRATTA_CC_CHARGE = 5901,
+    TRATTA_ACH_CHARGE = 5902,
+    TRATTA_CC_CHARGE_POST_DATED = 5903,
+    TRATTA_ACH_CHARGE_POST_DATED = 5904,
   }
 }
 
@@ -8672,6 +8714,102 @@ export namespace ExecuteNuveiPayment {
   }
 }
 
+export class ExecuteCallipayCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCallipayCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCallipayCcPayment): ExecuteCallipayCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCallipayCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCallipayCcPayment;
+  static deserializeBinaryFromReader(message: ExecuteCallipayCcPayment, reader: jspb.BinaryReader): ExecuteCallipayCcPayment;
+}
+
+export namespace ExecuteCallipayCcPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteCallipayCheckPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCallipayCheckPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCallipayCheckPayment): ExecuteCallipayCheckPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCallipayCheckPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCallipayCheckPayment;
+  static deserializeBinaryFromReader(message: ExecuteCallipayCheckPayment, reader: jspb.BinaryReader): ExecuteCallipayCheckPayment;
+}
+
+export namespace ExecuteCallipayCheckPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteTrattaCcCharge extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteTrattaCcCharge.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteTrattaCcCharge): ExecuteTrattaCcCharge.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteTrattaCcCharge, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteTrattaCcCharge;
+  static deserializeBinaryFromReader(message: ExecuteTrattaCcCharge, reader: jspb.BinaryReader): ExecuteTrattaCcCharge;
+}
+
+export namespace ExecuteTrattaCcCharge {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteTrattaAchCharge extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteTrattaAchCharge.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteTrattaAchCharge): ExecuteTrattaAchCharge.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteTrattaAchCharge, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteTrattaAchCharge;
+  static deserializeBinaryFromReader(message: ExecuteTrattaAchCharge, reader: jspb.BinaryReader): ExecuteTrattaAchCharge;
+}
+
+export namespace ExecuteTrattaAchCharge {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteTrattaCcChargePostDated extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteTrattaCcChargePostDated.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteTrattaCcChargePostDated): ExecuteTrattaCcChargePostDated.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteTrattaCcChargePostDated, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteTrattaCcChargePostDated;
+  static deserializeBinaryFromReader(message: ExecuteTrattaCcChargePostDated, reader: jspb.BinaryReader): ExecuteTrattaCcChargePostDated;
+}
+
+export namespace ExecuteTrattaCcChargePostDated {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteTrattaAchChargePostDated extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteTrattaAchChargePostDated.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteTrattaAchChargePostDated): ExecuteTrattaAchChargePostDated.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteTrattaAchChargePostDated, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteTrattaAchChargePostDated;
+  static deserializeBinaryFromReader(message: ExecuteTrattaAchChargePostDated, reader: jspb.BinaryReader): ExecuteTrattaAchChargePostDated;
+}
+
+export namespace ExecuteTrattaAchChargePostDated {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -8731,6 +8869,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_FINVI_VELOSIDY: 5500;
   INTEGRATION_TYPE_CLOVER: 5600;
   INTEGRATION_TYPE_NUVEI: 5700;
+  INTEGRATION_TYPE_CALLIPAY: 5800;
+  INTEGRATION_TYPE_TRATTA: 5900;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9049,6 +9189,12 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_VELOSIDY_PLAN_ONE_TIME_FUTURE: 5506;
   REQUEST_METHOD_CLOVER_PAYMENT_CARD_SALE_TRANSACTION: 5601;
   REQUEST_METHOD_NUVEI_PAYMENT: 5701;
+  REQUEST_METHOD_CALLIPAY_CC_PAYMENT: 5801;
+  REQUEST_METHOD_CALLIPAY_CHECK_PAYMENT: 5802;
+  REQUEST_METHOD_TRATTA_CHARGE_CC: 5901;
+  REQUEST_METHOD_TRATTA_CHARGE_ACH: 5902;
+  REQUEST_METHOD_TRATTA_CHARGE_CC_POST_DATED: 5903;
+  REQUEST_METHOD_TRATTA_CHARGE_ACH_POST_DATED: 5904;
 }
 
 export const RequestMethod: RequestMethodMap;
