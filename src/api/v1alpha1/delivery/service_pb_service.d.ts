@@ -247,13 +247,13 @@ type DeliveryApiListSMSNumbers = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.ListSMSNumbersRes;
 };
 
-type DeliveryApiSendTestEmail = {
+type DeliveryApiTriggerTestOutboundDelivery = {
   readonly methodName: string;
   readonly service: typeof DeliveryApi;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_delivery_service_pb.SendTestEmailReq;
-  readonly responseType: typeof api_v1alpha1_delivery_service_pb.SendTestEmailRes;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryRes;
 };
 
 export class DeliveryApi {
@@ -285,7 +285,7 @@ export class DeliveryApi {
   static readonly ListEncryptions: DeliveryApiListEncryptions;
   static readonly UpdateEncryption: DeliveryApiUpdateEncryption;
   static readonly ListSMSNumbers: DeliveryApiListSMSNumbers;
-  static readonly SendTestEmail: DeliveryApiSendTestEmail;
+  static readonly TriggerTestOutboundDelivery: DeliveryApiTriggerTestOutboundDelivery;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -563,14 +563,14 @@ export class DeliveryApiClient {
     requestMessage: api_v1alpha1_delivery_service_pb.ListSMSNumbersReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListSMSNumbersRes|null) => void
   ): UnaryResponse;
-  sendTestEmail(
-    requestMessage: api_v1alpha1_delivery_service_pb.SendTestEmailReq,
+  triggerTestOutboundDelivery(
+    requestMessage: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.SendTestEmailRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryRes|null) => void
   ): UnaryResponse;
-  sendTestEmail(
-    requestMessage: api_v1alpha1_delivery_service_pb.SendTestEmailReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.SendTestEmailRes|null) => void
+  triggerTestOutboundDelivery(
+    requestMessage: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryRes|null) => void
   ): UnaryResponse;
 }
 

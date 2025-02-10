@@ -253,13 +253,13 @@ DeliveryApi.ListSMSNumbers = {
   responseType: api_v1alpha1_delivery_service_pb.ListSMSNumbersRes
 };
 
-DeliveryApi.SendTestEmail = {
-  methodName: "SendTestEmail",
+DeliveryApi.TriggerTestOutboundDelivery = {
+  methodName: "TriggerTestOutboundDelivery",
   service: DeliveryApi,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_delivery_service_pb.SendTestEmailReq,
-  responseType: api_v1alpha1_delivery_service_pb.SendTestEmailRes
+  requestType: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryReq,
+  responseType: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryRes
 };
 
 exports.DeliveryApi = DeliveryApi;
@@ -1106,11 +1106,11 @@ DeliveryApiClient.prototype.listSMSNumbers = function listSMSNumbers(requestMess
   };
 };
 
-DeliveryApiClient.prototype.sendTestEmail = function sendTestEmail(requestMessage, metadata, callback) {
+DeliveryApiClient.prototype.triggerTestOutboundDelivery = function triggerTestOutboundDelivery(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DeliveryApi.SendTestEmail, {
+  var client = grpc.unary(DeliveryApi.TriggerTestOutboundDelivery, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
