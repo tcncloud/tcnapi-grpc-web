@@ -4072,6 +4072,11 @@ export class SchedulingActivity extends jspb.Message {
   setPauseCodesList(value: Array<string>): void;
   addPauseCodes(value: string, index?: number): string;
 
+  clearReasonCodesList(): void;
+  getReasonCodesList(): Array<api_commons_wfm_pb.ReasonCode>;
+  setReasonCodesList(value: Array<api_commons_wfm_pb.ReasonCode>): void;
+  addReasonCodes(value?: api_commons_wfm_pb.ReasonCode, index?: number): api_commons_wfm_pb.ReasonCode;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulingActivity.AsObject;
   static toObject(includeInstance: boolean, msg: SchedulingActivity): SchedulingActivity.AsObject;
@@ -4090,6 +4095,7 @@ export namespace SchedulingActivity {
     memberNonSkillActivity?: NonSkillActivity.AsObject,
     activityClassification: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap],
     pauseCodesList: Array<string>,
+    reasonCodesList: Array<api_commons_wfm_pb.ReasonCode.AsObject>,
   }
 }
 
@@ -7388,6 +7394,202 @@ export namespace ListConfigEntitiesRes {
   }
 }
 
+export class CreateReasonCodeRequest extends jspb.Message {
+  hasReasonCode(): boolean;
+  clearReasonCode(): void;
+  getReasonCode(): api_commons_wfm_pb.ReasonCode | undefined;
+  setReasonCode(value?: api_commons_wfm_pb.ReasonCode): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateReasonCodeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateReasonCodeRequest): CreateReasonCodeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateReasonCodeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateReasonCodeRequest;
+  static deserializeBinaryFromReader(message: CreateReasonCodeRequest, reader: jspb.BinaryReader): CreateReasonCodeRequest;
+}
+
+export namespace CreateReasonCodeRequest {
+  export type AsObject = {
+    reasonCode?: api_commons_wfm_pb.ReasonCode.AsObject,
+  }
+}
+
+export class CreateReasonCodeResponse extends jspb.Message {
+  getReasonCodeId(): string;
+  setReasonCodeId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateReasonCodeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateReasonCodeResponse): CreateReasonCodeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateReasonCodeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateReasonCodeResponse;
+  static deserializeBinaryFromReader(message: CreateReasonCodeResponse, reader: jspb.BinaryReader): CreateReasonCodeResponse;
+}
+
+export namespace CreateReasonCodeResponse {
+  export type AsObject = {
+    reasonCodeId: string,
+  }
+}
+
+export class UpdateReasonCodeRequest extends jspb.Message {
+  hasReasonCode(): boolean;
+  clearReasonCode(): void;
+  getReasonCode(): api_commons_wfm_pb.ReasonCode | undefined;
+  setReasonCode(value?: api_commons_wfm_pb.ReasonCode): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateReasonCodeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateReasonCodeRequest): UpdateReasonCodeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateReasonCodeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateReasonCodeRequest;
+  static deserializeBinaryFromReader(message: UpdateReasonCodeRequest, reader: jspb.BinaryReader): UpdateReasonCodeRequest;
+}
+
+export namespace UpdateReasonCodeRequest {
+  export type AsObject = {
+    reasonCode?: api_commons_wfm_pb.ReasonCode.AsObject,
+  }
+}
+
+export class UpdateReasonCodeResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateReasonCodeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateReasonCodeResponse): UpdateReasonCodeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateReasonCodeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateReasonCodeResponse;
+  static deserializeBinaryFromReader(message: UpdateReasonCodeResponse, reader: jspb.BinaryReader): UpdateReasonCodeResponse;
+}
+
+export namespace UpdateReasonCodeResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultReasonCodeRequest extends jspb.Message {
+  getSchedulingActivitySid(): string;
+  setSchedulingActivitySid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultReasonCodeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultReasonCodeRequest): GetDefaultReasonCodeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultReasonCodeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultReasonCodeRequest;
+  static deserializeBinaryFromReader(message: GetDefaultReasonCodeRequest, reader: jspb.BinaryReader): GetDefaultReasonCodeRequest;
+}
+
+export namespace GetDefaultReasonCodeRequest {
+  export type AsObject = {
+    schedulingActivitySid: string,
+  }
+}
+
+export class GetDefaultReasonCodeResponse extends jspb.Message {
+  hasDefaultReasonCode(): boolean;
+  clearDefaultReasonCode(): void;
+  getDefaultReasonCode(): api_commons_wfm_pb.ReasonCode | undefined;
+  setDefaultReasonCode(value?: api_commons_wfm_pb.ReasonCode): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultReasonCodeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultReasonCodeResponse): GetDefaultReasonCodeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultReasonCodeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultReasonCodeResponse;
+  static deserializeBinaryFromReader(message: GetDefaultReasonCodeResponse, reader: jspb.BinaryReader): GetDefaultReasonCodeResponse;
+}
+
+export namespace GetDefaultReasonCodeResponse {
+  export type AsObject = {
+    defaultReasonCode?: api_commons_wfm_pb.ReasonCode.AsObject,
+  }
+}
+
+export class ListReasonCodesRequest extends jspb.Message {
+  clearSchedulingActivitySidsList(): void;
+  getSchedulingActivitySidsList(): Array<string>;
+  setSchedulingActivitySidsList(value: Array<string>): void;
+  addSchedulingActivitySids(value: string, index?: number): string;
+
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListReasonCodesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReasonCodesRequest): ListReasonCodesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListReasonCodesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReasonCodesRequest;
+  static deserializeBinaryFromReader(message: ListReasonCodesRequest, reader: jspb.BinaryReader): ListReasonCodesRequest;
+}
+
+export namespace ListReasonCodesRequest {
+  export type AsObject = {
+    schedulingActivitySidsList: Array<string>,
+    includeInactive: boolean,
+  }
+}
+
+export class ListReasonCodesResponse extends jspb.Message {
+  clearReasonCodesBySchedulingActivityList(): void;
+  getReasonCodesBySchedulingActivityList(): Array<ListReasonCodesResponse.ReasonCodeMapping>;
+  setReasonCodesBySchedulingActivityList(value: Array<ListReasonCodesResponse.ReasonCodeMapping>): void;
+  addReasonCodesBySchedulingActivity(value?: ListReasonCodesResponse.ReasonCodeMapping, index?: number): ListReasonCodesResponse.ReasonCodeMapping;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListReasonCodesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReasonCodesResponse): ListReasonCodesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListReasonCodesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReasonCodesResponse;
+  static deserializeBinaryFromReader(message: ListReasonCodesResponse, reader: jspb.BinaryReader): ListReasonCodesResponse;
+}
+
+export namespace ListReasonCodesResponse {
+  export type AsObject = {
+    reasonCodesBySchedulingActivityList: Array<ListReasonCodesResponse.ReasonCodeMapping.AsObject>,
+  }
+
+  export class ReasonCodeMapping extends jspb.Message {
+    getSchedulingActivitySid(): string;
+    setSchedulingActivitySid(value: string): void;
+
+    clearReasonCodesList(): void;
+    getReasonCodesList(): Array<api_commons_wfm_pb.ReasonCode>;
+    setReasonCodesList(value: Array<api_commons_wfm_pb.ReasonCode>): void;
+    addReasonCodes(value?: api_commons_wfm_pb.ReasonCode, index?: number): api_commons_wfm_pb.ReasonCode;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ReasonCodeMapping.AsObject;
+    static toObject(includeInstance: boolean, msg: ReasonCodeMapping): ReasonCodeMapping.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ReasonCodeMapping, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ReasonCodeMapping;
+    static deserializeBinaryFromReader(message: ReasonCodeMapping, reader: jspb.BinaryReader): ReasonCodeMapping;
+  }
+
+  export namespace ReasonCodeMapping {
+    export type AsObject = {
+      schedulingActivitySid: string,
+      reasonCodesList: Array<api_commons_wfm_pb.ReasonCode.AsObject>,
+    }
+  }
+}
+
 export class Diagnostic extends jspb.Message {
   getLevel(): api_commons_wfm_pb.DiagnosticLevelMap[keyof api_commons_wfm_pb.DiagnosticLevelMap];
   setLevel(value: api_commons_wfm_pb.DiagnosticLevelMap[keyof api_commons_wfm_pb.DiagnosticLevelMap]): void;
@@ -8531,6 +8733,9 @@ export class ShiftSegment extends jspb.Message {
   setCallStatsBySkillCollectionList(value: Array<ShiftSegmentCallStat>): void;
   addCallStatsBySkillCollection(value?: ShiftSegmentCallStat, index?: number): ShiftSegmentCallStat;
 
+  getReasonCodeId(): string;
+  setReasonCodeId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftSegment.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftSegment): ShiftSegment.AsObject;
@@ -8551,6 +8756,7 @@ export namespace ShiftSegment {
     schedulingActivitySid: number,
     schedulingActivity?: SchedulingActivity.AsObject,
     callStatsBySkillCollectionList: Array<ShiftSegmentCallStat.AsObject>,
+    reasonCodeId: string,
   }
 }
 

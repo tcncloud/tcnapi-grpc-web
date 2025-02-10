@@ -530,6 +530,52 @@ export namespace OptionTypes {
   }
 }
 
+export class ReasonCode extends jspb.Message {
+  getReasonCodeId(): string;
+  setReasonCodeId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getSchedulingActivitySid(): string;
+  setSchedulingActivitySid(value: string): void;
+
+  getIsPlanned(): boolean;
+  setIsPlanned(value: boolean): void;
+
+  getIsPaid(): boolean;
+  setIsPaid(value: boolean): void;
+
+  getIsDefault(): boolean;
+  setIsDefault(value: boolean): void;
+
+  hasDatetimeSetToInactive(): boolean;
+  clearDatetimeSetToInactive(): void;
+  getDatetimeSetToInactive(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatetimeSetToInactive(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReasonCode.AsObject;
+  static toObject(includeInstance: boolean, msg: ReasonCode): ReasonCode.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReasonCode, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReasonCode;
+  static deserializeBinaryFromReader(message: ReasonCode, reader: jspb.BinaryReader): ReasonCode;
+}
+
+export namespace ReasonCode {
+  export type AsObject = {
+    reasonCodeId: string,
+    name: string,
+    schedulingActivitySid: string,
+    isPlanned: boolean,
+    isPaid: boolean,
+    isDefault: boolean,
+    datetimeSetToInactive?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ScheduleSelector extends jspb.Message {
   getScheduleSid(): number;
   setScheduleSid(value: number): void;

@@ -1012,6 +1012,42 @@ type WFMListConfigEntities = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListConfigEntitiesRes;
 };
 
+type WFMCreateReasonCode = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateReasonCodeRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateReasonCodeResponse;
+};
+
+type WFMUpdateReasonCode = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeResponse;
+};
+
+type WFMGetDefaultReasonCode = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeResponse;
+};
+
+type WFMListReasonCodes = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListReasonCodesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListReasonCodesResponse;
+};
+
 type WFMDeleteShiftInstances = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2161,6 +2197,10 @@ export class WFM {
   static readonly CreateScheduleScenarioWithNodes: WFMCreateScheduleScenarioWithNodes;
   static readonly UpdateScheduleScenario: WFMUpdateScheduleScenario;
   static readonly ListConfigEntities: WFMListConfigEntities;
+  static readonly CreateReasonCode: WFMCreateReasonCode;
+  static readonly UpdateReasonCode: WFMUpdateReasonCode;
+  static readonly GetDefaultReasonCode: WFMGetDefaultReasonCode;
+  static readonly ListReasonCodes: WFMListReasonCodes;
   static readonly DeleteShiftInstances: WFMDeleteShiftInstances;
   static readonly BuildNodeDiagnostics: WFMBuildNodeDiagnostics;
   static readonly BuildGlobalDiagnostics: WFMBuildGlobalDiagnostics;
@@ -3269,6 +3309,42 @@ export class WFMClient {
   listConfigEntities(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListConfigEntitiesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListConfigEntitiesRes|null) => void
+  ): UnaryResponse;
+  createReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateReasonCodeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  createReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateReasonCodeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  updateReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  updateReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  getDefaultReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  getDefaultReasonCode(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultReasonCodeResponse|null) => void
+  ): UnaryResponse;
+  listReasonCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListReasonCodesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListReasonCodesResponse|null) => void
+  ): UnaryResponse;
+  listReasonCodes(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListReasonCodesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListReasonCodesResponse|null) => void
   ): UnaryResponse;
   deleteShiftInstances(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteShiftInstancesReq,
