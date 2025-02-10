@@ -65002,7 +65002,7 @@ proto.api.v1alpha1.wfm.ListReasonCodesRequest.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
       for (var i = 0; i < values.length; i++) {
         msg.addSchedulingActivitySids(values[i]);
       }
@@ -65042,7 +65042,7 @@ proto.api.v1alpha1.wfm.ListReasonCodesRequest.serializeBinaryToWriter = function
   var f = undefined;
   f = message.getSchedulingActivitySidsList();
   if (f.length > 0) {
-    writer.writePackedInt64String(
+    writer.writePackedInt64(
       1,
       f
     );
@@ -65059,15 +65059,15 @@ proto.api.v1alpha1.wfm.ListReasonCodesRequest.serializeBinaryToWriter = function
 
 /**
  * repeated int64 scheduling_activity_sids = 1;
- * @return {!Array<string>}
+ * @return {!Array<number>}
  */
 proto.api.v1alpha1.wfm.ListReasonCodesRequest.prototype.getSchedulingActivitySidsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<number>} value
  * @return {!proto.api.v1alpha1.wfm.ListReasonCodesRequest} returns this
  */
 proto.api.v1alpha1.wfm.ListReasonCodesRequest.prototype.setSchedulingActivitySidsList = function(value) {
@@ -65076,7 +65076,7 @@ proto.api.v1alpha1.wfm.ListReasonCodesRequest.prototype.setSchedulingActivitySid
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ListReasonCodesRequest} returns this
  */

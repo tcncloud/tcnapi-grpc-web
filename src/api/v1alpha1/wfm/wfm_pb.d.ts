@@ -7518,9 +7518,9 @@ export namespace GetDefaultReasonCodeResponse {
 
 export class ListReasonCodesRequest extends jspb.Message {
   clearSchedulingActivitySidsList(): void;
-  getSchedulingActivitySidsList(): Array<string>;
-  setSchedulingActivitySidsList(value: Array<string>): void;
-  addSchedulingActivitySids(value: string, index?: number): string;
+  getSchedulingActivitySidsList(): Array<number>;
+  setSchedulingActivitySidsList(value: Array<number>): void;
+  addSchedulingActivitySids(value: number, index?: number): number;
 
   getIncludeInactive(): boolean;
   setIncludeInactive(value: boolean): void;
@@ -7537,7 +7537,7 @@ export class ListReasonCodesRequest extends jspb.Message {
 
 export namespace ListReasonCodesRequest {
   export type AsObject = {
-    schedulingActivitySidsList: Array<string>,
+    schedulingActivitySidsList: Array<number>,
     includeInactive: boolean,
   }
 }
