@@ -8369,7 +8369,7 @@ customFieldSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 customFieldName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
-customFieldOptions: jspb.Message.getFieldWithDefault(msg, 5, ""),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
@@ -8424,8 +8424,9 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
       msg.setCustomFieldType(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCustomFieldOptions(value);
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateModified(value);
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -8488,11 +8489,12 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getCustomFieldOptions();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDateModified();
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getIsDeleted();
@@ -8578,20 +8580,39 @@ proto.api.commons.CustomField.prototype.setCustomFieldType = function(value) {
 
 
 /**
- * optional string custom_field_options = 5;
- * @return {string}
+ * optional google.protobuf.Timestamp date_modified = 5;
+ * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.CustomField.prototype.getCustomFieldOptions = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.api.commons.CustomField.prototype.getDateModified = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.CustomField} returns this
+*/
+proto.api.commons.CustomField.prototype.setDateModified = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.setCustomFieldOptions = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.api.commons.CustomField.prototype.clearDateModified = function() {
+  return this.setDateModified(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.CustomField.prototype.hasDateModified = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

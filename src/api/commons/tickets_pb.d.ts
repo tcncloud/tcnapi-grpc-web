@@ -1087,8 +1087,10 @@ export class CustomField extends jspb.Message {
   getCustomFieldType(): string;
   setCustomFieldType(value: string): void;
 
-  getCustomFieldOptions(): string;
-  setCustomFieldOptions(value: string): void;
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
@@ -1109,7 +1111,7 @@ export namespace CustomField {
     customFieldName: string,
     customFieldValue: string,
     customFieldType: string,
-    customFieldOptions: string,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
   }
 }
