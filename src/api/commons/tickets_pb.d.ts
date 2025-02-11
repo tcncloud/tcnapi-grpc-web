@@ -1093,8 +1093,10 @@ export class CustomField extends jspb.Message {
   getCustomFieldType(): string;
   setCustomFieldType(value: string): void;
 
-  getFieldOptions(): string;
-  setFieldOptions(value: string): void;
+  clearCustomFieldOptionsList(): void;
+  getCustomFieldOptionsList(): Array<string>;
+  setCustomFieldOptionsList(value: Array<string>): void;
+  addCustomFieldOptions(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
@@ -1114,7 +1116,7 @@ export namespace CustomField {
     customFiledName: string,
     customFieldValue: string,
     customFieldType: string,
-    fieldOptions: string,
+    customFieldOptionsList: Array<string>,
   }
 }
 

@@ -635,7 +635,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.CustomField = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.CustomField.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.CustomField, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8334,6 +8334,13 @@ proto.api.commons.EditAttribute.prototype.setIsEdited = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.CustomField.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8371,7 +8378,7 @@ ticketCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFiledName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 customFieldValue: jspb.Message.getFieldWithDefault(msg, 5, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 6, ""),
-fieldOptions: jspb.Message.getFieldWithDefault(msg, 7, "")
+customFieldOptionsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8434,7 +8441,7 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFieldOptions(value);
+      msg.addCustomFieldOptions(value);
       break;
     default:
       reader.skipField();
@@ -8507,9 +8514,9 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getFieldOptions();
+  f = message.getCustomFieldOptionsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       7,
       f
     );
@@ -8626,20 +8633,39 @@ proto.api.commons.CustomField.prototype.setCustomFieldType = function(value) {
 
 
 /**
- * optional string field_options = 7;
- * @return {string}
+ * repeated string custom_field_options = 7;
+ * @return {!Array<string>}
  */
-proto.api.commons.CustomField.prototype.getFieldOptions = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.api.commons.CustomField.prototype.getCustomFieldOptionsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.setCustomFieldOptionsList = function(value) {
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.setFieldOptions = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+proto.api.commons.CustomField.prototype.addCustomFieldOptions = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.clearCustomFieldOptionsList = function() {
+  return this.setCustomFieldOptionsList([]);
 };
 
 
