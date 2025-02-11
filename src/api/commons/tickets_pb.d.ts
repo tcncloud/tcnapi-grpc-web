@@ -1084,8 +1084,8 @@ export class CustomField extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFiledName(): string;
-  setCustomFiledName(value: string): void;
+  getCustomFieldName(): string;
+  setCustomFieldName(value: string): void;
 
   getCustomFieldValue(): string;
   setCustomFieldValue(value: string): void;
@@ -1113,7 +1113,7 @@ export namespace CustomField {
     customFiledSid: string,
     projectId: string,
     ticketCode: string,
-    customFiledName: string,
+    customFieldName: string,
     customFieldValue: string,
     customFieldType: string,
     customFieldOptionsList: Array<string>,

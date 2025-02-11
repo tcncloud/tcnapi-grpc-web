@@ -8375,7 +8375,7 @@ proto.api.commons.CustomField.toObject = function(includeInstance, msg) {
 customFiledSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 projectId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 ticketCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-customFiledName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+customFieldName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 customFieldValue: jspb.Message.getFieldWithDefault(msg, 5, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 6, ""),
 customFieldOptionsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
@@ -8429,7 +8429,7 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCustomFiledName(value);
+      msg.setCustomFieldName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -8493,7 +8493,7 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getCustomFiledName();
+  f = message.getCustomFieldName();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -8579,10 +8579,10 @@ proto.api.commons.CustomField.prototype.setTicketCode = function(value) {
 
 
 /**
- * optional string custom_filed_name = 4;
+ * optional string custom_field_name = 4;
  * @return {string}
  */
-proto.api.commons.CustomField.prototype.getCustomFiledName = function() {
+proto.api.commons.CustomField.prototype.getCustomFieldName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -8591,7 +8591,7 @@ proto.api.commons.CustomField.prototype.getCustomFiledName = function() {
  * @param {string} value
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.setCustomFiledName = function(value) {
+proto.api.commons.CustomField.prototype.setCustomFieldName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
