@@ -28,6 +28,15 @@ Learn.Content = {
   responseType: api_v0alpha_learn_pb.ContentRes
 };
 
+Learn.ContentStream = {
+  methodName: "ContentStream",
+  service: Learn,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_learn_pb.ContentReq,
+  responseType: api_v0alpha_learn_pb.ContentRes
+};
+
 Learn.ExportMany = {
   methodName: "ExportMany",
   service: Learn,
@@ -77,6 +86,15 @@ Learn.Update = {
   methodName: "Update",
   service: Learn,
   requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.UpdateReq,
+  responseType: api_v0alpha_learn_pb.UpdateRes
+};
+
+Learn.UpdateStream = {
+  methodName: "UpdateStream",
+  service: Learn,
+  requestStream: true,
   responseStream: false,
   requestType: api_v0alpha_learn_pb.UpdateReq,
   responseType: api_v0alpha_learn_pb.UpdateRes
@@ -304,6 +322,45 @@ LearnClient.prototype.content = function content(requestMessage, metadata, callb
   };
 };
 
+LearnClient.prototype.contentStream = function contentStream(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Learn.ContentStream, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
 LearnClient.prototype.exportMany = function exportMany(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -493,6 +550,47 @@ LearnClient.prototype.update = function update(requestMessage, metadata, callbac
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.updateStream = function updateStream(metadata) {
+  var listeners = {
+    end: [],
+    status: []
+  };
+  var client = grpc.client(Learn.UpdateStream, {
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport
+  });
+  client.onEnd(function (status, statusMessage, trailers) {
+    listeners.status.forEach(function (handler) {
+      handler({ code: status, details: statusMessage, metadata: trailers });
+    });
+    listeners.end.forEach(function (handler) {
+      handler({ code: status, details: statusMessage, metadata: trailers });
+    });
+    listeners = null;
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    write: function (requestMessage) {
+      if (!client.started) {
+        client.start(metadata);
+      }
+      client.send(requestMessage);
+      return this;
+    },
+    end: function () {
+      client.finishSend();
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };

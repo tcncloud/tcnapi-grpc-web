@@ -22,6 +22,15 @@ type LearnContent = {
   readonly responseType: typeof api_v0alpha_learn_pb.ContentRes;
 };
 
+type LearnContentStream = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_learn_pb.ContentReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.ContentRes;
+};
+
 type LearnExportMany = {
   readonly methodName: string;
   readonly service: typeof Learn;
@@ -71,6 +80,15 @@ type LearnUpdate = {
   readonly methodName: string;
   readonly service: typeof Learn;
   readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.UpdateReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.UpdateRes;
+};
+
+type LearnUpdateStream = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: true;
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_learn_pb.UpdateReq;
   readonly responseType: typeof api_v0alpha_learn_pb.UpdateRes;
@@ -233,12 +251,14 @@ export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
   static readonly Content: LearnContent;
+  static readonly ContentStream: LearnContentStream;
   static readonly ExportMany: LearnExportMany;
   static readonly SearchContent: LearnSearchContent;
   static readonly ListSearchResults: LearnListSearchResults;
   static readonly Standalone: LearnStandalone;
   static readonly ContentEditorData: LearnContentEditorData;
   static readonly Update: LearnUpdate;
+  static readonly UpdateStream: LearnUpdateStream;
   static readonly StoreStaticImage: LearnStoreStaticImage;
   static readonly UploadDynamicScreenshot: LearnUploadDynamicScreenshot;
   static readonly DeleteStandalone: LearnDeleteStandalone;
@@ -308,6 +328,7 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.ContentReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ContentRes|null) => void
   ): UnaryResponse;
+  contentStream(requestMessage: api_v0alpha_learn_pb.ContentReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.ContentRes>;
   exportMany(
     requestMessage: api_v0alpha_learn_pb.ExportManyReq,
     metadata: grpc.Metadata,
@@ -354,6 +375,7 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.UpdateReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UpdateRes|null) => void
   ): UnaryResponse;
+  updateStream(metadata?: grpc.Metadata): RequestStream<api_v0alpha_learn_pb.UpdateReq>;
   storeStaticImage(
     requestMessage: api_v0alpha_learn_pb.StoreStaticImageReq,
     metadata: grpc.Metadata,
