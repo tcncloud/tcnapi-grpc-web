@@ -327,6 +327,33 @@ Tickets.ListEntityRefsByTicket = {
   responseType: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse
 };
 
+Tickets.CreateCustomField = {
+  methodName: "CreateCustomField",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldResponse
+};
+
+Tickets.EditCustomField = {
+  methodName: "EditCustomField",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse
+};
+
+Tickets.ListCustomFields = {
+  methodName: "ListCustomFields",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsResponse
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -1393,6 +1420,99 @@ TicketsClient.prototype.listEntityRefsByTicket = function listEntityRefsByTicket
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.ListEntityRefsByTicket, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.createCustomField = function createCustomField(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.CreateCustomField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.editCustomField = function editCustomField(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.EditCustomField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.listCustomFields = function listCustomFields(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.ListCustomFields, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

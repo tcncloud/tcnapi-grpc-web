@@ -321,6 +321,33 @@ type TicketsListEntityRefsByTicket = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse;
 };
 
+type TicketsCreateCustomField = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.CreateCustomFieldRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.CreateCustomFieldResponse;
+};
+
+type TicketsEditCustomField = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse;
+};
+
+type TicketsListCustomFields = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListCustomFieldsRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListCustomFieldsResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -358,6 +385,9 @@ export class Tickets {
   static readonly AddEntityRef: TicketsAddEntityRef;
   static readonly ListTicketsByEntityRef: TicketsListTicketsByEntityRef;
   static readonly ListEntityRefsByTicket: TicketsListEntityRefsByTicket;
+  static readonly CreateCustomField: TicketsCreateCustomField;
+  static readonly EditCustomField: TicketsEditCustomField;
+  static readonly ListCustomFields: TicketsListCustomFields;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -706,6 +736,33 @@ export class TicketsClient {
   listEntityRefsByTicket(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse|null) => void
+  ): UnaryResponse;
+  createCustomField(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldResponse|null) => void
+  ): UnaryResponse;
+  createCustomField(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateCustomFieldResponse|null) => void
+  ): UnaryResponse;
+  editCustomField(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse|null) => void
+  ): UnaryResponse;
+  editCustomField(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse|null) => void
+  ): UnaryResponse;
+  listCustomFields(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsResponse|null) => void
+  ): UnaryResponse;
+  listCustomFields(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsResponse|null) => void
   ): UnaryResponse;
 }
 

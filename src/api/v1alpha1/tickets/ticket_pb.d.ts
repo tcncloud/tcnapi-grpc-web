@@ -1680,6 +1680,180 @@ export namespace ListTicketsByEntityRefResponse {
   }
 }
 
+export class CreateCustomFieldRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearCustomFieldList(): void;
+  getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCustomFieldRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCustomFieldRequest): CreateCustomFieldRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateCustomFieldRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCustomFieldRequest;
+  static deserializeBinaryFromReader(message: CreateCustomFieldRequest, reader: jspb.BinaryReader): CreateCustomFieldRequest;
+}
+
+export namespace CreateCustomFieldRequest {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+    customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
+export class CreateCustomFieldResponse extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearCustomFieldList(): void;
+  getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCustomFieldResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCustomFieldResponse): CreateCustomFieldResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateCustomFieldResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCustomFieldResponse;
+  static deserializeBinaryFromReader(message: CreateCustomFieldResponse, reader: jspb.BinaryReader): CreateCustomFieldResponse;
+}
+
+export namespace CreateCustomFieldResponse {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+    customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
+export class EditCustomFieldRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearEditValueList(): void;
+  getEditValueList(): Array<api_commons_tickets_pb.CustomField>;
+  setEditValueList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addEditValue(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditCustomFieldRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EditCustomFieldRequest): EditCustomFieldRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditCustomFieldRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditCustomFieldRequest;
+  static deserializeBinaryFromReader(message: EditCustomFieldRequest, reader: jspb.BinaryReader): EditCustomFieldRequest;
+}
+
+export namespace EditCustomFieldRequest {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+    editValueList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
+export class EditCustomFieldResponse extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearEditedCustomFieldList(): void;
+  getEditedCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setEditedCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addEditedCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditCustomFieldResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EditCustomFieldResponse): EditCustomFieldResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditCustomFieldResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditCustomFieldResponse;
+  static deserializeBinaryFromReader(message: EditCustomFieldResponse, reader: jspb.BinaryReader): EditCustomFieldResponse;
+}
+
+export namespace EditCustomFieldResponse {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+    editedCustomFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
+export class ListCustomFieldsRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCustomFieldsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCustomFieldsRequest): ListCustomFieldsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCustomFieldsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCustomFieldsRequest;
+  static deserializeBinaryFromReader(message: ListCustomFieldsRequest, reader: jspb.BinaryReader): ListCustomFieldsRequest;
+}
+
+export namespace ListCustomFieldsRequest {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+  }
+}
+
+export class ListCustomFieldsResponse extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearCustomFieldsList(): void;
+  getCustomFieldsList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldsList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomFields(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCustomFieldsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCustomFieldsResponse): ListCustomFieldsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCustomFieldsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCustomFieldsResponse;
+  static deserializeBinaryFromReader(message: ListCustomFieldsResponse, reader: jspb.BinaryReader): ListCustomFieldsResponse;
+}
+
+export namespace ListCustomFieldsResponse {
+  export type AsObject = {
+    ticketCode: string,
+    projectId: string,
+    customFieldsList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
 export class EntityRef extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;

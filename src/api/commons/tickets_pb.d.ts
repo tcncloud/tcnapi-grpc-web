@@ -1074,6 +1074,48 @@ export namespace EditAttribute {
   }
 }
 
+export class CustomField extends jspb.Message {
+  getCustomFieldSid(): string;
+  setCustomFieldSid(value: string): void;
+
+  getCustomFieldName(): string;
+  setCustomFieldName(value: string): void;
+
+  getCustomFieldValue(): string;
+  setCustomFieldValue(value: string): void;
+
+  getCustomFieldType(): string;
+  setCustomFieldType(value: string): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsDeleted(): boolean;
+  setIsDeleted(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomField.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CustomField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomField;
+  static deserializeBinaryFromReader(message: CustomField, reader: jspb.BinaryReader): CustomField;
+}
+
+export namespace CustomField {
+  export type AsObject = {
+    customFieldSid: string,
+    customFieldName: string,
+    customFieldValue: string,
+    customFieldType: string,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isDeleted: boolean,
+  }
+}
+
 export interface TimeScaleMap {
   TIME_SCALE_MINUTE: 0;
   TIME_SCALE_HOUR: 1;
