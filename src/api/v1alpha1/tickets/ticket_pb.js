@@ -14371,7 +14371,7 @@ proto.api.v1alpha1.tickets.ListCustomFieldsRequest.prototype.setProjectId = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.tickets.ListCustomFieldsResponse.repeatedFields_ = [1];
+proto.api.v1alpha1.tickets.ListCustomFieldsResponse.repeatedFields_ = [3];
 
 
 
@@ -14404,6 +14404,8 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.tickets.ListCustomFieldsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+ticketCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
+projectId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     api_commons_tickets_pb.CustomField.toObject, includeInstance)
   };
@@ -14443,6 +14445,14 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setProjectId(value);
+      break;
+    case 3:
       var value = new api_commons_tickets_pb.CustomField;
       reader.readMessage(value,api_commons_tickets_pb.CustomField.deserializeBinaryFromReader);
       msg.addCustomFields(value);
@@ -14476,10 +14486,24 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.serializeBinary = 
  */
 proto.api.v1alpha1.tickets.ListCustomFieldsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      2,
+      f
+    );
+  }
   f = message.getCustomFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      3,
       f,
       api_commons_tickets_pb.CustomField.serializeBinaryToWriter
     );
@@ -14488,12 +14512,48 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.serializeBinaryToWriter = fu
 
 
 /**
- * repeated api.commons.CustomField custom_fields = 1;
+ * optional string ticket_code = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListCustomFieldsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int64 project_id = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.getProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListCustomFieldsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
+};
+
+
+/**
+ * repeated api.commons.CustomField custom_fields = 3;
  * @return {!Array<!proto.api.commons.CustomField>}
  */
 proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.getCustomFieldsList = function() {
   return /** @type{!Array<!proto.api.commons.CustomField>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.CustomField, 1));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.CustomField, 3));
 };
 
 
@@ -14502,7 +14562,7 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.getCustomFieldsLis
  * @return {!proto.api.v1alpha1.tickets.ListCustomFieldsResponse} returns this
 */
 proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.setCustomFieldsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -14512,7 +14572,7 @@ proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.setCustomFieldsLis
  * @return {!proto.api.commons.CustomField}
  */
 proto.api.v1alpha1.tickets.ListCustomFieldsResponse.prototype.addCustomFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.CustomField, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.commons.CustomField, opt_index);
 };
 
 

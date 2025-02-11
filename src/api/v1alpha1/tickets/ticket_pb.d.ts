@@ -1825,6 +1825,12 @@ export namespace ListCustomFieldsRequest {
 }
 
 export class ListCustomFieldsResponse extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
   clearCustomFieldsList(): void;
   getCustomFieldsList(): Array<api_commons_tickets_pb.CustomField>;
   setCustomFieldsList(value: Array<api_commons_tickets_pb.CustomField>): void;
@@ -1842,6 +1848,8 @@ export class ListCustomFieldsResponse extends jspb.Message {
 
 export namespace ListCustomFieldsResponse {
   export type AsObject = {
+    ticketCode: string,
+    projectId: string,
     customFieldsList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
