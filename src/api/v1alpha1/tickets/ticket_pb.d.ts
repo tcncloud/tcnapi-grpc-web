@@ -1680,6 +1680,156 @@ export namespace ListTicketsByEntityRefResponse {
   }
 }
 
+export class CreateCustomFieldRequest extends jspb.Message {
+  hasCustomField(): boolean;
+  clearCustomField(): void;
+  getCustomField(): api_commons_tickets_pb.CustomField | undefined;
+  setCustomField(value?: api_commons_tickets_pb.CustomField): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCustomFieldRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCustomFieldRequest): CreateCustomFieldRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateCustomFieldRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCustomFieldRequest;
+  static deserializeBinaryFromReader(message: CreateCustomFieldRequest, reader: jspb.BinaryReader): CreateCustomFieldRequest;
+}
+
+export namespace CreateCustomFieldRequest {
+  export type AsObject = {
+    customField?: api_commons_tickets_pb.CustomField.AsObject,
+  }
+}
+
+export class CreateCustomFieldResponse extends jspb.Message {
+  hasCustomField(): boolean;
+  clearCustomField(): void;
+  getCustomField(): api_commons_tickets_pb.CustomField | undefined;
+  setCustomField(value?: api_commons_tickets_pb.CustomField): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCustomFieldResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCustomFieldResponse): CreateCustomFieldResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateCustomFieldResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCustomFieldResponse;
+  static deserializeBinaryFromReader(message: CreateCustomFieldResponse, reader: jspb.BinaryReader): CreateCustomFieldResponse;
+}
+
+export namespace CreateCustomFieldResponse {
+  export type AsObject = {
+    customField?: api_commons_tickets_pb.CustomField.AsObject,
+  }
+}
+
+export class EditCustomFieldRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  hasEditValue(): boolean;
+  clearEditValue(): void;
+  getEditValue(): api_commons_tickets_pb.CustomField | undefined;
+  setEditValue(value?: api_commons_tickets_pb.CustomField): void;
+
+  hasEditedFieldsMask(): boolean;
+  clearEditedFieldsMask(): void;
+  getEditedFieldsMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditCustomFieldRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EditCustomFieldRequest): EditCustomFieldRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditCustomFieldRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditCustomFieldRequest;
+  static deserializeBinaryFromReader(message: EditCustomFieldRequest, reader: jspb.BinaryReader): EditCustomFieldRequest;
+}
+
+export namespace EditCustomFieldRequest {
+  export type AsObject = {
+    ticketCode: string,
+    editValue?: api_commons_tickets_pb.CustomField.AsObject,
+    editedFieldsMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class EditCustomFiledResponse extends jspb.Message {
+  hasEditedCustomField(): boolean;
+  clearEditedCustomField(): void;
+  getEditedCustomField(): api_commons_tickets_pb.CustomField | undefined;
+  setEditedCustomField(value?: api_commons_tickets_pb.CustomField): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditCustomFiledResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EditCustomFiledResponse): EditCustomFiledResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditCustomFiledResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditCustomFiledResponse;
+  static deserializeBinaryFromReader(message: EditCustomFiledResponse, reader: jspb.BinaryReader): EditCustomFiledResponse;
+}
+
+export namespace EditCustomFiledResponse {
+  export type AsObject = {
+    editedCustomField?: api_commons_tickets_pb.CustomField.AsObject,
+  }
+}
+
+export class ListCustomFieldsRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getCustomFieldProjectId(): string;
+  setCustomFieldProjectId(value: string): void;
+
+  hasRequestMask(): boolean;
+  clearRequestMask(): void;
+  getRequestMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setRequestMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCustomFieldsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCustomFieldsRequest): ListCustomFieldsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCustomFieldsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCustomFieldsRequest;
+  static deserializeBinaryFromReader(message: ListCustomFieldsRequest, reader: jspb.BinaryReader): ListCustomFieldsRequest;
+}
+
+export namespace ListCustomFieldsRequest {
+  export type AsObject = {
+    ticketCode: string,
+    customFieldProjectId: string,
+    requestMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class ListCustomFieldsResponse extends jspb.Message {
+  clearCustomFieldsList(): void;
+  getCustomFieldsList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldsList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomFields(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCustomFieldsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCustomFieldsResponse): ListCustomFieldsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCustomFieldsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCustomFieldsResponse;
+  static deserializeBinaryFromReader(message: ListCustomFieldsResponse, reader: jspb.BinaryReader): ListCustomFieldsResponse;
+}
+
+export namespace ListCustomFieldsResponse {
+  export type AsObject = {
+    customFieldsList: Array<api_commons_tickets_pb.CustomField.AsObject>,
+  }
+}
+
 export class EntityRef extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;

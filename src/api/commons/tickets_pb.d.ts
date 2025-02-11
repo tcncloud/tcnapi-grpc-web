@@ -1074,6 +1074,50 @@ export namespace EditAttribute {
   }
 }
 
+export class CustomField extends jspb.Message {
+  getCustomFiledSid(): string;
+  setCustomFiledSid(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getCustomFiledName(): string;
+  setCustomFiledName(value: string): void;
+
+  getCustomFieldValue(): string;
+  setCustomFieldValue(value: string): void;
+
+  getCustomFieldType(): string;
+  setCustomFieldType(value: string): void;
+
+  getFieldOptions(): string;
+  setFieldOptions(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomField.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CustomField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomField;
+  static deserializeBinaryFromReader(message: CustomField, reader: jspb.BinaryReader): CustomField;
+}
+
+export namespace CustomField {
+  export type AsObject = {
+    customFiledSid: string,
+    projectId: string,
+    ticketCode: string,
+    customFiledName: string,
+    customFieldValue: string,
+    customFieldType: string,
+    fieldOptions: string,
+  }
+}
+
 export interface TimeScaleMap {
   TIME_SCALE_MINUTE: 0;
   TIME_SCALE_HOUR: 1;
