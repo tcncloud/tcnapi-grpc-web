@@ -7178,7 +7178,8 @@ expectedPauseCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
 actualRtmStatesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 actualPauseCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
 violationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
-expectedPauseCodesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+expectedPauseCodesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+adherenceAgentStateViolationId: jspb.Message.getFieldWithDefault(msg, 9, "0")
   };
 
   if (includeInstance) {
@@ -7251,6 +7252,10 @@ proto.api.commons.AdherenceAgentStateViolation.deserializeBinaryFromReader = fun
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addExpectedPauseCodes(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setAdherenceAgentStateViolationId(value);
       break;
     default:
       reader.skipField();
@@ -7335,6 +7340,13 @@ proto.api.commons.AdherenceAgentStateViolation.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeRepeatedString(
       8,
+      f
+    );
+  }
+  f = message.getAdherenceAgentStateViolationId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      9,
       f
     );
   }
@@ -7558,6 +7570,24 @@ proto.api.commons.AdherenceAgentStateViolation.prototype.addExpectedPauseCodes =
  */
 proto.api.commons.AdherenceAgentStateViolation.prototype.clearExpectedPauseCodesList = function() {
   return this.setExpectedPauseCodesList([]);
+};
+
+
+/**
+ * optional int64 adherence_agent_state_violation_id = 9;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getAdherenceAgentStateViolationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setAdherenceAgentStateViolationId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 9, value);
 };
 
 

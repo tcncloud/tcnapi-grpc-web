@@ -930,6 +930,9 @@ export class AdherenceAgentStateViolation extends jspb.Message {
   setExpectedPauseCodesList(value: Array<string>): void;
   addExpectedPauseCodes(value: string, index?: number): string;
 
+  getAdherenceAgentStateViolationId(): string;
+  setAdherenceAgentStateViolationId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceAgentStateViolation.AsObject;
   static toObject(includeInstance: boolean, msg: AdherenceAgentStateViolation): AdherenceAgentStateViolation.AsObject;
@@ -950,6 +953,7 @@ export namespace AdherenceAgentStateViolation {
     actualPauseCode: string,
     violationDurationSeconds: number,
     expectedPauseCodesList: Array<string>,
+    adherenceAgentStateViolationId: string,
   }
 }
 
