@@ -1075,14 +1075,8 @@ export namespace EditAttribute {
 }
 
 export class CustomField extends jspb.Message {
-  getCustomFiledSid(): string;
-  setCustomFiledSid(value: string): void;
-
-  getProjectId(): string;
-  setProjectId(value: string): void;
-
-  getTicketCode(): string;
-  setTicketCode(value: string): void;
+  getCustomFieldSid(): string;
+  setCustomFieldSid(value: string): void;
 
   getCustomFieldName(): string;
   setCustomFieldName(value: string): void;
@@ -1093,10 +1087,11 @@ export class CustomField extends jspb.Message {
   getCustomFieldType(): string;
   setCustomFieldType(value: string): void;
 
-  clearCustomFieldOptionsList(): void;
-  getCustomFieldOptionsList(): Array<string>;
-  setCustomFieldOptionsList(value: Array<string>): void;
-  addCustomFieldOptions(value: string, index?: number): string;
+  getCustomFieldOptions(): string;
+  setCustomFieldOptions(value: string): void;
+
+  getIsDeleted(): boolean;
+  setIsDeleted(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
@@ -1110,13 +1105,12 @@ export class CustomField extends jspb.Message {
 
 export namespace CustomField {
   export type AsObject = {
-    customFiledSid: string,
-    projectId: string,
-    ticketCode: string,
+    customFieldSid: string,
     customFieldName: string,
     customFieldValue: string,
     customFieldType: string,
-    customFieldOptionsList: Array<string>,
+    customFieldOptions: string,
+    isDeleted: boolean,
   }
 }
 

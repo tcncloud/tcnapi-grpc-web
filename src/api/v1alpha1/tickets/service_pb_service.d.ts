@@ -336,7 +336,7 @@ type TicketsEditCustomField = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest;
-  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.EditCustomFiledResponse;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse;
 };
 
 type TicketsListCustomFields = {
@@ -749,11 +749,11 @@ export class TicketsClient {
   editCustomField(
     requestMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFiledResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse|null) => void
   ): UnaryResponse;
   editCustomField(
     requestMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFiledResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse|null) => void
   ): UnaryResponse;
   listCustomFields(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListCustomFieldsRequest,

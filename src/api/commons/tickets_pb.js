@@ -635,7 +635,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.CustomField = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.CustomField.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.commons.CustomField, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8334,13 +8334,6 @@ proto.api.commons.EditAttribute.prototype.setIsEdited = function(value) {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.commons.CustomField.repeatedFields_ = [7];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8372,13 +8365,12 @@ proto.api.commons.CustomField.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.CustomField.toObject = function(includeInstance, msg) {
   var f, obj = {
-customFiledSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-projectId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-ticketCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-customFieldName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-customFieldValue: jspb.Message.getFieldWithDefault(msg, 5, ""),
-customFieldType: jspb.Message.getFieldWithDefault(msg, 6, ""),
-customFieldOptionsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+customFieldSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+customFieldName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
+customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
+customFieldOptions: jspb.Message.getFieldWithDefault(msg, 5, ""),
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -8417,31 +8409,27 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readInt64String());
-      msg.setCustomFiledSid(value);
+      msg.setCustomFieldSid(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readInt64String());
-      msg.setProjectId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTicketCode(value);
-      break;
-    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCustomFieldName(value);
       break;
-    case 5:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setCustomFieldValue(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCustomFieldType(value);
       break;
-    case 7:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.addCustomFieldOptions(value);
+      msg.setCustomFieldOptions(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDeleted(value);
       break;
     default:
       reader.skipField();
@@ -8472,52 +8460,45 @@ proto.api.commons.CustomField.prototype.serializeBinary = function() {
  */
 proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCustomFiledSid();
+  f = message.getCustomFieldSid();
   if (parseInt(f, 10) !== 0) {
     writer.writeInt64String(
       1,
       f
     );
   }
-  f = message.getProjectId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
-      2,
-      f
-    );
-  }
-  f = message.getTicketCode();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getCustomFieldName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
       f
     );
   }
   f = message.getCustomFieldValue();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      3,
       f
     );
   }
   f = message.getCustomFieldType();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      4,
       f
     );
   }
-  f = message.getCustomFieldOptionsList();
+  f = message.getCustomFieldOptions();
   if (f.length > 0) {
-    writer.writeRepeatedString(
-      7,
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getIsDeleted();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -8525,10 +8506,10 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional int64 custom_filed_sid = 1;
+ * optional int64 custom_field_sid = 1;
  * @return {string}
  */
-proto.api.commons.CustomField.prototype.getCustomFiledSid = function() {
+proto.api.commons.CustomField.prototype.getCustomFieldSid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
@@ -8537,53 +8518,17 @@ proto.api.commons.CustomField.prototype.getCustomFiledSid = function() {
  * @param {string} value
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.setCustomFiledSid = function(value) {
+proto.api.commons.CustomField.prototype.setCustomFieldSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
- * optional int64 project_id = 2;
- * @return {string}
- */
-proto.api.commons.CustomField.prototype.getProjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.CustomField} returns this
- */
-proto.api.commons.CustomField.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 2, value);
-};
-
-
-/**
- * optional string ticket_code = 3;
- * @return {string}
- */
-proto.api.commons.CustomField.prototype.getTicketCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.CustomField} returns this
- */
-proto.api.commons.CustomField.prototype.setTicketCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string custom_field_name = 4;
+ * optional string custom_field_name = 2;
  * @return {string}
  */
 proto.api.commons.CustomField.prototype.getCustomFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -8592,16 +8537,16 @@ proto.api.commons.CustomField.prototype.getCustomFieldName = function() {
  * @return {!proto.api.commons.CustomField} returns this
  */
 proto.api.commons.CustomField.prototype.setCustomFieldName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string custom_field_value = 5;
+ * optional string custom_field_value = 3;
  * @return {string}
  */
 proto.api.commons.CustomField.prototype.getCustomFieldValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -8610,16 +8555,16 @@ proto.api.commons.CustomField.prototype.getCustomFieldValue = function() {
  * @return {!proto.api.commons.CustomField} returns this
  */
 proto.api.commons.CustomField.prototype.setCustomFieldValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string custom_field_type = 6;
+ * optional string custom_field_type = 4;
  * @return {string}
  */
 proto.api.commons.CustomField.prototype.getCustomFieldType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -8628,44 +8573,43 @@ proto.api.commons.CustomField.prototype.getCustomFieldType = function() {
  * @return {!proto.api.commons.CustomField} returns this
  */
 proto.api.commons.CustomField.prototype.setCustomFieldType = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * repeated string custom_field_options = 7;
- * @return {!Array<string>}
+ * optional string custom_field_options = 5;
+ * @return {string}
  */
-proto.api.commons.CustomField.prototype.getCustomFieldOptionsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.commons.CustomField} returns this
- */
-proto.api.commons.CustomField.prototype.setCustomFieldOptionsList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
+proto.api.commons.CustomField.prototype.getCustomFieldOptions = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.addCustomFieldOptions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+proto.api.commons.CustomField.prototype.setCustomFieldOptions = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
+ * optional bool is_deleted = 6;
+ * @return {boolean}
+ */
+proto.api.commons.CustomField.prototype.getIsDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
  * @return {!proto.api.commons.CustomField} returns this
  */
-proto.api.commons.CustomField.prototype.clearCustomFieldOptionsList = function() {
-  return this.setCustomFieldOptionsList([]);
+proto.api.commons.CustomField.prototype.setIsDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 

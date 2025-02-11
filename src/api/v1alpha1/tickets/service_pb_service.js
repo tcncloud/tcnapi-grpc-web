@@ -342,7 +342,7 @@ Tickets.EditCustomField = {
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_tickets_ticket_pb.EditCustomFieldRequest,
-  responseType: api_v1alpha1_tickets_ticket_pb.EditCustomFiledResponse
+  responseType: api_v1alpha1_tickets_ticket_pb.EditCustomFieldResponse
 };
 
 Tickets.ListCustomFields = {

@@ -1681,10 +1681,16 @@ export namespace ListTicketsByEntityRefResponse {
 }
 
 export class CreateCustomFieldRequest extends jspb.Message {
-  hasCustomField(): boolean;
-  clearCustomField(): void;
-  getCustomField(): api_commons_tickets_pb.CustomField | undefined;
-  setCustomField(value?: api_commons_tickets_pb.CustomField): void;
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getCustomFieldProjectId(): string;
+  setCustomFieldProjectId(value: string): void;
+
+  clearCustomFieldList(): void;
+  getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCustomFieldRequest.AsObject;
@@ -1698,15 +1704,23 @@ export class CreateCustomFieldRequest extends jspb.Message {
 
 export namespace CreateCustomFieldRequest {
   export type AsObject = {
-    customField?: api_commons_tickets_pb.CustomField.AsObject,
+    ticketCode: string,
+    customFieldProjectId: string,
+    customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
 
 export class CreateCustomFieldResponse extends jspb.Message {
-  hasCustomField(): boolean;
-  clearCustomField(): void;
-  getCustomField(): api_commons_tickets_pb.CustomField | undefined;
-  setCustomField(value?: api_commons_tickets_pb.CustomField): void;
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getCustomFieldProjectId(): string;
+  setCustomFieldProjectId(value: string): void;
+
+  clearCustomFieldList(): void;
+  getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCustomFieldResponse.AsObject;
@@ -1720,7 +1734,9 @@ export class CreateCustomFieldResponse extends jspb.Message {
 
 export namespace CreateCustomFieldResponse {
   export type AsObject = {
-    customField?: api_commons_tickets_pb.CustomField.AsObject,
+    ticketCode: string,
+    customFieldProjectId: string,
+    customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
 
@@ -1728,15 +1744,13 @@ export class EditCustomFieldRequest extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  hasEditValue(): boolean;
-  clearEditValue(): void;
-  getEditValue(): api_commons_tickets_pb.CustomField | undefined;
-  setEditValue(value?: api_commons_tickets_pb.CustomField): void;
+  getCustomFieldProjectId(): string;
+  setCustomFieldProjectId(value: string): void;
 
-  hasEditedFieldsMask(): boolean;
-  clearEditedFieldsMask(): void;
-  getEditedFieldsMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+  clearEditValueList(): void;
+  getEditValueList(): Array<api_commons_tickets_pb.CustomField>;
+  setEditValueList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addEditValue(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditCustomFieldRequest.AsObject;
@@ -1751,30 +1765,38 @@ export class EditCustomFieldRequest extends jspb.Message {
 export namespace EditCustomFieldRequest {
   export type AsObject = {
     ticketCode: string,
-    editValue?: api_commons_tickets_pb.CustomField.AsObject,
-    editedFieldsMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    customFieldProjectId: string,
+    editValueList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
 
-export class EditCustomFiledResponse extends jspb.Message {
-  hasEditedCustomField(): boolean;
-  clearEditedCustomField(): void;
-  getEditedCustomField(): api_commons_tickets_pb.CustomField | undefined;
-  setEditedCustomField(value?: api_commons_tickets_pb.CustomField): void;
+export class EditCustomFieldResponse extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getCustomFieldProjectId(): string;
+  setCustomFieldProjectId(value: string): void;
+
+  clearEditedCustomFieldList(): void;
+  getEditedCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
+  setEditedCustomFieldList(value: Array<api_commons_tickets_pb.CustomField>): void;
+  addEditedCustomField(value?: api_commons_tickets_pb.CustomField, index?: number): api_commons_tickets_pb.CustomField;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EditCustomFiledResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: EditCustomFiledResponse): EditCustomFiledResponse.AsObject;
+  toObject(includeInstance?: boolean): EditCustomFieldResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EditCustomFieldResponse): EditCustomFieldResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EditCustomFiledResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EditCustomFiledResponse;
-  static deserializeBinaryFromReader(message: EditCustomFiledResponse, reader: jspb.BinaryReader): EditCustomFiledResponse;
+  static serializeBinaryToWriter(message: EditCustomFieldResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditCustomFieldResponse;
+  static deserializeBinaryFromReader(message: EditCustomFieldResponse, reader: jspb.BinaryReader): EditCustomFieldResponse;
 }
 
-export namespace EditCustomFiledResponse {
+export namespace EditCustomFieldResponse {
   export type AsObject = {
-    editedCustomField?: api_commons_tickets_pb.CustomField.AsObject,
+    ticketCode: string,
+    customFieldProjectId: string,
+    editedCustomFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
 
@@ -1784,11 +1806,6 @@ export class ListCustomFieldsRequest extends jspb.Message {
 
   getCustomFieldProjectId(): string;
   setCustomFieldProjectId(value: string): void;
-
-  hasRequestMask(): boolean;
-  clearRequestMask(): void;
-  getRequestMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setRequestMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCustomFieldsRequest.AsObject;
@@ -1804,7 +1821,6 @@ export namespace ListCustomFieldsRequest {
   export type AsObject = {
     ticketCode: string,
     customFieldProjectId: string,
-    requestMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
