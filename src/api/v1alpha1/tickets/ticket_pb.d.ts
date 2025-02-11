@@ -1684,8 +1684,8 @@ export class CreateCustomFieldRequest extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFieldProjectId(): string;
-  setCustomFieldProjectId(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   clearCustomFieldList(): void;
   getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
@@ -1705,7 +1705,7 @@ export class CreateCustomFieldRequest extends jspb.Message {
 export namespace CreateCustomFieldRequest {
   export type AsObject = {
     ticketCode: string,
-    customFieldProjectId: string,
+    projectId: string,
     customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
@@ -1714,8 +1714,8 @@ export class CreateCustomFieldResponse extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFieldProjectId(): string;
-  setCustomFieldProjectId(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   clearCustomFieldList(): void;
   getCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
@@ -1735,7 +1735,7 @@ export class CreateCustomFieldResponse extends jspb.Message {
 export namespace CreateCustomFieldResponse {
   export type AsObject = {
     ticketCode: string,
-    customFieldProjectId: string,
+    projectId: string,
     customFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
@@ -1744,8 +1744,8 @@ export class EditCustomFieldRequest extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFieldProjectId(): string;
-  setCustomFieldProjectId(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   clearEditValueList(): void;
   getEditValueList(): Array<api_commons_tickets_pb.CustomField>;
@@ -1765,7 +1765,7 @@ export class EditCustomFieldRequest extends jspb.Message {
 export namespace EditCustomFieldRequest {
   export type AsObject = {
     ticketCode: string,
-    customFieldProjectId: string,
+    projectId: string,
     editValueList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
@@ -1774,8 +1774,8 @@ export class EditCustomFieldResponse extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFieldProjectId(): string;
-  setCustomFieldProjectId(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   clearEditedCustomFieldList(): void;
   getEditedCustomFieldList(): Array<api_commons_tickets_pb.CustomField>;
@@ -1795,7 +1795,7 @@ export class EditCustomFieldResponse extends jspb.Message {
 export namespace EditCustomFieldResponse {
   export type AsObject = {
     ticketCode: string,
-    customFieldProjectId: string,
+    projectId: string,
     editedCustomFieldList: Array<api_commons_tickets_pb.CustomField.AsObject>,
   }
 }
@@ -1804,8 +1804,8 @@ export class ListCustomFieldsRequest extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getCustomFieldProjectId(): string;
-  setCustomFieldProjectId(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCustomFieldsRequest.AsObject;
@@ -1820,7 +1820,7 @@ export class ListCustomFieldsRequest extends jspb.Message {
 export namespace ListCustomFieldsRequest {
   export type AsObject = {
     ticketCode: string,
-    customFieldProjectId: string,
+    projectId: string,
   }
 }
 
