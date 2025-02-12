@@ -5729,14 +5729,6 @@ export class ContactManagerSink extends jspb.Message {
   getLifetime(): google_protobuf_duration_pb.Duration | undefined;
   setLifetime(value?: google_protobuf_duration_pb.Duration): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  hasDeDuplicationInfo(): boolean;
-  clearDeDuplicationInfo(): void;
-  getDeDuplicationInfo(): ContactManagerSink.DeDuplication | undefined;
-  setDeDuplicationInfo(value?: ContactManagerSink.DeDuplication): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerSink.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerSink): ContactManagerSink.AsObject;
@@ -5755,47 +5747,7 @@ export namespace ContactManagerSink {
     fieldsList: Array<string>,
     ttl: number,
     lifetime?: google_protobuf_duration_pb.Duration.AsObject,
-    userId: string,
-    deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
   }
-
-  export class DeDuplication extends jspb.Message {
-    getFieldType(): ContactManagerSink.DeDuplicationFieldTypeMap[keyof ContactManagerSink.DeDuplicationFieldTypeMap];
-    setFieldType(value: ContactManagerSink.DeDuplicationFieldTypeMap[keyof ContactManagerSink.DeDuplicationFieldTypeMap]): void;
-
-    getMergeStrategy(): ContactManagerSink.DeDuplicationMergeStrategyMap[keyof ContactManagerSink.DeDuplicationMergeStrategyMap];
-    setMergeStrategy(value: ContactManagerSink.DeDuplicationMergeStrategyMap[keyof ContactManagerSink.DeDuplicationMergeStrategyMap]): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): DeDuplication.AsObject;
-    static toObject(includeInstance: boolean, msg: DeDuplication): DeDuplication.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: DeDuplication, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): DeDuplication;
-    static deserializeBinaryFromReader(message: DeDuplication, reader: jspb.BinaryReader): DeDuplication;
-  }
-
-  export namespace DeDuplication {
-    export type AsObject = {
-      fieldType: ContactManagerSink.DeDuplicationFieldTypeMap[keyof ContactManagerSink.DeDuplicationFieldTypeMap],
-      mergeStrategy: ContactManagerSink.DeDuplicationMergeStrategyMap[keyof ContactManagerSink.DeDuplicationMergeStrategyMap],
-    }
-  }
-
-  export interface DeDuplicationFieldTypeMap {
-    PHONE_NUMBER: 0;
-    EMAIL_ADDRESS: 1;
-  }
-
-  export const DeDuplicationFieldType: DeDuplicationFieldTypeMap;
-
-  export interface DeDuplicationMergeStrategyMap {
-    KEEP_EXISTING_LIST: 0;
-    REPLACE_EXISTING_LIST: 1;
-  }
-
-  export const DeDuplicationMergeStrategy: DeDuplicationMergeStrategyMap;
 }
 
 export class SumProcess extends jspb.Message {
