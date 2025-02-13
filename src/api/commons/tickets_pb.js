@@ -8729,11 +8729,12 @@ proto.api.commons.PhoneNumberType = {
  * @enum {number}
  */
 proto.api.commons.CustomFieldTypes = {
-  STRING: 0,
-  NUMBER: 1,
-  NDATEUMBER: 2,
-  MULTI_SELECT: 3,
-  SINGLE_SELECT: 4
+  BOOLEAN: 0,
+  STRING: 1,
+  NUMBER: 2,
+  DATE: 3,
+  MULTI_SELECT: 4,
+  SINGLE_SELECT: 5
 };
 
 goog.object.extend(exports, proto.api.commons);
