@@ -1794,6 +1794,11 @@ export class ExecuteFlow extends jspb.Message {
   getPayscoutGetConsumerFee(): ExecutePayScoutGetConsumerFee | undefined;
   setPayscoutGetConsumerFee(value?: ExecutePayScoutGetConsumerFee): void;
 
+  hasPayscoutStoreToken(): boolean;
+  clearPayscoutStoreToken(): void;
+  getPayscoutStoreToken(): ExecutePayScoutStoreToken | undefined;
+  setPayscoutStoreToken(value?: ExecutePayScoutStoreToken): void;
+
   hasI2cEcho(): boolean;
   clearI2cEcho(): void;
   getI2cEcho(): ExecuteI2cEcho | undefined;
@@ -2676,6 +2681,7 @@ export namespace ExecuteFlow {
     payscoutCreditSaleRecurring?: ExecutePayScoutCreditCardSaleRecurring.AsObject,
     payscoutEcheckSaleRecurring?: ExecutePayScoutEcheckSaleRecurring.AsObject,
     payscoutGetConsumerFee?: ExecutePayScoutGetConsumerFee.AsObject,
+    payscoutStoreToken?: ExecutePayScoutStoreToken.AsObject,
     i2cEcho?: ExecuteI2cEcho.AsObject,
     i2cBalanceInquiry?: ExecuteI2cBalanceInquiry.AsObject,
     i2cVerifyUser?: ExecuteI2cVerifyUser.AsObject,
@@ -2996,6 +3002,7 @@ export namespace ExecuteFlow {
     PAYSCOUT_CREDIT_SALE_RECURRING = 3103,
     PAYSCOUT_ECHECK_SALE_RECURRING = 3104,
     PAYSCOUT_GET_CONSUMER_FEE = 3105,
+    PAYSCOUT_STORE_TOKEN = 3106,
     I2C_ECHO = 3201,
     I2C_BALANCE_INQUIRY = 3202,
     I2C_VERIFY_USER = 3203,
@@ -6598,6 +6605,22 @@ export class ExecutePayScoutGetConsumerFee extends jspb.Message {
 }
 
 export namespace ExecutePayScoutGetConsumerFee {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePayScoutStoreToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePayScoutStoreToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePayScoutStoreToken): ExecutePayScoutStoreToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePayScoutStoreToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePayScoutStoreToken;
+  static deserializeBinaryFromReader(message: ExecutePayScoutStoreToken, reader: jspb.BinaryReader): ExecutePayScoutStoreToken;
+}
+
+export namespace ExecutePayScoutStoreToken {
   export type AsObject = {
   }
 }
