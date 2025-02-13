@@ -1095,6 +1095,12 @@ export class CustomField extends jspb.Message {
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
 
+  getCustomFieldOptions(): string;
+  setCustomFieldOptions(value: string): void;
+
+  getCustomFieldTypes(): CustomFieldTypesMap[keyof CustomFieldTypesMap];
+  setCustomFieldTypes(value: CustomFieldTypesMap[keyof CustomFieldTypesMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
   static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
@@ -1113,6 +1119,8 @@ export namespace CustomField {
     customFieldType: string,
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
+    customFieldOptions: string,
+    customFieldTypes: CustomFieldTypesMap[keyof CustomFieldTypesMap],
   }
 }
 
@@ -1142,4 +1150,14 @@ export interface PhoneNumberTypeMap {
 }
 
 export const PhoneNumberType: PhoneNumberTypeMap;
+
+export interface CustomFieldTypesMap {
+  STRING: 0;
+  NUMBER: 1;
+  NDATEUMBER: 2;
+  MULTI_SELECT: 3;
+  SINGLE_SELECT: 4;
+}
+
+export const CustomFieldTypes: CustomFieldTypesMap;
 

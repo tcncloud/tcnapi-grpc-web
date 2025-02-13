@@ -33,6 +33,7 @@ goog.exportSymbol('proto.api.commons.Comment', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmClose', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmReplyComment', null, global);
 goog.exportSymbol('proto.api.commons.CustomField', null, global);
+goog.exportSymbol('proto.api.commons.CustomFieldTypes', null, global);
 goog.exportSymbol('proto.api.commons.Duration', null, global);
 goog.exportSymbol('proto.api.commons.EditAttribute', null, global);
 goog.exportSymbol('proto.api.commons.EditTicket', null, global);
@@ -8370,7 +8371,9 @@ customFieldName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
 dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+customFieldOptions: jspb.Message.getFieldWithDefault(msg, 7, ""),
+customFieldTypes: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -8431,6 +8434,14 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDeleted(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomFieldOptions(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.commons.CustomFieldTypes} */ (reader.readEnum());
+      msg.setCustomFieldTypes(value);
       break;
     default:
       reader.skipField();
@@ -8501,6 +8512,20 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getCustomFieldOptions();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getCustomFieldTypes();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
       f
     );
   }
@@ -8635,6 +8660,42 @@ proto.api.commons.CustomField.prototype.setIsDeleted = function(value) {
 
 
 /**
+ * optional string custom_field_options = 7;
+ * @return {string}
+ */
+proto.api.commons.CustomField.prototype.getCustomFieldOptions = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.setCustomFieldOptions = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional CustomFieldTypes custom_field_types = 8;
+ * @return {!proto.api.commons.CustomFieldTypes}
+ */
+proto.api.commons.CustomField.prototype.getCustomFieldTypes = function() {
+  return /** @type {!proto.api.commons.CustomFieldTypes} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CustomFieldTypes} value
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.setCustomFieldTypes = function(value) {
+  return jspb.Message.setProto3EnumField(this, 8, value);
+};
+
+
+/**
  * @enum {number}
  */
 proto.api.commons.TimeScale = {
@@ -8662,6 +8723,17 @@ proto.api.commons.PhoneNumberType = {
   MOBILE: 0,
   OTHER: 1,
   INVALID_ERROR: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.CustomFieldTypes = {
+  STRING: 0,
+  NUMBER: 1,
+  NDATEUMBER: 2,
+  MULTI_SELECT: 3,
+  SINGLE_SELECT: 4
 };
 
 goog.object.extend(exports, proto.api.commons);
