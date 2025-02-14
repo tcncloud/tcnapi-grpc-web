@@ -1152,12 +1152,12 @@ export interface PhoneNumberTypeMap {
 export const PhoneNumberType: PhoneNumberTypeMap;
 
 export interface CustomFieldTypesMap {
-  BOOLEAN: 0;
-  STRING: 1;
-  NUMBER: 2;
-  DATE: 3;
-  MULTI_SELECT: 4;
-  SINGLE_SELECT: 5;
+  CUSTOMFIELD_TYPES_BOOLEAN: 0;
+  CUSTOMFIELD_TYPES_STRING: 1;
+  CUSTOMFIELD_TYPES_NUMBER: 2;
+  CUSTOMFIELD_TYPES_DATETIME: 3;
+  CUSTOMFIELD_TYPES_MULTISELECT: 4;
+  CUSTOMFIELD_TYPES_SINGLESELECT: 5;
 }
 
 export const CustomFieldTypes: CustomFieldTypesMap;
