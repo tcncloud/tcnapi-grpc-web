@@ -2864,9 +2864,6 @@ export class CjsExportProcess extends jspb.Message {
   getUpdateKeyField(): string;
   setUpdateKeyField(value: string): void;
 
-  getReplaceInvalidWithNull(): boolean;
-  setReplaceInvalidWithNull(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CjsExportProcess.AsObject;
   static toObject(includeInstance: boolean, msg: CjsExportProcess): CjsExportProcess.AsObject;
@@ -2886,7 +2883,6 @@ export namespace CjsExportProcess {
     overwrite: boolean,
     update: boolean,
     updateKeyField: string,
-    replaceInvalidWithNull: boolean,
   }
 }
 
