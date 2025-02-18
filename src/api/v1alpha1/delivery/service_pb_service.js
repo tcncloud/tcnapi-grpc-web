@@ -253,13 +253,13 @@ DeliveryApi.ListSMSNumbers = {
   responseType: api_v1alpha1_delivery_service_pb.ListSMSNumbersRes
 };
 
-DeliveryApi.TriggerTestOutboundDelivery = {
-  methodName: "TriggerTestOutboundDelivery",
+DeliveryApi.TriggerDemoOutboundDelivery = {
+  methodName: "TriggerDemoOutboundDelivery",
   service: DeliveryApi,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryReq,
-  responseType: api_v1alpha1_delivery_service_pb.TriggerTestOutboundDeliveryRes
+  requestType: api_v1alpha1_delivery_service_pb.TriggerDemoOutboundDeliveryReq,
+  responseType: api_v1alpha1_delivery_service_pb.TriggerDemoOutboundDeliveryRes
 };
 
 exports.DeliveryApi = DeliveryApi;
@@ -1106,11 +1106,11 @@ DeliveryApiClient.prototype.listSMSNumbers = function listSMSNumbers(requestMess
   };
 };
 
-DeliveryApiClient.prototype.triggerTestOutboundDelivery = function triggerTestOutboundDelivery(requestMessage, metadata, callback) {
+DeliveryApiClient.prototype.triggerDemoOutboundDelivery = function triggerDemoOutboundDelivery(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DeliveryApi.TriggerTestOutboundDelivery, {
+  var client = grpc.unary(DeliveryApi.TriggerDemoOutboundDelivery, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
