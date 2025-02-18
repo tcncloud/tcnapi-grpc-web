@@ -13198,15 +13198,10 @@ export namespace ListAdherenceAgentStatesResponse {
 }
 
 export class ListAdherenceAgentStateViolationsRequest extends jspb.Message {
-  hasStartDatetime(): boolean;
-  clearStartDatetime(): void;
-  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasEndDatetime(): boolean;
-  clearEndDatetime(): void;
-  getEndDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
   clearWfmAgentSidsList(): void;
   getWfmAgentSidsList(): Array<number>;
@@ -13228,8 +13223,7 @@ export class ListAdherenceAgentStateViolationsRequest extends jspb.Message {
 
 export namespace ListAdherenceAgentStateViolationsRequest {
   export type AsObject = {
-    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     wfmAgentSidsList: Array<number>,
     includeResolved: boolean,
   }

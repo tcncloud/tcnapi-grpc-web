@@ -106129,7 +106129,7 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStatesResponse.prototype.clearAgentStat
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.repeatedFields_ = [3];
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.repeatedFields_ = [2];
 
 
 
@@ -106162,10 +106162,9 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.toObje
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-endDatetime: (f = msg.getEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-includeResolved: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+includeResolved: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -106203,22 +106202,17 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.deserializeBinar
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setStartDatetime(value);
+      var value = new api_commons_wfm_pb.DatetimeRange;
+      reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
+      msg.setDatetimeRange(value);
       break;
     case 2:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setEndDatetime(value);
-      break;
-    case 3:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
       for (var i = 0; i < values.length; i++) {
         msg.addWfmAgentSids(values[i]);
       }
       break;
-    case 4:
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeResolved(value);
       break;
@@ -106251,33 +106245,25 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.serial
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStartDatetime();
+  f = message.getDatetimeRange();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getEndDatetime();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
     );
   }
   f = message.getWfmAgentSidsList();
   if (f.length > 0) {
     writer.writePackedInt64(
-      3,
+      2,
       f
     );
   }
   f = message.getIncludeResolved();
   if (f) {
     writer.writeBool(
-      4,
+      3,
       f
     );
   }
@@ -106285,20 +106271,20 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.serializeBinaryT
 
 
 /**
- * optional google.protobuf.Timestamp start_datetime = 1;
- * @return {?proto.google.protobuf.Timestamp}
+ * optional api.commons.DatetimeRange datetime_range = 1;
+ * @return {?proto.api.commons.DatetimeRange}
  */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getStartDatetime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getDatetimeRange = function() {
+  return /** @type{?proto.api.commons.DatetimeRange} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.DatetimeRange, 1));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @param {?proto.api.commons.DatetimeRange|undefined} value
  * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
 */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setStartDatetime = function(value) {
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setDatetimeRange = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -106307,8 +106293,8 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setSta
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
  */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.clearStartDatetime = function() {
-  return this.setStartDatetime(undefined);
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.clearDatetimeRange = function() {
+  return this.setDatetimeRange(undefined);
 };
 
 
@@ -106316,54 +106302,17 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.clearS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.hasStartDatetime = function() {
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp end_datetime = 2;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getEndDatetime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
-*/
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setEndDatetime = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
- */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.clearEndDatetime = function() {
-  return this.setEndDatetime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.hasEndDatetime = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * repeated int64 wfm_agent_sids = 3;
+ * repeated int64 wfm_agent_sids = 2;
  * @return {!Array<number>}
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getWfmAgentSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -106372,7 +106321,7 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getWfm
  * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setWfmAgentSidsList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -106382,7 +106331,7 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setWfm
  * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.addWfmAgentSids = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -106396,11 +106345,11 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.clearW
 
 
 /**
- * optional bool include_resolved = 4;
+ * optional bool include_resolved = 3;
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getIncludeResolved = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
@@ -106409,7 +106358,7 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.getInc
  * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest} returns this
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setIncludeResolved = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
