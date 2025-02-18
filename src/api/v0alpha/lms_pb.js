@@ -24939,7 +24939,8 @@ runType: jspb.Message.getFieldWithDefault(msg, 5, 0),
 cjsCollectionName: jspb.Message.getFieldWithDefault(msg, 6, ""),
 overwrite: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
 update: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-updateKeyField: jspb.Message.getFieldWithDefault(msg, 10, "")
+updateKeyField: jspb.Message.getFieldWithDefault(msg, 10, ""),
+replaceInvalidWithNull: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -25004,6 +25005,10 @@ proto.api.v0alpha.CjsExportProcess.deserializeBinaryFromReader = function(msg, r
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdateKeyField(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReplaceInvalidWithNull(value);
       break;
     default:
       reader.skipField();
@@ -25081,6 +25086,13 @@ proto.api.v0alpha.CjsExportProcess.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getReplaceInvalidWithNull();
+  if (f) {
+    writer.writeBool(
+      11,
       f
     );
   }
@@ -25229,6 +25241,24 @@ proto.api.v0alpha.CjsExportProcess.prototype.getUpdateKeyField = function() {
  */
 proto.api.v0alpha.CjsExportProcess.prototype.setUpdateKeyField = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional bool replace_invalid_with_null = 11;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CjsExportProcess.prototype.getReplaceInvalidWithNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CjsExportProcess} returns this
+ */
+proto.api.v0alpha.CjsExportProcess.prototype.setReplaceInvalidWithNull = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
