@@ -1095,6 +1095,9 @@ export class CustomField extends jspb.Message {
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
 
+  getTicketCustomFieldType(): TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap];
+  setTicketCustomFieldType(value: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
   static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
@@ -1113,6 +1116,7 @@ export namespace CustomField {
     customFieldType: string,
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
+    ticketCustomFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
   }
 }
 
@@ -1142,4 +1146,15 @@ export interface PhoneNumberTypeMap {
 }
 
 export const PhoneNumberType: PhoneNumberTypeMap;
+
+export interface TicketCustomFieldTypeMap {
+  TICKET_CUSTOMFIELD_TYPE_BOOLEAN: 0;
+  TICKET_CUSTOMFIELD_TYPE_STRING: 1;
+  TICKET_CUSTOMFIELD_TYPE_NUMBER: 2;
+  TICKET_CUSTOMFIELD_TYPE_DATETIME: 3;
+  TICKET_CUSTOMFIELD_TYPE_MULTISELECT: 4;
+  TICKET_CUSTOMFIELD_TYPE_SINGLESELECT: 5;
+}
+
+export const TicketCustomFieldType: TicketCustomFieldTypeMap;
 

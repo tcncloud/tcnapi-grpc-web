@@ -51,6 +51,7 @@ goog.exportSymbol('proto.api.commons.Ticket', null, global);
 goog.exportSymbol('proto.api.commons.TicketAction', null, global);
 goog.exportSymbol('proto.api.commons.TicketAction.ContextCase', null, global);
 goog.exportSymbol('proto.api.commons.TicketAuditLog', null, global);
+goog.exportSymbol('proto.api.commons.TicketCustomFieldType', null, global);
 goog.exportSymbol('proto.api.commons.TicketProject', null, global);
 goog.exportSymbol('proto.api.commons.TicketProjectTemplate', null, global);
 goog.exportSymbol('proto.api.commons.TicketSla', null, global);
@@ -8370,7 +8371,8 @@ customFieldName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
 dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+ticketCustomFieldType: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -8431,6 +8433,10 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDeleted(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.commons.TicketCustomFieldType} */ (reader.readEnum());
+      msg.setTicketCustomFieldType(value);
       break;
     default:
       reader.skipField();
@@ -8501,6 +8507,13 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getTicketCustomFieldType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
       f
     );
   }
@@ -8635,6 +8648,24 @@ proto.api.commons.CustomField.prototype.setIsDeleted = function(value) {
 
 
 /**
+ * optional TicketCustomFieldType ticket_custom_field_type = 8;
+ * @return {!proto.api.commons.TicketCustomFieldType}
+ */
+proto.api.commons.CustomField.prototype.getTicketCustomFieldType = function() {
+  return /** @type {!proto.api.commons.TicketCustomFieldType} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TicketCustomFieldType} value
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.setTicketCustomFieldType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 8, value);
+};
+
+
+/**
  * @enum {number}
  */
 proto.api.commons.TimeScale = {
@@ -8662,6 +8693,18 @@ proto.api.commons.PhoneNumberType = {
   MOBILE: 0,
   OTHER: 1,
   INVALID_ERROR: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.TicketCustomFieldType = {
+  TICKET_CUSTOMFIELD_TYPE_BOOLEAN: 0,
+  TICKET_CUSTOMFIELD_TYPE_STRING: 1,
+  TICKET_CUSTOMFIELD_TYPE_NUMBER: 2,
+  TICKET_CUSTOMFIELD_TYPE_DATETIME: 3,
+  TICKET_CUSTOMFIELD_TYPE_MULTISELECT: 4,
+  TICKET_CUSTOMFIELD_TYPE_SINGLESELECT: 5
 };
 
 goog.object.extend(exports, proto.api.commons);
