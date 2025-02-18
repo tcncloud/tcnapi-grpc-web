@@ -16,6 +16,7 @@ import * as api_commons_audit_organization_events_pb from "../../../api/commons/
 import * as api_commons_audit_scorecards_events_pb from "../../../api/commons/audit/scorecards_events_pb";
 import * as api_commons_audit_tickets_events_pb from "../../../api/commons/audit/tickets_events_pb";
 import * as api_commons_audit_vana_events_pb from "../../../api/commons/audit/vana_events_pb";
+import * as api_commons_audit_wfm_events_pb from "../../../api/commons/audit/wfm_events_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class AuditEvent extends jspb.Message {
@@ -679,6 +680,11 @@ export class AuditEvent extends jspb.Message {
   getAccessTokensExpiringEvent(): api_commons_audit_organization_events_pb.AccessTokensExpiringEvent | undefined;
   setAccessTokensExpiringEvent(value?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent): void;
 
+  hasWfmPublishScheduleEvent(): boolean;
+  clearWfmPublishScheduleEvent(): void;
+  getWfmPublishScheduleEvent(): api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent | undefined;
+  setWfmPublishScheduleEvent(value?: api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -826,6 +832,7 @@ export namespace AuditEvent {
     contactManagerEntryExpungeEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
     contactManagerEntityAssociationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.AsObject,
     accessTokensExpiringEvent?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.AsObject,
+    wfmPublishScheduleEvent?: api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.AsObject,
   }
 
   export enum EventCase {
@@ -958,6 +965,7 @@ export namespace AuditEvent {
     CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT = 1208,
     CONTACT_MANAGER_ENTITY_ASSOCIATION_EVENT = 1209,
     ACCESS_TOKENS_EXPIRING_EVENT = 1300,
+    WFM_PUBLISH_SCHEDULE_EVENT = 1400,
   }
 }
 

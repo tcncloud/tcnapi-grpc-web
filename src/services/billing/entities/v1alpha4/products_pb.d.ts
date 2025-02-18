@@ -256,6 +256,11 @@ export class ProductConfig extends jspb.Message {
   getWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
   setWorkforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
 
+  hasWorkforceEngagementWorkforceManagementSchedulerAgents(): boolean;
+  clearWorkforceEngagementWorkforceManagementSchedulerAgents(): void;
+  getWorkforceEngagementWorkforceManagementSchedulerAgents(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforceEngagementWorkforceManagementSchedulerAgents(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
   getConfigCase(): ProductConfig.ConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductConfig.AsObject;
@@ -319,6 +324,7 @@ export namespace ProductConfig {
     workforceEngagementWorkforceOptimizationAiBundleAccumulatedSentiments?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationAiBundleSummaries?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforceEngagementWorkforceOptimizationAiBundleAccumulatedSummaries?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforceEngagementWorkforceManagementSchedulerAgents?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
   }
 
   export enum ConfigCase {
@@ -373,6 +379,7 @@ export namespace ProductConfig {
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SENTIMENTS = 30011,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_SUMMARIES = 30020,
     WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_AI_BUNDLE_ACCUMULATED_SUMMARIES = 30021,
+    WORKFORCE_ENGAGEMENT_WORKFORCE_MANAGEMENT_SCHEDULER_AGENTS = 40000,
   }
 }
 
