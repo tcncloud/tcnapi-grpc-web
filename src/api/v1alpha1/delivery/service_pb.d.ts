@@ -10,6 +10,42 @@ import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class TriggerTestOutboundDeliveryReq extends jspb.Message {
+  getTransferconfigname(): string;
+  setTransferconfigname(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TriggerTestOutboundDeliveryReq.AsObject;
+  static toObject(includeInstance: boolean, msg: TriggerTestOutboundDeliveryReq): TriggerTestOutboundDeliveryReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TriggerTestOutboundDeliveryReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TriggerTestOutboundDeliveryReq;
+  static deserializeBinaryFromReader(message: TriggerTestOutboundDeliveryReq, reader: jspb.BinaryReader): TriggerTestOutboundDeliveryReq;
+}
+
+export namespace TriggerTestOutboundDeliveryReq {
+  export type AsObject = {
+    transferconfigname: string,
+  }
+}
+
+export class TriggerTestOutboundDeliveryRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TriggerTestOutboundDeliveryRes.AsObject;
+  static toObject(includeInstance: boolean, msg: TriggerTestOutboundDeliveryRes): TriggerTestOutboundDeliveryRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TriggerTestOutboundDeliveryRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TriggerTestOutboundDeliveryRes;
+  static deserializeBinaryFromReader(message: TriggerTestOutboundDeliveryRes, reader: jspb.BinaryReader): TriggerTestOutboundDeliveryRes;
+}
+
+export namespace TriggerTestOutboundDeliveryRes {
+  export type AsObject = {
+  }
+}
+
 export class CreateTransferConfigReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
