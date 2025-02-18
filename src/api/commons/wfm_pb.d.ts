@@ -933,6 +933,30 @@ export class AdherenceAgentStateViolation extends jspb.Message {
   getAdherenceAgentStateViolationId(): string;
   setAdherenceAgentStateViolationId(value: string): void;
 
+  getExpectedSchedulingActivitySid(): string;
+  setExpectedSchedulingActivitySid(value: string): void;
+
+  getExpectedReasonCodeId(): string;
+  setExpectedReasonCodeId(value: string): void;
+
+  getActualSchedulingActivitySid(): string;
+  setActualSchedulingActivitySid(value: string): void;
+
+  getActualReasonCodeId(): string;
+  setActualReasonCodeId(value: string): void;
+
+  getResolvedActivitySid(): string;
+  setResolvedActivitySid(value: string): void;
+
+  getResolvedReasonCodeId(): string;
+  setResolvedReasonCodeId(value: string): void;
+
+  getResolutionComment(): string;
+  setResolutionComment(value: string): void;
+
+  getResolvedByUserId(): string;
+  setResolvedByUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceAgentStateViolation.AsObject;
   static toObject(includeInstance: boolean, msg: AdherenceAgentStateViolation): AdherenceAgentStateViolation.AsObject;
@@ -954,6 +978,14 @@ export namespace AdherenceAgentStateViolation {
     violationDurationSeconds: number,
     expectedPauseCodesList: Array<string>,
     adherenceAgentStateViolationId: string,
+    expectedSchedulingActivitySid: string,
+    expectedReasonCodeId: string,
+    actualSchedulingActivitySid: string,
+    actualReasonCodeId: string,
+    resolvedActivitySid: string,
+    resolvedReasonCodeId: string,
+    resolutionComment: string,
+    resolvedByUserId: string,
   }
 }
 
