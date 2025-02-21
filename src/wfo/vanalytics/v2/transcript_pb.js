@@ -60,6 +60,7 @@ goog.exportSymbol('proto.wfo.vanalytics.v2.Chat', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Chat.Phone', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Chat.Segment', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Chat.Thread', null, global);
+goog.exportSymbol('proto.wfo.vanalytics.v2.ConversationKind', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary.Filter', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary.Flag', null, global);
@@ -30066,6 +30067,16 @@ proto.wfo.vanalytics.v2.ReviewStatus = {
   REVIEW_STATUS_TODO: 0,
   REVIEW_STATUS_DONE: 1,
   REVIEW_STATUS_NONE: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.wfo.vanalytics.v2.ConversationKind = {
+  CONVERSATION_KIND_CALL: 0,
+  CONVERSATION_KIND_SMS: 1,
+  CONVERSATION_KIND_CHAT: 2,
+  CONVERSATION_KIND_EMAIL: 3
 };
 
 goog.object.extend(exports, proto.wfo.vanalytics.v2);
