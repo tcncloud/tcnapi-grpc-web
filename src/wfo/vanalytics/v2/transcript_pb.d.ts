@@ -3761,12 +3761,3 @@ export interface ReviewStatusMap {
 
 export const ReviewStatus: ReviewStatusMap;
 
-export interface ConversationKindMap {
-  CONVERSATION_KIND_CALL: 0;
-  CONVERSATION_KIND_SMS: 1;
-  CONVERSATION_KIND_CHAT: 2;
-  CONVERSATION_KIND_EMAIL: 3;
-}
-
-export const ConversationKind: ConversationKindMap;
-
