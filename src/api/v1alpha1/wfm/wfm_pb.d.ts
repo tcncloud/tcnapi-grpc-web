@@ -14643,3 +14643,39 @@ export namespace AgentCancelLeavePetitionResponse {
   }
 }
 
+export class SetAgentStateSimulationLevelForOrgRequest extends jspb.Message {
+  getAgentStateSimulationLevel(): api_commons_wfm_pb.AgentStateSimulationLevelMap[keyof api_commons_wfm_pb.AgentStateSimulationLevelMap];
+  setAgentStateSimulationLevel(value: api_commons_wfm_pb.AgentStateSimulationLevelMap[keyof api_commons_wfm_pb.AgentStateSimulationLevelMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAgentStateSimulationLevelForOrgRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAgentStateSimulationLevelForOrgRequest): SetAgentStateSimulationLevelForOrgRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAgentStateSimulationLevelForOrgRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAgentStateSimulationLevelForOrgRequest;
+  static deserializeBinaryFromReader(message: SetAgentStateSimulationLevelForOrgRequest, reader: jspb.BinaryReader): SetAgentStateSimulationLevelForOrgRequest;
+}
+
+export namespace SetAgentStateSimulationLevelForOrgRequest {
+  export type AsObject = {
+    agentStateSimulationLevel: api_commons_wfm_pb.AgentStateSimulationLevelMap[keyof api_commons_wfm_pb.AgentStateSimulationLevelMap],
+  }
+}
+
+export class SetAgentStateSimulationLevelForOrgResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAgentStateSimulationLevelForOrgResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAgentStateSimulationLevelForOrgResponse): SetAgentStateSimulationLevelForOrgResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAgentStateSimulationLevelForOrgResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAgentStateSimulationLevelForOrgResponse;
+  static deserializeBinaryFromReader(message: SetAgentStateSimulationLevelForOrgResponse, reader: jspb.BinaryReader): SetAgentStateSimulationLevelForOrgResponse;
+}
+
+export namespace SetAgentStateSimulationLevelForOrgResponse {
+  export type AsObject = {
+  }
+}
+

@@ -2083,6 +2083,15 @@ type WFMAgentCancelLeavePetition = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse;
 };
 
+type WFMSetAgentStateSimulationLevelForOrg = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -2316,6 +2325,7 @@ export class WFM {
   static readonly AgentListLeavePetitions: WFMAgentListLeavePetitions;
   static readonly AgentCreateLeavePetition: WFMAgentCreateLeavePetition;
   static readonly AgentCancelLeavePetition: WFMAgentCancelLeavePetition;
+  static readonly SetAgentStateSimulationLevelForOrg: WFMSetAgentStateSimulationLevelForOrg;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4380,6 +4390,15 @@ export class WFMClient {
   agentCancelLeavePetition(
     requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  setAgentStateSimulationLevelForOrg(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse|null) => void
+  ): UnaryResponse;
+  setAgentStateSimulationLevelForOrg(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse|null) => void
   ): UnaryResponse;
 }
 

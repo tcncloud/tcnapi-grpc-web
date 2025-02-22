@@ -50,6 +50,7 @@ goog.exportSymbol('proto.api.commons.AgentLeavePetition', null, global);
 goog.exportSymbol('proto.api.commons.AgentLeavePetitionStatus', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSequence', null, global);
+goog.exportSymbol('proto.api.commons.AgentStateSimulationLevel', null, global);
 goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
 goog.exportSymbol('proto.api.commons.BitmapType', null, global);
 goog.exportSymbol('proto.api.commons.BuildDraftStatus', null, global);
@@ -11058,6 +11059,14 @@ proto.api.commons.RealTimeManagementState = {
   WRAP_UP: 11,
   LOGGED_OUT: 13,
   PAUSE: 14
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.AgentStateSimulationLevel = {
+  NO_SIMULATION: 0,
+  SIMULATED_AGENT_STATES: 1
 };
 
 /**
