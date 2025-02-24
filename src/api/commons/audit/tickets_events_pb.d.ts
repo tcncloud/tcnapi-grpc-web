@@ -13,6 +13,11 @@ export class TicketEvent extends jspb.Message {
   getCreatedById(): string;
   setCreatedById(value: string): void;
 
+  hasTicketcustomfieldauditlog(): boolean;
+  clearTicketcustomfieldauditlog(): void;
+  getTicketcustomfieldauditlog(): api_commons_tickets_pb.TicketCustomFieldAuditLog | undefined;
+  setTicketcustomfieldauditlog(value?: api_commons_tickets_pb.TicketCustomFieldAuditLog): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketEvent.AsObject;
   static toObject(includeInstance: boolean, msg: TicketEvent): TicketEvent.AsObject;
@@ -27,6 +32,7 @@ export namespace TicketEvent {
   export type AsObject = {
     editticket?: api_commons_tickets_pb.EditTicket.AsObject,
     createdById: string,
+    ticketcustomfieldauditlog?: api_commons_tickets_pb.TicketCustomFieldAuditLog.AsObject,
   }
 }
 

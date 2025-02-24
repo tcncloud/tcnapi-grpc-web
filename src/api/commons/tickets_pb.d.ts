@@ -1120,6 +1120,64 @@ export namespace CustomField {
   }
 }
 
+export class TicketCustomFieldAuditLog extends jspb.Message {
+  clearCustomFieldEditAttributesList(): void;
+  getCustomFieldEditAttributesList(): Array<CustomFieldEditAttribute>;
+  setCustomFieldEditAttributesList(value: Array<CustomFieldEditAttribute>): void;
+  addCustomFieldEditAttributes(value?: CustomFieldEditAttribute, index?: number): CustomFieldEditAttribute;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketCustomFieldAuditLog.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketCustomFieldAuditLog): TicketCustomFieldAuditLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketCustomFieldAuditLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketCustomFieldAuditLog;
+  static deserializeBinaryFromReader(message: TicketCustomFieldAuditLog, reader: jspb.BinaryReader): TicketCustomFieldAuditLog;
+}
+
+export namespace TicketCustomFieldAuditLog {
+  export type AsObject = {
+    customFieldEditAttributesList: Array<CustomFieldEditAttribute.AsObject>,
+    ticketCode: string,
+  }
+}
+
+export class CustomFieldEditAttribute extends jspb.Message {
+  getCustomFieldId(): number;
+  setCustomFieldId(value: number): void;
+
+  getCustomFieldType(): TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap];
+  setCustomFieldType(value: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap]): void;
+
+  getEditedValue(): string;
+  setEditedValue(value: string): void;
+
+  getPreviousValue(): string;
+  setPreviousValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomFieldEditAttribute.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomFieldEditAttribute): CustomFieldEditAttribute.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CustomFieldEditAttribute, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomFieldEditAttribute;
+  static deserializeBinaryFromReader(message: CustomFieldEditAttribute, reader: jspb.BinaryReader): CustomFieldEditAttribute;
+}
+
+export namespace CustomFieldEditAttribute {
+  export type AsObject = {
+    customFieldId: number,
+    customFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
+    editedValue: string,
+    previousValue: string,
+  }
+}
+
 export interface TimeScaleMap {
   TIME_SCALE_MINUTE: 0;
   TIME_SCALE_HOUR: 1;

@@ -80,7 +80,8 @@ proto.api.commons.audit.TicketEvent.prototype.toObject = function(opt_includeIns
 proto.api.commons.audit.TicketEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
 editticket: (f = msg.getEditticket()) && api_commons_tickets_pb.EditTicket.toObject(includeInstance, f),
-createdById: jspb.Message.getFieldWithDefault(msg, 2, "")
+createdById: jspb.Message.getFieldWithDefault(msg, 2, ""),
+ticketcustomfieldauditlog: (f = msg.getTicketcustomfieldauditlog()) && api_commons_tickets_pb.TicketCustomFieldAuditLog.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -126,6 +127,11 @@ proto.api.commons.audit.TicketEvent.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedById(value);
       break;
+    case 3:
+      var value = new api_commons_tickets_pb.TicketCustomFieldAuditLog;
+      reader.readMessage(value,api_commons_tickets_pb.TicketCustomFieldAuditLog.deserializeBinaryFromReader);
+      msg.setTicketcustomfieldauditlog(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -168,6 +174,14 @@ proto.api.commons.audit.TicketEvent.serializeBinaryToWriter = function(message, 
     writer.writeString(
       2,
       f
+    );
+  }
+  f = message.getTicketcustomfieldauditlog();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_tickets_pb.TicketCustomFieldAuditLog.serializeBinaryToWriter
     );
   }
 };
@@ -225,6 +239,43 @@ proto.api.commons.audit.TicketEvent.prototype.getCreatedById = function() {
  */
 proto.api.commons.audit.TicketEvent.prototype.setCreatedById = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.TicketCustomFieldAuditLog ticketcustomfieldauditlog = 3;
+ * @return {?proto.api.commons.TicketCustomFieldAuditLog}
+ */
+proto.api.commons.audit.TicketEvent.prototype.getTicketcustomfieldauditlog = function() {
+  return /** @type{?proto.api.commons.TicketCustomFieldAuditLog} */ (
+    jspb.Message.getWrapperField(this, api_commons_tickets_pb.TicketCustomFieldAuditLog, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.TicketCustomFieldAuditLog|undefined} value
+ * @return {!proto.api.commons.audit.TicketEvent} returns this
+*/
+proto.api.commons.audit.TicketEvent.prototype.setTicketcustomfieldauditlog = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.TicketEvent} returns this
+ */
+proto.api.commons.audit.TicketEvent.prototype.clearTicketcustomfieldauditlog = function() {
+  return this.setTicketcustomfieldauditlog(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.TicketEvent.prototype.hasTicketcustomfieldauditlog = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
