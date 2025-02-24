@@ -13043,6 +13043,44 @@ export namespace HelloWorldWFMAdherenceResponse {
   }
 }
 
+export class ListAdherenceDiagnosticsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceDiagnosticsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceDiagnosticsRequest): ListAdherenceDiagnosticsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceDiagnosticsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceDiagnosticsRequest;
+  static deserializeBinaryFromReader(message: ListAdherenceDiagnosticsRequest, reader: jspb.BinaryReader): ListAdherenceDiagnosticsRequest;
+}
+
+export namespace ListAdherenceDiagnosticsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAdherenceDiagnosticsResponse extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceDiagnosticsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceDiagnosticsResponse): ListAdherenceDiagnosticsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceDiagnosticsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceDiagnosticsResponse;
+  static deserializeBinaryFromReader(message: ListAdherenceDiagnosticsResponse, reader: jspb.BinaryReader): ListAdherenceDiagnosticsResponse;
+}
+
+export namespace ListAdherenceDiagnosticsResponse {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class ListAgentStatesForDayRequest extends jspb.Message {
   hasStartDatetime(): boolean;
   clearStartDatetime(): void;
@@ -13179,6 +13217,11 @@ export class ListAdherenceAgentStatesResponse extends jspb.Message {
 
   getAgentStateViolationsMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStateViolations>;
   clearAgentStateViolationsMap(): void;
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStatesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAdherenceAgentStatesResponse): ListAdherenceAgentStatesResponse.AsObject;
@@ -13194,6 +13237,7 @@ export namespace ListAdherenceAgentStatesResponse {
     agentStatesMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStates.AsObject]>,
     latestAgentStateDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     agentStateViolationsMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStateViolations.AsObject]>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
