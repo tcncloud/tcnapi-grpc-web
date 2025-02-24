@@ -1795,6 +1795,15 @@ type WFMHelloWorldWFMAdherence = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse;
 };
 
+type WFMListAdherenceDiagnostics = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse;
+};
+
 type WFMListAgentStatesForDay = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2284,6 +2293,7 @@ export class WFM {
   static readonly ResolveAgentLeavePetition: WFMResolveAgentLeavePetition;
   static readonly CancelAgentLeavePetition: WFMCancelAgentLeavePetition;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
+  static readonly ListAdherenceDiagnostics: WFMListAdherenceDiagnostics;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
   static readonly ListAdherenceAgentStates: WFMListAdherenceAgentStates;
@@ -4092,6 +4102,15 @@ export class WFMClient {
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
+  ): UnaryResponse;
+  listAdherenceDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse|null) => void
+  ): UnaryResponse;
+  listAdherenceDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse|null) => void
   ): UnaryResponse;
   listAgentStatesForDay(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
