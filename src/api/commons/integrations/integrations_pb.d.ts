@@ -2489,6 +2489,26 @@ export class ExecuteFlow extends jspb.Message {
   getTrattaAchChargePostDated(): ExecuteTrattaAchChargePostDated | undefined;
   setTrattaAchChargePostDated(value?: ExecuteTrattaAchChargePostDated): void;
 
+  hasFortisCreateAchtoken(): boolean;
+  clearFortisCreateAchtoken(): void;
+  getFortisCreateAchtoken(): ExecuteFortisCreateAchtoken | undefined;
+  setFortisCreateAchtoken(value?: ExecuteFortisCreateAchtoken): void;
+
+  hasFortisCreateCctoken(): boolean;
+  clearFortisCreateCctoken(): void;
+  getFortisCreateCctoken(): ExecuteFortisCreateCctoken | undefined;
+  setFortisCreateCctoken(value?: ExecuteFortisCreateCctoken): void;
+
+  hasFortisTokenAchDebitPayment(): boolean;
+  clearFortisTokenAchDebitPayment(): void;
+  getFortisTokenAchDebitPayment(): ExecuteFortisTokenAchDebitPayment | undefined;
+  setFortisTokenAchDebitPayment(value?: ExecuteFortisTokenAchDebitPayment): void;
+
+  hasFortisTokenCcPayment(): boolean;
+  clearFortisTokenCcPayment(): void;
+  getFortisTokenCcPayment(): ExecuteFortisTokenCcPayment | undefined;
+  setFortisTokenCcPayment(value?: ExecuteFortisTokenCcPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2820,6 +2840,10 @@ export namespace ExecuteFlow {
     trattaAchCharge?: ExecuteTrattaAchCharge.AsObject,
     trattaCcChargePostDated?: ExecuteTrattaCcChargePostDated.AsObject,
     trattaAchChargePostDated?: ExecuteTrattaAchChargePostDated.AsObject,
+    fortisCreateAchtoken?: ExecuteFortisCreateAchtoken.AsObject,
+    fortisCreateCctoken?: ExecuteFortisCreateCctoken.AsObject,
+    fortisTokenAchDebitPayment?: ExecuteFortisTokenAchDebitPayment.AsObject,
+    fortisTokenCcPayment?: ExecuteFortisTokenCcPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -3141,6 +3165,10 @@ export namespace ExecuteFlow {
     TRATTA_ACH_CHARGE = 5902,
     TRATTA_CC_CHARGE_POST_DATED = 5903,
     TRATTA_ACH_CHARGE_POST_DATED = 5904,
+    FORTIS_CREATE_ACHTOKEN = 6001,
+    FORTIS_CREATE_CCTOKEN = 6002,
+    FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 6003,
+    FORTIS_TOKEN_CC_PAYMENT = 6004,
   }
 }
 
@@ -8833,6 +8861,70 @@ export namespace ExecuteTrattaAchChargePostDated {
   }
 }
 
+export class ExecuteFortisCreateAchtoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFortisCreateAchtoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFortisCreateAchtoken): ExecuteFortisCreateAchtoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFortisCreateAchtoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFortisCreateAchtoken;
+  static deserializeBinaryFromReader(message: ExecuteFortisCreateAchtoken, reader: jspb.BinaryReader): ExecuteFortisCreateAchtoken;
+}
+
+export namespace ExecuteFortisCreateAchtoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFortisCreateCctoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFortisCreateCctoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFortisCreateCctoken): ExecuteFortisCreateCctoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFortisCreateCctoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFortisCreateCctoken;
+  static deserializeBinaryFromReader(message: ExecuteFortisCreateCctoken, reader: jspb.BinaryReader): ExecuteFortisCreateCctoken;
+}
+
+export namespace ExecuteFortisCreateCctoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFortisTokenAchDebitPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFortisTokenAchDebitPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFortisTokenAchDebitPayment): ExecuteFortisTokenAchDebitPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFortisTokenAchDebitPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFortisTokenAchDebitPayment;
+  static deserializeBinaryFromReader(message: ExecuteFortisTokenAchDebitPayment, reader: jspb.BinaryReader): ExecuteFortisTokenAchDebitPayment;
+}
+
+export namespace ExecuteFortisTokenAchDebitPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteFortisTokenCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteFortisTokenCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFortisTokenCcPayment): ExecuteFortisTokenCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteFortisTokenCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFortisTokenCcPayment;
+  static deserializeBinaryFromReader(message: ExecuteFortisTokenCcPayment, reader: jspb.BinaryReader): ExecuteFortisTokenCcPayment;
+}
+
+export namespace ExecuteFortisTokenCcPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -8894,6 +8986,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_NUVEI: 5700;
   INTEGRATION_TYPE_CALLIPAY: 5800;
   INTEGRATION_TYPE_TRATTA: 5900;
+  INTEGRATION_TYPE_FORTIS: 6000;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9218,6 +9311,10 @@ export interface RequestMethodMap {
   REQUEST_METHOD_TRATTA_CHARGE_ACH: 5902;
   REQUEST_METHOD_TRATTA_CHARGE_CC_POST_DATED: 5903;
   REQUEST_METHOD_TRATTA_CHARGE_ACH_POST_DATED: 5904;
+  REQUEST_METHOD_FORTIS_CREATE_FORTIS_ACHTOKEN: 6001;
+  REQUEST_METHOD_FORTIS_CREATE_FORTIS_CCTOKEN: 6002;
+  REQUEST_METHOD_FORTIS_FORTIS_TOKEN_ACH_DEBIT_PAYMENT: 6003;
+  REQUEST_METHOD_FORTIS_FORTIS_TOKEN_CC_PAYMENT: 6004;
 }
 
 export const RequestMethod: RequestMethodMap;
