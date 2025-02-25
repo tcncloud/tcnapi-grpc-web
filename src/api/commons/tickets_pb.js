@@ -33,7 +33,7 @@ goog.exportSymbol('proto.api.commons.Comment', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmClose', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmReplyComment', null, global);
 goog.exportSymbol('proto.api.commons.CustomField', null, global);
-goog.exportSymbol('proto.api.commons.CustomFieldEditAttribute', null, global);
+goog.exportSymbol('proto.api.commons.CustomFieldAttribute', null, global);
 goog.exportSymbol('proto.api.commons.Duration', null, global);
 goog.exportSymbol('proto.api.commons.EditAttribute', null, global);
 goog.exportSymbol('proto.api.commons.EditTicket', null, global);
@@ -679,16 +679,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.commons.CustomFieldEditAttribute = function(opt_data) {
+proto.api.commons.CustomFieldAttribute = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.commons.CustomFieldEditAttribute, jspb.Message);
+goog.inherits(proto.api.commons.CustomFieldAttribute, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.commons.CustomFieldEditAttribute.displayName = 'proto.api.commons.CustomFieldEditAttribute';
+  proto.api.commons.CustomFieldAttribute.displayName = 'proto.api.commons.CustomFieldAttribute';
 }
 
 /**
@@ -8748,8 +8748,8 @@ proto.api.commons.TicketCustomFieldAuditLog.prototype.toObject = function(opt_in
  */
 proto.api.commons.TicketCustomFieldAuditLog.toObject = function(includeInstance, msg) {
   var f, obj = {
-customFieldEditAttributesList: jspb.Message.toObjectList(msg.getCustomFieldEditAttributesList(),
-    proto.api.commons.CustomFieldEditAttribute.toObject, includeInstance),
+customFieldAttributesList: jspb.Message.toObjectList(msg.getCustomFieldAttributesList(),
+    proto.api.commons.CustomFieldAttribute.toObject, includeInstance),
 ticketCode: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -8788,9 +8788,9 @@ proto.api.commons.TicketCustomFieldAuditLog.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.commons.CustomFieldEditAttribute;
-      reader.readMessage(value,proto.api.commons.CustomFieldEditAttribute.deserializeBinaryFromReader);
-      msg.addCustomFieldEditAttributes(value);
+      var value = new proto.api.commons.CustomFieldAttribute;
+      reader.readMessage(value,proto.api.commons.CustomFieldAttribute.deserializeBinaryFromReader);
+      msg.addCustomFieldAttributes(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -8825,12 +8825,12 @@ proto.api.commons.TicketCustomFieldAuditLog.prototype.serializeBinary = function
  */
 proto.api.commons.TicketCustomFieldAuditLog.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCustomFieldEditAttributesList();
+  f = message.getCustomFieldAttributesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.api.commons.CustomFieldEditAttribute.serializeBinaryToWriter
+      proto.api.commons.CustomFieldAttribute.serializeBinaryToWriter
     );
   }
   f = message.getTicketCode();
@@ -8844,31 +8844,31 @@ proto.api.commons.TicketCustomFieldAuditLog.serializeBinaryToWriter = function(m
 
 
 /**
- * repeated CustomFieldEditAttribute custom_field_edit_attributes = 1;
- * @return {!Array<!proto.api.commons.CustomFieldEditAttribute>}
+ * repeated CustomFieldAttribute custom_field_attributes = 1;
+ * @return {!Array<!proto.api.commons.CustomFieldAttribute>}
  */
-proto.api.commons.TicketCustomFieldAuditLog.prototype.getCustomFieldEditAttributesList = function() {
-  return /** @type{!Array<!proto.api.commons.CustomFieldEditAttribute>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.CustomFieldEditAttribute, 1));
+proto.api.commons.TicketCustomFieldAuditLog.prototype.getCustomFieldAttributesList = function() {
+  return /** @type{!Array<!proto.api.commons.CustomFieldAttribute>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.CustomFieldAttribute, 1));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.CustomFieldEditAttribute>} value
+ * @param {!Array<!proto.api.commons.CustomFieldAttribute>} value
  * @return {!proto.api.commons.TicketCustomFieldAuditLog} returns this
 */
-proto.api.commons.TicketCustomFieldAuditLog.prototype.setCustomFieldEditAttributesList = function(value) {
+proto.api.commons.TicketCustomFieldAuditLog.prototype.setCustomFieldAttributesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.api.commons.CustomFieldEditAttribute=} opt_value
+ * @param {!proto.api.commons.CustomFieldAttribute=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.CustomFieldEditAttribute}
+ * @return {!proto.api.commons.CustomFieldAttribute}
  */
-proto.api.commons.TicketCustomFieldAuditLog.prototype.addCustomFieldEditAttributes = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.CustomFieldEditAttribute, opt_index);
+proto.api.commons.TicketCustomFieldAuditLog.prototype.addCustomFieldAttributes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.CustomFieldAttribute, opt_index);
 };
 
 
@@ -8876,8 +8876,8 @@ proto.api.commons.TicketCustomFieldAuditLog.prototype.addCustomFieldEditAttribut
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.TicketCustomFieldAuditLog} returns this
  */
-proto.api.commons.TicketCustomFieldAuditLog.prototype.clearCustomFieldEditAttributesList = function() {
-  return this.setCustomFieldEditAttributesList([]);
+proto.api.commons.TicketCustomFieldAuditLog.prototype.clearCustomFieldAttributesList = function() {
+  return this.setCustomFieldAttributesList([]);
 };
 
 
@@ -8915,8 +8915,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.commons.CustomFieldEditAttribute.toObject(opt_includeInstance, this);
+proto.api.commons.CustomFieldAttribute.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.commons.CustomFieldAttribute.toObject(opt_includeInstance, this);
 };
 
 
@@ -8925,11 +8925,11 @@ proto.api.commons.CustomFieldEditAttribute.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.commons.CustomFieldEditAttribute} msg The msg instance to transform.
+ * @param {!proto.api.commons.CustomFieldAttribute} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.CustomFieldEditAttribute.toObject = function(includeInstance, msg) {
+proto.api.commons.CustomFieldAttribute.toObject = function(includeInstance, msg) {
   var f, obj = {
 customFieldId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -8948,23 +8948,23 @@ previousValue: jspb.Message.getFieldWithDefault(msg, 4, "")
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.commons.CustomFieldEditAttribute}
+ * @return {!proto.api.commons.CustomFieldAttribute}
  */
-proto.api.commons.CustomFieldEditAttribute.deserializeBinary = function(bytes) {
+proto.api.commons.CustomFieldAttribute.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.commons.CustomFieldEditAttribute;
-  return proto.api.commons.CustomFieldEditAttribute.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.commons.CustomFieldAttribute;
+  return proto.api.commons.CustomFieldAttribute.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.commons.CustomFieldEditAttribute} msg The message object to deserialize into.
+ * @param {!proto.api.commons.CustomFieldAttribute} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.commons.CustomFieldEditAttribute}
+ * @return {!proto.api.commons.CustomFieldAttribute}
  */
-proto.api.commons.CustomFieldEditAttribute.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.commons.CustomFieldAttribute.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9000,9 +9000,9 @@ proto.api.commons.CustomFieldEditAttribute.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.serializeBinary = function() {
+proto.api.commons.CustomFieldAttribute.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.commons.CustomFieldEditAttribute.serializeBinaryToWriter(this, writer);
+  proto.api.commons.CustomFieldAttribute.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9010,11 +9010,11 @@ proto.api.commons.CustomFieldEditAttribute.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.commons.CustomFieldEditAttribute} message
+ * @param {!proto.api.commons.CustomFieldAttribute} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.CustomFieldEditAttribute.serializeBinaryToWriter = function(message, writer) {
+proto.api.commons.CustomFieldAttribute.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCustomFieldId();
   if (parseInt(f, 10) !== 0) {
@@ -9051,16 +9051,16 @@ proto.api.commons.CustomFieldEditAttribute.serializeBinaryToWriter = function(me
  * optional int64 custom_field_id = 1;
  * @return {string}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.getCustomFieldId = function() {
+proto.api.commons.CustomFieldAttribute.prototype.getCustomFieldId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.CustomFieldEditAttribute} returns this
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.setCustomFieldId = function(value) {
+proto.api.commons.CustomFieldAttribute.prototype.setCustomFieldId = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
@@ -9069,16 +9069,16 @@ proto.api.commons.CustomFieldEditAttribute.prototype.setCustomFieldId = function
  * optional TicketCustomFieldType custom_field_type = 2;
  * @return {!proto.api.commons.TicketCustomFieldType}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.getCustomFieldType = function() {
+proto.api.commons.CustomFieldAttribute.prototype.getCustomFieldType = function() {
   return /** @type {!proto.api.commons.TicketCustomFieldType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {!proto.api.commons.TicketCustomFieldType} value
- * @return {!proto.api.commons.CustomFieldEditAttribute} returns this
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.setCustomFieldType = function(value) {
+proto.api.commons.CustomFieldAttribute.prototype.setCustomFieldType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
@@ -9087,16 +9087,16 @@ proto.api.commons.CustomFieldEditAttribute.prototype.setCustomFieldType = functi
  * optional string edited_value = 3;
  * @return {string}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.getEditedValue = function() {
+proto.api.commons.CustomFieldAttribute.prototype.getEditedValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.CustomFieldEditAttribute} returns this
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.setEditedValue = function(value) {
+proto.api.commons.CustomFieldAttribute.prototype.setEditedValue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -9105,16 +9105,16 @@ proto.api.commons.CustomFieldEditAttribute.prototype.setEditedValue = function(v
  * optional string previous_value = 4;
  * @return {string}
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.getPreviousValue = function() {
+proto.api.commons.CustomFieldAttribute.prototype.getPreviousValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.CustomFieldEditAttribute} returns this
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
  */
-proto.api.commons.CustomFieldEditAttribute.prototype.setPreviousValue = function(value) {
+proto.api.commons.CustomFieldAttribute.prototype.setPreviousValue = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
