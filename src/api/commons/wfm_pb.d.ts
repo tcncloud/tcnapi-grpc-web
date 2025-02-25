@@ -1712,6 +1712,13 @@ export interface RealTimeManagementStateMap {
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
 
+export interface AgentStateSimulationLevelMap {
+  NO_SIMULATION: 0;
+  SIMULATED_AGENT_STATES: 1;
+}
+
+export const AgentStateSimulationLevel: AgentStateSimulationLevelMap;
+
 export interface AgentLeavePetitionStatusMap {
   UNSPECIFIED_PETITION_STATUS: 0;
   PENDING_PETITION: 1;

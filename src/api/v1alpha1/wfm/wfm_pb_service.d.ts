@@ -1795,6 +1795,15 @@ type WFMHelloWorldWFMAdherence = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse;
 };
 
+type WFMListAdherenceDiagnostics = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse;
+};
+
 type WFMListAgentStatesForDay = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -2101,6 +2110,15 @@ type WFMAgentCancelLeavePetition = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse;
 };
 
+type WFMSetAgentStateSimulationLevelForOrg = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -2302,6 +2320,7 @@ export class WFM {
   static readonly ResolveAgentLeavePetition: WFMResolveAgentLeavePetition;
   static readonly CancelAgentLeavePetition: WFMCancelAgentLeavePetition;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
+  static readonly ListAdherenceDiagnostics: WFMListAdherenceDiagnostics;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
   static readonly ListAdherenceAgentStates: WFMListAdherenceAgentStates;
@@ -2336,6 +2355,7 @@ export class WFM {
   static readonly AgentListLeavePetitions: WFMAgentListLeavePetitions;
   static readonly AgentCreateLeavePetition: WFMAgentCreateLeavePetition;
   static readonly AgentCancelLeavePetition: WFMAgentCancelLeavePetition;
+  static readonly SetAgentStateSimulationLevelForOrg: WFMSetAgentStateSimulationLevelForOrg;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4113,6 +4133,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
   ): UnaryResponse;
+  listAdherenceDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse|null) => void
+  ): UnaryResponse;
+  listAdherenceDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse|null) => void
+  ): UnaryResponse;
   listAgentStatesForDay(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
     metadata: grpc.Metadata,
@@ -4418,6 +4447,15 @@ export class WFMClient {
   agentCancelLeavePetition(
     requestMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  setAgentStateSimulationLevelForOrg(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse|null) => void
+  ): UnaryResponse;
+  setAgentStateSimulationLevelForOrg(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse|null) => void
   ): UnaryResponse;
 }
 

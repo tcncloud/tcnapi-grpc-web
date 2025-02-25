@@ -1801,6 +1801,15 @@ WFM.HelloWorldWFMAdherence = {
   responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse
 };
 
+WFM.ListAdherenceDiagnostics = {
+  methodName: "ListAdherenceDiagnostics",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAdherenceDiagnosticsResponse
+};
+
 WFM.ListAgentStatesForDay = {
   methodName: "ListAgentStatesForDay",
   service: WFM,
@@ -2105,6 +2114,15 @@ WFM.AgentCancelLeavePetition = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionRequest,
   responseType: api_v1alpha1_wfm_wfm_pb.AgentCancelLeavePetitionResponse
+};
+
+WFM.SetAgentStateSimulationLevelForOrg = {
+  methodName: "SetAgentStateSimulationLevelForOrg",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.SetAgentStateSimulationLevelForOrgResponse
 };
 
 exports.WFM = WFM;
@@ -8331,6 +8349,37 @@ WFMClient.prototype.helloWorldWFMAdherence = function helloWorldWFMAdherence(req
   };
 };
 
+WFMClient.prototype.listAdherenceDiagnostics = function listAdherenceDiagnostics(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListAdherenceDiagnostics, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.listAgentStatesForDay = function listAgentStatesForDay(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -9359,6 +9408,37 @@ WFMClient.prototype.agentCancelLeavePetition = function agentCancelLeavePetition
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.AgentCancelLeavePetition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.setAgentStateSimulationLevelForOrg = function setAgentStateSimulationLevelForOrg(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SetAgentStateSimulationLevelForOrg, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
