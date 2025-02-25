@@ -13197,6 +13197,95 @@ export namespace ListAdherenceAgentStatesResponse {
   }
 }
 
+export class ListAdherenceAgentStateViolationsRequest extends jspb.Message {
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  getIncludeResolved(): boolean;
+  setIncludeResolved(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceAgentStateViolationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStateViolationsRequest): ListAdherenceAgentStateViolationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceAgentStateViolationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStateViolationsRequest;
+  static deserializeBinaryFromReader(message: ListAdherenceAgentStateViolationsRequest, reader: jspb.BinaryReader): ListAdherenceAgentStateViolationsRequest;
+}
+
+export namespace ListAdherenceAgentStateViolationsRequest {
+  export type AsObject = {
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    wfmAgentSidsList: Array<number>,
+    includeResolved: boolean,
+  }
+}
+
+export class ListAdherenceAgentStateViolationsResponse extends jspb.Message {
+  getAgentStateViolationsMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStateViolations>;
+  clearAgentStateViolationsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAdherenceAgentStateViolationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAdherenceAgentStateViolationsResponse): ListAdherenceAgentStateViolationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAdherenceAgentStateViolationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAdherenceAgentStateViolationsResponse;
+  static deserializeBinaryFromReader(message: ListAdherenceAgentStateViolationsResponse, reader: jspb.BinaryReader): ListAdherenceAgentStateViolationsResponse;
+}
+
+export namespace ListAdherenceAgentStateViolationsResponse {
+  export type AsObject = {
+    agentStateViolationsMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStateViolations.AsObject]>,
+  }
+}
+
+export class ResolveAdherenceAgentStateViolationRequest extends jspb.Message {
+  hasResolvedViolation(): boolean;
+  clearResolvedViolation(): void;
+  getResolvedViolation(): api_commons_wfm_pb.AdherenceAgentStateViolation | undefined;
+  setResolvedViolation(value?: api_commons_wfm_pb.AdherenceAgentStateViolation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResolveAdherenceAgentStateViolationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResolveAdherenceAgentStateViolationRequest): ResolveAdherenceAgentStateViolationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResolveAdherenceAgentStateViolationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResolveAdherenceAgentStateViolationRequest;
+  static deserializeBinaryFromReader(message: ResolveAdherenceAgentStateViolationRequest, reader: jspb.BinaryReader): ResolveAdherenceAgentStateViolationRequest;
+}
+
+export namespace ResolveAdherenceAgentStateViolationRequest {
+  export type AsObject = {
+    resolvedViolation?: api_commons_wfm_pb.AdherenceAgentStateViolation.AsObject,
+  }
+}
+
+export class ResolveAdherenceAgentStateViolationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResolveAdherenceAgentStateViolationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResolveAdherenceAgentStateViolationResponse): ResolveAdherenceAgentStateViolationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResolveAdherenceAgentStateViolationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResolveAdherenceAgentStateViolationResponse;
+  static deserializeBinaryFromReader(message: ResolveAdherenceAgentStateViolationResponse, reader: jspb.BinaryReader): ResolveAdherenceAgentStateViolationResponse;
+}
+
+export namespace ResolveAdherenceAgentStateViolationResponse {
+  export type AsObject = {
+  }
+}
+
 export class RealTimeManagementStateColor extends jspb.Message {
   getState(): api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap];
   setState(value: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]): void;

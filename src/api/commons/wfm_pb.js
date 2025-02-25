@@ -7179,7 +7179,15 @@ actualRtmStatesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undef
 actualPauseCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
 violationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
 expectedPauseCodesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-adherenceAgentStateViolationId: jspb.Message.getFieldWithDefault(msg, 9, "0")
+adherenceAgentStateViolationId: jspb.Message.getFieldWithDefault(msg, 9, "0"),
+expectedSchedulingActivitySid: jspb.Message.getFieldWithDefault(msg, 10, "0"),
+expectedReasonCodeId: jspb.Message.getFieldWithDefault(msg, 11, "0"),
+actualSchedulingActivitySid: jspb.Message.getFieldWithDefault(msg, 12, "0"),
+actualReasonCodeId: jspb.Message.getFieldWithDefault(msg, 13, "0"),
+resolvedActivitySid: jspb.Message.getFieldWithDefault(msg, 14, "0"),
+resolvedReasonCodeId: jspb.Message.getFieldWithDefault(msg, 15, "0"),
+resolutionComment: jspb.Message.getFieldWithDefault(msg, 16, ""),
+resolvedByUserId: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -7256,6 +7264,38 @@ proto.api.commons.AdherenceAgentStateViolation.deserializeBinaryFromReader = fun
     case 9:
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceAgentStateViolationId(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setExpectedSchedulingActivitySid(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setExpectedReasonCodeId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setActualSchedulingActivitySid(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setActualReasonCodeId(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setResolvedActivitySid(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setResolvedReasonCodeId(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResolutionComment(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResolvedByUserId(value);
       break;
     default:
       reader.skipField();
@@ -7347,6 +7387,62 @@ proto.api.commons.AdherenceAgentStateViolation.serializeBinaryToWriter = functio
   if (parseInt(f, 10) !== 0) {
     writer.writeInt64String(
       9,
+      f
+    );
+  }
+  f = message.getExpectedSchedulingActivitySid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      10,
+      f
+    );
+  }
+  f = message.getExpectedReasonCodeId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      11,
+      f
+    );
+  }
+  f = message.getActualSchedulingActivitySid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      12,
+      f
+    );
+  }
+  f = message.getActualReasonCodeId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      13,
+      f
+    );
+  }
+  f = message.getResolvedActivitySid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      14,
+      f
+    );
+  }
+  f = message.getResolvedReasonCodeId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      15,
+      f
+    );
+  }
+  f = message.getResolutionComment();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getResolvedByUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -7588,6 +7684,150 @@ proto.api.commons.AdherenceAgentStateViolation.prototype.getAdherenceAgentStateV
  */
 proto.api.commons.AdherenceAgentStateViolation.prototype.setAdherenceAgentStateViolationId = function(value) {
   return jspb.Message.setProto3StringIntField(this, 9, value);
+};
+
+
+/**
+ * optional int64 expected_scheduling_activity_sid = 10;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getExpectedSchedulingActivitySid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setExpectedSchedulingActivitySid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 10, value);
+};
+
+
+/**
+ * optional int64 expected_reason_code_id = 11;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getExpectedReasonCodeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setExpectedReasonCodeId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 11, value);
+};
+
+
+/**
+ * optional int64 actual_scheduling_activity_sid = 12;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getActualSchedulingActivitySid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setActualSchedulingActivitySid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 12, value);
+};
+
+
+/**
+ * optional int64 actual_reason_code_id = 13;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getActualReasonCodeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setActualReasonCodeId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 13, value);
+};
+
+
+/**
+ * optional int64 resolved_activity_sid = 14;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getResolvedActivitySid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setResolvedActivitySid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 14, value);
+};
+
+
+/**
+ * optional int64 resolved_reason_code_id = 15;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getResolvedReasonCodeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setResolvedReasonCodeId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 15, value);
+};
+
+
+/**
+ * optional string resolution_comment = 16;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getResolutionComment = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setResolutionComment = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional string resolved_by_user_id = 17;
+ * @return {string}
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.getResolvedByUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AdherenceAgentStateViolation} returns this
+ */
+proto.api.commons.AdherenceAgentStateViolation.prototype.setResolvedByUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
