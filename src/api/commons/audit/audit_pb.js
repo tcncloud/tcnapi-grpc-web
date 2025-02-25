@@ -85,7 +85,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,616,617,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300]];
 
 /**
  * @enum {number}
@@ -188,8 +188,6 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   SCORECARDS_UPDATE_EVALUATION_EVENT: 522,
   SCORECARDS_CREATE_SMART_EVALUATION_EVENT: 523,
   TICKET_EVENT: 601,
-  TICKET_CUSTOM_FIELD_CREATE_EVENT: 616,
-  TICKET_CUSTOM_FIELD_EDIT_EVENT: 617,
   COMPLIANCE_RND_QUERY_EVENT: 700,
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701,
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT: 800,
@@ -364,8 +362,6 @@ scorecardsCreateAutoEvaluationEvent: (f = msg.getScorecardsCreateAutoEvaluationE
 scorecardsUpdateEvaluationEvent: (f = msg.getScorecardsUpdateEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.toObject(includeInstance, f),
 scorecardsCreateSmartEvaluationEvent: (f = msg.getScorecardsCreateSmartEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.toObject(includeInstance, f),
 ticketEvent: (f = msg.getTicketEvent()) && api_commons_audit_tickets_events_pb.TicketEvent.toObject(includeInstance, f),
-ticketCustomFieldCreateEvent: (f = msg.getTicketCustomFieldCreateEvent()) && api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent.toObject(includeInstance, f),
-ticketCustomFieldEditEvent: (f = msg.getTicketCustomFieldEditEvent()) && api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent.toObject(includeInstance, f),
 complianceRndQueryEvent: (f = msg.getComplianceRndQueryEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
 complianceRndQueryCachedEvent: (f = msg.getComplianceRndQueryCachedEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
 agentTrainingCreateLearningOpportunityEvent: (f = msg.getAgentTrainingCreateLearningOpportunityEvent()) && api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.toObject(includeInstance, f),
@@ -938,16 +934,6 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_tickets_events_pb.TicketEvent;
       reader.readMessage(value,api_commons_audit_tickets_events_pb.TicketEvent.deserializeBinaryFromReader);
       msg.setTicketEvent(value);
-      break;
-    case 616:
-      var value = new api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent;
-      reader.readMessage(value,api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent.deserializeBinaryFromReader);
-      msg.setTicketCustomFieldCreateEvent(value);
-      break;
-    case 617:
-      var value = new api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent;
-      reader.readMessage(value,api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent.deserializeBinaryFromReader);
-      msg.setTicketCustomFieldEditEvent(value);
       break;
     case 700:
       var value = new api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent;
@@ -1947,22 +1933,6 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       601,
       f,
       api_commons_audit_tickets_events_pb.TicketEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getTicketCustomFieldCreateEvent();
-  if (f != null) {
-    writer.writeMessage(
-      616,
-      f,
-      api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getTicketCustomFieldEditEvent();
-  if (f != null) {
-    writer.writeMessage(
-      617,
-      f,
-      api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent.serializeBinaryToWriter
     );
   }
   f = message.getComplianceRndQueryEvent();
@@ -5900,80 +5870,6 @@ proto.api.commons.audit.AuditEvent.prototype.clearTicketEvent = function() {
  */
 proto.api.commons.audit.AuditEvent.prototype.hasTicketEvent = function() {
   return jspb.Message.getField(this, 601) != null;
-};
-
-
-/**
- * optional TicketCustomFieldCreateEvent ticket_custom_field_create_event = 616;
- * @return {?proto.api.commons.audit.TicketCustomFieldCreateEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getTicketCustomFieldCreateEvent = function() {
-  return /** @type{?proto.api.commons.audit.TicketCustomFieldCreateEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent, 616));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.TicketCustomFieldCreateEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setTicketCustomFieldCreateEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 616, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearTicketCustomFieldCreateEvent = function() {
-  return this.setTicketCustomFieldCreateEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasTicketCustomFieldCreateEvent = function() {
-  return jspb.Message.getField(this, 616) != null;
-};
-
-
-/**
- * optional TicketCustomFieldEditEvent ticket_custom_field_edit_event = 617;
- * @return {?proto.api.commons.audit.TicketCustomFieldEditEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getTicketCustomFieldEditEvent = function() {
-  return /** @type{?proto.api.commons.audit.TicketCustomFieldEditEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent, 617));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.TicketCustomFieldEditEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setTicketCustomFieldEditEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 617, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearTicketCustomFieldEditEvent = function() {
-  return this.setTicketCustomFieldEditEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasTicketCustomFieldEditEvent = function() {
-  return jspb.Message.getField(this, 617) != null;
 };
 
 

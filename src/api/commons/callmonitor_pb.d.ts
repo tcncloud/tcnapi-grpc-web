@@ -61,7 +61,6 @@ export interface HoldQueueMonitorStatusMap {
   HOLD_QUEUE_MONITOR_STATUS_MONITORING: 1;
   HOLD_QUEUE_MONITOR_STATUS_SUCCESS: 2;
   HOLD_QUEUE_MONITOR_STATUS_FAILED: 3;
-  HOLD_QUEUE_MONITOR_STATUS_ENDED: 4;
 }
 
 export const HoldQueueMonitorStatus: HoldQueueMonitorStatusMap;

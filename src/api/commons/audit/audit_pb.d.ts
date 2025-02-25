@@ -519,16 +519,6 @@ export class AuditEvent extends jspb.Message {
   getTicketEvent(): api_commons_audit_tickets_events_pb.TicketEvent | undefined;
   setTicketEvent(value?: api_commons_audit_tickets_events_pb.TicketEvent): void;
 
-  hasTicketCustomFieldCreateEvent(): boolean;
-  clearTicketCustomFieldCreateEvent(): void;
-  getTicketCustomFieldCreateEvent(): api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent | undefined;
-  setTicketCustomFieldCreateEvent(value?: api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent): void;
-
-  hasTicketCustomFieldEditEvent(): boolean;
-  clearTicketCustomFieldEditEvent(): void;
-  getTicketCustomFieldEditEvent(): api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent | undefined;
-  setTicketCustomFieldEditEvent(value?: api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent): void;
-
   hasComplianceRndQueryEvent(): boolean;
   clearComplianceRndQueryEvent(): void;
   getComplianceRndQueryEvent(): api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent | undefined;
@@ -804,8 +794,6 @@ export namespace AuditEvent {
     scorecardsUpdateEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.AsObject,
     scorecardsCreateSmartEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsCreateSmartEvaluationEvent.AsObject,
     ticketEvent?: api_commons_audit_tickets_events_pb.TicketEvent.AsObject,
-    ticketCustomFieldCreateEvent?: api_commons_audit_tickets_events_pb.TicketCustomFieldCreateEvent.AsObject,
-    ticketCustomFieldEditEvent?: api_commons_audit_tickets_events_pb.TicketCustomFieldEditEvent.AsObject,
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
@@ -938,8 +926,6 @@ export namespace AuditEvent {
     SCORECARDS_UPDATE_EVALUATION_EVENT = 522,
     SCORECARDS_CREATE_SMART_EVALUATION_EVENT = 523,
     TICKET_EVENT = 601,
-    TICKET_CUSTOM_FIELD_CREATE_EVENT = 616,
-    TICKET_CUSTOM_FIELD_EDIT_EVENT = 617,
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
