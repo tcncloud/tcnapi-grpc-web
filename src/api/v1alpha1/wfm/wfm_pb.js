@@ -10424,7 +10424,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10466,7 +10466,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -106363,6 +106363,13 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsRequest.prototype.setInc
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -106394,7 +106401,9 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.toObj
  */
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentStateViolationsMap: (f = msg.getAgentStateViolationsMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStateViolations.toObject) : []
+agentStateViolationsMap: (f = msg.getAgentStateViolationsMap()) ? f.toObject(includeInstance, proto.api.commons.AdherenceAgentStateViolations.toObject) : [],
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -106437,6 +106446,11 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.deserializeBina
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt64, jspb.BinaryReader.prototype.readMessage, proto.api.commons.AdherenceAgentStateViolations.deserializeBinaryFromReader, 0, new proto.api.commons.AdherenceAgentStateViolations());
          });
       break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -106470,6 +106484,14 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.serializeBinary
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeInt64, jspb.BinaryWriter.prototype.writeMessage, proto.api.commons.AdherenceAgentStateViolations.serializeBinaryToWriter);
   }
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -106493,6 +106515,44 @@ proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.getAg
 proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.clearAgentStateViolationsMap = function() {
   this.getAgentStateViolationsMap().clear();
   return this;
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ListAdherenceAgentStateViolationsResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
 };
 
 
@@ -106648,6 +106708,13 @@ proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationRequest.prototype.hasR
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -106679,7 +106746,8 @@ proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.toO
  */
 proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -106716,6 +106784,11 @@ proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.deserializeBi
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -106745,6 +106818,52 @@ proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.ser
  */
 proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDiagnosticsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ResolveAdherenceAgentStateViolationResponse.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
 };
 
 

@@ -13232,6 +13232,11 @@ export namespace ListAdherenceAgentStateViolationsRequest {
 export class ListAdherenceAgentStateViolationsResponse extends jspb.Message {
   getAgentStateViolationsMap(): jspb.Map<number, api_commons_wfm_pb.AdherenceAgentStateViolations>;
   clearAgentStateViolationsMap(): void;
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceAgentStateViolationsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAdherenceAgentStateViolationsResponse): ListAdherenceAgentStateViolationsResponse.AsObject;
@@ -13245,6 +13250,7 @@ export class ListAdherenceAgentStateViolationsResponse extends jspb.Message {
 export namespace ListAdherenceAgentStateViolationsResponse {
   export type AsObject = {
     agentStateViolationsMap: Array<[number, api_commons_wfm_pb.AdherenceAgentStateViolations.AsObject]>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -13271,6 +13277,11 @@ export namespace ResolveAdherenceAgentStateViolationRequest {
 }
 
 export class ResolveAdherenceAgentStateViolationResponse extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveAdherenceAgentStateViolationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ResolveAdherenceAgentStateViolationResponse): ResolveAdherenceAgentStateViolationResponse.AsObject;
@@ -13283,6 +13294,7 @@ export class ResolveAdherenceAgentStateViolationResponse extends jspb.Message {
 
 export namespace ResolveAdherenceAgentStateViolationResponse {
   export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
