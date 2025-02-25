@@ -81,7 +81,7 @@ proto.api.commons.audit.TicketEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
 editticket: (f = msg.getEditticket()) && api_commons_tickets_pb.EditTicket.toObject(includeInstance, f),
 createdById: jspb.Message.getFieldWithDefault(msg, 2, ""),
-ticketcustomfieldauditlog: (f = msg.getTicketcustomfieldauditlog()) && api_commons_tickets_pb.TicketCustomFieldAuditLog.toObject(includeInstance, f)
+ticketCustomFieldAuditLog: (f = msg.getTicketCustomFieldAuditLog()) && api_commons_tickets_pb.TicketCustomFieldAuditLog.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -130,7 +130,7 @@ proto.api.commons.audit.TicketEvent.deserializeBinaryFromReader = function(msg, 
     case 3:
       var value = new api_commons_tickets_pb.TicketCustomFieldAuditLog;
       reader.readMessage(value,api_commons_tickets_pb.TicketCustomFieldAuditLog.deserializeBinaryFromReader);
-      msg.setTicketcustomfieldauditlog(value);
+      msg.setTicketCustomFieldAuditLog(value);
       break;
     default:
       reader.skipField();
@@ -176,7 +176,7 @@ proto.api.commons.audit.TicketEvent.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getTicketcustomfieldauditlog();
+  f = message.getTicketCustomFieldAuditLog();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -243,10 +243,10 @@ proto.api.commons.audit.TicketEvent.prototype.setCreatedById = function(value) {
 
 
 /**
- * optional api.commons.TicketCustomFieldAuditLog ticketcustomfieldauditlog = 3;
+ * optional api.commons.TicketCustomFieldAuditLog ticket_custom_field_audit_log = 3;
  * @return {?proto.api.commons.TicketCustomFieldAuditLog}
  */
-proto.api.commons.audit.TicketEvent.prototype.getTicketcustomfieldauditlog = function() {
+proto.api.commons.audit.TicketEvent.prototype.getTicketCustomFieldAuditLog = function() {
   return /** @type{?proto.api.commons.TicketCustomFieldAuditLog} */ (
     jspb.Message.getWrapperField(this, api_commons_tickets_pb.TicketCustomFieldAuditLog, 3));
 };
@@ -256,7 +256,7 @@ proto.api.commons.audit.TicketEvent.prototype.getTicketcustomfieldauditlog = fun
  * @param {?proto.api.commons.TicketCustomFieldAuditLog|undefined} value
  * @return {!proto.api.commons.audit.TicketEvent} returns this
 */
-proto.api.commons.audit.TicketEvent.prototype.setTicketcustomfieldauditlog = function(value) {
+proto.api.commons.audit.TicketEvent.prototype.setTicketCustomFieldAuditLog = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -265,8 +265,8 @@ proto.api.commons.audit.TicketEvent.prototype.setTicketcustomfieldauditlog = fun
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.audit.TicketEvent} returns this
  */
-proto.api.commons.audit.TicketEvent.prototype.clearTicketcustomfieldauditlog = function() {
-  return this.setTicketcustomfieldauditlog(undefined);
+proto.api.commons.audit.TicketEvent.prototype.clearTicketCustomFieldAuditLog = function() {
+  return this.setTicketCustomFieldAuditLog(undefined);
 };
 
 
@@ -274,7 +274,7 @@ proto.api.commons.audit.TicketEvent.prototype.clearTicketcustomfieldauditlog = f
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.audit.TicketEvent.prototype.hasTicketcustomfieldauditlog = function() {
+proto.api.commons.audit.TicketEvent.prototype.hasTicketCustomFieldAuditLog = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

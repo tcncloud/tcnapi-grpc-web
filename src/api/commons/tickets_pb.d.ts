@@ -1147,8 +1147,8 @@ export namespace TicketCustomFieldAuditLog {
 }
 
 export class CustomFieldEditAttribute extends jspb.Message {
-  getCustomFieldId(): number;
-  setCustomFieldId(value: number): void;
+  getCustomFieldId(): string;
+  setCustomFieldId(value: string): void;
 
   getCustomFieldType(): TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap];
   setCustomFieldType(value: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap]): void;
@@ -1171,7 +1171,7 @@ export class CustomFieldEditAttribute extends jspb.Message {
 
 export namespace CustomFieldEditAttribute {
   export type AsObject = {
-    customFieldId: number,
+    customFieldId: string,
     customFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
     editedValue: string,
     previousValue: string,
