@@ -2387,8 +2387,7 @@ agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 15, ""),
 labelIdsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
 timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
 huntGroupSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
-passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
+passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
   if (includeInstance) {
@@ -2497,11 +2496,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.deserializeBinaryFromReader = fun
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPasswordResetRequired(value);
-      break;
-    case 20:
-      var value = new api_commons_org_preferences_pb.LocalePreferences;
-      reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
-      msg.setLocalePreferencesOverride(value);
       break;
     default:
       reader.skipField();
@@ -2657,14 +2651,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.serializeBinaryToWriter = functio
     writer.writeBool(
       19,
       f
-    );
-  }
-  f = message.getLocalePreferencesOverride();
-  if (f != null) {
-    writer.writeMessage(
-      20,
-      f,
-      api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
     );
   }
 };
@@ -3086,43 +3072,6 @@ proto.api.v1alpha1.org.users.CreateUserRequest.prototype.getPasswordResetRequire
  */
 proto.api.v1alpha1.org.users.CreateUserRequest.prototype.setPasswordResetRequired = function(value) {
   return jspb.Message.setProto3BooleanField(this, 19, value);
-};
-
-
-/**
- * optional api.commons.LocalePreferences locale_preferences_override = 20;
- * @return {?proto.api.commons.LocalePreferences}
- */
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.getLocalePreferencesOverride = function() {
-  return /** @type{?proto.api.commons.LocalePreferences} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_preferences_pb.LocalePreferences, 20));
-};
-
-
-/**
- * @param {?proto.api.commons.LocalePreferences|undefined} value
- * @return {!proto.api.v1alpha1.org.users.CreateUserRequest} returns this
-*/
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.setLocalePreferencesOverride = function(value) {
-  return jspb.Message.setWrapperField(this, 20, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.org.users.CreateUserRequest} returns this
- */
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.clearLocalePreferencesOverride = function() {
-  return this.setLocalePreferencesOverride(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.org.users.CreateUserRequest.prototype.hasLocalePreferencesOverride = function() {
-  return jspb.Message.getField(this, 20) != null;
 };
 
 
