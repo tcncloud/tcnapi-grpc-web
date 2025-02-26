@@ -3584,3 +3584,39 @@ export namespace ConsentListDownloadRequest {
   }
 }
 
+export class DeleteAllListEntriesRequest extends jspb.Message {
+  getListId(): string;
+  setListId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAllListEntriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAllListEntriesRequest): DeleteAllListEntriesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAllListEntriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAllListEntriesRequest;
+  static deserializeBinaryFromReader(message: DeleteAllListEntriesRequest, reader: jspb.BinaryReader): DeleteAllListEntriesRequest;
+}
+
+export namespace DeleteAllListEntriesRequest {
+  export type AsObject = {
+    listId: string,
+  }
+}
+
+export class DeleteAllListEntriesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAllListEntriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAllListEntriesResponse): DeleteAllListEntriesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAllListEntriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAllListEntriesResponse;
+  static deserializeBinaryFromReader(message: DeleteAllListEntriesResponse, reader: jspb.BinaryReader): DeleteAllListEntriesResponse;
+}
+
+export namespace DeleteAllListEntriesResponse {
+  export type AsObject = {
+  }
+}
+
