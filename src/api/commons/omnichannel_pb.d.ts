@@ -346,6 +346,9 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getCountryCode(): number;
   setCountryCode(value: number): void;
 
+  getCountryCodeSid(): number;
+  setCountryCodeSid(value: number): void;
+
   getPostalCodeField(): string;
   setPostalCodeField(value: string): void;
 
@@ -389,6 +392,7 @@ export namespace OmniCampaignModuleConfig {
     whatsappNumber?: WhatsAppNumber.AsObject,
     providerMetadataMap: Array<[string, string]>,
     countryCode: number,
+    countryCodeSid: number,
     postalCodeField: string,
     timeoutMessageConfig?: ConversationTimeoutMessageConfig.AsObject,
   }
