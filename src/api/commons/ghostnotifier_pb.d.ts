@@ -51,6 +51,11 @@ export class GhostNotification extends jspb.Message {
   getAuthTokenExpirationNotification(): AuthTokenExpiration | undefined;
   setAuthTokenExpirationNotification(value?: AuthTokenExpiration): void;
 
+  hasAgentMessageReceived(): boolean;
+  clearAgentMessageReceived(): void;
+  getAgentMessageReceived(): AgentMessageReceived | undefined;
+  setAgentMessageReceived(value?: AgentMessageReceived): void;
+
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GhostNotification.AsObject;
@@ -73,6 +78,7 @@ export namespace GhostNotification {
     directedCallHangup?: api_commons_acd_pb.AgentDirectedCallHangupAlert.AsObject,
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
     authTokenExpirationNotification?: AuthTokenExpiration.AsObject,
+    agentMessageReceived?: AgentMessageReceived.AsObject,
   }
 
   export enum PayloadCase {
@@ -85,6 +91,7 @@ export namespace GhostNotification {
     DIRECTED_CALL_HANGUP = 8,
     AGENT_QUEUED_CALLS_NOTIFICATION = 9,
     AUTH_TOKEN_EXPIRATION_NOTIFICATION = 11,
+    AGENT_MESSAGE_RECEIVED = 12,
   }
 }
 
@@ -227,6 +234,54 @@ export namespace AuthTokenExpiration {
   export type AsObject = {
     token: string,
     expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ConverastionAssigned extends jspb.Message {
+  getConversationId(): string;
+  setConversationId(value: string): void;
+
+  getAssignedTo(): string;
+  setAssignedTo(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConverastionAssigned.AsObject;
+  static toObject(includeInstance: boolean, msg: ConverastionAssigned): ConverastionAssigned.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConverastionAssigned, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConverastionAssigned;
+  static deserializeBinaryFromReader(message: ConverastionAssigned, reader: jspb.BinaryReader): ConverastionAssigned;
+}
+
+export namespace ConverastionAssigned {
+  export type AsObject = {
+    conversationId: string,
+    assignedTo: string,
+  }
+}
+
+export class AgentMessageReceived extends jspb.Message {
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentMessageReceived.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentMessageReceived): AgentMessageReceived.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentMessageReceived, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentMessageReceived;
+  static deserializeBinaryFromReader(message: AgentMessageReceived, reader: jspb.BinaryReader): AgentMessageReceived;
+}
+
+export namespace AgentMessageReceived {
+  export type AsObject = {
+    conversationSid: string,
+    message: string,
   }
 }
 
