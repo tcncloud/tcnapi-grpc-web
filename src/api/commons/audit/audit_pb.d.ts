@@ -36,6 +36,11 @@ export class AuditEvent extends jspb.Message {
   getAuditId(): string;
   setAuditId(value: string): void;
 
+  hasEffectiveTime(): boolean;
+  clearEffectiveTime(): void;
+  getEffectiveTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEffectiveTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getEventType(): api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap];
   setEventType(value: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]): void;
 
@@ -707,6 +712,7 @@ export namespace AuditEvent {
     clusterId: string,
     eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     auditId: string,
+    effectiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     eventType: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap],
     dummyEvent?: api_commons_audit_events_pb.DummyEvent.AsObject,
     vanaFlagEvent?: api_commons_audit_vana_events_pb.VanaFlagEvent.AsObject,

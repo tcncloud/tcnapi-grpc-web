@@ -267,6 +267,7 @@ regionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 clusterId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 auditId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+effectiveTime: (f = msg.getEffectiveTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 eventType: jspb.Message.getFieldWithDefault(msg, 10, 0),
 dummyEvent: (f = msg.getDummyEvent()) && api_commons_audit_events_pb.DummyEvent.toObject(includeInstance, f),
 vanaFlagEvent: (f = msg.getVanaFlagEvent()) && api_commons_audit_vana_events_pb.VanaFlagEvent.toObject(includeInstance, f),
@@ -454,6 +455,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAuditId(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEffectiveTime(value);
       break;
     case 10:
       var value = /** @type {!proto.api.commons.audit.EventType} */ (reader.readEnum());
@@ -1172,6 +1178,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getEffectiveTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getEventType();
@@ -2330,6 +2344,43 @@ proto.api.commons.audit.AuditEvent.prototype.getAuditId = function() {
  */
 proto.api.commons.audit.AuditEvent.prototype.setAuditId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp effective_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getEffectiveTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setEffectiveTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearEffectiveTime = function() {
+  return this.setEffectiveTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasEffectiveTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
