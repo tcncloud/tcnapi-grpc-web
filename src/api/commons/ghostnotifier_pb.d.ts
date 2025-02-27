@@ -58,8 +58,8 @@ export class GhostNotification extends jspb.Message {
 
   hasConversationAssigned(): boolean;
   clearConversationAssigned(): void;
-  getConversationAssigned(): ConverastionAssigned | undefined;
-  setConversationAssigned(value?: ConverastionAssigned): void;
+  getConversationAssigned(): ConversationAssigned | undefined;
+  setConversationAssigned(value?: ConversationAssigned): void;
 
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
@@ -84,7 +84,7 @@ export namespace GhostNotification {
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
     authTokenExpirationNotification?: AuthTokenExpiration.AsObject,
     agentMessageReceived?: AgentMessageReceived.AsObject,
-    conversationAssigned?: ConverastionAssigned.AsObject,
+    conversationAssigned?: ConversationAssigned.AsObject,
   }
 
   export enum PayloadCase {
@@ -244,21 +244,21 @@ export namespace AuthTokenExpiration {
   }
 }
 
-export class ConverastionAssigned extends jspb.Message {
+export class ConversationAssigned extends jspb.Message {
   getConversationId(): string;
   setConversationId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConverastionAssigned.AsObject;
-  static toObject(includeInstance: boolean, msg: ConverastionAssigned): ConverastionAssigned.AsObject;
+  toObject(includeInstance?: boolean): ConversationAssigned.AsObject;
+  static toObject(includeInstance: boolean, msg: ConversationAssigned): ConversationAssigned.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConverastionAssigned, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConverastionAssigned;
-  static deserializeBinaryFromReader(message: ConverastionAssigned, reader: jspb.BinaryReader): ConverastionAssigned;
+  static serializeBinaryToWriter(message: ConversationAssigned, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConversationAssigned;
+  static deserializeBinaryFromReader(message: ConversationAssigned, reader: jspb.BinaryReader): ConversationAssigned;
 }
 
-export namespace ConverastionAssigned {
+export namespace ConversationAssigned {
   export type AsObject = {
     conversationId: string,
   }
