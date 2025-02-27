@@ -195,7 +195,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.GhostNotification.oneofGroups_ = [[2,3,4,6,7,8,9,11,12]];
+proto.api.commons.GhostNotification.oneofGroups_ = [[2,3,4,6,7,8,9,11,12,13]];
 
 /**
  * @enum {number}
@@ -210,7 +210,8 @@ proto.api.commons.GhostNotification.PayloadCase = {
   DIRECTED_CALL_HANGUP: 8,
   AGENT_QUEUED_CALLS_NOTIFICATION: 9,
   AUTH_TOKEN_EXPIRATION_NOTIFICATION: 11,
-  AGENT_MESSAGE_RECEIVED: 12
+  AGENT_MESSAGE_RECEIVED: 12,
+  CONVERSATION_ASSIGNED: 13
 };
 
 /**
@@ -260,7 +261,8 @@ directedCallRinging: (f = msg.getDirectedCallRinging()) && api_commons_acd_pb.Ag
 directedCallHangup: (f = msg.getDirectedCallHangup()) && api_commons_acd_pb.AgentDirectedCallHangupAlert.toObject(includeInstance, f),
 agentQueuedCallsNotification: (f = msg.getAgentQueuedCallsNotification()) && proto.api.commons.AgentQueuedCallsNotification.toObject(includeInstance, f),
 authTokenExpirationNotification: (f = msg.getAuthTokenExpirationNotification()) && proto.api.commons.AuthTokenExpiration.toObject(includeInstance, f),
-agentMessageReceived: (f = msg.getAgentMessageReceived()) && proto.api.commons.AgentMessageReceived.toObject(includeInstance, f)
+agentMessageReceived: (f = msg.getAgentMessageReceived()) && proto.api.commons.AgentMessageReceived.toObject(includeInstance, f),
+conversationAssigned: (f = msg.getConversationAssigned()) && proto.api.commons.ConverastionAssigned.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -345,6 +347,11 @@ proto.api.commons.GhostNotification.deserializeBinaryFromReader = function(msg, 
       var value = new proto.api.commons.AgentMessageReceived;
       reader.readMessage(value,proto.api.commons.AgentMessageReceived.deserializeBinaryFromReader);
       msg.setAgentMessageReceived(value);
+      break;
+    case 13:
+      var value = new proto.api.commons.ConverastionAssigned;
+      reader.readMessage(value,proto.api.commons.ConverastionAssigned.deserializeBinaryFromReader);
+      msg.setConversationAssigned(value);
       break;
     default:
       reader.skipField();
@@ -452,6 +459,14 @@ proto.api.commons.GhostNotification.serializeBinaryToWriter = function(message, 
       12,
       f,
       proto.api.commons.AgentMessageReceived.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversationAssigned();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.api.commons.ConverastionAssigned.serializeBinaryToWriter
     );
   }
 };
@@ -805,6 +820,43 @@ proto.api.commons.GhostNotification.prototype.clearAgentMessageReceived = functi
  */
 proto.api.commons.GhostNotification.prototype.hasAgentMessageReceived = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional ConverastionAssigned conversation_assigned = 13;
+ * @return {?proto.api.commons.ConverastionAssigned}
+ */
+proto.api.commons.GhostNotification.prototype.getConversationAssigned = function() {
+  return /** @type{?proto.api.commons.ConverastionAssigned} */ (
+    jspb.Message.getWrapperField(this, proto.api.commons.ConverastionAssigned, 13));
+};
+
+
+/**
+ * @param {?proto.api.commons.ConverastionAssigned|undefined} value
+ * @return {!proto.api.commons.GhostNotification} returns this
+*/
+proto.api.commons.GhostNotification.prototype.setConversationAssigned = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 13, proto.api.commons.GhostNotification.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.GhostNotification} returns this
+ */
+proto.api.commons.GhostNotification.prototype.clearConversationAssigned = function() {
+  return this.setConversationAssigned(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.GhostNotification.prototype.hasConversationAssigned = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -1885,8 +1937,7 @@ proto.api.commons.ConverastionAssigned.prototype.toObject = function(opt_include
  */
 proto.api.commons.ConverastionAssigned.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-assignedTo: jspb.Message.getFieldWithDefault(msg, 2, "")
+conversationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1927,10 +1978,6 @@ proto.api.commons.ConverastionAssigned.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setConversationId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAssignedTo(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1967,13 +2014,6 @@ proto.api.commons.ConverastionAssigned.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getAssignedTo();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1992,24 +2032,6 @@ proto.api.commons.ConverastionAssigned.prototype.getConversationId = function() 
  */
 proto.api.commons.ConverastionAssigned.prototype.setConversationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string assigned_to = 2;
- * @return {string}
- */
-proto.api.commons.ConverastionAssigned.prototype.getAssignedTo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.ConverastionAssigned} returns this
- */
-proto.api.commons.ConverastionAssigned.prototype.setAssignedTo = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

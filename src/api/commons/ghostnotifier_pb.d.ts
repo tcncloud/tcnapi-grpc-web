@@ -56,6 +56,11 @@ export class GhostNotification extends jspb.Message {
   getAgentMessageReceived(): AgentMessageReceived | undefined;
   setAgentMessageReceived(value?: AgentMessageReceived): void;
 
+  hasConversationAssigned(): boolean;
+  clearConversationAssigned(): void;
+  getConversationAssigned(): ConverastionAssigned | undefined;
+  setConversationAssigned(value?: ConverastionAssigned): void;
+
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GhostNotification.AsObject;
@@ -79,6 +84,7 @@ export namespace GhostNotification {
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
     authTokenExpirationNotification?: AuthTokenExpiration.AsObject,
     agentMessageReceived?: AgentMessageReceived.AsObject,
+    conversationAssigned?: ConverastionAssigned.AsObject,
   }
 
   export enum PayloadCase {
@@ -92,6 +98,7 @@ export namespace GhostNotification {
     AGENT_QUEUED_CALLS_NOTIFICATION = 9,
     AUTH_TOKEN_EXPIRATION_NOTIFICATION = 11,
     AGENT_MESSAGE_RECEIVED = 12,
+    CONVERSATION_ASSIGNED = 13,
   }
 }
 
@@ -241,9 +248,6 @@ export class ConverastionAssigned extends jspb.Message {
   getConversationId(): string;
   setConversationId(value: string): void;
 
-  getAssignedTo(): string;
-  setAssignedTo(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConverastionAssigned.AsObject;
   static toObject(includeInstance: boolean, msg: ConverastionAssigned): ConverastionAssigned.AsObject;
@@ -257,7 +261,6 @@ export class ConverastionAssigned extends jspb.Message {
 export namespace ConverastionAssigned {
   export type AsObject = {
     conversationId: string,
-    assignedTo: string,
   }
 }
 
