@@ -1779,7 +1779,8 @@ conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1837,6 +1838,10 @@ proto.api.commons.audit.OmnichannelT10Event.deserializeBinaryFromReader = functi
       var value = new api_commons_omnichannel_pb.OmniMessage;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniMessage.deserializeBinaryFromReader);
       msg.setMessage(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -1902,6 +1907,13 @@ proto.api.commons.audit.OmnichannelT10Event.serializeBinaryToWriter = function(m
       5,
       f,
       api_commons_omnichannel_pb.OmniMessage.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -2032,6 +2044,24 @@ proto.api.commons.audit.OmnichannelT10Event.prototype.clearMessage = function() 
  */
 proto.api.commons.audit.OmnichannelT10Event.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string customer_name = 6;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelT10Event.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelT10Event} returns this
+ */
+proto.api.commons.audit.OmnichannelT10Event.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -2333,7 +2363,8 @@ channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -2400,6 +2431,10 @@ proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.deserializeBinar
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -2480,6 +2515,13 @@ proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.serializeBinaryT
       7,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -2668,6 +2710,24 @@ proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.prototype.hasAsm
 };
 
 
+/**
+ * optional string customer_name = 8;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelAgentAssignConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -2706,7 +2766,8 @@ channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -2773,6 +2834,10 @@ proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.deserializeBin
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -2853,6 +2918,13 @@ proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.serializeBinar
       7,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -3041,6 +3113,24 @@ proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.prototype.hasA
 };
 
 
+/**
+ * optional string customer_name = 8;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -3081,7 +3171,8 @@ currentUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
 newUserId: jspb.Message.getFieldWithDefault(msg, 6, ""),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -3156,6 +3247,10 @@ proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.deserializeBin
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setNewUserAsmSessionSid(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -3250,6 +3345,13 @@ proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.serializeBinar
       9,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
     );
   }
 };
@@ -3474,6 +3576,24 @@ proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.prototype.hasN
 };
 
 
+/**
+ * optional string customer_name = 10;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelAgentReassignConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
 
 
 
@@ -3508,7 +3628,8 @@ proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.toObject = function(
   var f, obj = {
 conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -3558,6 +3679,10 @@ proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.deserializeBinaryFro
       var value = new api_commons_omnichannel_pb.OmniConversation;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniConversation.deserializeBinaryFromReader);
       msg.setConversation(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -3609,6 +3734,13 @@ proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.serializeBinaryToWri
       5,
       f,
       api_commons_omnichannel_pb.OmniConversation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -3706,6 +3838,24 @@ proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.prototype.hasConvers
 };
 
 
+/**
+ * optional string customer_name = 6;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelCustomerTextMessageEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
 
 
 
@@ -3742,7 +3892,8 @@ conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+userId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+customerName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -3801,6 +3952,10 @@ proto.api.commons.audit.OmnichannelAgentTextMessageEvent.deserializeBinaryFromRe
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -3866,6 +4021,13 @@ proto.api.commons.audit.OmnichannelAgentTextMessageEvent.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -4019,6 +4181,24 @@ proto.api.commons.audit.OmnichannelAgentTextMessageEvent.prototype.setUserId = f
 };
 
 
+/**
+ * optional string customer_name = 8;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelAgentTextMessageEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelAgentTextMessageEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelAgentTextMessageEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -4055,7 +4235,8 @@ conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+userId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+customerName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -4114,6 +4295,10 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.deserializeBinaryFrom
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -4179,6 +4364,13 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.serializeBinaryToWrit
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -4332,6 +4524,24 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.setUserId =
 };
 
 
+/**
+ * optional string customer_name = 8;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelManagerTextMessageEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -4369,7 +4579,8 @@ campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -4432,6 +4643,10 @@ proto.api.commons.audit.OmnichannelFinishWrapUpEvent.deserializeBinaryFromReader
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -4505,6 +4720,13 @@ proto.api.commons.audit.OmnichannelFinishWrapUpEvent.serializeBinaryToWriter = f
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -4675,6 +4897,24 @@ proto.api.commons.audit.OmnichannelFinishWrapUpEvent.prototype.hasAsmSessionSid 
 };
 
 
+/**
+ * optional string customer_name = 7;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelFinishWrapUpEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelFinishWrapUpEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelFinishWrapUpEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
 
 
 
@@ -4713,7 +4953,8 @@ channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
 asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+userId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+customerName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -4780,6 +5021,10 @@ proto.api.commons.audit.OmnichannelBeginWrapUpEvent.deserializeBinaryFromReader 
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -4859,6 +5104,13 @@ proto.api.commons.audit.OmnichannelBeginWrapUpEvent.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -5048,6 +5300,24 @@ proto.api.commons.audit.OmnichannelBeginWrapUpEvent.prototype.setUserId = functi
 };
 
 
+/**
+ * optional string customer_name = 8;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelBeginWrapUpEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelBeginWrapUpEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelBeginWrapUpEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -5083,7 +5353,8 @@ proto.api.commons.audit.OmnichannelT11Event.toObject = function(includeInstance,
 conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -5136,6 +5407,10 @@ proto.api.commons.audit.OmnichannelT11Event.deserializeBinaryFromReader = functi
       var value = new api_commons_omnichannel_pb.OmniConversation;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniConversation.deserializeBinaryFromReader);
       msg.setConversation(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -5193,6 +5468,13 @@ proto.api.commons.audit.OmnichannelT11Event.serializeBinaryToWriter = function(m
       4,
       f,
       api_commons_omnichannel_pb.OmniConversation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -5289,6 +5571,24 @@ proto.api.commons.audit.OmnichannelT11Event.prototype.hasConversation = function
 };
 
 
+/**
+ * optional string customer_name = 5;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelT11Event.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelT11Event} returns this
+ */
+proto.api.commons.audit.OmnichannelT11Event.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -5324,7 +5624,8 @@ proto.api.commons.audit.OmnichannelCreateConversationEvent.toObject = function(i
 campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -5378,6 +5679,10 @@ proto.api.commons.audit.OmnichannelCreateConversationEvent.deserializeBinaryFrom
       var value = new api_commons_omnichannel_pb.OmniMessage;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniMessage.deserializeBinaryFromReader);
       msg.setMessage(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -5436,6 +5741,13 @@ proto.api.commons.audit.OmnichannelCreateConversationEvent.serializeBinaryToWrit
       4,
       f,
       api_commons_omnichannel_pb.OmniMessage.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -5551,6 +5863,24 @@ proto.api.commons.audit.OmnichannelCreateConversationEvent.prototype.hasMessage 
 };
 
 
+/**
+ * optional string customer_name = 5;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelCreateConversationEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelCreateConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCreateConversationEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -5585,7 +5915,8 @@ proto.api.commons.audit.OmnichannelAgentSuspendEvent.toObject = function(include
   var f, obj = {
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5636,6 +5967,10 @@ proto.api.commons.audit.OmnichannelAgentSuspendEvent.deserializeBinaryFromReader
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -5688,6 +6023,13 @@ proto.api.commons.audit.OmnichannelAgentSuspendEvent.serializeBinaryToWriter = f
       3,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -5804,6 +6146,24 @@ proto.api.commons.audit.OmnichannelAgentSuspendEvent.prototype.hasAsmSessionSid 
 };
 
 
+/**
+ * optional string customer_name = 4;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelAgentSuspendEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelAgentSuspendEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelAgentSuspendEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 
 
@@ -5839,7 +6199,8 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.toObject = function(in
 message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
 conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
 asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-userId: jspb.Message.getFieldWithDefault(msg, 4, "")
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+customerName: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -5894,6 +6255,10 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.deserializeBinaryFromR
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -5952,6 +6317,13 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.serializeBinaryToWrite
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -6087,6 +6459,24 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.setUserId = 
 };
 
 
+/**
+ * optional string customer_name = 5;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelCloseConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -6121,7 +6511,8 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.toObject = function(incl
   var f, obj = {
 conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 transcriptPath: jspb.Message.getFieldWithDefault(msg, 2, ""),
-conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+customerName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -6170,6 +6561,10 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.deserializeBinaryFromRea
       var value = new api_commons_omnichannel_pb.OmniConversation;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniConversation.deserializeBinaryFromReader);
       msg.setConversation(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerName(value);
       break;
     default:
       reader.skipField();
@@ -6220,6 +6615,13 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.serializeBinaryToWriter 
       3,
       f,
       api_commons_omnichannel_pb.OmniConversation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -6295,6 +6697,24 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.clearConversat
  */
 proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.hasConversation = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string customer_name = 4;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.getCustomerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelTranscriptSavedEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.setCustomerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

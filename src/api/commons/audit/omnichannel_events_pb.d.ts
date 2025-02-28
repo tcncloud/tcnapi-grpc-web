@@ -105,6 +105,9 @@ export class OmnichannelT10Event extends jspb.Message {
   getMessage(): api_commons_omnichannel_pb.OmniMessage | undefined;
   setMessage(value?: api_commons_omnichannel_pb.OmniMessage): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelT10Event.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelT10Event): OmnichannelT10Event.AsObject;
@@ -122,6 +125,7 @@ export namespace OmnichannelT10Event {
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
+    customerName: string,
   }
 }
 
@@ -193,6 +197,9 @@ export class OmnichannelAgentAssignConversationEvent extends jspb.Message {
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelAgentAssignConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelAgentAssignConversationEvent): OmnichannelAgentAssignConversationEvent.AsObject;
@@ -212,6 +219,7 @@ export namespace OmnichannelAgentAssignConversationEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    customerName: string,
   }
 }
 
@@ -243,6 +251,9 @@ export class OmnichannelAgentUnassignConversationEvent extends jspb.Message {
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelAgentUnassignConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelAgentUnassignConversationEvent): OmnichannelAgentUnassignConversationEvent.AsObject;
@@ -262,6 +273,7 @@ export namespace OmnichannelAgentUnassignConversationEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    customerName: string,
   }
 }
 
@@ -299,6 +311,9 @@ export class OmnichannelAgentReassignConversationEvent extends jspb.Message {
   getNewUserAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setNewUserAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelAgentReassignConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelAgentReassignConversationEvent): OmnichannelAgentReassignConversationEvent.AsObject;
@@ -320,6 +335,7 @@ export namespace OmnichannelAgentReassignConversationEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     newUserAsmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    customerName: string,
   }
 }
 
@@ -337,6 +353,9 @@ export class OmnichannelCustomerTextMessageEvent extends jspb.Message {
   getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
   setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelCustomerTextMessageEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelCustomerTextMessageEvent): OmnichannelCustomerTextMessageEvent.AsObject;
@@ -352,6 +371,7 @@ export namespace OmnichannelCustomerTextMessageEvent {
     conversationSid: string,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
+    customerName: string,
   }
 }
 
@@ -377,6 +397,9 @@ export class OmnichannelAgentTextMessageEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelAgentTextMessageEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelAgentTextMessageEvent): OmnichannelAgentTextMessageEvent.AsObject;
@@ -394,6 +417,7 @@ export namespace OmnichannelAgentTextMessageEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     userId: string,
+    customerName: string,
   }
 }
 
@@ -419,6 +443,9 @@ export class OmnichannelManagerTextMessageEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelManagerTextMessageEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelManagerTextMessageEvent): OmnichannelManagerTextMessageEvent.AsObject;
@@ -436,6 +463,7 @@ export namespace OmnichannelManagerTextMessageEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     userId: string,
+    customerName: string,
   }
 }
 
@@ -464,6 +492,9 @@ export class OmnichannelFinishWrapUpEvent extends jspb.Message {
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelFinishWrapUpEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelFinishWrapUpEvent): OmnichannelFinishWrapUpEvent.AsObject;
@@ -482,6 +513,7 @@ export namespace OmnichannelFinishWrapUpEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    customerName: string,
   }
 }
 
@@ -513,6 +545,9 @@ export class OmnichannelBeginWrapUpEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelBeginWrapUpEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelBeginWrapUpEvent): OmnichannelBeginWrapUpEvent.AsObject;
@@ -532,6 +567,7 @@ export namespace OmnichannelBeginWrapUpEvent {
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     userId: string,
+    customerName: string,
   }
 }
 
@@ -550,6 +586,9 @@ export class OmnichannelT11Event extends jspb.Message {
   getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
   setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelT11Event.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelT11Event): OmnichannelT11Event.AsObject;
@@ -566,6 +605,7 @@ export namespace OmnichannelT11Event {
     campaignSid: string,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
+    customerName: string,
   }
 }
 
@@ -586,6 +626,9 @@ export class OmnichannelCreateConversationEvent extends jspb.Message {
   getMessage(): api_commons_omnichannel_pb.OmniMessage | undefined;
   setMessage(value?: api_commons_omnichannel_pb.OmniMessage): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelCreateConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelCreateConversationEvent): OmnichannelCreateConversationEvent.AsObject;
@@ -602,6 +645,7 @@ export namespace OmnichannelCreateConversationEvent {
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
+    customerName: string,
   }
 }
 
@@ -621,6 +665,9 @@ export class OmnichannelAgentSuspendEvent extends jspb.Message {
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelAgentSuspendEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelAgentSuspendEvent): OmnichannelAgentSuspendEvent.AsObject;
@@ -636,6 +683,7 @@ export namespace OmnichannelAgentSuspendEvent {
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    customerName: string,
   }
 }
 
@@ -658,6 +706,9 @@ export class OmnichannelCloseConversationEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelCloseConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelCloseConversationEvent): OmnichannelCloseConversationEvent.AsObject;
@@ -674,6 +725,7 @@ export namespace OmnichannelCloseConversationEvent {
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     userId: string,
+    customerName: string,
   }
 }
 
@@ -688,6 +740,9 @@ export class OmnichannelTranscriptSavedEvent extends jspb.Message {
   clearConversation(): void;
   getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
   setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
+
+  getCustomerName(): string;
+  setCustomerName(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelTranscriptSavedEvent.AsObject;
@@ -704,6 +759,7 @@ export namespace OmnichannelTranscriptSavedEvent {
     conversationSid: number,
     transcriptPath: string,
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
+    customerName: string,
   }
 }
 
