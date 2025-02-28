@@ -1463,10 +1463,8 @@ export class UpdateMyUserRequest extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
-  hasPlayNotificationSounds(): boolean;
-  clearPlayNotificationSounds(): void;
-  getPlayNotificationSounds(): google_protobuf_wrappers_pb.BoolValue | undefined;
-  setPlayNotificationSounds(value?: google_protobuf_wrappers_pb.BoolValue): void;
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
 
   clearFieldMaskList(): void;
   getFieldMaskList(): Array<string>;
@@ -1490,7 +1488,7 @@ export namespace UpdateMyUserRequest {
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     defaultApp: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
-    playNotificationSounds?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+    playNotificationSounds: boolean,
     fieldMaskList: Array<string>,
   }
 }
@@ -2637,10 +2635,8 @@ export namespace GetUserSessionDataResponse {
     getAccessTokenExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setAccessTokenExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-    hasPlayNotificationSounds(): boolean;
-    clearPlayNotificationSounds(): void;
-    getPlayNotificationSounds(): google_protobuf_wrappers_pb.BoolValue | undefined;
-    setPlayNotificationSounds(value?: google_protobuf_wrappers_pb.BoolValue): void;
+    getPlayNotificationSounds(): boolean;
+    setPlayNotificationSounds(value: boolean): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
@@ -2685,7 +2681,7 @@ export namespace GetUserSessionDataResponse {
       passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
       accessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      playNotificationSounds?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+      playNotificationSounds: boolean,
     }
 
     export class RegionSids extends jspb.Message {

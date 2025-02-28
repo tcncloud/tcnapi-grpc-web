@@ -12995,7 +12995,7 @@ callerIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined :
 timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
 defaultApp: jspb.Message.getFieldWithDefault(msg, 4, 0),
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
-playNotificationSounds: (f = msg.getPlayNotificationSounds()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
   };
 
@@ -13056,8 +13056,7 @@ proto.api.v1alpha1.org.UpdateMyUserRequest.deserializeBinaryFromReader = functio
       msg.setLocalePreferencesOverride(value);
       break;
     case 6:
-      var value = new google_protobuf_wrappers_pb.BoolValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setPlayNotificationSounds(value);
       break;
     case 10:
@@ -13131,11 +13130,10 @@ proto.api.v1alpha1.org.UpdateMyUserRequest.serializeBinaryToWriter = function(me
     );
   }
   f = message.getPlayNotificationSounds();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       6,
-      f,
-      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+      f
     );
   }
   f = message.getFieldMaskList();
@@ -13315,39 +13313,20 @@ proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.hasLocalePreferencesOverrid
 
 
 /**
- * optional google.protobuf.BoolValue play_notification_sounds = 6;
- * @return {?proto.google.protobuf.BoolValue}
- */
-proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.getPlayNotificationSounds = function() {
-  return /** @type{?proto.google.protobuf.BoolValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 6));
-};
-
-
-/**
- * @param {?proto.google.protobuf.BoolValue|undefined} value
- * @return {!proto.api.v1alpha1.org.UpdateMyUserRequest} returns this
-*/
-proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.setPlayNotificationSounds = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.org.UpdateMyUserRequest} returns this
- */
-proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.clearPlayNotificationSounds = function() {
-  return this.setPlayNotificationSounds(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
+ * optional bool play_notification_sounds = 6;
  * @return {boolean}
  */
-proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.hasPlayNotificationSounds = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.UpdateMyUserRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateMyUserRequest.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -20183,7 +20162,7 @@ mfaTimestamp: (f = msg.getMfaTimestamp()) && google_protobuf_timestamp_pb.Timest
 passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
 accessTokenExpiration: (f = msg.getAccessTokenExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-playNotificationSounds: (f = msg.getPlayNotificationSounds()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 37, false)
   };
 
   if (includeInstance) {
@@ -20355,8 +20334,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.deserializeBinaryFromRead
       msg.setAccessTokenExpiration(value);
       break;
     case 37:
-      var value = new google_protobuf_wrappers_pb.BoolValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setPlayNotificationSounds(value);
       break;
     default:
@@ -20611,11 +20589,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.serializeBinaryToWriter =
     );
   }
   f = message.getPlayNotificationSounds();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       37,
-      f,
-      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -21603,39 +21580,20 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasAccessTokenE
 
 
 /**
- * optional google.protobuf.BoolValue play_notification_sounds = 37;
- * @return {?proto.google.protobuf.BoolValue}
- */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getPlayNotificationSounds = function() {
-  return /** @type{?proto.google.protobuf.BoolValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 37));
-};
-
-
-/**
- * @param {?proto.google.protobuf.BoolValue|undefined} value
- * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
-*/
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setPlayNotificationSounds = function(value) {
-  return jspb.Message.setWrapperField(this, 37, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
- */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearPlayNotificationSounds = function() {
-  return this.setPlayNotificationSounds(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
+ * optional bool play_notification_sounds = 37;
  * @return {boolean}
  */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasPlayNotificationSounds = function() {
-  return jspb.Message.getField(this, 37) != null;
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 37, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 37, value);
 };
 
 
