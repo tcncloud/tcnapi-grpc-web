@@ -51,15 +51,15 @@ export class GhostNotification extends jspb.Message {
   getAuthTokenExpirationNotification(): AuthTokenExpiration | undefined;
   setAuthTokenExpirationNotification(value?: AuthTokenExpiration): void;
 
-  hasAgentMessageReceived(): boolean;
-  clearAgentMessageReceived(): void;
-  getAgentMessageReceived(): AgentMessageReceived | undefined;
-  setAgentMessageReceived(value?: AgentMessageReceived): void;
+  hasOmniMessageReceived(): boolean;
+  clearOmniMessageReceived(): void;
+  getOmniMessageReceived(): OmniMessageReceieved | undefined;
+  setOmniMessageReceived(value?: OmniMessageReceieved): void;
 
-  hasConversationAssigned(): boolean;
-  clearConversationAssigned(): void;
-  getConversationAssigned(): ConversationAssigned | undefined;
-  setConversationAssigned(value?: ConversationAssigned): void;
+  hasOmniConversationAssigned(): boolean;
+  clearOmniConversationAssigned(): void;
+  getOmniConversationAssigned(): OmniConversationAssigned | undefined;
+  setOmniConversationAssigned(value?: OmniConversationAssigned): void;
 
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
@@ -83,8 +83,8 @@ export namespace GhostNotification {
     directedCallHangup?: api_commons_acd_pb.AgentDirectedCallHangupAlert.AsObject,
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
     authTokenExpirationNotification?: AuthTokenExpiration.AsObject,
-    agentMessageReceived?: AgentMessageReceived.AsObject,
-    conversationAssigned?: ConversationAssigned.AsObject,
+    omniMessageReceived?: OmniMessageReceieved.AsObject,
+    omniConversationAssigned?: OmniConversationAssigned.AsObject,
   }
 
   export enum PayloadCase {
@@ -97,8 +97,8 @@ export namespace GhostNotification {
     DIRECTED_CALL_HANGUP = 8,
     AGENT_QUEUED_CALLS_NOTIFICATION = 9,
     AUTH_TOKEN_EXPIRATION_NOTIFICATION = 11,
-    AGENT_MESSAGE_RECEIVED = 12,
-    CONVERSATION_ASSIGNED = 13,
+    OMNI_MESSAGE_RECEIVED = 12,
+    OMNI_CONVERSATION_ASSIGNED = 13,
   }
 }
 
@@ -244,27 +244,27 @@ export namespace AuthTokenExpiration {
   }
 }
 
-export class ConversationAssigned extends jspb.Message {
+export class OmniConversationAssigned extends jspb.Message {
   getConversationId(): string;
   setConversationId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationAssigned.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationAssigned): ConversationAssigned.AsObject;
+  toObject(includeInstance?: boolean): OmniConversationAssigned.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniConversationAssigned): OmniConversationAssigned.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConversationAssigned, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationAssigned;
-  static deserializeBinaryFromReader(message: ConversationAssigned, reader: jspb.BinaryReader): ConversationAssigned;
+  static serializeBinaryToWriter(message: OmniConversationAssigned, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniConversationAssigned;
+  static deserializeBinaryFromReader(message: OmniConversationAssigned, reader: jspb.BinaryReader): OmniConversationAssigned;
 }
 
-export namespace ConversationAssigned {
+export namespace OmniConversationAssigned {
   export type AsObject = {
     conversationId: string,
   }
 }
 
-export class AgentMessageReceived extends jspb.Message {
+export class OmniMessageReceieved extends jspb.Message {
   getConversationSid(): string;
   setConversationSid(value: string): void;
 
@@ -272,16 +272,16 @@ export class AgentMessageReceived extends jspb.Message {
   setMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AgentMessageReceived.AsObject;
-  static toObject(includeInstance: boolean, msg: AgentMessageReceived): AgentMessageReceived.AsObject;
+  toObject(includeInstance?: boolean): OmniMessageReceieved.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniMessageReceieved): OmniMessageReceieved.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AgentMessageReceived, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AgentMessageReceived;
-  static deserializeBinaryFromReader(message: AgentMessageReceived, reader: jspb.BinaryReader): AgentMessageReceived;
+  static serializeBinaryToWriter(message: OmniMessageReceieved, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniMessageReceieved;
+  static deserializeBinaryFromReader(message: OmniMessageReceieved, reader: jspb.BinaryReader): OmniMessageReceieved;
 }
 
-export namespace AgentMessageReceived {
+export namespace OmniMessageReceieved {
   export type AsObject = {
     conversationSid: string,
     message: string,
