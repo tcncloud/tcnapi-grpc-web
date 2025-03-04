@@ -1463,6 +1463,9 @@ export class UpdateMyUserRequest extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
+
   clearFieldMaskList(): void;
   getFieldMaskList(): Array<string>;
   setFieldMaskList(value: Array<string>): void;
@@ -1485,6 +1488,7 @@ export namespace UpdateMyUserRequest {
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     defaultApp: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    playNotificationSounds: boolean,
     fieldMaskList: Array<string>,
   }
 }
@@ -2631,6 +2635,9 @@ export namespace GetUserSessionDataResponse {
     getAccessTokenExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setAccessTokenExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    getPlayNotificationSounds(): boolean;
+    setPlayNotificationSounds(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2674,6 +2681,7 @@ export namespace GetUserSessionDataResponse {
       passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
       accessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      playNotificationSounds: boolean,
     }
 
     export class RegionSids extends jspb.Message {
