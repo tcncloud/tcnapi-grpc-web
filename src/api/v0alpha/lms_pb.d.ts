@@ -1954,6 +1954,16 @@ export class Process extends jspb.Message {
   getFinviEntrypoint(): FinviEntrypoint | undefined;
   setFinviEntrypoint(value?: FinviEntrypoint): void;
 
+  hasContactManagementEnrichment(): boolean;
+  clearContactManagementEnrichment(): void;
+  getContactManagementEnrichment(): ContactManagementEnrichment | undefined;
+  setContactManagementEnrichment(value?: ContactManagementEnrichment): void;
+
+  hasTicketExchangeSink(): boolean;
+  clearTicketExchangeSink(): void;
+  getTicketExchangeSink(): TicketExchangeSink | undefined;
+  setTicketExchangeSink(value?: TicketExchangeSink): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -2006,6 +2016,8 @@ export namespace Process {
     contactManagerSink?: ContactManagerSink.AsObject,
     sum?: SumProcess.AsObject,
     finviEntrypoint?: FinviEntrypoint.AsObject,
+    contactManagementEnrichment?: ContactManagementEnrichment.AsObject,
+    ticketExchangeSink?: TicketExchangeSink.AsObject,
   }
 
   export enum ProcCase {
@@ -2048,6 +2060,8 @@ export namespace Process {
     CONTACT_MANAGER_SINK = 77,
     SUM = 78,
     FINVI_ENTRYPOINT = 79,
+    CONTACT_MANAGEMENT_ENRICHMENT = 80,
+    TICKET_EXCHANGE_SINK = 81,
   }
 }
 
@@ -7665,6 +7679,76 @@ export namespace FinviEntrypoint {
     disabled: boolean,
     timezone: string,
     filenamePattern: string,
+  }
+}
+
+export class ContactManagementEnrichment extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactListName(): string;
+  setContactListName(value: string): void;
+
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
+  hasDeDuplicationInfo(): boolean;
+  clearDeDuplicationInfo(): void;
+  getDeDuplicationInfo(): ContactManagerSink.DeDuplication | undefined;
+  setDeDuplicationInfo(value?: ContactManagerSink.DeDuplication): void;
+
+  getInsertIfMissing(): boolean;
+  setInsertIfMissing(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagementEnrichment.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagementEnrichment): ContactManagementEnrichment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagementEnrichment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagementEnrichment;
+  static deserializeBinaryFromReader(message: ContactManagementEnrichment, reader: jspb.BinaryReader): ContactManagementEnrichment;
+}
+
+export namespace ContactManagementEnrichment {
+  export type AsObject = {
+    projectId: string,
+    contactListName: string,
+    fieldsList: Array<string>,
+    deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
+    insertIfMissing: boolean,
+  }
+}
+
+export class TicketExchangeSink extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getTemplateId(): string;
+  setTemplateId(value: string): void;
+
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketExchangeSink.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketExchangeSink): TicketExchangeSink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketExchangeSink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketExchangeSink;
+  static deserializeBinaryFromReader(message: TicketExchangeSink, reader: jspb.BinaryReader): TicketExchangeSink;
+}
+
+export namespace TicketExchangeSink {
+  export type AsObject = {
+    projectId: string,
+    templateId: string,
+    fieldsList: Array<string>,
   }
 }
 
