@@ -1090,7 +1090,8 @@ proto.api.v1alpha1.explorer.SchemaType = {
 proto.api.v1alpha1.explorer.DatasourceType = {
   DATASOURCE_TYPE_UNSPECIFIED: 0,
   DATASOURCE_TYPE_VFS: 1,
-  DATASOURCE_TYPE_CLICKHOUSE: 2
+  DATASOURCE_TYPE_CLICKHOUSE: 2,
+  DATASOURCE_TYPE_INSTANT_DATA: 3
 };
 
 goog.object.extend(exports, proto.api.v1alpha1.explorer);
