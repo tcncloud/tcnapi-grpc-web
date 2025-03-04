@@ -1959,6 +1959,11 @@ export class Process extends jspb.Message {
   getContactManagementEnrichment(): ContactManagementEnrichment | undefined;
   setContactManagementEnrichment(value?: ContactManagementEnrichment): void;
 
+  hasTicketExchangeSink(): boolean;
+  clearTicketExchangeSink(): void;
+  getTicketExchangeSink(): TicketExchangeSink | undefined;
+  setTicketExchangeSink(value?: TicketExchangeSink): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -2012,6 +2017,7 @@ export namespace Process {
     sum?: SumProcess.AsObject,
     finviEntrypoint?: FinviEntrypoint.AsObject,
     contactManagementEnrichment?: ContactManagementEnrichment.AsObject,
+    ticketExchangeSink?: TicketExchangeSink.AsObject,
   }
 
   export enum ProcCase {
@@ -2055,6 +2061,7 @@ export namespace Process {
     SUM = 78,
     FINVI_ENTRYPOINT = 79,
     CONTACT_MANAGEMENT_ENRICHMENT = 80,
+    TICKET_EXCHANGE_SINK = 81,
   }
 }
 
@@ -7712,6 +7719,36 @@ export namespace ContactManagementEnrichment {
     fieldsList: Array<string>,
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
     insertIfMissing: boolean,
+  }
+}
+
+export class TicketExchangeSink extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getTemplateId(): string;
+  setTemplateId(value: string): void;
+
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketExchangeSink.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketExchangeSink): TicketExchangeSink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketExchangeSink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketExchangeSink;
+  static deserializeBinaryFromReader(message: TicketExchangeSink, reader: jspb.BinaryReader): TicketExchangeSink;
+}
+
+export namespace TicketExchangeSink {
+  export type AsObject = {
+    projectId: string,
+    templateId: string,
+    fieldsList: Array<string>,
   }
 }
 
