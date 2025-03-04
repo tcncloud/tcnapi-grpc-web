@@ -3306,6 +3306,7 @@ skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObje
 whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
 providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
 countryCode: jspb.Message.getFieldWithDefault(msg, 24, 0),
+countryCodeSid: jspb.Message.getFieldWithDefault(msg, 27, 0),
 postalCodeField: jspb.Message.getFieldWithDefault(msg, 25, ""),
 timeoutMessageConfig: (f = msg.getTimeoutMessageConfig()) && proto.api.commons.ConversationTimeoutMessageConfig.toObject(includeInstance, f)
   };
@@ -3457,6 +3458,10 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
     case 24:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCountryCode(value);
+      break;
+    case 27:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCountryCodeSid(value);
       break;
     case 25:
       var value = /** @type {string} */ (reader.readString());
@@ -3671,6 +3676,13 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
   if (f !== 0) {
     writer.writeInt32(
       24,
+      f
+    );
+  }
+  f = message.getCountryCodeSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      27,
       f
     );
   }
@@ -4509,6 +4521,24 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.getCountryCode = function()
  */
 proto.api.commons.OmniCampaignModuleConfig.prototype.setCountryCode = function(value) {
   return jspb.Message.setProto3IntField(this, 24, value);
+};
+
+
+/**
+ * optional int64 country_code_sid = 27;
+ * @return {number}
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.getCountryCodeSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 27, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.setCountryCodeSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 27, value);
 };
 
 
