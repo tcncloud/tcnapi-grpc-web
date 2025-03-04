@@ -328,6 +328,8 @@ export class Sms extends jspb.Message {
   getCampaignSid(): string;
   setCampaignSid(value: string): void;
 
+  getAgentResponseMap(): jspb.Map<string, Sms.AgentResponse>;
+  clearAgentResponseMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
   static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -345,6 +347,7 @@ export namespace Sms {
     phone?: Sms.Phone.AsObject,
     callerId: string,
     campaignSid: string,
+    agentResponseMap: Array<[string, Sms.AgentResponse.AsObject]>,
   }
 
   export class Phone extends jspb.Message {
@@ -364,6 +367,28 @@ export namespace Sms {
   export namespace Phone {
     export type AsObject = {
       raw: string,
+    }
+  }
+
+  export class AgentResponse extends jspb.Message {
+    clearValuesList(): void;
+    getValuesList(): Array<string>;
+    setValuesList(value: Array<string>): void;
+    addValues(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AgentResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: AgentResponse): AgentResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AgentResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AgentResponse;
+    static deserializeBinaryFromReader(message: AgentResponse, reader: jspb.BinaryReader): AgentResponse;
+  }
+
+  export namespace AgentResponse {
+    export type AsObject = {
+      valuesList: Array<string>,
     }
   }
 
@@ -850,6 +875,8 @@ export class Chat extends jspb.Message {
   getEmailAddress(): string;
   setEmailAddress(value: string): void;
 
+  getAgentResponseMap(): jspb.Map<string, Chat.AgentResponse>;
+  clearAgentResponseMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Chat.AsObject;
   static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
@@ -868,6 +895,7 @@ export namespace Chat {
     customerName: string,
     campaignSid: string,
     emailAddress: string,
+    agentResponseMap: Array<[string, Chat.AgentResponse.AsObject]>,
   }
 
   export class Thread extends jspb.Message {
@@ -949,6 +977,28 @@ export namespace Chat {
   export namespace Phone {
     export type AsObject = {
       raw: string,
+    }
+  }
+
+  export class AgentResponse extends jspb.Message {
+    clearValuesList(): void;
+    getValuesList(): Array<string>;
+    setValuesList(value: Array<string>): void;
+    addValues(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AgentResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: AgentResponse): AgentResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AgentResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AgentResponse;
+    static deserializeBinaryFromReader(message: AgentResponse, reader: jspb.BinaryReader): AgentResponse;
+  }
+
+  export namespace AgentResponse {
+    export type AsObject = {
+      valuesList: Array<string>,
     }
   }
 }
@@ -1250,6 +1300,11 @@ export class TranscriptQuery extends jspb.Message {
   getSkills(): TranscriptQuery.SkillsQuery | undefined;
   setSkills(value?: TranscriptQuery.SkillsQuery): void;
 
+  hasAgentResponse(): boolean;
+  clearAgentResponse(): void;
+  getAgentResponse(): TranscriptQuery.AgentResponse | undefined;
+  setAgentResponse(value?: TranscriptQuery.AgentResponse): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -1272,6 +1327,7 @@ export namespace TranscriptQuery {
     phone?: TranscriptQuery.Phone.AsObject,
     channelType?: TranscriptQuery.Channel.AsObject,
     skills?: TranscriptQuery.SkillsQuery.AsObject,
+    agentResponse?: TranscriptQuery.AgentResponse.AsObject,
   }
 
   export class SkillsQuery extends jspb.Message {
@@ -2898,6 +2954,168 @@ export namespace TranscriptQuery {
     export namespace EmailAddress {
       export type AsObject = {
         anyList: Array<string>,
+      }
+    }
+  }
+
+  export class AgentResponse extends jspb.Message {
+    clearAndList(): void;
+    getAndList(): Array<TranscriptQuery.AgentResponse>;
+    setAndList(value: Array<TranscriptQuery.AgentResponse>): void;
+    addAnd(value?: TranscriptQuery.AgentResponse, index?: number): TranscriptQuery.AgentResponse;
+
+    clearOrList(): void;
+    getOrList(): Array<TranscriptQuery.AgentResponse>;
+    setOrList(value: Array<TranscriptQuery.AgentResponse>): void;
+    addOr(value?: TranscriptQuery.AgentResponse, index?: number): TranscriptQuery.AgentResponse;
+
+    getNot(): boolean;
+    setNot(value: boolean): void;
+
+    hasKey(): boolean;
+    clearKey(): void;
+    getKey(): TranscriptQuery.AgentResponse.Key | undefined;
+    setKey(value?: TranscriptQuery.AgentResponse.Key): void;
+
+    hasValues(): boolean;
+    clearValues(): void;
+    getValues(): TranscriptQuery.AgentResponse.Values | undefined;
+    setValues(value?: TranscriptQuery.AgentResponse.Values): void;
+
+    hasNumbers(): boolean;
+    clearNumbers(): void;
+    getNumbers(): TranscriptQuery.AgentResponse.Numbers | undefined;
+    setNumbers(value?: TranscriptQuery.AgentResponse.Numbers): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AgentResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: AgentResponse): AgentResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AgentResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AgentResponse;
+    static deserializeBinaryFromReader(message: AgentResponse, reader: jspb.BinaryReader): AgentResponse;
+  }
+
+  export namespace AgentResponse {
+    export type AsObject = {
+      andList: Array<TranscriptQuery.AgentResponse.AsObject>,
+      orList: Array<TranscriptQuery.AgentResponse.AsObject>,
+      not: boolean,
+      key?: TranscriptQuery.AgentResponse.Key.AsObject,
+      values?: TranscriptQuery.AgentResponse.Values.AsObject,
+      numbers?: TranscriptQuery.AgentResponse.Numbers.AsObject,
+    }
+
+    export class Values extends jspb.Message {
+      clearInList(): void;
+      getInList(): Array<string>;
+      setInList(value: Array<string>): void;
+      addIn(value: string, index?: number): string;
+
+      getStartsWith(): string;
+      setStartsWith(value: string): void;
+
+      getContains(): string;
+      setContains(value: string): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Values.AsObject;
+      static toObject(includeInstance: boolean, msg: Values): Values.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Values, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Values;
+      static deserializeBinaryFromReader(message: Values, reader: jspb.BinaryReader): Values;
+    }
+
+    export namespace Values {
+      export type AsObject = {
+        inList: Array<string>,
+        startsWith: string,
+        contains: string,
+      }
+    }
+
+    export class Numbers extends jspb.Message {
+      clearInList(): void;
+      getInList(): Array<number>;
+      setInList(value: Array<number>): void;
+      addIn(value: number, index?: number): number;
+
+      hasGte(): boolean;
+      clearGte(): void;
+      getGte(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+      setGte(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+      hasLte(): boolean;
+      clearLte(): void;
+      getLte(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+      setLte(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+      hasGt(): boolean;
+      clearGt(): void;
+      getGt(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+      setGt(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+      hasLt(): boolean;
+      clearLt(): void;
+      getLt(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+      setLt(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+      hasEq(): boolean;
+      clearEq(): void;
+      getEq(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+      setEq(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Numbers.AsObject;
+      static toObject(includeInstance: boolean, msg: Numbers): Numbers.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Numbers, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Numbers;
+      static deserializeBinaryFromReader(message: Numbers, reader: jspb.BinaryReader): Numbers;
+    }
+
+    export namespace Numbers {
+      export type AsObject = {
+        inList: Array<number>,
+        gte?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+        lte?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+        gt?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+        lt?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+        eq?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+      }
+    }
+
+    export class Key extends jspb.Message {
+      clearInList(): void;
+      getInList(): Array<string>;
+      setInList(value: Array<string>): void;
+      addIn(value: string, index?: number): string;
+
+      getStartsWith(): string;
+      setStartsWith(value: string): void;
+
+      getContains(): string;
+      setContains(value: string): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Key.AsObject;
+      static toObject(includeInstance: boolean, msg: Key): Key.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Key, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Key;
+      static deserializeBinaryFromReader(message: Key, reader: jspb.BinaryReader): Key;
+    }
+
+    export namespace Key {
+      export type AsObject = {
+        inList: Array<string>,
+        startsWith: string,
+        contains: string,
       }
     }
   }
