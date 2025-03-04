@@ -1937,7 +1937,7 @@ proto.api.commons.OmniConversationAssigned.prototype.toObject = function(opt_inc
  */
 proto.api.commons.OmniConversationAssigned.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1975,8 +1975,8 @@ proto.api.commons.OmniConversationAssigned.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setConversationId(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setConversationSid(value);
       break;
     default:
       reader.skipField();
@@ -2007,9 +2007,9 @@ proto.api.commons.OmniConversationAssigned.prototype.serializeBinary = function(
  */
 proto.api.commons.OmniConversationAssigned.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConversationId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConversationSid();
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -2018,20 +2018,20 @@ proto.api.commons.OmniConversationAssigned.serializeBinaryToWriter = function(me
 
 
 /**
- * optional string conversation_id = 1;
- * @return {string}
+ * optional int64 conversation_sid = 1;
+ * @return {number}
  */
-proto.api.commons.OmniConversationAssigned.prototype.getConversationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.commons.OmniConversationAssigned.prototype.getConversationSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.commons.OmniConversationAssigned} returns this
  */
-proto.api.commons.OmniConversationAssigned.prototype.setConversationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.api.commons.OmniConversationAssigned.prototype.setConversationSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2067,7 +2067,7 @@ proto.api.commons.OmniMessageReceieved.prototype.toObject = function(opt_include
  */
 proto.api.commons.OmniMessageReceieved.toObject = function(includeInstance, msg) {
   var f, obj = {
-conversationSid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2106,7 +2106,7 @@ proto.api.commons.OmniMessageReceieved.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setConversationSid(value);
       break;
     case 2:
@@ -2143,8 +2143,8 @@ proto.api.commons.OmniMessageReceieved.prototype.serializeBinary = function() {
 proto.api.commons.OmniMessageReceieved.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getConversationSid();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -2160,20 +2160,20 @@ proto.api.commons.OmniMessageReceieved.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional string conversation_sid = 1;
- * @return {string}
+ * optional int64 conversation_sid = 1;
+ * @return {number}
  */
 proto.api.commons.OmniMessageReceieved.prototype.getConversationSid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.commons.OmniMessageReceieved} returns this
  */
 proto.api.commons.OmniMessageReceieved.prototype.setConversationSid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

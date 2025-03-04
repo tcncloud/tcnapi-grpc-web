@@ -245,8 +245,8 @@ export namespace AuthTokenExpiration {
 }
 
 export class OmniConversationAssigned extends jspb.Message {
-  getConversationId(): string;
-  setConversationId(value: string): void;
+  getConversationSid(): number;
+  setConversationSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniConversationAssigned.AsObject;
@@ -260,13 +260,13 @@ export class OmniConversationAssigned extends jspb.Message {
 
 export namespace OmniConversationAssigned {
   export type AsObject = {
-    conversationId: string,
+    conversationSid: number,
   }
 }
 
 export class OmniMessageReceieved extends jspb.Message {
-  getConversationSid(): string;
-  setConversationSid(value: string): void;
+  getConversationSid(): number;
+  setConversationSid(value: number): void;
 
   getMessage(): string;
   setMessage(value: string): void;
@@ -283,7 +283,7 @@ export class OmniMessageReceieved extends jspb.Message {
 
 export namespace OmniMessageReceieved {
   export type AsObject = {
-    conversationSid: string,
+    conversationSid: number,
     message: string,
   }
 }
