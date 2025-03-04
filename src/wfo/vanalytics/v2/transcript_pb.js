@@ -11806,7 +11806,8 @@ startTime: (f = msg.getStartTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.S
 deleteTime: (f = msg.getDeleteTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.toObject(includeInstance, f),
 phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject(includeInstance, f),
 channelType: (f = msg.getChannelType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f),
-skills: (f = msg.getSkills()) && proto.wfo.vanalytics.v2.TranscriptQuery.SkillsQuery.toObject(includeInstance, f)
+skills: (f = msg.getSkills()) && proto.wfo.vanalytics.v2.TranscriptQuery.SkillsQuery.toObject(includeInstance, f),
+agentResponse: (f = msg.getAgentResponse()) && proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11892,6 +11893,11 @@ proto.wfo.vanalytics.v2.TranscriptQuery.deserializeBinaryFromReader = function(m
       var value = new proto.wfo.vanalytics.v2.TranscriptQuery.SkillsQuery;
       reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.SkillsQuery.deserializeBinaryFromReader);
       msg.setSkills(value);
+      break;
+    case 11:
+      var value = new proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse;
+      reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.deserializeBinaryFromReader);
+      msg.setAgentResponse(value);
       break;
     default:
       reader.skipField();
@@ -12000,6 +12006,14 @@ proto.wfo.vanalytics.v2.TranscriptQuery.serializeBinaryToWriter = function(messa
       10,
       f,
       proto.wfo.vanalytics.v2.TranscriptQuery.SkillsQuery.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentResponse();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.serializeBinaryToWriter
     );
   }
 };
@@ -22745,8 +22759,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.toObject = function(opt_in
 proto.wfo.vanalytics.v2.TranscriptQuery.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
 conversationSid: (f = msg.getConversationSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.toObject(includeInstance, f),
-campaignSid: (f = msg.getCampaignSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.CampaignSid.toObject(includeInstance, f),
-agentResponse: (f = msg.getAgentResponse()) && proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.toObject(includeInstance, f)
+campaignSid: (f = msg.getCampaignSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.CampaignSid.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -22793,11 +22806,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.Sms.CampaignSid.deserializeBinaryFromReader);
       msg.setCampaignSid(value);
       break;
-    case 3:
-      var value = new proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse;
-      reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.deserializeBinaryFromReader);
-      msg.setAgentResponse(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -22841,14 +22849,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.serializeBinaryToWriter = function(m
       2,
       f,
       proto.wfo.vanalytics.v2.TranscriptQuery.Sms.CampaignSid.serializeBinaryToWriter
-    );
-  }
-  f = message.getAgentResponse();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.serializeBinaryToWriter
     );
   }
 };
@@ -23244,43 +23244,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.hasCampaignSid = function(
 };
 
 
-/**
- * optional AgentResponse agent_response = 3;
- * @return {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse}
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.getAgentResponse = function() {
-  return /** @type{?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse} */ (
-    jspb.Message.getWrapperField(this, proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse, 3));
-};
-
-
-/**
- * @param {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse|undefined} value
- * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Sms} returns this
-*/
-proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.setAgentResponse = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Sms} returns this
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.clearAgentResponse = function() {
-  return this.setAgentResponse(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.hasAgentResponse = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
 
 
 
@@ -23316,8 +23279,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Chat.toObject = function(includeInstance
 conversationSid: (f = msg.getConversationSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Chat.ConversationSid.toObject(includeInstance, f),
 campaignSid: (f = msg.getCampaignSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Chat.CampaignSid.toObject(includeInstance, f),
 customerName: (f = msg.getCustomerName()) && proto.wfo.vanalytics.v2.TranscriptQuery.Chat.CustomerName.toObject(includeInstance, f),
-emailAddress: (f = msg.getEmailAddress()) && proto.wfo.vanalytics.v2.TranscriptQuery.Chat.EmailAddress.toObject(includeInstance, f),
-agentResponse: (f = msg.getAgentResponse()) && proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.toObject(includeInstance, f)
+emailAddress: (f = msg.getEmailAddress()) && proto.wfo.vanalytics.v2.TranscriptQuery.Chat.EmailAddress.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23373,11 +23335,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Chat.deserializeBinaryFromReader = funct
       var value = new proto.wfo.vanalytics.v2.TranscriptQuery.Chat.EmailAddress;
       reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.Chat.EmailAddress.deserializeBinaryFromReader);
       msg.setEmailAddress(value);
-      break;
-    case 5:
-      var value = new proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse;
-      reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.deserializeBinaryFromReader);
-      msg.setAgentResponse(value);
       break;
     default:
       reader.skipField();
@@ -23438,14 +23395,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Chat.serializeBinaryToWriter = function(
       4,
       f,
       proto.wfo.vanalytics.v2.TranscriptQuery.Chat.EmailAddress.serializeBinaryToWriter
-    );
-  }
-  f = message.getAgentResponse();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse.serializeBinaryToWriter
     );
   }
 };
@@ -24224,43 +24173,6 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.clearEmailAddress = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.hasEmailAddress = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional AgentResponse agent_response = 5;
- * @return {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse}
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.getAgentResponse = function() {
-  return /** @type{?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse} */ (
-    jspb.Message.getWrapperField(this, proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse, 5));
-};
-
-
-/**
- * @param {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse|undefined} value
- * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Chat} returns this
-*/
-proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.setAgentResponse = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Chat} returns this
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.clearAgentResponse = function() {
-  return this.setAgentResponse(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.wfo.vanalytics.v2.TranscriptQuery.Chat.prototype.hasAgentResponse = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -29182,6 +29094,43 @@ proto.wfo.vanalytics.v2.TranscriptQuery.prototype.clearSkills = function() {
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.prototype.hasSkills = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional AgentResponse agent_response = 11;
+ * @return {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse}
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.getAgentResponse = function() {
+  return /** @type{?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse} */ (
+    jspb.Message.getWrapperField(this, proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse, 11));
+};
+
+
+/**
+ * @param {?proto.wfo.vanalytics.v2.TranscriptQuery.AgentResponse|undefined} value
+ * @return {!proto.wfo.vanalytics.v2.TranscriptQuery} returns this
+*/
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.setAgentResponse = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wfo.vanalytics.v2.TranscriptQuery} returns this
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.clearAgentResponse = function() {
+  return this.setAgentResponse(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.hasAgentResponse = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

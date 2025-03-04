@@ -1300,6 +1300,11 @@ export class TranscriptQuery extends jspb.Message {
   getSkills(): TranscriptQuery.SkillsQuery | undefined;
   setSkills(value?: TranscriptQuery.SkillsQuery): void;
 
+  hasAgentResponse(): boolean;
+  clearAgentResponse(): void;
+  getAgentResponse(): TranscriptQuery.AgentResponse | undefined;
+  setAgentResponse(value?: TranscriptQuery.AgentResponse): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -1322,6 +1327,7 @@ export namespace TranscriptQuery {
     phone?: TranscriptQuery.Phone.AsObject,
     channelType?: TranscriptQuery.Channel.AsObject,
     skills?: TranscriptQuery.SkillsQuery.AsObject,
+    agentResponse?: TranscriptQuery.AgentResponse.AsObject,
   }
 
   export class SkillsQuery extends jspb.Message {
@@ -2763,11 +2769,6 @@ export namespace TranscriptQuery {
     getCampaignSid(): TranscriptQuery.Sms.CampaignSid | undefined;
     setCampaignSid(value?: TranscriptQuery.Sms.CampaignSid): void;
 
-    hasAgentResponse(): boolean;
-    clearAgentResponse(): void;
-    getAgentResponse(): TranscriptQuery.AgentResponse | undefined;
-    setAgentResponse(value?: TranscriptQuery.AgentResponse): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
     static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -2782,7 +2783,6 @@ export namespace TranscriptQuery {
     export type AsObject = {
       conversationSid?: TranscriptQuery.Sms.ConversationSid.AsObject,
       campaignSid?: TranscriptQuery.Sms.CampaignSid.AsObject,
-      agentResponse?: TranscriptQuery.AgentResponse.AsObject,
     }
 
     export class ConversationSid extends jspb.Message {
@@ -2851,11 +2851,6 @@ export namespace TranscriptQuery {
     getEmailAddress(): TranscriptQuery.Chat.EmailAddress | undefined;
     setEmailAddress(value?: TranscriptQuery.Chat.EmailAddress): void;
 
-    hasAgentResponse(): boolean;
-    clearAgentResponse(): void;
-    getAgentResponse(): TranscriptQuery.AgentResponse | undefined;
-    setAgentResponse(value?: TranscriptQuery.AgentResponse): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Chat.AsObject;
     static toObject(includeInstance: boolean, msg: Chat): Chat.AsObject;
@@ -2872,7 +2867,6 @@ export namespace TranscriptQuery {
       campaignSid?: TranscriptQuery.Chat.CampaignSid.AsObject,
       customerName?: TranscriptQuery.Chat.CustomerName.AsObject,
       emailAddress?: TranscriptQuery.Chat.EmailAddress.AsObject,
-      agentResponse?: TranscriptQuery.AgentResponse.AsObject,
     }
 
     export class ConversationSid extends jspb.Message {
