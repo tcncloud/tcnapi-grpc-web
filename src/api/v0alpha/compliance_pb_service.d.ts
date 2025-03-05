@@ -141,6 +141,15 @@ type ComplianceDeleteScrubListEntries = {
   readonly responseType: typeof api_v0alpha_compliance_pb.ScrubListRes;
 };
 
+type ComplianceDeleteAllListEntries = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.DeleteAllListEntriesRequest;
+  readonly responseType: typeof api_v0alpha_compliance_pb.DeleteAllListEntriesResponse;
+};
+
 type ComplianceGetScrubList = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -635,6 +644,7 @@ export class Compliance {
   static readonly AddScrubListEntries: ComplianceAddScrubListEntries;
   static readonly UpdateScrubEntry: ComplianceUpdateScrubEntry;
   static readonly DeleteScrubListEntries: ComplianceDeleteScrubListEntries;
+  static readonly DeleteAllListEntries: ComplianceDeleteAllListEntries;
   static readonly GetScrubList: ComplianceGetScrubList;
   static readonly DeleteScrubList: ComplianceDeleteScrubList;
   static readonly GetDefaultRules: ComplianceGetDefaultRules;
@@ -848,6 +858,15 @@ export class ComplianceClient {
   deleteScrubListEntries(
     requestMessage: api_v0alpha_compliance_pb.DeleteScrubListEntriesReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.ScrubListRes|null) => void
+  ): UnaryResponse;
+  deleteAllListEntries(
+    requestMessage: api_v0alpha_compliance_pb.DeleteAllListEntriesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.DeleteAllListEntriesResponse|null) => void
+  ): UnaryResponse;
+  deleteAllListEntries(
+    requestMessage: api_v0alpha_compliance_pb.DeleteAllListEntriesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.DeleteAllListEntriesResponse|null) => void
   ): UnaryResponse;
   getScrubList(
     requestMessage: api_v0alpha_compliance_pb.GetScrubListReq,
