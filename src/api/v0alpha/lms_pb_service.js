@@ -551,6 +551,51 @@ LMS.ListPools = {
   responseType: api_v0alpha_lms_pb.ListPoolsResponse
 };
 
+LMS.CreatePipelineCanvas = {
+  methodName: "CreatePipelineCanvas",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.CreatePipelineCanvasReq,
+  responseType: api_v0alpha_lms_pb.CreatePipelineCanvasRes
+};
+
+LMS.ListPipelineCanvases = {
+  methodName: "ListPipelineCanvases",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ListPipelineCanvasesReq,
+  responseType: api_v0alpha_lms_pb.ListPipelineCanvasesRes
+};
+
+LMS.UpdatePipelineCanvas = {
+  methodName: "UpdatePipelineCanvas",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.UpdatePipelineCanvasReq,
+  responseType: api_v0alpha_lms_pb.UpdatePipelineCanvasRes
+};
+
+LMS.DeletePipelineCanvas = {
+  methodName: "DeletePipelineCanvas",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.DeletePipelineCanvasReq,
+  responseType: api_v0alpha_lms_pb.DeletePipelineCanvasRes
+};
+
+LMS.GetPipelineCanvas = {
+  methodName: "GetPipelineCanvas",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.GetPipelineCanvasReq,
+  responseType: api_v0alpha_lms_pb.GetPipelineCanvasRes
+};
+
 exports.LMS = LMS;
 
 function LMSClient(serviceHost, options) {
@@ -2442,6 +2487,161 @@ LMSClient.prototype.listPools = function listPools(requestMessage, metadata, cal
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.ListPools, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.createPipelineCanvas = function createPipelineCanvas(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.CreatePipelineCanvas, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.listPipelineCanvases = function listPipelineCanvases(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.ListPipelineCanvases, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.updatePipelineCanvas = function updatePipelineCanvas(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.UpdatePipelineCanvas, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.deletePipelineCanvas = function deletePipelineCanvas(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.DeletePipelineCanvas, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.getPipelineCanvas = function getPipelineCanvas(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.GetPipelineCanvas, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

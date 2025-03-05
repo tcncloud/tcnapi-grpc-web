@@ -545,6 +545,51 @@ type LMSListPools = {
   readonly responseType: typeof api_v0alpha_lms_pb.ListPoolsResponse;
 };
 
+type LMSCreatePipelineCanvas = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.CreatePipelineCanvasReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.CreatePipelineCanvasRes;
+};
+
+type LMSListPipelineCanvases = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ListPipelineCanvasesReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.ListPipelineCanvasesRes;
+};
+
+type LMSUpdatePipelineCanvas = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.UpdatePipelineCanvasReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.UpdatePipelineCanvasRes;
+};
+
+type LMSDeletePipelineCanvas = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.DeletePipelineCanvasReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.DeletePipelineCanvasRes;
+};
+
+type LMSGetPipelineCanvas = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.GetPipelineCanvasReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.GetPipelineCanvasRes;
+};
+
 export class LMS {
   static readonly serviceName: string;
   static readonly GetPublicKey: LMSGetPublicKey;
@@ -607,6 +652,11 @@ export class LMS {
   static readonly GetAvailableEHRFields: LMSGetAvailableEHRFields;
   static readonly GetQueuedEventsStatusByElementId: LMSGetQueuedEventsStatusByElementId;
   static readonly ListPools: LMSListPools;
+  static readonly CreatePipelineCanvas: LMSCreatePipelineCanvas;
+  static readonly ListPipelineCanvases: LMSListPipelineCanvases;
+  static readonly UpdatePipelineCanvas: LMSUpdatePipelineCanvas;
+  static readonly DeletePipelineCanvas: LMSDeletePipelineCanvas;
+  static readonly GetPipelineCanvas: LMSGetPipelineCanvas;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1132,6 +1182,51 @@ export class LMSClient {
   listPools(
     requestMessage: api_v0alpha_lms_pb.ListPoolsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListPoolsResponse|null) => void
+  ): UnaryResponse;
+  createPipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.CreatePipelineCanvasReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.CreatePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  createPipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.CreatePipelineCanvasReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.CreatePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  listPipelineCanvases(
+    requestMessage: api_v0alpha_lms_pb.ListPipelineCanvasesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListPipelineCanvasesRes|null) => void
+  ): UnaryResponse;
+  listPipelineCanvases(
+    requestMessage: api_v0alpha_lms_pb.ListPipelineCanvasesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListPipelineCanvasesRes|null) => void
+  ): UnaryResponse;
+  updatePipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.UpdatePipelineCanvasReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.UpdatePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  updatePipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.UpdatePipelineCanvasReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.UpdatePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  deletePipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.DeletePipelineCanvasReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.DeletePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  deletePipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.DeletePipelineCanvasReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.DeletePipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  getPipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.GetPipelineCanvasReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.GetPipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  getPipelineCanvas(
+    requestMessage: api_v0alpha_lms_pb.GetPipelineCanvasReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.GetPipelineCanvasRes|null) => void
   ): UnaryResponse;
 }
 
