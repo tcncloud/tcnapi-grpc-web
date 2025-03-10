@@ -2514,6 +2514,11 @@ export class ExecuteFlow extends jspb.Message {
   getFortisTokenCcPayment(): ExecuteFortisTokenCcPayment | undefined;
   setFortisTokenCcPayment(value?: ExecuteFortisTokenCcPayment): void;
 
+  hasBlinkpaymentCharge(): boolean;
+  clearBlinkpaymentCharge(): void;
+  getBlinkpaymentCharge(): ExecuteBlinkPaymentCharge | undefined;
+  setBlinkpaymentCharge(value?: ExecuteBlinkPaymentCharge): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2850,6 +2855,7 @@ export namespace ExecuteFlow {
     fortisCreateCctoken?: ExecuteFortisCreateCctoken.AsObject,
     fortisTokenAchDebitPayment?: ExecuteFortisTokenAchDebitPayment.AsObject,
     fortisTokenCcPayment?: ExecuteFortisTokenCcPayment.AsObject,
+    blinkpaymentCharge?: ExecuteBlinkPaymentCharge.AsObject,
   }
 
   export enum ValueCase {
@@ -3176,6 +3182,7 @@ export namespace ExecuteFlow {
     FORTIS_CREATE_CCTOKEN = 6002,
     FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 6003,
     FORTIS_TOKEN_CC_PAYMENT = 6004,
+    BLINKPAYMENT_CHARGE = 6101,
   }
 }
 
@@ -8948,6 +8955,22 @@ export namespace ExecuteFortisTokenCcPayment {
   }
 }
 
+export class ExecuteBlinkPaymentCharge extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteBlinkPaymentCharge.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteBlinkPaymentCharge): ExecuteBlinkPaymentCharge.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteBlinkPaymentCharge, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteBlinkPaymentCharge;
+  static deserializeBinaryFromReader(message: ExecuteBlinkPaymentCharge, reader: jspb.BinaryReader): ExecuteBlinkPaymentCharge;
+}
+
+export namespace ExecuteBlinkPaymentCharge {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -9010,6 +9033,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_CALLIPAY: 5800;
   INTEGRATION_TYPE_TRATTA: 5900;
   INTEGRATION_TYPE_FORTIS: 6000;
+  INTEGRATION_TYPE_BLINKPAYMENT: 6100;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9340,6 +9364,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FORTIS_CREATE_CCTOKEN: 6002;
   REQUEST_METHOD_FORTIS_TOKEN_ACH_DEBIT_PAYMENT: 6003;
   REQUEST_METHOD_FORTIS_TOKEN_CC_PAYMENT: 6004;
+  REQUEST_METHOD_BLINKPAYMENT_CHARGE: 6101;
 }
 
 export const RequestMethod: RequestMethodMap;
