@@ -53,6 +53,7 @@ goog.exportSymbol('proto.api.commons.TicketAction', null, global);
 goog.exportSymbol('proto.api.commons.TicketAction.ContextCase', null, global);
 goog.exportSymbol('proto.api.commons.TicketAuditLog', null, global);
 goog.exportSymbol('proto.api.commons.TicketCustomFieldAuditLog', null, global);
+goog.exportSymbol('proto.api.commons.TicketCustomFieldStatus', null, global);
 goog.exportSymbol('proto.api.commons.TicketCustomFieldType', null, global);
 goog.exportSymbol('proto.api.commons.TicketProject', null, global);
 goog.exportSymbol('proto.api.commons.TicketProjectTemplate', null, global);
@@ -8416,7 +8417,8 @@ customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
 dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-ticketCustomFieldType: jspb.Message.getFieldWithDefault(msg, 8, 0)
+ticketCustomFieldType: jspb.Message.getFieldWithDefault(msg, 8, 0),
+customFieldDateValue: (f = msg.getCustomFieldDateValue()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8481,6 +8483,11 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
     case 8:
       var value = /** @type {!proto.api.commons.TicketCustomFieldType} */ (reader.readEnum());
       msg.setTicketCustomFieldType(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCustomFieldDateValue(value);
       break;
     default:
       reader.skipField();
@@ -8559,6 +8566,14 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
     writer.writeEnum(
       8,
       f
+    );
+  }
+  f = message.getCustomFieldDateValue();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -8706,6 +8721,43 @@ proto.api.commons.CustomField.prototype.getTicketCustomFieldType = function() {
  */
 proto.api.commons.CustomField.prototype.setTicketCustomFieldType = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp custom_field_date_value = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.CustomField.prototype.getCustomFieldDateValue = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.CustomField} returns this
+*/
+proto.api.commons.CustomField.prototype.setCustomFieldDateValue = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.CustomField} returns this
+ */
+proto.api.commons.CustomField.prototype.clearCustomFieldDateValue = function() {
+  return this.setCustomFieldDateValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.CustomField.prototype.hasCustomFieldDateValue = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -8934,7 +8986,9 @@ proto.api.commons.CustomFieldAttribute.toObject = function(includeInstance, msg)
 customFieldId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 editedValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
-previousValue: jspb.Message.getFieldWithDefault(msg, 4, "")
+previousValue: jspb.Message.getFieldWithDefault(msg, 4, ""),
+customFieldName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+ticketCustomFieldStatus: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -8986,6 +9040,14 @@ proto.api.commons.CustomFieldAttribute.deserializeBinaryFromReader = function(ms
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPreviousValue(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomFieldName(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.api.commons.TicketCustomFieldStatus} */ (reader.readEnum());
+      msg.setTicketCustomFieldStatus(value);
       break;
     default:
       reader.skipField();
@@ -9041,6 +9103,20 @@ proto.api.commons.CustomFieldAttribute.serializeBinaryToWriter = function(messag
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getCustomFieldName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getTicketCustomFieldStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
       f
     );
   }
@@ -9120,6 +9196,42 @@ proto.api.commons.CustomFieldAttribute.prototype.setPreviousValue = function(val
 
 
 /**
+ * optional string custom_field_name = 5;
+ * @return {string}
+ */
+proto.api.commons.CustomFieldAttribute.prototype.getCustomFieldName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
+ */
+proto.api.commons.CustomFieldAttribute.prototype.setCustomFieldName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional TicketCustomFieldStatus ticket_custom_field_status = 6;
+ * @return {!proto.api.commons.TicketCustomFieldStatus}
+ */
+proto.api.commons.CustomFieldAttribute.prototype.getTicketCustomFieldStatus = function() {
+  return /** @type {!proto.api.commons.TicketCustomFieldStatus} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TicketCustomFieldStatus} value
+ * @return {!proto.api.commons.CustomFieldAttribute} returns this
+ */
+proto.api.commons.CustomFieldAttribute.prototype.setTicketCustomFieldStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
  * @enum {number}
  */
 proto.api.commons.TimeScale = {
@@ -9159,6 +9271,15 @@ proto.api.commons.TicketCustomFieldType = {
   TICKET_CUSTOMFIELD_TYPE_DATETIME: 3,
   TICKET_CUSTOMFIELD_TYPE_MULTISELECT: 4,
   TICKET_CUSTOMFIELD_TYPE_SINGLESELECT: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.TicketCustomFieldStatus = {
+  TICKET_CUSTOM_FIELD_STATUS_ADDED: 0,
+  TICKET_CUSTOM_FIELD_STATUS_UPDATED: 1,
+  TICKET_CUSTOM_FIELD_STATUS_DELETED: 2
 };
 
 goog.object.extend(exports, proto.api.commons);

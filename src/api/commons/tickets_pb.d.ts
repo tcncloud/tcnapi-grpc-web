@@ -1098,6 +1098,11 @@ export class CustomField extends jspb.Message {
   getTicketCustomFieldType(): TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap];
   setTicketCustomFieldType(value: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap]): void;
 
+  hasCustomFieldDateValue(): boolean;
+  clearCustomFieldDateValue(): void;
+  getCustomFieldDateValue(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCustomFieldDateValue(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
   static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
@@ -1117,6 +1122,7 @@ export namespace CustomField {
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
     ticketCustomFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
+    customFieldDateValue?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1159,6 +1165,12 @@ export class CustomFieldAttribute extends jspb.Message {
   getPreviousValue(): string;
   setPreviousValue(value: string): void;
 
+  getCustomFieldName(): string;
+  setCustomFieldName(value: string): void;
+
+  getTicketCustomFieldStatus(): TicketCustomFieldStatusMap[keyof TicketCustomFieldStatusMap];
+  setTicketCustomFieldStatus(value: TicketCustomFieldStatusMap[keyof TicketCustomFieldStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomFieldAttribute.AsObject;
   static toObject(includeInstance: boolean, msg: CustomFieldAttribute): CustomFieldAttribute.AsObject;
@@ -1175,6 +1187,8 @@ export namespace CustomFieldAttribute {
     customFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
     editedValue: string,
     previousValue: string,
+    customFieldName: string,
+    ticketCustomFieldStatus: TicketCustomFieldStatusMap[keyof TicketCustomFieldStatusMap],
   }
 }
 
@@ -1215,4 +1229,12 @@ export interface TicketCustomFieldTypeMap {
 }
 
 export const TicketCustomFieldType: TicketCustomFieldTypeMap;
+
+export interface TicketCustomFieldStatusMap {
+  TICKET_CUSTOM_FIELD_STATUS_ADDED: 0;
+  TICKET_CUSTOM_FIELD_STATUS_UPDATED: 1;
+  TICKET_CUSTOM_FIELD_STATUS_DELETED: 2;
+}
+
+export const TicketCustomFieldStatus: TicketCustomFieldStatusMap;
 
