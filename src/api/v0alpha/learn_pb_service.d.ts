@@ -229,15 +229,6 @@ type LearnUploadStaticImage = {
   readonly responseType: typeof api_v0alpha_learn_pb.UploadStaticImageRes;
 };
 
-type LearnGetUpdateUrl = {
-  readonly methodName: string;
-  readonly service: typeof Learn;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_learn_pb.GetUpdateUrlReq;
-  readonly responseType: typeof api_v0alpha_learn_pb.GetUpdateUrlRes;
-};
-
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -265,7 +256,6 @@ export class Learn {
   static readonly ReviewVersionStream: LearnReviewVersionStream;
   static readonly DeleteVersion: LearnDeleteVersion;
   static readonly UploadStaticImage: LearnUploadStaticImage;
-  static readonly GetUpdateUrl: LearnGetUpdateUrl;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -492,15 +482,6 @@ export class LearnClient {
   uploadStaticImage(
     requestMessage: api_v0alpha_learn_pb.UploadStaticImageReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UploadStaticImageRes|null) => void
-  ): UnaryResponse;
-  getUpdateUrl(
-    requestMessage: api_v0alpha_learn_pb.GetUpdateUrlReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.GetUpdateUrlRes|null) => void
-  ): UnaryResponse;
-  getUpdateUrl(
-    requestMessage: api_v0alpha_learn_pb.GetUpdateUrlReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.GetUpdateUrlRes|null) => void
   ): UnaryResponse;
 }
 
