@@ -1098,11 +1098,6 @@ export class CustomField extends jspb.Message {
   getTicketCustomFieldType(): TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap];
   setTicketCustomFieldType(value: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap]): void;
 
-  hasCustomFieldDateValue(): boolean;
-  clearCustomFieldDateValue(): void;
-  getCustomFieldDateValue(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCustomFieldDateValue(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomField.AsObject;
   static toObject(includeInstance: boolean, msg: CustomField): CustomField.AsObject;
@@ -1122,7 +1117,6 @@ export namespace CustomField {
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
     ticketCustomFieldType: TicketCustomFieldTypeMap[keyof TicketCustomFieldTypeMap],
-    customFieldDateValue?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

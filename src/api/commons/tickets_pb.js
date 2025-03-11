@@ -8417,8 +8417,7 @@ customFieldValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
 customFieldType: jspb.Message.getFieldWithDefault(msg, 4, ""),
 dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-ticketCustomFieldType: jspb.Message.getFieldWithDefault(msg, 8, 0),
-customFieldDateValue: (f = msg.getCustomFieldDateValue()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+ticketCustomFieldType: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -8483,11 +8482,6 @@ proto.api.commons.CustomField.deserializeBinaryFromReader = function(msg, reader
     case 8:
       var value = /** @type {!proto.api.commons.TicketCustomFieldType} */ (reader.readEnum());
       msg.setTicketCustomFieldType(value);
-      break;
-    case 9:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCustomFieldDateValue(value);
       break;
     default:
       reader.skipField();
@@ -8566,14 +8560,6 @@ proto.api.commons.CustomField.serializeBinaryToWriter = function(message, writer
     writer.writeEnum(
       8,
       f
-    );
-  }
-  f = message.getCustomFieldDateValue();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -8721,43 +8707,6 @@ proto.api.commons.CustomField.prototype.getTicketCustomFieldType = function() {
  */
 proto.api.commons.CustomField.prototype.setTicketCustomFieldType = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp custom_field_date_value = 9;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.CustomField.prototype.getCustomFieldDateValue = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.CustomField} returns this
-*/
-proto.api.commons.CustomField.prototype.setCustomFieldDateValue = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.CustomField} returns this
- */
-proto.api.commons.CustomField.prototype.clearCustomFieldDateValue = function() {
-  return this.setCustomFieldDateValue(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.CustomField.prototype.hasCustomFieldDateValue = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
