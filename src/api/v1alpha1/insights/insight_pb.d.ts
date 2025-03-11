@@ -707,6 +707,16 @@ export class TextValueCondition extends jspb.Message {
   getExpressionNode(): api_v1alpha1_explorer_pipeline_pb.ExpressionNode | undefined;
   setExpressionNode(value?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode): void;
 
+  hasConditionExpression(): boolean;
+  clearConditionExpression(): void;
+  getConditionExpression(): api_v1alpha1_explorer_pipeline_pb.ExpressionNode | undefined;
+  setConditionExpression(value?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode): void;
+
+  hasResultExpression(): boolean;
+  clearResultExpression(): void;
+  getResultExpression(): api_v1alpha1_explorer_pipeline_pb.ExpressionNode | undefined;
+  setResultExpression(value?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TextValueCondition.AsObject;
   static toObject(includeInstance: boolean, msg: TextValueCondition): TextValueCondition.AsObject;
@@ -725,6 +735,8 @@ export namespace TextValueCondition {
     iconName: string,
     iconColor?: TextValueCondition.Color.AsObject,
     expressionNode?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode.AsObject,
+    conditionExpression?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode.AsObject,
+    resultExpression?: api_v1alpha1_explorer_pipeline_pb.ExpressionNode.AsObject,
   }
 
   export class Color extends jspb.Message {
