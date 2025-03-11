@@ -41,7 +41,8 @@ proto.api.commons.AppName = {
   OMNICHANNEL: 10,
   LEARN: 11,
   BILLING: 12,
-  NEWSROOM: 13
+  NEWSROOM: 13,
+  KNOWLEDGE_BASE: 14
 };
 
 goog.object.extend(exports, proto.api.commons);
