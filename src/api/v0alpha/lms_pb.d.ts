@@ -14,6 +14,324 @@ import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
+export class PipelineCanvasMetadata extends jspb.Message {
+  getPipelineCanvasSid(): string;
+  setPipelineCanvasSid(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasCreatedDate(): boolean;
+  clearCreatedDate(): void;
+  getCreatedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasLastEdited(): boolean;
+  clearLastEdited(): void;
+  getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineCanvasMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineCanvasMetadata): PipelineCanvasMetadata.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PipelineCanvasMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineCanvasMetadata;
+  static deserializeBinaryFromReader(message: PipelineCanvasMetadata, reader: jspb.BinaryReader): PipelineCanvasMetadata;
+}
+
+export namespace PipelineCanvasMetadata {
+  export type AsObject = {
+    pipelineCanvasSid: string,
+    name: string,
+    description: string,
+    createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class PipelineCanvas extends jspb.Message {
+  hasMetadata(): boolean;
+  clearMetadata(): void;
+  getMetadata(): PipelineCanvasMetadata | undefined;
+  setMetadata(value?: PipelineCanvasMetadata): void;
+
+  clearElementsList(): void;
+  getElementsList(): Array<Element>;
+  setElementsList(value: Array<Element>): void;
+  addElements(value?: Element, index?: number): Element;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineCanvas.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineCanvas): PipelineCanvas.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PipelineCanvas, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineCanvas;
+  static deserializeBinaryFromReader(message: PipelineCanvas, reader: jspb.BinaryReader): PipelineCanvas;
+}
+
+export namespace PipelineCanvas {
+  export type AsObject = {
+    metadata?: PipelineCanvasMetadata.AsObject,
+    elementsList: Array<Element.AsObject>,
+  }
+}
+
+export class PipelineCanvasPreview extends jspb.Message {
+  hasMetadata(): boolean;
+  clearMetadata(): void;
+  getMetadata(): PipelineCanvasMetadata | undefined;
+  setMetadata(value?: PipelineCanvasMetadata): void;
+
+  clearEntrypointsList(): void;
+  getEntrypointsList(): Array<string>;
+  setEntrypointsList(value: Array<string>): void;
+  addEntrypoints(value: string, index?: number): string;
+
+  clearExchangesList(): void;
+  getExchangesList(): Array<string>;
+  setExchangesList(value: Array<string>): void;
+  addExchanges(value: string, index?: number): string;
+
+  getElementCount(): number;
+  setElementCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineCanvasPreview.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineCanvasPreview): PipelineCanvasPreview.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PipelineCanvasPreview, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineCanvasPreview;
+  static deserializeBinaryFromReader(message: PipelineCanvasPreview, reader: jspb.BinaryReader): PipelineCanvasPreview;
+}
+
+export namespace PipelineCanvasPreview {
+  export type AsObject = {
+    metadata?: PipelineCanvasMetadata.AsObject,
+    entrypointsList: Array<string>,
+    exchangesList: Array<string>,
+    elementCount: number,
+  }
+}
+
+export class CreatePipelineCanvasReq extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePipelineCanvasReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePipelineCanvasReq): CreatePipelineCanvasReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePipelineCanvasReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePipelineCanvasReq;
+  static deserializeBinaryFromReader(message: CreatePipelineCanvasReq, reader: jspb.BinaryReader): CreatePipelineCanvasReq;
+}
+
+export namespace CreatePipelineCanvasReq {
+  export type AsObject = {
+    name: string,
+    description: string,
+  }
+}
+
+export class CreatePipelineCanvasRes extends jspb.Message {
+  hasPipelineCanvas(): boolean;
+  clearPipelineCanvas(): void;
+  getPipelineCanvas(): PipelineCanvas | undefined;
+  setPipelineCanvas(value?: PipelineCanvas): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePipelineCanvasRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePipelineCanvasRes): CreatePipelineCanvasRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePipelineCanvasRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePipelineCanvasRes;
+  static deserializeBinaryFromReader(message: CreatePipelineCanvasRes, reader: jspb.BinaryReader): CreatePipelineCanvasRes;
+}
+
+export namespace CreatePipelineCanvasRes {
+  export type AsObject = {
+    pipelineCanvas?: PipelineCanvas.AsObject,
+  }
+}
+
+export class ListPipelineCanvasesReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPipelineCanvasesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPipelineCanvasesReq): ListPipelineCanvasesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPipelineCanvasesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPipelineCanvasesReq;
+  static deserializeBinaryFromReader(message: ListPipelineCanvasesReq, reader: jspb.BinaryReader): ListPipelineCanvasesReq;
+}
+
+export namespace ListPipelineCanvasesReq {
+  export type AsObject = {
+  }
+}
+
+export class ListPipelineCanvasesRes extends jspb.Message {
+  clearPipelineCanvasPreviewsList(): void;
+  getPipelineCanvasPreviewsList(): Array<PipelineCanvasPreview>;
+  setPipelineCanvasPreviewsList(value: Array<PipelineCanvasPreview>): void;
+  addPipelineCanvasPreviews(value?: PipelineCanvasPreview, index?: number): PipelineCanvasPreview;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPipelineCanvasesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPipelineCanvasesRes): ListPipelineCanvasesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPipelineCanvasesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPipelineCanvasesRes;
+  static deserializeBinaryFromReader(message: ListPipelineCanvasesRes, reader: jspb.BinaryReader): ListPipelineCanvasesRes;
+}
+
+export namespace ListPipelineCanvasesRes {
+  export type AsObject = {
+    pipelineCanvasPreviewsList: Array<PipelineCanvasPreview.AsObject>,
+  }
+}
+
+export class UpdatePipelineCanvasReq extends jspb.Message {
+  getPipelineCanvasSid(): string;
+  setPipelineCanvasSid(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePipelineCanvasReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePipelineCanvasReq): UpdatePipelineCanvasReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePipelineCanvasReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePipelineCanvasReq;
+  static deserializeBinaryFromReader(message: UpdatePipelineCanvasReq, reader: jspb.BinaryReader): UpdatePipelineCanvasReq;
+}
+
+export namespace UpdatePipelineCanvasReq {
+  export type AsObject = {
+    pipelineCanvasSid: string,
+    name: string,
+    description: string,
+  }
+}
+
+export class UpdatePipelineCanvasRes extends jspb.Message {
+  hasPipelineCanvas(): boolean;
+  clearPipelineCanvas(): void;
+  getPipelineCanvas(): PipelineCanvas | undefined;
+  setPipelineCanvas(value?: PipelineCanvas): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePipelineCanvasRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePipelineCanvasRes): UpdatePipelineCanvasRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePipelineCanvasRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePipelineCanvasRes;
+  static deserializeBinaryFromReader(message: UpdatePipelineCanvasRes, reader: jspb.BinaryReader): UpdatePipelineCanvasRes;
+}
+
+export namespace UpdatePipelineCanvasRes {
+  export type AsObject = {
+    pipelineCanvas?: PipelineCanvas.AsObject,
+  }
+}
+
+export class DeletePipelineCanvasReq extends jspb.Message {
+  getPipelineCanvasSid(): string;
+  setPipelineCanvasSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePipelineCanvasReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePipelineCanvasReq): DeletePipelineCanvasReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePipelineCanvasReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePipelineCanvasReq;
+  static deserializeBinaryFromReader(message: DeletePipelineCanvasReq, reader: jspb.BinaryReader): DeletePipelineCanvasReq;
+}
+
+export namespace DeletePipelineCanvasReq {
+  export type AsObject = {
+    pipelineCanvasSid: string,
+  }
+}
+
+export class DeletePipelineCanvasRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePipelineCanvasRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePipelineCanvasRes): DeletePipelineCanvasRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePipelineCanvasRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePipelineCanvasRes;
+  static deserializeBinaryFromReader(message: DeletePipelineCanvasRes, reader: jspb.BinaryReader): DeletePipelineCanvasRes;
+}
+
+export namespace DeletePipelineCanvasRes {
+  export type AsObject = {
+  }
+}
+
+export class GetPipelineCanvasReq extends jspb.Message {
+  getPipelineCanvasSid(): string;
+  setPipelineCanvasSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPipelineCanvasReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPipelineCanvasReq): GetPipelineCanvasReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPipelineCanvasReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPipelineCanvasReq;
+  static deserializeBinaryFromReader(message: GetPipelineCanvasReq, reader: jspb.BinaryReader): GetPipelineCanvasReq;
+}
+
+export namespace GetPipelineCanvasReq {
+  export type AsObject = {
+    pipelineCanvasSid: string,
+  }
+}
+
+export class GetPipelineCanvasRes extends jspb.Message {
+  hasPipelineCanvas(): boolean;
+  clearPipelineCanvas(): void;
+  getPipelineCanvas(): PipelineCanvas | undefined;
+  setPipelineCanvas(value?: PipelineCanvas): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPipelineCanvasRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPipelineCanvasRes): GetPipelineCanvasRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPipelineCanvasRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPipelineCanvasRes;
+  static deserializeBinaryFromReader(message: GetPipelineCanvasRes, reader: jspb.BinaryReader): GetPipelineCanvasRes;
+}
+
+export namespace GetPipelineCanvasRes {
+  export type AsObject = {
+    pipelineCanvas?: PipelineCanvas.AsObject,
+  }
+}
+
 export class ListPoolsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPoolsRequest.AsObject;
@@ -687,6 +1005,9 @@ export class Element extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getPipelineCanvasSid(): string;
+  setPipelineCanvasSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Element.AsObject;
   static toObject(includeInstance: boolean, msg: Element): Element.AsObject;
@@ -709,6 +1030,7 @@ export namespace Element {
     createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     description: string,
+    pipelineCanvasSid: string,
   }
 }
 
