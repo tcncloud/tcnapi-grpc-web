@@ -1691,7 +1691,8 @@ proto.api.v1alpha1.explorer.QueryResponse.toObject = function(includeInstance, m
   var f, obj = {
 resultUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
 resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
+postProcessingQuery: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1742,6 +1743,10 @@ proto.api.v1alpha1.explorer.QueryResponse.deserializeBinaryFromReader = function
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
          });
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPostProcessingQuery(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1788,6 +1793,13 @@ proto.api.v1alpha1.explorer.QueryResponse.serializeBinaryToWriter = function(mes
   f = message.getTimeFilteredDatasourcesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+  }
+  f = message.getPostProcessingQuery();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
   }
 };
 
@@ -1848,6 +1860,24 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.getTimeFilteredDatasourcesMa
 proto.api.v1alpha1.explorer.QueryResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
   this.getTimeFilteredDatasourcesMap().clear();
   return this;
+};
+
+
+/**
+ * optional string post_processing_query = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.QueryResponse.prototype.getPostProcessingQuery = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.QueryResponse} returns this
+ */
+proto.api.v1alpha1.explorer.QueryResponse.prototype.setPostProcessingQuery = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2069,7 +2099,8 @@ resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 prql: jspb.Message.getFieldWithDefault(msg, 3, ""),
 sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
 explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
-timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
+postProcessingQuery: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2131,6 +2162,10 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.deserializeBinaryFromReader = f
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
          });
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPostProcessingQuery(value);
       break;
     default:
       reader.skipField();
@@ -2199,6 +2234,13 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.serializeBinaryToWriter = funct
   f = message.getTimeFilteredDatasourcesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+  }
+  f = message.getPostProcessingQuery();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
   }
 };
 
@@ -2313,6 +2355,24 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getTimeFilteredDataso
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
   this.getTimeFilteredDatasourcesMap().clear();
   return this;
+};
+
+
+/**
+ * optional string post_processing_query = 7;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getPostProcessingQuery = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
+ */
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setPostProcessingQuery = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -2504,7 +2564,8 @@ resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 prql: jspb.Message.getFieldWithDefault(msg, 3, ""),
 sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
 explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
-timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : []
+timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
+postProcessingQuery: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2566,6 +2627,10 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.deserializeBinaryFromReader = f
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
          });
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPostProcessingQuery(value);
       break;
     default:
       reader.skipField();
@@ -2634,6 +2699,13 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.serializeBinaryToWriter = funct
   f = message.getTimeFilteredDatasourcesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+  }
+  f = message.getPostProcessingQuery();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
   }
 };
 
@@ -2748,6 +2820,24 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getTimeFilteredDataso
 proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.clearTimeFilteredDatasourcesMap = function() {
   this.getTimeFilteredDatasourcesMap().clear();
   return this;
+};
+
+
+/**
+ * optional string post_processing_query = 7;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getPostProcessingQuery = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.QueryExplainResponse} returns this
+ */
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setPostProcessingQuery = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
