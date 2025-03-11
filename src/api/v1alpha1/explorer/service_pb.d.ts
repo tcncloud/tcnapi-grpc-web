@@ -212,6 +212,12 @@ export class QueryResponse extends jspb.Message {
 
   getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
   clearTimeFilteredDatasourcesMap(): void;
+  getPostProcessingTableQuery(): string;
+  setPostProcessingTableQuery(value: string): void;
+
+  getPostProcessingSummaryQuery(): string;
+  setPostProcessingSummaryQuery(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResponse): QueryResponse.AsObject;
@@ -227,6 +233,8 @@ export namespace QueryResponse {
     resultUrl: string,
     resultSizeBytes: number,
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
+    postProcessingTableQuery: string,
+    postProcessingSummaryQuery: string,
   }
 }
 
@@ -274,6 +282,12 @@ export class SupportQueryResponse extends jspb.Message {
 
   getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
   clearTimeFilteredDatasourcesMap(): void;
+  getPostProcessingTableQuery(): string;
+  setPostProcessingTableQuery(value: string): void;
+
+  getPostProcessingSummaryQuery(): string;
+  setPostProcessingSummaryQuery(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
@@ -292,6 +306,8 @@ export namespace SupportQueryResponse {
     sql: string,
     explain: string,
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
+    postProcessingTableQuery: string,
+    postProcessingSummaryQuery: string,
   }
 }
 
@@ -335,6 +351,12 @@ export class QueryExplainResponse extends jspb.Message {
 
   getTimeFilteredDatasourcesMap(): jspb.Map<string, boolean>;
   clearTimeFilteredDatasourcesMap(): void;
+  getPostProcessingTableQuery(): string;
+  setPostProcessingTableQuery(value: string): void;
+
+  getPostProcessingSummaryQuery(): string;
+  setPostProcessingSummaryQuery(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
@@ -353,6 +375,8 @@ export namespace QueryExplainResponse {
     sql: string,
     explain: string,
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
+    postProcessingTableQuery: string,
+    postProcessingSummaryQuery: string,
   }
 }
 
