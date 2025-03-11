@@ -2514,16 +2514,6 @@ export class ExecuteFlow extends jspb.Message {
   getFortisTokenCcPayment(): ExecuteFortisTokenCcPayment | undefined;
   setFortisTokenCcPayment(value?: ExecuteFortisTokenCcPayment): void;
 
-  hasBlinkpaymentChargeCc(): boolean;
-  clearBlinkpaymentChargeCc(): void;
-  getBlinkpaymentChargeCc(): ExecuteBlinkPaymentChargeCc | undefined;
-  setBlinkpaymentChargeCc(value?: ExecuteBlinkPaymentChargeCc): void;
-
-  hasBlinkpaymentChargeAch(): boolean;
-  clearBlinkpaymentChargeAch(): void;
-  getBlinkpaymentChargeAch(): ExecuteBlinkPaymentChargeAch | undefined;
-  setBlinkpaymentChargeAch(value?: ExecuteBlinkPaymentChargeAch): void;
-
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2860,8 +2850,6 @@ export namespace ExecuteFlow {
     fortisCreateCctoken?: ExecuteFortisCreateCctoken.AsObject,
     fortisTokenAchDebitPayment?: ExecuteFortisTokenAchDebitPayment.AsObject,
     fortisTokenCcPayment?: ExecuteFortisTokenCcPayment.AsObject,
-    blinkpaymentChargeCc?: ExecuteBlinkPaymentChargeCc.AsObject,
-    blinkpaymentChargeAch?: ExecuteBlinkPaymentChargeAch.AsObject,
   }
 
   export enum ValueCase {
@@ -3188,8 +3176,6 @@ export namespace ExecuteFlow {
     FORTIS_CREATE_CCTOKEN = 6002,
     FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 6003,
     FORTIS_TOKEN_CC_PAYMENT = 6004,
-    BLINKPAYMENT_CHARGE_CC = 6101,
-    BLINKPAYMENT_CHARGE_ACH = 6102,
   }
 }
 
@@ -8962,38 +8948,6 @@ export namespace ExecuteFortisTokenCcPayment {
   }
 }
 
-export class ExecuteBlinkPaymentChargeCc extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteBlinkPaymentChargeCc.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteBlinkPaymentChargeCc): ExecuteBlinkPaymentChargeCc.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteBlinkPaymentChargeCc, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteBlinkPaymentChargeCc;
-  static deserializeBinaryFromReader(message: ExecuteBlinkPaymentChargeCc, reader: jspb.BinaryReader): ExecuteBlinkPaymentChargeCc;
-}
-
-export namespace ExecuteBlinkPaymentChargeCc {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteBlinkPaymentChargeAch extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteBlinkPaymentChargeAch.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteBlinkPaymentChargeAch): ExecuteBlinkPaymentChargeAch.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteBlinkPaymentChargeAch, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteBlinkPaymentChargeAch;
-  static deserializeBinaryFromReader(message: ExecuteBlinkPaymentChargeAch, reader: jspb.BinaryReader): ExecuteBlinkPaymentChargeAch;
-}
-
-export namespace ExecuteBlinkPaymentChargeAch {
-  export type AsObject = {
-  }
-}
-
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -9056,7 +9010,6 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_CALLIPAY: 5800;
   INTEGRATION_TYPE_TRATTA: 5900;
   INTEGRATION_TYPE_FORTIS: 6000;
-  INTEGRATION_TYPE_BLINKPAYMENT: 6100;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9387,8 +9340,6 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FORTIS_CREATE_CCTOKEN: 6002;
   REQUEST_METHOD_FORTIS_TOKEN_ACH_DEBIT_PAYMENT: 6003;
   REQUEST_METHOD_FORTIS_TOKEN_CC_PAYMENT: 6004;
-  REQUEST_METHOD_BLINKPAYMENT_CHARGE_CC: 6101;
-  REQUEST_METHOD_BLINKPAYMENT_CHARGE_ACH: 6102;
 }
 
 export const RequestMethod: RequestMethodMap;
