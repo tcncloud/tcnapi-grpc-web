@@ -235,6 +235,15 @@ Learn.UploadStaticImage = {
   responseType: api_v0alpha_learn_pb.UploadStaticImageRes
 };
 
+Learn.GetUpdateUrl = {
+  methodName: "GetUpdateUrl",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.GetUpdateUrlReq,
+  responseType: api_v0alpha_learn_pb.GetUpdateUrlRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -1023,6 +1032,37 @@ LearnClient.prototype.uploadStaticImage = function uploadStaticImage(requestMess
     callback = arguments[1];
   }
   var client = grpc.unary(Learn.UploadStaticImage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.getUpdateUrl = function getUpdateUrl(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.GetUpdateUrl, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
