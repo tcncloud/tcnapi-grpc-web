@@ -12228,7 +12228,8 @@ campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 19, "0"),
 lastMessageGroupTime: (f = msg.getLastMessageGroupTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 21, 0),
 result: jspb.Message.getFieldWithDefault(msg, 22, 0),
-lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+taskSid: (f = msg.getTaskSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12367,6 +12368,11 @@ proto.api.commons.OmniConversation.deserializeBinaryFromReader = function(msg, r
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastStateChangedTime(value);
+      break;
+    case 24:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setTaskSid(value);
       break;
     default:
       reader.skipField();
@@ -12564,6 +12570,14 @@ proto.api.commons.OmniConversation.serializeBinaryToWriter = function(message, w
       23,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTaskSid();
+  if (f != null) {
+    writer.writeMessage(
+      24,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -13494,6 +13508,43 @@ proto.api.commons.OmniConversation.prototype.clearLastStateChangedTime = functio
  */
 proto.api.commons.OmniConversation.prototype.hasLastStateChangedTime = function() {
   return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value task_sid = 24;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.commons.OmniConversation.prototype.getTaskSid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 24));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.commons.OmniConversation} returns this
+*/
+proto.api.commons.OmniConversation.prototype.setTaskSid = function(value) {
+  return jspb.Message.setWrapperField(this, 24, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniConversation} returns this
+ */
+proto.api.commons.OmniConversation.prototype.clearTaskSid = function() {
+  return this.setTaskSid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniConversation.prototype.hasTaskSid = function() {
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
