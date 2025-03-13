@@ -80535,7 +80535,8 @@ includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
 includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
 includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-includeShiftSegmentCallStats: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+includeShiftSegmentCallStats: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+scheduleType: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -80597,6 +80598,10 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.deserializeBinaryFromReader = 
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeShiftSegmentCallStats(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.ScheduleType} */ (reader.readEnum());
+      msg.setScheduleType(value);
       break;
     default:
       reader.skipField();
@@ -80666,6 +80671,13 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.serializeBinaryToWriter = func
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getScheduleType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
       f
     );
   }
@@ -80796,6 +80808,24 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeShiftSegme
  */
 proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeShiftSegmentCallStats = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional api.commons.ScheduleType schedule_type = 7;
+ * @return {!proto.api.commons.ScheduleType}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getScheduleType = function() {
+  return /** @type {!proto.api.commons.ScheduleType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ScheduleType} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setScheduleType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
@@ -86645,7 +86675,8 @@ proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.toObject = functi
   var f, obj = {
 shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
 includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+scheduleType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -86696,6 +86727,10 @@ proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.deserializeBinary
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeActivity(value);
       break;
+    case 4:
+      var value = /** @type {!proto.api.commons.ScheduleType} */ (reader.readEnum());
+      msg.setScheduleType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -86743,6 +86778,13 @@ proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.serializeBinaryTo
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getScheduleType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
       f
     );
   }
@@ -86819,6 +86861,24 @@ proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.prototype.getIncl
  */
 proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.prototype.setIncludeActivity = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional api.commons.ScheduleType schedule_type = 4;
+ * @return {!proto.api.commons.ScheduleType}
+ */
+proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.prototype.getScheduleType = function() {
+  return /** @type {!proto.api.commons.ScheduleType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ScheduleType} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsReq.prototype.setScheduleType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
