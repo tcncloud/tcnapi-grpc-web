@@ -118,6 +118,11 @@ export class AgentEvent extends jspb.Message {
   getHuntGroupName(): string;
   setHuntGroupName(value: string): void;
 
+  clearSkillNamesList(): void;
+  getSkillNamesList(): Array<string>;
+  setSkillNamesList(value: Array<string>): void;
+  addSkillNames(value: string, index?: number): string;
+
   getEventData(): string;
   setEventData(value: string): void;
 
@@ -141,6 +146,7 @@ export namespace AgentEvent {
     agentFirstName: string,
     agentLastName: string,
     huntGroupName: string,
+    skillNamesList: Array<string>,
     eventData: string,
   }
 }

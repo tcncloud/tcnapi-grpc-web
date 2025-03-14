@@ -132,7 +132,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.omnichannel.instant.v1alpha1.AgentEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.omnichannel.instant.v1alpha1.AgentEvent.repeatedFields_, null);
 };
 goog.inherits(proto.services.omnichannel.instant.v1alpha1.AgentEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -744,6 +744,13 @@ proto.services.omnichannel.instant.v1alpha1.StreamCallerEventsResponse.prototype
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -783,6 +790,7 @@ eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.to
 agentFirstName: jspb.Message.getFieldWithDefault(msg, 7, ""),
 agentLastName: jspb.Message.getFieldWithDefault(msg, 8, ""),
 huntGroupName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+skillNamesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
 eventData: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -852,6 +860,10 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.deserializeBinaryFromRead
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setHuntGroupName(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addSkillNames(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -940,6 +952,13 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.serializeBinaryToWriter =
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getSkillNamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      10,
       f
     );
   }
@@ -1113,6 +1132,43 @@ proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getHuntGroupNam
  */
 proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setHuntGroupName = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * repeated string skill_names = 10;
+ * @return {!Array<string>}
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.getSkillNamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.setSkillNamesList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.addSkillNames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.omnichannel.instant.v1alpha1.AgentEvent} returns this
+ */
+proto.services.omnichannel.instant.v1alpha1.AgentEvent.prototype.clearSkillNamesList = function() {
+  return this.setSkillNamesList([]);
 };
 
 
