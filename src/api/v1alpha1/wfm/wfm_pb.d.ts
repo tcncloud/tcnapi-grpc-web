@@ -10287,6 +10287,9 @@ export class CopyShiftInstancesToScheduleReq extends jspb.Message {
   getOverlapAsWarning(): boolean;
   setOverlapAsWarning(value: boolean): void;
 
+  getSourceScheduleType(): api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap];
+  setSourceScheduleType(value: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleReq.AsObject;
   static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleReq): CopyShiftInstancesToScheduleReq.AsObject;
@@ -10302,6 +10305,7 @@ export namespace CopyShiftInstancesToScheduleReq {
     destinationSchedule?: api_commons_wfm_pb.ScheduleSelector.AsObject,
     shiftInstanceSidsList: Array<number>,
     overlapAsWarning: boolean,
+    sourceScheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
   }
 }
 

@@ -85445,7 +85445,8 @@ proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.toObject = function(inclu
   var f, obj = {
 destinationSchedule: (f = msg.getDestinationSchedule()) && api_commons_wfm_pb.ScheduleSelector.toObject(includeInstance, f),
 shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-overlapAsWarning: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+overlapAsWarning: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+sourceScheduleType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -85497,6 +85498,10 @@ proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.deserializeBinaryFromRead
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOverlapAsWarning(value);
       break;
+    case 4:
+      var value = /** @type {!proto.api.commons.ScheduleType} */ (reader.readEnum());
+      msg.setSourceScheduleType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -85545,6 +85550,13 @@ proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.serializeBinaryToWriter =
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getSourceScheduleType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
       f
     );
   }
@@ -85640,6 +85652,24 @@ proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.prototype.getOverlapAsWar
  */
 proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.prototype.setOverlapAsWarning = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional api.commons.ScheduleType source_schedule_type = 4;
+ * @return {!proto.api.commons.ScheduleType}
+ */
+proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.prototype.getSourceScheduleType = function() {
+  return /** @type {!proto.api.commons.ScheduleType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ScheduleType} value
+ * @return {!proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq} returns this
+ */
+proto.api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq.prototype.setSourceScheduleType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
