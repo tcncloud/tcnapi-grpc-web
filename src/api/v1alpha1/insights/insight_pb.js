@@ -1283,7 +1283,8 @@ datasourceName: jspb.Message.getFieldWithDefault(msg, 12, ""),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 pipeline: (f = msg.getPipeline()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
-insightBody: (f = msg.getInsightBody()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f)
+insightBody: (f = msg.getInsightBody()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f),
+exportOptions: (f = msg.getExportOptions()) && proto.api.v1alpha1.insights.ExportOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1383,6 +1384,11 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
       var value = new api_v1alpha1_explorer_pipeline_pb.Pipeline;
       reader.readMessage(value,api_v1alpha1_explorer_pipeline_pb.Pipeline.deserializeBinaryFromReader);
       msg.setInsightBody(value);
+      break;
+    case 18:
+      var value = new proto.api.v1alpha1.insights.ExportOptions;
+      reader.readMessage(value,proto.api.v1alpha1.insights.ExportOptions.deserializeBinaryFromReader);
+      msg.setExportOptions(value);
       break;
     default:
       reader.skipField();
@@ -1520,6 +1526,14 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
       17,
       f,
       api_v1alpha1_explorer_pipeline_pb.Pipeline.serializeBinaryToWriter
+    );
+  }
+  f = message.getExportOptions();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.api.v1alpha1.insights.ExportOptions.serializeBinaryToWriter
     );
   }
 };
@@ -1868,6 +1882,43 @@ proto.api.v1alpha1.insights.Insight.prototype.clearInsightBody = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.hasInsightBody = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional ExportOptions export_options = 18;
+ * @return {?proto.api.v1alpha1.insights.ExportOptions}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getExportOptions = function() {
+  return /** @type{?proto.api.v1alpha1.insights.ExportOptions} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.ExportOptions, 18));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.insights.ExportOptions|undefined} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+*/
+proto.api.v1alpha1.insights.Insight.prototype.setExportOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.clearExportOptions = function() {
+  return this.setExportOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.hasExportOptions = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
