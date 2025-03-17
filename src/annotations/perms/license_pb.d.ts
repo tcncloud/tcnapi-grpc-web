@@ -25,6 +25,7 @@ export interface ApplicationMap {
   APPLICATION_CONTACTMANAGER: 18;
   APPLICATION_WFO_AGENT_MANAGER: 19;
   APPLICATION_KNOWLEDGE_BASE: 20;
+  APPLICATION_RULE_ENGINE: 21;
 }
 
 export const Application: ApplicationMap;
