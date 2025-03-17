@@ -594,6 +594,34 @@ export namespace ListVfsSchemasResponse {
   }
 }
 
+export class ExportOptions extends jspb.Message {
+  getDelimiter(): string;
+  setDelimiter(value: string): void;
+
+  getQuoteCharacter(): QuoteCharacterMap[keyof QuoteCharacterMap];
+  setQuoteCharacter(value: QuoteCharacterMap[keyof QuoteCharacterMap]): void;
+
+  getNoHeader(): boolean;
+  setNoHeader(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportOptions): ExportOptions.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportOptions;
+  static deserializeBinaryFromReader(message: ExportOptions, reader: jspb.BinaryReader): ExportOptions;
+}
+
+export namespace ExportOptions {
+  export type AsObject = {
+    delimiter: string,
+    quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
+    noHeader: boolean,
+  }
+}
+
 export class TableVisualization extends jspb.Message {
   clearTableColumnDetailsList(): void;
   getTableColumnDetailsList(): Array<TableColumnConfig>;
