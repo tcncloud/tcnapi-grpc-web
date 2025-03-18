@@ -606,6 +606,9 @@ export class SampleAgentConversationsRequest extends jspb.Message {
   setAgentUserIdsList(value: Array<string>): void;
   addAgentUserIds(value: string, index?: number): string;
 
+  getTranscriptFilterSid(): number;
+  setTranscriptFilterSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SampleAgentConversationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SampleAgentConversationsRequest): SampleAgentConversationsRequest.AsObject;
@@ -624,6 +627,7 @@ export namespace SampleAgentConversationsRequest {
     maxAgentEvaluations: number,
     samplePercentage: number,
     agentUserIdsList: Array<string>,
+    transcriptFilterSid: number,
   }
 }
 

@@ -4730,7 +4730,8 @@ startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.to
 endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 maxAgentEvaluations: jspb.Message.getFieldWithDefault(msg, 6, 0),
 samplePercentage: jspb.Message.getFieldWithDefault(msg, 7, 0),
-agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+transcriptFilterSid: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -4792,6 +4793,10 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.deserializeBinaryF
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addAgentUserIds(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTranscriptFilterSid(value);
       break;
     default:
       reader.skipField();
@@ -4863,6 +4868,13 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.serializeBinaryToW
   if (f.length > 0) {
     writer.writeRepeatedString(
       8,
+      f
+    );
+  }
+  f = message.getTranscriptFilterSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      9,
       f
     );
   }
@@ -5031,6 +5043,24 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.addAgent
  */
 proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.clearAgentUserIdsList = function() {
   return this.setAgentUserIdsList([]);
+};
+
+
+/**
+ * optional int64 transcript_filter_sid = 9;
+ * @return {number}
+ */
+proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.getTranscriptFilterSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.setTranscriptFilterSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
