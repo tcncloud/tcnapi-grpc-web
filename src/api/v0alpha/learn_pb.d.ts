@@ -1252,3 +1252,49 @@ export namespace GetUpdateUrlRes {
   }
 }
 
+export class AdvancedSearchReq extends jspb.Message {
+  getUserPrompt(): string;
+  setUserPrompt(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdvancedSearchReq.AsObject;
+  static toObject(includeInstance: boolean, msg: AdvancedSearchReq): AdvancedSearchReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdvancedSearchReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdvancedSearchReq;
+  static deserializeBinaryFromReader(message: AdvancedSearchReq, reader: jspb.BinaryReader): AdvancedSearchReq;
+}
+
+export namespace AdvancedSearchReq {
+  export type AsObject = {
+    userPrompt: string,
+  }
+}
+
+export class AdvancedSearchRes extends jspb.Message {
+  getAnswer(): string;
+  setAnswer(value: string): void;
+
+  clearSourcesList(): void;
+  getSourcesList(): Array<string>;
+  setSourcesList(value: Array<string>): void;
+  addSources(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdvancedSearchRes.AsObject;
+  static toObject(includeInstance: boolean, msg: AdvancedSearchRes): AdvancedSearchRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdvancedSearchRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdvancedSearchRes;
+  static deserializeBinaryFromReader(message: AdvancedSearchRes, reader: jspb.BinaryReader): AdvancedSearchRes;
+}
+
+export namespace AdvancedSearchRes {
+  export type AsObject = {
+    answer: string,
+    sourcesList: Array<string>,
+  }
+}
+

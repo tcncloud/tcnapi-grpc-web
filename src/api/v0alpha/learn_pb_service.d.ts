@@ -238,6 +238,15 @@ type LearnGetUpdateUrl = {
   readonly responseType: typeof api_v0alpha_learn_pb.GetUpdateUrlRes;
 };
 
+type LearnAdvancedSearch = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.AdvancedSearchReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.AdvancedSearchRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -266,6 +275,7 @@ export class Learn {
   static readonly DeleteVersion: LearnDeleteVersion;
   static readonly UploadStaticImage: LearnUploadStaticImage;
   static readonly GetUpdateUrl: LearnGetUpdateUrl;
+  static readonly AdvancedSearch: LearnAdvancedSearch;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -501,6 +511,15 @@ export class LearnClient {
   getUpdateUrl(
     requestMessage: api_v0alpha_learn_pb.GetUpdateUrlReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.GetUpdateUrlRes|null) => void
+  ): UnaryResponse;
+  advancedSearch(
+    requestMessage: api_v0alpha_learn_pb.AdvancedSearchReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.AdvancedSearchRes|null) => void
+  ): UnaryResponse;
+  advancedSearch(
+    requestMessage: api_v0alpha_learn_pb.AdvancedSearchReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.AdvancedSearchRes|null) => void
   ): UnaryResponse;
 }
 
