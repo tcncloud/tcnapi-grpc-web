@@ -41,6 +41,8 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.api.v1alpha1.asm.AsmSession', null, global);
 goog.exportSymbol('proto.api.v1alpha1.asm.AssignNewConversationReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.asm.AssignNewConversationRes', null, global);
@@ -5097,7 +5099,8 @@ assignmentType: jspb.Message.getFieldWithDefault(msg, 15, 0),
 slaTimeouts: (f = msg.getSlaTimeouts()) && api_commons_omnichannel_pb.SLATimeouts.toObject(includeInstance, f),
 conversationCollectedData: (f = msg.getConversationCollectedData()) && api_commons_omnichannel_pb.ConversationCollectedData.toObject(includeInstance, f),
 lastMessageGroupTime: (f = msg.getLastMessageGroupTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 19, 0)
+lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 19, 0),
+taskSid: (f = msg.getTaskSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5197,6 +5200,11 @@ proto.api.v1alpha1.asm.Conversation.deserializeBinaryFromReader = function(msg, 
     case 19:
       var value = /** @type {!proto.api.commons.OmniSenderType} */ (reader.readEnum());
       msg.setLastMessageGroupType(value);
+      break;
+    case 20:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setTaskSid(value);
       break;
     default:
       reader.skipField();
@@ -5331,6 +5339,14 @@ proto.api.v1alpha1.asm.Conversation.serializeBinaryToWriter = function(message, 
     writer.writeEnum(
       19,
       f
+    );
+  }
+  f = message.getTaskSid();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -5737,6 +5753,43 @@ proto.api.v1alpha1.asm.Conversation.prototype.getLastMessageGroupType = function
  */
 proto.api.v1alpha1.asm.Conversation.prototype.setLastMessageGroupType = function(value) {
   return jspb.Message.setProto3EnumField(this, 19, value);
+};
+
+
+/**
+ * optional google.protobuf.Int64Value task_sid = 20;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.asm.Conversation.prototype.getTaskSid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 20));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.v1alpha1.asm.Conversation} returns this
+*/
+proto.api.v1alpha1.asm.Conversation.prototype.setTaskSid = function(value) {
+  return jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.asm.Conversation} returns this
+ */
+proto.api.v1alpha1.asm.Conversation.prototype.clearTaskSid = function() {
+  return this.setTaskSid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.asm.Conversation.prototype.hasTaskSid = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

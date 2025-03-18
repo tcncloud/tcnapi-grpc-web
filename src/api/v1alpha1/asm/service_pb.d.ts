@@ -11,6 +11,7 @@ import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class CreateSessionReq extends jspb.Message {
   getHuntGroupSid(): number;
@@ -661,6 +662,11 @@ export class Conversation extends jspb.Message {
   getLastMessageGroupType(): api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap];
   setLastMessageGroupType(value: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap]): void;
 
+  hasTaskSid(): boolean;
+  clearTaskSid(): void;
+  getTaskSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setTaskSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Conversation.AsObject;
   static toObject(includeInstance: boolean, msg: Conversation): Conversation.AsObject;
@@ -687,6 +693,7 @@ export namespace Conversation {
     conversationCollectedData?: api_commons_omnichannel_pb.ConversationCollectedData.AsObject,
     lastMessageGroupTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastMessageGroupType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
+    taskSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 

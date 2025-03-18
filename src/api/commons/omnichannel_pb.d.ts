@@ -1555,6 +1555,11 @@ export class OmniConversation extends jspb.Message {
   getLastStateChangedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastStateChangedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasTaskSid(): boolean;
+  clearTaskSid(): void;
+  getTaskSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setTaskSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniConversation.AsObject;
   static toObject(includeInstance: boolean, msg: OmniConversation): OmniConversation.AsObject;
@@ -1589,6 +1594,7 @@ export namespace OmniConversation {
     lastMessageGroupType: OmniSenderTypeMap[keyof OmniSenderTypeMap],
     result: OmniConversationResultMap[keyof OmniConversationResultMap],
     lastStateChangedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    taskSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 
   export class ConversationDetails extends jspb.Message {
