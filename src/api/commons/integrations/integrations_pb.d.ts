@@ -2524,6 +2524,16 @@ export class ExecuteFlow extends jspb.Message {
   getBlinkpaymentChargeAch(): ExecuteBlinkPaymentChargeAch | undefined;
   setBlinkpaymentChargeAch(value?: ExecuteBlinkPaymentChargeAch): void;
 
+  hasWaystarCcPayment(): boolean;
+  clearWaystarCcPayment(): void;
+  getWaystarCcPayment(): ExecuteWayStarCcPayment | undefined;
+  setWaystarCcPayment(value?: ExecuteWayStarCcPayment): void;
+
+  hasWaystarAchPayment(): boolean;
+  clearWaystarAchPayment(): void;
+  getWaystarAchPayment(): ExecuteWayStarAchPayment | undefined;
+  setWaystarAchPayment(value?: ExecuteWayStarAchPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2862,6 +2872,8 @@ export namespace ExecuteFlow {
     fortisTokenCcPayment?: ExecuteFortisTokenCcPayment.AsObject,
     blinkpaymentChargeCc?: ExecuteBlinkPaymentChargeCc.AsObject,
     blinkpaymentChargeAch?: ExecuteBlinkPaymentChargeAch.AsObject,
+    waystarCcPayment?: ExecuteWayStarCcPayment.AsObject,
+    waystarAchPayment?: ExecuteWayStarAchPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -3190,6 +3202,8 @@ export namespace ExecuteFlow {
     FORTIS_TOKEN_CC_PAYMENT = 6004,
     BLINKPAYMENT_CHARGE_CC = 6101,
     BLINKPAYMENT_CHARGE_ACH = 6102,
+    WAYSTAR_CC_PAYMENT = 6201,
+    WAYSTAR_ACH_PAYMENT = 6202,
   }
 }
 
@@ -8994,6 +9008,38 @@ export namespace ExecuteBlinkPaymentChargeAch {
   }
 }
 
+export class ExecuteWayStarCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteWayStarCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteWayStarCcPayment): ExecuteWayStarCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteWayStarCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteWayStarCcPayment;
+  static deserializeBinaryFromReader(message: ExecuteWayStarCcPayment, reader: jspb.BinaryReader): ExecuteWayStarCcPayment;
+}
+
+export namespace ExecuteWayStarCcPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteWayStarAchPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteWayStarAchPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteWayStarAchPayment): ExecuteWayStarAchPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteWayStarAchPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteWayStarAchPayment;
+  static deserializeBinaryFromReader(message: ExecuteWayStarAchPayment, reader: jspb.BinaryReader): ExecuteWayStarAchPayment;
+}
+
+export namespace ExecuteWayStarAchPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -9057,6 +9103,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_TRATTA: 5900;
   INTEGRATION_TYPE_FORTIS: 6000;
   INTEGRATION_TYPE_BLINKPAYMENT: 6100;
+  INTEGRATION_TYPE_WAYSTAR: 6200;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9389,6 +9436,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FORTIS_TOKEN_CC_PAYMENT: 6004;
   REQUEST_METHOD_BLINKPAYMENT_CHARGE_CC: 6101;
   REQUEST_METHOD_BLINKPAYMENT_CHARGE_ACH: 6102;
+  REQUEST_METHOD_WAYSTAR_CC_PAYMENT: 6201;
+  REQUEST_METHOD_WAYSTAR_ACH_PAYMENT: 6202;
 }
 
 export const RequestMethod: RequestMethodMap;
