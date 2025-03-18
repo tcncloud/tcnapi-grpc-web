@@ -9634,6 +9634,9 @@ export class ListShiftInstancesBySidReq extends jspb.Message {
   getIncludeShiftSegmentCallStats(): boolean;
   setIncludeShiftSegmentCallStats(value: boolean): void;
 
+  getScheduleType(): api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap];
+  setScheduleType(value: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftInstancesBySidReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidReq): ListShiftInstancesBySidReq.AsObject;
@@ -9652,6 +9655,7 @@ export namespace ListShiftInstancesBySidReq {
     includeSchedulingActivity: boolean,
     includeActivity: boolean,
     includeShiftSegmentCallStats: boolean,
+    scheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
   }
 }
 
@@ -10283,6 +10287,9 @@ export class CopyShiftInstancesToScheduleReq extends jspb.Message {
   getOverlapAsWarning(): boolean;
   setOverlapAsWarning(value: boolean): void;
 
+  getSourceScheduleType(): api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap];
+  setSourceScheduleType(value: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleReq.AsObject;
   static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleReq): CopyShiftInstancesToScheduleReq.AsObject;
@@ -10298,6 +10305,7 @@ export namespace CopyShiftInstancesToScheduleReq {
     destinationSchedule?: api_commons_wfm_pb.ScheduleSelector.AsObject,
     shiftInstanceSidsList: Array<number>,
     overlapAsWarning: boolean,
+    sourceScheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
   }
 }
 
@@ -10449,6 +10457,9 @@ export class ListShiftSegmentsByShiftInstanceSidsReq extends jspb.Message {
   getIncludeActivity(): boolean;
   setIncludeActivity(value: boolean): void;
 
+  getScheduleType(): api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap];
+  setScheduleType(value: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftSegmentsByShiftInstanceSidsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftSegmentsByShiftInstanceSidsReq): ListShiftSegmentsByShiftInstanceSidsReq.AsObject;
@@ -10464,6 +10475,7 @@ export namespace ListShiftSegmentsByShiftInstanceSidsReq {
     shiftInstanceSidsList: Array<number>,
     includeSchedulingActivity: boolean,
     includeActivity: boolean,
+    scheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
   }
 }
 
