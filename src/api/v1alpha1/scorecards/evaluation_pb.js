@@ -4731,7 +4731,7 @@ endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObje
 maxAgentEvaluations: jspb.Message.getFieldWithDefault(msg, 6, 0),
 samplePercentage: jspb.Message.getFieldWithDefault(msg, 7, 0),
 agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-transcriptFilterSid: jspb.Message.getFieldWithDefault(msg, 9, 0)
+filterSid: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -4796,7 +4796,7 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.deserializeBinaryF
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setTranscriptFilterSid(value);
+      msg.setFilterSid(value);
       break;
     default:
       reader.skipField();
@@ -4871,7 +4871,7 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.serializeBinaryToW
       f
     );
   }
-  f = message.getTranscriptFilterSid();
+  f = message.getFilterSid();
   if (f !== 0) {
     writer.writeInt64(
       9,
@@ -5047,10 +5047,10 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.clearAge
 
 
 /**
- * optional int64 transcript_filter_sid = 9;
+ * optional int64 filter_sid = 9;
  * @return {number}
  */
-proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.getTranscriptFilterSid = function() {
+proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.getFilterSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -5059,7 +5059,7 @@ proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.getTrans
  * @param {number} value
  * @return {!proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest} returns this
  */
-proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.setTranscriptFilterSid = function(value) {
+proto.api.v1alpha1.scorecards.SampleAgentConversationsRequest.prototype.setFilterSid = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
