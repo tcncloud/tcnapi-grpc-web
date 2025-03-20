@@ -1499,6 +1499,12 @@ export namespace ListContactListsReq {
     getProjectSid(): string;
     setProjectSid(value: string): void;
 
+    getPageSize(): number;
+    setPageSize(value: number): void;
+
+    getPageToken(): string;
+    setPageToken(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ByProject.AsObject;
     static toObject(includeInstance: boolean, msg: ByProject): ByProject.AsObject;
@@ -1512,6 +1518,8 @@ export namespace ListContactListsReq {
   export namespace ByProject {
     export type AsObject = {
       projectSid: string,
+      pageSize: number,
+      pageToken: string,
     }
   }
 
@@ -1527,6 +1535,9 @@ export class ListContactListsRes extends jspb.Message {
   setContactListsList(value: Array<api_commons_omnichannel_pb.ContactList>): void;
   addContactLists(value?: api_commons_omnichannel_pb.ContactList, index?: number): api_commons_omnichannel_pb.ContactList;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactListsRes.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactListsRes): ListContactListsRes.AsObject;
@@ -1540,6 +1551,7 @@ export class ListContactListsRes extends jspb.Message {
 export namespace ListContactListsRes {
   export type AsObject = {
     contactListsList: Array<api_commons_omnichannel_pb.ContactList.AsObject>,
+    nextPageToken: string,
   }
 }
 

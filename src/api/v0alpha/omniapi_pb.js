@@ -13707,7 +13707,9 @@ proto.api.v0alpha.ListContactListsReq.ByProject.prototype.toObject = function(op
  */
 proto.api.v0alpha.ListContactListsReq.ByProject.toObject = function(includeInstance, msg) {
   var f, obj = {
-projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -13748,6 +13750,14 @@ proto.api.v0alpha.ListContactListsReq.ByProject.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setProjectSid(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPageSize(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -13784,6 +13794,20 @@ proto.api.v0alpha.ListContactListsReq.ByProject.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -13802,6 +13826,42 @@ proto.api.v0alpha.ListContactListsReq.ByProject.prototype.getProjectSid = functi
  */
 proto.api.v0alpha.ListContactListsReq.ByProject.prototype.setProjectSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 page_size = 2;
+ * @return {number}
+ */
+proto.api.v0alpha.ListContactListsReq.ByProject.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ListContactListsReq.ByProject} returns this
+ */
+proto.api.v0alpha.ListContactListsReq.ByProject.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string page_token = 3;
+ * @return {string}
+ */
+proto.api.v0alpha.ListContactListsReq.ByProject.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListContactListsReq.ByProject} returns this
+ */
+proto.api.v0alpha.ListContactListsReq.ByProject.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -13919,7 +13979,8 @@ proto.api.v0alpha.ListContactListsRes.prototype.toObject = function(opt_includeI
 proto.api.v0alpha.ListContactListsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
 contactListsList: jspb.Message.toObjectList(msg.getContactListsList(),
-    api_commons_omnichannel_pb.ContactList.toObject, includeInstance)
+    api_commons_omnichannel_pb.ContactList.toObject, includeInstance),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -13961,6 +14022,10 @@ proto.api.v0alpha.ListContactListsRes.deserializeBinaryFromReader = function(msg
       reader.readMessage(value,api_commons_omnichannel_pb.ContactList.deserializeBinaryFromReader);
       msg.addContactLists(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -13996,6 +14061,13 @@ proto.api.v0alpha.ListContactListsRes.serializeBinaryToWriter = function(message
       1,
       f,
       api_commons_omnichannel_pb.ContactList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -14036,6 +14108,24 @@ proto.api.v0alpha.ListContactListsRes.prototype.addContactLists = function(opt_v
  */
 proto.api.v0alpha.ListContactListsRes.prototype.clearContactListsList = function() {
   return this.setContactListsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.ListContactListsRes.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListContactListsRes} returns this
+ */
+proto.api.v0alpha.ListContactListsRes.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
