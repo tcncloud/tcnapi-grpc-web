@@ -8533,7 +8533,9 @@ proto.api.commons.integrations.Receipt.prototype.toObject = function(opt_include
 proto.api.commons.integrations.Receipt.toObject = function(includeInstance, msg) {
   var f, obj = {
 fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    proto.api.commons.integrations.ReceiptField.toObject, includeInstance)
+    proto.api.commons.integrations.ReceiptField.toObject, includeInstance),
+header: jspb.Message.getFieldWithDefault(msg, 2, ""),
+footer: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -8575,6 +8577,14 @@ proto.api.commons.integrations.Receipt.deserializeBinaryFromReader = function(ms
       reader.readMessage(value,proto.api.commons.integrations.ReceiptField.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHeader(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFooter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8610,6 +8620,20 @@ proto.api.commons.integrations.Receipt.serializeBinaryToWriter = function(messag
       1,
       f,
       proto.api.commons.integrations.ReceiptField.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeader();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getFooter();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -8650,6 +8674,42 @@ proto.api.commons.integrations.Receipt.prototype.addFields = function(opt_value,
  */
 proto.api.commons.integrations.Receipt.prototype.clearFieldsList = function() {
   return this.setFieldsList([]);
+};
+
+
+/**
+ * optional string header = 2;
+ * @return {string}
+ */
+proto.api.commons.integrations.Receipt.prototype.getHeader = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.integrations.Receipt} returns this
+ */
+proto.api.commons.integrations.Receipt.prototype.setHeader = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string footer = 3;
+ * @return {string}
+ */
+proto.api.commons.integrations.Receipt.prototype.getFooter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.integrations.Receipt} returns this
+ */
+proto.api.commons.integrations.Receipt.prototype.setFooter = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
