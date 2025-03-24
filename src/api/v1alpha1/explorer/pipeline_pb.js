@@ -8121,6 +8121,7 @@ proto.api.v1alpha1.explorer.TableColumnConfig.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.explorer.TableColumnConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
+columnName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
     proto.api.v1alpha1.explorer.ColumnOperation.toObject, includeInstance),
 columnSummary: jspb.Message.getFieldWithDefault(msg, 6, 0)
@@ -8160,6 +8161,10 @@ proto.api.v1alpha1.explorer.TableColumnConfig.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumnName(value);
+      break;
     case 5:
       var value = new proto.api.v1alpha1.explorer.ColumnOperation;
       reader.readMessage(value,proto.api.v1alpha1.explorer.ColumnOperation.deserializeBinaryFromReader);
@@ -8198,6 +8203,13 @@ proto.api.v1alpha1.explorer.TableColumnConfig.prototype.serializeBinary = functi
  */
 proto.api.v1alpha1.explorer.TableColumnConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getColumnName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getOperationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -8213,6 +8225,24 @@ proto.api.v1alpha1.explorer.TableColumnConfig.serializeBinaryToWriter = function
       f
     );
   }
+};
+
+
+/**
+ * optional string column_name = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.TableColumnConfig.prototype.getColumnName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.TableColumnConfig} returns this
+ */
+proto.api.v1alpha1.explorer.TableColumnConfig.prototype.setColumnName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
