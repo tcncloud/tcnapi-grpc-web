@@ -1009,6 +1009,9 @@ export namespace FormatQuery {
 }
 
 export class TableColumnConfig extends jspb.Message {
+  getColumnName(): string;
+  setColumnName(value: string): void;
+
   clearOperationsList(): void;
   getOperationsList(): Array<ColumnOperation>;
   setOperationsList(value: Array<ColumnOperation>): void;
@@ -1029,6 +1032,7 @@ export class TableColumnConfig extends jspb.Message {
 
 export namespace TableColumnConfig {
   export type AsObject = {
+    columnName: string,
     operationsList: Array<ColumnOperation.AsObject>,
     columnSummary: ColumnSummaryTypeMap[keyof ColumnSummaryTypeMap],
   }
