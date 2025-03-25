@@ -150,6 +150,11 @@ export class OmniCampaignModule extends jspb.Message {
   setAttachmentsList(value: Array<OmniAttachment>): void;
   addAttachments(value?: OmniAttachment, index?: number): OmniAttachment;
 
+  hasHoursOfOperationTimezone(): boolean;
+  clearHoursOfOperationTimezone(): void;
+  getHoursOfOperationTimezone(): WeekdayTimeRange | undefined;
+  setHoursOfOperationTimezone(value?: WeekdayTimeRange): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModule.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModule): OmniCampaignModule.AsObject;
@@ -174,6 +179,7 @@ export namespace OmniCampaignModule {
     hoursOfOperation?: WeekdayTimeRange.AsObject,
     details?: OmniCampaignModule.Details.AsObject,
     attachmentsList: Array<OmniAttachment.AsObject>,
+    hoursOfOperationTimezone?: WeekdayTimeRange.AsObject,
   }
 
   export class Details extends jspb.Message {

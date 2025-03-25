@@ -2199,7 +2199,8 @@ actualStopDate: (f = msg.getActualStopDate()) && google_protobuf_timestamp_pb.Ti
 hoursOfOperation: (f = msg.getHoursOfOperation()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
 details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.toObject(includeInstance, f),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    proto.api.commons.OmniAttachment.toObject, includeInstance)
+    proto.api.commons.OmniAttachment.toObject, includeInstance),
+hoursOfOperationTimezone: (f = msg.getHoursOfOperationTimezone()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2291,6 +2292,11 @@ proto.api.commons.OmniCampaignModule.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.commons.OmniAttachment;
       reader.readMessage(value,proto.api.commons.OmniAttachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
+      break;
+    case 13:
+      var value = new proto.api.commons.WeekdayTimeRange;
+      reader.readMessage(value,proto.api.commons.WeekdayTimeRange.deserializeBinaryFromReader);
+      msg.setHoursOfOperationTimezone(value);
       break;
     default:
       reader.skipField();
@@ -2411,6 +2417,14 @@ proto.api.commons.OmniCampaignModule.serializeBinaryToWriter = function(message,
       12,
       f,
       proto.api.commons.OmniAttachment.serializeBinaryToWriter
+    );
+  }
+  f = message.getHoursOfOperationTimezone();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.api.commons.WeekdayTimeRange.serializeBinaryToWriter
     );
   }
 };
@@ -3239,6 +3253,43 @@ proto.api.commons.OmniCampaignModule.prototype.addAttachments = function(opt_val
  */
 proto.api.commons.OmniCampaignModule.prototype.clearAttachmentsList = function() {
   return this.setAttachmentsList([]);
+};
+
+
+/**
+ * optional WeekdayTimeRange hours_of_operation_timezone = 13;
+ * @return {?proto.api.commons.WeekdayTimeRange}
+ */
+proto.api.commons.OmniCampaignModule.prototype.getHoursOfOperationTimezone = function() {
+  return /** @type{?proto.api.commons.WeekdayTimeRange} */ (
+    jspb.Message.getWrapperField(this, proto.api.commons.WeekdayTimeRange, 13));
+};
+
+
+/**
+ * @param {?proto.api.commons.WeekdayTimeRange|undefined} value
+ * @return {!proto.api.commons.OmniCampaignModule} returns this
+*/
+proto.api.commons.OmniCampaignModule.prototype.setHoursOfOperationTimezone = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniCampaignModule} returns this
+ */
+proto.api.commons.OmniCampaignModule.prototype.clearHoursOfOperationTimezone = function() {
+  return this.setHoursOfOperationTimezone(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniCampaignModule.prototype.hasHoursOfOperationTimezone = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
