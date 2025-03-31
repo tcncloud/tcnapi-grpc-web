@@ -1422,12 +1422,6 @@ export namespace VoiceAnalytics {
       getInOrder(): boolean;
       setInOrder(value: boolean): void;
 
-      getNot(): boolean;
-      setNot(value: boolean): void;
-
-      getChannel(): number;
-      setChannel(value: number): void;
-
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Phrase.AsObject;
       static toObject(includeInstance: boolean, msg: Phrase): Phrase.AsObject;
@@ -1443,8 +1437,6 @@ export namespace VoiceAnalytics {
         wordsList: Array<VoiceAnalytics.Number.Phrase.Word.AsObject>,
         slop: number,
         inOrder: boolean,
-        not: boolean,
-        channel: number,
       }
 
       export class Word extends jspb.Message {

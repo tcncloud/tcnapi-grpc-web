@@ -11180,9 +11180,7 @@ proto.api.commons.org.VoiceAnalytics.Number.Phrase.toObject = function(includeIn
 wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.api.commons.org.VoiceAnalytics.Number.Phrase.Word.toObject, includeInstance),
 slop: jspb.Message.getFieldWithDefault(msg, 2, 0),
-inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-not: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-channel: jspb.Message.getFieldWithDefault(msg, 7, 0)
+inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -11232,14 +11230,6 @@ proto.api.commons.org.VoiceAnalytics.Number.Phrase.deserializeBinaryFromReader =
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setInOrder(value);
       break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNot(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setChannel(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -11288,20 +11278,6 @@ proto.api.commons.org.VoiceAnalytics.Number.Phrase.serializeBinaryToWriter = fun
   if (f) {
     writer.writeBool(
       3,
-      f
-    );
-  }
-  f = message.getNot();
-  if (f) {
-    writer.writeBool(
-      5,
-      f
-    );
-  }
-  f = message.getChannel();
-  if (f !== 0) {
-    writer.writeUint32(
-      7,
       f
     );
   }
@@ -11539,42 +11515,6 @@ proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.getInOrder = functi
  */
 proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.setInOrder = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional bool not = 5;
- * @return {boolean}
- */
-proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.getNot = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.VoiceAnalytics.Number.Phrase} returns this
- */
-proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.setNot = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional uint32 channel = 7;
- * @return {number}
- */
-proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.getChannel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.org.VoiceAnalytics.Number.Phrase} returns this
- */
-proto.api.commons.org.VoiceAnalytics.Number.Phrase.prototype.setChannel = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
