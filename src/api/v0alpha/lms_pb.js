@@ -79,6 +79,7 @@ goog.exportSymbol('proto.api.v0alpha.ConsentExportProcess.ChannelTypeCase', null
 goog.exportSymbol('proto.api.v0alpha.ConsentExportProcess.ContentTypeCase', null, global);
 goog.exportSymbol('proto.api.v0alpha.ConsentExportProcess.ExpirationCase', null, global);
 goog.exportSymbol('proto.api.v0alpha.ContactManagementEnrichment', null, global);
+goog.exportSymbol('proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType', null, global);
 goog.exportSymbol('proto.api.v0alpha.ContactManagerSink', null, global);
 goog.exportSymbol('proto.api.v0alpha.ContactManagerSink.DeDuplication', null, global);
 goog.exportSymbol('proto.api.v0alpha.ContactManagerSink.DeDuplicationFieldType', null, global);
@@ -61897,7 +61898,8 @@ projectId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 contactListName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 fieldsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 deDuplicationInfo: (f = msg.getDeDuplicationInfo()) && proto.api.v0alpha.ContactManagerSink.DeDuplication.toObject(includeInstance, f),
-insertIfMissing: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+insertIfMissing: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+searchFieldType: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -61954,6 +61956,10 @@ proto.api.v0alpha.ContactManagementEnrichment.deserializeBinaryFromReader = func
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setInsertIfMissing(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType} */ (reader.readEnum());
+      msg.setSearchFieldType(value);
       break;
     default:
       reader.skipField();
@@ -62020,8 +62026,24 @@ proto.api.v0alpha.ContactManagementEnrichment.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getSearchFieldType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType = {
+  NONE: 0,
+  PHONE_NUMBER: 1,
+  EMAIL_ADDRESS: 2
+};
 
 /**
  * optional string project_id = 1;
@@ -62148,6 +62170,24 @@ proto.api.v0alpha.ContactManagementEnrichment.prototype.getInsertIfMissing = fun
  */
 proto.api.v0alpha.ContactManagementEnrichment.prototype.setInsertIfMissing = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional SearchFieldType search_field_type = 6;
+ * @return {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType}
+ */
+proto.api.v0alpha.ContactManagementEnrichment.prototype.getSearchFieldType = function() {
+  return /** @type {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType} value
+ * @return {!proto.api.v0alpha.ContactManagementEnrichment} returns this
+ */
+proto.api.v0alpha.ContactManagementEnrichment.prototype.setSearchFieldType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 

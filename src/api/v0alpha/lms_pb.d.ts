@@ -8024,6 +8024,9 @@ export class ContactManagementEnrichment extends jspb.Message {
   getInsertIfMissing(): boolean;
   setInsertIfMissing(value: boolean): void;
 
+  getSearchFieldType(): ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap];
+  setSearchFieldType(value: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagementEnrichment.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagementEnrichment): ContactManagementEnrichment.AsObject;
@@ -8041,7 +8044,16 @@ export namespace ContactManagementEnrichment {
     fieldsList: Array<string>,
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
     insertIfMissing: boolean,
+    searchFieldType: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap],
   }
+
+  export interface SearchFieldTypeMap {
+    NONE: 0;
+    PHONE_NUMBER: 1;
+    EMAIL_ADDRESS: 2;
+  }
+
+  export const SearchFieldType: SearchFieldTypeMap;
 }
 
 export class TicketExchangeSink extends jspb.Message {
