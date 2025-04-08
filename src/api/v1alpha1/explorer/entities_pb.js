@@ -1527,10 +1527,9 @@ proto.api.v1alpha1.explorer.DatasourceType = {
  */
 proto.api.v1alpha1.explorer.ResultType = {
   RESULT_TYPE_UNSPECIFIED: 0,
-  RESULT_TYPE_RAW: 1,
-  RESULT_TYPE_FORMAT: 2,
-  RESULT_TYPE_SUMMARY: 3,
-  RESULT_TYPE_REPORT: 4
+  RESULT_TYPE_FORMAT: 1,
+  RESULT_TYPE_SUMMARY: 2,
+  RESULT_TYPE_REPORT: 3
 };
 
 /**

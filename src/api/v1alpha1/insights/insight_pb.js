@@ -1285,7 +1285,7 @@ updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.
 pipeline: (f = msg.getPipeline()) && api_v1alpha1_insights_insight_content_pb.Pipeline.toObject(includeInstance, f),
 insightBody: (f = msg.getInsightBody()) && api_v1alpha1_explorer_pipeline_pb.Pipeline.toObject(includeInstance, f),
 exportOptions: (f = msg.getExportOptions()) && proto.api.v1alpha1.insights.ExportOptions.toObject(includeInstance, f),
-exportFormat: jspb.Message.getFieldWithDefault(msg, 19, 0)
+dataExportOptions: (f = msg.getDataExportOptions()) && api_v1alpha1_explorer_entities_pb.ExportOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1392,8 +1392,9 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
       msg.setExportOptions(value);
       break;
     case 19:
-      var value = /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (reader.readEnum());
-      msg.setExportFormat(value);
+      var value = new api_v1alpha1_explorer_entities_pb.ExportOptions;
+      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ExportOptions.deserializeBinaryFromReader);
+      msg.setDataExportOptions(value);
       break;
     default:
       reader.skipField();
@@ -1541,11 +1542,12 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
       proto.api.v1alpha1.insights.ExportOptions.serializeBinaryToWriter
     );
   }
-  f = message.getExportFormat();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getDataExportOptions();
+  if (f != null) {
+    writer.writeMessage(
       19,
-      f
+      f,
+      api_v1alpha1_explorer_entities_pb.ExportOptions.serializeBinaryToWriter
     );
   }
 };
@@ -1935,20 +1937,39 @@ proto.api.v1alpha1.insights.Insight.prototype.hasExportOptions = function() {
 
 
 /**
- * optional api.v1alpha1.explorer.ExportFormat export_format = 19;
- * @return {!proto.api.v1alpha1.explorer.ExportFormat}
+ * optional api.v1alpha1.explorer.ExportOptions data_export_options = 19;
+ * @return {?proto.api.v1alpha1.explorer.ExportOptions}
  */
-proto.api.v1alpha1.insights.Insight.prototype.getExportFormat = function() {
-  return /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+proto.api.v1alpha1.insights.Insight.prototype.getDataExportOptions = function() {
+  return /** @type{?proto.api.v1alpha1.explorer.ExportOptions} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_explorer_entities_pb.ExportOptions, 19));
 };
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.ExportFormat} value
+ * @param {?proto.api.v1alpha1.explorer.ExportOptions|undefined} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+*/
+proto.api.v1alpha1.insights.Insight.prototype.setDataExportOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.insights.Insight} returns this
  */
-proto.api.v1alpha1.insights.Insight.prototype.setExportFormat = function(value) {
-  return jspb.Message.setProto3EnumField(this, 19, value);
+proto.api.v1alpha1.insights.Insight.prototype.clearDataExportOptions = function() {
+  return this.setDataExportOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.hasDataExportOptions = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
