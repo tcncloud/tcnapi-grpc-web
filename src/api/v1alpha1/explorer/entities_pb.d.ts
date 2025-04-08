@@ -160,6 +160,32 @@ export namespace ResultFile {
   }
 }
 
+export class ResultUrlsEntry extends jspb.Message {
+  getKey(): ResultTypeMap[keyof ResultTypeMap];
+  setKey(value: ResultTypeMap[keyof ResultTypeMap]): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): ResultFile | undefined;
+  setValue(value?: ResultFile): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResultUrlsEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: ResultUrlsEntry): ResultUrlsEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResultUrlsEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResultUrlsEntry;
+  static deserializeBinaryFromReader(message: ResultUrlsEntry, reader: jspb.BinaryReader): ResultUrlsEntry;
+}
+
+export namespace ResultUrlsEntry {
+  export type AsObject = {
+    key: ResultTypeMap[keyof ResultTypeMap],
+    value?: ResultFile.AsObject,
+  }
+}
+
 export class ExportOptions extends jspb.Message {
   getDelimiter(): string;
   setDelimiter(value: string): void;
@@ -189,32 +215,6 @@ export namespace ExportOptions {
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
     noHeader: boolean,
     fileExtension: FileExtensionMap[keyof FileExtensionMap],
-  }
-}
-
-export class ResultUrlsEntry extends jspb.Message {
-  getKey(): ResultTypeMap[keyof ResultTypeMap];
-  setKey(value: ResultTypeMap[keyof ResultTypeMap]): void;
-
-  hasValue(): boolean;
-  clearValue(): void;
-  getValue(): ResultFile | undefined;
-  setValue(value?: ResultFile): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResultUrlsEntry.AsObject;
-  static toObject(includeInstance: boolean, msg: ResultUrlsEntry): ResultUrlsEntry.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ResultUrlsEntry, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResultUrlsEntry;
-  static deserializeBinaryFromReader(message: ResultUrlsEntry, reader: jspb.BinaryReader): ResultUrlsEntry;
-}
-
-export namespace ResultUrlsEntry {
-  export type AsObject = {
-    key: ResultTypeMap[keyof ResultTypeMap],
-    value?: ResultFile.AsObject,
   }
 }
 
