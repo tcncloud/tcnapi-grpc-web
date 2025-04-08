@@ -160,7 +160,7 @@ export namespace ResultFile {
   }
 }
 
-export class ResultUrlsEntry extends jspb.Message {
+export class ResultUrlEntry extends jspb.Message {
   getKey(): ResultTypeMap[keyof ResultTypeMap];
   setKey(value: ResultTypeMap[keyof ResultTypeMap]): void;
 
@@ -170,16 +170,16 @@ export class ResultUrlsEntry extends jspb.Message {
   setValue(value?: ResultFile): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResultUrlsEntry.AsObject;
-  static toObject(includeInstance: boolean, msg: ResultUrlsEntry): ResultUrlsEntry.AsObject;
+  toObject(includeInstance?: boolean): ResultUrlEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: ResultUrlEntry): ResultUrlEntry.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ResultUrlsEntry, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResultUrlsEntry;
-  static deserializeBinaryFromReader(message: ResultUrlsEntry, reader: jspb.BinaryReader): ResultUrlsEntry;
+  static serializeBinaryToWriter(message: ResultUrlEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResultUrlEntry;
+  static deserializeBinaryFromReader(message: ResultUrlEntry, reader: jspb.BinaryReader): ResultUrlEntry;
 }
 
-export namespace ResultUrlsEntry {
+export namespace ResultUrlEntry {
   export type AsObject = {
     key: ResultTypeMap[keyof ResultTypeMap],
     value?: ResultFile.AsObject,

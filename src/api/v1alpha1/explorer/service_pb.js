@@ -1804,7 +1804,7 @@ timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObje
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 4, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 5, ""),
 resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.toObject, includeInstance)
+    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1864,8 +1864,8 @@ proto.api.v1alpha1.explorer.QueryResponse.deserializeBinaryFromReader = function
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 6:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlsEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
+      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
       msg.addResultUrls(value);
       break;
     default:
@@ -1934,7 +1934,7 @@ proto.api.v1alpha1.explorer.QueryResponse.serializeBinaryToWriter = function(mes
     writer.writeRepeatedMessage(
       6,
       f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.serializeBinaryToWriter
+      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
     );
   }
 };
@@ -2036,17 +2036,17 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.setPostProcessingSummaryQuer
 
 
 /**
- * repeated ResultUrlsEntry result_urls = 6;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>}
+ * repeated ResultUrlEntry result_urls = 6;
+ * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
  */
 proto.api.v1alpha1.explorer.QueryResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlsEntry, 6));
+  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 6));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} value
+ * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
  * @return {!proto.api.v1alpha1.explorer.QueryResponse} returns this
 */
 proto.api.v1alpha1.explorer.QueryResponse.prototype.setResultUrlsList = function(value) {
@@ -2055,12 +2055,12 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.setResultUrlsList = function
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlsEntry=} opt_value
+ * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlsEntry}
+ * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
  */
 proto.api.v1alpha1.explorer.QueryResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.v1alpha1.explorer.ResultUrlsEntry, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
 };
 
 
@@ -2302,7 +2302,7 @@ timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObje
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 7, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 8, ""),
 resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.toObject, includeInstance)
+    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2374,8 +2374,8 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.deserializeBinaryFromReader = f
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 9:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlsEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
+      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
       msg.addResultUrls(value);
       break;
     default:
@@ -2465,7 +2465,7 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.serializeBinaryToWriter = funct
     writer.writeRepeatedMessage(
       9,
       f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.serializeBinaryToWriter
+      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
     );
   }
 };
@@ -2621,17 +2621,17 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setPostProcessingSumm
 
 
 /**
- * repeated ResultUrlsEntry result_urls = 9;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>}
+ * repeated ResultUrlEntry result_urls = 9;
+ * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
  */
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlsEntry, 9));
+  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 9));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} value
+ * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
  * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
 */
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setResultUrlsList = function(value) {
@@ -2640,12 +2640,12 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setResultUrlsList = f
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlsEntry=} opt_value
+ * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlsEntry}
+ * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
  */
 proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlsEntry, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
 };
 
 
@@ -2857,7 +2857,7 @@ timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObje
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 7, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 8, ""),
 resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.toObject, includeInstance)
+    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2929,8 +2929,8 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.deserializeBinaryFromReader = f
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 9:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlsEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
+      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
       msg.addResultUrls(value);
       break;
     default:
@@ -3020,7 +3020,7 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.serializeBinaryToWriter = funct
     writer.writeRepeatedMessage(
       9,
       f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlsEntry.serializeBinaryToWriter
+      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
     );
   }
 };
@@ -3176,17 +3176,17 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setPostProcessingSumm
 
 
 /**
- * repeated ResultUrlsEntry result_urls = 9;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>}
+ * repeated ResultUrlEntry result_urls = 9;
+ * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
  */
 proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlsEntry, 9));
+  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 9));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlsEntry>} value
+ * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
  * @return {!proto.api.v1alpha1.explorer.QueryExplainResponse} returns this
 */
 proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setResultUrlsList = function(value) {
@@ -3195,12 +3195,12 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setResultUrlsList = f
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlsEntry=} opt_value
+ * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlsEntry}
+ * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
  */
 proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlsEntry, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
 };
 
 
