@@ -160,32 +160,6 @@ export namespace ResultFile {
   }
 }
 
-export class ResultUrlEntry extends jspb.Message {
-  getKey(): ResultTypeMap[keyof ResultTypeMap];
-  setKey(value: ResultTypeMap[keyof ResultTypeMap]): void;
-
-  hasValue(): boolean;
-  clearValue(): void;
-  getValue(): ResultFile | undefined;
-  setValue(value?: ResultFile): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResultUrlEntry.AsObject;
-  static toObject(includeInstance: boolean, msg: ResultUrlEntry): ResultUrlEntry.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ResultUrlEntry, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResultUrlEntry;
-  static deserializeBinaryFromReader(message: ResultUrlEntry, reader: jspb.BinaryReader): ResultUrlEntry;
-}
-
-export namespace ResultUrlEntry {
-  export type AsObject = {
-    key: ResultTypeMap[keyof ResultTypeMap],
-    value?: ResultFile.AsObject,
-  }
-}
-
 export class ExportOptions extends jspb.Message {
   getDelimiter(): string;
   setDelimiter(value: string): void;

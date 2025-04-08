@@ -162,7 +162,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.explorer.QueryResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.explorer.QueryResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.explorer.QueryResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -204,7 +204,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.explorer.SupportQueryResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.explorer.SupportQueryResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.explorer.SupportQueryResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -246,7 +246,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.explorer.QueryExplainResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.explorer.QueryExplainResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.explorer.QueryExplainResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1760,13 +1760,6 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.clearResultTypesList = functi
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.explorer.QueryResponse.repeatedFields_ = [6];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1803,8 +1796,7 @@ resultSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 4, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 5, ""),
-resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
+resultUrlsMap: (f = msg.getResultUrlsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.explorer.ResultFile.toObject) : []
   };
 
   if (includeInstance) {
@@ -1864,9 +1856,10 @@ proto.api.v1alpha1.explorer.QueryResponse.deserializeBinaryFromReader = function
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 6:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
-      msg.addResultUrls(value);
+      var value = msg.getResultUrlsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.explorer.ResultFile.deserializeBinaryFromReader, 0, new proto.api.v1alpha1.explorer.ResultFile());
+         });
       break;
     default:
       reader.skipField();
@@ -1929,13 +1922,9 @@ proto.api.v1alpha1.explorer.QueryResponse.serializeBinaryToWriter = function(mes
       f
     );
   }
-  f = message.getResultUrlsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
-      f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
-    );
+  f = message.getResultUrlsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.explorer.ResultFile.serializeBinaryToWriter);
   }
 };
 
@@ -2036,40 +2025,25 @@ proto.api.v1alpha1.explorer.QueryResponse.prototype.setPostProcessingSummaryQuer
 
 
 /**
- * repeated ResultUrlEntry result_urls = 6;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
+ * map<int32, ResultFile> result_urls = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>}
  */
-proto.api.v1alpha1.explorer.QueryResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 6));
+proto.api.v1alpha1.explorer.QueryResponse.prototype.getResultUrlsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      proto.api.v1alpha1.explorer.ResultFile));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
- * @return {!proto.api.v1alpha1.explorer.QueryResponse} returns this
-*/
-proto.api.v1alpha1.explorer.QueryResponse.prototype.setResultUrlsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
- */
-proto.api.v1alpha1.explorer.QueryResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.api.v1alpha1.explorer.QueryResponse} returns this
  */
-proto.api.v1alpha1.explorer.QueryResponse.prototype.clearResultUrlsList = function() {
-  return this.setResultUrlsList([]);
+proto.api.v1alpha1.explorer.QueryResponse.prototype.clearResultUrlsMap = function() {
+  this.getResultUrlsMap().clear();
+  return this;
 };
 
 
@@ -2255,13 +2229,6 @@ proto.api.v1alpha1.explorer.SupportQueryRequest.prototype.setDebug = function(va
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.repeatedFields_ = [9];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2301,8 +2268,7 @@ explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
 timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 7, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 8, ""),
-resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
+resultUrlsMap: (f = msg.getResultUrlsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.explorer.ResultFile.toObject) : []
   };
 
   if (includeInstance) {
@@ -2374,9 +2340,10 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.deserializeBinaryFromReader = f
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 9:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
-      msg.addResultUrls(value);
+      var value = msg.getResultUrlsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.explorer.ResultFile.deserializeBinaryFromReader, 0, new proto.api.v1alpha1.explorer.ResultFile());
+         });
       break;
     default:
       reader.skipField();
@@ -2460,13 +2427,9 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getResultUrlsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
-    );
+  f = message.getResultUrlsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.explorer.ResultFile.serializeBinaryToWriter);
   }
 };
 
@@ -2621,40 +2584,25 @@ proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setPostProcessingSumm
 
 
 /**
- * repeated ResultUrlEntry result_urls = 9;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
+ * map<int32, ResultFile> result_urls = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>}
  */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 9));
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.getResultUrlsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      proto.api.v1alpha1.explorer.ResultFile));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
- * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
-*/
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.setResultUrlsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
- */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.api.v1alpha1.explorer.SupportQueryResponse} returns this
  */
-proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.clearResultUrlsList = function() {
-  return this.setResultUrlsList([]);
+proto.api.v1alpha1.explorer.SupportQueryResponse.prototype.clearResultUrlsMap = function() {
+  this.getResultUrlsMap().clear();
+  return this;
 };
 
 
@@ -2810,13 +2758,6 @@ proto.api.v1alpha1.explorer.QueryExplainRequest.prototype.hasQueryRequest = func
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.explorer.QueryExplainResponse.repeatedFields_ = [9];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2856,8 +2797,7 @@ explain: jspb.Message.getFieldWithDefault(msg, 5, ""),
 timeFilteredDatasourcesMap: (f = msg.getTimeFilteredDatasourcesMap()) ? f.toObject(includeInstance, undefined) : [],
 postProcessingTableQuery: jspb.Message.getFieldWithDefault(msg, 7, ""),
 postProcessingSummaryQuery: jspb.Message.getFieldWithDefault(msg, 8, ""),
-resultUrlsList: jspb.Message.toObjectList(msg.getResultUrlsList(),
-    api_v1alpha1_explorer_entities_pb.ResultUrlEntry.toObject, includeInstance)
+resultUrlsMap: (f = msg.getResultUrlsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.explorer.ResultFile.toObject) : []
   };
 
   if (includeInstance) {
@@ -2929,9 +2869,10 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.deserializeBinaryFromReader = f
       msg.setPostProcessingSummaryQuery(value);
       break;
     case 9:
-      var value = new api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-      reader.readMessage(value,api_v1alpha1_explorer_entities_pb.ResultUrlEntry.deserializeBinaryFromReader);
-      msg.addResultUrls(value);
+      var value = msg.getResultUrlsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.explorer.ResultFile.deserializeBinaryFromReader, 0, new proto.api.v1alpha1.explorer.ResultFile());
+         });
       break;
     default:
       reader.skipField();
@@ -3015,13 +2956,9 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getResultUrlsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      api_v1alpha1_explorer_entities_pb.ResultUrlEntry.serializeBinaryToWriter
-    );
+  f = message.getResultUrlsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.explorer.ResultFile.serializeBinaryToWriter);
   }
 };
 
@@ -3176,40 +3113,25 @@ proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setPostProcessingSumm
 
 
 /**
- * repeated ResultUrlEntry result_urls = 9;
- * @return {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>}
+ * map<int32, ResultFile> result_urls = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>}
  */
-proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getResultUrlsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_explorer_entities_pb.ResultUrlEntry, 9));
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.getResultUrlsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,!proto.api.v1alpha1.explorer.ResultFile>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      proto.api.v1alpha1.explorer.ResultFile));
 };
 
 
 /**
- * @param {!Array<!proto.api.v1alpha1.explorer.ResultUrlEntry>} value
- * @return {!proto.api.v1alpha1.explorer.QueryExplainResponse} returns this
-*/
-proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.setResultUrlsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.explorer.ResultUrlEntry=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.explorer.ResultUrlEntry}
- */
-proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.addResultUrls = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.v1alpha1.explorer.ResultUrlEntry, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.api.v1alpha1.explorer.QueryExplainResponse} returns this
  */
-proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.clearResultUrlsList = function() {
-  return this.setResultUrlsList([]);
+proto.api.v1alpha1.explorer.QueryExplainResponse.prototype.clearResultUrlsMap = function() {
+  this.getResultUrlsMap().clear();
+  return this;
 };
 
 

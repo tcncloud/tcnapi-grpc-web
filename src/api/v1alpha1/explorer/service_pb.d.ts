@@ -230,11 +230,8 @@ export class QueryResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  clearResultUrlsList(): void;
-  getResultUrlsList(): Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>;
-  setResultUrlsList(value: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>): void;
-  addResultUrls(value?: api_v1alpha1_explorer_entities_pb.ResultUrlEntry, index?: number): api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-
+  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
+  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResponse): QueryResponse.AsObject;
@@ -252,7 +249,7 @@ export namespace QueryResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsList: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry.AsObject>,
+    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
@@ -306,11 +303,8 @@ export class SupportQueryResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  clearResultUrlsList(): void;
-  getResultUrlsList(): Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>;
-  setResultUrlsList(value: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>): void;
-  addResultUrls(value?: api_v1alpha1_explorer_entities_pb.ResultUrlEntry, index?: number): api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-
+  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
+  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
@@ -331,7 +325,7 @@ export namespace SupportQueryResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsList: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry.AsObject>,
+    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
@@ -381,11 +375,8 @@ export class QueryExplainResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  clearResultUrlsList(): void;
-  getResultUrlsList(): Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>;
-  setResultUrlsList(value: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry>): void;
-  addResultUrls(value?: api_v1alpha1_explorer_entities_pb.ResultUrlEntry, index?: number): api_v1alpha1_explorer_entities_pb.ResultUrlEntry;
-
+  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
+  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
@@ -406,7 +397,7 @@ export namespace QueryExplainResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsList: Array<api_v1alpha1_explorer_entities_pb.ResultUrlEntry.AsObject>,
+    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
