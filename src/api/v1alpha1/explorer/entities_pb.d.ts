@@ -196,8 +196,8 @@ export class ExportOptions extends jspb.Message {
   getNoHeader(): boolean;
   setNoHeader(value: boolean): void;
 
-  getResultFormat(): ResultFormatMap[keyof ResultFormatMap];
-  setResultFormat(value: ResultFormatMap[keyof ResultFormatMap]): void;
+  getExportFormat(): ExportFormatMap[keyof ExportFormatMap];
+  setExportFormat(value: ExportFormatMap[keyof ExportFormatMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportOptions.AsObject;
@@ -214,7 +214,7 @@ export namespace ExportOptions {
     delimiter: string,
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
     noHeader: boolean,
-    resultFormat: ResultFormatMap[keyof ResultFormatMap],
+    exportFormat: ExportFormatMap[keyof ExportFormatMap],
   }
 }
 
@@ -222,6 +222,8 @@ export interface ExportFormatMap {
   REPORT_FORMAT_UNSPECIFIED: 0;
   REPORT_FORMAT_CSV: 1;
   REPORT_FORMAT_PARQUET: 2;
+  REPORT_FORMAT_TSV: 3;
+  REPORT_FORMAT_TXT: 4;
 }
 
 export const ExportFormat: ExportFormatMap;
@@ -268,13 +270,4 @@ export interface QuoteCharacterMap {
 }
 
 export const QuoteCharacter: QuoteCharacterMap;
-
-export interface ResultFormatMap {
-  RESULT_FORMAT_UNSPECIFIED: 0;
-  RESULT_FORMAT_PARQUET: 1;
-  RESULT_FORMAT_DELIMITED: 2;
-  RESULT_FORMAT_PLAIN_TEXT: 3;
-}
-
-export const ResultFormat: ResultFormatMap;
 

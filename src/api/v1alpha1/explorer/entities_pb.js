@@ -30,7 +30,6 @@ goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters.Parameter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.QuoteCharacter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ResultFile', null, global);
-goog.exportSymbol('proto.api.v1alpha1.explorer.ResultFormat', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ResultType', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ResultUrlEntry', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Schema', null, global);
@@ -1503,7 +1502,7 @@ proto.api.v1alpha1.explorer.ExportOptions.toObject = function(includeInstance, m
 delimiter: jspb.Message.getFieldWithDefault(msg, 1, ""),
 quoteCharacter: jspb.Message.getFieldWithDefault(msg, 2, 0),
 noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-resultFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
+exportFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1553,8 +1552,8 @@ proto.api.v1alpha1.explorer.ExportOptions.deserializeBinaryFromReader = function
       msg.setNoHeader(value);
       break;
     case 4:
-      var value = /** @type {!proto.api.v1alpha1.explorer.ResultFormat} */ (reader.readEnum());
-      msg.setResultFormat(value);
+      var value = /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (reader.readEnum());
+      msg.setExportFormat(value);
       break;
     default:
       reader.skipField();
@@ -1606,7 +1605,7 @@ proto.api.v1alpha1.explorer.ExportOptions.serializeBinaryToWriter = function(mes
       f
     );
   }
-  f = message.getResultFormat();
+  f = message.getExportFormat();
   if (f !== 0.0) {
     writer.writeEnum(
       4,
@@ -1671,19 +1670,19 @@ proto.api.v1alpha1.explorer.ExportOptions.prototype.setNoHeader = function(value
 
 
 /**
- * optional ResultFormat result_format = 4;
- * @return {!proto.api.v1alpha1.explorer.ResultFormat}
+ * optional ExportFormat export_format = 4;
+ * @return {!proto.api.v1alpha1.explorer.ExportFormat}
  */
-proto.api.v1alpha1.explorer.ExportOptions.prototype.getResultFormat = function() {
-  return /** @type {!proto.api.v1alpha1.explorer.ResultFormat} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.api.v1alpha1.explorer.ExportOptions.prototype.getExportFormat = function() {
+  return /** @type {!proto.api.v1alpha1.explorer.ExportFormat} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.v1alpha1.explorer.ResultFormat} value
+ * @param {!proto.api.v1alpha1.explorer.ExportFormat} value
  * @return {!proto.api.v1alpha1.explorer.ExportOptions} returns this
  */
-proto.api.v1alpha1.explorer.ExportOptions.prototype.setResultFormat = function(value) {
+proto.api.v1alpha1.explorer.ExportOptions.prototype.setExportFormat = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
@@ -1694,7 +1693,9 @@ proto.api.v1alpha1.explorer.ExportOptions.prototype.setResultFormat = function(v
 proto.api.v1alpha1.explorer.ExportFormat = {
   REPORT_FORMAT_UNSPECIFIED: 0,
   REPORT_FORMAT_CSV: 1,
-  REPORT_FORMAT_PARQUET: 2
+  REPORT_FORMAT_PARQUET: 2,
+  REPORT_FORMAT_TSV: 3,
+  REPORT_FORMAT_TXT: 4
 };
 
 /**
@@ -1742,16 +1743,6 @@ proto.api.v1alpha1.explorer.QuoteCharacter = {
   QUOTE_CHARACTER_UNSPECIFIED: 0,
   QUOTE_CHARACTER_DOUBLE_QUOTE: 1,
   QUOTE_CHARACTER_SINGLE_QUOTE: 2
-};
-
-/**
- * @enum {number}
- */
-proto.api.v1alpha1.explorer.ResultFormat = {
-  RESULT_FORMAT_UNSPECIFIED: 0,
-  RESULT_FORMAT_PARQUET: 1,
-  RESULT_FORMAT_DELIMITED: 2,
-  RESULT_FORMAT_PLAIN_TEXT: 3
 };
 
 goog.object.extend(exports, proto.api.v1alpha1.explorer);
