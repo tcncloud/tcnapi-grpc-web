@@ -3119,9 +3119,6 @@ export class CreateCannedMessageReq extends jspb.Message {
   setAttachmentsList(value: Array<api_commons_omnichannel_pb.OmniAttachment>): void;
   addAttachments(value?: api_commons_omnichannel_pb.OmniAttachment, index?: number): api_commons_omnichannel_pb.OmniAttachment;
 
-  getDisableEdit(): boolean;
-  setDisableEdit(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCannedMessageReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateCannedMessageReq): CreateCannedMessageReq.AsObject;
@@ -3140,7 +3137,6 @@ export namespace CreateCannedMessageReq {
     cannedMessageGroupId: string,
     allowsHtml: boolean,
     attachmentsList: Array<api_commons_omnichannel_pb.OmniAttachment.AsObject>,
-    disableEdit: boolean,
   }
 }
 
@@ -3178,9 +3174,6 @@ export class CannedMessage extends jspb.Message {
   setAttachmentsList(value: Array<api_commons_omnichannel_pb.OmniAttachment>): void;
   addAttachments(value?: api_commons_omnichannel_pb.OmniAttachment, index?: number): api_commons_omnichannel_pb.OmniAttachment;
 
-  getDisableEdit(): boolean;
-  setDisableEdit(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CannedMessage.AsObject;
   static toObject(includeInstance: boolean, msg: CannedMessage): CannedMessage.AsObject;
@@ -3202,7 +3195,6 @@ export namespace CannedMessage {
     cannedMessageGroupId: string,
     allowsHtml: boolean,
     attachmentsList: Array<api_commons_omnichannel_pb.OmniAttachment.AsObject>,
-    disableEdit: boolean,
   }
 }
 
@@ -3268,9 +3260,6 @@ export class UpdateCannedMessageReq extends jspb.Message {
   setAttachmentsList(value: Array<api_commons_omnichannel_pb.OmniAttachment>): void;
   addAttachments(value?: api_commons_omnichannel_pb.OmniAttachment, index?: number): api_commons_omnichannel_pb.OmniAttachment;
 
-  getDisableEdit(): boolean;
-  setDisableEdit(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateCannedMessageReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateCannedMessageReq): UpdateCannedMessageReq.AsObject;
@@ -3290,7 +3279,6 @@ export namespace UpdateCannedMessageReq {
     cannedMessageGroupId: string,
     allowsHtml: boolean,
     attachmentsList: Array<api_commons_omnichannel_pb.OmniAttachment.AsObject>,
-    disableEdit: boolean,
   }
 }
 
@@ -3468,9 +3456,6 @@ export class CannedMessageWithGroup extends jspb.Message {
   setAttachmentsList(value: Array<api_commons_omnichannel_pb.OmniAttachment>): void;
   addAttachments(value?: api_commons_omnichannel_pb.OmniAttachment, index?: number): api_commons_omnichannel_pb.OmniAttachment;
 
-  getDisableEdit(): boolean;
-  setDisableEdit(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CannedMessageWithGroup.AsObject;
   static toObject(includeInstance: boolean, msg: CannedMessageWithGroup): CannedMessageWithGroup.AsObject;
@@ -3496,7 +3481,6 @@ export namespace CannedMessageWithGroup {
     groupLastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     allowsHtml: boolean,
     attachmentsList: Array<api_commons_omnichannel_pb.OmniAttachment.AsObject>,
-    disableEdit: boolean,
   }
 }
 

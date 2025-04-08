@@ -24641,8 +24641,7 @@ messageBody: jspb.Message.getFieldWithDefault(msg, 3, ""),
 cannedMessageGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
 allowsHtml: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance),
-disableEdit: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -24703,10 +24702,6 @@ proto.api.v0alpha.CreateCannedMessageReq.deserializeBinaryFromReader = function(
       var value = new api_commons_omnichannel_pb.OmniAttachment;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniAttachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
-      break;
-    case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableEdit(value);
       break;
     default:
       reader.skipField();
@@ -24778,13 +24773,6 @@ proto.api.v0alpha.CreateCannedMessageReq.serializeBinaryToWriter = function(mess
       6,
       f,
       api_commons_omnichannel_pb.OmniAttachment.serializeBinaryToWriter
-    );
-  }
-  f = message.getDisableEdit();
-  if (f) {
-    writer.writeBool(
-      7,
-      f
     );
   }
 };
@@ -24918,24 +24906,6 @@ proto.api.v0alpha.CreateCannedMessageReq.prototype.clearAttachmentsList = functi
 };
 
 
-/**
- * optional bool disable_edit = 7;
- * @return {boolean}
- */
-proto.api.v0alpha.CreateCannedMessageReq.prototype.getDisableEdit = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.CreateCannedMessageReq} returns this
- */
-proto.api.v0alpha.CreateCannedMessageReq.prototype.setDisableEdit = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
-};
-
-
 
 /**
  * List of repeated fields within this message type.
@@ -24984,8 +24954,7 @@ lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestam
 cannedMessageGroupId: jspb.Message.getFieldWithDefault(msg, 7, ""),
 allowsHtml: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance),
-disableEdit: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -25060,10 +25029,6 @@ proto.api.v0alpha.CannedMessage.deserializeBinaryFromReader = function(msg, read
       var value = new api_commons_omnichannel_pb.OmniAttachment;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniAttachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
-      break;
-    case 10:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableEdit(value);
       break;
     default:
       reader.skipField();
@@ -25158,13 +25123,6 @@ proto.api.v0alpha.CannedMessage.serializeBinaryToWriter = function(message, writ
       9,
       f,
       api_commons_omnichannel_pb.OmniAttachment.serializeBinaryToWriter
-    );
-  }
-  f = message.getDisableEdit();
-  if (f) {
-    writer.writeBool(
-      10,
-      f
     );
   }
 };
@@ -25387,24 +25345,6 @@ proto.api.v0alpha.CannedMessage.prototype.addAttachments = function(opt_value, o
  */
 proto.api.v0alpha.CannedMessage.prototype.clearAttachmentsList = function() {
   return this.setAttachmentsList([]);
-};
-
-
-/**
- * optional bool disable_edit = 10;
- * @return {boolean}
- */
-proto.api.v0alpha.CannedMessage.prototype.getDisableEdit = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.CannedMessage} returns this
- */
-proto.api.v0alpha.CannedMessage.prototype.setDisableEdit = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -25715,8 +25655,7 @@ messageBody: jspb.Message.getFieldWithDefault(msg, 4, ""),
 cannedMessageGroupId: jspb.Message.getFieldWithDefault(msg, 5, ""),
 allowsHtml: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance),
-disableEdit: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -25781,10 +25720,6 @@ proto.api.v0alpha.UpdateCannedMessageReq.deserializeBinaryFromReader = function(
       var value = new api_commons_omnichannel_pb.OmniAttachment;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniAttachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
-      break;
-    case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableEdit(value);
       break;
     default:
       reader.skipField();
@@ -25863,13 +25798,6 @@ proto.api.v0alpha.UpdateCannedMessageReq.serializeBinaryToWriter = function(mess
       7,
       f,
       api_commons_omnichannel_pb.OmniAttachment.serializeBinaryToWriter
-    );
-  }
-  f = message.getDisableEdit();
-  if (f) {
-    writer.writeBool(
-      8,
-      f
     );
   }
 };
@@ -26018,24 +25946,6 @@ proto.api.v0alpha.UpdateCannedMessageReq.prototype.addAttachments = function(opt
  */
 proto.api.v0alpha.UpdateCannedMessageReq.prototype.clearAttachmentsList = function() {
   return this.setAttachmentsList([]);
-};
-
-
-/**
- * optional bool disable_edit = 8;
- * @return {boolean}
- */
-proto.api.v0alpha.UpdateCannedMessageReq.prototype.getDisableEdit = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.UpdateCannedMessageReq} returns this
- */
-proto.api.v0alpha.UpdateCannedMessageReq.prototype.setDisableEdit = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -26933,8 +26843,7 @@ groupDateCreated: (f = msg.getGroupDateCreated()) && google_protobuf_timestamp_p
 groupLastUpdated: (f = msg.getGroupLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 allowsHtml: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance),
-disableEdit: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    api_commons_omnichannel_pb.OmniAttachment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -27027,10 +26936,6 @@ proto.api.v0alpha.CannedMessageWithGroup.deserializeBinaryFromReader = function(
       var value = new api_commons_omnichannel_pb.OmniAttachment;
       reader.readMessage(value,api_commons_omnichannel_pb.OmniAttachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
-      break;
-    case 14:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableEdit(value);
       break;
     default:
       reader.skipField();
@@ -27155,13 +27060,6 @@ proto.api.v0alpha.CannedMessageWithGroup.serializeBinaryToWriter = function(mess
       13,
       f,
       api_commons_omnichannel_pb.OmniAttachment.serializeBinaryToWriter
-    );
-  }
-  f = message.getDisableEdit();
-  if (f) {
-    writer.writeBool(
-      14,
-      f
     );
   }
 };
@@ -27494,24 +27392,6 @@ proto.api.v0alpha.CannedMessageWithGroup.prototype.addAttachments = function(opt
  */
 proto.api.v0alpha.CannedMessageWithGroup.prototype.clearAttachmentsList = function() {
   return this.setAttachmentsList([]);
-};
-
-
-/**
- * optional bool disable_edit = 14;
- * @return {boolean}
- */
-proto.api.v0alpha.CannedMessageWithGroup.prototype.getDisableEdit = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.CannedMessageWithGroup} returns this
- */
-proto.api.v0alpha.CannedMessageWithGroup.prototype.setDisableEdit = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
