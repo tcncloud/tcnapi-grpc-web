@@ -26,7 +26,6 @@ var global = localGlobalThis ||
 goog.exportSymbol('proto.api.v1alpha1.explorer.DatasourceType', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ExportFormat', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.ExportOptions', null, global);
-goog.exportSymbol('proto.api.v1alpha1.explorer.FileExtension', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters.Parameter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.QuoteCharacter', null, global);
@@ -1502,8 +1501,7 @@ proto.api.v1alpha1.explorer.ExportOptions.toObject = function(includeInstance, m
   var f, obj = {
 delimiter: jspb.Message.getFieldWithDefault(msg, 1, ""),
 quoteCharacter: jspb.Message.getFieldWithDefault(msg, 2, 0),
-noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-fileExtension: jspb.Message.getFieldWithDefault(msg, 4, 0)
+noHeader: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1552,10 +1550,6 @@ proto.api.v1alpha1.explorer.ExportOptions.deserializeBinaryFromReader = function
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setNoHeader(value);
       break;
-    case 4:
-      var value = /** @type {!proto.api.v1alpha1.explorer.FileExtension} */ (reader.readEnum());
-      msg.setFileExtension(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1603,13 +1597,6 @@ proto.api.v1alpha1.explorer.ExportOptions.serializeBinaryToWriter = function(mes
   if (f) {
     writer.writeBool(
       3,
-      f
-    );
-  }
-  f = message.getFileExtension();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      4,
       f
     );
   }
@@ -1671,24 +1658,6 @@ proto.api.v1alpha1.explorer.ExportOptions.prototype.setNoHeader = function(value
 
 
 /**
- * optional FileExtension file_extension = 4;
- * @return {!proto.api.v1alpha1.explorer.FileExtension}
- */
-proto.api.v1alpha1.explorer.ExportOptions.prototype.getFileExtension = function() {
-  return /** @type {!proto.api.v1alpha1.explorer.FileExtension} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.explorer.FileExtension} value
- * @return {!proto.api.v1alpha1.explorer.ExportOptions} returns this
- */
-proto.api.v1alpha1.explorer.ExportOptions.prototype.setFileExtension = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
-};
-
-
-/**
  * @enum {number}
  */
 proto.api.v1alpha1.explorer.ExportFormat = {
@@ -1742,17 +1711,6 @@ proto.api.v1alpha1.explorer.QuoteCharacter = {
   QUOTE_CHARACTER_UNSPECIFIED: 0,
   QUOTE_CHARACTER_DOUBLE_QUOTE: 1,
   QUOTE_CHARACTER_SINGLE_QUOTE: 2
-};
-
-/**
- * @enum {number}
- */
-proto.api.v1alpha1.explorer.FileExtension = {
-  FILE_EXTENSION_UNSPECIFIED: 0,
-  FILE_EXTENSION_PARQUET: 1,
-  FILE_EXTENSION_CSV: 2,
-  FILE_EXTENSION_TSV: 3,
-  FILE_EXTENSION_TXT: 4
 };
 
 goog.object.extend(exports, proto.api.v1alpha1.explorer);

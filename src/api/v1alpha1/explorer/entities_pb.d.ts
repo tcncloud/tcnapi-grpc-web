@@ -196,9 +196,6 @@ export class ExportOptions extends jspb.Message {
   getNoHeader(): boolean;
   setNoHeader(value: boolean): void;
 
-  getFileExtension(): FileExtensionMap[keyof FileExtensionMap];
-  setFileExtension(value: FileExtensionMap[keyof FileExtensionMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportOptions.AsObject;
   static toObject(includeInstance: boolean, msg: ExportOptions): ExportOptions.AsObject;
@@ -214,7 +211,6 @@ export namespace ExportOptions {
     delimiter: string,
     quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
     noHeader: boolean,
-    fileExtension: FileExtensionMap[keyof FileExtensionMap],
   }
 }
 
@@ -268,14 +264,4 @@ export interface QuoteCharacterMap {
 }
 
 export const QuoteCharacter: QuoteCharacterMap;
-
-export interface FileExtensionMap {
-  FILE_EXTENSION_UNSPECIFIED: 0;
-  FILE_EXTENSION_PARQUET: 1;
-  FILE_EXTENSION_CSV: 2;
-  FILE_EXTENSION_TSV: 3;
-  FILE_EXTENSION_TXT: 4;
-}
-
-export const FileExtension: FileExtensionMap;
 
