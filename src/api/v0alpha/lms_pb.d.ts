@@ -332,48 +332,6 @@ export namespace GetPipelineCanvasRes {
   }
 }
 
-export class GetPipelineCanvasEventsReq extends jspb.Message {
-  getPipelineCanvasSid(): string;
-  setPipelineCanvasSid(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetPipelineCanvasEventsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetPipelineCanvasEventsReq): GetPipelineCanvasEventsReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetPipelineCanvasEventsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetPipelineCanvasEventsReq;
-  static deserializeBinaryFromReader(message: GetPipelineCanvasEventsReq, reader: jspb.BinaryReader): GetPipelineCanvasEventsReq;
-}
-
-export namespace GetPipelineCanvasEventsReq {
-  export type AsObject = {
-    pipelineCanvasSid: string,
-  }
-}
-
-export class GetPipelineCanvasEventsRes extends jspb.Message {
-  getQueuedEventsMap(): jspb.Map<string, number>;
-  clearQueuedEventsMap(): void;
-  getProcessingEventsMap(): jspb.Map<string, number>;
-  clearProcessingEventsMap(): void;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetPipelineCanvasEventsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetPipelineCanvasEventsRes): GetPipelineCanvasEventsRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetPipelineCanvasEventsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetPipelineCanvasEventsRes;
-  static deserializeBinaryFromReader(message: GetPipelineCanvasEventsRes, reader: jspb.BinaryReader): GetPipelineCanvasEventsRes;
-}
-
-export namespace GetPipelineCanvasEventsRes {
-  export type AsObject = {
-    queuedEventsMap: Array<[string, number]>,
-    processingEventsMap: Array<[string, number]>,
-  }
-}
-
 export class ListPoolsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPoolsRequest.AsObject;
