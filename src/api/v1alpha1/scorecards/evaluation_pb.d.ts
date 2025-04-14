@@ -277,10 +277,10 @@ export class ListEvaluationsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
-  clearStatusList(): void;
-  getStatusList(): Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>;
-  setStatusList(value: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>): void;
-  addStatus(value: api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap], index?: number): api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap];
+  clearStatusesList(): void;
+  getStatusesList(): Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>;
+  setStatusesList(value: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>): void;
+  addStatuses(value: api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap], index?: number): api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap];
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
@@ -305,7 +305,7 @@ export namespace ListEvaluationsRequest {
     orderBy: string,
     pageSize: number,
     pageToken: string,
-    statusList: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>,
+    statusesList: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>,
   }
 }
 

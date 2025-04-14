@@ -2134,7 +2134,7 @@ channelTypesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefin
 orderBy: jspb.Message.getFieldWithDefault(msg, 15, ""),
 pageSize: jspb.Message.getFieldWithDefault(msg, 16, 0),
 pageToken: jspb.Message.getFieldWithDefault(msg, 17, ""),
-statusList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f
+statusesList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2226,7 +2226,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.deserializeBinaryFromReader
     case 18:
       var values = /** @type {!Array<!proto.api.commons.EvaluationState>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
-        msg.addStatus(values[i]);
+        msg.addStatuses(values[i]);
       }
       break;
     default:
@@ -2337,7 +2337,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getStatusList();
+  f = message.getStatusesList();
   if (f.length > 0) {
     writer.writePackedEnum(
       18,
@@ -2679,10 +2679,10 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setPageToken = fu
 
 
 /**
- * repeated api.commons.EvaluationState status = 18;
+ * repeated api.commons.EvaluationState statuses = 18;
  * @return {!Array<!proto.api.commons.EvaluationState>}
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getStatusList = function() {
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getStatusesList = function() {
   return /** @type {!Array<!proto.api.commons.EvaluationState>} */ (jspb.Message.getRepeatedField(this, 18));
 };
 
@@ -2691,7 +2691,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getStatusList = f
  * @param {!Array<!proto.api.commons.EvaluationState>} value
  * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setStatusList = function(value) {
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setStatusesList = function(value) {
   return jspb.Message.setField(this, 18, value || []);
 };
 
@@ -2701,7 +2701,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setStatusList = f
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.addStatus = function(value, opt_index) {
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.addStatuses = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 18, value, opt_index);
 };
 
@@ -2710,8 +2710,8 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.addStatus = funct
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearStatusList = function() {
-  return this.setStatusList([]);
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearStatusesList = function() {
+  return this.setStatusesList([]);
 };
 
 
