@@ -85,6 +85,24 @@ type IntegrationsPublicCalculateFees = {
   readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes;
 };
 
+type IntegrationsPublicGetOrgIntegrationSettings = {
+  readonly methodName: string;
+  readonly service: typeof IntegrationsPublic;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq;
+  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes;
+};
+
+type IntegrationsPublicUpsertOrgIntegrationSettings = {
+  readonly methodName: string;
+  readonly service: typeof IntegrationsPublic;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq;
+  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes;
+};
+
 export class IntegrationsPublic {
   static readonly serviceName: string;
   static readonly GetLinkData: IntegrationsPublicGetLinkData;
@@ -96,6 +114,8 @@ export class IntegrationsPublic {
   static readonly ProcessWorkflow: IntegrationsPublicProcessWorkflow;
   static readonly GetLinkDetails: IntegrationsPublicGetLinkDetails;
   static readonly CalculateFees: IntegrationsPublicCalculateFees;
+  static readonly GetOrgIntegrationSettings: IntegrationsPublicGetOrgIntegrationSettings;
+  static readonly UpsertOrgIntegrationSettings: IntegrationsPublicUpsertOrgIntegrationSettings;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -210,6 +230,24 @@ export class IntegrationsPublicClient {
   calculateFees(
     requestMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes|null) => void
+  ): UnaryResponse;
+  getOrgIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes|null) => void
+  ): UnaryResponse;
+  getOrgIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes|null) => void
+  ): UnaryResponse;
+  upsertOrgIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes|null) => void
+  ): UnaryResponse;
+  upsertOrgIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes|null) => void
   ): UnaryResponse;
 }
 
