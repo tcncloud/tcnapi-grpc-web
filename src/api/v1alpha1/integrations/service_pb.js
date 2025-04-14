@@ -65,14 +65,14 @@ goog.exportSymbol('proto.api.v1alpha1.integrations.GenerateEpicKeyPairRes', null
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetAggregatedMetadataReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetAggregatedMetadataRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationConfigReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationSettingsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationSettingsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataRow', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReportReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReportRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetIntegrationTransactionReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetPaymentLinkConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq', null, global);
@@ -86,6 +86,7 @@ goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationConfig', null, glo
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationConfigs', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationInfo', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationInfos', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationSettings', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationTemplateInfo', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationTransaction', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.IntegrationTransactionReportRow', null, global);
@@ -106,7 +107,6 @@ goog.exportSymbol('proto.api.v1alpha1.integrations.Logo', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.MapString', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.MethodCall', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.MethodInfo', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrations.OrgIntegrationSettings', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.Parameter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.PastTxEntity', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.PaymentLinkConfig', null, global);
@@ -162,8 +162,8 @@ goog.exportSymbol('proto.api.v1alpha1.integrations.TransactionType', null, globa
 goog.exportSymbol('proto.api.v1alpha1.integrations.UnknownField', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.UpdatePortalLogoReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq', null, global);
-goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.Validation', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.Value', null, global);
 goog.exportSymbol('proto.api.v1alpha1.integrations.Value.ValCase', null, global);
@@ -2636,16 +2636,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.OrgIntegrationSettings.repeatedFields_, null);
+proto.api.v1alpha1.integrations.IntegrationSettings = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.IntegrationSettings.repeatedFields_, null);
 };
-goog.inherits(proto.api.v1alpha1.integrations.OrgIntegrationSettings, jspb.Message);
+goog.inherits(proto.api.v1alpha1.integrations.IntegrationSettings, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.integrations.OrgIntegrationSettings.displayName = 'proto.api.v1alpha1.integrations.OrgIntegrationSettings';
+  proto.api.v1alpha1.integrations.IntegrationSettings.displayName = 'proto.api.v1alpha1.integrations.IntegrationSettings';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2657,16 +2657,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq = function(opt_data) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq, jspb.Message);
+goog.inherits(proto.api.v1alpha1.integrations.GetIntegrationSettingsReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.displayName = 'proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq';
+  proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.displayName = 'proto.api.v1alpha1.integrations.GetIntegrationSettingsReq';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2678,16 +2678,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.repeatedFields_, null);
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.repeatedFields_, null);
 };
-goog.inherits(proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes, jspb.Message);
+goog.inherits(proto.api.v1alpha1.integrations.GetIntegrationSettingsRes, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.displayName = 'proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes';
+  proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.displayName = 'proto.api.v1alpha1.integrations.GetIntegrationSettingsRes';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2699,16 +2699,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq = function(opt_data) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq, jspb.Message);
+goog.inherits(proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.displayName = 'proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq';
+  proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.displayName = 'proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2720,16 +2720,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes = function(opt_data) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes, jspb.Message);
+goog.inherits(proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.displayName = 'proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes';
+  proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.displayName = 'proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes';
 }
 
 
@@ -29999,7 +29999,7 @@ proto.api.v1alpha1.integrations.CalculateFeesRes.prototype.hasTotalAmountDue = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.repeatedFields_ = [1];
+proto.api.v1alpha1.integrations.IntegrationSettings.repeatedFields_ = [1];
 
 
 
@@ -30016,8 +30016,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.integrations.OrgIntegrationSettings.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.integrations.IntegrationSettings.toObject(opt_includeInstance, this);
 };
 
 
@@ -30026,11 +30026,11 @@ proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.toObject = func
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.integrations.IntegrationSettings} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.integrations.IntegrationSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
 allowedIntegrationsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
@@ -30046,23 +30046,23 @@ allowedIntegrationsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? u
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.integrations.OrgIntegrationSettings}
+ * @return {!proto.api.v1alpha1.integrations.IntegrationSettings}
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.integrations.IntegrationSettings.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.integrations.OrgIntegrationSettings;
-  return proto.api.v1alpha1.integrations.OrgIntegrationSettings.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.integrations.IntegrationSettings;
+  return proto.api.v1alpha1.integrations.IntegrationSettings.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.integrations.IntegrationSettings} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.integrations.OrgIntegrationSettings}
+ * @return {!proto.api.v1alpha1.integrations.IntegrationSettings}
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.integrations.IntegrationSettings.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -30088,9 +30088,9 @@ proto.api.v1alpha1.integrations.OrgIntegrationSettings.deserializeBinaryFromRead
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.serializeBinary = function() {
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.integrations.OrgIntegrationSettings.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.integrations.IntegrationSettings.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -30098,11 +30098,11 @@ proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.serializeBinary
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} message
+ * @param {!proto.api.v1alpha1.integrations.IntegrationSettings} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.integrations.IntegrationSettings.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAllowedIntegrationsList();
   if (f.length > 0) {
@@ -30118,16 +30118,16 @@ proto.api.v1alpha1.integrations.OrgIntegrationSettings.serializeBinaryToWriter =
  * repeated api.commons.integrations.IntegrationType allowed_integrations = 1;
  * @return {!Array<!proto.api.commons.integrations.IntegrationType>}
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.getAllowedIntegrationsList = function() {
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.getAllowedIntegrationsList = function() {
   return /** @type {!Array<!proto.api.commons.integrations.IntegrationType>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
  * @param {!Array<!proto.api.commons.integrations.IntegrationType>} value
- * @return {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} returns this
+ * @return {!proto.api.v1alpha1.integrations.IntegrationSettings} returns this
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.setAllowedIntegrationsList = function(value) {
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.setAllowedIntegrationsList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -30135,18 +30135,18 @@ proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.setAllowedInteg
 /**
  * @param {!proto.api.commons.integrations.IntegrationType} value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} returns this
+ * @return {!proto.api.v1alpha1.integrations.IntegrationSettings} returns this
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.addAllowedIntegrations = function(value, opt_index) {
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.addAllowedIntegrations = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.integrations.OrgIntegrationSettings} returns this
+ * @return {!proto.api.v1alpha1.integrations.IntegrationSettings} returns this
  */
-proto.api.v1alpha1.integrations.OrgIntegrationSettings.prototype.clearAllowedIntegrationsList = function() {
+proto.api.v1alpha1.integrations.IntegrationSettings.prototype.clearAllowedIntegrationsList = function() {
   return this.setAllowedIntegrationsList([]);
 };
 
@@ -30167,8 +30167,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.toObject(opt_includeInstance, this);
 };
 
 
@@ -30177,11 +30177,11 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.prototype.toObject 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsReq} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -30197,23 +30197,23 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.toObject = function
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq}
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsReq}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq;
-  return proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.integrations.GetIntegrationSettingsReq;
+  return proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsReq} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq}
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsReq}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -30233,9 +30233,9 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.deserializeBinaryFr
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.prototype.serializeBinary = function() {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -30243,11 +30243,11 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.prototype.serialize
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq} message
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsReq} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -30258,7 +30258,7 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsReq.serializeBinaryToWr
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.repeatedFields_ = [1];
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.repeatedFields_ = [1];
 
 
 
@@ -30275,8 +30275,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.toObject(opt_includeInstance, this);
 };
 
 
@@ -30285,11 +30285,11 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.toObject 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
 allowedIntegrationsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
@@ -30305,23 +30305,23 @@ allowedIntegrationsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? u
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes}
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes;
-  return proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.integrations.GetIntegrationSettingsRes;
+  return proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes}
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -30347,9 +30347,9 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.deserializeBinaryFr
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.serializeBinary = function() {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -30357,11 +30357,11 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.serialize
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} message
+ * @param {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAllowedIntegrationsList();
   if (f.length > 0) {
@@ -30377,16 +30377,16 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.serializeBinaryToWr
  * repeated api.commons.integrations.IntegrationType allowed_integrations = 1;
  * @return {!Array<!proto.api.commons.integrations.IntegrationType>}
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.getAllowedIntegrationsList = function() {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.getAllowedIntegrationsList = function() {
   return /** @type {!Array<!proto.api.commons.integrations.IntegrationType>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
  * @param {!Array<!proto.api.commons.integrations.IntegrationType>} value
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} returns this
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} returns this
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.setAllowedIntegrationsList = function(value) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.setAllowedIntegrationsList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -30394,18 +30394,18 @@ proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.setAllowe
 /**
  * @param {!proto.api.commons.integrations.IntegrationType} value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} returns this
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} returns this
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.addAllowedIntegrations = function(value, opt_index) {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.addAllowedIntegrations = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes} returns this
+ * @return {!proto.api.v1alpha1.integrations.GetIntegrationSettingsRes} returns this
  */
-proto.api.v1alpha1.integrations.GetOrgIntegrationSettingsRes.prototype.clearAllowedIntegrationsList = function() {
+proto.api.v1alpha1.integrations.GetIntegrationSettingsRes.prototype.clearAllowedIntegrationsList = function() {
   return this.setAllowedIntegrationsList([]);
 };
 
@@ -30426,8 +30426,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.toObject(opt_includeInstance, this);
 };
 
 
@@ -30436,13 +30436,13 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.toObje
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrations.OrgIntegrationSettings.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrations.IntegrationSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30456,23 +30456,23 @@ entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrations.OrgIntegrationS
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq}
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq;
-  return proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq;
+  return proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq}
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -30480,8 +30480,8 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.deserializeBinar
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.v1alpha1.integrations.OrgIntegrationSettings;
-      reader.readMessage(value,proto.api.v1alpha1.integrations.OrgIntegrationSettings.deserializeBinaryFromReader);
+      var value = new proto.api.v1alpha1.integrations.IntegrationSettings;
+      reader.readMessage(value,proto.api.v1alpha1.integrations.IntegrationSettings.deserializeBinaryFromReader);
       msg.setEntity(value);
       break;
     default:
@@ -30497,9 +30497,9 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.deserializeBinar
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.serializeBinary = function() {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -30507,47 +30507,47 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.serial
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq} message
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEntity();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.api.v1alpha1.integrations.OrgIntegrationSettings.serializeBinaryToWriter
+      proto.api.v1alpha1.integrations.IntegrationSettings.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional OrgIntegrationSettings entity = 1;
- * @return {?proto.api.v1alpha1.integrations.OrgIntegrationSettings}
+ * optional IntegrationSettings entity = 1;
+ * @return {?proto.api.v1alpha1.integrations.IntegrationSettings}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.getEntity = function() {
-  return /** @type{?proto.api.v1alpha1.integrations.OrgIntegrationSettings} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.integrations.OrgIntegrationSettings, 1));
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.integrations.IntegrationSettings} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.integrations.IntegrationSettings, 1));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.integrations.OrgIntegrationSettings|undefined} value
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq} returns this
+ * @param {?proto.api.v1alpha1.integrations.IntegrationSettings|undefined} value
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq} returns this
 */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.setEntity = function(value) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.setEntity = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq} returns this
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq} returns this
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.clearEntity = function() {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.clearEntity = function() {
   return this.setEntity(undefined);
 };
 
@@ -30556,7 +30556,7 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.clearE
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsReq.prototype.hasEntity = function() {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsReq.prototype.hasEntity = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -30577,8 +30577,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.toObject(opt_includeInstance, this);
 };
 
 
@@ -30587,11 +30587,11 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.prototype.toObje
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -30607,23 +30607,23 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.toObject = funct
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes}
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes;
-  return proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes;
+  return proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes}
+ * @return {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -30643,9 +30643,9 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.deserializeBinar
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.prototype.serializeBinary = function() {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -30653,11 +30653,11 @@ proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.prototype.serial
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes} message
+ * @param {!proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.integrations.UpsertOrgIntegrationSettingsRes.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.integrations.UpsertIntegrationSettingsRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 

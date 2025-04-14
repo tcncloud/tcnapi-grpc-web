@@ -923,100 +923,100 @@ export namespace CalculateFeesRes {
   }
 }
 
-export class OrgIntegrationSettings extends jspb.Message {
+export class IntegrationSettings extends jspb.Message {
   clearAllowedIntegrationsList(): void;
   getAllowedIntegrationsList(): Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>;
   setAllowedIntegrationsList(value: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>): void;
   addAllowedIntegrations(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap], index?: number): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrgIntegrationSettings.AsObject;
-  static toObject(includeInstance: boolean, msg: OrgIntegrationSettings): OrgIntegrationSettings.AsObject;
+  toObject(includeInstance?: boolean): IntegrationSettings.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationSettings): IntegrationSettings.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrgIntegrationSettings, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrgIntegrationSettings;
-  static deserializeBinaryFromReader(message: OrgIntegrationSettings, reader: jspb.BinaryReader): OrgIntegrationSettings;
+  static serializeBinaryToWriter(message: IntegrationSettings, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationSettings;
+  static deserializeBinaryFromReader(message: IntegrationSettings, reader: jspb.BinaryReader): IntegrationSettings;
 }
 
-export namespace OrgIntegrationSettings {
+export namespace IntegrationSettings {
   export type AsObject = {
     allowedIntegrationsList: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>,
   }
 }
 
-export class GetOrgIntegrationSettingsReq extends jspb.Message {
+export class GetIntegrationSettingsReq extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetOrgIntegrationSettingsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetOrgIntegrationSettingsReq): GetOrgIntegrationSettingsReq.AsObject;
+  toObject(includeInstance?: boolean): GetIntegrationSettingsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetIntegrationSettingsReq): GetIntegrationSettingsReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetOrgIntegrationSettingsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetOrgIntegrationSettingsReq;
-  static deserializeBinaryFromReader(message: GetOrgIntegrationSettingsReq, reader: jspb.BinaryReader): GetOrgIntegrationSettingsReq;
+  static serializeBinaryToWriter(message: GetIntegrationSettingsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetIntegrationSettingsReq;
+  static deserializeBinaryFromReader(message: GetIntegrationSettingsReq, reader: jspb.BinaryReader): GetIntegrationSettingsReq;
 }
 
-export namespace GetOrgIntegrationSettingsReq {
+export namespace GetIntegrationSettingsReq {
   export type AsObject = {
   }
 }
 
-export class GetOrgIntegrationSettingsRes extends jspb.Message {
+export class GetIntegrationSettingsRes extends jspb.Message {
   clearAllowedIntegrationsList(): void;
   getAllowedIntegrationsList(): Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>;
   setAllowedIntegrationsList(value: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>): void;
   addAllowedIntegrations(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap], index?: number): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetOrgIntegrationSettingsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetOrgIntegrationSettingsRes): GetOrgIntegrationSettingsRes.AsObject;
+  toObject(includeInstance?: boolean): GetIntegrationSettingsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetIntegrationSettingsRes): GetIntegrationSettingsRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetOrgIntegrationSettingsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetOrgIntegrationSettingsRes;
-  static deserializeBinaryFromReader(message: GetOrgIntegrationSettingsRes, reader: jspb.BinaryReader): GetOrgIntegrationSettingsRes;
+  static serializeBinaryToWriter(message: GetIntegrationSettingsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetIntegrationSettingsRes;
+  static deserializeBinaryFromReader(message: GetIntegrationSettingsRes, reader: jspb.BinaryReader): GetIntegrationSettingsRes;
 }
 
-export namespace GetOrgIntegrationSettingsRes {
+export namespace GetIntegrationSettingsRes {
   export type AsObject = {
     allowedIntegrationsList: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>,
   }
 }
 
-export class UpsertOrgIntegrationSettingsReq extends jspb.Message {
+export class UpsertIntegrationSettingsReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
-  getEntity(): OrgIntegrationSettings | undefined;
-  setEntity(value?: OrgIntegrationSettings): void;
+  getEntity(): IntegrationSettings | undefined;
+  setEntity(value?: IntegrationSettings): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpsertOrgIntegrationSettingsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: UpsertOrgIntegrationSettingsReq): UpsertOrgIntegrationSettingsReq.AsObject;
+  toObject(includeInstance?: boolean): UpsertIntegrationSettingsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertIntegrationSettingsReq): UpsertIntegrationSettingsReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpsertOrgIntegrationSettingsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpsertOrgIntegrationSettingsReq;
-  static deserializeBinaryFromReader(message: UpsertOrgIntegrationSettingsReq, reader: jspb.BinaryReader): UpsertOrgIntegrationSettingsReq;
+  static serializeBinaryToWriter(message: UpsertIntegrationSettingsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertIntegrationSettingsReq;
+  static deserializeBinaryFromReader(message: UpsertIntegrationSettingsReq, reader: jspb.BinaryReader): UpsertIntegrationSettingsReq;
 }
 
-export namespace UpsertOrgIntegrationSettingsReq {
+export namespace UpsertIntegrationSettingsReq {
   export type AsObject = {
-    entity?: OrgIntegrationSettings.AsObject,
+    entity?: IntegrationSettings.AsObject,
   }
 }
 
-export class UpsertOrgIntegrationSettingsRes extends jspb.Message {
+export class UpsertIntegrationSettingsRes extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpsertOrgIntegrationSettingsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: UpsertOrgIntegrationSettingsRes): UpsertOrgIntegrationSettingsRes.AsObject;
+  toObject(includeInstance?: boolean): UpsertIntegrationSettingsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertIntegrationSettingsRes): UpsertIntegrationSettingsRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpsertOrgIntegrationSettingsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpsertOrgIntegrationSettingsRes;
-  static deserializeBinaryFromReader(message: UpsertOrgIntegrationSettingsRes, reader: jspb.BinaryReader): UpsertOrgIntegrationSettingsRes;
+  static serializeBinaryToWriter(message: UpsertIntegrationSettingsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertIntegrationSettingsRes;
+  static deserializeBinaryFromReader(message: UpsertIntegrationSettingsRes, reader: jspb.BinaryReader): UpsertIntegrationSettingsRes;
 }
 
-export namespace UpsertOrgIntegrationSettingsRes {
+export namespace UpsertIntegrationSettingsRes {
   export type AsObject = {
   }
 }

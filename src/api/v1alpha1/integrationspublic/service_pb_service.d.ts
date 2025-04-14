@@ -85,22 +85,22 @@ type IntegrationsPublicCalculateFees = {
   readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes;
 };
 
-type IntegrationsPublicGetOrgIntegrationSettings = {
+type IntegrationsPublicGetIntegrationSettings = {
   readonly methodName: string;
   readonly service: typeof IntegrationsPublic;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq;
-  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes;
+  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq;
+  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes;
 };
 
-type IntegrationsPublicUpsertOrgIntegrationSettings = {
+type IntegrationsPublicUpsertIntegrationSettings = {
   readonly methodName: string;
   readonly service: typeof IntegrationsPublic;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq;
-  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes;
+  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq;
+  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes;
 };
 
 export class IntegrationsPublic {
@@ -114,8 +114,8 @@ export class IntegrationsPublic {
   static readonly ProcessWorkflow: IntegrationsPublicProcessWorkflow;
   static readonly GetLinkDetails: IntegrationsPublicGetLinkDetails;
   static readonly CalculateFees: IntegrationsPublicCalculateFees;
-  static readonly GetOrgIntegrationSettings: IntegrationsPublicGetOrgIntegrationSettings;
-  static readonly UpsertOrgIntegrationSettings: IntegrationsPublicUpsertOrgIntegrationSettings;
+  static readonly GetIntegrationSettings: IntegrationsPublicGetIntegrationSettings;
+  static readonly UpsertIntegrationSettings: IntegrationsPublicUpsertIntegrationSettings;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -231,23 +231,23 @@ export class IntegrationsPublicClient {
     requestMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes|null) => void
   ): UnaryResponse;
-  getOrgIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq,
+  getIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes|null) => void
   ): UnaryResponse;
-  getOrgIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes|null) => void
+  getIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes|null) => void
   ): UnaryResponse;
-  upsertOrgIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq,
+  upsertIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes|null) => void
   ): UnaryResponse;
-  upsertOrgIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes|null) => void
+  upsertIntegrationSettings(
+    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes|null) => void
   ): UnaryResponse;
 }
 

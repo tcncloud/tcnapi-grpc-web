@@ -91,22 +91,22 @@ IntegrationsPublic.CalculateFees = {
   responseType: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes
 };
 
-IntegrationsPublic.GetOrgIntegrationSettings = {
-  methodName: "GetOrgIntegrationSettings",
+IntegrationsPublic.GetIntegrationSettings = {
+  methodName: "GetIntegrationSettings",
   service: IntegrationsPublic,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsReq,
-  responseType: api_v1alpha1_integrationspublic_service_pb.GetOrgIntegrationSettingsRes
+  requestType: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
+  responseType: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes
 };
 
-IntegrationsPublic.UpsertOrgIntegrationSettings = {
-  methodName: "UpsertOrgIntegrationSettings",
+IntegrationsPublic.UpsertIntegrationSettings = {
+  methodName: "UpsertIntegrationSettings",
   service: IntegrationsPublic,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsReq,
-  responseType: api_v1alpha1_integrationspublic_service_pb.UpsertOrgIntegrationSettingsRes
+  requestType: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
+  responseType: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes
 };
 
 exports.IntegrationsPublic = IntegrationsPublic;
@@ -395,11 +395,11 @@ IntegrationsPublicClient.prototype.calculateFees = function calculateFees(reques
   };
 };
 
-IntegrationsPublicClient.prototype.getOrgIntegrationSettings = function getOrgIntegrationSettings(requestMessage, metadata, callback) {
+IntegrationsPublicClient.prototype.getIntegrationSettings = function getIntegrationSettings(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(IntegrationsPublic.GetOrgIntegrationSettings, {
+  var client = grpc.unary(IntegrationsPublic.GetIntegrationSettings, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -426,11 +426,11 @@ IntegrationsPublicClient.prototype.getOrgIntegrationSettings = function getOrgIn
   };
 };
 
-IntegrationsPublicClient.prototype.upsertOrgIntegrationSettings = function upsertOrgIntegrationSettings(requestMessage, metadata, callback) {
+IntegrationsPublicClient.prototype.upsertIntegrationSettings = function upsertIntegrationSettings(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(IntegrationsPublic.UpsertOrgIntegrationSettings, {
+  var client = grpc.unary(IntegrationsPublic.UpsertIntegrationSettings, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
