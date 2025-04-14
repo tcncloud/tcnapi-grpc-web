@@ -1244,6 +1244,11 @@ export class ExecuteFlow extends jspb.Message {
   getInterproseLookupAccountByFormId(): ExecuteInterproseLookupAccountByFormId | undefined;
   setInterproseLookupAccountByFormId(value?: ExecuteInterproseLookupAccountByFormId): void;
 
+  hasInterproseGetBundle(): boolean;
+  clearInterproseGetBundle(): void;
+  getInterproseGetBundle(): ExecuteInterproseGetBundle | undefined;
+  setInterproseGetBundle(value?: ExecuteInterproseGetBundle): void;
+
   hasDallasnewsSearchByPhone(): boolean;
   clearDallasnewsSearchByPhone(): void;
   getDallasnewsSearchByPhone(): ExecuteDallasnewsSearchByPhone | undefined;
@@ -2616,6 +2621,7 @@ export namespace ExecuteFlow {
     interproseSubmitCardSaleRequestByAch?: ExecuteInterproseSubmitCardSaleRequestByAch.AsObject,
     interproseLookupPaymentId?: ExecuteInterproseLookupPaymentId.AsObject,
     interproseLookupAccountByFormId?: ExecuteInterproseLookupAccountByFormId.AsObject,
+    interproseGetBundle?: ExecuteInterproseGetBundle.AsObject,
     dallasnewsSearchByPhone?: ExecuteDallasnewsSearchByPhone.AsObject,
     dallasnewsSearchByZipStreet?: ExecuteDallasnewsSearchByZipStreet.AsObject,
     dallasnewsSearchBy?: ExecuteDallasnewsSearchBy.AsObject,
@@ -2946,6 +2952,7 @@ export namespace ExecuteFlow {
     INTERPROSE_SUBMIT_CARD_SALE_REQUEST_BY_ACH = 1603,
     INTERPROSE_LOOKUP_PAYMENT_ID = 1604,
     INTERPROSE_LOOKUP_ACCOUNT_BY_FORM_ID = 1605,
+    INTERPROSE_GET_BUNDLE = 1606,
     DALLASNEWS_SEARCH_BY_PHONE = 1701,
     DALLASNEWS_SEARCH_BY_ZIP_STREET = 1702,
     DALLASNEWS_SEARCH_BY = 1703,
@@ -4908,6 +4915,22 @@ export class ExecuteInterproseLookupAccountByFormId extends jspb.Message {
 }
 
 export namespace ExecuteInterproseLookupAccountByFormId {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteInterproseGetBundle extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteInterproseGetBundle.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteInterproseGetBundle): ExecuteInterproseGetBundle.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteInterproseGetBundle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteInterproseGetBundle;
+  static deserializeBinaryFromReader(message: ExecuteInterproseGetBundle, reader: jspb.BinaryReader): ExecuteInterproseGetBundle;
+}
+
+export namespace ExecuteInterproseGetBundle {
   export type AsObject = {
   }
 }
@@ -9178,6 +9201,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_INTERPROSE_SUBMITCARDSALEREQUESTBYACH: 1603;
   REQUEST_METHOD_INTERPROSE_LOOKUPPAYMENTID: 1604;
   REQUEST_METHOD_INTERPROSE_LOOKUPACCOUNTBYFORMID: 1605;
+  REQUEST_METHOD_INTERPROSE_GETBUNDLE: 1606;
   REQUEST_METHOD_DALLASNEWS_SEARCHBYPHONE: 1701;
   REQUEST_METHOD_DALLASNEWS_SEARCHBYZIPSTREET: 1702;
   REQUEST_METHOD_DALLASNEWS_SEARCHBY: 1703;
