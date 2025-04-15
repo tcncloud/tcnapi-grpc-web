@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_ana_pb from "../../../api/commons/ana_pb";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
@@ -1323,6 +1324,11 @@ export namespace VoiceAnalytics {
     getNumber(): VoiceAnalytics.Number | undefined;
     setNumber(value?: VoiceAnalytics.Number): void;
 
+    hasRedactEntity(): boolean;
+    clearRedactEntity(): void;
+    getRedactEntity(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+    setRedactEntity(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
+
     getWhereCase(): Redact.WhereCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Redact.AsObject;
@@ -1337,11 +1343,13 @@ export namespace VoiceAnalytics {
   export namespace Redact {
     export type AsObject = {
       number?: VoiceAnalytics.Number.AsObject,
+      redactEntity: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
     }
 
     export enum WhereCase {
       WHERE_NOT_SET = 0,
       NUMBER = 1,
+      REDACT_ENTITY = 2,
     }
   }
 

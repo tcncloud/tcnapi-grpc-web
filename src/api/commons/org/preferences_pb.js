@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_ana_pb = require('../../../api/commons/ana_pb.js');
 goog.object.extend(proto, api_commons_ana_pb);
+var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
+goog.object.extend(proto, api_commons_classifier_pb);
 var api_commons_country_pb = require('../../../api/commons/country_pb.js');
 goog.object.extend(proto, api_commons_country_pb);
 var api_commons_enums_pb = require('../../../api/commons/enums_pb.js');
@@ -10510,14 +10512,15 @@ proto.api.commons.org.VoiceAnalytics.serializeBinaryToWriter = function(message,
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.org.VoiceAnalytics.Redact.oneofGroups_ = [[1]];
+proto.api.commons.org.VoiceAnalytics.Redact.oneofGroups_ = [[1,2]];
 
 /**
  * @enum {number}
  */
 proto.api.commons.org.VoiceAnalytics.Redact.WhereCase = {
   WHERE_NOT_SET: 0,
-  NUMBER: 1
+  NUMBER: 1,
+  REDACT_ENTITY: 2
 };
 
 /**
@@ -10558,7 +10561,8 @@ proto.api.commons.org.VoiceAnalytics.Redact.prototype.toObject = function(opt_in
  */
 proto.api.commons.org.VoiceAnalytics.Redact.toObject = function(includeInstance, msg) {
   var f, obj = {
-number: (f = msg.getNumber()) && proto.api.commons.org.VoiceAnalytics.Number.toObject(includeInstance, f)
+number: (f = msg.getNumber()) && proto.api.commons.org.VoiceAnalytics.Number.toObject(includeInstance, f),
+redactEntity: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10600,6 +10604,10 @@ proto.api.commons.org.VoiceAnalytics.Redact.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto.api.commons.org.VoiceAnalytics.Number.deserializeBinaryFromReader);
       msg.setNumber(value);
       break;
+    case 2:
+      var value = /** @type {!proto.api.commons.ClassifierEntityType} */ (reader.readEnum());
+      msg.setRedactEntity(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10635,6 +10643,13 @@ proto.api.commons.org.VoiceAnalytics.Redact.serializeBinaryToWriter = function(m
       1,
       f,
       proto.api.commons.org.VoiceAnalytics.Number.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeEnum(
+      2,
+      f
     );
   }
 };
@@ -10674,6 +10689,42 @@ proto.api.commons.org.VoiceAnalytics.Redact.prototype.clearNumber = function() {
  */
 proto.api.commons.org.VoiceAnalytics.Redact.prototype.hasNumber = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional api.commons.ClassifierEntityType redact_entity = 2;
+ * @return {!proto.api.commons.ClassifierEntityType}
+ */
+proto.api.commons.org.VoiceAnalytics.Redact.prototype.getRedactEntity = function() {
+  return /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ClassifierEntityType} value
+ * @return {!proto.api.commons.org.VoiceAnalytics.Redact} returns this
+ */
+proto.api.commons.org.VoiceAnalytics.Redact.prototype.setRedactEntity = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.api.commons.org.VoiceAnalytics.Redact.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.org.VoiceAnalytics.Redact} returns this
+ */
+proto.api.commons.org.VoiceAnalytics.Redact.prototype.clearRedactEntity = function() {
+  return jspb.Message.setOneofField(this, 2, proto.api.commons.org.VoiceAnalytics.Redact.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.org.VoiceAnalytics.Redact.prototype.hasRedactEntity = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
