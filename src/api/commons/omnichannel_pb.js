@@ -2200,7 +2200,8 @@ hoursOfOperation: (f = msg.getHoursOfOperation()) && proto.api.commons.WeekdayTi
 details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.toObject(includeInstance, f),
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
-hoursOfOperationTimezone: (f = msg.getHoursOfOperationTimezone()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f)
+hoursOfOperationTimezone: (f = msg.getHoursOfOperationTimezone()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
+globalTimezoneOrdering: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -2297,6 +2298,10 @@ proto.api.commons.OmniCampaignModule.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.commons.WeekdayTimeRange;
       reader.readMessage(value,proto.api.commons.WeekdayTimeRange.deserializeBinaryFromReader);
       msg.setHoursOfOperationTimezone(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGlobalTimezoneOrdering(value);
       break;
     default:
       reader.skipField();
@@ -2425,6 +2430,13 @@ proto.api.commons.OmniCampaignModule.serializeBinaryToWriter = function(message,
       13,
       f,
       proto.api.commons.WeekdayTimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getGlobalTimezoneOrdering();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
     );
   }
 };
@@ -3290,6 +3302,24 @@ proto.api.commons.OmniCampaignModule.prototype.clearHoursOfOperationTimezone = f
  */
 proto.api.commons.OmniCampaignModule.prototype.hasHoursOfOperationTimezone = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool global_timezone_ordering = 14;
+ * @return {boolean}
+ */
+proto.api.commons.OmniCampaignModule.prototype.getGlobalTimezoneOrdering = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.OmniCampaignModule} returns this
+ */
+proto.api.commons.OmniCampaignModule.prototype.setGlobalTimezoneOrdering = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
