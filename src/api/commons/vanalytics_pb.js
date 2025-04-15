@@ -79,7 +79,7 @@ proto.api.commons.RecordingType = {
  * @enum {number}
  */
 proto.api.commons.RedactEntity = {
-  REDACT_ENTITY_UNKNOWN: 0,
+  REDACT_ENTITY_UNSPECIFIED: 0,
   REDACT_ENTITY_CREDIT_CARD: 1
 };
 

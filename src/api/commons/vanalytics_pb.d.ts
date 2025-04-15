@@ -47,7 +47,7 @@ export interface RecordingTypeMap {
 export const RecordingType: RecordingTypeMap;
 
 export interface RedactEntityMap {
-  REDACT_ENTITY_UNKNOWN: 0;
+  REDACT_ENTITY_UNSPECIFIED: 0;
   REDACT_ENTITY_CREDIT_CARD: 1;
 }
 
