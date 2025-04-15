@@ -257,6 +257,15 @@ type PortalManagerApiListPluginsByMethod = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPluginsByMethodRes;
 };
 
+type PortalManagerApiDeliverReceipt = {
+  readonly methodName: string;
+  readonly service: typeof PortalManagerApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.DeliverReceiptReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.DeliverReceiptRes;
+};
+
 export class PortalManagerApi {
   static readonly serviceName: string;
   static readonly UpsertPortalConfig: PortalManagerApiUpsertPortalConfig;
@@ -287,6 +296,7 @@ export class PortalManagerApi {
   static readonly ListPortalWorkflows: PortalManagerApiListPortalWorkflows;
   static readonly ListAllActionDefinitions: PortalManagerApiListAllActionDefinitions;
   static readonly ListPluginsByMethod: PortalManagerApiListPluginsByMethod;
+  static readonly DeliverReceipt: PortalManagerApiDeliverReceipt;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -572,6 +582,15 @@ export class PortalManagerApiClient {
   listPluginsByMethod(
     requestMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodRes|null) => void
+  ): UnaryResponse;
+  deliverReceipt(
+    requestMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptRes|null) => void
+  ): UnaryResponse;
+  deliverReceipt(
+    requestMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptRes|null) => void
   ): UnaryResponse;
 }
 

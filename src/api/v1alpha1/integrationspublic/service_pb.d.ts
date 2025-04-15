@@ -855,6 +855,74 @@ export namespace GetLinkDetailsRes {
   }
 }
 
+export class DeliverReceiptReq extends jspb.Message {
+  hasEmailReceipt(): boolean;
+  clearEmailReceipt(): void;
+  getEmailReceipt(): EmailReceipt | undefined;
+  setEmailReceipt(value?: EmailReceipt): void;
+
+  getReceiptId(): string;
+  setReceiptId(value: string): void;
+
+  getDeliveryMethodCase(): DeliverReceiptReq.DeliveryMethodCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeliverReceiptReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeliverReceiptReq): DeliverReceiptReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeliverReceiptReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeliverReceiptReq;
+  static deserializeBinaryFromReader(message: DeliverReceiptReq, reader: jspb.BinaryReader): DeliverReceiptReq;
+}
+
+export namespace DeliverReceiptReq {
+  export type AsObject = {
+    emailReceipt?: EmailReceipt.AsObject,
+    receiptId: string,
+  }
+
+  export enum DeliveryMethodCase {
+    DELIVERY_METHOD_NOT_SET = 0,
+    EMAIL_RECEIPT = 3,
+  }
+}
+
+export class EmailReceipt extends jspb.Message {
+  getToAddr(): string;
+  setToAddr(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EmailReceipt.AsObject;
+  static toObject(includeInstance: boolean, msg: EmailReceipt): EmailReceipt.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EmailReceipt, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EmailReceipt;
+  static deserializeBinaryFromReader(message: EmailReceipt, reader: jspb.BinaryReader): EmailReceipt;
+}
+
+export namespace EmailReceipt {
+  export type AsObject = {
+    toAddr: string,
+  }
+}
+
+export class DeliverReceiptRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeliverReceiptRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeliverReceiptRes): DeliverReceiptRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeliverReceiptRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeliverReceiptRes;
+  static deserializeBinaryFromReader(message: DeliverReceiptRes, reader: jspb.BinaryReader): DeliverReceiptRes;
+}
+
+export namespace DeliverReceiptRes {
+  export type AsObject = {
+  }
+}
+
 export class CalculateFeesReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
