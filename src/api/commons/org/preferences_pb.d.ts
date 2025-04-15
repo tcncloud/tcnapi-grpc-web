@@ -8,6 +8,7 @@ import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
+import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class OrganizationPreferences extends jspb.Message {
@@ -1323,6 +1324,11 @@ export namespace VoiceAnalytics {
     getNumber(): VoiceAnalytics.Number | undefined;
     setNumber(value?: VoiceAnalytics.Number): void;
 
+    hasRedactEntity(): boolean;
+    clearRedactEntity(): void;
+    getRedactEntity(): api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap];
+    setRedactEntity(value: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap]): void;
+
     getWhereCase(): Redact.WhereCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Redact.AsObject;
@@ -1337,11 +1343,13 @@ export namespace VoiceAnalytics {
   export namespace Redact {
     export type AsObject = {
       number?: VoiceAnalytics.Number.AsObject,
+      redactEntity: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap],
     }
 
     export enum WhereCase {
       WHERE_NOT_SET = 0,
       NUMBER = 1,
+      REDACT_ENTITY = 2,
     }
   }
 
@@ -1357,11 +1365,6 @@ export namespace VoiceAnalytics {
 
     getSlop(): number;
     setSlop(value: number): void;
-
-    hasPhraseProximity(): boolean;
-    clearPhraseProximity(): void;
-    getPhraseProximity(): VoiceAnalytics.Number.PhraseProximity | undefined;
-    setPhraseProximity(value?: VoiceAnalytics.Number.PhraseProximity): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Number.AsObject;
@@ -1379,113 +1382,6 @@ export namespace VoiceAnalytics {
       minConsecutive: number,
       maxConsecutive: number,
       slop: number,
-      phraseProximity?: VoiceAnalytics.Number.PhraseProximity.AsObject,
-    }
-
-    export class PhraseProximity extends jspb.Message {
-      hasPhrase(): boolean;
-      clearPhrase(): void;
-      getPhrase(): VoiceAnalytics.Number.Phrase | undefined;
-      setPhrase(value?: VoiceAnalytics.Number.Phrase): void;
-
-      hasProximity(): boolean;
-      clearProximity(): void;
-      getProximity(): VoiceAnalytics.Number.Proximity | undefined;
-      setProximity(value?: VoiceAnalytics.Number.Proximity): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): PhraseProximity.AsObject;
-      static toObject(includeInstance: boolean, msg: PhraseProximity): PhraseProximity.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: PhraseProximity, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): PhraseProximity;
-      static deserializeBinaryFromReader(message: PhraseProximity, reader: jspb.BinaryReader): PhraseProximity;
-    }
-
-    export namespace PhraseProximity {
-      export type AsObject = {
-        phrase?: VoiceAnalytics.Number.Phrase.AsObject,
-        proximity?: VoiceAnalytics.Number.Proximity.AsObject,
-      }
-    }
-
-    export class Phrase extends jspb.Message {
-      clearWordsList(): void;
-      getWordsList(): Array<VoiceAnalytics.Number.Phrase.Word>;
-      setWordsList(value: Array<VoiceAnalytics.Number.Phrase.Word>): void;
-      addWords(value?: VoiceAnalytics.Number.Phrase.Word, index?: number): VoiceAnalytics.Number.Phrase.Word;
-
-      getSlop(): number;
-      setSlop(value: number): void;
-
-      getInOrder(): boolean;
-      setInOrder(value: boolean): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Phrase.AsObject;
-      static toObject(includeInstance: boolean, msg: Phrase): Phrase.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: Phrase, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): Phrase;
-      static deserializeBinaryFromReader(message: Phrase, reader: jspb.BinaryReader): Phrase;
-    }
-
-    export namespace Phrase {
-      export type AsObject = {
-        wordsList: Array<VoiceAnalytics.Number.Phrase.Word.AsObject>,
-        slop: number,
-        inOrder: boolean,
-      }
-
-      export class Word extends jspb.Message {
-        getValue(): string;
-        setValue(value: string): void;
-
-        getFuzziness(): string;
-        setFuzziness(value: string): void;
-
-        serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): Word.AsObject;
-        static toObject(includeInstance: boolean, msg: Word): Word.AsObject;
-        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: Word, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): Word;
-        static deserializeBinaryFromReader(message: Word, reader: jspb.BinaryReader): Word;
-      }
-
-      export namespace Word {
-        export type AsObject = {
-          value: string,
-          fuzziness: string,
-        }
-      }
-    }
-
-    export class Proximity extends jspb.Message {
-      getBefore(): number;
-      setBefore(value: number): void;
-
-      getAfter(): number;
-      setAfter(value: number): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Proximity.AsObject;
-      static toObject(includeInstance: boolean, msg: Proximity): Proximity.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: Proximity, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): Proximity;
-      static deserializeBinaryFromReader(message: Proximity, reader: jspb.BinaryReader): Proximity;
-    }
-
-    export namespace Proximity {
-      export type AsObject = {
-        before: number,
-        after: number,
-      }
     }
 
     export interface KindMap {
