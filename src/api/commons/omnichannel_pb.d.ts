@@ -2138,9 +2138,6 @@ export class OmniTask extends jspb.Message {
   getTaskConfig(): OmniTaskConfig | undefined;
   setTaskConfig(value?: OmniTaskConfig): void;
 
-  getTimezoneOffset(): number;
-  setTimezoneOffset(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTask.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTask): OmniTask.AsObject;
@@ -2167,7 +2164,6 @@ export namespace OmniTask {
     statusMessage?: google_protobuf_wrappers_pb.StringValue.AsObject,
     scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     taskConfig?: OmniTaskConfig.AsObject,
-    timezoneOffset: number,
   }
 
   export class Details extends jspb.Message {
