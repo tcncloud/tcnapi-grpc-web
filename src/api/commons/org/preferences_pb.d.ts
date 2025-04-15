@@ -8,6 +8,7 @@ import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
+import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class OrganizationPreferences extends jspb.Message {
@@ -1323,6 +1324,11 @@ export namespace VoiceAnalytics {
     getNumber(): VoiceAnalytics.Number | undefined;
     setNumber(value?: VoiceAnalytics.Number): void;
 
+    hasRedactEntity(): boolean;
+    clearRedactEntity(): void;
+    getRedactEntity(): api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap];
+    setRedactEntity(value: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap]): void;
+
     getWhereCase(): Redact.WhereCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Redact.AsObject;
@@ -1337,11 +1343,13 @@ export namespace VoiceAnalytics {
   export namespace Redact {
     export type AsObject = {
       number?: VoiceAnalytics.Number.AsObject,
+      redactEntity: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap],
     }
 
     export enum WhereCase {
       WHERE_NOT_SET = 0,
       NUMBER = 1,
+      REDACT_ENTITY = 2,
     }
   }
 
