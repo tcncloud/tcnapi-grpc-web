@@ -91,24 +91,6 @@ IntegrationsPublic.CalculateFees = {
   responseType: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes
 };
 
-IntegrationsPublic.GetIntegrationSettings = {
-  methodName: "GetIntegrationSettings",
-  service: IntegrationsPublic,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
-  responseType: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes
-};
-
-IntegrationsPublic.UpsertIntegrationSettings = {
-  methodName: "UpsertIntegrationSettings",
-  service: IntegrationsPublic,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
-  responseType: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes
-};
-
 exports.IntegrationsPublic = IntegrationsPublic;
 
 function IntegrationsPublicClient(serviceHost, options) {
@@ -369,68 +351,6 @@ IntegrationsPublicClient.prototype.calculateFees = function calculateFees(reques
     callback = arguments[1];
   }
   var client = grpc.unary(IntegrationsPublic.CalculateFees, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-IntegrationsPublicClient.prototype.getIntegrationSettings = function getIntegrationSettings(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(IntegrationsPublic.GetIntegrationSettings, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-IntegrationsPublicClient.prototype.upsertIntegrationSettings = function upsertIntegrationSettings(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(IntegrationsPublic.UpsertIntegrationSettings, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

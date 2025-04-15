@@ -85,24 +85,6 @@ type IntegrationsPublicCalculateFees = {
   readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes;
 };
 
-type IntegrationsPublicGetIntegrationSettings = {
-  readonly methodName: string;
-  readonly service: typeof IntegrationsPublic;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq;
-  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes;
-};
-
-type IntegrationsPublicUpsertIntegrationSettings = {
-  readonly methodName: string;
-  readonly service: typeof IntegrationsPublic;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq;
-  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes;
-};
-
 export class IntegrationsPublic {
   static readonly serviceName: string;
   static readonly GetLinkData: IntegrationsPublicGetLinkData;
@@ -114,8 +96,6 @@ export class IntegrationsPublic {
   static readonly ProcessWorkflow: IntegrationsPublicProcessWorkflow;
   static readonly GetLinkDetails: IntegrationsPublicGetLinkDetails;
   static readonly CalculateFees: IntegrationsPublicCalculateFees;
-  static readonly GetIntegrationSettings: IntegrationsPublicGetIntegrationSettings;
-  static readonly UpsertIntegrationSettings: IntegrationsPublicUpsertIntegrationSettings;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -230,24 +210,6 @@ export class IntegrationsPublicClient {
   calculateFees(
     requestMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.CalculateFeesRes|null) => void
-  ): UnaryResponse;
-  getIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes|null) => void
-  ): UnaryResponse;
-  getIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetIntegrationSettingsRes|null) => void
-  ): UnaryResponse;
-  upsertIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes|null) => void
-  ): UnaryResponse;
-  upsertIntegrationSettings(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.UpsertIntegrationSettingsRes|null) => void
   ): UnaryResponse;
 }
 
