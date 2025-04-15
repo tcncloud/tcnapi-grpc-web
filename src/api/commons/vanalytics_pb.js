@@ -25,7 +25,6 @@ var global = localGlobalThis ||
 
 goog.exportSymbol('proto.api.commons.Interval', null, global);
 goog.exportSymbol('proto.api.commons.RecordingType', null, global);
-goog.exportSymbol('proto.api.commons.RedactEntity', null, global);
 goog.exportSymbol('proto.api.commons.TranscriptSentimentTone', null, global);
 goog.exportSymbol('proto.api.commons.TranscriptSummaryStatus', null, global);
 /**
@@ -73,14 +72,6 @@ proto.api.commons.RecordingType = {
   RECORDING_TYPE_TCN: 0,
   RECORDING_TYPE_EXTERNAL: 1,
   RECORDING_TYPE_VOICEMAIL: 2
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.RedactEntity = {
-  REDACT_ENTITY_UNSPECIFIED: 0,
-  REDACT_ENTITY_CREDIT_CARD: 1
 };
 
 goog.object.extend(exports, proto.api.commons);

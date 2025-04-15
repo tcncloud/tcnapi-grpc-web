@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_ana_pb = require('../../../api/commons/ana_pb.js');
 goog.object.extend(proto, api_commons_ana_pb);
+var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
+goog.object.extend(proto, api_commons_classifier_pb);
 var api_commons_country_pb = require('../../../api/commons/country_pb.js');
 goog.object.extend(proto, api_commons_country_pb);
 var api_commons_enums_pb = require('../../../api/commons/enums_pb.js');
@@ -35,8 +37,6 @@ var api_commons_org_pb = require('../../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
 var api_commons_org_preferences_pb = require('../../../api/commons/org_preferences_pb.js');
 goog.object.extend(proto, api_commons_org_preferences_pb);
-var api_commons_vanalytics_pb = require('../../../api/commons/vanalytics_pb.js');
-goog.object.extend(proto, api_commons_vanalytics_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.org.AdminClientPreferences', null, global);
@@ -10605,7 +10605,7 @@ proto.api.commons.org.VoiceAnalytics.Redact.deserializeBinaryFromReader = functi
       msg.setNumber(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.RedactEntity} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.ClassifierEntityType} */ (reader.readEnum());
       msg.setRedactEntity(value);
       break;
     default:
@@ -10645,7 +10645,7 @@ proto.api.commons.org.VoiceAnalytics.Redact.serializeBinaryToWriter = function(m
       proto.api.commons.org.VoiceAnalytics.Number.serializeBinaryToWriter
     );
   }
-  f = /** @type {!proto.api.commons.RedactEntity} */ (jspb.Message.getField(message, 2));
+  f = /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeEnum(
       2,
@@ -10693,16 +10693,16 @@ proto.api.commons.org.VoiceAnalytics.Redact.prototype.hasNumber = function() {
 
 
 /**
- * optional api.commons.RedactEntity redact_entity = 2;
- * @return {!proto.api.commons.RedactEntity}
+ * optional api.commons.ClassifierEntityType redact_entity = 2;
+ * @return {!proto.api.commons.ClassifierEntityType}
  */
 proto.api.commons.org.VoiceAnalytics.Redact.prototype.getRedactEntity = function() {
-  return /** @type {!proto.api.commons.RedactEntity} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.RedactEntity} value
+ * @param {!proto.api.commons.ClassifierEntityType} value
  * @return {!proto.api.commons.org.VoiceAnalytics.Redact} returns this
  */
 proto.api.commons.org.VoiceAnalytics.Redact.prototype.setRedactEntity = function(value) {

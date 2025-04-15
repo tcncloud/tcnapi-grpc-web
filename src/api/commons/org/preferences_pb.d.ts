@@ -3,12 +3,12 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_ana_pb from "../../../api/commons/ana_pb";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
-import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class OrganizationPreferences extends jspb.Message {
@@ -1326,8 +1326,8 @@ export namespace VoiceAnalytics {
 
     hasRedactEntity(): boolean;
     clearRedactEntity(): void;
-    getRedactEntity(): api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap];
-    setRedactEntity(value: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap]): void;
+    getRedactEntity(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+    setRedactEntity(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
 
     getWhereCase(): Redact.WhereCase;
     serializeBinary(): Uint8Array;
@@ -1343,7 +1343,7 @@ export namespace VoiceAnalytics {
   export namespace Redact {
     export type AsObject = {
       number?: VoiceAnalytics.Number.AsObject,
-      redactEntity: api_commons_vanalytics_pb.RedactEntityMap[keyof api_commons_vanalytics_pb.RedactEntityMap],
+      redactEntity: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
     }
 
     export enum WhereCase {
