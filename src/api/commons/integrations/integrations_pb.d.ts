@@ -10,12 +10,6 @@ export class Receipt extends jspb.Message {
   setFieldsList(value: Array<ReceiptField>): void;
   addFields(value?: ReceiptField, index?: number): ReceiptField;
 
-  getCampaignSid(): number;
-  setCampaignSid(value: number): void;
-
-  getCampaignModuleSid(): number;
-  setCampaignModuleSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Receipt.AsObject;
   static toObject(includeInstance: boolean, msg: Receipt): Receipt.AsObject;
@@ -29,8 +23,6 @@ export class Receipt extends jspb.Message {
 export namespace Receipt {
   export type AsObject = {
     fieldsList: Array<ReceiptField.AsObject>,
-    campaignSid: number,
-    campaignModuleSid: number,
   }
 }
 

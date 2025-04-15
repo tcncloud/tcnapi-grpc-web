@@ -319,15 +319,6 @@ type IntegrationsUpsertIntegrationSettings = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.UpsertIntegrationSettingsRes;
 };
 
-type IntegrationsDeliverReceipt = {
-  readonly methodName: string;
-  readonly service: typeof Integrations;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrations_service_pb.DeliverReceiptReq;
-  readonly responseType: typeof api_v1alpha1_integrations_service_pb.DeliverReceiptRes;
-};
-
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -365,7 +356,6 @@ export class Integrations {
   static readonly CalculateFees: IntegrationsCalculateFees;
   static readonly GetIntegrationSettings: IntegrationsGetIntegrationSettings;
   static readonly UpsertIntegrationSettings: IntegrationsUpsertIntegrationSettings;
-  static readonly DeliverReceipt: IntegrationsDeliverReceipt;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -714,15 +704,6 @@ export class IntegrationsClient {
   upsertIntegrationSettings(
     requestMessage: api_v1alpha1_integrations_service_pb.UpsertIntegrationSettingsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.UpsertIntegrationSettingsRes|null) => void
-  ): UnaryResponse;
-  deliverReceipt(
-    requestMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptRes|null) => void
-  ): UnaryResponse;
-  deliverReceipt(
-    requestMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.DeliverReceiptRes|null) => void
   ): UnaryResponse;
 }
 
