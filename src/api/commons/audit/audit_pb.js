@@ -45,8 +45,6 @@ var api_commons_audit_omnichannel_events_pb = require('../../../api/commons/audi
 goog.object.extend(proto, api_commons_audit_omnichannel_events_pb);
 var api_commons_audit_organization_events_pb = require('../../../api/commons/audit/organization_events_pb.js');
 goog.object.extend(proto, api_commons_audit_organization_events_pb);
-var api_commons_audit_p3_amqp_events_pb = require('../../../api/commons/audit/p3_amqp_events_pb.js');
-goog.object.extend(proto, api_commons_audit_p3_amqp_events_pb);
 var api_commons_audit_scorecards_events_pb = require('../../../api/commons/audit/scorecards_events_pb.js');
 goog.object.extend(proto, api_commons_audit_scorecards_events_pb);
 var api_commons_audit_tickets_events_pb = require('../../../api/commons/audit/tickets_events_pb.js');
@@ -89,7 +87,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,616,617,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300,1400,1500,1501]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,205,206,207,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,601,616,617,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1100,1101,1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1300,1400]];
 
 /**
  * @enum {number}
@@ -226,9 +224,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   CONTACT_MANAGER_ENTRY_EXPUNGE_EVENT: 1208,
   CONTACT_MANAGER_ENTITY_ASSOCIATION_EVENT: 1209,
   ACCESS_TOKENS_EXPIRING_EVENT: 1300,
-  WFM_PUBLISH_SCHEDULE_EVENT: 1400,
-  P3_AMQP_CALL_RESULT_EVENT: 1500,
-  P3_AMQP_AGENT_RESPONSE_EVENT: 1501
+  WFM_PUBLISH_SCHEDULE_EVENT: 1400
 };
 
 /**
@@ -406,9 +402,7 @@ contactManagerEntryDeleteEvent: (f = msg.getContactManagerEntryDeleteEvent()) &&
 contactManagerEntryExpungeEvent: (f = msg.getContactManagerEntryExpungeEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
 contactManagerEntityAssociationEvent: (f = msg.getContactManagerEntityAssociationEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.toObject(includeInstance, f),
 accessTokensExpiringEvent: (f = msg.getAccessTokensExpiringEvent()) && api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.toObject(includeInstance, f),
-wfmPublishScheduleEvent: (f = msg.getWfmPublishScheduleEvent()) && api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.toObject(includeInstance, f),
-p3AmqpCallResultEvent: (f = msg.getP3AmqpCallResultEvent()) && api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent.toObject(includeInstance, f),
-p3AmqpAgentResponseEvent: (f = msg.getP3AmqpAgentResponseEvent()) && api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent.toObject(includeInstance, f)
+wfmPublishScheduleEvent: (f = msg.getWfmPublishScheduleEvent()) && api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1129,16 +1123,6 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent;
       reader.readMessage(value,api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.deserializeBinaryFromReader);
       msg.setWfmPublishScheduleEvent(value);
-      break;
-    case 1500:
-      var value = new api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent;
-      reader.readMessage(value,api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent.deserializeBinaryFromReader);
-      msg.setP3AmqpCallResultEvent(value);
-      break;
-    case 1501:
-      var value = new api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent;
-      reader.readMessage(value,api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent.deserializeBinaryFromReader);
-      msg.setP3AmqpAgentResponseEvent(value);
       break;
     default:
       reader.skipField();
@@ -2266,22 +2250,6 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       1400,
       f,
       api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getP3AmqpCallResultEvent();
-  if (f != null) {
-    writer.writeMessage(
-      1500,
-      f,
-      api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getP3AmqpAgentResponseEvent();
-  if (f != null) {
-    writer.writeMessage(
-      1501,
-      f,
-      api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent.serializeBinaryToWriter
     );
   }
 };
@@ -7295,80 +7263,6 @@ proto.api.commons.audit.AuditEvent.prototype.clearWfmPublishScheduleEvent = func
  */
 proto.api.commons.audit.AuditEvent.prototype.hasWfmPublishScheduleEvent = function() {
   return jspb.Message.getField(this, 1400) != null;
-};
-
-
-/**
- * optional P3AMQPCallResultEvent p3_amqp_call_result_event = 1500;
- * @return {?proto.api.commons.audit.P3AMQPCallResultEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getP3AmqpCallResultEvent = function() {
-  return /** @type{?proto.api.commons.audit.P3AMQPCallResultEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent, 1500));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.P3AMQPCallResultEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setP3AmqpCallResultEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1500, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearP3AmqpCallResultEvent = function() {
-  return this.setP3AmqpCallResultEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasP3AmqpCallResultEvent = function() {
-  return jspb.Message.getField(this, 1500) != null;
-};
-
-
-/**
- * optional P3AMQPAgentResponseEvent p3_amqp_agent_response_event = 1501;
- * @return {?proto.api.commons.audit.P3AMQPAgentResponseEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getP3AmqpAgentResponseEvent = function() {
-  return /** @type{?proto.api.commons.audit.P3AMQPAgentResponseEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent, 1501));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.P3AMQPAgentResponseEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setP3AmqpAgentResponseEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1501, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearP3AmqpAgentResponseEvent = function() {
-  return this.setP3AmqpAgentResponseEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasP3AmqpAgentResponseEvent = function() {
-  return jspb.Message.getField(this, 1501) != null;
 };
 
 

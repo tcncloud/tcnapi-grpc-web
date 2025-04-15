@@ -13,7 +13,6 @@ import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_
 import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
 import * as api_commons_audit_omnichannel_events_pb from "../../../api/commons/audit/omnichannel_events_pb";
 import * as api_commons_audit_organization_events_pb from "../../../api/commons/audit/organization_events_pb";
-import * as api_commons_audit_p3_amqp_events_pb from "../../../api/commons/audit/p3_amqp_events_pb";
 import * as api_commons_audit_scorecards_events_pb from "../../../api/commons/audit/scorecards_events_pb";
 import * as api_commons_audit_tickets_events_pb from "../../../api/commons/audit/tickets_events_pb";
 import * as api_commons_audit_vana_events_pb from "../../../api/commons/audit/vana_events_pb";
@@ -701,16 +700,6 @@ export class AuditEvent extends jspb.Message {
   getWfmPublishScheduleEvent(): api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent | undefined;
   setWfmPublishScheduleEvent(value?: api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent): void;
 
-  hasP3AmqpCallResultEvent(): boolean;
-  clearP3AmqpCallResultEvent(): void;
-  getP3AmqpCallResultEvent(): api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent | undefined;
-  setP3AmqpCallResultEvent(value?: api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent): void;
-
-  hasP3AmqpAgentResponseEvent(): boolean;
-  clearP3AmqpAgentResponseEvent(): void;
-  getP3AmqpAgentResponseEvent(): api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent | undefined;
-  setP3AmqpAgentResponseEvent(value?: api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent): void;
-
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -862,8 +851,6 @@ export namespace AuditEvent {
     contactManagerEntityAssociationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntityAssociationEvent.AsObject,
     accessTokensExpiringEvent?: api_commons_audit_organization_events_pb.AccessTokensExpiringEvent.AsObject,
     wfmPublishScheduleEvent?: api_commons_audit_wfm_events_pb.WFMPublishScheduleEvent.AsObject,
-    p3AmqpCallResultEvent?: api_commons_audit_p3_amqp_events_pb.P3AMQPCallResultEvent.AsObject,
-    p3AmqpAgentResponseEvent?: api_commons_audit_p3_amqp_events_pb.P3AMQPAgentResponseEvent.AsObject,
   }
 
   export enum EventCase {
@@ -999,8 +986,6 @@ export namespace AuditEvent {
     CONTACT_MANAGER_ENTITY_ASSOCIATION_EVENT = 1209,
     ACCESS_TOKENS_EXPIRING_EVENT = 1300,
     WFM_PUBLISH_SCHEDULE_EVENT = 1400,
-    P3_AMQP_CALL_RESULT_EVENT = 1500,
-    P3_AMQP_AGENT_RESPONSE_EVENT = 1501,
   }
 }
 
