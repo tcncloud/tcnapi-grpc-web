@@ -68,11 +68,6 @@ export class Insight extends jspb.Message {
   getExportOptions(): ExportOptions | undefined;
   setExportOptions(value?: ExportOptions): void;
 
-  hasDataExportOptions(): boolean;
-  clearDataExportOptions(): void;
-  getDataExportOptions(): api_v1alpha1_explorer_entities_pb.ExportOptions | undefined;
-  setDataExportOptions(value?: api_v1alpha1_explorer_entities_pb.ExportOptions): void;
-
   getInsightContentCase(): Insight.InsightContentCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
@@ -102,7 +97,6 @@ export namespace Insight {
     pipeline?: api_v1alpha1_insights_insight_content_pb.Pipeline.AsObject,
     insightBody?: api_v1alpha1_explorer_pipeline_pb.Pipeline.AsObject,
     exportOptions?: ExportOptions.AsObject,
-    dataExportOptions?: api_v1alpha1_explorer_entities_pb.ExportOptions.AsObject,
   }
 
   export enum InsightContentCase {

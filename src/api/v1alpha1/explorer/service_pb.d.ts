@@ -165,16 +165,6 @@ export class QueryRequest extends jspb.Message {
   getReportDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setReportDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasExportOptions(): boolean;
-  clearExportOptions(): void;
-  getExportOptions(): api_v1alpha1_explorer_entities_pb.ExportOptions | undefined;
-  setExportOptions(value?: api_v1alpha1_explorer_entities_pb.ExportOptions): void;
-
-  clearResultTypesList(): void;
-  getResultTypesList(): Array<api_v1alpha1_explorer_entities_pb.ResultTypeMap[keyof api_v1alpha1_explorer_entities_pb.ResultTypeMap]>;
-  setResultTypesList(value: Array<api_v1alpha1_explorer_entities_pb.ResultTypeMap[keyof api_v1alpha1_explorer_entities_pb.ResultTypeMap]>): void;
-  addResultTypes(value: api_v1alpha1_explorer_entities_pb.ResultTypeMap[keyof api_v1alpha1_explorer_entities_pb.ResultTypeMap], index?: number): api_v1alpha1_explorer_entities_pb.ResultTypeMap[keyof api_v1alpha1_explorer_entities_pb.ResultTypeMap];
-
   getQueryCase(): QueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryRequest.AsObject;
@@ -203,8 +193,6 @@ export namespace QueryRequest {
     format: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap],
     timePeriod: api_commons_bireportgenerator_pb.TimePeriodMap[keyof api_commons_bireportgenerator_pb.TimePeriodMap],
     reportDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    exportOptions?: api_v1alpha1_explorer_entities_pb.ExportOptions.AsObject,
-    resultTypesList: Array<api_v1alpha1_explorer_entities_pb.ResultTypeMap[keyof api_v1alpha1_explorer_entities_pb.ResultTypeMap]>,
   }
 
   export enum QueryCase {
@@ -230,8 +218,6 @@ export class QueryResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
-  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResponse): QueryResponse.AsObject;
@@ -249,7 +235,6 @@ export namespace QueryResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
@@ -303,8 +288,6 @@ export class SupportQueryResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
-  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupportQueryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SupportQueryResponse): SupportQueryResponse.AsObject;
@@ -325,7 +308,6 @@ export namespace SupportQueryResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
@@ -375,8 +357,6 @@ export class QueryExplainResponse extends jspb.Message {
   getPostProcessingSummaryQuery(): string;
   setPostProcessingSummaryQuery(value: string): void;
 
-  getResultUrlsMap(): jspb.Map<number, api_v1alpha1_explorer_entities_pb.ResultFile>;
-  clearResultUrlsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryExplainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: QueryExplainResponse): QueryExplainResponse.AsObject;
@@ -397,7 +377,6 @@ export namespace QueryExplainResponse {
     timeFilteredDatasourcesMap: Array<[string, boolean]>,
     postProcessingTableQuery: string,
     postProcessingSummaryQuery: string,
-    resultUrlsMap: Array<[number, api_v1alpha1_explorer_entities_pb.ResultFile.AsObject]>,
   }
 }
 
