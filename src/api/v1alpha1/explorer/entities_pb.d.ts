@@ -136,10 +136,68 @@ export namespace Parameters {
   }
 }
 
+export class ResultFile extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResultFile.AsObject;
+  static toObject(includeInstance: boolean, msg: ResultFile): ResultFile.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResultFile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResultFile;
+  static deserializeBinaryFromReader(message: ResultFile, reader: jspb.BinaryReader): ResultFile;
+}
+
+export namespace ResultFile {
+  export type AsObject = {
+    url: string,
+    sizeBytes: number,
+  }
+}
+
+export class ExportOptions extends jspb.Message {
+  getDelimiter(): string;
+  setDelimiter(value: string): void;
+
+  getQuoteCharacter(): QuoteCharacterMap[keyof QuoteCharacterMap];
+  setQuoteCharacter(value: QuoteCharacterMap[keyof QuoteCharacterMap]): void;
+
+  getNoHeader(): boolean;
+  setNoHeader(value: boolean): void;
+
+  getExportFormat(): ExportFormatMap[keyof ExportFormatMap];
+  setExportFormat(value: ExportFormatMap[keyof ExportFormatMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportOptions): ExportOptions.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportOptions;
+  static deserializeBinaryFromReader(message: ExportOptions, reader: jspb.BinaryReader): ExportOptions;
+}
+
+export namespace ExportOptions {
+  export type AsObject = {
+    delimiter: string,
+    quoteCharacter: QuoteCharacterMap[keyof QuoteCharacterMap],
+    noHeader: boolean,
+    exportFormat: ExportFormatMap[keyof ExportFormatMap],
+  }
+}
+
 export interface ExportFormatMap {
   REPORT_FORMAT_UNSPECIFIED: 0;
   REPORT_FORMAT_CSV: 1;
   REPORT_FORMAT_PARQUET: 2;
+  REPORT_FORMAT_TSV: 3;
+  REPORT_FORMAT_TXT: 4;
 }
 
 export const ExportFormat: ExportFormatMap;
@@ -168,4 +226,21 @@ export interface DatasourceTypeMap {
 }
 
 export const DatasourceType: DatasourceTypeMap;
+
+export interface ResultTypeMap {
+  RESULT_TYPE_UNSPECIFIED: 0;
+  RESULT_TYPE_FORMAT: 1;
+  RESULT_TYPE_SUMMARY: 2;
+  RESULT_TYPE_REPORT: 3;
+}
+
+export const ResultType: ResultTypeMap;
+
+export interface QuoteCharacterMap {
+  QUOTE_CHARACTER_UNSPECIFIED: 0;
+  QUOTE_CHARACTER_DOUBLE_QUOTE: 1;
+  QUOTE_CHARACTER_SINGLE_QUOTE: 2;
+}
+
+export const QuoteCharacter: QuoteCharacterMap;
 

@@ -16868,7 +16868,8 @@ details: (f = msg.getDetails()) && proto.api.commons.OmniTask.Details.toObject(i
 name: jspb.Message.getFieldWithDefault(msg, 11, ""),
 statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
 scheduledTime: (f = msg.getScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-taskConfig: (f = msg.getTaskConfig()) && proto.api.commons.OmniTaskConfig.toObject(includeInstance, f)
+taskConfig: (f = msg.getTaskConfig()) && proto.api.commons.OmniTaskConfig.toObject(includeInstance, f),
+timezoneOffset: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0)
   };
 
   if (includeInstance) {
@@ -16969,6 +16970,10 @@ proto.api.commons.OmniTask.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.commons.OmniTaskConfig;
       reader.readMessage(value,proto.api.commons.OmniTaskConfig.deserializeBinaryFromReader);
       msg.setTaskConfig(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTimezoneOffset(value);
       break;
     default:
       reader.skipField();
@@ -17104,6 +17109,13 @@ proto.api.commons.OmniTask.serializeBinaryToWriter = function(message, writer) {
       15,
       f,
       proto.api.commons.OmniTaskConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getTimezoneOffset();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      16,
+      f
     );
   }
 };
@@ -17681,6 +17693,24 @@ proto.api.commons.OmniTask.prototype.clearTaskConfig = function() {
  */
 proto.api.commons.OmniTask.prototype.hasTaskConfig = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional float timezone_offset = 16;
+ * @return {number}
+ */
+proto.api.commons.OmniTask.prototype.getTimezoneOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 16, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.OmniTask} returns this
+ */
+proto.api.commons.OmniTask.prototype.setTimezoneOffset = function(value) {
+  return jspb.Message.setProto3FloatField(this, 16, value);
 };
 
 

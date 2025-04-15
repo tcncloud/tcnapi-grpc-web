@@ -277,6 +277,11 @@ export class ListEvaluationsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  clearStatusesList(): void;
+  getStatusesList(): Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>;
+  setStatusesList(value: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>): void;
+  addStatuses(value: api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap], index?: number): api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -300,6 +305,7 @@ export namespace ListEvaluationsRequest {
     orderBy: string,
     pageSize: number,
     pageToken: string,
+    statusesList: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>,
   }
 }
 
@@ -678,6 +684,11 @@ export class AgentConversation extends jspb.Message {
   getSmsMetadata(): AgentConversation.SmsMetadata | undefined;
   setSmsMetadata(value?: AgentConversation.SmsMetadata): void;
 
+  hasChatMetadata(): boolean;
+  clearChatMetadata(): void;
+  getChatMetadata(): AgentConversation.ChatMetadata | undefined;
+  setChatMetadata(value?: AgentConversation.ChatMetadata): void;
+
   getMetadataCase(): AgentConversation.MetadataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentConversation.AsObject;
@@ -697,6 +708,7 @@ export namespace AgentConversation {
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     callMetadata?: AgentConversation.CallMetadata.AsObject,
     smsMetadata?: AgentConversation.SmsMetadata.AsObject,
+    chatMetadata?: AgentConversation.ChatMetadata.AsObject,
   }
 
   export class CallMetadata extends jspb.Message {
@@ -765,10 +777,35 @@ export namespace AgentConversation {
     }
   }
 
+  export class ChatMetadata extends jspb.Message {
+    getConversationSid(): number;
+    setConversationSid(value: number): void;
+
+    getCampaignSid(): number;
+    setCampaignSid(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ChatMetadata.AsObject;
+    static toObject(includeInstance: boolean, msg: ChatMetadata): ChatMetadata.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ChatMetadata, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ChatMetadata;
+    static deserializeBinaryFromReader(message: ChatMetadata, reader: jspb.BinaryReader): ChatMetadata;
+  }
+
+  export namespace ChatMetadata {
+    export type AsObject = {
+      conversationSid: number,
+      campaignSid: number,
+    }
+  }
+
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
     CALL_METADATA = 10,
     SMS_METADATA = 11,
+    CHAT_METADATA = 12,
   }
 }
 
