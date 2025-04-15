@@ -8555,7 +8555,9 @@ proto.api.commons.integrations.Receipt.prototype.toObject = function(opt_include
 proto.api.commons.integrations.Receipt.toObject = function(includeInstance, msg) {
   var f, obj = {
 fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    proto.api.commons.integrations.ReceiptField.toObject, includeInstance)
+    proto.api.commons.integrations.ReceiptField.toObject, includeInstance),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -8597,6 +8599,14 @@ proto.api.commons.integrations.Receipt.deserializeBinaryFromReader = function(ms
       reader.readMessage(value,proto.api.commons.integrations.ReceiptField.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCampaignSid(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCampaignModuleSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8632,6 +8642,20 @@ proto.api.commons.integrations.Receipt.serializeBinaryToWriter = function(messag
       1,
       f,
       proto.api.commons.integrations.ReceiptField.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = message.getCampaignModuleSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
     );
   }
 };
@@ -8672,6 +8696,42 @@ proto.api.commons.integrations.Receipt.prototype.addFields = function(opt_value,
  */
 proto.api.commons.integrations.Receipt.prototype.clearFieldsList = function() {
   return this.setFieldsList([]);
+};
+
+
+/**
+ * optional int64 campaign_sid = 2;
+ * @return {number}
+ */
+proto.api.commons.integrations.Receipt.prototype.getCampaignSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.integrations.Receipt} returns this
+ */
+proto.api.commons.integrations.Receipt.prototype.setCampaignSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int64 campaign_module_sid = 3;
+ * @return {number}
+ */
+proto.api.commons.integrations.Receipt.prototype.getCampaignModuleSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.integrations.Receipt} returns this
+ */
+proto.api.commons.integrations.Receipt.prototype.setCampaignModuleSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
