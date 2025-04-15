@@ -277,6 +277,11 @@ export class ListEvaluationsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  clearStatusesList(): void;
+  getStatusesList(): Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>;
+  setStatusesList(value: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>): void;
+  addStatuses(value: api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap], index?: number): api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -300,6 +305,7 @@ export namespace ListEvaluationsRequest {
     orderBy: string,
     pageSize: number,
     pageToken: string,
+    statusesList: Array<api_commons_scorecards_pb.EvaluationStateMap[keyof api_commons_scorecards_pb.EvaluationStateMap]>,
   }
 }
 
