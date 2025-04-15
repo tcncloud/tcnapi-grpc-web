@@ -923,25 +923,3 @@ export namespace CalculateFeesRes {
   }
 }
 
-export class IntegrationSettings extends jspb.Message {
-  clearAllowedIntegrationsList(): void;
-  getAllowedIntegrationsList(): Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>;
-  setAllowedIntegrationsList(value: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>): void;
-  addAllowedIntegrations(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap], index?: number): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IntegrationSettings.AsObject;
-  static toObject(includeInstance: boolean, msg: IntegrationSettings): IntegrationSettings.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: IntegrationSettings, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IntegrationSettings;
-  static deserializeBinaryFromReader(message: IntegrationSettings, reader: jspb.BinaryReader): IntegrationSettings;
-}
-
-export namespace IntegrationSettings {
-  export type AsObject = {
-    allowedIntegrationsList: Array<api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]>,
-  }
-}
-
