@@ -47,7 +47,8 @@ proto.api.commons.ClassifierEntityType = {
   CET_US_PASSPORT: 16,
   CET_US_SSN: 17,
   CET_POSTAL_CODE: 18,
-  CET_ACCOUNT_NUMBER: 19
+  CET_ACCOUNT_NUMBER: 19,
+  CET_CURRENCY: 20
 };
 
 goog.object.extend(exports, proto.api.commons);

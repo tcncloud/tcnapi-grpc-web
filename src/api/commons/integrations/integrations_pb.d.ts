@@ -9542,6 +9542,7 @@ export interface ValidationMap {
   VALIDATION_ROUTING: 501;
   VALIDATION_ACCOUNT: 502;
   VALIDATION_TRANSACTION_ID: 601;
+  VALIDATION_SELECT: 701;
 }
 
 export const Validation: ValidationMap;

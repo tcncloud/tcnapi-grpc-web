@@ -4726,6 +4726,9 @@ export class DateTimeModifier extends jspb.Message {
   getSeconds(): number;
   setSeconds(value: number): void;
 
+  getDuration(): string;
+  setDuration(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DateTimeModifier.AsObject;
   static toObject(includeInstance: boolean, msg: DateTimeModifier): DateTimeModifier.AsObject;
@@ -4744,6 +4747,55 @@ export namespace DateTimeModifier {
     hours: number,
     minutes: number,
     seconds: number,
+    duration: string,
+  }
+}
+
+export class DateTimeFieldModifier extends jspb.Message {
+  getYearsField(): string;
+  setYearsField(value: string): void;
+
+  getWeeksField(): string;
+  setWeeksField(value: string): void;
+
+  getDaysField(): string;
+  setDaysField(value: string): void;
+
+  getHoursField(): string;
+  setHoursField(value: string): void;
+
+  getMinutesField(): string;
+  setMinutesField(value: string): void;
+
+  getSecondsField(): string;
+  setSecondsField(value: string): void;
+
+  getDurationField(): string;
+  setDurationField(value: string): void;
+
+  getNegate(): boolean;
+  setNegate(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DateTimeFieldModifier.AsObject;
+  static toObject(includeInstance: boolean, msg: DateTimeFieldModifier): DateTimeFieldModifier.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DateTimeFieldModifier, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DateTimeFieldModifier;
+  static deserializeBinaryFromReader(message: DateTimeFieldModifier, reader: jspb.BinaryReader): DateTimeFieldModifier;
+}
+
+export namespace DateTimeFieldModifier {
+  export type AsObject = {
+    yearsField: string,
+    weeksField: string,
+    daysField: string,
+    hoursField: string,
+    minutesField: string,
+    secondsField: string,
+    durationField: string,
+    negate: boolean,
   }
 }
 
@@ -5485,6 +5537,11 @@ export namespace ReshapeAction {
     getDatetime(): DateTimeModifier | undefined;
     setDatetime(value?: DateTimeModifier): void;
 
+    hasDatetimeFieldModifier(): boolean;
+    clearDatetimeFieldModifier(): void;
+    getDatetimeFieldModifier(): DateTimeFieldModifier | undefined;
+    setDatetimeFieldModifier(value?: DateTimeFieldModifier): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AddDate.AsObject;
     static toObject(includeInstance: boolean, msg: AddDate): AddDate.AsObject;
@@ -5498,6 +5555,7 @@ export namespace ReshapeAction {
   export namespace AddDate {
     export type AsObject = {
       datetime?: DateTimeModifier.AsObject,
+      datetimeFieldModifier?: DateTimeFieldModifier.AsObject,
     }
   }
 
