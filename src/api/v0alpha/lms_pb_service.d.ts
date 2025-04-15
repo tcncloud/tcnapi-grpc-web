@@ -590,6 +590,15 @@ type LMSGetPipelineCanvas = {
   readonly responseType: typeof api_v0alpha_lms_pb.GetPipelineCanvasRes;
 };
 
+type LMSGetPipelineCanvasEvents = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.GetPipelineCanvasEventsReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.GetPipelineCanvasEventsRes;
+};
+
 export class LMS {
   static readonly serviceName: string;
   static readonly GetPublicKey: LMSGetPublicKey;
@@ -657,6 +666,7 @@ export class LMS {
   static readonly UpdatePipelineCanvas: LMSUpdatePipelineCanvas;
   static readonly DeletePipelineCanvas: LMSDeletePipelineCanvas;
   static readonly GetPipelineCanvas: LMSGetPipelineCanvas;
+  static readonly GetPipelineCanvasEvents: LMSGetPipelineCanvasEvents;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1227,6 +1237,15 @@ export class LMSClient {
   getPipelineCanvas(
     requestMessage: api_v0alpha_lms_pb.GetPipelineCanvasReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.GetPipelineCanvasRes|null) => void
+  ): UnaryResponse;
+  getPipelineCanvasEvents(
+    requestMessage: api_v0alpha_lms_pb.GetPipelineCanvasEventsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.GetPipelineCanvasEventsRes|null) => void
+  ): UnaryResponse;
+  getPipelineCanvasEvents(
+    requestMessage: api_v0alpha_lms_pb.GetPipelineCanvasEventsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.GetPipelineCanvasEventsRes|null) => void
   ): UnaryResponse;
 }
 
