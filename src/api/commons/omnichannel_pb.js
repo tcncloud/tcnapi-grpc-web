@@ -2201,7 +2201,8 @@ details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
 hoursOfOperationTimezone: (f = msg.getHoursOfOperationTimezone()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
-globalTimezoneOrdering: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+globalTimezoneOrdering: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+tasksCarryOver: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -2302,6 +2303,10 @@ proto.api.commons.OmniCampaignModule.deserializeBinaryFromReader = function(msg,
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGlobalTimezoneOrdering(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setTasksCarryOver(value);
       break;
     default:
       reader.skipField();
@@ -2436,6 +2441,13 @@ proto.api.commons.OmniCampaignModule.serializeBinaryToWriter = function(message,
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getTasksCarryOver();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -3320,6 +3332,24 @@ proto.api.commons.OmniCampaignModule.prototype.getGlobalTimezoneOrdering = funct
  */
 proto.api.commons.OmniCampaignModule.prototype.setGlobalTimezoneOrdering = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional bool tasks_carry_over = 15;
+ * @return {boolean}
+ */
+proto.api.commons.OmniCampaignModule.prototype.getTasksCarryOver = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.OmniCampaignModule} returns this
+ */
+proto.api.commons.OmniCampaignModule.prototype.setTasksCarryOver = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 

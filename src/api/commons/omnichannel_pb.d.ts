@@ -158,6 +158,9 @@ export class OmniCampaignModule extends jspb.Message {
   getGlobalTimezoneOrdering(): boolean;
   setGlobalTimezoneOrdering(value: boolean): void;
 
+  getTasksCarryOver(): boolean;
+  setTasksCarryOver(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModule.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModule): OmniCampaignModule.AsObject;
@@ -184,6 +187,7 @@ export namespace OmniCampaignModule {
     attachmentsList: Array<OmniAttachment.AsObject>,
     hoursOfOperationTimezone?: WeekdayTimeRange.AsObject,
     globalTimezoneOrdering: boolean,
+    tasksCarryOver: boolean,
   }
 
   export class Details extends jspb.Message {
