@@ -2607,3 +2607,109 @@ export namespace ValidateFieldRes {
   }
 }
 
+export class ListAgentsVoiceStatusesRequest extends jspb.Message {
+  clearSkillsList(): void;
+  getSkillsList(): Array<string>;
+  setSkillsList(value: Array<string>): void;
+  addSkills(value: string, index?: number): string;
+
+  getAllSkillsRequired(): boolean;
+  setAllSkillsRequired(value: boolean): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentsVoiceStatusesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentsVoiceStatusesRequest): ListAgentsVoiceStatusesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentsVoiceStatusesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentsVoiceStatusesRequest;
+  static deserializeBinaryFromReader(message: ListAgentsVoiceStatusesRequest, reader: jspb.BinaryReader): ListAgentsVoiceStatusesRequest;
+}
+
+export namespace ListAgentsVoiceStatusesRequest {
+  export type AsObject = {
+    skillsList: Array<string>,
+    allSkillsRequired: boolean,
+    pageToken: string,
+  }
+}
+
+export class ListAgentsVoiceStatusesReply extends jspb.Message {
+  clearAgentDetailsList(): void;
+  getAgentDetailsList(): Array<AgentVoiceStatusDetails>;
+  setAgentDetailsList(value: Array<AgentVoiceStatusDetails>): void;
+  addAgentDetails(value?: AgentVoiceStatusDetails, index?: number): AgentVoiceStatusDetails;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentsVoiceStatusesReply.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentsVoiceStatusesReply): ListAgentsVoiceStatusesReply.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentsVoiceStatusesReply, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentsVoiceStatusesReply;
+  static deserializeBinaryFromReader(message: ListAgentsVoiceStatusesReply, reader: jspb.BinaryReader): ListAgentsVoiceStatusesReply;
+}
+
+export namespace ListAgentsVoiceStatusesReply {
+  export type AsObject = {
+    agentDetailsList: Array<AgentVoiceStatusDetails.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class AgentVoiceStatusDetails extends jspb.Message {
+  getAgentSid(): number;
+  setAgentSid(value: number): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  getCurrentSessionSid(): number;
+  setCurrentSessionSid(value: number): void;
+
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
+  getStatus(): number;
+  setStatus(value: number): void;
+
+  getStatusDesc(): api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap];
+  setStatusDesc(value: api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap]): void;
+
+  clearSkillsList(): void;
+  getSkillsList(): Array<string>;
+  setSkillsList(value: Array<string>): void;
+  addSkills(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentVoiceStatusDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentVoiceStatusDetails): AgentVoiceStatusDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentVoiceStatusDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentVoiceStatusDetails;
+  static deserializeBinaryFromReader(message: AgentVoiceStatusDetails, reader: jspb.BinaryReader): AgentVoiceStatusDetails;
+}
+
+export namespace AgentVoiceStatusDetails {
+  export type AsObject = {
+    agentSid: number,
+    huntGroupSid: number,
+    currentSessionSid: number,
+    firstName: string,
+    lastName: string,
+    status: number,
+    statusDesc: api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap],
+    skillsList: Array<string>,
+  }
+}
+
