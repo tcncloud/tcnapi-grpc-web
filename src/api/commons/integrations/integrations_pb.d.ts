@@ -2547,16 +2547,6 @@ export class ExecuteFlow extends jspb.Message {
   getWaystarAchPayment(): ExecuteWayStarAchPayment | undefined;
   setWaystarAchPayment(value?: ExecuteWayStarAchPayment): void;
 
-  hasAciworldwideCcPayment(): boolean;
-  clearAciworldwideCcPayment(): void;
-  getAciworldwideCcPayment(): ExecuteACIWorldwideCcPayment | undefined;
-  setAciworldwideCcPayment(value?: ExecuteACIWorldwideCcPayment): void;
-
-  hasAciworldwideAchPayment(): boolean;
-  clearAciworldwideAchPayment(): void;
-  getAciworldwideAchPayment(): ExecuteACIWorldwideAchPayment | undefined;
-  setAciworldwideAchPayment(value?: ExecuteACIWorldwideAchPayment): void;
-
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2898,8 +2888,6 @@ export namespace ExecuteFlow {
     blinkpaymentChargeAch?: ExecuteBlinkPaymentChargeAch.AsObject,
     waystarCcPayment?: ExecuteWayStarCcPayment.AsObject,
     waystarAchPayment?: ExecuteWayStarAchPayment.AsObject,
-    aciworldwideCcPayment?: ExecuteACIWorldwideCcPayment.AsObject,
-    aciworldwideAchPayment?: ExecuteACIWorldwideAchPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -3231,8 +3219,6 @@ export namespace ExecuteFlow {
     BLINKPAYMENT_CHARGE_ACH = 6102,
     WAYSTAR_CC_PAYMENT = 6201,
     WAYSTAR_ACH_PAYMENT = 6202,
-    ACIWORLDWIDE_CC_PAYMENT = 6301,
-    ACIWORLDWIDE_ACH_PAYMENT = 6302,
   }
 }
 
@@ -9085,38 +9071,6 @@ export namespace ExecuteWayStarAchPayment {
   }
 }
 
-export class ExecuteACIWorldwideCcPayment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteACIWorldwideCcPayment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteACIWorldwideCcPayment): ExecuteACIWorldwideCcPayment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteACIWorldwideCcPayment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteACIWorldwideCcPayment;
-  static deserializeBinaryFromReader(message: ExecuteACIWorldwideCcPayment, reader: jspb.BinaryReader): ExecuteACIWorldwideCcPayment;
-}
-
-export namespace ExecuteACIWorldwideCcPayment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteACIWorldwideAchPayment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteACIWorldwideAchPayment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteACIWorldwideAchPayment): ExecuteACIWorldwideAchPayment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteACIWorldwideAchPayment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteACIWorldwideAchPayment;
-  static deserializeBinaryFromReader(message: ExecuteACIWorldwideAchPayment, reader: jspb.BinaryReader): ExecuteACIWorldwideAchPayment;
-}
-
-export namespace ExecuteACIWorldwideAchPayment {
-  export type AsObject = {
-  }
-}
-
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -9181,7 +9135,6 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_FORTIS: 6000;
   INTEGRATION_TYPE_BLINKPAYMENT: 6100;
   INTEGRATION_TYPE_WAYSTAR: 6200;
-  INTEGRATION_TYPE_ACIWORLDWIDE: 6300;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -9517,8 +9470,6 @@ export interface RequestMethodMap {
   REQUEST_METHOD_BLINKPAYMENT_CHARGE_ACH: 6102;
   REQUEST_METHOD_WAYSTAR_CC_PAYMENT: 6201;
   REQUEST_METHOD_WAYSTAR_ACH_PAYMENT: 6202;
-  REQUEST_METHOD_ACIWORLDWIDE_CHARGE_CC: 6301;
-  REQUEST_METHOD_ACIWORLDWIDE_CHARGE_ACH: 6302;
 }
 
 export const RequestMethod: RequestMethodMap;
