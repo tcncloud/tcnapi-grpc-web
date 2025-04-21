@@ -5721,6 +5721,48 @@ export namespace ReshapeAction {
     }
   }
 
+  export class DivideValue extends jspb.Message {
+    getValue(): number;
+    setValue(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DivideValue.AsObject;
+    static toObject(includeInstance: boolean, msg: DivideValue): DivideValue.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DivideValue, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DivideValue;
+    static deserializeBinaryFromReader(message: DivideValue, reader: jspb.BinaryReader): DivideValue;
+  }
+
+  export namespace DivideValue {
+    export type AsObject = {
+      value: number,
+    }
+  }
+
+  export class DivideField extends jspb.Message {
+    hasOtherField(): boolean;
+    clearOtherField(): void;
+    getOtherField(): FieldIndex | undefined;
+    setOtherField(value?: FieldIndex): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DivideField.AsObject;
+    static toObject(includeInstance: boolean, msg: DivideField): DivideField.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DivideField, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DivideField;
+    static deserializeBinaryFromReader(message: DivideField, reader: jspb.BinaryReader): DivideField;
+  }
+
+  export namespace DivideField {
+    export type AsObject = {
+      otherField?: FieldIndex.AsObject,
+    }
+  }
+
   export class Multiply extends jspb.Message {
     getDefaultValue(): number;
     setDefaultValue(value: number): void;
@@ -5745,6 +5787,48 @@ export namespace ReshapeAction {
     }
   }
 
+  export class MultiplyValue extends jspb.Message {
+    getValue(): number;
+    setValue(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MultiplyValue.AsObject;
+    static toObject(includeInstance: boolean, msg: MultiplyValue): MultiplyValue.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MultiplyValue, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MultiplyValue;
+    static deserializeBinaryFromReader(message: MultiplyValue, reader: jspb.BinaryReader): MultiplyValue;
+  }
+
+  export namespace MultiplyValue {
+    export type AsObject = {
+      value: number,
+    }
+  }
+
+  export class MultiplyField extends jspb.Message {
+    hasOtherField(): boolean;
+    clearOtherField(): void;
+    getOtherField(): FieldIndex | undefined;
+    setOtherField(value?: FieldIndex): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MultiplyField.AsObject;
+    static toObject(includeInstance: boolean, msg: MultiplyField): MultiplyField.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MultiplyField, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MultiplyField;
+    static deserializeBinaryFromReader(message: MultiplyField, reader: jspb.BinaryReader): MultiplyField;
+  }
+
+  export namespace MultiplyField {
+    export type AsObject = {
+      otherField?: FieldIndex.AsObject,
+    }
+  }
+
   export class Modulo extends jspb.Message {
     getDefaultValue(): number;
     setDefaultValue(value: number): void;
@@ -5766,6 +5850,48 @@ export namespace ReshapeAction {
     export type AsObject = {
       defaultValue: number,
       modulus: number,
+    }
+  }
+
+  export class ModuloValue extends jspb.Message {
+    getValue(): number;
+    setValue(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ModuloValue.AsObject;
+    static toObject(includeInstance: boolean, msg: ModuloValue): ModuloValue.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ModuloValue, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ModuloValue;
+    static deserializeBinaryFromReader(message: ModuloValue, reader: jspb.BinaryReader): ModuloValue;
+  }
+
+  export namespace ModuloValue {
+    export type AsObject = {
+      value: number,
+    }
+  }
+
+  export class ModuloField extends jspb.Message {
+    hasOtherField(): boolean;
+    clearOtherField(): void;
+    getOtherField(): FieldIndex | undefined;
+    setOtherField(value?: FieldIndex): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ModuloField.AsObject;
+    static toObject(includeInstance: boolean, msg: ModuloField): ModuloField.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ModuloField, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ModuloField;
+    static deserializeBinaryFromReader(message: ModuloField, reader: jspb.BinaryReader): ModuloField;
+  }
+
+  export namespace ModuloField {
+    export type AsObject = {
+      otherField?: FieldIndex.AsObject,
     }
   }
 
