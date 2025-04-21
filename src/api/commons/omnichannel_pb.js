@@ -110,6 +110,7 @@ goog.exportSymbol('proto.api.commons.OmniStartWrapUp', null, global);
 goog.exportSymbol('proto.api.commons.OmniSuspend', null, global);
 goog.exportSymbol('proto.api.commons.OmniTask', null, global);
 goog.exportSymbol('proto.api.commons.OmniTask.Details', null, global);
+goog.exportSymbol('proto.api.commons.OmniTaskCarryOverBehavior', null, global);
 goog.exportSymbol('proto.api.commons.OmniTaskConfig', null, global);
 goog.exportSymbol('proto.api.commons.OmniTaskState', null, global);
 goog.exportSymbol('proto.api.commons.OmniTaskState.Entry', null, global);
@@ -2201,7 +2202,8 @@ details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.
 attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
 hoursOfOperationTimezone: (f = msg.getHoursOfOperationTimezone()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
-globalTimezoneOrdering: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+globalTimezoneOrdering: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+taskCarryOverBehavior: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -2302,6 +2304,10 @@ proto.api.commons.OmniCampaignModule.deserializeBinaryFromReader = function(msg,
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGlobalTimezoneOrdering(value);
+      break;
+    case 15:
+      var value = /** @type {!proto.api.commons.OmniTaskCarryOverBehavior} */ (reader.readEnum());
+      msg.setTaskCarryOverBehavior(value);
       break;
     default:
       reader.skipField();
@@ -2436,6 +2442,13 @@ proto.api.commons.OmniCampaignModule.serializeBinaryToWriter = function(message,
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getTaskCarryOverBehavior();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      15,
       f
     );
   }
@@ -3320,6 +3333,24 @@ proto.api.commons.OmniCampaignModule.prototype.getGlobalTimezoneOrdering = funct
  */
 proto.api.commons.OmniCampaignModule.prototype.setGlobalTimezoneOrdering = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional OmniTaskCarryOverBehavior task_carry_over_behavior = 15;
+ * @return {!proto.api.commons.OmniTaskCarryOverBehavior}
+ */
+proto.api.commons.OmniCampaignModule.prototype.getTaskCarryOverBehavior = function() {
+  return /** @type {!proto.api.commons.OmniTaskCarryOverBehavior} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OmniTaskCarryOverBehavior} value
+ * @return {!proto.api.commons.OmniCampaignModule} returns this
+ */
+proto.api.commons.OmniCampaignModule.prototype.setTaskCarryOverBehavior = function(value) {
+  return jspb.Message.setProto3EnumField(this, 15, value);
 };
 
 
@@ -22712,6 +22743,14 @@ proto.api.commons.OmniMessageType = {
   OMNI_MESSAGE_TYPE_REQUEST_QUEUE_INFORMATION: 14,
   OMNI_MESSAGE_TYPE_OFFLOADED_TEXT_MESSAGE: 15,
   OMNI_MESSAGE_TYPE_CANNED_MESSAGE: 16
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.OmniTaskCarryOverBehavior = {
+  OMNI_TASK_CARRY_OVER_PAUSE: 0,
+  OMNI_TASK_CARRY_OVER_CANCEL: 1
 };
 
 goog.object.extend(exports, proto.api.commons);
