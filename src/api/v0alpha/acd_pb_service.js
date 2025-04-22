@@ -550,6 +550,15 @@ Acd.ValidateField = {
   responseType: api_v0alpha_acd_pb.ValidateFieldRes
 };
 
+Acd.ListAgentsVoiceStatuses = {
+  methodName: "ListAgentsVoiceStatuses",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.ListAgentsVoiceStatusesRequest,
+  responseType: api_v0alpha_acd_pb.ListAgentsVoiceStatusesReply
+};
+
 exports.Acd = Acd;
 
 function AcdClient(serviceHost, options) {
@@ -2407,6 +2416,37 @@ AcdClient.prototype.validateField = function validateField(requestMessage, metad
     callback = arguments[1];
   }
   var client = grpc.unary(Acd.ValidateField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.listAgentsVoiceStatuses = function listAgentsVoiceStatuses(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.ListAgentsVoiceStatuses, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

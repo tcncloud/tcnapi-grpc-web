@@ -544,6 +544,15 @@ type AcdValidateField = {
   readonly responseType: typeof api_v0alpha_acd_pb.ValidateFieldRes;
 };
 
+type AcdListAgentsVoiceStatuses = {
+  readonly methodName: string;
+  readonly service: typeof Acd;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_acd_pb.ListAgentsVoiceStatusesRequest;
+  readonly responseType: typeof api_v0alpha_acd_pb.ListAgentsVoiceStatusesReply;
+};
+
 export class Acd {
   static readonly serviceName: string;
   static readonly AgentGetStatusStream: AcdAgentGetStatusStream;
@@ -606,6 +615,7 @@ export class Acd {
   static readonly FinishSecureFormHandling: AcdFinishSecureFormHandling;
   static readonly PopulateWorkflowFields: AcdPopulateWorkflowFields;
   static readonly ValidateField: AcdValidateField;
+  static readonly ListAgentsVoiceStatuses: AcdListAgentsVoiceStatuses;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1163,6 +1173,15 @@ export class AcdClient {
   validateField(
     requestMessage: api_v0alpha_acd_pb.ValidateFieldReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ValidateFieldRes|null) => void
+  ): UnaryResponse;
+  listAgentsVoiceStatuses(
+    requestMessage: api_v0alpha_acd_pb.ListAgentsVoiceStatusesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ListAgentsVoiceStatusesReply|null) => void
+  ): UnaryResponse;
+  listAgentsVoiceStatuses(
+    requestMessage: api_v0alpha_acd_pb.ListAgentsVoiceStatusesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ListAgentsVoiceStatusesReply|null) => void
   ): UnaryResponse;
 }
 
