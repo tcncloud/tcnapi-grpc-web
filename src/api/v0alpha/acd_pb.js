@@ -20528,7 +20528,7 @@ proto.api.v0alpha.ListAgentsVoiceStatusesReply.prototype.setNextPageToken = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.AgentVoiceStatusDetails.repeatedFields_ = [8];
+proto.api.v0alpha.AgentVoiceStatusDetails.repeatedFields_ = [8,9];
 
 
 
@@ -20568,7 +20568,8 @@ firstName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 lastName: jspb.Message.getFieldWithDefault(msg, 5, ""),
 status: jspb.Message.getFieldWithDefault(msg, 6, 0),
 statusDesc: jspb.Message.getFieldWithDefault(msg, 7, 0),
-skillsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+skillsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+pbxExtensionsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20636,6 +20637,10 @@ proto.api.v0alpha.AgentVoiceStatusDetails.deserializeBinaryFromReader = function
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addSkills(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPbxExtensions(value);
       break;
     default:
       reader.skipField();
@@ -20719,6 +20724,13 @@ proto.api.v0alpha.AgentVoiceStatusDetails.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeRepeatedString(
       8,
+      f
+    );
+  }
+  f = message.getPbxExtensionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
       f
     );
   }
@@ -20885,6 +20897,43 @@ proto.api.v0alpha.AgentVoiceStatusDetails.prototype.addSkills = function(value, 
  */
 proto.api.v0alpha.AgentVoiceStatusDetails.prototype.clearSkillsList = function() {
   return this.setSkillsList([]);
+};
+
+
+/**
+ * repeated string pbx_extensions = 9;
+ * @return {!Array<string>}
+ */
+proto.api.v0alpha.AgentVoiceStatusDetails.prototype.getPbxExtensionsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v0alpha.AgentVoiceStatusDetails} returns this
+ */
+proto.api.v0alpha.AgentVoiceStatusDetails.prototype.setPbxExtensionsList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v0alpha.AgentVoiceStatusDetails} returns this
+ */
+proto.api.v0alpha.AgentVoiceStatusDetails.prototype.addPbxExtensions = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v0alpha.AgentVoiceStatusDetails} returns this
+ */
+proto.api.v0alpha.AgentVoiceStatusDetails.prototype.clearPbxExtensionsList = function() {
+  return this.setPbxExtensionsList([]);
 };
 
 

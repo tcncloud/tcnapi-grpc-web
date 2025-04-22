@@ -2690,6 +2690,11 @@ export class AgentVoiceStatusDetails extends jspb.Message {
   setSkillsList(value: Array<string>): void;
   addSkills(value: string, index?: number): string;
 
+  clearPbxExtensionsList(): void;
+  getPbxExtensionsList(): Array<string>;
+  setPbxExtensionsList(value: Array<string>): void;
+  addPbxExtensions(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentVoiceStatusDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AgentVoiceStatusDetails): AgentVoiceStatusDetails.AsObject;
@@ -2710,6 +2715,7 @@ export namespace AgentVoiceStatusDetails {
     status: number,
     statusDesc: api_commons_acd_pb.AgentStatus.EnumMap[keyof api_commons_acd_pb.AgentStatus.EnumMap],
     skillsList: Array<string>,
+    pbxExtensionsList: Array<string>,
   }
 }
 
