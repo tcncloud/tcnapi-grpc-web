@@ -488,6 +488,50 @@ export namespace GetPBXUserResponse {
   }
 }
 
+export class GetSipCredentialsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSipCredentialsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSipCredentialsRequest): GetSipCredentialsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSipCredentialsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSipCredentialsRequest;
+  static deserializeBinaryFromReader(message: GetSipCredentialsRequest, reader: jspb.BinaryReader): GetSipCredentialsRequest;
+}
+
+export namespace GetSipCredentialsRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetSipCredentialsResponse extends jspb.Message {
+  getSipDomain(): string;
+  setSipDomain(value: string): void;
+
+  getUserUri(): string;
+  setUserUri(value: string): void;
+
+  getSessionToken(): string;
+  setSessionToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSipCredentialsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSipCredentialsResponse): GetSipCredentialsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSipCredentialsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSipCredentialsResponse;
+  static deserializeBinaryFromReader(message: GetSipCredentialsResponse, reader: jspb.BinaryReader): GetSipCredentialsResponse;
+}
+
+export namespace GetSipCredentialsResponse {
+  export type AsObject = {
+    sipDomain: string,
+    userUri: string,
+    sessionToken: string,
+  }
+}
+
 export class ListRingGroupsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRingGroupsRequest.AsObject;
