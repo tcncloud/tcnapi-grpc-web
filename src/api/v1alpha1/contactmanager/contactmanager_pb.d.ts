@@ -447,6 +447,9 @@ export class AddContactEntryRequest extends jspb.Message {
   setFieldList(value: Array<ContactField>): void;
   addField(value?: ContactField, index?: number): ContactField;
 
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddContactEntryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AddContactEntryRequest): AddContactEntryRequest.AsObject;
@@ -463,6 +466,7 @@ export namespace AddContactEntryRequest {
     entryList: Array<Entry.AsObject>,
     projectSid: string,
     fieldList: Array<ContactField.AsObject>,
+    countryCode: string,
   }
 }
 
