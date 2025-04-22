@@ -82,6 +82,44 @@ export namespace PipelineCanvas {
   }
 }
 
+export class EntrypointMetadata extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getCronString(): string;
+  setCronString(value: string): void;
+
+  hasLastRunTime(): boolean;
+  clearLastRunTime(): void;
+  getLastRunTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastRunTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getRecentErrorMessage(): string;
+  setRecentErrorMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntrypointMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: EntrypointMetadata): EntrypointMetadata.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntrypointMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntrypointMetadata;
+  static deserializeBinaryFromReader(message: EntrypointMetadata, reader: jspb.BinaryReader): EntrypointMetadata;
+}
+
+export namespace EntrypointMetadata {
+  export type AsObject = {
+    elementId: string,
+    name: string,
+    cronString: string,
+    lastRunTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    recentErrorMessage: string,
+  }
+}
+
 export class PipelineCanvasPreview extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): void;
@@ -101,6 +139,11 @@ export class PipelineCanvasPreview extends jspb.Message {
   getElementCount(): number;
   setElementCount(value: number): void;
 
+  clearEntrypointMetadataList(): void;
+  getEntrypointMetadataList(): Array<EntrypointMetadata>;
+  setEntrypointMetadataList(value: Array<EntrypointMetadata>): void;
+  addEntrypointMetadata(value?: EntrypointMetadata, index?: number): EntrypointMetadata;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PipelineCanvasPreview.AsObject;
   static toObject(includeInstance: boolean, msg: PipelineCanvasPreview): PipelineCanvasPreview.AsObject;
@@ -117,6 +160,7 @@ export namespace PipelineCanvasPreview {
     entrypointsList: Array<string>,
     exchangesList: Array<string>,
     elementCount: number,
+    entrypointMetadataList: Array<EntrypointMetadata.AsObject>,
   }
 }
 
@@ -357,6 +401,8 @@ export class GetPipelineCanvasEventsRes extends jspb.Message {
   clearQueuedEventsMap(): void;
   getProcessingEventsMap(): jspb.Map<string, number>;
   clearProcessingEventsMap(): void;
+  getEntrypointFailuresMap(): jspb.Map<string, string>;
+  clearEntrypointFailuresMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPipelineCanvasEventsRes.AsObject;
   static toObject(includeInstance: boolean, msg: GetPipelineCanvasEventsRes): GetPipelineCanvasEventsRes.AsObject;
@@ -371,6 +417,7 @@ export namespace GetPipelineCanvasEventsRes {
   export type AsObject = {
     queuedEventsMap: Array<[string, number]>,
     processingEventsMap: Array<[string, number]>,
+    entrypointFailuresMap: Array<[string, string]>,
   }
 }
 
@@ -6303,6 +6350,9 @@ export class ContactManagerSink extends jspb.Message {
   getDeDuplicationInfo(): ContactManagerSink.DeDuplication | undefined;
   setDeDuplicationInfo(value?: ContactManagerSink.DeDuplication): void;
 
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerSink.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerSink): ContactManagerSink.AsObject;
@@ -6323,6 +6373,7 @@ export namespace ContactManagerSink {
     lifetime?: google_protobuf_duration_pb.Duration.AsObject,
     userId: string,
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
+    countryCode: string,
   }
 
   export class DeDuplication extends jspb.Message {
@@ -8253,6 +8304,9 @@ export class ContactManagementEnrichment extends jspb.Message {
   getSearchFieldType(): ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap];
   setSearchFieldType(value: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap]): void;
 
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagementEnrichment.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagementEnrichment): ContactManagementEnrichment.AsObject;
@@ -8271,6 +8325,7 @@ export namespace ContactManagementEnrichment {
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
     insertIfMissing: boolean,
     searchFieldType: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap],
+    countryCode: string,
   }
 
   export interface SearchFieldTypeMap {
