@@ -6350,9 +6350,6 @@ export class ContactManagerSink extends jspb.Message {
   getDeDuplicationInfo(): ContactManagerSink.DeDuplication | undefined;
   setDeDuplicationInfo(value?: ContactManagerSink.DeDuplication): void;
 
-  getCountryCode(): string;
-  setCountryCode(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerSink.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerSink): ContactManagerSink.AsObject;
@@ -6373,7 +6370,6 @@ export namespace ContactManagerSink {
     lifetime?: google_protobuf_duration_pb.Duration.AsObject,
     userId: string,
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
-    countryCode: string,
   }
 
   export class DeDuplication extends jspb.Message {
@@ -8304,9 +8300,6 @@ export class ContactManagementEnrichment extends jspb.Message {
   getSearchFieldType(): ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap];
   setSearchFieldType(value: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap]): void;
 
-  getCountryCode(): string;
-  setCountryCode(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagementEnrichment.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagementEnrichment): ContactManagementEnrichment.AsObject;
@@ -8325,7 +8318,6 @@ export namespace ContactManagementEnrichment {
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
     insertIfMissing: boolean,
     searchFieldType: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap],
-    countryCode: string,
   }
 
   export interface SearchFieldTypeMap {
