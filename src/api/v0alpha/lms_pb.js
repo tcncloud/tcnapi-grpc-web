@@ -62684,7 +62684,8 @@ contactListName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 fieldsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 deDuplicationInfo: (f = msg.getDeDuplicationInfo()) && proto.api.v0alpha.ContactManagerSink.DeDuplication.toObject(includeInstance, f),
 insertIfMissing: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-searchFieldType: jspb.Message.getFieldWithDefault(msg, 6, 0)
+searchFieldType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+countryCode: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -62745,6 +62746,10 @@ proto.api.v0alpha.ContactManagementEnrichment.deserializeBinaryFromReader = func
     case 6:
       var value = /** @type {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType} */ (reader.readEnum());
       msg.setSearchFieldType(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountryCode(value);
       break;
     default:
       reader.skipField();
@@ -62815,6 +62820,13 @@ proto.api.v0alpha.ContactManagementEnrichment.serializeBinaryToWriter = function
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getCountryCode();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -62973,6 +62985,24 @@ proto.api.v0alpha.ContactManagementEnrichment.prototype.getSearchFieldType = fun
  */
 proto.api.v0alpha.ContactManagementEnrichment.prototype.setSearchFieldType = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional string country_code = 8;
+ * @return {string}
+ */
+proto.api.v0alpha.ContactManagementEnrichment.prototype.getCountryCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ContactManagementEnrichment} returns this
+ */
+proto.api.v0alpha.ContactManagementEnrichment.prototype.setCountryCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

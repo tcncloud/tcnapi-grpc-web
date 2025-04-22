@@ -8127,6 +8127,9 @@ export class ContactManagementEnrichment extends jspb.Message {
   getSearchFieldType(): ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap];
   setSearchFieldType(value: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap]): void;
 
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagementEnrichment.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagementEnrichment): ContactManagementEnrichment.AsObject;
@@ -8145,6 +8148,7 @@ export namespace ContactManagementEnrichment {
     deDuplicationInfo?: ContactManagerSink.DeDuplication.AsObject,
     insertIfMissing: boolean,
     searchFieldType: ContactManagementEnrichment.SearchFieldTypeMap[keyof ContactManagementEnrichment.SearchFieldTypeMap],
+    countryCode: string,
   }
 
   export interface SearchFieldTypeMap {
