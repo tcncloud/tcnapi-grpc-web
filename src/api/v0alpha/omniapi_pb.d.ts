@@ -761,6 +761,9 @@ export class SendOmniMessageReq extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
+  getMessageFormat(): api_commons_omnichannel_pb.MessageFormatMap[keyof api_commons_omnichannel_pb.MessageFormatMap];
+  setMessageFormat(value: api_commons_omnichannel_pb.MessageFormatMap[keyof api_commons_omnichannel_pb.MessageFormatMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SendOmniMessageReq.AsObject;
   static toObject(includeInstance: boolean, msg: SendOmniMessageReq): SendOmniMessageReq.AsObject;
@@ -778,6 +781,7 @@ export namespace SendOmniMessageReq {
     campaignSid: string,
     uiReferenceId: string,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    messageFormat: api_commons_omnichannel_pb.MessageFormatMap[keyof api_commons_omnichannel_pb.MessageFormatMap],
   }
 }
 

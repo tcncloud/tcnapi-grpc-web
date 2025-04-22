@@ -3718,7 +3718,8 @@ entryList: jspb.Message.toObjectList(msg.getEntryList(),
     proto.api.v1alpha1.contactmanager.Entry.toObject, includeInstance),
 projectSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
 fieldList: jspb.Message.toObjectList(msg.getFieldList(),
-    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance)
+    proto.api.v1alpha1.contactmanager.ContactField.toObject, includeInstance),
+countryCode: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3772,6 +3773,10 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.deserializeBinaryFromRe
       var value = new proto.api.v1alpha1.contactmanager.ContactField;
       reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactField.deserializeBinaryFromReader);
       msg.addField(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountryCode(value);
       break;
     default:
       reader.skipField();
@@ -3830,6 +3835,13 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.serializeBinaryToWriter
       4,
       f,
       proto.api.v1alpha1.contactmanager.ContactField.serializeBinaryToWriter
+    );
+  }
+  f = message.getCountryCode();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -3962,6 +3974,24 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.addField = fu
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.clearFieldList = function() {
   return this.setFieldList([]);
+};
+
+
+/**
+ * optional string country_code = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.getCountryCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.AddContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.setCountryCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
