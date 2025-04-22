@@ -8546,7 +8546,8 @@ conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 payload: (f = msg.getPayload()) && api_commons_omnichannel_pb.OmniMessagePayload.toObject(includeInstance, f),
 campaignSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
 uiReferenceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-channelType: jspb.Message.getFieldWithDefault(msg, 6, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+messageFormat: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -8603,6 +8604,10 @@ proto.api.v0alpha.SendOmniMessageReq.deserializeBinaryFromReader = function(msg,
     case 6:
       var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannelType(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.MessageFormat} */ (reader.readEnum());
+      msg.setMessageFormat(value);
       break;
     default:
       reader.skipField();
@@ -8666,6 +8671,13 @@ proto.api.v0alpha.SendOmniMessageReq.serializeBinaryToWriter = function(message,
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getMessageFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
       f
     );
   }
@@ -8778,6 +8790,24 @@ proto.api.v0alpha.SendOmniMessageReq.prototype.getChannelType = function() {
  */
 proto.api.v0alpha.SendOmniMessageReq.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional api.commons.MessageFormat message_format = 7;
+ * @return {!proto.api.commons.MessageFormat}
+ */
+proto.api.v0alpha.SendOmniMessageReq.prototype.getMessageFormat = function() {
+  return /** @type {!proto.api.commons.MessageFormat} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.MessageFormat} value
+ * @return {!proto.api.v0alpha.SendOmniMessageReq} returns this
+ */
+proto.api.v0alpha.SendOmniMessageReq.prototype.setMessageFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
