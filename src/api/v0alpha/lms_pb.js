@@ -62715,7 +62715,7 @@ fieldsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 deDuplicationInfo: (f = msg.getDeDuplicationInfo()) && proto.api.v0alpha.ContactManagerSink.DeDuplication.toObject(includeInstance, f),
 insertIfMissing: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 searchFieldType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-countryCode: jspb.Message.getFieldWithDefault(msg, 8, "")
+countryCode: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -62777,7 +62777,7 @@ proto.api.v0alpha.ContactManagementEnrichment.deserializeBinaryFromReader = func
       var value = /** @type {!proto.api.v0alpha.ContactManagementEnrichment.SearchFieldType} */ (reader.readEnum());
       msg.setSearchFieldType(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountryCode(value);
       break;
@@ -62856,7 +62856,7 @@ proto.api.v0alpha.ContactManagementEnrichment.serializeBinaryToWriter = function
   f = message.getCountryCode();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
     );
   }
@@ -63019,11 +63019,11 @@ proto.api.v0alpha.ContactManagementEnrichment.prototype.setSearchFieldType = fun
 
 
 /**
- * optional string country_code = 8;
+ * optional string country_code = 7;
  * @return {string}
  */
 proto.api.v0alpha.ContactManagementEnrichment.prototype.getCountryCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -63032,7 +63032,7 @@ proto.api.v0alpha.ContactManagementEnrichment.prototype.getCountryCode = functio
  * @return {!proto.api.v0alpha.ContactManagementEnrichment} returns this
  */
 proto.api.v0alpha.ContactManagementEnrichment.prototype.setCountryCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
