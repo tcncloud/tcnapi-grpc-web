@@ -924,6 +924,11 @@ export namespace CalculateFeesRes {
 }
 
 export class DeliverReceiptReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): PortalLinkId | undefined;
+  setEntity(value?: PortalLinkId): void;
+
   hasEmailReceipt(): boolean;
   clearEmailReceipt(): void;
   getEmailReceipt(): EmailReceipt | undefined;
@@ -945,6 +950,7 @@ export class DeliverReceiptReq extends jspb.Message {
 
 export namespace DeliverReceiptReq {
   export type AsObject = {
+    entity?: PortalLinkId.AsObject,
     emailReceipt?: EmailReceipt.AsObject,
     receiptId: string,
   }

@@ -7343,6 +7343,7 @@ proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.toObject = fun
  */
 proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.toObject = function(includeInstance, msg) {
   var f, obj = {
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
 emailReceipt: (f = msg.getEmailReceipt()) && proto.api.v1alpha1.integrationspublic.EmailReceipt.toObject(includeInstance, f),
 receiptId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -7381,6 +7382,11 @@ proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.deserializeBinaryFromRea
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.integrationspublic.PortalLinkId;
+      reader.readMessage(value,proto.api.v1alpha1.integrationspublic.PortalLinkId.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
     case 3:
       var value = new proto.api.v1alpha1.integrationspublic.EmailReceipt;
       reader.readMessage(value,proto.api.v1alpha1.integrationspublic.EmailReceipt.deserializeBinaryFromReader);
@@ -7419,6 +7425,14 @@ proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.serializeBinar
  */
 proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.integrationspublic.PortalLinkId.serializeBinaryToWriter
+    );
+  }
   f = message.getEmailReceipt();
   if (f != null) {
     writer.writeMessage(
@@ -7434,6 +7448,43 @@ proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.serializeBinaryToWriter 
       f
     );
   }
+};
+
+
+/**
+ * optional PortalLinkId entity = 1;
+ * @return {?proto.api.v1alpha1.integrationspublic.PortalLinkId}
+ */
+proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.integrationspublic.PortalLinkId} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.integrationspublic.PortalLinkId, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.integrationspublic.PortalLinkId|undefined} value
+ * @return {!proto.api.v1alpha1.integrationspublic.DeliverReceiptReq} returns this
+*/
+proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.integrationspublic.DeliverReceiptReq} returns this
+ */
+proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.integrationspublic.DeliverReceiptReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
