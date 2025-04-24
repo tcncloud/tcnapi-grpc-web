@@ -83,6 +83,9 @@ export class CreateUserRequest extends jspb.Message {
   getPasswordResetRequired(): boolean;
   setPasswordResetRequired(value: boolean): void;
 
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
@@ -114,6 +117,7 @@ export namespace CreateUserRequest {
     huntGroupSid: number,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     passwordResetRequired: boolean,
+    playNotificationSounds: boolean,
   }
 }
 
@@ -502,6 +506,9 @@ export class GetUserResponse extends jspb.Message {
   getPasswordResetDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setPasswordResetDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -546,6 +553,7 @@ export namespace GetUserResponse {
     emailVerified: boolean,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    playNotificationSounds: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -683,6 +691,9 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -710,6 +721,7 @@ export namespace GetUserByOrgIdResponse {
     accountOwner: boolean,
     emailVerified: boolean,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    playNotificationSounds: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -1565,6 +1577,9 @@ export class UpdateUserRequest extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  getPlayNotificationSounds(): boolean;
+  setPlayNotificationSounds(value: boolean): void;
+
   clearFieldMaskList(): void;
   getFieldMaskList(): Array<string>;
   setFieldMaskList(value: Array<string>): void;
@@ -1597,6 +1612,7 @@ export namespace UpdateUserRequest {
     userCallerId: string,
     labelIdsList: Array<string>,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    playNotificationSounds: boolean,
     fieldMaskList: Array<string>,
   }
 }

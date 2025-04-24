@@ -2476,7 +2476,8 @@ labelIdsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined :
 timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
 huntGroupSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
-passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 21, false)
   };
 
   if (includeInstance) {
@@ -2590,6 +2591,10 @@ proto.api.v1alpha1.org.CreateUserRequest.deserializeBinaryFromReader = function(
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPasswordResetRequired(value);
+      break;
+    case 21:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPlayNotificationSounds(value);
       break;
     default:
       reader.skipField();
@@ -2752,6 +2757,13 @@ proto.api.v1alpha1.org.CreateUserRequest.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = message.getPlayNotificationSounds();
+  if (f) {
+    writer.writeBool(
+      21,
       f
     );
   }
@@ -3211,6 +3223,24 @@ proto.api.v1alpha1.org.CreateUserRequest.prototype.getPasswordResetRequired = fu
  */
 proto.api.v1alpha1.org.CreateUserRequest.prototype.setPasswordResetRequired = function(value) {
   return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional bool play_notification_sounds = 21;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.CreateUserRequest.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.CreateUserRequest} returns this
+ */
+proto.api.v1alpha1.org.CreateUserRequest.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 
@@ -5147,7 +5177,8 @@ passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
 accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
 emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
-passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 33, false)
   };
 
   if (includeInstance) {
@@ -5323,6 +5354,10 @@ proto.api.v1alpha1.org.GetUserResponse.deserializeBinaryFromReader = function(ms
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setPasswordResetDate(value);
+      break;
+    case 33:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPlayNotificationSounds(value);
       break;
     default:
       reader.skipField();
@@ -5587,6 +5622,13 @@ proto.api.v1alpha1.org.GetUserResponse.serializeBinaryToWriter = function(messag
       32,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPlayNotificationSounds();
+  if (f) {
+    writer.writeBool(
+      33,
+      f
     );
   }
 };
@@ -6758,6 +6800,24 @@ proto.api.v1alpha1.org.GetUserResponse.prototype.hasPasswordResetDate = function
 };
 
 
+/**
+ * optional bool play_notification_sounds = 33;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 33, value);
+};
+
+
 
 
 
@@ -6975,7 +7035,8 @@ trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
 accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
 emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
-localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
+localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 25, false)
   };
 
   if (includeInstance) {
@@ -7079,6 +7140,10 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.deserializeBinaryFromReader = func
       var value = new api_commons_org_preferences_pb.LocalePreferences;
       reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
       msg.setLocalePreferencesOverride(value);
+      break;
+    case 25:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPlayNotificationSounds(value);
       break;
     default:
       reader.skipField();
@@ -7220,6 +7285,13 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.serializeBinaryToWriter = function
       24,
       f,
       api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getPlayNotificationSounds();
+  if (f) {
+    writer.writeBool(
+      25,
+      f
     );
   }
 };
@@ -7968,6 +8040,24 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.clearLocalePreferencesOv
  */
 proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.hasLocalePreferencesOverride = function() {
   return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional bool play_notification_sounds = 25;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserByOrgIdResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 25, value);
 };
 
 
@@ -13522,6 +13612,7 @@ email: jspb.Message.getFieldWithDefault(msg, 12, ""),
 userCallerId: jspb.Message.getFieldWithDefault(msg, 13, ""),
 labelIdsList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
+playNotificationSounds: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
 fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f
   };
 
@@ -13620,6 +13711,10 @@ proto.api.v1alpha1.org.UpdateUserRequest.deserializeBinaryFromReader = function(
       var value = new api_commons_org_preferences_pb.LocalePreferences;
       reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
       msg.setLocalePreferencesOverride(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPlayNotificationSounds(value);
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
@@ -13759,6 +13854,13 @@ proto.api.v1alpha1.org.UpdateUserRequest.serializeBinaryToWriter = function(mess
       15,
       f,
       api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getPlayNotificationSounds();
+  if (f) {
+    writer.writeBool(
+      16,
+      f
     );
   }
   f = message.getFieldMaskList();
@@ -14133,6 +14235,24 @@ proto.api.v1alpha1.org.UpdateUserRequest.prototype.clearLocalePreferencesOverrid
  */
 proto.api.v1alpha1.org.UpdateUserRequest.prototype.hasLocalePreferencesOverride = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool play_notification_sounds = 16;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.UpdateUserRequest.prototype.getPlayNotificationSounds = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.UpdateUserRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateUserRequest.prototype.setPlayNotificationSounds = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
