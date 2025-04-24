@@ -8,6 +8,49 @@ import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_types_pb from "../../../api/commons/types_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class ReportParameters extends jspb.Message {
+  getParametersMap(): jspb.Map<string, ReportParameters.Parameter>;
+  clearParametersMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportParameters.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportParameters): ReportParameters.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReportParameters, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportParameters;
+  static deserializeBinaryFromReader(message: ReportParameters, reader: jspb.BinaryReader): ReportParameters;
+}
+
+export namespace ReportParameters {
+  export type AsObject = {
+    parametersMap: Array<[string, ReportParameters.Parameter.AsObject]>,
+  }
+
+  export class Parameter extends jspb.Message {
+    getValue(): string;
+    setValue(value: string): void;
+
+    getDataType(): string;
+    setDataType(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Parameter.AsObject;
+    static toObject(includeInstance: boolean, msg: Parameter): Parameter.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Parameter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Parameter;
+    static deserializeBinaryFromReader(message: Parameter, reader: jspb.BinaryReader): Parameter;
+  }
+
+  export namespace Parameter {
+    export type AsObject = {
+      value: string,
+      dataType: string,
+    }
+  }
+}
+
 export class ReportJob extends jspb.Message {
   getReportJobId(): string;
   setReportJobId(value: string): void;
@@ -82,6 +125,11 @@ export class ReportJob extends jspb.Message {
   getTransferOptions(): api_commons_bireportgenerator_pb.TransferOptions | undefined;
   setTransferOptions(value?: api_commons_bireportgenerator_pb.TransferOptions): void;
 
+  hasReportParameters(): boolean;
+  clearReportParameters(): void;
+  getReportParameters(): ReportParameters | undefined;
+  setReportParameters(value?: ReportParameters): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportJob.AsObject;
   static toObject(includeInstance: boolean, msg: ReportJob): ReportJob.AsObject;
@@ -113,6 +161,7 @@ export namespace ReportJob {
     transferConfigSid: number,
     cronExpression?: api_commons_types_pb.CronExpression.AsObject,
     transferOptions?: api_commons_bireportgenerator_pb.TransferOptions.AsObject,
+    reportParameters?: ReportParameters.AsObject,
   }
 }
 
