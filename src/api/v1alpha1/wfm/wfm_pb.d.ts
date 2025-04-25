@@ -182,6 +182,9 @@ export class SkillProfile extends jspb.Message {
   getSms(): SkillProfile.SmsMetadata | undefined;
   setSms(value?: SkillProfile.SmsMetadata): void;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfile.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfile): SkillProfile.AsObject;
@@ -210,6 +213,7 @@ export namespace SkillProfile {
     areAveragesManual: boolean,
     channelTypesList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
     sms?: SkillProfile.SmsMetadata.AsObject,
+    averageTalkTimeInSeconds: number,
   }
 
   export class SmsMetadata extends jspb.Message {
@@ -275,6 +279,9 @@ export class SkillProfileGroup extends jspb.Message {
   getDatetimeSetToInactive(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDatetimeSetToInactive(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfileGroup.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfileGroup): SkillProfileGroup.AsObject;
@@ -298,6 +305,7 @@ export namespace SkillProfileGroup {
     areAveragesManual: boolean,
     skillProfileSidsList: Array<number>,
     datetimeSetToInactive?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -378,6 +386,9 @@ export class UpdateSkillProfileReq extends jspb.Message {
   getAreAveragesManual(): boolean;
   setAreAveragesManual(value: boolean): void;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateSkillProfileReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateSkillProfileReq): UpdateSkillProfileReq.AsObject;
@@ -398,6 +409,7 @@ export namespace UpdateSkillProfileReq {
     averageAfterCallWorkInSeconds: number,
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -780,6 +792,16 @@ export class HistoricalDataInterval extends jspb.Message {
   getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
   setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
+  hasAverageTalkTimeInSeconds(): boolean;
+  clearAverageTalkTimeInSeconds(): void;
+  getAverageTalkTimeInSeconds(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setAverageTalkTimeInSeconds(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
+  hasOriginalAverageTalkTimeInSeconds(): boolean;
+  clearOriginalAverageTalkTimeInSeconds(): void;
+  getOriginalAverageTalkTimeInSeconds(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setOriginalAverageTalkTimeInSeconds(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistoricalDataInterval.AsObject;
   static toObject(includeInstance: boolean, msg: HistoricalDataInterval): HistoricalDataInterval.AsObject;
@@ -808,6 +830,8 @@ export namespace HistoricalDataInterval {
     originalTotalCalls: number,
     originalTotalAbandonedCalls: number,
     skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    averageTalkTimeInSeconds?: google_protobuf_wrappers_pb.FloatValue.AsObject,
+    originalAverageTalkTimeInSeconds?: google_protobuf_wrappers_pb.FloatValue.AsObject,
   }
 }
 
@@ -1072,6 +1096,14 @@ export class CallProfileTemplate extends jspb.Message {
   getTimeZone(): string;
   setTimeZone(value: string): void;
 
+  hasAverageTalkTimeProfile(): boolean;
+  clearAverageTalkTimeProfile(): void;
+  getAverageTalkTimeProfile(): api_commons_wfm_pb.CallProfileGroupAvgs | undefined;
+  setAverageTalkTimeProfile(value?: api_commons_wfm_pb.CallProfileGroupAvgs): void;
+
+  getFixedAverageTalkTime(): number;
+  setFixedAverageTalkTime(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallProfileTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: CallProfileTemplate): CallProfileTemplate.AsObject;
@@ -1098,6 +1130,8 @@ export namespace CallProfileTemplate {
     fixedAverageTimeToAbort: number,
     defaultToFixedAveragesForecast: boolean,
     timeZone: string,
+    averageTalkTimeProfile?: api_commons_wfm_pb.CallProfileGroupAvgs.AsObject,
+    fixedAverageTalkTime: number,
   }
 }
 
@@ -1682,6 +1716,9 @@ export class CallDataByInterval extends jspb.Message {
   getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
   setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallDataByInterval.AsObject;
   static toObject(includeInstance: boolean, msg: CallDataByInterval): CallDataByInterval.AsObject;
@@ -1706,6 +1743,7 @@ export namespace CallDataByInterval {
     forecastDataIntervalSid: number,
     intervalWidthInMinutes: number,
     skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -2101,6 +2139,9 @@ export class BuildRegressionForecastByIntervalReq extends jspb.Message {
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildRegressionForecastByIntervalReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildRegressionForecastByIntervalReq): BuildRegressionForecastByIntervalReq.AsObject;
@@ -2119,6 +2160,7 @@ export namespace BuildRegressionForecastByIntervalReq {
     averageTimeToAbortInSeconds: number,
     regressionTemplate?: RegressionTemplate.AsObject,
     skillProfileSidsToForecastList: Array<number>,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -2145,6 +2187,9 @@ export class BuildRegressionForecastByIntervalWithStatsReq extends jspb.Message 
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildRegressionForecastByIntervalWithStatsReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildRegressionForecastByIntervalWithStatsReq): BuildRegressionForecastByIntervalWithStatsReq.AsObject;
@@ -2163,6 +2208,7 @@ export namespace BuildRegressionForecastByIntervalWithStatsReq {
     averageTimeToAbortInSeconds: number,
     regressionTemplate?: RegressionTemplate.AsObject,
     skillProfileSidsToForecastList: Array<number>,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -2200,6 +2246,9 @@ export class GetForecastStatisticsRes extends jspb.Message {
   getInvalidReason(): string;
   setInvalidReason(value: string): void;
 
+  getRmsErrorAtt(): number;
+  setRmsErrorAtt(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetForecastStatisticsRes.AsObject;
   static toObject(includeInstance: boolean, msg: GetForecastStatisticsRes): GetForecastStatisticsRes.AsObject;
@@ -2223,6 +2272,7 @@ export namespace GetForecastStatisticsRes {
     rmsErrorAht: number,
     areStatsInvalid: boolean,
     invalidReason: string,
+    rmsErrorAtt: number,
   }
 }
 
@@ -2408,6 +2458,9 @@ export class UpsertRegressionForecastReq extends jspb.Message {
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertRegressionForecastReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertRegressionForecastReq): UpsertRegressionForecastReq.AsObject;
@@ -2426,6 +2479,7 @@ export namespace UpsertRegressionForecastReq {
     averageAfterCallWorkInSeconds: number,
     averageTimeToAbortInSeconds: number,
     skillProfileSidsToForecastList: Array<number>,
+    averageTalkTimeInSeconds: number,
   }
 }
 
@@ -2749,6 +2803,9 @@ export class CalculateTrainingDataAveragesForSkillProfileRes extends jspb.Messag
   getAverageTimeToAbortInSeconds(): number;
   setAverageTimeToAbortInSeconds(value: number): void;
 
+  getAverageTalkTimeInSeconds(): number;
+  setAverageTalkTimeInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CalculateTrainingDataAveragesForSkillProfileRes.AsObject;
   static toObject(includeInstance: boolean, msg: CalculateTrainingDataAveragesForSkillProfileRes): CalculateTrainingDataAveragesForSkillProfileRes.AsObject;
@@ -2765,6 +2822,7 @@ export namespace CalculateTrainingDataAveragesForSkillProfileRes {
     averageHandleTimeInSeconds: number,
     averageAfterCallWorkInSeconds: number,
     averageTimeToAbortInSeconds: number,
+    averageTalkTimeInSeconds: number,
   }
 }
 

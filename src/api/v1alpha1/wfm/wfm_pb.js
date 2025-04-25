@@ -12823,7 +12823,8 @@ averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
 areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
 channelTypesList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f,
-sms: (f = msg.getSms()) && proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.toObject(includeInstance, f)
+sms: (f = msg.getSms()) && proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.toObject(includeInstance, f),
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0)
   };
 
   if (includeInstance) {
@@ -12929,6 +12930,10 @@ proto.api.v1alpha1.wfm.SkillProfile.deserializeBinaryFromReader = function(msg, 
       var value = new proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata;
       reader.readMessage(value,proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.deserializeBinaryFromReader);
       msg.setSms(value);
+      break;
+    case 17:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -13073,6 +13078,13 @@ proto.api.v1alpha1.wfm.SkillProfile.serializeBinaryToWriter = function(message, 
       16,
       f,
       proto.api.v1alpha1.wfm.SkillProfile.SmsMetadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      17,
+      f
     );
   }
 };
@@ -13613,6 +13625,24 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.hasSms = function() {
 };
 
 
+/**
+ * optional float average_talk_time_in_seconds = 17;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 17, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfile} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfile.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 17, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -13662,7 +13692,8 @@ averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
 areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
 skillProfileSidsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-datetimeSetToInactive: (f = msg.getDatetimeSetToInactive()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+datetimeSetToInactive: (f = msg.getDatetimeSetToInactive()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
   };
 
   if (includeInstance) {
@@ -13746,6 +13777,10 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader = function(
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDatetimeSetToInactive(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -13853,6 +13888,13 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter = function(mess
       11,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      12,
+      f
     );
   }
 };
@@ -14110,6 +14152,24 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.clearDatetimeSetToInactive = 
  */
 proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.hasDatetimeSetToInactive = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional float average_talk_time_in_seconds = 12;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
@@ -14530,7 +14590,8 @@ averageSpeedOfAnswerInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg
 averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0)
   };
 
   if (includeInstance) {
@@ -14598,6 +14659,10 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileReq.deserializeBinaryFromReader = funct
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAreAveragesManual(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -14681,6 +14746,13 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileReq.serializeBinaryToWriter = function(
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      9,
       f
     );
   }
@@ -14828,6 +14900,24 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileReq.prototype.getAreAveragesManual = fu
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileReq.prototype.setAreAveragesManual = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional float average_talk_time_in_seconds = 9;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileReq.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileReq.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
@@ -16975,7 +17065,9 @@ originalAverageAfterCallWorkInSeconds: (f = msg.getOriginalAverageAfterCallWorkI
 originalAverageTimeToAbortInSeconds: (f = msg.getOriginalAverageTimeToAbortInSeconds()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f),
 originalTotalCalls: jspb.Message.getFieldWithDefault(msg, 14, 0),
 originalTotalAbandonedCalls: jspb.Message.getFieldWithDefault(msg, 15, 0),
-skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
+skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
+averageTalkTimeInSeconds: (f = msg.getAverageTalkTimeInSeconds()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f),
+originalAverageTalkTimeInSeconds: (f = msg.getOriginalAverageTalkTimeInSeconds()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17085,6 +17177,16 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.deserializeBinaryFromReader = func
       var value = new api_commons_wfm_pb.SkillProfileCategory;
       reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
       msg.setSkillProfileCategory(value);
+      break;
+    case 17:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setAverageTalkTimeInSeconds(value);
+      break;
+    case 18:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setOriginalAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -17235,6 +17337,22 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.serializeBinaryToWriter = function
       16,
       f,
       api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getOriginalAverageTalkTimeInSeconds();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
     );
   }
 };
@@ -17715,6 +17833,80 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.clearSkillProfileCategor
  */
 proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.hasSkillProfileCategory = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional google.protobuf.FloatValue average_talk_time_in_seconds = 17;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+*/
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.clearAverageTalkTimeInSeconds = function() {
+  return this.setAverageTalkTimeInSeconds(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.hasAverageTalkTimeInSeconds = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional google.protobuf.FloatValue original_average_talk_time_in_seconds = 18;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.getOriginalAverageTalkTimeInSeconds = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+*/
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.setOriginalAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.clearOriginalAverageTalkTimeInSeconds = function() {
+  return this.setOriginalAverageTalkTimeInSeconds(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.hasOriginalAverageTalkTimeInSeconds = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
@@ -19180,7 +19372,9 @@ fixedAverageHandleTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0
 fixedAverageAfterCallWork: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
 fixedAverageTimeToAbort: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
 defaultToFixedAveragesForecast: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-timeZone: jspb.Message.getFieldWithDefault(msg, 14, "")
+timeZone: jspb.Message.getFieldWithDefault(msg, 14, ""),
+averageTalkTimeProfile: (f = msg.getAverageTalkTimeProfile()) && api_commons_wfm_pb.CallProfileGroupAvgs.toObject(includeInstance, f),
+fixedAverageTalkTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0)
   };
 
   if (includeInstance) {
@@ -19278,6 +19472,15 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.deserializeBinaryFromReader = functio
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimeZone(value);
+      break;
+    case 15:
+      var value = new api_commons_wfm_pb.CallProfileGroupAvgs;
+      reader.readMessage(value,api_commons_wfm_pb.CallProfileGroupAvgs.deserializeBinaryFromReader);
+      msg.setAverageTalkTimeProfile(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setFixedAverageTalkTime(value);
       break;
     default:
       reader.skipField();
@@ -19409,6 +19612,21 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeProfile();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      api_commons_wfm_pb.CallProfileGroupAvgs.serializeBinaryToWriter
+    );
+  }
+  f = message.getFixedAverageTalkTime();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      16,
       f
     );
   }
@@ -19778,6 +19996,61 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.getTimeZone = function() {
  */
 proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.setTimeZone = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional api.commons.CallProfileGroupAvgs average_talk_time_profile = 15;
+ * @return {?proto.api.commons.CallProfileGroupAvgs}
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.getAverageTalkTimeProfile = function() {
+  return /** @type{?proto.api.commons.CallProfileGroupAvgs} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.CallProfileGroupAvgs, 15));
+};
+
+
+/**
+ * @param {?proto.api.commons.CallProfileGroupAvgs|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CallProfileTemplate} returns this
+*/
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.setAverageTalkTimeProfile = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CallProfileTemplate} returns this
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.clearAverageTalkTimeProfile = function() {
+  return this.setAverageTalkTimeProfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.hasAverageTalkTimeProfile = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional float fixed_average_talk_time = 16;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.getFixedAverageTalkTime = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 16, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CallProfileTemplate} returns this
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.setFixedAverageTalkTime = function(value) {
+  return jspb.Message.setProto3FloatField(this, 16, value);
 };
 
 
@@ -23513,7 +23786,8 @@ totalAbandonedCalls: jspb.Message.getFieldWithDefault(msg, 8, 0),
 isDelta: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
 forecastDataIntervalSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
 intervalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 11, 0),
-skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
+skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0)
   };
 
   if (includeInstance) {
@@ -23599,6 +23873,10 @@ proto.api.v1alpha1.wfm.CallDataByInterval.deserializeBinaryFromReader = function
       var value = new api_commons_wfm_pb.SkillProfileCategory;
       reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
       msg.setSkillProfileCategory(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -23713,6 +23991,13 @@ proto.api.v1alpha1.wfm.CallDataByInterval.serializeBinaryToWriter = function(mes
       12,
       f,
       api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      13,
+      f
     );
   }
 };
@@ -23969,6 +24254,24 @@ proto.api.v1alpha1.wfm.CallDataByInterval.prototype.clearSkillProfileCategory = 
  */
 proto.api.v1alpha1.wfm.CallDataByInterval.prototype.hasSkillProfileCategory = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional float average_talk_time_in_seconds = 13;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CallDataByInterval} returns this
+ */
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 13, value);
 };
 
 
@@ -26526,7 +26829,8 @@ averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 2
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
 regressionTemplate: (f = msg.getRegressionTemplate()) && proto.api.v1alpha1.wfm.RegressionTemplate.toObject(includeInstance, f),
-skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
   };
 
   if (includeInstance) {
@@ -26589,6 +26893,10 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq.deserializeBinaryFro
       for (var i = 0; i < values.length; i++) {
         msg.addSkillProfileSidsToForecast(values[i]);
       }
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -26659,6 +26967,13 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq.serializeBinaryToWri
   if (f.length > 0) {
     writer.writePackedInt64(
       6,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
       f
     );
   }
@@ -26811,6 +27126,24 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq.prototype.clearSkill
 };
 
 
+/**
+ * optional float average_talk_time_in_seconds = 7;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalReq.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -26855,7 +27188,8 @@ averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 2
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
 regressionTemplate: (f = msg.getRegressionTemplate()) && proto.api.v1alpha1.wfm.RegressionTemplate.toObject(includeInstance, f),
-skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
   };
 
   if (includeInstance) {
@@ -26918,6 +27252,10 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq.deserialize
       for (var i = 0; i < values.length; i++) {
         msg.addSkillProfileSidsToForecast(values[i]);
       }
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -26988,6 +27326,13 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq.serializeBi
   if (f.length > 0) {
     writer.writePackedInt64(
       6,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
       f
     );
   }
@@ -27140,6 +27485,24 @@ proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq.prototype.c
 };
 
 
+/**
+ * optional float average_talk_time_in_seconds = 7;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildRegressionForecastByIntervalWithStatsReq.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
 
 
 
@@ -27182,7 +27545,8 @@ rmsErrorAsa: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
 rmsErrorAcw: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
 rmsErrorAht: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
 areStatsInvalid: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-invalidReason: jspb.Message.getFieldWithDefault(msg, 11, "")
+invalidReason: jspb.Message.getFieldWithDefault(msg, 11, ""),
+rmsErrorAtt: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
   };
 
   if (includeInstance) {
@@ -27262,6 +27626,10 @@ proto.api.v1alpha1.wfm.GetForecastStatisticsRes.deserializeBinaryFromReader = fu
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setInvalidReason(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRmsErrorAtt(value);
       break;
     default:
       reader.skipField();
@@ -27366,6 +27734,13 @@ proto.api.v1alpha1.wfm.GetForecastStatisticsRes.serializeBinaryToWriter = functi
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getRmsErrorAtt();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      12,
       f
     );
   }
@@ -27567,6 +27942,24 @@ proto.api.v1alpha1.wfm.GetForecastStatisticsRes.prototype.getInvalidReason = fun
  */
 proto.api.v1alpha1.wfm.GetForecastStatisticsRes.prototype.setInvalidReason = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional float rms_error_ATT = 12;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.GetForecastStatisticsRes.prototype.getRmsErrorAtt = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.GetForecastStatisticsRes} returns this
+ */
+proto.api.v1alpha1.wfm.GetForecastStatisticsRes.prototype.setRmsErrorAtt = function(value) {
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
@@ -28695,7 +29088,8 @@ averageSpeedOfAnswerInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg
 averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
 averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+skillProfileSidsToForecastList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
   };
 
   if (includeInstance) {
@@ -28758,6 +29152,10 @@ proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.deserializeBinaryFromReader =
       for (var i = 0; i < values.length; i++) {
         msg.addSkillProfileSidsToForecast(values[i]);
       }
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -28828,6 +29226,13 @@ proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.serializeBinaryToWriter = fun
   if (f.length > 0) {
     writer.writePackedInt64(
       6,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
       f
     );
   }
@@ -28977,6 +29382,24 @@ proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.prototype.addSkillProfileSids
  */
 proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.prototype.clearSkillProfileSidsToForecastList = function() {
   return this.setSkillProfileSidsToForecastList([]);
+};
+
+
+/**
+ * optional float average_talk_time_in_seconds = 7;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpsertRegressionForecastReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpsertRegressionForecastReq.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
@@ -31078,7 +31501,8 @@ proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.toObject 
 averageSpeedOfAnswerInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
 averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
 averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
+averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+averageTalkTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -31130,6 +31554,10 @@ proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.deseriali
     case 4:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setAverageTimeToAbortInSeconds(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTalkTimeInSeconds(value);
       break;
     default:
       reader.skipField();
@@ -31185,6 +31613,13 @@ proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.serialize
   if (f !== 0.0) {
     writer.writeFloat(
       4,
+      f
+    );
+  }
+  f = message.getAverageTalkTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      5,
       f
     );
   }
@@ -31260,6 +31695,24 @@ proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.prototype
  */
 proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.prototype.setAverageTimeToAbortInSeconds = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional float average_talk_time_in_seconds = 5;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.prototype.getAverageTalkTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes} returns this
+ */
+proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.prototype.setAverageTalkTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
